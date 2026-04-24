@@ -7,6 +7,7 @@ import { checkUsageLimit } from "@/lib/usage";
 import { stones } from "@/lib/stones";
 
 export const metadata = { title: "Espace membre | Litho Intelligence" };
+export const dynamic = "force-dynamic";
 
 export default async function DashboardPage() {
   const { user, profile } = await requireUser();
