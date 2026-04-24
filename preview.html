@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Litho Intelligence - Preview</title>
+    <style>
+      :root {
+        --bg: #f9f2ee;
+        --ink: #241b1d;
+        --muted: #756768;
+        --line: #e3d4cd;
+        --surface: #fffaf7;
+        --accent: #8b4656;
+        --accent-strong: #683241;
+        --gold: #b98434;
+        --shadow: 0 18px 55px rgba(72, 38, 46, 0.1);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background:
+          linear-gradient(145deg, rgba(139, 70, 86, 0.08), transparent 34%),
+          linear-gradient(20deg, rgba(49, 79, 74, 0.1), transparent 42%),
+          var(--bg);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      a { color: inherit; text-decoration: none; }
+      .nav {
+        align-items: center;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        padding: 18px clamp(18px, 5vw, 64px);
+        position: sticky;
+        top: 0;
+        background: rgba(249, 242, 238, 0.92);
+        backdrop-filter: blur(16px);
+        z-index: 10;
+      }
+      .brand { align-items: center; display: flex; gap: 10px; font-weight: 800; }
+      .brand-mark {
+        align-items: center;
+        background: var(--accent-strong);
+        border-radius: 8px;
+        color: white;
+        display: inline-flex;
+        height: 34px;
+        justify-content: center;
+        width: 34px;
+      }
+      .nav-links { display: flex; gap: 16px; color: var(--muted); font-size: 14px; }
+      .nav-cta, .button {
+        align-items: center;
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        color: white;
+        display: inline-flex;
+        gap: 8px;
+        justify-content: center;
+        min-height: 42px;
+        padding: 10px 15px;
+      }
+      .button.secondary {
+        background: transparent;
+        border-color: var(--line);
+        color: var(--ink);
+      }
+      .hero {
+        display: grid;
+        gap: 34px;
+        grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+        padding: clamp(34px, 6vw, 76px) clamp(18px, 5vw, 64px) 24px;
+      }
+      .hero h1 {
+        font-size: clamp(38px, 5vw, 68px);
+        line-height: 1;
+        margin: 0 0 18px;
+        max-width: 900px;
+      }
+      .hero p, .section-lead {
+        color: var(--muted);
+        font-size: clamp(17px, 2vw, 20px);
+        line-height: 1.6;
+        max-width: 760px;
+      }
+      .eyebrow {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 800;
+        margin: 0 0 12px;
+        text-transform: uppercase;
+      }
+      .search-box {
+        align-items: center;
+        background: rgba(255, 250, 247, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 10px;
+        grid-template-columns: auto 1fr auto;
+        margin-top: 26px;
+        max-width: 780px;
+        padding: 10px;
+      }
+      .search-box input {
+        background: transparent;
+        border: 0;
+        min-height: 44px;
+        outline: 0;
+        width: 100%;
+      }
+      .search-box button {
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        min-height: 44px;
+        padding: 0 18px;
+      }
+      .question-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 14px;
+        max-width: 780px;
+      }
+      .question-list a {
+        background: rgba(255, 250, 247, 0.78);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 14px;
+        padding: 8px 11px;
+      }
+      .hero-panel, .card {
+        background: rgba(255, 250, 247, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+      .hero-panel { align-self: start; padding: 20px; }
+      .quick-grid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .quick-link {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        min-height: 88px;
+        padding: 16px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 247, 242, 0.72));
+      }
+      .quick-link strong { display: block; font-size: 18px; margin: 0 0 7px; }
+      .quick-link span { color: var(--muted); font-size: 14px; line-height: 1.35; }
+      .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 13px;
+        padding: 7px 10px;
+      }
+      .section { padding: 54px clamp(18px, 5vw, 64px); }
+      .compact-section { padding-top: 34px; padding-bottom: 24px; }
+      .answer-band { padding: 0 clamp(18px, 5vw, 64px) 18px; }
+      .answer-band div {
+        align-items: center;
+        background: #f4e5df;
+        border: 1px solid #e1c5bd;
+        border-radius: 8px;
+        color: var(--accent-strong);
+        display: flex;
+        gap: 12px;
+        padding: 14px 16px;
+      }
+      .answer-band span { color: #72595b; }
+      .section h2 { font-size: clamp(30px, 4vw, 48px); margin: 0 0 14px; }
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .card { padding: 20px; }
+      .emotional-card { min-height: 210px; }
+      .emotional-card h3 { font-size: 24px; }
+      .emotional-card p { min-height: 74px; }
+      .micro-action {
+        align-items: center;
+        color: var(--accent-strong);
+        display: inline-flex;
+        font-weight: 800;
+        gap: 6px;
+      }
+      .card h3 { margin: 0 0 10px; }
+      .card p, .fineprint { color: var(--muted); line-height: 1.55; }
+      .fineprint {
+        border-top: 1px solid var(--line);
+        font-size: 13px;
+        margin-top: 20px;
+        padding-top: 14px;
+      }
+      @media (max-width: 900px) {
+        .hero, .grid { grid-template-columns: 1fr; }
+        .nav { align-items: flex-start; flex-direction: column; }
+        .nav-links { flex-wrap: wrap; }
+        .answer-band div { align-items: flex-start; flex-direction: column; }
+      }
+      @media (max-width: 520px) {
+        .quick-grid { grid-template-columns: 1fr; }
+        .search-box { grid-template-columns: 1fr; }
+        .search-box .icon { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="brand" href="#">
+        <span class="brand-mark">◆</span>
+        Litho Intelligence
+      </a>
+      <div class="nav-links">
+        <a href="#">Recommandation</a>
+        <a href="#">Combinaisons</a>
+        <a href="#">Pierres</a>
+        <a href="#">Newsletter</a>
+      </div>
+      <a class="nav-cta" href="#">✦ Test rapide</a>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Un soutien symbolique quand quelque chose pese</p>
+          <h1>Dis ce que tu ressens. Trouve la pierre qui t'aide a reprendre confiance.</h1>
+          <p>
+            Pour les moments de stress, de doute, de fatigue ou de manque affectif, l'application propose
+            une reponse simple, douce et actionnable: pierres, intention, usage et prochaine etape.
+          </p>
+          <form class="search-box">
+            <span class="icon">⌕</span>
+            <input placeholder="Ex: je suis anxieux, je manque de confiance, je veux me sentir protege..." />
+            <button type="button">Me guider</button>
+          </form>
+          <div class="question-list">
+            <a href="#">J'ai besoin d'apaiser mon mental</a>
+            <a href="#">Je doute de moi en ce moment</a>
+            <a href="#">Je porte deja des pierres: est-ce coherent ?</a>
+            <a href="#">Je veux offrir un soutien symbolique</a>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <h2>Choisis ce qui te parle</h2>
+          <div class="quick-grid">
+            <a class="quick-link" href="#"><strong>☾ Je me sens submerge</strong><span>Retrouver du calme</span></a>
+            <a class="quick-link" href="#"><strong>◇ Je n'ai plus d'energie</strong><span>Rallumer l'elan</span></a>
+            <a class="quick-link" href="#"><strong>€ J'ai peur de manquer</strong><span>Revenir a la confiance</span></a>
+            <a class="quick-link" href="#"><strong>♡ J'ai besoin d'etre aime</strong><span>Soutenir le coeur</span></a>
+          </div>
+          <p class="fineprint">
+            La lithotherapie est une pratique de bien-etre non medicale, basee sur des traditions, croyances
+            et pratiques energetiques. Elle ne remplace jamais un avis, diagnostic ou traitement medical.
+          </p>
+        </aside>
+      </section>
+
+      <section class="answer-band">
+        <div>
+          <strong>La promesse d'usage</strong>
+          <span>Une reponse rassurante, une intention claire, 3 a 5 pierres et un geste simple a faire aujourd'hui.</span>
+        </div>
+      </section>
+
+      <section class="section compact-section">
+        <h2>Commencer par ce que vous ressentez</h2>
+        <p class="section-lead">
+          L'utilisateur n'a pas besoin de connaitre les pierres. Il part de sa tension interieure,
+          puis l'application traduit ce ressenti en choix simple.
+        </p>
+        <div class="grid">
+          <article class="card emotional-card">
+            <h3>Je me sens perdu</h3>
+            <p>Quand tout semble flou, commence par une pierre qui ramene de la clarte et une intention simple.</p>
+            <span class="micro-action">Voir mon soutien →</span>
+          </article>
+          <article class="card emotional-card">
+            <h3>Je me sens seul</h3>
+            <p>Quand le coeur manque de chaleur, choisis un soutien symbolique centre sur la douceur et l'amour de soi.</p>
+            <span class="micro-action">Voir mon soutien →</span>
+          </article>
+          <article class="card emotional-card">
+            <h3>Je n'ose pas agir</h3>
+            <p>Quand la peur bloque le mouvement, cherche une pierre associee au courage, a l'ancrage et a la decision.</p>
+            <span class="micro-action">Voir mon soutien →</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Acces direct aux pierres</h2>
+        <p class="section-lead">
+          Pour ceux qui savent deja ce qu'ils cherchent: fiche claire, compatibilites, purification,
+          port recommande et lien d'achat.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>Amethyste</h3>
+            <p>Pierre traditionnellement associee a l'apaisement mental, a l'intuition et aux rituels du soir.</p>
+            <span class="button secondary">Voir la fiche →</span>
+          </article>
+          <article class="card">
+            <h3>Quartz rose</h3>
+            <p>Symbole de tendresse, d'amour de soi et de reconfort dans de nombreuses traditions energetiques.</p>
+            <span class="button secondary">Voir la fiche →</span>
+          </article>
+          <article class="card">
+            <h3>Citrine</h3>
+            <p>Pierre traditionnellement reliee a l'elan personnel, a l'abondance symbolique et a la motivation.</p>
+            <span class="button secondary">Voir la fiche →</span>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
