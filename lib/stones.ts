@@ -62,11 +62,11 @@ const product = (name: string, url: string, brand: "Felicidade" | "Vera Mentis" 
   badge: badge ?? "Produit direct"
 });
 
-const image = (query: string, name: string) => ({
-  url: `https://source.unsplash.com/1000x750/?${encodeURIComponent(`${query} gemstone crystal`)}`,
+const image = (slug: string, name: string) => ({
+  url: `/images/stones/${slug}.png`,
   alt: `${name} en pierre naturelle`,
-  credit: "Image illustrative, Unsplash Source",
-  sourceUrl: "https://unsplash.com/"
+  credit: "Image generee par ChatGPT",
+  sourceUrl: "/"
 });
 
 const createStone = (seed: StoneSeed): Stone => ({
@@ -75,7 +75,7 @@ const createStone = (seed: StoneSeed): Stone => ({
   visual: seed.visual,
   origin: seed.origin ?? "Origines variables selon les gisements",
   description: seed.description,
-  image: image(seed.name, seed.name),
+  image: image(seed.slug, seed.name),
   properties: seed.properties,
   chakra: seed.chakra,
   emotions: seed.emotions,
