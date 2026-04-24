@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
-import { ArrowRight, Search, ShoppingBag } from "lucide-react";
-import { recommendStones } from "@/lib/recommendation";
+import { useEffect, useMemo, useState } from "react";
+import { Search } from "lucide-react";
 import { wellbeingDisclaimer } from "@/lib/legal";
-import { withAffiliate } from "@/lib/affiliate";
+import { StoneResultCard } from "@/components/StoneResultCard";
+import { EmailCapture } from "@/components/EmailCapture";
+import type { AIStoneRecommendation } from "@/lib/openai-recommendation";
 
 export default function RecommendationPage({
   searchParams
@@ -15,8 +16,32 @@ export default function RecommendationPage({
   const [physical, setPhysical] = useState(searchParams.physical ?? "");
   const [emotional, setEmotional] = useState(searchParams.emotional ?? "");
   const [goal, setGoal] = useState(searchParams.goal ?? "");
+  const [results, setResults] = useState<AIStoneRecommendation[]>([]);
+  const [loading, setLoading] = useState(false);
 
-  const results = useMemo(() => recommendStones({ physical, emotional, goal }), [physical, emotional, goal]);
+  const payload = useMemo(() => ({ physical, emotional, goal }), [physical, emotional, goal]);
+
+  useEffect(() => {
+    let active = true;
+    async function load() {
+      setLoading(true);
+      const response = await fetch("/api/recommendation/ai", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await response.json();
+      if (active) {
+        setResults(data.stones ?? []);
+        setLoading(false);
+      }
+    }
+
+    load();
+    return () => {
+      active = false;
+    };
+  }, [payload]);
 
   return (
     <main className="section">
@@ -61,45 +86,14 @@ export default function RecommendationPage({
         <p className="fineprint">{wellbeingDisclaimer}</p>
       </form>
 
-      <div className="result-list">
+      <div className="premium-results-shell">
+        {loading ? <p className="loading-line">Lecture de votre besoin...</p> : null}
         {results.map((item) => (
-          <article className="card result-card" key={item.stone.slug}>
-            <img className="result-image" src={item.stone.image.url} alt={item.stone.image.alt} />
-            <div>
-              <div className="result-title-row">
-                <h2>{item.stone.name}</h2>
-                <div className="score">{item.score}%</div>
-              </div>
-              <p>{item.reason}</p>
-              <p className="intention-line">{item.intention}</p>
-              <p>
-                Geste propose: {item.usage}
-              </p>
-              <div className="pill-row">
-                {item.stone.properties.map((property) => (
-                  <span className="pill" key={property}>
-                    {property}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="result-actions">
-              <Link
-                className="button"
-                href={withAffiliate(item.stone.products[0].url)}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <ShoppingBag size={16} />
-                {item.stone.products[0].price ?? "Bracelets"}
-              </Link>
-              <Link className="button secondary" href={`/stone/${item.stone.slug}`}>
-                Fiche <ArrowRight size={16} />
-              </Link>
-            </div>
-          </article>
+          <StoneResultCard key={item.slug} result={item} />
         ))}
       </div>
+
+      {results.length > 0 ? <EmailCapture source="recommendation" /> : null}
     </main>
   );
 }

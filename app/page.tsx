@@ -4,10 +4,11 @@ import { wellbeingDisclaimer } from "@/lib/legal";
 import { stones } from "@/lib/stones";
 
 const quickLinks = [
-  { label: "Je me sens submerge", detail: "Retrouver du calme", href: "/recommendation?emotional=stress", icon: Moon },
-  { label: "Je n'ai plus d'energie", detail: "Rallumer l'elan", href: "/recommendation?physical=fatigue", icon: Shield },
-  { label: "J'ai peur de manquer", detail: "Revenir a la confiance", href: "/recommendation?goal=argent", icon: Wallet },
-  { label: "J'ai besoin d'etre aime", detail: "Soutenir le coeur", href: "/recommendation?goal=amour", icon: Heart }
+  { label: "Stresse", detail: "Apaiser le mental", href: "/recommendation?emotional=stress&goal=serenite", icon: Moon },
+  { label: "Fatigue", detail: "Retrouver de l'elan", href: "/recommendation?physical=fatigue&goal=energie", icon: Shield },
+  { label: "Manque d'energie", detail: "Relancer l'action", href: "/recommendation?physical=fatigue&goal=confiance", icon: Wallet },
+  { label: "Besoin d'amour", detail: "Soutenir le coeur", href: "/recommendation?emotional=solitude&goal=amour", icon: Heart },
+  { label: "Protection", detail: "Poser des limites", href: "/recommendation?emotional=peur&goal=protection", icon: Shield }
 ];
 
 const commonQuestions = [
@@ -40,15 +41,15 @@ export default function HomePage() {
     <main>
       <section className="hero app-hero">
         <div>
-          <p className="eyebrow">Un soutien symbolique quand quelque chose pese</p>
-          <h1>Dis ce que tu ressens. Trouve la pierre qui t'aide a reprendre confiance.</h1>
+          <p className="eyebrow">Lithotherapie traditionnelle, recommandation intelligente</p>
+          <h1>Comment te sens-tu aujourd'hui ?</h1>
           <p>
-            Pour les moments de stress, de doute, de fatigue ou de manque affectif, l'application propose
-            une reponse simple, douce et actionnable: pierres, intention, usage et prochaine etape.
+            En un clic, obtenez une recommandation de pierres, un rituel simple et le bracelet associe
+            Felicidade ou Vera Mentis.
           </p>
           <form className="search-box" action="/recommendation">
             <Search size={20} />
-            <input name="goal" placeholder="Ex: je suis anxieux, je manque de confiance, je veux me sentir protege..." />
+            <input name="goal" placeholder="Ex: stress, amour, protection, argent, confiance..." />
             <button type="submit">Me guider</button>
           </form>
           <div className="hero-actions">
@@ -71,7 +72,7 @@ export default function HomePage() {
           </div>
         </div>
         <aside className="hero-panel" aria-label="Test rapide">
-          <h2>Choisis ce qui te parle</h2>
+          <h2>Reponse en 1 clic</h2>
           <div className="quick-grid">
             {quickLinks.map((item) => {
               const Icon = item.icon;
