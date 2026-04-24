@@ -73,7 +73,7 @@ export default function TestPage() {
           <div className="sos-actions">
             <Link className="button" href={withAffiliate(main.stone.products[0].url)}>
               <ShoppingBag size={16} />
-              Voir bracelets
+              {main.stone.products[0].price ?? "Voir bracelets"}
             </Link>
             <Link className="button secondary" href={`/stone/${main.stone.slug}`}>
               Fiche pierre <ArrowRight size={16} />

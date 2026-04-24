@@ -86,7 +86,7 @@ export default function RecommendationPage({
             <div className="result-actions">
               <Link className="button" href={withAffiliate(item.stone.products[0].url)}>
                 <ShoppingBag size={16} />
-                Bracelets
+                {item.stone.products[0].price ?? "Bracelets"}
               </Link>
               <Link className="button secondary" href={`/stone/${item.stone.slug}`}>
                 Fiche <ArrowRight size={16} />

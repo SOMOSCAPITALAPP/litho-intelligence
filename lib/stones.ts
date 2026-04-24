@@ -23,6 +23,15 @@ export type Stone = {
     label: string;
     brand: "Felicidade" | "Vera Mentis" | "KDP";
     url: string;
+    asin?: string;
+    sku?: string;
+    rating?: string;
+    reviewCount?: number;
+    heliumScore?: string;
+    monthlySales?: number;
+    price?: string;
+    stock?: number;
+    badge?: string;
   }[];
 };
 
@@ -77,7 +86,46 @@ export const stones: Stone[] = [
     purification: "Eau claire rapide, fumigation ou fleur de vie. Rechargement doux a la lumiere lunaire.",
     wear: "Collier court, bracelet ou pierre dans la poche lors des journees emotionnelles.",
     products: [
-      { label: "Voir bracelets quartz rose", brand: "Vera Mentis", url: "https://www.amazon.fr/s?k=bracelet+quartz+rose+pierre+naturelle" },
+      {
+        label: "Bracelet Quartz Rose 8MM - douceur et harmonie",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/0bifqsoC",
+        asin: "B0C6L1LBY6",
+        sku: "F_BRACELETQUARTZROSETAILLE8MM",
+        rating: "4,1",
+        reviewCount: 22,
+        heliumScore: "10",
+        monthlySales: 2,
+        price: "8,54 EUR",
+        stock: 186,
+        badge: "Best-seller quartz rose"
+      },
+      {
+        label: "Bracelet Quartz Rose fil rouge 8MM",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/08pBYyoW",
+        asin: "B0CCJTJ6RV",
+        sku: "F_BRACELETQUARTZROSE8MMFILROUGE",
+        rating: "4,1",
+        reviewCount: 8,
+        heliumScore: "8,8",
+        monthlySales: 2,
+        price: "10,90 EUR",
+        stock: 63
+      },
+      {
+        label: "Bracelet Quartz Rose Vera Mentis 8MM",
+        brand: "Vera Mentis",
+        url: "https://amzn.eu/d/0eYz8Pml",
+        asin: "B0DH3TS81Q",
+        sku: "4M-KUNA-7521",
+        rating: "5",
+        reviewCount: 2,
+        heliumScore: "8,8",
+        monthlySales: 1,
+        price: "12,90 EUR",
+        stock: 45
+      },
       { label: "Livres pierres et intentions", brand: "KDP", url: "https://www.amazon.fr/s?k=livre+pierres+intentions+lithotherapie" }
     ]
   },
@@ -131,7 +179,60 @@ export const stones: Stone[] = [
     purification: "Fumigation reguliere ou bol chantant. Rechargement lunaire recommande.",
     wear: "Bracelet ou pendentif pendant les journees chargees.",
     products: [
-      { label: "Voir bracelets labradorite", brand: "Vera Mentis", url: "https://www.amazon.fr/s?k=bracelet+labradorite+pierre+naturelle" }
+      {
+        label: "Bracelet Labradorite 8MM + pochette artisanale",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/0eXwx6am",
+        asin: "B0D2VG6D3Z",
+        sku: "E9-7BJ7-P3HO",
+        rating: "4,2",
+        reviewCount: 54,
+        heliumScore: "10",
+        monthlySales: 30,
+        price: "15,90 EUR",
+        stock: 198,
+        badge: "Top ventes labradorite"
+      },
+      {
+        label: "Bracelet Labradorite foncee 8MM",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/06bhTerM",
+        asin: "B0D2VFSL94",
+        sku: "Z8-369G-TY3P",
+        rating: "4,6",
+        reviewCount: 32,
+        heliumScore: "10",
+        monthlySales: 30,
+        price: "14,90 EUR",
+        stock: 133,
+        badge: "Meilleure note"
+      },
+      {
+        label: "Bracelet Labradorite foncee arbre de vie",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/0cVOpLyI",
+        asin: "B0DPXNKDTV",
+        sku: "4E-9I7S-CHOZ",
+        rating: "5",
+        reviewCount: 10,
+        heliumScore: "10",
+        monthlySales: 10,
+        price: "17,90 EUR",
+        stock: 38
+      },
+      {
+        label: "Bracelet Larvikite Vera Mentis 8MM",
+        brand: "Vera Mentis",
+        url: "https://amzn.eu/d/0fwZ8k4Z",
+        asin: "B0DH3QTYXJ",
+        sku: "E4-DQ3B-X6LO",
+        rating: "4,7",
+        reviewCount: 5,
+        heliumScore: "8,8",
+        monthlySales: 5,
+        price: "16,90 EUR",
+        stock: 69
+      }
     ]
   },
   {
@@ -157,7 +258,59 @@ export const stones: Stone[] = [
     purification: "Fumigation, son ou passage rapide sous l'eau selon la qualite de la pierre.",
     wear: "Bracelet main droite pour une intention d'assurance et de mouvement.",
     products: [
-      { label: "Voir bracelets oeil de tigre", brand: "Felicidade", url: "https://www.amazon.fr/s?k=bracelet+oeil+de+tigre+pierre+naturelle" }
+      {
+        label: "Bracelet Homme Oeil de Tigre 8MM",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/0gWKB6CY",
+        asin: "B0C6B7TH96",
+        sku: "F_BRACELETOEILDETIGRE8MM",
+        rating: "4,3",
+        reviewCount: 34,
+        heliumScore: "10",
+        monthlySales: 5,
+        price: "8,50 EUR",
+        stock: 336,
+        badge: "Best-seller protection"
+      },
+      {
+        label: "Bracelet Oeil de Tigre 6MM",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/0eJvVWx2",
+        asin: "B0C9R82J58",
+        sku: "PI-X273-FOM4",
+        rating: "3,5",
+        reviewCount: 6,
+        heliumScore: "7,5",
+        monthlySales: 2,
+        price: "12,90 EUR",
+        stock: 47
+      },
+      {
+        label: "Bracelet 7 chakras Oeil de Tigre 6MM",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/09KxuCQB",
+        asin: "B0CQPHXY7B",
+        sku: "BRACELET7CHAKRASOEILDETIGRE6MM",
+        rating: "4,2",
+        reviewCount: 6,
+        heliumScore: "8,8",
+        monthlySales: 4,
+        price: "12,90 EUR",
+        stock: 41
+      },
+      {
+        label: "Bracelet 3 yeux Vera Mentis 8MM",
+        brand: "Vera Mentis",
+        url: "https://amzn.eu/d/0gZrX26b",
+        asin: "B0DN1ZGT3L",
+        sku: "ET-U1PH-0IS9",
+        rating: "4,6",
+        reviewCount: 6,
+        heliumScore: "8,8",
+        monthlySales: 2,
+        price: "17,90 EUR",
+        stock: 46
+      }
     ]
   },
   {
@@ -183,7 +336,33 @@ export const stones: Stone[] = [
     purification: "Fumigation ou eau claire rapide. Rechargement solaire court.",
     wear: "Bracelet main droite ou pierre de poche pendant les phases d'action.",
     products: [
-      { label: "Voir bracelets cornaline", brand: "Vera Mentis", url: "https://www.amazon.fr/s?k=bracelet+cornaline+pierre+naturelle" }
+      {
+        label: "Bracelet Cornaline 8MM",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/01aHc9gY",
+        asin: "B0CG2BVN75",
+        sku: "F_BRACELETCORNALINE8MM",
+        rating: "4,2",
+        reviewCount: 36,
+        heliumScore: "9,9",
+        monthlySales: 10,
+        price: "13,80 EUR",
+        stock: 82,
+        badge: "Top vitalite"
+      },
+      {
+        label: "Bracelet Agate Cornaline 8MM",
+        brand: "Felicidade",
+        url: "https://amzn.eu/d/00ktgVmC",
+        asin: "B0FP2XK4F7",
+        sku: "KX-U4KR-ZFOE",
+        rating: "5",
+        reviewCount: 1,
+        heliumScore: "8,8",
+        monthlySales: 4,
+        price: "15,90 EUR",
+        stock: 35
+      }
     ]
   },
   {

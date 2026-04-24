@@ -88,11 +88,22 @@ export default function StonePage({ params }: { params: { slug: string } }) {
 
         <div className="form-panel">
           <h2>Acheter ou approfondir</h2>
-          <div className="pill-row">
+          <div className="product-grid">
             {stone.products.map((product) => (
-              <Link className="button" href={withAffiliate(product.url)} key={product.label}>
-                <ShoppingBag size={17} />
-                {product.label}
+              <Link className="product-card" href={withAffiliate(product.url)} key={product.label}>
+                <span className="product-brand">{product.brand}</span>
+                {product.badge ? <span className="product-badge">{product.badge}</span> : null}
+                <strong>{product.label}</strong>
+                <div className="product-meta">
+                  {product.price ? <span>{product.price}</span> : null}
+                  {product.rating ? <span>{product.rating}/5</span> : null}
+                  {product.reviewCount ? <span>{product.reviewCount} avis</span> : null}
+                  {product.monthlySales ? <span>{product.monthlySales}/mois</span> : null}
+                </div>
+                <span className="button">
+                  <ShoppingBag size={17} />
+                  Voir sur Amazon
+                </span>
               </Link>
             ))}
           </div>

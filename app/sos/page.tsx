@@ -116,7 +116,7 @@ export default function SosPage() {
           <div className="sos-actions">
             <Link className="button" href={withAffiliate(result.stone.products[0].url)}>
               <ShoppingBag size={16} />
-              Voir bracelets
+              {result.stone.products[0].price ?? "Voir bracelets"}
             </Link>
             <Link className="button secondary" href={`/stone/${result.stone.slug}`}>
               Voir la pierre <ArrowRight size={16} />
