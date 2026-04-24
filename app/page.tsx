@@ -1,37 +1,37 @@
 import Link from "next/link";
-import { ArrowRight, Brain, Heart, Moon, Search, Shield, Wallet } from "lucide-react";
+import { ArrowRight, Brain, Heart, Moon, Search, Shield, UserCircle, Wallet } from "lucide-react";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { stones } from "@/lib/stones";
 
 const quickLinks = [
-  { label: "Stresse", detail: "Apaiser le mental", href: "/recommendation?emotional=stress&goal=serenite", icon: Moon },
-  { label: "Fatigue", detail: "Retrouver de l'elan", href: "/recommendation?physical=fatigue&goal=energie", icon: Shield },
-  { label: "Manque d'energie", detail: "Relancer l'action", href: "/recommendation?physical=fatigue&goal=confiance", icon: Wallet },
-  { label: "Besoin d'amour", detail: "Soutenir le coeur", href: "/recommendation?emotional=solitude&goal=amour", icon: Heart },
+  { label: "Stressé", detail: "Apaiser le mental", href: "/recommendation?emotional=stress&goal=serenite", icon: Moon },
+  { label: "Fatigué", detail: "Retrouver de l'élan", href: "/recommendation?physical=fatigue&goal=energie", icon: Shield },
+  { label: "Manque d'énergie", detail: "Relancer l'action", href: "/recommendation?physical=fatigue&goal=confiance", icon: Wallet },
+  { label: "Besoin d'amour", detail: "Soutenir le cœur", href: "/recommendation?emotional=solitude&goal=amour", icon: Heart },
   { label: "Protection", detail: "Poser des limites", href: "/recommendation?emotional=peur&goal=protection", icon: Shield }
 ];
 
 const commonQuestions = [
   { label: "J'ai besoin d'apaiser mon mental", href: "/recommendation?physical=sommeil&emotional=stress" },
   { label: "Je doute de moi en ce moment", href: "/recommendation?goal=confiance&emotional=doute" },
-  { label: "Je porte deja des pierres: est-ce coherent ?", href: "/combination" },
+  { label: "Je porte déjà des pierres : est-ce cohérent ?", href: "/combination" },
   { label: "Je veux offrir un soutien symbolique", href: "/recommendation?goal=amour" }
 ];
 
 const emotionalPaths = [
   {
     title: "Je me sens perdu",
-    text: "Quand tout semble flou, commence par une pierre qui ramene de la clarte et une intention simple.",
+    text: "Quand tout semble flou, commence par une pierre qui ramène de la clarté et une intention simple.",
     href: "/recommendation?emotional=confusion&goal=clarte"
   },
   {
     title: "Je me sens seul",
-    text: "Quand le coeur manque de chaleur, choisis un soutien symbolique centre sur la douceur et l'amour de soi.",
+    text: "Quand le cœur manque de chaleur, choisis un soutien symbolique centré sur la douceur et l'amour de soi.",
     href: "/recommendation?emotional=solitude&goal=amour"
   },
   {
     title: "Je n'ose pas agir",
-    text: "Quand la peur bloque le mouvement, cherche une pierre associee au courage, a l'ancrage et a la decision.",
+    text: "Quand la peur bloque le mouvement, cherche une pierre associée au courage, à l'ancrage et à la décision.",
     href: "/recommendation?emotional=peur&goal=confiance"
   }
 ];
@@ -41,10 +41,10 @@ export default function HomePage() {
     <main>
       <section className="hero app-hero">
         <div>
-          <p className="eyebrow">Lithotherapie traditionnelle, recommandation intelligente</p>
-          <h1>Comment te sens-tu aujourd'hui ?</h1>
+          <p className="eyebrow">Lithothérapie traditionnelle, recommandation intelligente</p>
+          <h1>Comment te sens-tu aujourd’hui ?</h1>
           <p>
-            En un clic, obtenez une recommandation de pierres, un rituel simple et le bracelet associe
+            En un clic, obtenez une recommandation de pierres, un rituel simple et le bracelet associé
             Felicidade ou Vera Mentis.
           </p>
           <form className="search-box" action="/recommendation">
@@ -59,6 +59,10 @@ export default function HomePage() {
             <Link className="button" href="/test">
               Faire le test rapide <ArrowRight size={16} />
             </Link>
+            <Link className="button gold-button" href="/dashboard">
+              <UserCircle size={16} />
+              Espace membre
+            </Link>
             <Link className="button secondary" href="/combination">
               Tester mes pierres
             </Link>
@@ -72,7 +76,7 @@ export default function HomePage() {
           </div>
         </div>
         <aside className="hero-panel" aria-label="Test rapide">
-          <h2>Reponse en 1 clic</h2>
+          <h2>Réponse en 1 clic</h2>
           <div className="quick-grid">
             {quickLinks.map((item) => {
               const Icon = item.icon;
@@ -93,14 +97,32 @@ export default function HomePage() {
         <div>
           <Brain size={24} />
           <strong>La promesse d'usage</strong>
-          <span>Une reponse rassurante, une intention claire, 3 a 5 pierres et un geste simple a faire aujourd'hui.</span>
+          <span>Une réponse rassurante, une intention claire, 3 à 5 pierres et un geste simple à faire aujourd’hui.</span>
+        </div>
+      </section>
+
+      <section className="member-band">
+        <div>
+          <span className="mystic-kicker">
+            <UserCircle size={15} />
+            Espace membre
+          </span>
+          <h2>Gardez vos recommandations, vos favoris et votre progression énergétique.</h2>
+          <p>
+            Créez un compte gratuit pour retrouver votre historique, suivre vos pierres favorites et débloquer
+            progressivement les fonctions Premium.
+          </p>
+        </div>
+        <div className="member-actions">
+          <Link className="button gold-button" href="/register">Créer mon espace gratuit</Link>
+          <Link className="button ghost-dark" href="/login">Me connecter</Link>
         </div>
       </section>
 
       <section className="section compact-section">
         <h2>Commencer par ce que vous ressentez</h2>
         <p className="section-lead">
-          L'utilisateur n'a pas besoin de connaitre les pierres. Il part de sa tension interieure,
+          L'utilisateur n'a pas besoin de connaître les pierres. Il part de sa tension intérieure,
           puis l'application traduit ce ressenti en choix simple.
         </p>
         <div className="grid">
@@ -117,10 +139,10 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <h2>Acces direct aux pierres</h2>
+        <h2>Accès direct aux pierres</h2>
         <p className="section-lead">
-          Pour ceux qui savent deja ce qu'ils cherchent: fiche claire, compatibilites, purification,
-          port recommande et lien d'achat.
+          Pour ceux qui savent déjà ce qu'ils cherchent : fiche claire, compatibilités, purification,
+          port recommandé et lien d'achat.
         </p>
         <div className="grid">
           {stones.slice(0, 6).map((stone) => (

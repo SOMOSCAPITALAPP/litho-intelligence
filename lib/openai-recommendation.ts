@@ -71,7 +71,7 @@ export async function getStoneRecommendations(input: RecommendationInput): Promi
           {
             role: "system",
             content:
-              "Tu es un conseiller premium en lithotherapie traditionnelle non medicale. Tu recommandes uniquement des pierres presentes dans le catalogue fourni. Ne fais jamais de promesse medicale, scientifique, de guerison ou de traitement. Ton style est empathique, simple, rassurant et oriente action."
+              "Tu es un conseiller premium en lithothérapie traditionnelle non médicale. Tu recommandes uniquement des pierres présentes dans le catalogue fourni. Ne fais jamais de promesse médicale, scientifique, de guérison ou de traitement. Ton style est empathique, simple, rassurant et orienté action."
           },
           {
             role: "user",
@@ -117,7 +117,7 @@ function getFallbackRecommendations(input: RecommendationInput): AIRecommendatio
       reason: item.reason,
       usage: item.usage,
       ritual: "Prenez 2 minutes, tenez la pierre ou visualisez-la, puis respirez lentement en posant une intention simple.",
-      warning: "Base sur des pratiques traditionnelles de bien-etre non scientifiques."
+      warning: "Basé sur des pratiques traditionnelles de bien-être non scientifiques."
     }))
   };
 }
@@ -133,7 +133,7 @@ function sanitizeRecommendations(response: AIRecommendationResponse, input: Reco
         name: match.name,
         slug: match.slug,
         score: Math.max(1, Math.min(99, Math.round(item.score))),
-        warning: "Base sur des pratiques traditionnelles de bien-etre non scientifiques."
+        warning: "Basé sur des pratiques traditionnelles de bien-être non scientifiques."
       };
     })
     .filter(Boolean) as AIStoneRecommendation[];

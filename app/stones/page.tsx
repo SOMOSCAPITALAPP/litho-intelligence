@@ -4,7 +4,7 @@ import { stones } from "@/lib/stones";
 
 export const metadata = {
   title: "Pierres | Litho Intelligence",
-  description: "Catalogue des pierres, usages symboliques, compatibilites et conseils."
+  description: "Catalogue des pierres, usages symboliques, compatibilités et conseils."
 };
 
 export default function StonesPage() {
@@ -12,7 +12,7 @@ export default function StonesPage() {
     <main className="section">
       <h1>Catalogue des pierres</h1>
       <p className="section-lead">
-        Accedez rapidement aux fiches, usages symboliques, compatibilites, purifications
+        Accédez rapidement aux fiches, usages symboliques, compatibilités, purifications
         et conseils de port.
       </p>
 

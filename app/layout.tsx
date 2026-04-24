@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Gem, Sparkles } from "lucide-react";
+import { Gem, LogIn, Sparkles, UserCircle } from "lucide-react";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Litho Intelligence",
-  description: "Recommandations personnalisees de pierres basees sur les traditions de lithotherapie."
+  description: "Recommandations personnalisées de pierres basées sur les traditions de lithothérapie."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -27,8 +27,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/combination">Combinaisons</Link>
               <Link href="/stones">Pierres</Link>
               <Link href="/pricing">Premium</Link>
-              <Link href="/dashboard">Dashboard</Link>
-              <Link href="/profile">Profil</Link>
+              <Link className="member-link" href="/dashboard">
+                <UserCircle size={15} />
+                Espace membre
+              </Link>
+              <Link href="/login">
+                <LogIn size={15} />
+                Connexion
+              </Link>
               <Link href="/newsletter">Newsletter</Link>
             </div>
             <Link className="nav-cta" href="/sos">
@@ -38,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
           {children}
           <footer className="footer">
-            Litho Intelligence presente des usages symboliques et traditionnels. Aucun contenu ne remplace un avis medical.
+            Les informations proposées sont issues de traditions de bien-être et de lithothérapie. Elles ne remplacent pas un avis médical, un diagnostic ou un traitement professionnel.
           </footer>
         </div>
       </body>

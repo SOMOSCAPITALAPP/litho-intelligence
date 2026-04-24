@@ -81,14 +81,27 @@ select {
 }
 
 .nav-links {
+  align-items: center;
   display: flex;
   gap: 16px;
   color: var(--muted);
   font-size: 14px;
 }
 
+.nav-links a {
+  align-items: center;
+  display: inline-flex;
+  gap: 5px;
+  white-space: nowrap;
+}
+
 .nav-links a:hover {
   color: var(--accent-strong);
+}
+
+.member-link {
+  color: var(--accent-strong);
+  font-weight: 800;
 }
 
 .nav-cta,
@@ -306,6 +319,41 @@ select {
 
 .answer-band span {
   color: #72595b;
+}
+
+.member-band {
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, rgba(214, 173, 98, 0.18), transparent 34%),
+    linear-gradient(135deg, var(--luxury), var(--luxury-2));
+  border: 1px solid rgba(214, 173, 98, 0.24);
+  border-radius: 12px;
+  color: white;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin: 18px clamp(18px, 5vw, 64px) 0;
+  padding: clamp(20px, 4vw, 30px);
+}
+
+.member-band h2 {
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.08;
+  margin: 10px 0;
+}
+
+.member-band p {
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 760px;
+}
+
+.member-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
 }
 
 .section h2 {
@@ -1033,6 +1081,14 @@ select {
   .answer-band div {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .member-band {
+    grid-template-columns: 1fr;
+  }
+
+  .member-actions {
+    justify-content: flex-start;
   }
 }
 

@@ -16,7 +16,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
   async function submit() {
     const supabase = createSupabaseBrowserClient();
     if (!supabase) {
-      setError("Supabase n'est pas encore configure.");
+      setError("Supabase n'est pas encore configuré.");
       return;
     }
 
@@ -49,10 +49,10 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
 
   return (
     <div className="auth-panel">
-      <h1>{mode === "register" ? "Creer votre espace membre" : "Connexion membre"}</h1>
+      <h1>{mode === "register" ? "Créer votre espace membre" : "Connexion membre"}</h1>
       <p>
         {mode === "register"
-          ? "Votre compte gratuit debloque le suivi, les favoris et vos premieres recommandations."
+          ? "Votre compte gratuit débloque le suivi, les favoris et vos premières recommandations."
           : "Retrouvez vos recommandations, favoris et avantages membres."}
       </p>
       {mode === "register" ? (
@@ -76,7 +76,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
         </label>
       ) : null}
       <button className="button gold-button" disabled={loading} onClick={submit} type="button">
-        {loading ? "Veuillez patienter..." : mode === "register" ? "Creer mon compte" : "Me connecter"}
+        {loading ? "Veuillez patienter..." : mode === "register" ? "Créer mon compte" : "Me connecter"}
       </button>
       {error ? <p className="form-error">{error}</p> : null}
     </div>

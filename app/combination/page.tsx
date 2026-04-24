@@ -18,8 +18,8 @@ export default function CombinationPage() {
     <main className="section">
       <h1>Analyse de combinaison</h1>
       <p className="section-lead">
-        Selectionnez les pierres que vous possedez pour estimer leur compatibilite symbolique, leurs synergies
-        et les points d'attention energetiques.
+        Sélectionnez les pierres que vous possédez pour estimer leur compatibilité symbolique, leurs synergies
+        et les points d'attention énergétiques.
       </p>
 
       <div className="form-panel">
@@ -46,7 +46,7 @@ export default function CombinationPage() {
             </h2>
             <p>{analysis.verdict}</p>
             <p>
-              Pierres analysees:{" "}
+              Pierres analysées :{" "}
               {analysis.selected.length > 0 ? analysis.selected.map((stone) => stone.name).join(", ") : "aucune"}
             </p>
           </div>
@@ -57,7 +57,7 @@ export default function CombinationPage() {
         <article className="card">
           <h2>Synergies</h2>
           <ul>
-            {(analysis.synergies.length > 0 ? analysis.synergies : ["Aucune synergie explicite detectee."]).map((item) => (
+            {(analysis.synergies.length > 0 ? analysis.synergies : ["Aucune synergie explicite détectée."]).map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
@@ -65,7 +65,7 @@ export default function CombinationPage() {
         <article className="card">
           <h2>Points d'attention</h2>
           <ul>
-            {(analysis.warnings.length > 0 ? analysis.warnings : ["Aucun risque energetique notable."]).map((item) => (
+            {(analysis.warnings.length > 0 ? analysis.warnings : ["Aucun risque énergétique notable."]).map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>

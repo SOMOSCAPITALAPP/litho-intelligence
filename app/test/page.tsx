@@ -8,33 +8,33 @@ import { wellbeingDisclaimer } from "@/lib/legal";
 import { withAffiliate } from "@/lib/affiliate";
 
 const emotions = [
-  { label: "Submerge", value: "stress" },
+  { label: "Submergé", value: "stress" },
   { label: "Seul", value: "solitude" },
   { label: "Fatigue", value: "fatigue" },
   { label: "Dans le doute", value: "doute" },
   { label: "En manque", value: "peur du manque" },
-  { label: "A fleur de peau", value: "tristesse" }
+  { label: "À fleur de peau", value: "tristesse" }
 ];
 
 const goals = [
-  { label: "Retrouver le calme", value: "serenite" },
-  { label: "Me sentir aime", value: "amour" },
+  { label: "Retrouver le calme", value: "sérénité" },
+  { label: "Me sentir aimé", value: "amour" },
   { label: "Oser agir", value: "confiance" },
-  { label: "Me proteger", value: "protection" },
+  { label: "Me protéger", value: "protection" },
   { label: "Attirer l'abondance", value: "argent" },
-  { label: "Clarifier mon esprit", value: "clarte" }
+  { label: "Clarifier mon esprit", value: "clarté" }
 ];
 
 const moments = [
   { label: "Ce soir", value: "sommeil" },
-  { label: "Avant une decision", value: "decision" },
+  { label: "Avant une décision", value: "décision" },
   { label: "Au travail", value: "focus" },
   { label: "Dans une relation", value: "relations" }
 ];
 
 export default function TestPage() {
   const [emotion, setEmotion] = useState("stress");
-  const [goal, setGoal] = useState("serenite");
+  const [goal, setGoal] = useState("sérénité");
   const [moment, setMoment] = useState("sommeil");
 
   const results = useMemo(
@@ -46,16 +46,16 @@ export default function TestPage() {
 
   return (
     <main className="section">
-      <h1>Test rapide: quelle pierre est faite pour vous aujourd'hui ?</h1>
+      <h1>Test rapide : quelle pierre est faite pour vous aujourd'hui ?</h1>
       <p className="section-lead">
-        Repondez avec votre ressenti du moment. Le test traduit votre besoin en pierres, intention et geste simple.
+        Répondez avec votre ressenti du moment. Le test traduit votre besoin en pierres, intention et geste simple.
       </p>
 
       <div className="guided-layout">
         <section className="form-panel guided-panel">
           <Step title="Ce que je ressens" options={emotions} value={emotion} onChange={setEmotion} />
           <Step title="Ce que je veux retrouver" options={goals} value={goal} onChange={setGoal} />
-          <Step title="Le moment ou j'en ai besoin" options={moments} value={moment} onChange={setMoment} />
+          <Step title="Le moment où j'en ai besoin" options={moments} value={moment} onChange={setMoment} />
           <p className="fineprint">{wellbeingDisclaimer}</p>
         </section>
 
@@ -69,7 +69,7 @@ export default function TestPage() {
           <div className="score large-score">{main.score}%</div>
           <p>{main.reason}</p>
           <p className="intention-line">{main.intention}</p>
-          <p>Geste simple: {main.usage}</p>
+          <p>Geste simple : {main.usage}</p>
           <div className="sos-actions">
             <Link
               className="button"
@@ -78,7 +78,7 @@ export default function TestPage() {
               target="_blank"
             >
               <ShoppingBag size={16} />
-              {main.stone.products[0].price ?? "Voir bracelets"}
+              {main.stone.products[0].price ?? "Voir les bracelets"}
             </Link>
             <Link className="button secondary" href={`/stone/${main.stone.slug}`}>
               Fiche pierre <ArrowRight size={16} />

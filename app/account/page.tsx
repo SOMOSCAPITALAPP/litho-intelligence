@@ -13,12 +13,12 @@ export default async function AccountPage() {
       <div className="grid">
         <article className="card">
           <h2>Profil</h2>
-          <p>Email: {user.email}</p>
-          <p>Plan: {profile?.plan ?? "free"}</p>
+          <p>Email : {user.email}</p>
+          <p>Plan : {profile?.plan ?? "free"}</p>
         </article>
         <article className="card">
           <h2>Abonnement</h2>
-          <p>Premium est annulable a tout moment depuis le portail Stripe.</p>
+          <p>Premium est annulable à tout moment depuis le portail Stripe.</p>
           {profile?.stripe_customer_id ? <PortalButton /> : null}
         </article>
         <article className="card">

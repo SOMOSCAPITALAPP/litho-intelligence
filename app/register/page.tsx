@@ -8,7 +8,7 @@ export default function RegisterPage() {
     <main className="auth-page">
       <AuthForm mode="register" />
       <p>
-        Deja membre ? <Link href="/login">Se connecter</Link>
+        Déjà membre ? <Link href="/login">Se connecter</Link>
       </p>
     </main>
   );

@@ -4,7 +4,7 @@ export const plans = {
   free: {
     name: "Gratuit",
     slug: "free" as const,
-    price: "0 EUR",
+    price: "0 €",
     recommendationLimit: 3,
     combinationLimit: 1,
     favoriteLimit: 5
@@ -12,15 +12,15 @@ export const plans = {
   premium: {
     name: "Premium",
     slug: "premium" as const,
-    price: "7,90 EUR/mois",
+    price: "7,90 €/mois",
     recommendationLimit: Infinity,
     combinationLimit: Infinity,
     favoriteLimit: Infinity
   },
   elite: {
-    name: "Elite",
+    name: "Élite",
     slug: "elite" as const,
-    price: "19,90 EUR/mois",
+    price: "19,90 €/mois",
     recommendationLimit: Infinity,
     combinationLimit: Infinity,
     favoriteLimit: Infinity
@@ -28,12 +28,12 @@ export const plans = {
 };
 
 export const premiumFeatures = [
-  "Recommandations illimitees",
-  "Analyse avancee des combinaisons",
-  "Profil energetique personnalise",
+  "Recommandations illimitées",
+  "Analyse avancée des combinaisons",
+  "Profil énergétique personnalisé",
   "Historique complet",
   "Pierre du jour",
-  "Rituels personnalises",
+  "Rituels personnalisés",
   "Guides PDF premium",
-  "Offres speciales Felicidade / Vera Mentis"
+  "Offres spéciales Felicidade / Vera Mentis"
 ];

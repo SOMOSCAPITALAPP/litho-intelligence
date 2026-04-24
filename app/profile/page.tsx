@@ -24,7 +24,7 @@ export default function ProfilePage() {
     <main className="section">
       <h1>Profil utilisateur</h1>
       <p className="section-lead">
-        Base locale pour le MVP: favoris, objectifs personnels et historique pourront ensuite etre branches sur Supabase Auth.
+        Base locale pour le MVP : favoris, objectifs personnels et historique pourront ensuite être branchés sur Supabase Auth.
       </p>
 
       <div className="grid">
@@ -49,7 +49,7 @@ export default function ProfilePage() {
           <h2>
             <Target size={22} /> Objectifs
           </h2>
-          <p>Confiance, apaisement, amour, protection et abondance seront personnalises par compte utilisateur.</p>
+          <p>Confiance, apaisement, amour, protection et abondance seront personnalisés par compte utilisateur.</p>
           <Link className="button secondary" href="/recommendation">
             Relancer une recommandation
           </Link>
@@ -58,7 +58,7 @@ export default function ProfilePage() {
           <h2>
             <History size={22} /> Historique
           </h2>
-          <p>La version Supabase enregistrera les recherches, les resultats et les clics Amazon pour optimiser la conversion.</p>
+          <p>La version Supabase enregistrera les recherches, les résultats et les clics Amazon pour optimiser la conversion.</p>
         </article>
       </div>
     </main>

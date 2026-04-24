@@ -14,7 +14,12 @@ export type Recommendation = {
   intention: string;
 };
 
-const normalize = (value?: string) => value?.trim().toLowerCase() ?? "";
+const normalize = (value?: string) =>
+  value
+    ?.trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") ?? "";
 
 export function recommendStones(input: RecommendationInput): Recommendation[] {
   const physical = normalize(input.physical);
@@ -26,25 +31,26 @@ export function recommendStones(input: RecommendationInput): Recommendation[] {
       let points = 20;
       const matches: string[] = [];
 
-      if (physical && stone.emotions.some((emotion) => physical.includes(emotion) || emotion.includes(physical))) {
+      if (physical && stone.emotions.some((emotion) => physical.includes(normalize(emotion)) || normalize(emotion).includes(physical))) {
         points += 24;
-        matches.push("votre etat physique ressenti");
+        matches.push("votre état physique ressenti");
       }
 
-      if (emotional && stone.emotions.some((emotion) => emotional.includes(emotion) || emotion.includes(emotional))) {
+      if (emotional && stone.emotions.some((emotion) => emotional.includes(normalize(emotion)) || normalize(emotion).includes(emotional))) {
         points += 30;
-        matches.push("votre etat emotionnel");
+        matches.push("votre état émotionnel");
       }
 
-      if (goal && stone.goals.some((item) => goal.includes(item) || item.includes(goal))) {
+      if (goal && stone.goals.some((item) => goal.includes(normalize(item)) || normalize(item).includes(goal))) {
         points += 34;
         matches.push("votre objectif");
       }
 
-      if (physical.includes("sommeil") && stone.goals.includes("sommeil")) points += 20;
-      if (physical.includes("fatigue") && stone.goals.includes("energie")) points += 18;
-      if (goal.includes("amour") && stone.goals.includes("amour")) points += 18;
-      if (goal.includes("argent") && stone.goals.includes("argent")) points += 18;
+      const normalizedGoals = stone.goals.map(normalize);
+      if (physical.includes("sommeil") && normalizedGoals.includes("sommeil")) points += 20;
+      if (physical.includes("fatigue") && normalizedGoals.includes("energie")) points += 18;
+      if (goal.includes("amour") && normalizedGoals.includes("amour")) points += 18;
+      if (goal.includes("argent") && normalizedGoals.includes("argent")) points += 18;
 
       const score = Math.min(98, points);
 
@@ -53,7 +59,7 @@ export function recommendStones(input: RecommendationInput): Recommendation[] {
         score,
         reason:
           matches.length > 0
-            ? `${stone.name} ressort pour ${matches.join(", ")} selon les traditions energetiques.`
+            ? `${stone.name} ressort pour ${matches.join(", ")} selon les traditions énergétiques.`
             : `${stone.name} est une option polyvalente pour clarifier votre intention.`,
         usage: stone.usage,
         intention: buildIntention(stone, { physical, emotional, goal })
@@ -65,15 +71,15 @@ export function recommendStones(input: RecommendationInput): Recommendation[] {
 
 function buildIntention(stone: Stone, input: { physical: string; emotional: string; goal: string }) {
   if (input.emotional.includes("stress") || input.emotional.includes("anxiete")) {
-    return `Aujourd'hui, je reviens doucement a mon calme avec ${stone.name}.`;
+    return `Aujourd'hui, je reviens doucement à mon calme avec ${stone.name}.`;
   }
 
   if (input.emotional.includes("peur") || input.emotional.includes("doute")) {
-    return "J'avance pas a pas, avec plus de securite interieure et de confiance.";
+    return "J'avance pas à pas, avec plus de sécurité intérieure et de confiance.";
   }
 
   if (input.goal.includes("amour") || input.emotional.includes("solitude")) {
-    return "Je merite la douceur, le respect et un lien qui me nourrit.";
+    return "Je mérite la douceur, le respect et un lien qui me nourrit.";
   }
 
   if (input.goal.includes("argent") || input.goal.includes("abondance")) {
@@ -81,7 +87,7 @@ function buildIntention(stone: Stone, input: { physical: string; emotional: stri
   }
 
   if (input.physical.includes("fatigue")) {
-    return "Je respecte mon rythme et je rallume mon energie sans me brusquer.";
+    return "Je respecte mon rythme et je rallume mon énergie sans me brusquer.";
   }
 
   return "Je choisis une intention simple et je la garde vivante aujourd'hui.";
@@ -100,7 +106,7 @@ export function analyzeCombination(slugs: string[]) {
 
     stone.incompatibilities.forEach((slug) => {
       const match = selected.find((item) => item.slug === slug);
-      if (match) warnings.push(`${stone.name} peut etre percue comme energetiquement moins fluide avec ${match.name}.`);
+      if (match) warnings.push(`${stone.name} peut être perçue comme énergétiquement moins fluide avec ${match.name}.`);
     });
   });
 
@@ -115,7 +121,7 @@ export function analyzeCombination(slugs: string[]) {
     warnings: uniqueWarnings,
     verdict:
       uniqueWarnings.length > 0
-        ? "Association interessante, mais a utiliser avec une intention claire et peu de pierres a la fois."
+        ? "Association intéressante, mais à utiliser avec une intention claire et peu de pierres à la fois."
         : "Association harmonieuse pour un rituel simple et lisible."
   };
 }

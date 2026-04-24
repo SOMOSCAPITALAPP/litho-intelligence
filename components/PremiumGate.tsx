@@ -18,8 +18,8 @@ export async function PremiumGate({
       {fallback ?? (
         <section className="paywall-card">
           <p className="eyebrow">Premium</p>
-          <h2>Debloquez {featureName} avec Litho Intelligence Premium.</h2>
-          <p>Recommandations illimitees, historique, profil energetique et rituels personnalises.</p>
+          <h2>Débloquez {featureName} avec Litho Intelligence Premium.</h2>
+          <p>Recommandations illimitées, historique, profil énergétique et rituels personnalisés.</p>
           <CheckoutButton />
         </section>
       )}

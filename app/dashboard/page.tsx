@@ -6,7 +6,7 @@ import { createSupabaseAdminClient } from "@/lib/supabase/server";
 import { checkUsageLimit } from "@/lib/usage";
 import { stones } from "@/lib/stones";
 
-export const metadata = { title: "Dashboard | Litho Intelligence" };
+export const metadata = { title: "Espace membre | Litho Intelligence" };
 
 export default async function DashboardPage() {
   const { user, profile } = await requireUser();
@@ -34,7 +34,7 @@ export default async function DashboardPage() {
       <p className="eyebrow">Espace membre</p>
       <h1>Bienvenue dans votre espace Litho Intelligence</h1>
       <p className="section-lead">
-        Suivez vos recommandations, vos favoris et vos rituels dans une experience simple et premium.
+        Suivez vos recommandations, vos favoris et vos rituels dans une expérience simple et premium.
       </p>
 
       <div className="dashboard-grid">
@@ -42,10 +42,10 @@ export default async function DashboardPage() {
           <h2>{premium ? "Plan Premium actif" : "Plan gratuit"}</h2>
           <p>
             {premium
-              ? "Vous avez acces aux recommandations illimitees et aux modules avances."
-              : `Recommandations restantes aujourd'hui: ${recommendationUsage.remaining}`}
+              ? "Vous avez accès aux recommandations illimitées et aux modules avancés."
+              : `Recommandations restantes aujourd'hui : ${recommendationUsage.remaining}`}
           </p>
-          {!premium ? <CheckoutButton /> : <Link className="button secondary" href="/account">Gerer mon compte</Link>}
+          {!premium ? <CheckoutButton /> : <Link className="button secondary" href="/account">Gérer mon compte</Link>}
         </article>
 
         <article className="card">
@@ -81,7 +81,7 @@ export default async function DashboardPage() {
                 </article>
               ))
             ) : (
-              <p>Aucune recommandation enregistree.</p>
+              <p>Aucune recommandation enregistrée.</p>
             )}
           </div>
         </section>

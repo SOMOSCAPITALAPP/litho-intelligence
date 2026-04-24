@@ -4,9 +4,9 @@ import { wellbeingDisclaimer } from "@/lib/legal";
 export default function NewsletterPage() {
   return (
     <main className="section">
-      <h1>Newsletter et lead magnet</h1>
+      <h1>Newsletter et guide offert</h1>
       <p className="section-lead">
-        Capturez les emails avec un cadeau gratuit: le guide PDF "10 pierres essentielles pour debuter".
+        Recevez le guide PDF gratuit « 10 pierres essentielles pour débuter ».
       </p>
 
       <form className="form-panel">

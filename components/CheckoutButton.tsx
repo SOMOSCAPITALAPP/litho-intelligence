@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function CheckoutButton({ label = "Passer Premium - 7,90 EUR/mois" }: { label?: string }) {
+export function CheckoutButton({ label = "Passer Premium — 7,90 €/mois" }: { label?: string }) {
   const [loading, setLoading] = useState(false);
 
   async function checkout() {

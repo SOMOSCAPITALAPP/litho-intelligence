@@ -47,10 +47,10 @@ export default function RecommendationPage({
 
   return (
     <main className="section">
-      <h1>Recommandation personnalisee</h1>
+      <h1>Recommandation personnalisée</h1>
       <p className="section-lead">
-        Decrivez ce qui pese, ce qui manque ou ce que vous voulez retrouver. Le moteur transforme ce ressenti
-        en selection de pierres, avec une intention claire et un geste simple pour aujourd'hui.
+        Décrivez ce qui pèse, ce qui manque ou ce que vous voulez retrouver. Le moteur transforme ce ressenti
+        en sélection de pierres, avec une intention claire et un geste simple pour aujourd'hui.
       </p>
 
       <form className="form-panel">
@@ -58,16 +58,16 @@ export default function RecommendationPage({
           <label htmlFor="physical">Ce que le corps raconte</label>
           <input
             id="physical"
-            placeholder="fatigue, sommeil agite, tension..."
+            placeholder="fatigue, sommeil agité, tension..."
             value={physical}
             onChange={(event) => setPhysical(event.target.value)}
           />
         </div>
         <div className="field">
-          <label htmlFor="emotional">Ce qui se passe a l'interieur</label>
+          <label htmlFor="emotional">Ce qui se passe à l'intérieur</label>
           <input
             id="emotional"
-            placeholder="stress, peur, colere, tristesse, doute..."
+            placeholder="stress, peur, colère, tristesse, doute..."
             value={emotional}
             onChange={(event) => setEmotional(event.target.value)}
           />
@@ -92,10 +92,10 @@ export default function RecommendationPage({
         {loading ? <p className="loading-line">Lecture de votre besoin...</p> : null}
         {limitError ? (
           <section className="paywall-card">
-            <h2>Votre acces gratuit du jour est termine.</h2>
+            <h2>Votre accès gratuit du jour est terminé.</h2>
             <p>{limitError}</p>
             <Link className="button gold-button" href="/pricing">
-              Debloquer Premium
+              Débloquer Premium
             </Link>
           </section>
         ) : null}

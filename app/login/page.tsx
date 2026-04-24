@@ -8,7 +8,7 @@ export default function LoginPage() {
     <main className="auth-page">
       <AuthForm mode="login" />
       <p>
-        Pas encore membre ? <Link href="/register">Creer un compte gratuit</Link>
+        Pas encore membre ? <Link href="/register">Créer un compte gratuit</Link>
       </p>
     </main>
   );

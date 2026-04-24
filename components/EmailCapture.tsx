@@ -26,7 +26,7 @@ export function EmailCapture({ source = "results" }: { source?: string }) {
           Guide offert
         </span>
         <h2>Recevez votre guide OFFERT</h2>
-        <p>Les 10 pierres essentielles pour transformer votre energie.</p>
+        <p>Les 10 pierres essentielles pour transformer votre énergie.</p>
       </div>
       <div className="email-form">
         <input
@@ -40,8 +40,8 @@ export function EmailCapture({ source = "results" }: { source?: string }) {
           Recevoir
         </button>
       </div>
-      {status === "success" ? <p className="capture-status">Parfait, votre demande est enregistree.</p> : null}
-      {status === "error" ? <p className="capture-status">Impossible d'enregistrer pour le moment. Reessayez dans un instant.</p> : null}
+      {status === "success" ? <p className="capture-status">Parfait, votre demande est enregistrée.</p> : null}
+      {status === "error" ? <p className="capture-status">Impossible d'enregistrer pour le moment. Réessayez dans un instant.</p> : null}
     </section>
   );
 }
