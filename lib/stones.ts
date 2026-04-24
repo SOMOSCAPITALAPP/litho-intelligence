@@ -4,6 +4,12 @@ export type Stone = {
   visual: string;
   origin: string;
   description: string;
+  image: {
+    url: string;
+    alt: string;
+    credit: string;
+    sourceUrl: string;
+  };
   properties: string[];
   chakra: string;
   emotions: string[];
@@ -28,6 +34,12 @@ export const stones: Stone[] = [
     origin: "Bresil, Uruguay, Madagascar",
     description:
       "Pierre traditionnellement associee a l'apaisement mental, a l'intuition et aux rituels du soir.",
+    image: {
+      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Am%C3%A9thyste_300.3.7317.JPG?width=1000",
+      alt: "Cristaux d'amethyste violets",
+      credit: "Gery Parent, Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Am%C3%A9thyste_300.3.7317.JPG"
+    },
     properties: ["calme", "clarte", "sommeil", "intuition"],
     chakra: "Couronne",
     emotions: ["stress", "anxiete", "peur", "surcharge mentale"],
@@ -38,8 +50,8 @@ export const stones: Stone[] = [
     purification: "Fumigation douce, bol chantant ou repos sur amas de quartz. Eviter le soleil direct prolonge.",
     wear: "Bracelet main gauche pour une intention d'apaisement, ou pierre roulee pres de l'oreiller.",
     products: [
-      { label: "Bracelet amethyste", brand: "Felicidade", url: "https://www.amazon.fr/" },
-      { label: "Guide lithotherapie debutant", brand: "KDP", url: "https://www.amazon.fr/" }
+      { label: "Voir bracelets amethyste", brand: "Felicidade", url: "https://www.amazon.fr/s?k=bracelet+amethyste+pierre+naturelle" },
+      { label: "Livres lithotherapie debutant", brand: "KDP", url: "https://www.amazon.fr/s?k=livre+lithotherapie+debutant" }
     ]
   },
   {
@@ -49,6 +61,12 @@ export const stones: Stone[] = [
     origin: "Bresil, Madagascar, Inde",
     description:
       "Symbole de tendresse, d'amour de soi et de reconfort dans de nombreuses traditions energetiques.",
+    image: {
+      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Rose_quartz_%2832132819430%29.jpg?width=1000",
+      alt: "Quartz rose brut",
+      credit: "James St. John, Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Rose_quartz_(32132819430).jpg"
+    },
     properties: ["amour", "douceur", "reconfort", "acceptation"],
     chakra: "Coeur",
     emotions: ["tristesse", "solitude", "colere", "stress"],
@@ -59,8 +77,8 @@ export const stones: Stone[] = [
     purification: "Eau claire rapide, fumigation ou fleur de vie. Rechargement doux a la lumiere lunaire.",
     wear: "Collier court, bracelet ou pierre dans la poche lors des journees emotionnelles.",
     products: [
-      { label: "Bracelet quartz rose", brand: "Vera Mentis", url: "https://www.amazon.fr/" },
-      { label: "Livre pierres et intentions", brand: "KDP", url: "https://www.amazon.fr/" }
+      { label: "Voir bracelets quartz rose", brand: "Vera Mentis", url: "https://www.amazon.fr/s?k=bracelet+quartz+rose+pierre+naturelle" },
+      { label: "Livres pierres et intentions", brand: "KDP", url: "https://www.amazon.fr/s?k=livre+pierres+intentions+lithotherapie" }
     ]
   },
   {
@@ -70,6 +88,12 @@ export const stones: Stone[] = [
     origin: "Bresil, Madagascar",
     description:
       "Pierre traditionnellement reliee a l'elan personnel, a l'abondance symbolique et a la motivation.",
+    image: {
+      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Quartz_Citrine_Crystals_in_Their_Natural_Form.jpg?width=1000",
+      alt: "Cristaux de citrine",
+      credit: "Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/Category:Citrine"
+    },
     properties: ["energie", "abondance", "optimisme", "confiance"],
     chakra: "Plexus solaire",
     emotions: ["fatigue", "doute", "demotivation"],
@@ -80,8 +104,8 @@ export const stones: Stone[] = [
     purification: "Fumigation ou geode. Rechargement a la lumiere naturelle douce.",
     wear: "Bracelet main droite pour une intention d'action et de concretisation.",
     products: [
-      { label: "Bracelet citrine", brand: "Felicidade", url: "https://www.amazon.fr/" },
-      { label: "Carnet d'intentions abondance", brand: "KDP", url: "https://www.amazon.fr/" }
+      { label: "Voir bracelets citrine", brand: "Felicidade", url: "https://www.amazon.fr/s?k=bracelet+citrine+pierre+naturelle" },
+      { label: "Carnets intentions abondance", brand: "KDP", url: "https://www.amazon.fr/s?k=carnet+intentions+abondance" }
     ]
   },
   {
@@ -91,6 +115,12 @@ export const stones: Stone[] = [
     origin: "Canada, Madagascar, Finlande",
     description:
       "Souvent choisie comme pierre de protection symbolique et de recuperation energetique.",
+    image: {
+      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pietra_di_labradorite.jpg?width=1000",
+      alt: "Labradorite aux reflets bleus et verts",
+      credit: "Anna.Massini, Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Pietra_di_labradorite.jpg"
+    },
     properties: ["protection", "intuition", "recuperation", "frontieres"],
     chakra: "Troisieme oeil",
     emotions: ["fatigue", "stress", "surcharge mentale", "empathie excessive"],
@@ -101,7 +131,7 @@ export const stones: Stone[] = [
     purification: "Fumigation reguliere ou bol chantant. Rechargement lunaire recommande.",
     wear: "Bracelet ou pendentif pendant les journees chargees.",
     products: [
-      { label: "Bracelet labradorite", brand: "Vera Mentis", url: "https://www.amazon.fr/" }
+      { label: "Voir bracelets labradorite", brand: "Vera Mentis", url: "https://www.amazon.fr/s?k=bracelet+labradorite+pierre+naturelle" }
     ]
   },
   {
@@ -111,6 +141,12 @@ export const stones: Stone[] = [
     origin: "Afrique du Sud, Australie, Inde",
     description:
       "Pierre associee a la confiance, a l'ancrage et au passage a l'action dans les usages traditionnels.",
+    image: {
+      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Tiger_eye.JPG?width=1000",
+      alt: "Pierres oeil de tigre brunes et dorees",
+      credit: "Weissanna, Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Tiger_eye.JPG"
+    },
     properties: ["confiance", "courage", "ancrage", "decision"],
     chakra: "Plexus solaire",
     emotions: ["peur", "doute", "stress"],
@@ -121,7 +157,7 @@ export const stones: Stone[] = [
     purification: "Fumigation, son ou passage rapide sous l'eau selon la qualite de la pierre.",
     wear: "Bracelet main droite pour une intention d'assurance et de mouvement.",
     products: [
-      { label: "Bracelet oeil de tigre", brand: "Felicidade", url: "https://www.amazon.fr/" }
+      { label: "Voir bracelets oeil de tigre", brand: "Felicidade", url: "https://www.amazon.fr/s?k=bracelet+oeil+de+tigre+pierre+naturelle" }
     ]
   },
   {
@@ -131,6 +167,12 @@ export const stones: Stone[] = [
     origin: "Inde, Bresil, Uruguay",
     description:
       "Traditionnellement liee a la vitalite, a la creativite et a l'expression personnelle.",
+    image: {
+      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Carnelian_Agate%2C_Oregon.jpg?width=1000",
+      alt: "Cornaline orange",
+      credit: "Bobjgalindo, Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Carnelian_Agate,_Oregon.jpg"
+    },
     properties: ["vitalite", "creation", "desir", "elan"],
     chakra: "Sacre",
     emotions: ["fatigue", "blocage", "demotivation"],
@@ -141,7 +183,7 @@ export const stones: Stone[] = [
     purification: "Fumigation ou eau claire rapide. Rechargement solaire court.",
     wear: "Bracelet main droite ou pierre de poche pendant les phases d'action.",
     products: [
-      { label: "Bracelet cornaline", brand: "Vera Mentis", url: "https://www.amazon.fr/" }
+      { label: "Voir bracelets cornaline", brand: "Vera Mentis", url: "https://www.amazon.fr/s?k=bracelet+cornaline+pierre+naturelle" }
     ]
   },
   {
@@ -151,6 +193,12 @@ export const stones: Stone[] = [
     origin: "Bresil, Alpes, Madagascar",
     description:
       "Pierre d'amplification symbolique, souvent utilisee pour clarifier une intention ou accompagner d'autres pierres.",
+    image: {
+      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Quartz_crystals_%28geode%29_%286390459075%29.jpg?width=1000",
+      alt: "Cristaux de quartz clair dans une geode",
+      credit: "Mauro Cateb, Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Quartz_crystals_(geode)_(6390459075).jpg"
+    },
     properties: ["clarte", "amplification", "neutralite", "focus"],
     chakra: "Tous chakras",
     emotions: ["confusion", "surcharge mentale"],
@@ -161,7 +209,7 @@ export const stones: Stone[] = [
     purification: "Fumigation, eau claire rapide ou geode. Rechargement lumiere douce.",
     wear: "En bracelet neutre ou pose sur un bureau pendant une intention de concentration.",
     products: [
-      { label: "Bracelet cristal de roche", brand: "Felicidade", url: "https://www.amazon.fr/" }
+      { label: "Voir bracelets cristal de roche", brand: "Felicidade", url: "https://www.amazon.fr/s?k=bracelet+cristal+de+roche+pierre+naturelle" }
     ]
   }
 ];

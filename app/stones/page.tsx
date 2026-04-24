@@ -29,7 +29,7 @@ export default function StonesPage() {
       <div className="grid">
         {stones.map((stone) => (
           <Link className="card catalog-card" href={`/stone/${stone.slug}`} key={stone.slug}>
-            <div className="catalog-stone-mark" aria-hidden="true" />
+            <img className="stone-thumb" src={stone.image.url} alt={stone.image.alt} />
             <h2>{stone.name}</h2>
             <p>{stone.description}</p>
             <div className="pill-row">

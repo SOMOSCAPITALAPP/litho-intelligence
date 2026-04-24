@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ArrowRight, HeartPulse, Sparkles } from "lucide-react";
+import { ArrowRight, HeartPulse, ShoppingBag, Sparkles } from "lucide-react";
 import { recommendStones } from "@/lib/recommendation";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { withAffiliate } from "@/lib/affiliate";
 
 const emotions = [
   { label: "Submerge", value: "stress" },
@@ -64,13 +65,20 @@ export default function TestPage() {
             Votre soutien du moment
           </div>
           <h2>{main.stone.name}</h2>
+          <img className="featured-stone-image" src={main.stone.image.url} alt={main.stone.image.alt} />
           <div className="score large-score">{main.score}%</div>
           <p>{main.reason}</p>
           <p className="intention-line">{main.intention}</p>
           <p>Geste simple: {main.usage}</p>
-          <Link className="button" href={`/stone/${main.stone.slug}`}>
-            Voir ma fiche <ArrowRight size={16} />
-          </Link>
+          <div className="sos-actions">
+            <Link className="button" href={withAffiliate(main.stone.products[0].url)}>
+              <ShoppingBag size={16} />
+              Voir bracelets
+            </Link>
+            <Link className="button secondary" href={`/stone/${main.stone.slug}`}>
+              Fiche pierre <ArrowRight size={16} />
+            </Link>
+          </div>
         </aside>
       </div>
 
@@ -79,6 +87,7 @@ export default function TestPage() {
         <div className="grid">
           {results.slice(1).map((item) => (
             <Link className="card" href={`/stone/${item.stone.slug}`} key={item.stone.slug}>
+              <img className="stone-thumb wide" src={item.stone.image.url} alt={item.stone.image.alt} />
               <Sparkles size={20} />
               <h3>{item.stone.name}</h3>
               <p>{item.reason}</p>

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ShoppingBag } from "lucide-react";
 import { getStone, stones } from "@/lib/stones";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { withAffiliate } from "@/lib/affiliate";
 
 export function generateStaticParams() {
   return stones.map((stone) => ({ slug: stone.slug }));
@@ -31,7 +32,12 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             <span className="pill">Origine: {stone.origin}</span>
           </div>
         </div>
-        <div className="stone-visual" aria-label={`Representation visuelle de ${stone.name}`} />
+        <figure className="stone-visual">
+          <img src={stone.image.url} alt={stone.image.alt} />
+          <figcaption>
+            Photo: <Link href={stone.image.sourceUrl}>{stone.image.credit}</Link>
+          </figcaption>
+        </figure>
       </section>
 
       <section className="section">
@@ -84,7 +90,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
           <h2>Acheter ou approfondir</h2>
           <div className="pill-row">
             {stone.products.map((product) => (
-              <Link className="button" href={product.url} key={product.label}>
+              <Link className="button" href={withAffiliate(product.url)} key={product.label}>
                 <ShoppingBag size={17} />
                 {product.label}
               </Link>

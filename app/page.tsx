@@ -124,6 +124,7 @@ export default function HomePage() {
         <div className="grid">
           {stones.slice(0, 6).map((stone) => (
             <Link className="card" key={stone.slug} href={`/stone/${stone.slug}`}>
+              <img className="stone-thumb wide" src={stone.image.url} alt={stone.image.alt} />
               <h3>{stone.name}</h3>
               <p>{stone.description}</p>
               <span className="button secondary">

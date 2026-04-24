@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, Search, ShoppingBag } from "lucide-react";
 import { recommendStones } from "@/lib/recommendation";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { withAffiliate } from "@/lib/affiliate";
 
 export default function RecommendationPage({
   searchParams
@@ -63,9 +64,12 @@ export default function RecommendationPage({
       <div className="result-list">
         {results.map((item) => (
           <article className="card result-card" key={item.stone.slug}>
-            <div className="score">{item.score}%</div>
+            <img className="result-image" src={item.stone.image.url} alt={item.stone.image.alt} />
             <div>
-              <h2>{item.stone.name}</h2>
+              <div className="result-title-row">
+                <h2>{item.stone.name}</h2>
+                <div className="score">{item.score}%</div>
+              </div>
               <p>{item.reason}</p>
               <p className="intention-line">{item.intention}</p>
               <p>
@@ -79,9 +83,15 @@ export default function RecommendationPage({
                 ))}
               </div>
             </div>
-            <Link className="button secondary" href={`/stone/${item.stone.slug}`}>
-              Fiche <ArrowRight size={16} />
-            </Link>
+            <div className="result-actions">
+              <Link className="button" href={withAffiliate(item.stone.products[0].url)}>
+                <ShoppingBag size={16} />
+                Bracelets
+              </Link>
+              <Link className="button secondary" href={`/stone/${item.stone.slug}`}>
+                Fiche <ArrowRight size={16} />
+              </Link>
+            </div>
           </article>
         ))}
       </div>

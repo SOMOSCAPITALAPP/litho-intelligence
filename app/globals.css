@@ -507,16 +507,6 @@ select {
   margin-top: auto;
 }
 
-.catalog-stone-mark {
-  background:
-    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.88), transparent 20%),
-    linear-gradient(135deg, rgba(139, 70, 86, 0.92), rgba(49, 79, 74, 0.88));
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 8px;
-  height: 72px;
-  width: 72px;
-}
-
 .card p,
 .card li,
 .fineprint {
@@ -566,7 +556,25 @@ select {
 .result-card {
   display: grid;
   gap: 12px;
-  grid-template-columns: 86px 1fr auto;
+  grid-template-columns: 132px 1fr auto;
+}
+
+.result-title-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.result-title-row h2 {
+  margin: 0;
+}
+
+.result-actions {
+  align-content: start;
+  display: grid;
+  gap: 8px;
 }
 
 .score {
@@ -589,11 +597,56 @@ select {
 }
 
 .stone-visual {
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.9), transparent 22%),
-    linear-gradient(135deg, #4a365f, #28756f 48%, #b98434);
   border-radius: 8px;
+  margin: 0;
   min-height: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stone-visual img,
+.featured-stone-image,
+.stone-thumb,
+.result-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.stone-visual img {
+  height: 360px;
+}
+
+.stone-visual figcaption {
+  background: rgba(36, 27, 29, 0.76);
+  bottom: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 12px;
+  left: 0;
+  padding: 8px 10px;
+  position: absolute;
+  right: 0;
+}
+
+.featured-stone-image {
+  border-radius: 8px;
+  height: 210px;
+  margin: 12px 0;
+}
+
+.stone-thumb {
+  border-radius: 8px;
+  height: 118px;
+}
+
+.stone-thumb.wide {
+  height: 150px;
+  margin-bottom: 6px;
+}
+
+.result-image {
+  border-radius: 8px;
+  height: 132px;
 }
 
 .pill-row {

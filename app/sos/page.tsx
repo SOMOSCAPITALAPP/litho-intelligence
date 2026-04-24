@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ArrowRight, HeartHandshake, Moon, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, HeartHandshake, Moon, Shield, ShoppingBag, Sparkles } from "lucide-react";
 import { recommendStones } from "@/lib/recommendation";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { withAffiliate } from "@/lib/affiliate";
 
 const states = [
   {
@@ -107,16 +108,18 @@ export default function SosPage() {
             Soutien propose
           </div>
           <h2>{result.stone.name}</h2>
+          <img className="featured-stone-image" src={result.stone.image.url} alt={result.stone.image.alt} />
           <div className="score large-score">{result.score}%</div>
           <p>{result.reason}</p>
           <p className="intention-line">{result.intention}</p>
           <p>Geste simple: {result.usage}</p>
           <div className="sos-actions">
-            <Link className="button" href={`/stone/${result.stone.slug}`}>
-              Voir la pierre <ArrowRight size={16} />
+            <Link className="button" href={withAffiliate(result.stone.products[0].url)}>
+              <ShoppingBag size={16} />
+              Voir bracelets
             </Link>
-            <Link className="button secondary" href="/test">
-              Faire le test complet
+            <Link className="button secondary" href={`/stone/${result.stone.slug}`}>
+              Voir la pierre <ArrowRight size={16} />
             </Link>
           </div>
         </aside>
