@@ -7,7 +7,7 @@ import { wellbeingDisclaimer } from "@/lib/legal";
 import { stones } from "@/lib/stones";
 
 export default function CombinationPage() {
-  const [selected, setSelected] = useState<string[]>(["amethyste", "quartz-rose"]);
+  const [selected, setSelected] = useState<string[]>(["labradorite", "quartz-rose"]);
   const analysis = useMemo(() => analyzeCombination(selected), [selected]);
 
   function toggle(slug: string) {

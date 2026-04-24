@@ -19,378 +19,442 @@ export type Stone = {
   incompatibilities: string[];
   purification: string;
   wear: string;
-  products: {
-    label: string;
-    brand: "Felicidade" | "Vera Mentis" | "KDP";
-    url: string;
-    asin?: string;
-    sku?: string;
-    rating?: string;
-    reviewCount?: number;
-    heliumScore?: string;
-    monthlySales?: number;
-    price?: string;
-    stock?: number;
-    badge?: string;
-  }[];
+  products: Product[];
 };
 
-export const stones: Stone[] = [
+export type Product = {
+  label: string;
+  brand: "Felicidade" | "Vera Mentis" | "KDP";
+  url: string;
+  asin?: string;
+  sku?: string;
+  rating?: string;
+  reviewCount?: number;
+  heliumScore?: string;
+  monthlySales?: number;
+  price?: string;
+  stock?: number;
+  badge?: string;
+};
+
+type StoneSeed = {
+  slug: string;
+  name: string;
+  productUrl: string;
+  properties: string[];
+  emotions: string[];
+  goals: string[];
+  chakra: string;
+  visual: string;
+  description: string;
+  origin?: string;
+  usage?: string;
+  brand?: "Felicidade" | "Vera Mentis";
+  compatibilities?: string[];
+  incompatibilities?: string[];
+  badge?: string;
+};
+
+const product = (name: string, url: string, brand: "Felicidade" | "Vera Mentis" = "Felicidade", badge?: string): Product => ({
+  label: `Bracelet ${name}`,
+  brand,
+  url,
+  badge: badge ?? "Produit direct"
+});
+
+const image = (query: string, name: string) => ({
+  url: `https://source.unsplash.com/1000x750/?${encodeURIComponent(`${query} gemstone crystal`)}`,
+  alt: `${name} en pierre naturelle`,
+  credit: "Image illustrative, Unsplash Source",
+  sourceUrl: "https://unsplash.com/"
+});
+
+const createStone = (seed: StoneSeed): Stone => ({
+  slug: seed.slug,
+  name: seed.name,
+  visual: seed.visual,
+  origin: seed.origin ?? "Origines variables selon les gisements",
+  description: seed.description,
+  image: image(seed.name, seed.name),
+  properties: seed.properties,
+  chakra: seed.chakra,
+  emotions: seed.emotions,
+  goals: seed.goals,
+  usage:
+    seed.usage ??
+    `A porter en bracelet lorsque l'intention ${seed.goals[0] ?? "bien-etre"} est importante dans la journee.`,
+  compatibilities: seed.compatibilities ?? ["cristal-de-roche", "quartz-rose", "labradorite"],
+  incompatibilities: seed.incompatibilities ?? [],
+  purification: "Fumigation douce, son ou repos sur fleur de vie. Eviter les methodes agressives sans verifier la durete de la pierre.",
+  wear: "Bracelet au poignet selon le ressenti: main gauche pour accueillir, main droite pour agir.",
+  products: [product(seed.name, seed.productUrl, seed.brand, seed.badge)]
+});
+
+const seeds: StoneSeed[] = [
   {
-    slug: "amethyste",
-    name: "Amethyste",
-    visual: "Violet profond, parfois translucide, avec des nuances calmes et minerales.",
-    origin: "Bresil, Uruguay, Madagascar",
-    description:
-      "Pierre traditionnellement associee a l'apaisement mental, a l'intuition et aux rituels du soir.",
-    image: {
-      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Am%C3%A9thyste_300.3.7317.JPG?width=1000",
-      alt: "Cristaux d'amethyste violets",
-      credit: "Gery Parent, Wikimedia Commons",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Am%C3%A9thyste_300.3.7317.JPG"
-    },
-    properties: ["calme", "clarte", "sommeil", "intuition"],
-    chakra: "Couronne",
-    emotions: ["stress", "anxiete", "peur", "surcharge mentale"],
-    goals: ["sommeil", "serenite", "spiritualite"],
-    usage: "A garder pres du lit ou a porter en bracelet lors des periodes de tension.",
-    compatibilities: ["quartz-rose", "labradorite", "cristal-de-roche"],
-    incompatibilities: ["cornaline"],
-    purification: "Fumigation douce, bol chantant ou repos sur amas de quartz. Eviter le soleil direct prolonge.",
-    wear: "Bracelet main gauche pour une intention d'apaisement, ou pierre roulee pres de l'oreiller.",
-    products: [
-      { label: "Voir bracelets amethyste", brand: "Felicidade", url: "https://www.amazon.fr/s?k=bracelet+amethyste+pierre+naturelle" },
-      { label: "Livres lithotherapie debutant", brand: "KDP", url: "https://www.amazon.fr/s?k=livre+lithotherapie+debutant" }
-    ]
+    slug: "labradorite-foncee-larvikite",
+    name: "Labradorite foncee (Larvikite)",
+    productUrl: "https://amzn.eu/d/01zLtXoD",
+    properties: ["protection", "stabilite", "ancrage", "intuition"],
+    emotions: ["stress", "peur", "surcharge mentale", "dispersion"],
+    goals: ["protection", "stabilite", "confiance"],
+    chakra: "Racine / Troisieme oeil",
+    visual: "Noir gris profond, reflets argentés ou bleutes, presence tres ancree.",
+    description: "Pierre associee a la protection calme, aux limites personnelles et a la stabilite interieure.",
+    brand: "Vera Mentis",
+    badge: "Protection stable"
   },
   {
-    slug: "quartz-rose",
-    name: "Quartz rose",
-    visual: "Rose pale laiteux, doux et lumineux.",
-    origin: "Bresil, Madagascar, Inde",
-    description:
-      "Symbole de tendresse, d'amour de soi et de reconfort dans de nombreuses traditions energetiques.",
-    image: {
-      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Rose_quartz_%2832132819430%29.jpg?width=1000",
-      alt: "Quartz rose brut",
-      credit: "James St. John, Wikimedia Commons",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Rose_quartz_(32132819430).jpg"
-    },
-    properties: ["amour", "douceur", "reconfort", "acceptation"],
-    chakra: "Coeur",
-    emotions: ["tristesse", "solitude", "colere", "stress"],
-    goals: ["amour", "confiance", "relations"],
-    usage: "A porter pres du coeur ou a utiliser dans un rituel d'intention du matin.",
-    compatibilities: ["amethyste", "aventurine", "cristal-de-roche"],
-    incompatibilities: ["obsidienne"],
-    purification: "Eau claire rapide, fumigation ou fleur de vie. Rechargement doux a la lumiere lunaire.",
-    wear: "Collier court, bracelet ou pierre dans la poche lors des journees emotionnelles.",
-    products: [
-      {
-        label: "Bracelet Quartz Rose 8MM - douceur et harmonie",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/0bifqsoC",
-        asin: "B0C6L1LBY6",
-        sku: "F_BRACELETQUARTZROSETAILLE8MM",
-        rating: "4,1",
-        reviewCount: 22,
-        heliumScore: "10",
-        monthlySales: 2,
-        price: "8,54 EUR",
-        stock: 186,
-        badge: "Best-seller quartz rose"
-      },
-      {
-        label: "Bracelet Quartz Rose fil rouge 8MM",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/08pBYyoW",
-        asin: "B0CCJTJ6RV",
-        sku: "F_BRACELETQUARTZROSE8MMFILROUGE",
-        rating: "4,1",
-        reviewCount: 8,
-        heliumScore: "8,8",
-        monthlySales: 2,
-        price: "10,90 EUR",
-        stock: 63
-      },
-      {
-        label: "Bracelet Quartz Rose Vera Mentis 8MM",
-        brand: "Vera Mentis",
-        url: "https://amzn.eu/d/0eYz8Pml",
-        asin: "B0DH3TS81Q",
-        sku: "4M-KUNA-7521",
-        rating: "5",
-        reviewCount: 2,
-        heliumScore: "8,8",
-        monthlySales: 1,
-        price: "12,90 EUR",
-        stock: 45
-      },
-      { label: "Livres pierres et intentions", brand: "KDP", url: "https://www.amazon.fr/s?k=livre+pierres+intentions+lithotherapie" }
-    ]
-  },
-  {
-    slug: "citrine",
-    name: "Citrine",
-    visual: "Jaune dore a miel, aspect solaire et chaleureux.",
-    origin: "Bresil, Madagascar",
-    description:
-      "Pierre traditionnellement reliee a l'elan personnel, a l'abondance symbolique et a la motivation.",
-    image: {
-      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Quartz_Citrine_Crystals_in_Their_Natural_Form.jpg?width=1000",
-      alt: "Cristaux de citrine",
-      credit: "Wikimedia Commons",
-      sourceUrl: "https://commons.wikimedia.org/wiki/Category:Citrine"
-    },
-    properties: ["energie", "abondance", "optimisme", "confiance"],
-    chakra: "Plexus solaire",
-    emotions: ["fatigue", "doute", "demotivation"],
-    goals: ["argent", "confiance", "reussite", "energie"],
-    usage: "A utiliser pendant les sessions de travail, de creation ou de planification financiere.",
-    compatibilities: ["oeil-de-tigre", "cornaline", "cristal-de-roche"],
-    incompatibilities: ["amethyste"],
-    purification: "Fumigation ou geode. Rechargement a la lumiere naturelle douce.",
-    wear: "Bracelet main droite pour une intention d'action et de concretisation.",
-    products: [
-      { label: "Voir bracelets citrine", brand: "Felicidade", url: "https://www.amazon.fr/s?k=bracelet+citrine+pierre+naturelle" },
-      { label: "Carnets intentions abondance", brand: "KDP", url: "https://www.amazon.fr/s?k=carnet+intentions+abondance" }
-    ]
+    slug: "apatite-bleue",
+    name: "Apatite bleue",
+    productUrl: "https://amzn.eu/d/09lQ0omu",
+    properties: ["expression", "clarte", "motivation", "serenite"],
+    emotions: ["blocage", "doute", "stress", "tristesse"],
+    goals: ["clarte", "communication", "motivation"],
+    chakra: "Gorge",
+    visual: "Bleu profond a turquoise, lumineux et frais.",
+    description: "Traditionnellement reliee a l'expression personnelle, a la clarte et a l'envie d'avancer.",
+    badge: "Clarte & expression"
   },
   {
     slug: "labradorite",
     name: "Labradorite",
-    visual: "Gris sombre avec reflets bleus, verts ou dores.",
-    origin: "Canada, Madagascar, Finlande",
-    description:
-      "Souvent choisie comme pierre de protection symbolique et de recuperation energetique.",
-    image: {
-      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pietra_di_labradorite.jpg?width=1000",
-      alt: "Labradorite aux reflets bleus et verts",
-      credit: "Anna.Massini, Wikimedia Commons",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Pietra_di_labradorite.jpg"
-    },
+    productUrl: "https://amzn.eu/d/03nqLs0J",
     properties: ["protection", "intuition", "recuperation", "frontieres"],
-    chakra: "Troisieme oeil",
     emotions: ["fatigue", "stress", "surcharge mentale", "empathie excessive"],
     goals: ["protection", "equilibre", "spiritualite"],
-    usage: "A porter lors des interactions intenses ou des environnements tres sollicitants.",
-    compatibilities: ["amethyste", "obsidienne", "cristal-de-roche"],
-    incompatibilities: ["citrine"],
-    purification: "Fumigation reguliere ou bol chantant. Rechargement lunaire recommande.",
-    wear: "Bracelet ou pendentif pendant les journees chargees.",
-    products: [
-      {
-        label: "Bracelet Labradorite 8MM + pochette artisanale",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/0eXwx6am",
-        asin: "B0D2VG6D3Z",
-        sku: "E9-7BJ7-P3HO",
-        rating: "4,2",
-        reviewCount: 54,
-        heliumScore: "10",
-        monthlySales: 30,
-        price: "15,90 EUR",
-        stock: 198,
-        badge: "Top ventes labradorite"
-      },
-      {
-        label: "Bracelet Labradorite foncee 8MM",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/06bhTerM",
-        asin: "B0D2VFSL94",
-        sku: "Z8-369G-TY3P",
-        rating: "4,6",
-        reviewCount: 32,
-        heliumScore: "10",
-        monthlySales: 30,
-        price: "14,90 EUR",
-        stock: 133,
-        badge: "Meilleure note"
-      },
-      {
-        label: "Bracelet Labradorite foncee arbre de vie",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/0cVOpLyI",
-        asin: "B0DPXNKDTV",
-        sku: "4E-9I7S-CHOZ",
-        rating: "5",
-        reviewCount: 10,
-        heliumScore: "10",
-        monthlySales: 10,
-        price: "17,90 EUR",
-        stock: 38
-      },
-      {
-        label: "Bracelet Larvikite Vera Mentis 8MM",
-        brand: "Vera Mentis",
-        url: "https://amzn.eu/d/0fwZ8k4Z",
-        asin: "B0DH3QTYXJ",
-        sku: "E4-DQ3B-X6LO",
-        rating: "4,7",
-        reviewCount: 5,
-        heliumScore: "8,8",
-        monthlySales: 5,
-        price: "16,90 EUR",
-        stock: 69
-      }
-    ]
+    chakra: "Troisieme oeil",
+    visual: "Gris sombre avec reflets bleus, verts ou dores.",
+    description: "Pierre de protection symbolique, souvent choisie pour les personnes sensibles aux ambiances.",
+    brand: "Vera Mentis",
+    badge: "Protection intuitive"
+  },
+  {
+    slug: "obsidienne-oeil-celeste",
+    name: "Obsidienne oeil celeste",
+    productUrl: "https://amzn.eu/d/0gmfb5rl",
+    properties: ["protection", "verite", "ancrage", "liberation"],
+    emotions: ["peur", "colere", "stress", "blocage"],
+    goals: ["protection", "courage", "clarte"],
+    chakra: "Racine",
+    visual: "Noir profond avec reflets circulaires subtils.",
+    description: "Pierre intense, traditionnellement associee a la protection et au retour a soi.",
+    incompatibilities: ["quartz-rose"],
+    badge: "Protection forte"
+  },
+  {
+    slug: "calcedoine-bleue",
+    name: "Calcedoine bleue",
+    productUrl: "https://amzn.eu/d/01234ZUc",
+    properties: ["douceur", "communication", "apaisement", "harmonie"],
+    emotions: ["stress", "colere", "hypersensibilite"],
+    goals: ["serenite", "communication", "relations"],
+    chakra: "Gorge",
+    visual: "Bleu pale laiteux, texture douce et rassurante.",
+    description: "Pierre associee a la parole douce, a l'apaisement emotionnel et a l'harmonie.",
+    brand: "Vera Mentis",
+    badge: "Apaisement relationnel"
   },
   {
     slug: "oeil-de-tigre",
     name: "Oeil de tigre",
-    visual: "Bandes brunes, dorees et lumineuses a effet chatoyant.",
-    origin: "Afrique du Sud, Australie, Inde",
-    description:
-      "Pierre associee a la confiance, a l'ancrage et au passage a l'action dans les usages traditionnels.",
-    image: {
-      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Tiger_eye.JPG?width=1000",
-      alt: "Pierres oeil de tigre brunes et dorees",
-      credit: "Weissanna, Wikimedia Commons",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Tiger_eye.JPG"
-    },
+    productUrl: "https://amzn.eu/d/0gcKGhLS",
     properties: ["confiance", "courage", "ancrage", "decision"],
-    chakra: "Plexus solaire",
     emotions: ["peur", "doute", "stress"],
     goals: ["confiance", "argent", "reussite", "protection"],
-    usage: "A porter avant un rendez-vous, une negociation ou une decision importante.",
-    compatibilities: ["citrine", "cornaline", "hematite"],
+    chakra: "Plexus solaire",
+    visual: "Bandes brunes, dorees et lumineuses a effet chatoyant.",
+    description: "Pierre associee a la confiance, a l'ancrage et au passage a l'action.",
+    compatibilities: ["jaspe-rouge", "cornaline", "onyx"],
     incompatibilities: ["quartz-rose"],
-    purification: "Fumigation, son ou passage rapide sous l'eau selon la qualite de la pierre.",
-    wear: "Bracelet main droite pour une intention d'assurance et de mouvement.",
-    products: [
-      {
-        label: "Bracelet Homme Oeil de Tigre 8MM",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/0gWKB6CY",
-        asin: "B0C6B7TH96",
-        sku: "F_BRACELETOEILDETIGRE8MM",
-        rating: "4,3",
-        reviewCount: 34,
-        heliumScore: "10",
-        monthlySales: 5,
-        price: "8,50 EUR",
-        stock: 336,
-        badge: "Best-seller protection"
-      },
-      {
-        label: "Bracelet Oeil de Tigre 6MM",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/0eJvVWx2",
-        asin: "B0C9R82J58",
-        sku: "PI-X273-FOM4",
-        rating: "3,5",
-        reviewCount: 6,
-        heliumScore: "7,5",
-        monthlySales: 2,
-        price: "12,90 EUR",
-        stock: 47
-      },
-      {
-        label: "Bracelet 7 chakras Oeil de Tigre 6MM",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/09KxuCQB",
-        asin: "B0CQPHXY7B",
-        sku: "BRACELET7CHAKRASOEILDETIGRE6MM",
-        rating: "4,2",
-        reviewCount: 6,
-        heliumScore: "8,8",
-        monthlySales: 4,
-        price: "12,90 EUR",
-        stock: 41
-      },
-      {
-        label: "Bracelet 3 yeux Vera Mentis 8MM",
-        brand: "Vera Mentis",
-        url: "https://amzn.eu/d/0gZrX26b",
-        asin: "B0DN1ZGT3L",
-        sku: "ET-U1PH-0IS9",
-        rating: "4,6",
-        reviewCount: 6,
-        heliumScore: "8,8",
-        monthlySales: 2,
-        price: "17,90 EUR",
-        stock: 46
-      }
-    ]
+    badge: "Confiance & force"
   },
   {
-    slug: "cornaline",
-    name: "Cornaline",
-    visual: "Orange chaud a rouge translucide.",
-    origin: "Inde, Bresil, Uruguay",
-    description:
-      "Traditionnellement liee a la vitalite, a la creativite et a l'expression personnelle.",
-    image: {
-      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Carnelian_Agate%2C_Oregon.jpg?width=1000",
-      alt: "Cornaline orange",
-      credit: "Bobjgalindo, Wikimedia Commons",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Carnelian_Agate,_Oregon.jpg"
-    },
-    properties: ["vitalite", "creation", "desir", "elan"],
-    chakra: "Sacre",
+    slug: "jaspe-rouge",
+    name: "Jaspe rouge",
+    productUrl: "https://amzn.eu/d/06Ckfi9B",
+    properties: ["ancrage", "courage", "vitalite", "stabilite"],
+    emotions: ["fatigue", "peur", "dispersion"],
+    goals: ["energie", "ancrage", "courage"],
+    chakra: "Racine",
+    visual: "Rouge terreux, dense et chaleureux.",
+    description: "Pierre d'ancrage traditionnellement reliee a la force tranquille et a l'endurance.",
+    badge: "Ancrage"
+  },
+  {
+    slug: "quartz-rose",
+    name: "Quartz rose",
+    productUrl: "https://amzn.eu/d/04WjJOpA",
+    properties: ["amour", "douceur", "reconfort", "acceptation"],
+    emotions: ["tristesse", "solitude", "colere", "stress"],
+    goals: ["amour", "confiance", "relations"],
+    chakra: "Coeur",
+    visual: "Rose pale laiteux, doux et lumineux.",
+    description: "Symbole de tendresse, d'amour de soi et de reconfort.",
+    compatibilities: ["amethyste", "aventurine-verte", "rhodonite"],
+    incompatibilities: ["obsidienne-oeil-celeste"],
+    badge: "Amour & douceur"
+  },
+  {
+    slug: "agate-du-botswana",
+    name: "Agate du Botswana",
+    productUrl: "https://amzn.eu/d/0cuJCJKe",
+    properties: ["stabilite", "reconfort", "patience", "transition"],
+    emotions: ["tristesse", "stress", "confusion"],
+    goals: ["stabilite", "apaisement", "changement"],
+    chakra: "Racine",
+    visual: "Bandes grises, roses ou brunes, aspect doux et stratifie.",
+    description: "Pierre traditionnellement associee aux periodes de transition et au reconfort progressif.",
+    badge: "Transitions"
+  },
+  {
+    slug: "jade-emeraude",
+    name: "Jade emeraude",
+    productUrl: "https://amzn.eu/d/0bjy729l",
+    properties: ["harmonie", "chance", "coeur", "equilibre"],
+    emotions: ["stress", "jalousie", "agitation"],
+    goals: ["amour", "abondance", "equilibre"],
+    chakra: "Coeur",
+    visual: "Vert intense a emeraude, aspect elegant et protecteur.",
+    description: "Pierre associee a l'harmonie, a la chance symbolique et a l'equilibre du coeur.",
+    badge: "Harmonie"
+  },
+  {
+    slug: "fluorite",
+    name: "Fluorite",
+    productUrl: "https://amzn.eu/d/0gLFmf2t",
+    properties: ["clarte", "organisation", "focus", "discernement"],
+    emotions: ["confusion", "surcharge mentale", "dispersion"],
+    goals: ["clarte", "focus", "decision"],
+    chakra: "Troisieme oeil",
+    visual: "Bandes vertes, violettes ou translucides, tres structurees.",
+    description: "Pierre traditionnellement associee a l'ordre mental, au tri et a la concentration.",
+    badge: "Focus"
+  },
+  {
+    slug: "howlite",
+    name: "Howlite",
+    productUrl: "https://amzn.eu/d/0gJSNeon",
+    properties: ["calme", "patience", "sommeil", "relachement"],
+    emotions: ["stress", "colere", "anxiete"],
+    goals: ["sommeil", "serenite", "patience"],
+    chakra: "Couronne",
+    visual: "Blanc veine de gris, sobre et mineral.",
+    description: "Pierre douce, souvent associee a la patience, au sommeil et au ralentissement.",
+    badge: "Calme"
+  },
+  {
+    slug: "angelite",
+    name: "Angelite",
+    productUrl: "https://amzn.eu/d/00a0r4Pn",
+    properties: ["paix", "douceur", "spiritualite", "reconfort"],
+    emotions: ["tristesse", "solitude", "stress"],
+    goals: ["serenite", "spiritualite", "reconfort"],
+    chakra: "Gorge / Couronne",
+    visual: "Bleu tres pale, doux et presque celeste.",
+    description: "Pierre associee a la paix interieure, au reconfort et a la douceur spirituelle.",
+    badge: "Paix interieure"
+  },
+  {
+    slug: "lapis-lazuli",
+    name: "Lapis lazuli",
+    productUrl: "https://amzn.eu/d/0f9b1aSP",
+    properties: ["verite", "expression", "sagesse", "confiance"],
+    emotions: ["doute", "blocage", "peur"],
+    goals: ["communication", "confiance", "clarte"],
+    chakra: "Gorge / Troisieme oeil",
+    visual: "Bleu royal, parfois parseme de pyrite doree.",
+    description: "Pierre symbolique de verite, de parole juste et de confiance dans son expression.",
+    badge: "Expression"
+  },
+  {
+    slug: "labradorite-de-madagascar",
+    name: "Labradorite de Madagascar",
+    productUrl: "https://amzn.eu/d/0jbrLvpi",
+    properties: ["protection", "intuition", "elegance", "recuperation"],
+    emotions: ["fatigue", "stress", "hypersensibilite"],
+    goals: ["protection", "intuition", "equilibre"],
+    chakra: "Troisieme oeil",
+    visual: "Reflets bleus ou verts lumineux, aspect premium.",
+    description: "Variante de labradorite recherchee pour ses reflets et sa symbolique protectrice.",
+    brand: "Vera Mentis",
+    badge: "Madagascar"
+  },
+  {
+    slug: "rhodonite",
+    name: "Rhodonite",
+    productUrl: "https://amzn.eu/d/0dRHPu8I",
+    properties: ["coeur", "reparation", "pardon", "securite affective"],
+    emotions: ["tristesse", "colere", "blessure affective", "solitude"],
+    goals: ["amour", "relations", "reconfort"],
+    chakra: "Coeur",
+    visual: "Rose soutenu veine de noir, presence forte et tendre.",
+    description: "Pierre du coeur blesse, traditionnellement associee a la reparation emotionnelle.",
+    compatibilities: ["quartz-rose", "aventurine-verte", "cristal-de-roche"],
+    badge: "Coeur blesse"
+  },
+  {
+    slug: "aventurine-verte",
+    name: "Aventurine verte",
+    productUrl: "https://amzn.eu/d/0jgKsV3H",
+    properties: ["chance", "coeur", "croissance", "apaisement"],
+    emotions: ["stress", "doute", "frustration"],
+    goals: ["abondance", "amour", "opportunite"],
+    chakra: "Coeur",
+    visual: "Vert tendre avec eclats subtils.",
+    description: "Pierre traditionnellement associee a l'ouverture du coeur, a la chance et aux nouveaux departs.",
+    badge: "Chance douce"
+  },
+  {
+    slug: "sodalite-du-bresil",
+    name: "Sodalite du Bresil",
+    productUrl: "https://amzn.eu/d/00ImK7Yk",
+    properties: ["logique", "calme mental", "expression", "clarte"],
+    emotions: ["surcharge mentale", "stress", "confusion"],
+    goals: ["clarte", "focus", "communication"],
+    chakra: "Gorge / Troisieme oeil",
+    visual: "Bleu profond veine de blanc.",
+    description: "Pierre associee a la clarte intellectuelle, au calme mental et a l'expression posee.",
+    badge: "Mental clair"
+  },
+  {
+    slug: "lepidolite",
+    name: "Lepidolite",
+    productUrl: "https://amzn.eu/d/09MOxfGm",
+    properties: ["apaisement", "transition", "relachement", "sommeil"],
+    emotions: ["anxiete", "stress", "tristesse"],
+    goals: ["serenite", "sommeil", "changement"],
+    chakra: "Coeur / Couronne",
+    visual: "Violet pale a lilas, texture douce.",
+    description: "Pierre traditionnellement reliee a l'apaisement, aux transitions et au repos interieur.",
+    badge: "Apaisement profond"
+  },
+  {
+    slug: "jaspe",
+    name: "Jaspe",
+    productUrl: "https://amzn.eu/d/0iNjLB8L",
+    properties: ["ancrage", "stabilite", "endurance", "presence"],
+    emotions: ["dispersion", "fatigue", "stress"],
+    goals: ["ancrage", "energie", "constance"],
+    chakra: "Racine",
+    visual: "Variations terreuses, rouges, brunes ou ocres.",
+    description: "Famille de pierres associee a l'ancrage, a la stabilite et a la presence au quotidien.",
+    badge: "Stabilite"
+  },
+  {
+    slug: "onyx",
+    name: "Onyx",
+    productUrl: "https://amzn.eu/d/0aGhOHac",
+    properties: ["force", "discipline", "protection", "ancrage"],
+    emotions: ["peur", "doute", "dispersion"],
+    goals: ["protection", "discipline", "confiance"],
+    chakra: "Racine",
+    visual: "Noir profond, lisse et sobre.",
+    description: "Pierre associee a la force interieure, a la discipline et a la protection symbolique.",
+    incompatibilities: ["quartz-rose"],
+    badge: "Force calme"
+  },
+  {
+    slug: "pierre-de-lune",
+    name: "Pierre de lune",
+    productUrl: "https://amzn.eu/d/0h4MtOHt",
+    properties: ["intuition", "feminin", "cycles", "douceur"],
+    emotions: ["hypersensibilite", "tristesse", "stress"],
+    goals: ["intuition", "amour", "equilibre"],
+    chakra: "Sacre / Couronne",
+    visual: "Blanc nacre, reflets doux et lunaires.",
+    description: "Pierre associee aux cycles, a l'intuition et a la douceur emotionnelle.",
+    badge: "Intuition"
+  },
+  {
+    slug: "chrysoprase-citron",
+    name: "Chrysoprase citron",
+    productUrl: "https://amzn.eu/d/0dTyJSbX",
+    properties: ["renouveau", "joie", "coeur", "optimisme"],
+    emotions: ["tristesse", "fatigue", "frustration"],
+    goals: ["joie", "amour", "renouveau"],
+    chakra: "Coeur",
+    visual: "Vert citron lumineux, frais et vivant.",
+    description: "Pierre associee au renouveau, a la joie douce et a l'ouverture du coeur.",
+    badge: "Renouveau"
+  },
+  {
+    slug: "grenat",
+    name: "Grenat",
+    productUrl: "https://amzn.eu/d/09r5D11i",
+    properties: ["energie", "passion", "courage", "vitalite"],
     emotions: ["fatigue", "blocage", "demotivation"],
-    goals: ["energie", "creativite", "confiance"],
-    usage: "A utiliser lors des periodes de relance, de creation ou de reprise d'activite.",
-    compatibilities: ["citrine", "oeil-de-tigre", "hematite"],
-    incompatibilities: ["amethyste"],
-    purification: "Fumigation ou eau claire rapide. Rechargement solaire court.",
-    wear: "Bracelet main droite ou pierre de poche pendant les phases d'action.",
-    products: [
-      {
-        label: "Bracelet Cornaline 8MM",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/01aHc9gY",
-        asin: "B0CG2BVN75",
-        sku: "F_BRACELETCORNALINE8MM",
-        rating: "4,2",
-        reviewCount: 36,
-        heliumScore: "9,9",
-        monthlySales: 10,
-        price: "13,80 EUR",
-        stock: 82,
-        badge: "Top vitalite"
-      },
-      {
-        label: "Bracelet Agate Cornaline 8MM",
-        brand: "Felicidade",
-        url: "https://amzn.eu/d/00ktgVmC",
-        asin: "B0FP2XK4F7",
-        sku: "KX-U4KR-ZFOE",
-        rating: "5",
-        reviewCount: 1,
-        heliumScore: "8,8",
-        monthlySales: 4,
-        price: "15,90 EUR",
-        stock: 35
-      }
-    ]
+    goals: ["energie", "confiance", "desir"],
+    chakra: "Racine",
+    visual: "Rouge profond, parfois sombre et intense.",
+    description: "Pierre associee a la vitalite, au courage et au feu interieur.",
+    badge: "Energie intense"
   },
   {
     slug: "cristal-de-roche",
     name: "Cristal de roche",
-    visual: "Transparent a blanc, eclat clair et neutre.",
-    origin: "Bresil, Alpes, Madagascar",
-    description:
-      "Pierre d'amplification symbolique, souvent utilisee pour clarifier une intention ou accompagner d'autres pierres.",
-    image: {
-      url: "https://commons.wikimedia.org/wiki/Special:FilePath/Quartz_crystals_%28geode%29_%286390459075%29.jpg?width=1000",
-      alt: "Cristaux de quartz clair dans une geode",
-      credit: "Mauro Cateb, Wikimedia Commons",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Quartz_crystals_(geode)_(6390459075).jpg"
-    },
+    productUrl: "https://amzn.eu/d/05I8kdHa",
     properties: ["clarte", "amplification", "neutralite", "focus"],
-    chakra: "Tous chakras",
     emotions: ["confusion", "surcharge mentale"],
     goals: ["clarte", "spiritualite", "focus"],
-    usage: "A associer avec une pierre principale pour renforcer une intention precise.",
-    compatibilities: ["amethyste", "quartz-rose", "citrine", "labradorite", "oeil-de-tigre"],
-    incompatibilities: [],
-    purification: "Fumigation, eau claire rapide ou geode. Rechargement lumiere douce.",
-    wear: "En bracelet neutre ou pose sur un bureau pendant une intention de concentration.",
-    products: [
-      { label: "Voir bracelets cristal de roche", brand: "Felicidade", url: "https://www.amazon.fr/s?k=bracelet+cristal+de+roche+pierre+naturelle" }
-    ]
+    chakra: "Tous chakras",
+    visual: "Transparent a blanc, eclat clair et neutre.",
+    description: "Pierre d'amplification symbolique, souvent utilisee pour clarifier une intention.",
+    compatibilities: ["quartz-rose", "labradorite", "oeil-de-tigre"],
+    badge: "Amplificateur"
+  },
+  {
+    slug: "turquoise",
+    name: "Turquoise",
+    productUrl: "https://amzn.eu/d/0hGqPisd",
+    properties: ["protection", "communication", "voyage", "apaisement"],
+    emotions: ["stress", "peur", "blocage"],
+    goals: ["protection", "communication", "serenite"],
+    chakra: "Gorge",
+    visual: "Bleu turquoise a vert, veines minerales sombres.",
+    description: "Pierre associee a la protection, a la parole vraie et a l'apaisement.",
+    badge: "Protection douce"
+  },
+  {
+    slug: "cornaline",
+    name: "Cornaline",
+    productUrl: "https://amzn.eu/d/0ekcqK2r",
+    properties: ["vitalite", "creation", "desir", "elan"],
+    emotions: ["fatigue", "blocage", "demotivation"],
+    goals: ["energie", "creativite", "confiance"],
+    chakra: "Sacre",
+    visual: "Orange chaud a rouge translucide.",
+    description: "Pierre traditionnellement liee a la vitalite, a la creativite et a l'expression personnelle.",
+    compatibilities: ["oeil-de-tigre", "grenat", "jaspe-rouge"],
+    incompatibilities: ["amethyste"],
+    badge: "Vitalite"
+  },
+  {
+    slug: "calcite-jaune",
+    name: "Calcite jaune",
+    productUrl: "https://amzn.eu/d/0cs2tF8H",
+    properties: ["optimisme", "confiance", "energie douce", "clarte"],
+    emotions: ["fatigue", "doute", "demotivation"],
+    goals: ["confiance", "energie", "reussite"],
+    chakra: "Plexus solaire",
+    visual: "Jaune lumineux, doux et solaire.",
+    description: "Pierre associee a l'optimisme, a la confiance et au rayonnement personnel.",
+    badge: "Solaire"
+  },
+  {
+    slug: "pierre-de-soleil",
+    name: "Pierre de soleil",
+    productUrl: "https://amzn.eu/d/0iE8Hf1Q",
+    properties: ["joie", "confiance", "rayonnement", "elan"],
+    emotions: ["fatigue", "tristesse", "doute"],
+    goals: ["confiance", "joie", "reussite"],
+    chakra: "Plexus solaire",
+    visual: "Orange dore, reflets lumineux et chaleureux.",
+    description: "Pierre associee a la joie, au rayonnement personnel et a l'envie d'avancer.",
+    badge: "Rayonnement"
   }
 ];
+
+export const stones: Stone[] = seeds.map(createStone);
 
 export const getStone = (slug: string) => stones.find((stone) => stone.slug === slug);
