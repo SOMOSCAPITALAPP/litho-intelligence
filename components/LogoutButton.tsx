@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { clearLocalMember } from "@/lib/localMember";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 export function LogoutButton() {
@@ -9,13 +10,14 @@ export function LogoutButton() {
   async function logout() {
     const supabase = createSupabaseBrowserClient();
     await supabase?.auth.signOut();
+    clearLocalMember();
     router.push("/");
     router.refresh();
   }
 
   return (
     <button className="button secondary" onClick={logout} type="button">
-      Deconnexion
+      Déconnexion
     </button>
   );
 }

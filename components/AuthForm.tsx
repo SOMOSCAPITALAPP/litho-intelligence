@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { saveLocalMember } from "@/lib/localMember";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 export function AuthForm({ mode }: { mode: "login" | "register" }) {
@@ -11,17 +12,36 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
   const [fullName, setFullName] = useState("");
   const [newsletter, setNewsletter] = useState(true);
   const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function submit() {
-    const supabase = createSupabaseBrowserClient();
-    if (!supabase) {
-      setError("Supabase n'est pas encore configuré.");
+    if (!email.includes("@")) {
+      setError("Indiquez une adresse email valide.");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Le mot de passe doit contenir au moins 6 caractères.");
       return;
     }
 
     setLoading(true);
     setError("");
+    setNotice("");
+
+    const supabase = createSupabaseBrowserClient();
+    if (!supabase) {
+      saveLocalMember({
+        email,
+        fullName,
+        newsletterOptIn: newsletter
+      });
+      setLoading(false);
+      router.push("/dashboard");
+      router.refresh();
+      return;
+    }
 
     const result =
       mode === "register"
@@ -37,14 +57,26 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
           })
         : await supabase.auth.signInWithPassword({ email, password });
 
-    setLoading(false);
     if (result.error) {
+      setLoading(false);
       setError(result.error.message);
       return;
     }
 
-    router.push("/dashboard");
-    router.refresh();
+    if (result.data.session) {
+      await fetch("/api/auth/ensure-profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fullName, newsletterOptIn: newsletter })
+      });
+      setLoading(false);
+      router.push("/dashboard");
+      router.refresh();
+      return;
+    }
+
+    setLoading(false);
+    setNotice("Compte créé. Vérifiez votre email pour activer la connexion si la confirmation est demandée.");
   }
 
   return (
@@ -76,8 +108,9 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
         </label>
       ) : null}
       <button className="button gold-button" disabled={loading} onClick={submit} type="button">
-        {loading ? "Veuillez patienter..." : mode === "register" ? "Créer mon compte" : "Me connecter"}
+        {loading ? "Veuillez patienter..." : mode === "register" ? "Créer mon compte gratuit" : "Me connecter"}
       </button>
+      {notice ? <p className="capture-status">{notice}</p> : null}
       {error ? <p className="form-error">{error}</p> : null}
     </div>
   );
