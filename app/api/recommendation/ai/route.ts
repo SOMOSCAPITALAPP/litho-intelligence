@@ -4,6 +4,7 @@ import { wellbeingDisclaimer } from "@/lib/legal";
 import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
 import { checkUsageLimit, incrementUsage } from "@/lib/usage";
 import { trackEvent } from "@/lib/analytics";
+import type { MembershipPlan } from "@/lib/plans";
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -18,15 +19,17 @@ export async function POST(request: Request) {
     data: { user }
   } = supabase ? await supabase.auth.getUser() : { data: { user: null } };
 
+  let plan: MembershipPlan = "free";
+
   if (user && admin) {
     const { data: profile } = await admin.from("profiles").select("plan").eq("id", user.id).maybeSingle();
-    const plan = profile?.plan ?? "free";
+    plan = (profile?.plan ?? "free") as MembershipPlan;
     const usage = await checkUsageLimit(user.id, plan, "recommendations");
     if (!usage.allowed) {
       await trackEvent("limit_reached", { feature: "recommendations" }, user.id);
       return NextResponse.json(
         {
-          error: "Votre acces gratuit du jour est termine. Passez Premium pour continuer sans limite.",
+          error: "Votre accès gratuit du jour est terminé. Passez Premium pour continuer sans limite.",
           upgradeRequired: true
         },
         { status: 402 }
@@ -34,7 +37,10 @@ export async function POST(request: Request) {
     }
   }
 
-  const recommendations = await getStoneRecommendations(input);
+  const recommendations = await getStoneRecommendations(input, {
+    id: user?.id,
+    plan
+  });
 
   if (user && admin) {
     await incrementUsage(user.id, "recommendations");
@@ -43,7 +49,7 @@ export async function POST(request: Request) {
       user_input: input,
       result: recommendations
     });
-    await trackEvent("recommendation_generated", { source: "ai" }, user.id);
+    await trackEvent("recommendation_generated", { source: recommendations.source }, user.id);
   }
 
   return NextResponse.json({

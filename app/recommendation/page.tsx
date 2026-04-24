@@ -6,7 +6,14 @@ import { Search } from "lucide-react";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { StoneResultCard } from "@/components/StoneResultCard";
 import { EmailCapture } from "@/components/EmailCapture";
-import type { AIStoneRecommendation } from "@/lib/openai-recommendation";
+import type { AIRecommendationSource, AIStoneRecommendation } from "@/lib/openai-recommendation";
+
+const sourceLabels: Record<AIRecommendationSource, string> = {
+  local: "Résultat instantané",
+  cache: "Résultat instantané déjà vérifié",
+  ai: "Analyse avancée",
+  fallback: "Résultat sécurisé"
+};
 
 export default function RecommendationPage({
   searchParams
@@ -17,6 +24,7 @@ export default function RecommendationPage({
   const [emotional, setEmotional] = useState(searchParams.emotional ?? "");
   const [goal, setGoal] = useState(searchParams.goal ?? "");
   const [results, setResults] = useState<AIStoneRecommendation[]>([]);
+  const [source, setSource] = useState<AIRecommendationSource | null>(null);
   const [loading, setLoading] = useState(false);
   const [limitError, setLimitError] = useState("");
 
@@ -35,6 +43,7 @@ export default function RecommendationPage({
       if (active) {
         setLimitError(response.status === 402 ? data.error : "");
         setResults(response.ok ? data.stones ?? [] : []);
+        setSource(response.ok ? data.source ?? null : null);
         setLoading(false);
       }
     }
@@ -99,6 +108,7 @@ export default function RecommendationPage({
             </Link>
           </section>
         ) : null}
+        {source && results.length > 0 ? <p className="source-pill">{sourceLabels[source]}</p> : null}
         {results.map((item) => (
           <StoneResultCard key={item.slug} result={item} />
         ))}

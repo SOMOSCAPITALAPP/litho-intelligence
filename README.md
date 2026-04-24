@@ -110,7 +110,7 @@ NEXT_PUBLIC_APP_URL=https://votre-domaine.vercel.app
 NEXT_PUBLIC_SITE_URL=https://votre-domaine.vercel.app
 
 OPENAI_API_KEY=
-OPENAI_RECOMMENDATION_MODEL=gpt-4o-mini
+MAX_DAILY_AI_CALLS=500
 
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
@@ -126,13 +126,25 @@ NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=
 
 ## Supabase
 
-Executer la migration:
+Executer les migrations:
 
 ```sql
 supabase/migrations/20260424190000_membership.sql
+supabase/migrations/20260424213000_ai_hybrid_engine.sql
 ```
 
-Elle cree les tables `profiles`, `subscriptions`, `usage_limits`, `favorites`, `recommendation_history`, `downloads`, `leads`, `events`, les RLS policies, le trigger profil FREE apres inscription, et la fonction `increment_usage_limit`.
+Elles creent les tables `profiles`, `subscriptions`, `usage_limits`, `favorites`, `recommendation_history`, `downloads`, `leads`, `events`, `ai_cache`, `ai_usage_logs`, les RLS policies, le trigger profil FREE apres inscription, et la fonction `increment_usage_limit`.
+
+## Moteur hybride IA
+
+Le moteur de recommandation suit cet ordre pour limiter les couts:
+
+- local: `lib/stoneRules.ts`, reponse instantanee sans OpenAI
+- cache: table Supabase `ai_cache`
+- OpenAI: uniquement en fallback, modele `gpt-4.1-mini`, `max_output_tokens: 300`, `temperature: 0.7`
+- fallback global: si OpenAI est indisponible, si Supabase ne peut pas compter les appels, ou si `MAX_DAILY_AI_CALLS` est atteint
+
+Les appels sont journalises dans `ai_usage_logs` avec `source` = `local`, `cache`, `ai` ou `fallback`.
 
 ## Stripe
 

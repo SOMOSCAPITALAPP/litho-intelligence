@@ -10,9 +10,12 @@ const requiredFiles = [
   "app/api/stripe/create-portal-session/route.ts",
   "app/api/stripe/webhook/route.ts",
   "components/PremiumGate.tsx",
+  "lib/stoneRules.ts",
+  "lib/openai-recommendation.ts",
   "lib/usage.ts",
   "lib/analytics.ts",
-  "supabase/migrations/20260424190000_membership.sql"
+  "supabase/migrations/20260424190000_membership.sql",
+  "supabase/migrations/20260424213000_ai_hybrid_engine.sql"
 ];
 
 const missing = requiredFiles.filter((file) => !fs.existsSync(file));
@@ -27,8 +30,15 @@ for (const table of ["profiles", "subscriptions", "usage_limits", "favorites", "
   }
 }
 
+const aiMigration = fs.readFileSync("supabase/migrations/20260424213000_ai_hybrid_engine.sql", "utf8");
+for (const table of ["ai_cache", "ai_usage_logs"]) {
+  if (!aiMigration.includes(`public.${table}`)) {
+    throw new Error(`Missing AI table in migration: ${table}`);
+  }
+}
+
 const env = fs.readFileSync(".env.example", "utf8");
-for (const key of ["NEXT_PUBLIC_SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "STRIPE_PREMIUM_PRICE_ID"]) {
+for (const key of ["NEXT_PUBLIC_SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "STRIPE_PREMIUM_PRICE_ID", "MAX_DAILY_AI_CALLS"]) {
   if (!env.includes(`${key}=`)) {
     throw new Error(`Missing env key: ${key}`);
   }

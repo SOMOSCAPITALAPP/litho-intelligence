@@ -746,6 +746,21 @@ select {
   padding: 0 14px;
 }
 
+.source-pill {
+  align-items: center;
+  background: rgba(214, 173, 98, 0.14);
+  border: 1px solid rgba(214, 173, 98, 0.3);
+  border-radius: 999px;
+  color: var(--premium-gold);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 900;
+  justify-self: start;
+  margin: 0;
+  padding: 8px 12px;
+  text-transform: uppercase;
+}
+
 .ritual-box {
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.12);
