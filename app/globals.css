@@ -193,6 +193,13 @@ select {
   max-width: 780px;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
 .question-list a {
   background: rgba(255, 250, 247, 0.78);
   border: 1px solid var(--line);
@@ -258,6 +265,11 @@ select {
   padding-bottom: 24px;
 }
 
+.no-side-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .answer-band {
   padding: 0 clamp(18px, 5vw, 64px) 18px;
 }
@@ -312,6 +324,82 @@ select {
   display: inline-flex;
   font-weight: 800;
   gap: 6px;
+}
+
+.guided-layout {
+  align-items: start;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  margin-top: 26px;
+}
+
+.guided-panel {
+  margin-top: 0;
+  max-width: none;
+}
+
+.guided-step {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+}
+
+.guided-step:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.guided-step h2 {
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+
+.choice-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.choice {
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  cursor: pointer;
+  min-height: 50px;
+  padding: 10px;
+  text-align: left;
+  transition: 0.18s ease;
+}
+
+.choice:hover,
+.choice.active {
+  background: #f7e7e1;
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.guidance-result {
+  position: sticky;
+  top: 96px;
+}
+
+.guidance-result h2 {
+  font-size: 34px;
+  margin: 10px 0;
+}
+
+.result-kicker {
+  align-items: center;
+  color: var(--accent-strong);
+  display: flex;
+  font-weight: 800;
+  gap: 8px;
+}
+
+.large-score {
+  font-size: 20px;
+  width: 92px;
 }
 
 .intention-line {
@@ -472,6 +560,14 @@ select {
     grid-template-columns: 1fr;
   }
 
+  .guided-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .guidance-result {
+    position: static;
+  }
+
   .nav {
     align-items: flex-start;
     flex-direction: column;
@@ -498,5 +594,9 @@ select {
 
   .search-box svg {
     display: none;
+  }
+
+  .choice-grid {
+    grid-template-columns: 1fr;
   }
 }

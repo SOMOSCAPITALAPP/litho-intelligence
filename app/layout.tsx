@@ -21,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Litho Intelligence
             </Link>
             <div className="nav-links" aria-label="Navigation principale">
+              <Link href="/test">Test</Link>
               <Link href="/recommendation">Recommandation</Link>
               <Link href="/combination">Combinaisons</Link>
               <Link href="/stones">Pierres</Link>
@@ -29,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <Link className="nav-cta" href="/recommendation">
               <Sparkles size={17} />
-              Test rapide
+              Recommandation
             </Link>
           </nav>
           {children}

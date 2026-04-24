@@ -51,6 +51,14 @@ export default function HomePage() {
             <input name="goal" placeholder="Ex: je suis anxieux, je manque de confiance, je veux me sentir protege..." />
             <button type="submit">Me guider</button>
           </form>
+          <div className="hero-actions">
+            <Link className="button" href="/test">
+              Faire le test rapide <ArrowRight size={16} />
+            </Link>
+            <Link className="button secondary" href="/combination">
+              Tester mes pierres
+            </Link>
+          </div>
           <div className="question-list">
             {commonQuestions.map((question) => (
               <Link key={question.label} href={question.href}>
