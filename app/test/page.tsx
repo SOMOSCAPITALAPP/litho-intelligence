@@ -71,7 +71,12 @@ export default function TestPage() {
           <p className="intention-line">{main.intention}</p>
           <p>Geste simple: {main.usage}</p>
           <div className="sos-actions">
-            <Link className="button" href={withAffiliate(main.stone.products[0].url)}>
+            <Link
+              className="button"
+              href={withAffiliate(main.stone.products[0].url)}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <ShoppingBag size={16} />
               {main.stone.products[0].price ?? "Voir bracelets"}
             </Link>

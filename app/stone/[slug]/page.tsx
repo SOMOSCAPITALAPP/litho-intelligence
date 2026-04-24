@@ -90,7 +90,13 @@ export default function StonePage({ params }: { params: { slug: string } }) {
           <h2>Acheter ou approfondir</h2>
           <div className="product-grid">
             {stone.products.map((product) => (
-              <Link className="product-card" href={withAffiliate(product.url)} key={product.label}>
+              <Link
+                className="product-card"
+                href={withAffiliate(product.url)}
+                key={product.label}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <span className="product-brand">{product.brand}</span>
                 {product.badge ? <span className="product-badge">{product.badge}</span> : null}
                 <strong>{product.label}</strong>

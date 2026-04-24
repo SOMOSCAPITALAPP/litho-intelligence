@@ -114,7 +114,12 @@ export default function SosPage() {
           <p className="intention-line">{result.intention}</p>
           <p>Geste simple: {result.usage}</p>
           <div className="sos-actions">
-            <Link className="button" href={withAffiliate(result.stone.products[0].url)}>
+            <Link
+              className="button"
+              href={withAffiliate(result.stone.products[0].url)}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <ShoppingBag size={16} />
               {result.stone.products[0].price ?? "Voir bracelets"}
             </Link>

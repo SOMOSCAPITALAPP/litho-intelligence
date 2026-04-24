@@ -84,7 +84,12 @@ export default function RecommendationPage({
               </div>
             </div>
             <div className="result-actions">
-              <Link className="button" href={withAffiliate(item.stone.products[0].url)}>
+              <Link
+                className="button"
+                href={withAffiliate(item.stone.products[0].url)}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <ShoppingBag size={16} />
                 {item.stone.products[0].price ?? "Bracelets"}
               </Link>
