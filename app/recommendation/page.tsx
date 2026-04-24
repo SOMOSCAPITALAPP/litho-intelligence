@@ -18,6 +18,7 @@ export default function RecommendationPage({
   const [goal, setGoal] = useState(searchParams.goal ?? "");
   const [results, setResults] = useState<AIStoneRecommendation[]>([]);
   const [loading, setLoading] = useState(false);
+  const [limitError, setLimitError] = useState("");
 
   const payload = useMemo(() => ({ physical, emotional, goal }), [physical, emotional, goal]);
 
@@ -32,7 +33,8 @@ export default function RecommendationPage({
       });
       const data = await response.json();
       if (active) {
-        setResults(data.stones ?? []);
+        setLimitError(response.status === 402 ? data.error : "");
+        setResults(response.ok ? data.stones ?? [] : []);
         setLoading(false);
       }
     }
@@ -88,6 +90,15 @@ export default function RecommendationPage({
 
       <div className="premium-results-shell">
         {loading ? <p className="loading-line">Lecture de votre besoin...</p> : null}
+        {limitError ? (
+          <section className="paywall-card">
+            <h2>Votre acces gratuit du jour est termine.</h2>
+            <p>{limitError}</p>
+            <Link className="button gold-button" href="/pricing">
+              Debloquer Premium
+            </Link>
+          </section>
+        ) : null}
         {results.map((item) => (
           <StoneResultCard key={item.slug} result={item} />
         ))}

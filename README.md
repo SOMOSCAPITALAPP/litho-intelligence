@@ -80,6 +80,75 @@ Puis consulter `.vercel/project.json` sans le commit.
 
 ## Prochaines integrations
 
-- Remplacer les URLs Amazon temporaires dans `lib/stones.ts` par les liens Felicidade, Vera Mentis et KDP.
-- Brancher Supabase pour `users`, `stones`, `products`, `preferences` et `history`.
-- Ajouter OpenAI dans l'API recommendation pour enrichir l'explication, en gardant le JSON et les garde-fous non medicaux.
+- Configurer les variables Vercel Supabase, Stripe et OpenAI.
+- Ajouter les vrais guides PDF premium.
+- Remplacer progressivement les visuels restants par des photos individuelles finales.
+
+## Membership Premium
+
+Le projet inclut maintenant une architecture membership:
+
+- `FREE`: compte gratuit, 3 recommandations par jour, 1 apercu combinaison, 5 favoris.
+- `PREMIUM`: 7,90 EUR/mois via Stripe Billing.
+- `ELITE`: prevu dans le code, non affiche.
+
+Routes:
+
+- `/login`
+- `/register`
+- `/account`
+- `/dashboard`
+- `/pricing`
+- `/api/stripe/create-checkout-session`
+- `/api/stripe/create-portal-session`
+- `/api/stripe/webhook`
+
+## Variables d'environnement Vercel
+
+```bash
+NEXT_PUBLIC_APP_URL=https://votre-domaine.vercel.app
+NEXT_PUBLIC_SITE_URL=https://votre-domaine.vercel.app
+
+OPENAI_API_KEY=
+OPENAI_RECOMMENDATION_MODEL=gpt-4o-mini
+
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+STRIPE_PREMIUM_PRICE_ID=
+
+NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=
+```
+
+## Supabase
+
+Executer la migration:
+
+```sql
+supabase/migrations/20260424190000_membership.sql
+```
+
+Elle cree les tables `profiles`, `subscriptions`, `usage_limits`, `favorites`, `recommendation_history`, `downloads`, `leads`, `events`, les RLS policies, le trigger profil FREE apres inscription, et la fonction `increment_usage_limit`.
+
+## Stripe
+
+Configurer un produit recurrent Premium a `7,90 EUR/mois`, puis renseigner `STRIPE_PREMIUM_PRICE_ID`.
+
+Webhook Stripe:
+
+```text
+https://votre-domaine.vercel.app/api/stripe/webhook
+```
+
+Evenements a activer:
+
+- `checkout.session.completed`
+- `customer.subscription.created`
+- `customer.subscription.updated`
+- `customer.subscription.deleted`
+- `invoice.payment_succeeded`
+- `invoice.payment_failed`

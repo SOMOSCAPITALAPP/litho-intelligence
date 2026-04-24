@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { createSupabaseAdminClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -9,29 +10,22 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const supabase = createSupabaseAdminClient();
 
-  if (!supabaseUrl || !supabaseKey) {
+  if (!supabase) {
     return NextResponse.json({ ok: true, stored: false });
   }
 
-  const response = await fetch(`${supabaseUrl}/rest/v1/leads`, {
-    method: "POST",
-    headers: {
-      apikey: supabaseKey,
-      Authorization: `Bearer ${supabaseKey}`,
-      "Content-Type": "application/json",
-      Prefer: "resolution=merge-duplicates"
-    },
-    body: JSON.stringify({
+  const { error } = await supabase.from("leads").upsert(
+    {
       email,
       source,
-      created_at: new Date().toISOString()
-    })
-  });
+      consent: true
+    },
+    { onConflict: "email" }
+  );
 
-  if (!response.ok) {
+  if (error) {
     return NextResponse.json({ error: "Supabase insert failed" }, { status: 500 });
   }
 
