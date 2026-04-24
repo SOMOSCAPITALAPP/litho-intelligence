@@ -1,4 +1,5 @@
 import { getScoreForStone, stoneMappings } from "@/lib/stoneKnowledge";
+import { recommendNativeStones } from "@/lib/nativeRecommendation";
 import { getStone } from "@/lib/stones";
 import type { AIRecommendationSource, AIStoneRecommendation } from "@/lib/openai-recommendation";
 import type { RecommendationInput } from "@/lib/recommendation";
@@ -53,6 +54,18 @@ export function getInputHash(input: RecommendationInput | string) {
 }
 
 export function getLocalMatch(input: RecommendationInput | string) {
+  const native = recommendNativeStones(input);
+  if (native.length && native[0].score >= 70) {
+    return buildRecommendationResponse(
+      native.map((item) => ({
+        stone: item.stone.name,
+        slug: item.stone.amazon_product_slug || item.stone.slug,
+        score: item.score
+      })),
+      "local"
+    );
+  }
+
   const normalized = normalizeInput(input);
   const intents = new Set<string>();
 

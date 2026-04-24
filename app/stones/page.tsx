@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, Gem } from "lucide-react";
-import { stones } from "@/lib/stones";
+import { nativeStones } from "@/lib/nativeStones";
+import { getStone } from "@/lib/stones";
 
 export const metadata = {
   title: "Pierres | Litho Intelligence",
-  description: "Catalogue des pierres, usages symboliques, compatibilités et conseils."
+  description: "Catalogue natif Litho Intelligence : pierres, usages symboliques, compatibilités et conseils."
 };
 
 export default function StonesPage() {
@@ -27,23 +28,27 @@ export default function StonesPage() {
       </div>
 
       <div className="grid">
-        {stones.map((stone) => (
-          <Link className="card catalog-card" href={`/stone/${stone.slug}`} key={stone.slug}>
-            <img className="stone-thumb" src={stone.image.url} alt={stone.image.alt} />
-            <h2>{stone.name}</h2>
-            <p>{stone.description}</p>
-            <div className="pill-row">
-              {stone.properties.slice(0, 3).map((property) => (
-                <span className="pill" key={property}>
-                  {property}
-                </span>
-              ))}
-            </div>
-            <span className="micro-action">
-              Ouvrir la fiche <ArrowRight size={15} />
-            </span>
-          </Link>
-        ))}
+        {nativeStones.map((stone) => {
+          const productStone = getStone(stone.amazon_product_slug || stone.slug);
+
+          return (
+            <Link className="card catalog-card" href={`/stones/${stone.slug}`} key={stone.slug}>
+              {productStone ? <img className="stone-thumb" src={productStone.image.url} alt={productStone.image.alt} /> : null}
+              <h2>{stone.name}</h2>
+              <p>{stone.short_description}</p>
+              <div className="pill-row">
+                {stone.intentions.slice(0, 3).map((property) => (
+                  <span className="pill" key={property}>
+                    {property}
+                  </span>
+                ))}
+              </div>
+              <span className="micro-action">
+                Ouvrir la fiche <ArrowRight size={15} />
+              </span>
+            </Link>
+          );
+        })}
       </div>
     </main>
   );

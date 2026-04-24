@@ -131,9 +131,26 @@ Executer les migrations:
 ```sql
 supabase/migrations/20260424190000_membership.sql
 supabase/migrations/20260424213000_ai_hybrid_engine.sql
+supabase/migrations/20260424235000_stone_catalog.sql
+supabase/migrations/20260425090000_native_stones.sql
 ```
 
 Elles creent les tables `profiles`, `subscriptions`, `usage_limits`, `favorites`, `recommendation_history`, `downloads`, `leads`, `events`, `ai_cache`, `ai_usage_logs`, les RLS policies, le trigger profil FREE apres inscription, et la fonction `increment_usage_limit`.
+
+## Base native des pierres
+
+La base originale Litho Intelligence est dans `data/stones.seed.json`.
+
+- 50 fiches originales, sans copie de site concurrent.
+- Ton premium, SEO, non medical.
+- Route SEO publique: `/stones/[slug]`.
+- Moteur local: `lib/nativeRecommendation.ts`, utilise par `lib/stoneRules.ts`.
+
+Importer dans Supabase apres la migration `native_stones`:
+
+```bash
+npm run import:stones
+```
 
 ## Moteur hybride IA
 

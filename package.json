@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "verify:membership": "node scripts/verify-membership.mjs"
+    "verify:membership": "node scripts/verify-membership.mjs",
+    "import:stones": "node scripts/import-stones.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
