@@ -1,3 +1,4 @@
+import { getScoreForStone, stoneMappings } from "@/lib/stoneKnowledge";
 import { getStone } from "@/lib/stones";
 import type { AIRecommendationSource, AIStoneRecommendation } from "@/lib/openai-recommendation";
 import type { RecommendationInput } from "@/lib/recommendation";
@@ -8,81 +9,29 @@ export type StoneRule = {
   score: number;
 };
 
-export const stoneRules: Record<string, StoneRule[]> = {
-  stress: [
-    { stone: "Howlite", slug: "howlite", score: 95 },
-    { stone: "Labradorite", slug: "labradorite", score: 90 },
-    { stone: "Calcédoine bleue", slug: "calcedoine-bleue", score: 88 }
-  ],
-  anxiete: [
-    { stone: "Lépidolite", slug: "lepidolite", score: 94 },
-    { stone: "Howlite", slug: "howlite", score: 90 }
-  ],
-  fatigue: [
-    { stone: "Pierre de soleil", slug: "pierre-de-soleil", score: 92 },
-    { stone: "Cornaline", slug: "cornaline", score: 90 },
-    { stone: "Cristal de roche", slug: "cristal-de-roche", score: 88 }
-  ],
-  protection: [
-    { stone: "Labradorite", slug: "labradorite", score: 96 },
-    { stone: "Obsidienne œil céleste", slug: "obsidienne-oeil-celeste", score: 93 },
-    { stone: "Œil de tigre", slug: "oeil-de-tigre", score: 90 }
-  ],
-  amour: [
-    { stone: "Quartz rose", slug: "quartz-rose", score: 97 },
-    { stone: "Rhodonite", slug: "rhodonite", score: 91 },
-    { stone: "Aventurine verte", slug: "aventurine-verte", score: 86 }
-  ],
-  confiance: [
-    { stone: "Œil de tigre", slug: "oeil-de-tigre", score: 94 },
-    { stone: "Calcite jaune", slug: "calcite-jaune", score: 89 },
-    { stone: "Pierre de soleil", slug: "pierre-de-soleil", score: 88 }
-  ],
-  argent: [
-    { stone: "Jade émeraude", slug: "jade-emeraude", score: 91 },
-    { stone: "Aventurine verte", slug: "aventurine-verte", score: 89 },
-    { stone: "Œil de tigre", slug: "oeil-de-tigre", score: 87 }
-  ],
-  sommeil: [
-    { stone: "Howlite", slug: "howlite", score: 93 },
-    { stone: "Angélite", slug: "angelite", score: 88 },
-    { stone: "Lépidolite", slug: "lepidolite", score: 87 }
-  ],
-  clarte: [
-    { stone: "Fluorite", slug: "fluorite", score: 92 },
-    { stone: "Sodalite du Brésil", slug: "sodalite-du-bresil", score: 89 },
-    { stone: "Cristal de roche", slug: "cristal-de-roche", score: 88 }
-  ]
-};
-
 const aliases: Record<string, string> = {
-  anxiété: "anxiete",
   angoisse: "anxiete",
-  énergie: "fatigue",
-  energie: "fatigue",
-  épuisement: "fatigue",
+  anxiete: "anxiete",
+  energie: "energie",
   epuisement: "fatigue",
-  peur: "protection",
-  sécurité: "protection",
-  securite: "protection",
-  relation: "amour",
-  solitude: "amour",
-  tristesse: "amour",
-  coeur: "amour",
-  cœur: "amour",
-  doute: "confiance",
-  courage: "confiance",
-  abondance: "argent",
   manque: "argent",
+  abondance: "argent",
   prosperite: "argent",
-  prospérité: "argent",
+  peur: "protection",
+  securite: "protection",
   calme: "stress",
   serenite: "stress",
-  sérénité: "stress",
-  clarté: "clarte",
-  confusion: "clarte",
+  relation: "amour",
+  coeur: "amour",
+  solitude: "amour",
+  tristesse: "amour",
+  doute: "confiance",
+  courage: "confiance",
+  focus: "clarte",
   mental: "clarte",
-  focus: "clarte"
+  confusion: "clarte",
+  meditation: "spiritualite",
+  intuition: "spiritualite"
 };
 
 export function normalizeInput(input: RecommendationInput | string) {
@@ -105,22 +54,25 @@ export function getInputHash(input: RecommendationInput | string) {
 
 export function getLocalMatch(input: RecommendationInput | string) {
   const normalized = normalizeInput(input);
-  const keys = new Set<string>();
+  const intents = new Set<string>();
 
-  Object.keys(stoneRules).forEach((key) => {
-    if (normalized.includes(key)) keys.add(key);
+  Object.keys(stoneMappings).forEach((key) => {
+    if (normalized.includes(key)) intents.add(key);
   });
 
-  Object.entries(aliases).forEach(([alias, key]) => {
-    const normalizedAlias = normalizeInput(alias);
-    if (normalized.includes(normalizedAlias)) keys.add(key);
+  Object.entries(aliases).forEach(([alias, intent]) => {
+    if (normalized.includes(normalizeInput(alias))) intents.add(intent);
   });
 
   const merged = new Map<string, StoneRule>();
-  keys.forEach((key) => {
-    stoneRules[key]?.forEach((rule) => {
-      const current = merged.get(rule.slug);
-      if (!current || rule.score > current.score) merged.set(rule.slug, rule);
+  intents.forEach((intent) => {
+    stoneMappings[intent]?.forEach((slug, index) => {
+      const stone = getStone(slug);
+      const score = Math.max(getScoreForStone(slug, intent), 90 - index * 4);
+      const current = merged.get(slug);
+      if (!current || score > current.score) {
+        merged.set(slug, { stone: stone?.name ?? slug, slug, score });
+      }
     });
   });
 
@@ -133,9 +85,9 @@ export function getLocalMatch(input: RecommendationInput | string) {
 export function getGlobalFallback() {
   return buildRecommendationResponse(
     [
-      { stone: "Cristal de roche", slug: "cristal-de-roche", score: 88 },
-      { stone: "Labradorite", slug: "labradorite", score: 84 },
-      { stone: "Quartz rose", slug: "quartz-rose", score: 82 }
+      { stone: "Quartz clair", slug: "quartz-clair", score: 88 },
+      { stone: "Améthyste", slug: "amethyste", score: 86 },
+      { stone: "Labradorite", slug: "labradorite", score: 84 }
     ],
     "fallback"
   );
@@ -144,16 +96,18 @@ export function getGlobalFallback() {
 function buildRecommendationResponse(rules: StoneRule[], source: AIRecommendationSource) {
   const recommendations: AIStoneRecommendation[] = rules.map((rule) => {
     const stone = getStone(rule.slug);
+    const name = stone?.name ?? rule.stone;
+
     return {
-      name: stone?.name ?? rule.stone,
+      name,
       slug: stone?.slug ?? rule.slug,
       score: rule.score,
-      emotional_message: buildEmotionalMessage(stone?.name ?? rule.stone),
+      emotional_message: buildEmotionalMessage(name),
       reason: stone
-        ? `${stone.name} correspond à votre besoin selon les traditions de bien-être et les usages symboliques.`
-        : `${rule.stone} est proposée comme soutien symbolique doux et accessible.`,
+        ? `${name} correspond à votre besoin selon les traditions de bien-être et les usages symboliques.`
+        : `${name} est proposée comme soutien symbolique doux et accessible.`,
       usage: stone?.usage ?? "Portez-la en bracelet ou gardez-la près de vous pendant quelques minutes.",
-      ritual: "Respirez pendant 2 minutes en gardant une intention simple et concrète.",
+      ritual: stone?.rituals[0] ?? "Respirez pendant 2 minutes en gardant une intention simple et concrète.",
       warning: "Basé sur des pratiques traditionnelles de bien-être non scientifiques."
     };
   });

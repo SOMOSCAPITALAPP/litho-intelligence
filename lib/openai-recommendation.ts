@@ -1,7 +1,8 @@
-import { createSupabaseAdminClient } from "@/lib/supabase/server";
 import { recommendStones, type RecommendationInput } from "@/lib/recommendation";
-import { stones } from "@/lib/stones";
 import { getGlobalFallback, getInputHash, getLocalMatch, normalizeInput } from "@/lib/stoneRules";
+import { stonesContext } from "@/lib/stoneKnowledge";
+import { stones } from "@/lib/stones";
+import { createSupabaseAdminClient } from "@/lib/supabase/server";
 import type { MembershipPlan } from "@/lib/plans";
 
 export type AIRecommendationSource = "local" | "cache" | "ai" | "fallback";
@@ -101,7 +102,7 @@ export async function getStoneRecommendations(
     await saveCachedResult(normalized, aiResult);
     await logAIUsage(user.id, normalized, "ai");
     return aiResult;
-  } catch (error) {
+  } catch {
     const fallback = getFallbackRecommendations(normalized, "fallback");
     await logAIUsage(user.id, normalized, "fallback", { reason: "OPENAI_ERROR" });
     return fallback;
@@ -112,17 +113,15 @@ export async function getCachedResult(input: RecommendationInput) {
   const supabase = createSupabaseAdminClient();
   if (!supabase) return null;
 
-  const inputHash = getInputHash(input);
   const { data } = await supabase
     .from("ai_cache")
     .select("response_json")
-    .eq("input_hash", inputHash)
+    .eq("input_hash", getInputHash(input))
     .maybeSingle();
 
   if (!data?.response_json) return null;
-  const cached = data.response_json as AIRecommendationResponse;
   return {
-    ...cached,
+    ...(data.response_json as AIRecommendationResponse),
     source: "cache" as const
   };
 }
@@ -145,9 +144,7 @@ export async function checkAIUsageLimit(userId: string | null | undefined, userP
   const maxDailyCalls = Number(process.env.MAX_DAILY_AI_CALLS ?? 500);
   const today = new Date().toISOString().slice(0, 10);
 
-  if (!supabase) {
-    return { allowed: false, reason: "AI_COUNTER_UNAVAILABLE" };
-  }
+  if (!supabase) return { allowed: false, reason: "AI_COUNTER_UNAVAILABLE" };
 
   const { count: globalCalls } = await supabase
     .from("ai_usage_logs")
@@ -155,13 +152,8 @@ export async function checkAIUsageLimit(userId: string | null | undefined, userP
     .eq("source", "ai")
     .gte("created_at", `${today}T00:00:00.000Z`);
 
-  if ((globalCalls ?? 0) >= maxDailyCalls) {
-    return { allowed: false, reason: "GLOBAL_AI_LIMIT_REACHED" };
-  }
-
-  if (userPlan === "premium" || userPlan === "elite" || !userId) {
-    return { allowed: true };
-  }
+  if ((globalCalls ?? 0) >= maxDailyCalls) return { allowed: false, reason: "GLOBAL_AI_LIMIT_REACHED" };
+  if (userPlan === "premium" || userPlan === "elite" || !userId) return { allowed: true };
 
   const { count: userCalls } = await supabase
     .from("ai_usage_logs")
@@ -170,26 +162,12 @@ export async function checkAIUsageLimit(userId: string | null | undefined, userP
     .eq("source", "ai")
     .gte("created_at", `${today}T00:00:00.000Z`);
 
-  if ((userCalls ?? 0) >= 1) {
-    return { allowed: false, reason: "FREE_AI_LIMIT_REACHED" };
-  }
-
+  if ((userCalls ?? 0) >= 1) return { allowed: false, reason: "FREE_AI_LIMIT_REACHED" };
   return { allowed: true };
 }
 
 export async function callOpenAI(input: RecommendationInput): Promise<AIRecommendationResponse> {
-  if (!process.env.OPENAI_API_KEY) {
-    throw new Error("OPENAI_API_KEY_MISSING");
-  }
-
-  const catalog = stones.map((stone) => ({
-    name: stone.name,
-    slug: stone.slug,
-    properties: stone.properties,
-    emotions: stone.emotions,
-    goals: stone.goals,
-    usage: stone.usage
-  }));
+  if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY_MISSING");
 
   const response = await fetch("https://api.openai.com/v1/responses", {
     method: "POST",
@@ -205,13 +183,13 @@ export async function callOpenAI(input: RecommendationInput): Promise<AIRecommen
         {
           role: "system",
           content:
-            "Tu es expert en lithothérapie. Règles: pas de médecine, pas de promesse de guérison, réponses courtes, format JSON strict. Recommande uniquement des pierres du catalogue fourni."
+            "Tu es expert en lithothérapie. Règles : pas de médecine, pas de promesse de guérison, réponses courtes, format JSON strict. Recommande uniquement des pierres du catalogue fourni."
         },
         {
           role: "user",
           content: JSON.stringify({
             input,
-            catalog,
+            stones_context: stonesContext,
             format: {
               stones: [{ name: "", score: 0, reason: "", usage: "" }]
             }
@@ -229,9 +207,7 @@ export async function callOpenAI(input: RecommendationInput): Promise<AIRecommen
     })
   });
 
-  if (!response.ok) {
-    throw new Error(`OPENAI_${response.status}`);
-  }
+  if (!response.ok) throw new Error(`OPENAI_${response.status}`);
 
   const data = await response.json();
   const rawText =
@@ -241,8 +217,7 @@ export async function callOpenAI(input: RecommendationInput): Promise<AIRecommen
       ?.find((item: { type: string }) => item.type === "output_text")?.text;
 
   if (!rawText) throw new Error("OPENAI_EMPTY_RESPONSE");
-  const parsed = JSON.parse(rawText) as OpenAIResponsePayload;
-  return sanitizeRecommendations(parsed, input, "ai");
+  return sanitizeRecommendations(JSON.parse(rawText) as OpenAIResponsePayload, input, "ai");
 }
 
 function normalizeRecommendationInput(input: RecommendationInput): RecommendationInput {
@@ -254,9 +229,8 @@ function normalizeRecommendationInput(input: RecommendationInput): Recommendatio
 }
 
 function getFallbackRecommendations(input: RecommendationInput, source: AIRecommendationSource): AIRecommendationResponse {
-  const localFallback = getGlobalFallback();
   const ranked = recommendStones(input).slice(0, 5);
-  if (!ranked.length) return { ...localFallback, source };
+  if (!ranked.length) return { ...getGlobalFallback(), source };
 
   return {
     source,
@@ -283,6 +257,7 @@ function sanitizeRecommendations(
     .map((item) => {
       const match = stones.find((stone) => normalizeInput(stone.name) === normalizeInput(item.name));
       if (!match) return null;
+
       return {
         name: match.name,
         slug: match.slug,

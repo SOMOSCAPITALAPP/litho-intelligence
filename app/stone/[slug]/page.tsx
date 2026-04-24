@@ -28,8 +28,8 @@ export default function StonePage({ params }: { params: { slug: string } }) {
           <h1>{stone.name}</h1>
           <p className="section-lead">{stone.description}</p>
           <div className="pill-row">
-            <span className="pill">Chakra: {stone.chakra}</span>
-            <span className="pill">Origine: {stone.origin}</span>
+            <span className="pill">Chakra : {stone.chakra}</span>
+            <span className="pill">Origine : {stone.origin}</span>
           </div>
         </div>
         <figure className="stone-visual">
@@ -47,7 +47,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             <p>{stone.visual}</p>
           </article>
           <article className="card">
-            <h2>Proprietes symboliques</h2>
+            <h2>Propriétés symboliques</h2>
             <ul>
               {stone.properties.map((property) => (
                 <li key={property}>{property}</li>
@@ -58,9 +58,22 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             <h2>Utilisation</h2>
             <p>{stone.usage}</p>
             <p>{stone.wear}</p>
+            <ul>
+              {stone.usageTips.map((tip) => (
+                <li key={tip}>{tip}</li>
+              ))}
+            </ul>
           </article>
           <article className="card">
-            <h2>Compatibilites</h2>
+            <h2>Rituel du jour</h2>
+            <ul>
+              {stone.rituals.map((ritual) => (
+                <li key={ritual}>{ritual}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="card">
+            <h2>Compatibilités</h2>
             <div className="pill-row">
               {stone.compatibilities.map((slug) => {
                 const match = getStone(slug);
@@ -73,16 +86,33 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             </div>
           </article>
           <article className="card">
-            <h2>Incompatibilites</h2>
+            <h2>Incompatibilités</h2>
             <p>
               {stone.incompatibilities.length > 0
                 ? stone.incompatibilities.map((slug) => getStone(slug)?.name ?? slug).join(", ")
-                : "Aucune incompatibilite notable dans cette base."}
+                : "Aucune incompatibilité notable dans cette base."}
             </p>
           </article>
           <article className="card">
             <h2>Purification</h2>
             <p>{stone.purification}</p>
+            <div className="pill-row">
+              {stone.purificationMethods.map((method) => (
+                <span className="pill" key={method}>
+                  {method}
+                </span>
+              ))}
+            </div>
+          </article>
+          <article className="card">
+            <h2>Recharge</h2>
+            <div className="pill-row">
+              {stone.recharge.map((method) => (
+                <span className="pill" key={method}>
+                  {method}
+                </span>
+              ))}
+            </div>
           </article>
         </div>
 

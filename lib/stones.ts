@@ -1,8 +1,12 @@
 ﻿export type Stone = {
+  id: string;
   slug: string;
   name: string;
+  category: string;
   visual: string;
   origin: string;
+  origins: string[];
+  colors: string[];
   description: string;
   image: {
     url: string;
@@ -12,12 +16,24 @@
   };
   properties: string[];
   chakra: string;
+  chakraList: string[];
+  elements: string[];
   emotions: string[];
+  intentions: string[];
   goals: string[];
   usage: string;
+  usageTips: string[];
+  rituals: string[];
   compatibilities: string[];
   incompatibilities: string[];
+  combinations_positive: string[];
+  combinations_negative: string[];
   purification: string;
+  purificationMethods: string[];
+  recharge: string[];
+  price_range: string;
+  seo_keywords: string[];
+  scores: Record<string, number>;
   wear: string;
   products: Product[];
 };
@@ -40,15 +56,27 @@ export type Product = {
 type StoneSeed = {
   slug: string;
   name: string;
-  productUrl: string;
+  productUrl?: string;
+  category?: string;
   properties: string[];
   emotions: string[];
   goals: string[];
   chakra: string;
+  chakraList?: string[];
+  elements?: string[];
   visual: string;
   description: string;
   origin?: string;
+  origins?: string[];
+  colors?: string[];
   usage?: string;
+  usageTips?: string[];
+  rituals?: string[];
+  purificationMethods?: string[];
+  recharge?: string[];
+  price_range?: string;
+  seo_keywords?: string[];
+  scores?: Record<string, number>;
   brand?: "Felicidade" | "Vera Mentis";
   compatibilities?: string[];
   incompatibilities?: string[];
@@ -70,24 +98,52 @@ const image = (slug: string, name: string) => ({
 });
 
 const createStone = (seed: StoneSeed): Stone => ({
+  id: seed.slug,
   slug: seed.slug,
   name: seed.name,
+  category: seed.category ?? seed.goals[0] ?? "bien-être",
   visual: seed.visual,
   origin: seed.origin ?? "Origines variables selon les gisements",
+  origins: seed.origins ?? [seed.origin ?? "Origines variables selon les gisements"],
+  colors: seed.colors ?? [],
   description: seed.description,
   image: image(seed.slug, seed.name),
   properties: seed.properties,
   chakra: seed.chakra,
+  chakraList: seed.chakraList ?? seed.chakra.split("/").map((item) => item.trim()),
+  elements: seed.elements ?? [],
   emotions: seed.emotions,
+  intentions: seed.goals,
   goals: seed.goals,
   usage:
     seed.usage ??
     `À porter en bracelet lorsque l'intention ${seed.goals[0] ?? "bien-être"} est importante dans la journée.`,
+  usageTips:
+    seed.usageTips ??
+    [
+      "Porter en bracelet pendant la journée.",
+      "Tenir la pierre quelques minutes avant une décision ou un moment sensible."
+    ],
+  rituals:
+    seed.rituals ??
+    [
+      "Respirer profondément en tenant la pierre.",
+      "Formuler une intention courte, concrète et positive."
+    ],
   compatibilities: seed.compatibilities ?? ["cristal-de-roche", "quartz-rose", "labradorite"],
   incompatibilities: seed.incompatibilities ?? [],
+  combinations_positive: seed.compatibilities ?? ["cristal-de-roche", "quartz-rose", "labradorite"],
+  combinations_negative: seed.incompatibilities ?? [],
   purification: "Fumigation douce, son ou repos sur fleur de vie. Éviter les méthodes agressives sans vérifier la dureté de la pierre.",
+  purificationMethods: seed.purificationMethods ?? ["fumigation", "son", "lune"],
+  recharge: seed.recharge ?? ["lune", "géode de quartz"],
+  price_range: seed.price_range ?? "10-30€",
+  seo_keywords:
+    seed.seo_keywords ??
+    [`${seed.name.toLowerCase()} signification`, `${seed.name.toLowerCase()} bracelet`, `pierre ${seed.goals[0] ?? "bien-être"}`],
+  scores: seed.scores ?? {},
   wear: "Bracelet au poignet selon le ressenti : main gauche pour accueillir, main droite pour agir.",
-  products: [product(seed.name, seed.productUrl, seed.brand, seed.badge)]
+  products: seed.productUrl ? [product(seed.name, seed.productUrl, seed.brand, seed.badge)] : []
 });
 
 const seeds: StoneSeed[] = [
@@ -452,6 +508,128 @@ const seeds: StoneSeed[] = [
     visual: "Orange doré, reflets lumineux et chaleureux.",
     description: "Pierre associée à la joie, au rayonnement personnel et à l'envie d'avancer.",
     badge: "Rayonnement"
+  },
+  {
+    slug: "obsidienne-noire",
+    name: "Obsidienne noire",
+    productUrl: "https://amzn.eu/d/0gmfb5rl",
+    category: "protection",
+    properties: ["protection", "ancrage", "lucidité", "limites"],
+    emotions: ["peur", "colère", "stress", "blocage"],
+    goals: ["protection", "ancrage", "clarté"],
+    chakra: "Racine",
+    visual: "Noir profond, dense, sobre et très ancré.",
+    description: "Pierre traditionnellement associée à la protection, aux limites personnelles et au retour au réel.",
+    compatibilities: ["tourmaline-noire", "jaspe-rouge", "cristal-de-roche"],
+    incompatibilities: ["quartz-rose"],
+    badge: "Protection"
+  },
+  {
+    slug: "tourmaline-noire",
+    name: "Tourmaline noire",
+    category: "protection",
+    properties: ["protection", "ancrage", "stabilité", "nettoyage symbolique"],
+    emotions: ["stress", "peur", "dispersion", "surcharge"],
+    goals: ["protection", "ancrage", "stabilité"],
+    chakra: "Racine",
+    visual: "Noir mat à strié, présence minérale très stable.",
+    description: "Pierre de protection et d'ancrage, utilisée dans les traditions pour se sentir plus stable face aux influences extérieures.",
+    compatibilities: ["obsidienne-noire", "jaspe-rouge", "quartz-clair"],
+    badge: "Ancrage protecteur"
+  },
+  {
+    slug: "citrine",
+    name: "Citrine",
+    category: "énergie",
+    properties: ["motivation", "abondance", "optimisme", "confiance"],
+    emotions: ["fatigue", "doute", "démotivation", "manque"],
+    goals: ["énergie", "argent", "réussite", "confiance"],
+    chakra: "Plexus solaire",
+    visual: "Jaune doré à miel, lumière chaude et solaire.",
+    description: "Pierre solaire associée à l'élan, à l'abondance symbolique et à la confiance dans l'action.",
+    compatibilities: ["oeil-de-tigre", "cornaline", "pyrite"],
+    badge: "Élan solaire"
+  },
+  {
+    slug: "amethyste",
+    name: "Améthyste",
+    category: "calme",
+    properties: ["calme", "spiritualité", "apaisement", "intuition"],
+    emotions: ["stress", "anxiété", "confusion", "tension"],
+    goals: ["sérénité", "sommeil", "spiritualité", "clarté"],
+    chakra: "Troisième œil / Couronne",
+    visual: "Violet translucide à profond, vibration douce et contemplative.",
+    description: "Pierre traditionnellement associée au calme intérieur, à la méditation et à la clarté spirituelle.",
+    compatibilities: ["quartz-rose", "quartz-clair", "labradorite"],
+    incompatibilities: ["cornaline"],
+    badge: "Calme profond"
+  },
+  {
+    slug: "sodalite",
+    name: "Sodalite",
+    productUrl: "https://amzn.eu/d/00ImK7Yk",
+    category: "calme",
+    properties: ["calme mental", "logique", "expression", "clarté"],
+    emotions: ["confusion", "stress", "surcharge mentale"],
+    goals: ["clarté", "focus", "communication"],
+    chakra: "Gorge / Troisième œil",
+    visual: "Bleu profond veiné de blanc, aspect posé et structuré.",
+    description: "Pierre associée à la clarté intellectuelle, au recul et à l'expression calme.",
+    badge: "Mental clair"
+  },
+  {
+    slug: "amazonite",
+    name: "Amazonite",
+    category: "équilibre",
+    properties: ["équilibre", "communication", "apaisement", "authenticité"],
+    emotions: ["stress", "frustration", "peur de dire", "tension relationnelle"],
+    goals: ["équilibre", "communication", "sérénité"],
+    chakra: "Cœur / Gorge",
+    visual: "Vert d'eau à turquoise, doux et frais.",
+    description: "Pierre d'apaisement relationnel, reliée aux traditions de parole authentique et de calme émotionnel.",
+    compatibilities: ["quartz-rose", "calcedoine-bleue", "sodalite"],
+    badge: "Parole apaisée"
+  },
+  {
+    slug: "pyrite",
+    name: "Pyrite",
+    category: "puissance",
+    properties: ["abondance", "structure", "action", "rayonnement"],
+    emotions: ["doute", "manque", "démotivation"],
+    goals: ["argent", "réussite", "confiance", "action"],
+    chakra: "Plexus solaire",
+    visual: "Doré métallique, géométrique et très lumineux.",
+    description: "Pierre symbolique de structure, de prospérité et de passage à l'action.",
+    compatibilities: ["citrine", "oeil-de-tigre", "grenat"],
+    incompatibilities: ["labradorite"],
+    badge: "Abondance"
+  },
+  {
+    slug: "malachite",
+    name: "Malachite",
+    category: "puissance",
+    properties: ["transformation", "courage", "cœur", "libération symbolique"],
+    emotions: ["peur", "frustration", "blocage", "blessure affective"],
+    goals: ["transformation", "courage", "amour", "protection"],
+    chakra: "Cœur",
+    visual: "Vert intense avec bandes concentriques hypnotiques.",
+    description: "Pierre puissante des traditions, associée aux changements profonds et au courage émotionnel.",
+    compatibilities: ["quartz-rose", "rhodonite", "tourmaline-noire"],
+    badge: "Transformation"
+  },
+  {
+    slug: "quartz-clair",
+    name: "Quartz clair",
+    productUrl: "https://amzn.eu/d/05I8kdHa",
+    category: "équilibre",
+    properties: ["clarté", "amplification", "neutralité", "harmonie"],
+    emotions: ["confusion", "fatigue", "dispersion"],
+    goals: ["clarté", "énergie", "spiritualité", "équilibre"],
+    chakra: "Tous chakras",
+    visual: "Transparent à blanc, éclat clair, pur et minimal.",
+    description: "Pierre polyvalente utilisée pour clarifier une intention et amplifier symboliquement une pratique de bien-être.",
+    compatibilities: ["amethyste", "quartz-rose", "labradorite"],
+    badge: "Clarté"
   }
 ];
 
