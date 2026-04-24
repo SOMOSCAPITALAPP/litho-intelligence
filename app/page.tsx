@@ -52,6 +52,9 @@ export default function HomePage() {
             <button type="submit">Me guider</button>
           </form>
           <div className="hero-actions">
+            <Link className="button" href="/sos">
+              Besoin d'aide maintenant <ArrowRight size={16} />
+            </Link>
             <Link className="button" href="/test">
               Faire le test rapide <ArrowRight size={16} />
             </Link>

@@ -360,6 +360,10 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.choice-grid.two-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .choice {
   background: rgba(255, 255, 255, 0.58);
   border: 1px solid var(--line);
@@ -400,6 +404,72 @@ select {
 .large-score {
   font-size: 20px;
   width: 92px;
+}
+
+.sos-page .guided-layout {
+  margin-top: 18px;
+}
+
+.sos-header {
+  max-width: 960px;
+}
+
+.breath-card {
+  align-items: flex-start;
+  background: #f7e7e1;
+  border: 1px solid #e5c8bf;
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+}
+
+.breath-card p {
+  color: #72595b;
+  line-height: 1.55;
+  margin: 6px 0 0;
+}
+
+.sos-steps {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sos-steps div {
+  background: rgba(255, 255, 255, 0.54);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.sos-steps span {
+  align-items: center;
+  background: var(--accent-strong);
+  border-radius: 999px;
+  color: white;
+  display: inline-flex;
+  font-weight: 800;
+  height: 26px;
+  justify-content: center;
+  width: 26px;
+}
+
+.sos-steps p {
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 10px 0 0;
+}
+
+.sos-result {
+  border-color: #d8b4aa;
+}
+
+.sos-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 .intention-line {
@@ -597,6 +667,11 @@ select {
   }
 
   .choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-grid.two-columns,
+  .sos-steps {
     grid-template-columns: 1fr;
   }
 }
