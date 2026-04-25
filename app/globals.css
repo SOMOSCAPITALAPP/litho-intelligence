@@ -898,6 +898,11 @@ button {
   color: #ffb7b7;
 }
 
+.light-error {
+  color: var(--accent-strong);
+  margin: 0;
+}
+
 .pricing-grid,
 .dashboard-grid {
   display: grid;

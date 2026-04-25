@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Search } from "lucide-react";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { StoneResultCard } from "@/components/StoneResultCard";
@@ -15,44 +15,91 @@ const sourceLabels: Record<AIRecommendationSource, string> = {
   fallback: "Résultat sécurisé"
 };
 
+type RecommendationPayload = {
+  physical: string;
+  emotional: string;
+  goal: string;
+};
+
 export default function RecommendationPage({
   searchParams
 }: {
   searchParams: { physical?: string; emotional?: string; goal?: string };
 }) {
-  const [physical, setPhysical] = useState(searchParams.physical ?? "");
-  const [emotional, setEmotional] = useState(searchParams.emotional ?? "");
-  const [goal, setGoal] = useState(searchParams.goal ?? "");
+  const initialPayload = {
+    physical: searchParams.physical ?? "",
+    emotional: searchParams.emotional ?? "",
+    goal: searchParams.goal ?? ""
+  };
+
+  const [physical, setPhysical] = useState(initialPayload.physical);
+  const [emotional, setEmotional] = useState(initialPayload.emotional);
+  const [goal, setGoal] = useState(initialPayload.goal);
   const [results, setResults] = useState<AIStoneRecommendation[]>([]);
   const [source, setSource] = useState<AIRecommendationSource | null>(null);
   const [loading, setLoading] = useState(false);
   const [limitError, setLimitError] = useState("");
+  const [formError, setFormError] = useState("");
 
-  const payload = useMemo(() => ({ physical, emotional, goal }), [physical, emotional, goal]);
+  async function loadRecommendations(payload: RecommendationPayload) {
+    const hasInput = Boolean(payload.physical.trim() || payload.emotional.trim() || payload.goal.trim());
 
-  useEffect(() => {
-    let active = true;
-    async function load() {
-      setLoading(true);
+    if (!hasInput) {
+      setFormError("Indiquez au moins un ressenti, une sensation ou une intention.");
+      setResults([]);
+      setSource(null);
+      return;
+    }
+
+    setLoading(true);
+    setLimitError("");
+    setFormError("");
+
+    try {
       const response = await fetch("/api/recommendation/ai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
       const data = await response.json();
-      if (active) {
-        setLimitError(response.status === 402 ? data.error : "");
-        setResults(response.ok ? data.stones ?? [] : []);
-        setSource(response.ok ? data.source ?? null : null);
-        setLoading(false);
-      }
-    }
 
-    load();
-    return () => {
-      active = false;
-    };
-  }, [payload]);
+      if (response.status === 402) {
+        setLimitError(data.error ?? "Votre accès gratuit du jour est terminé.");
+        setResults([]);
+        setSource(null);
+        return;
+      }
+
+      if (!response.ok) {
+        setFormError("La recommandation n'a pas pu être générée. Réessayez dans quelques secondes.");
+        setResults([]);
+        setSource(null);
+        return;
+      }
+
+      setResults(data.stones ?? []);
+      setSource(data.source ?? null);
+    } catch {
+      setFormError("Connexion momentanément impossible. Réessayez dans quelques secondes.");
+      setResults([]);
+      setSource(null);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    void loadRecommendations({ physical, emotional, goal });
+  }
+
+  useEffect(() => {
+    if (initialPayload.physical || initialPayload.emotional || initialPayload.goal) {
+      void loadRecommendations(initialPayload);
+    }
+    // Chargement initial uniquement pour les liens rapides de la page d'accueil.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <main className="section">
@@ -62,7 +109,7 @@ export default function RecommendationPage({
         en sélection de pierres, avec une intention claire et un geste simple pour aujourd'hui.
       </p>
 
-      <form className="form-panel">
+      <form className="form-panel" onSubmit={submit}>
         <div className="field">
           <label htmlFor="physical">Ce que le corps raconte</label>
           <input
@@ -90,10 +137,11 @@ export default function RecommendationPage({
             onChange={(event) => setGoal(event.target.value)}
           />
         </div>
-        <span className="button">
+        <button className="button" disabled={loading} type="submit">
           <Search size={17} />
-          Recevoir mon soutien
-        </span>
+          {loading ? "Analyse en cours..." : "Conseil personnalisé"}
+        </button>
+        {formError ? <p className="form-error light-error">{formError}</p> : null}
         <p className="fineprint">{wellbeingDisclaimer}</p>
       </form>
 
