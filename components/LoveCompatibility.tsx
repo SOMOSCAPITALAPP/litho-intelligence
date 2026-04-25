@@ -7,6 +7,7 @@ import { getLoveCompatibility } from "@/lib/getLoveCompatibility";
 import { getStone } from "@/lib/stones";
 import { withAffiliate } from "@/lib/affiliate";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
+import { stoneWithDefiniteArticle } from "@/lib/french";
 
 const contexts = ["couple", "rencontre", "relation compliquée", "attirance", "réconciliation"];
 
@@ -22,7 +23,7 @@ export function LoveCompatibility() {
 
   function shareResult() {
     if (!result) return;
-    const text = `${result.title}. Pierre d’harmonisation : ${result.harmonizer.name}.`;
+    const text = `${result.title}. Pierre d’harmonisation : ${stoneWithDefiniteArticle(result.harmonizer.name)}.`;
     if (navigator.share) navigator.share({ title: "Compatibilité amoureuse par les pierres", text, url: window.location.href });
     else navigator.clipboard.writeText(text);
   }
@@ -66,11 +67,11 @@ export function LoveCompatibility() {
               <Heart size={16} />
               Pierre de votre couple
             </p>
-            <h2>{result.harmonizer.name}</h2>
+            <h2>{stoneWithDefiniteArticle(result.harmonizer.name)}</h2>
             <p>{result.reading}</p>
             <div className="pill-row">
-              <span className="pill">{result.birthstoneA.monthName} : {result.birthstoneA.mainStone}</span>
-              <span className="pill">{result.birthstoneB.monthName} : {result.birthstoneB.mainStone}</span>
+              <span className="pill">{result.birthstoneA.monthName} : {stoneWithDefiniteArticle(result.birthstoneA.mainStone)}</span>
+              <span className="pill">{result.birthstoneB.monthName} : {stoneWithDefiniteArticle(result.birthstoneB.mainStone)}</span>
             </div>
             <h3>Points forts</h3>
             <ul>{result.strengths.map((item) => <li key={item}>{item}</li>)}</ul>

@@ -34,12 +34,12 @@ export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
           {product ? (
             <Link className="button gold-button" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">
               <ShoppingBag size={16} />
-              Voir le bracelet associé
+              Voir le bracelet recommandé
             </Link>
           ) : null}
           {stone ? (
             <Link className="button ghost-dark" href={`/stone/${stone.slug}`}>
-              Fiche pierre <ArrowRight size={16} />
+              Comprendre cette pierre <ArrowRight size={16} />
             </Link>
           ) : null}
         </div>

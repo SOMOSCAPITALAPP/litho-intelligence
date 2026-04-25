@@ -7,6 +7,7 @@ import { getBirthstone } from "@/lib/getBirthstone";
 import { getMeditationSuggestion } from "@/lib/getMeditationSuggestion";
 import { getStone } from "@/lib/stones";
 import { withAffiliate } from "@/lib/affiliate";
+import { stoneWithDefiniteArticle } from "@/lib/french";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
 
 const intentions = ["amour", "protection", "calme", "confiance", "abondance", "énergie", "intuition", "cadeau"];
@@ -22,7 +23,7 @@ export function BirthstoneFinder() {
 
   function shareResult() {
     if (!result) return;
-    const text = `${firstName || "Ma"} pierre de naissance : ${result.mainStone}. Alternative accessible : ${result.alternativeStone}.`;
+    const text = `${firstName || "Ma"} pierre de naissance : ${stoneWithDefiniteArticle(result.mainStone)}. Alternative accessible : ${stoneWithDefiniteArticle(result.alternativeStone)}.`;
     if (navigator.share) navigator.share({ title: "Pierre de naissance", text, url: window.location.href });
     else navigator.clipboard.writeText(text);
   }
@@ -56,15 +57,19 @@ export function BirthstoneFinder() {
         {result ? (
           <>
             <p className="result-kicker">{result.monthName}</p>
-            <h2>{firstName ? `${firstName}, ta pierre est ${result.mainStone}` : `Votre pierre est ${result.mainStone}`}</h2>
+            <h2>
+              {firstName
+                ? `${firstName}, ta pierre est ${stoneWithDefiniteArticle(result.mainStone)}`
+                : `Votre pierre est ${stoneWithDefiniteArticle(result.mainStone)}`}
+            </h2>
             <p>{result.giftAngle}.</p>
             <div className="pill-row">
-              <span className="pill">Alternative : {result.alternativeStone}</span>
+              <span className="pill">Alternative : {stoneWithDefiniteArticle(result.alternativeStone)}</span>
               <span className="pill">Émotion : {result.emotion}</span>
               <span className="pill">Intention : {intention || result.themes[0]}</span>
             </div>
             <p className="intention-line">
-              {result.mainStone} symbolise {result.themes.join(", ")} selon les traditions de lithothérapie.
+              {stoneWithDefiniteArticle(result.mainStone)} symbolise {result.themes.join(", ")} selon les traditions de lithothérapie.
             </p>
             <p>Suggestion : {result.productTypes.join(", ")}.</p>
             <div className="sos-actions">

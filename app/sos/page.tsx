@@ -13,21 +13,21 @@ const states = [
     emotional: "stress anxiété",
     goal: "sérénité",
     physical: "sommeil",
-    anchor: "Pose une main sur le cœur. Inspire lentement, puis expire plus longtemps que tu n'inspires."
+    anchor: "Pose une main sur le cœur. Inspire lentement, puis expire plus longtemps que tu n’inspires."
   },
   {
     label: "Je me sens vide",
     emotional: "solitude tristesse",
     goal: "amour",
     physical: "fatigue",
-    anchor: "Dis-toi une phrase simple : je n'ai pas besoin de tout porter maintenant."
+    anchor: "Dis-toi une phrase simple : je n’ai pas besoin de tout porter maintenant."
   },
   {
-    label: "J'ai peur de manquer",
+    label: "J’ai peur de manquer",
     emotional: "peur doute",
     goal: "argent confiance",
     physical: "tension",
-    anchor: "Reviens à une action concrète possible aujourd'hui, même minuscule."
+    anchor: "Reviens à une action concrète possible aujourd’hui, même minuscule."
   },
   {
     label: "Je me sens attaqué",
@@ -56,7 +56,7 @@ export default function SosPage() {
         <p className="eyebrow">Mode soutien immédiat</p>
         <h1>Respirez. Nommez ce qui se passe. Repartez avec un geste simple.</h1>
         <p className="section-lead">
-          Cet espace aide l'utilisateur à ralentir, mettre des mots sur son état et choisir un soutien symbolique
+          Cet espace aide l’utilisateur à ralentir, mettre des mots sur son état et choisir un soutien symbolique
           sans se sentir jugé ni perdu.
         </p>
       </div>
@@ -92,7 +92,7 @@ export default function SosPage() {
             </div>
             <div>
               <span>2</span>
-              <p>Respirer : ralentir l'expiration.</p>
+              <p>Respirer : ralentir l’expiration.</p>
             </div>
             <div>
               <span>3</span>
@@ -105,7 +105,7 @@ export default function SosPage() {
         <aside className="card guidance-result sos-result">
           <div className="result-kicker">
             <HeartHandshake size={19} />
-            Soutien proposé
+            Conseil proposé
           </div>
           <h2>{result.stone.name}</h2>
           <img className="featured-stone-image" src={result.stone.image.url} alt={result.stone.image.alt} />
@@ -115,16 +115,16 @@ export default function SosPage() {
           <p>Geste simple : {result.usage}</p>
           <div className="sos-actions">
             <Link
-              className="button"
+              className="button gold-button"
               href={withAffiliate(result.stone.products[0].url)}
               rel="noopener noreferrer"
               target="_blank"
             >
               <ShoppingBag size={16} />
-              {result.stone.products[0].price ?? "Voir les bracelets"}
+              Voir le bracelet recommandé
             </Link>
             <Link className="button secondary" href={`/stone/${result.stone.slug}`}>
-              Voir la pierre <ArrowRight size={16} />
+              Comprendre cette pierre <ArrowRight size={16} />
             </Link>
           </div>
         </aside>
@@ -140,7 +140,7 @@ export default function SosPage() {
           <article className="card">
             <Sparkles size={22} />
             <h2>Conversion douce</h2>
-            <p>La fiche pierre arrive après l'apaisement, au moment où l'utilisateur comprend pourquoi elle lui est proposée.</p>
+            <p>La fiche pierre arrive après l’apaisement, au moment où l’utilisateur comprend pourquoi elle lui est proposée.</p>
           </article>
         </div>
       </section>

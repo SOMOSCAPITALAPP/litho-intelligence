@@ -71,7 +71,7 @@ export default function RecommendationPage({
       }
 
       if (!response.ok) {
-        setFormError("La recommandation n'a pas pu être générée. Réessayez dans quelques secondes.");
+        setFormError("La recommandation n’a pas pu être générée. Réessayez dans quelques secondes.");
         setResults([]);
         setSource(null);
         return;
@@ -97,16 +97,16 @@ export default function RecommendationPage({
     if (initialPayload.physical || initialPayload.emotional || initialPayload.goal) {
       void loadRecommendations(initialPayload);
     }
-    // Chargement initial uniquement pour les liens rapides de la page d'accueil.
+    // Chargement initial uniquement pour les liens rapides de la page d’accueil.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <main className="section">
-      <h1>Recommandation personnalisée</h1>
+      <h1>Conseil personnalisé</h1>
       <p className="section-lead">
-        Décrivez ce qui pèse, ce qui manque ou ce que vous voulez retrouver. Le moteur transforme ce ressenti
-        en sélection de pierres, avec une intention claire et un geste simple pour aujourd'hui.
+        Décrivez ce qui pèse, ce qui manque ou ce que vous voulez retrouver. Litho Intelligence transforme ce ressenti
+        en sélection de pierres, avec une intention claire et un geste simple pour aujourd’hui.
       </p>
 
       <form className="form-panel" onSubmit={submit}>
@@ -120,7 +120,7 @@ export default function RecommendationPage({
           />
         </div>
         <div className="field">
-          <label htmlFor="emotional">Ce qui se passe à l'intérieur</label>
+          <label htmlFor="emotional">Ce qui se passe à l’intérieur</label>
           <input
             id="emotional"
             placeholder="stress, peur, colère, tristesse, doute..."
@@ -137,9 +137,9 @@ export default function RecommendationPage({
             onChange={(event) => setGoal(event.target.value)}
           />
         </div>
-        <button className="button" disabled={loading} type="submit">
+        <button className="button gold-button" disabled={loading} type="submit">
           <Search size={17} />
-          {loading ? "Analyse en cours..." : "Conseil personnalisé"}
+          {loading ? "Analyse en cours..." : "Obtenir mon conseil personnalisé"}
         </button>
         {formError ? <p className="form-error light-error">{formError}</p> : null}
         <p className="fineprint">{wellbeingDisclaimer}</p>

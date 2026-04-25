@@ -61,7 +61,7 @@ export function GiftStoneFinder() {
         {result ? (
           <>
             <p className="result-kicker">Idée cadeau personnalisée</p>
-            <h2>{result.birthstone.alternativeStone} ou {result.birthstone.mainStone}</h2>
+            <h2>{result.title}</h2>
             <p>{result.emotionalText}</p>
             <p className="intention-line">{result.copyMessage}</p>
             <p>Bijou recommandé : {result.recommendedJewelry}.</p>
@@ -82,7 +82,7 @@ export function GiftStoneFinder() {
             </div>
           </>
         ) : (
-          <p>Indiquez une date pour générer une idée cadeau émotionnelle et monétisable.</p>
+          <p>Indiquez une date pour générer une idée cadeau émotionnelle et personnalisée.</p>
         )}
       </aside>
 

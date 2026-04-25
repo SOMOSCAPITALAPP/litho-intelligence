@@ -1,39 +1,39 @@
 import Link from "next/link";
-import { ArrowRight, Brain, Heart, Moon, Search, Shield, UserCircle, Wallet } from "lucide-react";
+import { ArrowRight, Brain, Heart, Moon, Search, Shield, UserCircle, Wallet, Zap } from "lucide-react";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { stones } from "@/lib/stones";
 
 const quickLinks = [
-  { label: "Stressé", detail: "Apaiser le mental", href: "/recommendation?emotional=stress&goal=serenite", icon: Moon },
-  { label: "Fatigué", detail: "Retrouver de l'élan", href: "/recommendation?physical=fatigue&goal=energie", icon: Shield },
-  { label: "Manque d'énergie", detail: "Relancer l'action", href: "/recommendation?physical=fatigue&goal=confiance", icon: Wallet },
-  { label: "Besoin d'amour", detail: "Soutenir le cœur", href: "/recommendation?emotional=solitude&goal=amour", icon: Heart },
+  { label: "Stressé", detail: "Retrouver du calme", href: "/recommendation?emotional=stress&goal=serenite", icon: Moon },
+  { label: "Fatigué", detail: "Récupérer de l’élan", href: "/recommendation?physical=fatigue&goal=energie", icon: Zap },
+  { label: "Manque d’énergie", detail: "Relancer l’action", href: "/recommendation?physical=fatigue&goal=confiance", icon: Wallet },
+  { label: "Besoin d’amour", detail: "Adoucir le cœur", href: "/recommendation?emotional=solitude&goal=amour", icon: Heart },
   { label: "Protection", detail: "Poser des limites", href: "/recommendation?emotional=peur&goal=protection", icon: Shield }
 ];
 
 const commonQuestions = [
-  { label: "Pierre pour stress", href: "/intention/stress" },
-  { label: "Pierre pour argent", href: "/intention/argent" },
-  { label: "Pierre pour amour", href: "/intention/amour" },
-  { label: "Pierre pour confiance", href: "/intention/confiance" },
-  { label: "Je porte déjà des pierres : est-ce cohérent ?", href: "/combination" },
-  { label: "Je veux offrir un soutien symbolique", href: "/recommendation?goal=amour" }
+  { label: "Pierre pour le stress", href: "/intention/stress" },
+  { label: "Pierre pour l’argent", href: "/intention/argent" },
+  { label: "Pierre pour l’amour", href: "/intention/amour" },
+  { label: "Pierre pour la confiance", href: "/intention/confiance" },
+  { label: "Mes pierres sont-elles compatibles ?", href: "/combination" },
+  { label: "Trouver une idée cadeau", href: "/idee-cadeau" }
 ];
 
 const emotionalPaths = [
   {
     title: "Je me sens perdu",
-    text: "Quand tout semble flou, commence par une pierre qui ramène de la clarté et une intention simple.",
+    text: "Quand tout semble flou, commence par une pierre associée à la clarté et à une intention simple.",
     href: "/recommendation?emotional=confusion&goal=clarte"
   },
   {
     title: "Je me sens seul",
-    text: "Quand le cœur manque de chaleur, choisis un soutien symbolique centré sur la douceur et l'amour de soi.",
+    text: "Quand le cœur manque de chaleur, choisis un soutien symbolique centré sur la douceur et l’amour de soi.",
     href: "/recommendation?emotional=solitude&goal=amour"
   },
   {
-    title: "Je n'ose pas agir",
-    text: "Quand la peur bloque le mouvement, cherche une pierre associée au courage, à l'ancrage et à la décision.",
+    title: "Je n’ose pas agir",
+    text: "Quand la peur bloque le mouvement, cherche une pierre associée au courage, à l’ancrage et à la décision.",
     href: "/recommendation?emotional=peur&goal=confiance"
   }
 ];
@@ -46,27 +46,27 @@ export default function HomePage() {
           <p className="eyebrow">Lithothérapie traditionnelle, recommandation intelligente</p>
           <h1>Comment te sens-tu aujourd’hui ?</h1>
           <p>
-            En un clic, obtenez une recommandation de pierres, un rituel simple et le bracelet associé
+            En un clic, obtenez un conseil personnalisé, un rituel simple et le bracelet associé
             Felicidade ou Vera Mentis.
           </p>
           <form className="search-box" action="/recommendation">
             <Search size={20} />
-            <input name="goal" placeholder="Ex: stress, amour, protection, argent, confiance..." />
-            <button type="submit">Me guider</button>
+            <input name="goal" placeholder="Ex : stress, amour, protection, argent, confiance..." />
+            <button type="submit">Obtenir mon conseil</button>
           </form>
           <div className="hero-actions">
-            <Link className="button" href="/sos">
-              Besoin d'aide maintenant <ArrowRight size={16} />
+            <Link className="button gold-button" href="/sos">
+              Besoin d’un conseil maintenant <ArrowRight size={16} />
             </Link>
             <Link className="button" href="/test">
               Faire le test rapide <ArrowRight size={16} />
             </Link>
-            <Link className="button gold-button" href="/dashboard">
+            <Link className="button secondary" href="/pierre-de-naissance">
+              Découvrir ma pierre de naissance
+            </Link>
+            <Link className="button secondary" href="/dashboard">
               <UserCircle size={16} />
               Espace membre
-            </Link>
-            <Link className="button secondary" href="/combination">
-              Tester mes pierres
             </Link>
           </div>
           <div className="question-list">
@@ -98,8 +98,8 @@ export default function HomePage() {
       <section className="answer-band">
         <div>
           <Brain size={24} />
-          <strong>La promesse d'usage</strong>
-          <span>Une réponse rassurante, une intention claire, 3 à 5 pierres et un geste simple à faire aujourd’hui.</span>
+          <strong>Une réponse claire, pas un discours compliqué</strong>
+          <span>3 à 5 pierres, une raison simple, un geste à faire aujourd’hui et un accès direct au bracelet recommandé.</span>
         </div>
       </section>
 
@@ -128,22 +128,22 @@ export default function HomePage() {
         </p>
         <div className="grid">
           <Link className="card emotional-card" href="/intention/stress">
-            <h3>Pierre pour stress</h3>
+            <h3>Pierre pour le stress</h3>
             <p>Améthyste, lépidolite, howlite, quartz rose : choisir une pierre associée au calme et au recentrage.</p>
             <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
           </Link>
           <Link className="card emotional-card" href="/intention/argent">
-            <h3>Pierre pour argent</h3>
+            <h3>Pierre pour l’argent</h3>
             <p>Citrine, pyrite, aventurine verte : travailler symboliquement l’abondance, la confiance et l’action.</p>
             <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
           </Link>
           <Link className="card emotional-card" href="/intention/amour">
-            <h3>Pierre pour amour</h3>
+            <h3>Pierre pour l’amour</h3>
             <p>Quartz rose, rhodonite, pierre de lune : soutenir une intention de douceur, de lien et d’ouverture du cœur.</p>
             <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
           </Link>
           <Link className="card emotional-card" href="/intention/confiance">
-            <h3>Pierre pour confiance</h3>
+            <h3>Pierre pour la confiance</h3>
             <p>Œil de tigre, citrine, cornaline : symboliser le courage, l’affirmation et la sécurité intérieure.</p>
             <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
           </Link>
@@ -153,8 +153,8 @@ export default function HomePage() {
       <section className="section compact-section">
         <h2>Commencer par ce que vous ressentez</h2>
         <p className="section-lead">
-          L'utilisateur n'a pas besoin de connaître les pierres. Il part de sa tension intérieure,
-          puis l'application traduit ce ressenti en choix simple.
+          L’utilisateur n’a pas besoin de connaître les pierres. Il part de sa tension intérieure,
+          puis l’application traduit ce ressenti en choix simple.
         </p>
         <div className="grid">
           {emotionalPaths.map((path) => (
@@ -162,7 +162,7 @@ export default function HomePage() {
               <h3>{path.title}</h3>
               <p>{path.text}</p>
               <span className="micro-action">
-                Voir mon soutien <ArrowRight size={15} />
+                Obtenir mon conseil <ArrowRight size={15} />
               </span>
             </Link>
           ))}
@@ -172,8 +172,8 @@ export default function HomePage() {
       <section className="section">
         <h2>Accès direct aux pierres</h2>
         <p className="section-lead">
-          Pour ceux qui savent déjà ce qu'ils cherchent : fiche claire, compatibilités, purification,
-          port recommandé et lien d'achat.
+          Pour ceux qui savent déjà ce qu’ils cherchent : fiche claire, compatibilités, purification,
+          port recommandé et lien d’achat.
         </p>
         <div className="grid">
           {stones.slice(0, 6).map((stone) => (
