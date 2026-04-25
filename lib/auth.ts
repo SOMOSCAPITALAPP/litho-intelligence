@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { ensureProfile } from "@/lib/profile";
 import type { MembershipPlan } from "@/lib/plans";
 
 export type UserProfile = {
@@ -22,7 +23,7 @@ export async function getCurrentUser() {
   if (!user) return { user: null, profile: null };
 
   const { data: profile } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
-  return { user, profile: profile as UserProfile | null };
+  return { user, profile: (profile as UserProfile | null) ?? (await ensureProfile(user)) };
 }
 
 export async function requireUser() {

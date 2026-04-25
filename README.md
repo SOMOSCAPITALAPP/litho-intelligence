@@ -145,11 +145,25 @@ La base originale Litho Intelligence est dans `data/stones.seed.json`.
 - Ton premium, SEO, non medical.
 - Route SEO publique: `/stones/[slug]`.
 - Moteur local: `lib/nativeRecommendation.ts`, utilise par `lib/stoneRules.ts`.
+- Produits Amazon: `data/products.seed.json`.
 
-Importer dans Supabase apres la migration `native_stones`:
+Importer uniquement les pierres natives:
 
 ```bash
 npm run import:stones
+```
+
+Importer le catalogue complet dans Supabase (`native_stones`, `stones`, `products`):
+
+```bash
+npm run import:catalog
+```
+
+Verifier la configuration production:
+
+```text
+/system
+/api/system/status
 ```
 
 ## Moteur hybride IA
@@ -162,6 +176,13 @@ Le moteur de recommandation suit cet ordre pour limiter les couts:
 - fallback global: si OpenAI est indisponible, si Supabase ne peut pas compter les appels, ou si `MAX_DAILY_AI_CALLS` est atteint
 
 Les appels sont journalises dans `ai_usage_logs` avec `source` = `local`, `cache`, `ai` ou `fallback`.
+
+Pour rendre l'IA active en production:
+
+1. Ajouter `OPENAI_API_KEY` dans Vercel.
+2. Garder `MAX_DAILY_AI_CALLS=500` ou plus bas pour securiser les couts.
+3. Verifier `/api/system/status`.
+4. Tester `/recommendation` avec une demande qui ne matche pas le moteur local, afin de declencher le fallback IA.
 
 ## Stripe
 

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
 import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
 import { trackEvent } from "@/lib/analytics";
+import { ensureProfile } from "@/lib/profile";
 
 export async function POST() {
   const stripe = getStripe();
@@ -22,7 +23,10 @@ export async function POST() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { data: profile } = await admin.from("profiles").select("*").eq("id", user.id).maybeSingle();
+  const ensuredProfile = await ensureProfile(user);
+  const { data: profile } = ensuredProfile
+    ? { data: ensuredProfile }
+    : await admin.from("profiles").select("*").eq("id", user.id).maybeSingle();
   let customerId = profile?.stripe_customer_id as string | undefined;
 
   if (!customerId) {

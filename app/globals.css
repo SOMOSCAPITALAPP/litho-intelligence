@@ -1058,6 +1058,24 @@ button {
   padding: 7px 10px;
 }
 
+.status-ok,
+.status-warn {
+  border-radius: 999px;
+  display: inline-flex;
+  font-weight: 800;
+  padding: 7px 10px;
+}
+
+.status-ok {
+  background: #e3f1ef;
+  color: #276257;
+}
+
+.status-warn {
+  background: #fbebdf;
+  color: #8b4656;
+}
+
 .footer {
   border-top: 1px solid var(--line);
   color: var(--muted);

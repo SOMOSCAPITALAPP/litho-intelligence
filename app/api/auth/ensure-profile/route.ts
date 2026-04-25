@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
+import { ensureProfile } from "@/lib/profile";
 
 export async function POST(request: Request) {
   const supabase = createSupabaseServerClient();
@@ -19,22 +20,10 @@ export async function POST(request: Request) {
 
   const body = await request.json().catch(() => ({}));
 
-  const { data: existing } = await admin.from("profiles").select("id").eq("id", user.id).maybeSingle();
-  const profilePayload = {
-    email: user.email,
+  await ensureProfile(user, {
     full_name: body.fullName ?? user.user_metadata?.full_name ?? null,
     newsletter_opt_in: Boolean(body.newsletterOptIn ?? user.user_metadata?.newsletter_opt_in ?? false)
-  };
-
-  if (existing) {
-    await admin.from("profiles").update(profilePayload).eq("id", user.id);
-  } else {
-    await admin.from("profiles").insert({
-      id: user.id,
-      ...profilePayload,
-      plan: "free"
-    });
-  }
+  });
 
   return NextResponse.json({ ok: true, mode: "supabase" });
 }

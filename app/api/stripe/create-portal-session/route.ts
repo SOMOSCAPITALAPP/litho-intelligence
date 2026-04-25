@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
 import { createSupabaseServerClient, createSupabaseAdminClient } from "@/lib/supabase/server";
+import { ensureProfile } from "@/lib/profile";
 
 export async function POST() {
   const stripe = getStripe();
@@ -18,7 +19,10 @@ export async function POST() {
 
   if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const { data: profile } = await admin.from("profiles").select("stripe_customer_id").eq("id", user.id).maybeSingle();
+  const ensuredProfile = await ensureProfile(user);
+  const { data: profile } = ensuredProfile
+    ? { data: ensuredProfile }
+    : await admin.from("profiles").select("stripe_customer_id").eq("id", user.id).maybeSingle();
   if (!profile?.stripe_customer_id) return NextResponse.json({ error: "No Stripe customer" }, { status: 400 });
 
   const session = await stripe.billingPortal.sessions.create({
