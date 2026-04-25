@@ -49,7 +49,6 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
         </div>
         <figure className="stone-visual">
           <img src={image.url} alt={image.alt} />
-          <figcaption>Visuel produit Litho Intelligence</figcaption>
         </figure>
       </section>
 

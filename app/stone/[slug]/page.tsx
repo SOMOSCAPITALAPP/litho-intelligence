@@ -37,9 +37,6 @@ export default function StonePage({ params }: { params: { slug: string } }) {
         </div>
         <figure className="stone-visual">
           <img src={stone.image.url} alt={stone.image.alt} />
-          <figcaption>
-            Photo : <Link href={stone.image.sourceUrl}>{stone.image.credit}</Link>
-          </figcaption>
         </figure>
       </section>
 

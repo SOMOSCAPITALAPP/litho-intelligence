@@ -1158,17 +1158,6 @@ button {
   height: 360px;
 }
 
-.stone-visual figcaption {
-  background: rgba(36, 27, 29, 0.76);
-  bottom: 0;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 12px;
-  left: 0;
-  padding: 8px 10px;
-  position: absolute;
-  right: 0;
-}
-
 .featured-stone-image {
   border-radius: 8px;
   height: 210px;
