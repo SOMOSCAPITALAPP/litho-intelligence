@@ -5,7 +5,6 @@ import { CheckoutButton } from "@/components/CheckoutButton";
 import { LocalMemberDashboard } from "@/components/LocalMemberDashboard";
 import { getCurrentUser, isPremium } from "@/lib/auth";
 import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
-import { checkUsageLimit } from "@/lib/usage";
 import { getStone, stones } from "@/lib/stones";
 
 export const metadata = { title: "Espace membre | Litho Intelligence" };
@@ -13,6 +12,7 @@ export const dynamic = "force-dynamic";
 
 type FavoriteRow = { id: string; stone_slug: string };
 type HistoryRow = { id: string; created_at: string; user_input: Record<string, string | null>; result: unknown };
+type UsageRow = { recommendations_count: number | null };
 
 function getDisplayName(profileName?: string | null, metadataName?: unknown, email?: string | null) {
   const name = profileName?.trim() || (typeof metadataName === "string" ? metadataName.trim() : "");
@@ -46,13 +46,12 @@ export default async function DashboardPage() {
     );
   }
 
-  const plan = profile?.plan ?? "free";
   const premium = isPremium(profile);
   const displayName = getDisplayName(profile?.full_name, user.user_metadata?.full_name, profile?.email ?? user.email);
-  const recommendationUsage = await checkUsageLimit(user.id, plan, "recommendations");
   const supabase = createSupabaseAdminClient();
+  const today = new Date().toISOString().slice(0, 10);
 
-  const [{ data: favorites }, { data: history }] = supabase
+  const [{ data: favorites }, { data: history }, { data: usage }] = supabase
     ? await Promise.all([
         supabase.from("favorites").select("*").eq("user_id", user.id).order("created_at", { ascending: false }).limit(5),
         supabase
@@ -60,12 +59,15 @@ export default async function DashboardPage() {
           .select("*")
           .eq("user_id", user.id)
           .order("created_at", { ascending: false })
-          .limit(premium ? 10 : 3)
+          .limit(premium ? 10 : 3),
+        supabase.from("usage_limits").select("recommendations_count").eq("user_id", user.id).eq("date", today).maybeSingle()
       ])
-    : [{ data: [] }, { data: [] }];
+    : [{ data: [] }, { data: [] }, { data: null }];
 
   const favoriteRows = (favorites ?? []) as FavoriteRow[];
   const historyRows = (history ?? []) as HistoryRow[];
+  const usageRow = usage as UsageRow | null;
+  const remainingRecommendations = premium ? Infinity : Math.max(0, 3 - Number(usageRow?.recommendations_count ?? 0));
   const favoriteSlugs = new Set(favoriteRows.map((favorite) => favorite.stone_slug));
   const stoneOfDay = stones[new Date().getDate() % stones.length];
   const suggestedStones = ["labradorite", "quartz-rose", "oeil-de-tigre", "amethyste"]
@@ -78,7 +80,7 @@ export default async function DashboardPage() {
       <p className="eyebrow">Espace membre</p>
       <h1>Bienvenue{displayName ? `, ${displayName}` : ""}</h1>
       <p className="section-lead">
-        Votre espace Litho Intelligence rassemble vos recommandations, vos pierres favorites et vos prochains rituels.
+        Votre espace rassemble vos conseils, vos pierres favorites et les actions les plus utiles pour avancer aujourd'hui.
       </p>
 
       <section className="dashboard-action-panel">
@@ -88,8 +90,8 @@ export default async function DashboardPage() {
             <span>{premium ? "Premium actif" : "Plan gratuit"}</span>
             <strong>
               {premium
-                ? "Recommandations illimitées"
-                : `${recommendationUsage.remaining} recommandation${recommendationUsage.remaining > 1 ? "s" : ""} restante${recommendationUsage.remaining > 1 ? "s" : ""} aujourd'hui`}
+                ? "Conseils personnalisés illimités"
+                : `${remainingRecommendations} conseil${remainingRecommendations > 1 ? "s" : ""} personnalisé${remainingRecommendations > 1 ? "s" : ""} restant${remainingRecommendations > 1 ? "s" : ""} aujourd'hui`}
             </strong>
           </div>
         </article>
@@ -97,11 +99,11 @@ export default async function DashboardPage() {
         <div className="dashboard-quick-actions">
           <Link className="quick-action-card primary" href="/recommendation">
             <Search size={20} />
-            <span>Faire une recommandation</span>
+            <span>Obtenir un conseil</span>
           </Link>
           <Link className="quick-action-card" href="/sos">
             <Shield size={20} />
-            <span>Test SOS émotionnel</span>
+            <span>Mode SOS émotionnel</span>
           </Link>
           <Link className="quick-action-card" href="/combination">
             <Wand2 size={20} />
@@ -141,7 +143,7 @@ export default async function DashboardPage() {
               })}
             </ul>
           ) : (
-            <p>Aucun favori pour le moment. Commencez par choisir les pierres qui vous attirent naturellement.</p>
+            <p>Aucun favori pour le moment. Ajoutez les pierres qui vous attirent pour retrouver rapidement vos choix.</p>
           )}
           <Link className="button secondary" href="/stones">Explorer les pierres</Link>
         </article>
@@ -169,7 +171,7 @@ export default async function DashboardPage() {
       <section className="section compact-section no-side-padding">
         <div className="dashboard-section-header">
           <div>
-            <p className="eyebrow">À ajouter à vos favoris</p>
+            <p className="eyebrow">À garder sous la main</p>
             <h2>Vos premières pierres essentielles</h2>
           </div>
           {!premium ? <CheckoutButton /> : <Link className="button secondary" href="/account">Gérer mon compte</Link>}

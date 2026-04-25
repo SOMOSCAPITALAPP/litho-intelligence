@@ -15,7 +15,7 @@ export function PortalButton() {
 
   return (
     <button className="button secondary" disabled={loading} onClick={openPortal} type="button">
-      {loading ? "Ouverture..." : "Gerer mon abonnement"}
+      {loading ? "Ouverture..." : "Gérer mon abonnement"}
     </button>
   );
 }
