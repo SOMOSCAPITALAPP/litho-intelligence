@@ -12,8 +12,10 @@ const quickLinks = [
 ];
 
 const commonQuestions = [
-  { label: "J'ai besoin d'apaiser mon mental", href: "/recommendation?physical=sommeil&emotional=stress" },
-  { label: "Je doute de moi en ce moment", href: "/recommendation?goal=confiance&emotional=doute" },
+  { label: "Pierre pour stress", href: "/intention/stress" },
+  { label: "Pierre pour argent", href: "/intention/argent" },
+  { label: "Pierre pour amour", href: "/intention/amour" },
+  { label: "Pierre pour confiance", href: "/intention/confiance" },
   { label: "Je porte déjà des pierres : est-ce cohérent ?", href: "/combination" },
   { label: "Je veux offrir un soutien symbolique", href: "/recommendation?goal=amour" }
 ];
@@ -116,6 +118,35 @@ export default function HomePage() {
         <div className="member-actions">
           <Link className="button gold-button" href="/register">Créer mon espace gratuit</Link>
           <Link className="button ghost-dark" href="/login">Me connecter</Link>
+        </div>
+      </section>
+
+      <section className="section compact-section">
+        <h2>Guides par intention</h2>
+        <p className="section-lead">
+          Des pages claires pour partir d’un besoin précis et découvrir les pierres traditionnellement associées à cette intention.
+        </p>
+        <div className="grid">
+          <Link className="card emotional-card" href="/intention/stress">
+            <h3>Pierre pour stress</h3>
+            <p>Améthyste, lépidolite, howlite, quartz rose : choisir une pierre associée au calme et au recentrage.</p>
+            <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
+          </Link>
+          <Link className="card emotional-card" href="/intention/argent">
+            <h3>Pierre pour argent</h3>
+            <p>Citrine, pyrite, aventurine verte : travailler symboliquement l’abondance, la confiance et l’action.</p>
+            <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
+          </Link>
+          <Link className="card emotional-card" href="/intention/amour">
+            <h3>Pierre pour amour</h3>
+            <p>Quartz rose, rhodonite, pierre de lune : soutenir une intention de douceur, de lien et d’ouverture du cœur.</p>
+            <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
+          </Link>
+          <Link className="card emotional-card" href="/intention/confiance">
+            <h3>Pierre pour confiance</h3>
+            <p>Œil de tigre, citrine, cornaline : symboliser le courage, l’affirmation et la sécurité intérieure.</p>
+            <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
+          </Link>
         </div>
       </section>
 
