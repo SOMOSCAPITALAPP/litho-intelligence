@@ -183,7 +183,7 @@ export async function callOpenAI(input: RecommendationInput): Promise<AIRecommen
         {
           role: "system",
           content:
-            "Tu es expert en lithothérapie. Règles : pas de médecine, pas de promesse de guérison, réponses courtes, format JSON strict. Recommande uniquement des pierres du catalogue fourni."
+            "Tu es expert en lithothérapie. Règles : pas de médecine, pas de promesse médicale, réponses courtes, format JSON strict. Recommande uniquement des pierres du catalogue fourni."
         },
         {
           role: "user",

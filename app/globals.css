@@ -44,6 +44,10 @@ select {
   font: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 .site-shell {
   min-height: 100vh;
 }
@@ -399,6 +403,15 @@ select {
   gap: 20px;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
   margin-top: 26px;
+}
+
+.birthstone-module > #meditation,
+.guided-layout > .meditation-card {
+  grid-column: 1 / -1;
+}
+
+.meditation-card {
+  align-content: start;
 }
 
 .guided-panel {

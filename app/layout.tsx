@@ -22,9 +22,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <div className="nav-links" aria-label="Navigation principale">
               <Link href="/sos">SOS</Link>
-              <Link href="/test">Test</Link>
-              <Link href="/recommendation">Recommandation</Link>
-              <Link href="/combination">Combinaisons</Link>
+              <Link href="/pierre-de-naissance">Pierre de naissance</Link>
+              <Link href="/idee-cadeau">Idée cadeau</Link>
+              <Link href="/compatibilite-amoureuse">Compatibilité amoureuse</Link>
+              <Link href="/meditations">Méditations</Link>
+              <Link href="/formation">Formation</Link>
               <Link href="/stones">Pierres</Link>
               <Link href="/pricing">Premium</Link>
               <Link className="member-link" href="/dashboard">
@@ -35,7 +37,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <LogIn size={15} />
                 Connexion
               </Link>
-              <Link href="/newsletter">Newsletter</Link>
             </div>
             <Link className="nav-cta" href="/sos">
               <Sparkles size={17} />
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
           {children}
           <footer className="footer">
-            Les informations proposées sont issues de traditions de bien-être et de lithothérapie. Elles ne remplacent pas un avis médical, un diagnostic ou un traitement professionnel.
+            Les informations proposées reposent sur les traditions, croyances et usages symboliques associés aux pierres naturelles. Elles ne remplacent pas un avis médical, psychologique ou professionnel.
           </footer>
         </div>
       </body>
