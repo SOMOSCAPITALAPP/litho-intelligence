@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ShoppingBag, Sparkles } from "lucide-react";
 import { withAffiliate } from "@/lib/affiliate";
 import { getStone } from "@/lib/stones";
+import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import type { AIStoneRecommendation } from "@/lib/openai-recommendation";
 
 export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
@@ -37,6 +38,7 @@ export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
               Voir le bracelet recommandé
             </Link>
           ) : null}
+          {stone ? <AddFavoriteButton stoneSlug={stone.slug} /> : null}
           {stone ? (
             <Link className="button ghost-dark" href={`/stone/${stone.slug}`}>
               Comprendre cette pierre <ArrowRight size={16} />

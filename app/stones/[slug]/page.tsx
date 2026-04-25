@@ -4,6 +4,8 @@ import { ArrowLeft, ShoppingBag } from "lucide-react";
 import { withAffiliate } from "@/lib/affiliate";
 import { getNativeStone, getNativeStoneImage, nativeStones } from "@/lib/nativeStones";
 import { getStone } from "@/lib/stones";
+import { AddFavoriteButton } from "@/components/AddFavoriteButton";
+import { EmailCapture } from "@/components/EmailCapture";
 
 export function generateStaticParams() {
   return nativeStones.map((stone) => ({ slug: stone.slug }));
@@ -66,17 +68,23 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
         </div>
 
         <div className="form-panel">
-          <h2>Bracelet associé</h2>
-          {product ? (
-            <Link className="button gold-button" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">
-              <ShoppingBag size={17} />
-              Voir le bracelet {product.brand}
-            </Link>
-          ) : (
-            <p>Produit associé à compléter dans le catalogue Felicidade / Vera Mentis.</p>
-          )}
+          <h2>Cette pierre vous correspond ?</h2>
+          <p>
+            Sauvegardez-la dans votre espace ou passez au bracelet associé pour transformer cette intention en geste concret.
+          </p>
+          <div className="premium-actions">
+            {product ? (
+              <Link className="button gold-button" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">
+                <ShoppingBag size={17} />
+                Voir le bracelet {product.brand}
+              </Link>
+            ) : null}
+            <AddFavoriteButton stoneSlug={stone.slug} />
+          </div>
+          {!product ? <p>Produit associé à compléter dans le catalogue Felicidade / Vera Mentis.</p> : null}
           <p className="fineprint">{stone.disclaimer}</p>
         </div>
+        <EmailCapture source={`native-stone:${stone.slug}`} />
       </section>
     </main>
   );

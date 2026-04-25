@@ -31,7 +31,11 @@ export function AddFavoriteButton({ stoneSlug, initialActive = false }: { stoneS
     } = await supabase.auth.getUser();
 
     if (!user) {
-      setMessage("Connectez-vous");
+      const current = JSON.parse(window.localStorage.getItem("litho:favorites") ?? "[]") as string[];
+      const next = Array.from(new Set([...current, stoneSlug])).slice(0, 5);
+      window.localStorage.setItem("litho:favorites", JSON.stringify(next));
+      setActive(true);
+      setMessage("Ajouté");
       setLoading(false);
       return;
     }
@@ -58,7 +62,7 @@ export function AddFavoriteButton({ stoneSlug, initialActive = false }: { stoneS
   return (
     <button className={active ? "icon-action active" : "icon-action"} disabled={loading || active} onClick={addFavorite} type="button">
       <Heart size={16} />
-      <span>{active ? "Favori" : loading ? "Ajout..." : "Ajouter"}</span>
+      <span>{active ? "Favori" : loading ? "Ajout..." : "Ajouter aux favoris"}</span>
       {message ? <small>{message}</small> : null}
     </button>
   );

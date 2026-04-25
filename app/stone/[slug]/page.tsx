@@ -4,6 +4,8 @@ import { ShoppingBag } from "lucide-react";
 import { getStone, stones } from "@/lib/stones";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { withAffiliate } from "@/lib/affiliate";
+import { AddFavoriteButton } from "@/components/AddFavoriteButton";
+import { EmailCapture } from "@/components/EmailCapture";
 
 export function generateStaticParams() {
   return stones.map((stone) => ({ slug: stone.slug }));
@@ -117,7 +119,13 @@ export default function StonePage({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="form-panel">
-          <h2>Acheter ou approfondir</h2>
+          <h2>Cette pierre vous correspond ?</h2>
+          <p>
+            Gardez cette pierre dans vos favoris ou découvrez le bracelet associé pour l’intégrer à votre quotidien.
+          </p>
+          <div className="premium-actions">
+            <AddFavoriteButton stoneSlug={stone.slug} />
+          </div>
           <div className="product-grid">
             {stone.products.map((product) => (
               <Link
@@ -138,13 +146,14 @@ export default function StonePage({ params }: { params: { slug: string } }) {
                 </div>
                 <span className="button">
                   <ShoppingBag size={17} />
-                  Voir sur Amazon
+                  Voir le bracelet recommandé
                 </span>
               </Link>
             ))}
           </div>
           <p className="fineprint">{wellbeingDisclaimer}</p>
         </div>
+        <EmailCapture source={`stone:${stone.slug}`} />
       </section>
     </main>
   );
