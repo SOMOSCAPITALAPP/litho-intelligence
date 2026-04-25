@@ -21,13 +21,28 @@ const requiredTables = [
   "leads"
 ];
 
+const tableChecks: Record<string, string> = {
+  profiles: "id",
+  subscriptions: "id",
+  usage_limits: "id",
+  favorites: "id",
+  recommendation_history: "id",
+  native_stones: "slug",
+  stones: "id",
+  products: "id",
+  ai_cache: "id",
+  ai_usage_logs: "id",
+  events: "id",
+  leads: "id"
+};
+
 export default async function SystemPage() {
   const supabase = createSupabaseAdminClient();
   const tableStatus: Array<{ table: string; ok: boolean }> = [];
 
   if (supabase) {
     for (const table of requiredTables) {
-      const { error } = await supabase.from(table).select("*", { count: "exact", head: true });
+      const { error } = await supabase.from(table).select(tableChecks[table] ?? "*").limit(1);
       tableStatus.push({ table, ok: !error });
     }
   }

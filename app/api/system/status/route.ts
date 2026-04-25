@@ -19,6 +19,21 @@ const requiredTables = [
   "leads"
 ];
 
+const tableChecks: Record<string, string> = {
+  profiles: "id",
+  subscriptions: "id",
+  usage_limits: "id",
+  favorites: "id",
+  recommendation_history: "id",
+  native_stones: "slug",
+  stones: "id",
+  products: "id",
+  ai_cache: "id",
+  ai_usage_logs: "id",
+  events: "id",
+  leads: "id"
+};
+
 export async function GET() {
   const supabase = createSupabaseAdminClient();
   const tableStatus: Record<string, boolean> = {};
@@ -26,7 +41,7 @@ export async function GET() {
   if (supabase) {
     await Promise.all(
       requiredTables.map(async (table) => {
-        const { error } = await supabase.from(table).select("*", { count: "exact", head: true });
+        const { error } = await supabase.from(table).select(tableChecks[table] ?? "*").limit(1);
         tableStatus[table] = !error;
       })
     );
