@@ -6,6 +6,7 @@ import { wellbeingDisclaimer } from "@/lib/legal";
 import { withAffiliate } from "@/lib/affiliate";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { EmailCapture } from "@/components/EmailCapture";
+import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 
 export function generateStaticParams() {
   return stones.map((stone) => ({ slug: stone.slug }));
@@ -37,7 +38,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
         <figure className="stone-visual">
           <img src={stone.image.url} alt={stone.image.alt} />
           <figcaption>
-            Photo: <Link href={stone.image.sourceUrl}>{stone.image.credit}</Link>
+            Photo : <Link href={stone.image.sourceUrl}>{stone.image.credit}</Link>
           </figcaption>
         </figure>
       </section>
@@ -76,24 +77,15 @@ export default function StonePage({ params }: { params: { slug: string } }) {
           </article>
           <article className="card">
             <h2>Compatibilités</h2>
-            <div className="pill-row">
-              {stone.compatibilities.map((slug) => {
-                const match = getStone(slug);
-                return (
-                  <Link className="pill" href={`/stone/${slug}`} key={slug}>
-                    {match?.name ?? slug}
-                  </Link>
-                );
-              })}
-            </div>
+            <RelatedStoneLinks items={stone.compatibilities} title="Pierres compatibles" />
           </article>
           <article className="card">
             <h2>Incompatibilités</h2>
-            <p>
-              {stone.incompatibilities.length > 0
-                ? stone.incompatibilities.map((slug) => getStone(slug)?.name ?? slug).join(", ")
-                : "Aucune incompatibilité notable dans cette base."}
-            </p>
+            <RelatedStoneLinks
+              emptyText="Aucune incompatibilité notable dans cette base."
+              items={stone.incompatibilities}
+              title="Associations à doser"
+            />
           </article>
           <article className="card">
             <h2>Purification</h2>

@@ -3,6 +3,7 @@ import { ArrowRight, ShoppingBag, Sparkles } from "lucide-react";
 import { withAffiliate } from "@/lib/affiliate";
 import { getStone } from "@/lib/stones";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
+import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import type { AIStoneRecommendation } from "@/lib/openai-recommendation";
 
 export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
@@ -31,6 +32,12 @@ export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
           <span>{result.ritual}</span>
         </div>
         <p className="micro-warning">{result.warning}</p>
+        {stone ? (
+          <RelatedStoneLinks
+            items={stone.compatibilities.slice(0, 3)}
+            title="Pierres complémentaires"
+          />
+        ) : null}
         <div className="premium-actions">
           {product ? (
             <Link className="button gold-button" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">

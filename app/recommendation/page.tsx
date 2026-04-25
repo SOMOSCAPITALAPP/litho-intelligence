@@ -6,6 +6,7 @@ import { Search } from "lucide-react";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { StoneResultCard } from "@/components/StoneResultCard";
 import { EmailCapture } from "@/components/EmailCapture";
+import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import type { AIRecommendationSource, AIStoneRecommendation } from "@/lib/openai-recommendation";
 
 const sourceLabels: Record<AIRecommendationSource, string> = {
@@ -157,6 +158,14 @@ export default function RecommendationPage({
           </section>
         ) : null}
         {source && results.length > 0 ? <p className="source-pill">{sourceLabels[source]}</p> : null}
+        {results.length > 1 ? (
+          <section className="card">
+            <RelatedStoneLinks
+              items={results.map((item) => item.slug)}
+              title="Autres pierres possibles"
+            />
+          </section>
+        ) : null}
         {results.map((item) => (
           <StoneResultCard key={item.slug} result={item} />
         ))}

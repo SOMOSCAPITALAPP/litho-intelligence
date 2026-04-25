@@ -1204,6 +1204,41 @@ button {
   padding: 7px 10px;
 }
 
+.related-stone-block h3 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+
+.related-stone-list {
+  display: grid;
+  gap: 10px;
+}
+
+.related-stone-item {
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  padding: 9px 10px;
+}
+
+.related-stone-name {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.related-amazon-link {
+  align-items: center;
+  color: var(--accent-strong);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 800;
+  gap: 5px;
+}
+
 .status-ok,
 .status-warn {
   border-radius: 999px;

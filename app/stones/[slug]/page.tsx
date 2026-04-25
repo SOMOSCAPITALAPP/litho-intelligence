@@ -6,6 +6,7 @@ import { getNativeStone, getNativeStoneImage, nativeStones } from "@/lib/nativeS
 import { getStone } from "@/lib/stones";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { EmailCapture } from "@/components/EmailCapture";
+import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 
 export function generateStaticParams() {
   return nativeStones.map((stone) => ({ slug: stone.slug }));
@@ -63,8 +64,12 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
           <InfoCard title="Conseils d’utilisation" items={stone.usage_advice} />
           <InfoCard title="Purification" items={stone.purification} />
           <InfoCard title="Recharge" items={stone.recharge} />
-          <InfoCard title="Associations positives" items={stone.positive_combinations} />
-          <InfoCard title="Associations à doser" items={stone.avoid_combinations.length ? stone.avoid_combinations : ["Aucune association sensible dans cette base."]} />
+          <RelatedCard title="Associations positives" items={stone.positive_combinations} />
+          <RelatedCard
+            emptyText="Aucune association sensible dans cette base."
+            items={stone.avoid_combinations}
+            title="Associations à doser"
+          />
         </div>
 
         <div className="form-panel">
@@ -99,6 +104,14 @@ function InfoCard({ title, items }: { title: string; items: string[] }) {
           <li key={item}>{item}</li>
         ))}
       </ul>
+    </article>
+  );
+}
+
+function RelatedCard({ title, items, emptyText }: { title: string; items: string[]; emptyText?: string }) {
+  return (
+    <article className="card">
+      <RelatedStoneLinks emptyText={emptyText} items={items} title={title} />
     </article>
   );
 }
