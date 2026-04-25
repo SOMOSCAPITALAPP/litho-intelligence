@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/compatibilite-amoureuse">Compatibilité amoureuse</Link>
               <Link href="/meditations">Méditations</Link>
               <Link href="/formation">Formation</Link>
-              <Link href="/intention/stress">Intentions</Link>
+              <Link href="/intention">Intentions</Link>
               <Link href="/stones">Pierres</Link>
               <Link href="/pricing">Premium</Link>
               <Link className="member-link" href="/dashboard">
