@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Gem } from "lucide-react";
-import { nativeStones } from "@/lib/nativeStones";
-import { getStone } from "@/lib/stones";
+import { getNativeStoneImage, nativeStones } from "@/lib/nativeStones";
 
 export const metadata = {
   title: "Pierres | Litho Intelligence",
@@ -29,11 +28,11 @@ export default function StonesPage() {
 
       <div className="grid">
         {nativeStones.map((stone) => {
-          const productStone = getStone(stone.amazon_product_slug || stone.slug);
+          const image = getNativeStoneImage(stone);
 
           return (
             <Link className="card catalog-card" href={`/stones/${stone.slug}`} key={stone.slug}>
-              {productStone ? <img className="stone-thumb" src={productStone.image.url} alt={productStone.image.alt} /> : null}
+              <img className="stone-thumb" src={image.url} alt={image.alt} />
               <h2>{stone.name}</h2>
               <p>{stone.short_description}</p>
               <div className="pill-row">

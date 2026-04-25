@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ShoppingBag } from "lucide-react";
 import { withAffiliate } from "@/lib/affiliate";
-import { getNativeStone, nativeStones } from "@/lib/nativeStones";
+import { getNativeStone, getNativeStoneImage, nativeStones } from "@/lib/nativeStones";
 import { getStone } from "@/lib/stones";
 
 export function generateStaticParams() {
@@ -24,7 +24,7 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
 
   const productStone = getStone(stone.amazon_product_slug || stone.slug);
   const product = productStone?.products[0];
-  const image = productStone?.image;
+  const image = getNativeStoneImage(stone);
 
   return (
     <main>
@@ -44,12 +44,10 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
             ))}
           </div>
         </div>
-        {image ? (
-          <figure className="stone-visual">
-            <img src={image.url} alt={image.alt} />
-            <figcaption>Visuel produit Litho Intelligence</figcaption>
-          </figure>
-        ) : null}
+        <figure className="stone-visual">
+          <img src={image.url} alt={image.alt} />
+          <figcaption>Visuel produit Litho Intelligence</figcaption>
+        </figure>
       </section>
 
       <section className="section">

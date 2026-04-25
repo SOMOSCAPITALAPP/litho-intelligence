@@ -28,6 +28,14 @@ export function getNativeStone(slug: string) {
   return nativeStones.find((stone) => stone.slug === slug);
 }
 
+export function getNativeStoneImage(stone: Pick<NativeStone, "slug" | "name">) {
+  return {
+    url: `/images/stones/${stone.slug}.png`,
+    alt: `${stone.name} en pierre naturelle`,
+    credit: "Image générée par ChatGPT"
+  };
+}
+
 export function normalizeNativeValue(value: string) {
   return value
     .trim()
