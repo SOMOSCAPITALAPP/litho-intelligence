@@ -64,14 +64,22 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
     }
 
     if (result.data.session) {
-      await fetch("/api/auth/ensure-profile", {
+      const profileResponse = await fetch("/api/auth/ensure-profile", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fullName, newsletterOptIn: newsletter })
       });
+
+      if (!profileResponse.ok) {
+        setLoading(false);
+        setError("Connexion réussie, mais la création du profil membre a échoué. Réessayez dans quelques secondes.");
+        return;
+      }
+
       setLoading(false);
-      router.push("/dashboard");
-      router.refresh();
+      const params = new URLSearchParams(window.location.search);
+      const next = params.get("redirect") || "/dashboard";
+      window.location.href = `/auth/callback?next=${encodeURIComponent(next)}`;
       return;
     }
 
