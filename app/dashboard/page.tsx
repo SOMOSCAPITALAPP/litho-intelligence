@@ -14,8 +14,8 @@ export const dynamic = "force-dynamic";
 type FavoriteRow = { id: string; stone_slug: string };
 type HistoryRow = { id: string; created_at: string; user_input: Record<string, string | null>; result: unknown };
 
-function getDisplayName(profileName?: string | null, email?: string | null) {
-  const name = profileName?.trim();
+function getDisplayName(profileName?: string | null, metadataName?: unknown, email?: string | null) {
+  const name = profileName?.trim() || (typeof metadataName === "string" ? metadataName.trim() : "");
   if (name) return name.split(" ")[0];
   return email?.split("@")[0] ?? "";
 }
@@ -48,7 +48,7 @@ export default async function DashboardPage() {
 
   const plan = profile?.plan ?? "free";
   const premium = isPremium(profile);
-  const displayName = getDisplayName(profile?.full_name, profile?.email ?? user.email);
+  const displayName = getDisplayName(profile?.full_name, user.user_metadata?.full_name, profile?.email ?? user.email);
   const recommendationUsage = await checkUsageLimit(user.id, plan, "recommendations");
   const supabase = createSupabaseAdminClient();
 

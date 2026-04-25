@@ -23,7 +23,7 @@ function getFriendlyAuthError(message: string) {
   return message || "Une erreur est survenue. Réessayez dans quelques secondes.";
 }
 
-async function ensureProfileWithoutBlocking(fullName: string, newsletter: boolean) {
+async function ensureProfileWithoutBlocking(fullName: string, newsletter: boolean, mode: "login" | "register") {
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 6000);
 
@@ -31,7 +31,10 @@ async function ensureProfileWithoutBlocking(fullName: string, newsletter: boolea
     await fetch("/api/auth/ensure-profile", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ fullName, newsletterOptIn: newsletter }),
+      body: JSON.stringify({
+        fullName: mode === "register" ? fullName.trim() : undefined,
+        newsletterOptIn: newsletter
+      }),
       signal: controller.signal
     });
   } catch {
@@ -100,7 +103,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
     }
 
     if (result.data.session) {
-      await ensureProfileWithoutBlocking(fullName, newsletter);
+      await ensureProfileWithoutBlocking(fullName, newsletter, mode);
       const params = new URLSearchParams(window.location.search);
       const next = params.get("redirect") || "/dashboard";
       window.location.href = `/auth/callback?next=${encodeURIComponent(next)}`;

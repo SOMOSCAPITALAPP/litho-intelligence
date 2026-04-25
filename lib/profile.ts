@@ -7,11 +7,14 @@ export async function ensureProfile(user: User, overrides: Partial<UserProfile> 
   if (!admin) return null;
 
   const { data: existing } = await admin.from("profiles").select("*").eq("id", user.id).maybeSingle();
+  const overrideName = typeof overrides.full_name === "string" ? overrides.full_name.trim() : overrides.full_name;
+  const metadataName =
+    typeof user.user_metadata?.full_name === "string" ? user.user_metadata.full_name.trim() : user.user_metadata?.full_name;
 
   const payload = {
     id: user.id,
     email: user.email ?? null,
-    full_name: overrides.full_name ?? user.user_metadata?.full_name ?? null,
+    full_name: overrideName || existing?.full_name || metadataName || null,
     plan: overrides.plan ?? existing?.plan ?? "free",
     stripe_customer_id: overrides.stripe_customer_id ?? existing?.stripe_customer_id ?? null,
     newsletter_opt_in:
