@@ -5,6 +5,42 @@ import { useRouter } from "next/navigation";
 import { saveLocalMember } from "@/lib/localMember";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
+function getFriendlyAuthError(message: string) {
+  const normalized = message.toLowerCase();
+
+  if (normalized.includes("invalid login credentials")) {
+    return "Email ou mot de passe incorrect.";
+  }
+
+  if (normalized.includes("email not confirmed")) {
+    return "Votre email n'est pas encore confirmé. Vérifiez votre boîte de réception.";
+  }
+
+  if (normalized.includes("user already registered")) {
+    return "Un compte existe déjà avec cet email. Connectez-vous à votre espace membre.";
+  }
+
+  return message || "Une erreur est survenue. Réessayez dans quelques secondes.";
+}
+
+async function ensureProfileWithoutBlocking(fullName: string, newsletter: boolean) {
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 6000);
+
+  try {
+    await fetch("/api/auth/ensure-profile", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fullName, newsletterOptIn: newsletter }),
+      signal: controller.signal
+    });
+  } catch {
+    // Le dashboard recrée aussi le profil si besoin. La connexion ne doit jamais rester bloquée ici.
+  } finally {
+    window.clearTimeout(timeout);
+  }
+}
+
 export function AuthForm({ mode }: { mode: "login" | "register" }) {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -59,24 +95,12 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
 
     if (result.error) {
       setLoading(false);
-      setError(result.error.message);
+      setError(getFriendlyAuthError(result.error.message));
       return;
     }
 
     if (result.data.session) {
-      const profileResponse = await fetch("/api/auth/ensure-profile", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullName, newsletterOptIn: newsletter })
-      });
-
-      if (!profileResponse.ok) {
-        setLoading(false);
-        setError("Connexion réussie, mais la création du profil membre a échoué. Réessayez dans quelques secondes.");
-        return;
-      }
-
-      setLoading(false);
+      await ensureProfileWithoutBlocking(fullName, newsletter);
       const params = new URLSearchParams(window.location.search);
       const next = params.get("redirect") || "/dashboard";
       window.location.href = `/auth/callback?next=${encodeURIComponent(next)}`;
