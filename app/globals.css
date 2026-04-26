@@ -1207,6 +1207,65 @@ button {
   margin: 0;
 }
 
+.video-card {
+  display: grid;
+  gap: 14px;
+}
+
+.video-card h3,
+.video-card p {
+  margin: 0;
+}
+
+.video-shell {
+  aspect-ratio: 16 / 9;
+  background: #120f12;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-launcher {
+  border: 0;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.video-poster,
+.video-frame {
+  border: 0;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.video-overlay {
+  background: linear-gradient(180deg, rgba(18, 15, 18, 0.08), rgba(18, 15, 18, 0.52));
+  inset: 0;
+  position: absolute;
+}
+
+.video-badge {
+  align-items: center;
+  background: rgba(255, 250, 247, 0.92);
+  border-radius: 999px;
+  color: var(--ink);
+  display: inline-flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 8px;
+  left: 16px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 16px;
+}
+
 .dashboard-section-header {
   align-items: flex-end;
   display: flex;

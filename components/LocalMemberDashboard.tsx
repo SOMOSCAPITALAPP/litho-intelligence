@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, Download, Heart, MoonStar, Sparkles, UserCircle } from "lucide-react";
+import { ArrowRight, Download, Heart, Sparkles, UserCircle } from "lucide-react";
 import { CheckoutButton } from "@/components/CheckoutButton";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { withAffiliate } from "@/lib/affiliate";
 import { getLocalFavorites, getLocalMember, getLocalRecommendationUsage, type LocalMember } from "@/lib/localMember";
 import { getStone, stones } from "@/lib/stones";
 
 const guideUrl = "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf";
-const sleepMeditationUrl = "https://youtu.be/Y1rP0iOVG0Q";
 
 export function LocalMemberDashboard() {
   const [member, setMember] = useState<LocalMember | null>(null);
@@ -123,15 +123,19 @@ export function LocalMemberDashboard() {
               Télécharger le guide
             </a>
           </article>
-          <article className="card">
-            <MoonStar size={22} />
-            <h2>Méditation sommeil</h2>
-            <p>Une proposition de Quintessence Cristal pour ralentir avant le coucher et apaiser l'esprit.</p>
-            <a className="button secondary" href={sleepMeditationUrl} target="_blank" rel="noreferrer">
-              Ouvrir sur YouTube
-            </a>
-          </article>
         </div>
+      </section>
+
+      <section className="section compact-section no-side-padding">
+        <h2>Méditation sommeil</h2>
+        <p className="section-lead">
+          Une proposition de Quintessence Cristal intégrée dans votre espace pour rester dans le site tout en lançant la lecture.
+        </p>
+        <YouTubeEmbed
+          videoId="Y1rP0iOVG0Q"
+          title="Méditation pour aider à dormir"
+          description="Une pratique douce pour ralentir le mental, relâcher la journée et préparer le sommeil."
+        />
       </section>
     </main>
   );

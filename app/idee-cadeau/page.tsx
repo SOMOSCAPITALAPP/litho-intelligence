@@ -26,7 +26,7 @@ const veraMentisGiftSlugs = [
   "labradorite-foncee-larvikite",
   "labradorite",
   "apatite-bleue",
-  "jade",
+  "jade-emeraude",
   "quartz-rose",
   "calcedoine-bleue"
 ];
@@ -40,14 +40,14 @@ function ProductGallery({
   lead: string;
   slugs: string[];
 }) {
-  const stones = slugs.map((slug) => getStone(slug)).filter(Boolean);
+  const galleryStones = slugs.map((slug) => getStone(slug)).filter(Boolean);
 
   return (
     <section className="section compact-section">
       <h2>{title}</h2>
       <p className="section-lead">{lead}</p>
       <div className="grid">
-        {stones.map((stone) => {
+        {galleryStones.map((stone) => {
           const product = stone!.products[0];
           return (
             <article className="card catalog-card" key={`${title}-${stone!.slug}`}>

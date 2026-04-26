@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Download, Heart, MoonStar, Search, Shield, Sparkles, UserCircle, Wand2 } from "lucide-react";
+import { Download, Heart, Search, Shield, Sparkles, UserCircle, Wand2 } from "lucide-react";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { CheckoutButton } from "@/components/CheckoutButton";
 import { LocalMemberDashboard } from "@/components/LocalMemberDashboard";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { getCurrentUser, isPremium } from "@/lib/auth";
 import { withAffiliate } from "@/lib/affiliate";
 import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
@@ -15,7 +16,6 @@ type FavoriteRow = { id: string; stone_slug: string };
 type UsageRow = { recommendations_count: number | null };
 
 const guideUrl = "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf";
-const sleepMeditationUrl = "https://youtu.be/Y1rP0iOVG0Q";
 
 function getDisplayName(profileName?: string | null, metadataName?: unknown, email?: string | null) {
   const name = profileName?.trim() || (typeof metadataName === "string" ? metadataName.trim() : "");
@@ -159,17 +159,20 @@ export default async function DashboardPage() {
               Télécharger le guide
             </a>
           </div>
-          <div className="card-divider" />
-          <MoonStar size={22} />
-          <h2>Méditation pour dormir</h2>
-          <p>Une méditation douce de la chaîne Quintessence Cristal pour calmer le mental et préparer le sommeil.</p>
-          <div className="card-actions">
-            <a className="button secondary" href={sleepMeditationUrl} target="_blank" rel="noreferrer">
-              Lancer sur YouTube
-            </a>
-          </div>
         </article>
       </div>
+
+      <section className="section compact-section no-side-padding">
+        <h2>Méditation pour dormir</h2>
+        <p className="section-lead">
+          Une proposition de Quintessence Cristal intégrée dans votre espace membre pour rester dans l'application tout en lançant la lecture.
+        </p>
+        <YouTubeEmbed
+          videoId="Y1rP0iOVG0Q"
+          title="Méditation pour aider à dormir"
+          description="Une pratique douce pour ralentir le mental, relâcher la journée et préparer le sommeil."
+        />
+      </section>
 
       <section className="section compact-section no-side-padding">
         <div className="dashboard-section-header">

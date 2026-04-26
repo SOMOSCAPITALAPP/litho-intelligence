@@ -4,26 +4,26 @@ import { ArrowRight, Gem, Heart, Shield, Sparkles } from "lucide-react";
 import { EmailCapture } from "@/components/EmailCapture";
 
 export const metadata: Metadata = {
-  title: "Qu'est-ce que la lithotherapie ? | Litho Intelligence",
+  title: "Qu'est-ce que la lithothérapie ? | Litho Intelligence",
   description:
-    "Comprenez la lithotherapie, ses usages traditionnels, son positionnement bien-etre et la maniere de choisir une pierre avec discernement."
+    "Comprenez la lithothérapie, ses usages traditionnels, son positionnement bien-être et la manière de choisir une pierre avec discernement."
 };
 
 const pillars = [
   {
     icon: Gem,
     title: "Une pratique symbolique",
-    text: "La lithotherapie associe des pierres naturelles a des intentions, des emotions et des rituels de bien-etre."
+    text: "La lithothérapie associe des pierres naturelles à des intentions, des émotions et des rituels de bien-être."
   },
   {
     icon: Heart,
     title: "Un support personnel",
-    text: "Une pierre peut devenir un repere quotidien pour revenir a une intention simple : calme, confiance, protection ou amour."
+    text: "Une pierre peut devenir un repère quotidien pour revenir à une intention simple : calme, confiance, protection ou amour."
   },
   {
     icon: Shield,
     title: "Un cadre responsable",
-    text: "Litho Intelligence parle de traditions et d'usages symboliques. L'application ne remplace jamais un avis medical ou psychologique."
+    text: "Litho Intelligence parle de traditions et d'usages symboliques. L'application ne remplace jamais un avis médical ou psychologique."
   }
 ];
 
@@ -32,11 +32,11 @@ export default function LithotherapiePage() {
     <main>
       <section className="hero app-hero">
         <div>
-          <p className="eyebrow">Comprendre la lithotherapie</p>
-          <h1>Une pratique de bien-etre, de symbole et d'intention</h1>
+          <p className="eyebrow">Comprendre la lithothérapie</p>
+          <h1>Une pratique de bien-être, de symbole et d'intention</h1>
           <p>
-            La lithotherapie ne promet pas de soigner. Elle aide a choisir une pierre comme support de presence, de sens
-            et de rituel personnel selon les traditions associees aux mineraux.
+            La lithothérapie ne promet pas de soigner. Elle aide à choisir une pierre comme support de présence, de sens
+            et de rituel personnel selon les traditions associées aux minéraux.
           </p>
           <div className="hero-actions">
             <Link className="button gold-button" href="/recommendation">
@@ -49,7 +49,7 @@ export default function LithotherapiePage() {
         </div>
 
         <aside className="hero-panel editorial-visual-panel">
-          <img className="editorial-visual" src="/images/stones/collection-premium.png" alt="Selection coloree de pierres naturelles" />
+          <img className="editorial-visual" src="/images/stones/collection-premium.png" alt="Sélection colorée de pierres naturelles" />
           <div className="editorial-caption">
             <span className="mystic-kicker">
               <Sparkles size={15} />
@@ -57,8 +57,8 @@ export default function LithotherapiePage() {
             </span>
             <h2>Ce que fait Litho Intelligence</h2>
             <p>
-              Nous traduisons un besoin emotionnel ou symbolique en recommandations simples : pierres, gestes d'usage,
-              idees cadeau et bracelets associes.
+              Nous traduisons un besoin émotionnel ou symbolique en recommandations simples : pierres, gestes d'usage,
+              idées cadeau et bracelets associés.
             </p>
           </div>
         </aside>
@@ -84,22 +84,22 @@ export default function LithotherapiePage() {
           <article className="card">
             <h2>Comment choisir une pierre ?</h2>
             <p>
-              Commencez par une intention precise. Ensuite, regardez quelles pierres lui sont traditionnellement associees,
-              puis choisissez la forme la plus simple a porter ou a utiliser au quotidien.
+              Commencez par une intention précise. Ensuite, regardez quelles pierres lui sont traditionnellement associées,
+              puis choisissez la forme la plus simple à porter ou à utiliser au quotidien.
             </p>
           </article>
           <article className="card">
-            <h2>A quoi sert l'application ?</h2>
+            <h2>À quoi sert l'application ?</h2>
             <p>
-              Elle aide a passer plus vite de la question a la solution : recommandation, fiche claire, compatibilites,
-              meditation courte et acces direct au bracelet correspondant.
+              Elle aide à passer plus vite de la question à la solution : recommandation, fiche claire, compatibilités,
+              méditation courte et accès direct au bracelet correspondant.
             </p>
           </article>
           <article className="card">
-            <h2>Ce qu'il faut garder en tete</h2>
+            <h2>Ce qu'il faut garder en tête</h2>
             <p>
-              Les pierres sont presentees comme des supports symboliques dans une demarche de bien-etre. Elles n'ont pas
-              vocation a diagnostiquer, traiter ou remplacer un professionnel de sante.
+              Les pierres sont présentées comme des supports symboliques dans une démarche de bien-être. Elles n'ont pas
+              vocation à diagnostiquer, traiter ou remplacer un professionnel de santé.
             </p>
           </article>
         </div>
