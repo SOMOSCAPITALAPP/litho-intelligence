@@ -10,10 +10,17 @@ type ConsultationStone = {
   braceletUrl: string;
 };
 
+export type ConsultationInsight = {
+  issue: string;
+  reading: string;
+  stoneNames: string[];
+};
+
 export type ConsultationResponse = {
   title: string;
   answer: string;
   grounding: string;
+  insights: ConsultationInsight[];
   stones: ConsultationStone[];
   disclaimer: string;
 };
@@ -37,16 +44,36 @@ export type ConsultationExperience = {
 const consultationSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["title", "answer", "grounding", "chatMessage", "stones"],
+  required: ["title", "answer", "grounding", "chatMessage", "insights", "stones"],
   properties: {
     title: { type: "string" },
     answer: { type: "string" },
     grounding: { type: "string" },
     chatMessage: { type: "string" },
-    stones: {
+    insights: {
       type: "array",
       minItems: 2,
-      maxItems: 3,
+      maxItems: 5,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["issue", "reading", "stoneNames"],
+        properties: {
+          issue: { type: "string" },
+          reading: { type: "string" },
+          stoneNames: {
+            type: "array",
+            minItems: 1,
+            maxItems: 3,
+            items: { type: "string" }
+          }
+        }
+      }
+    },
+    stones: {
+      type: "array",
+      minItems: 3,
+      maxItems: 5,
       items: {
         type: "object",
         additionalProperties: false,
@@ -59,6 +86,9 @@ const consultationSchema = {
     }
   }
 };
+
+const disclaimer =
+  "Conseil basé sur les traditions de lithothérapie et une démarche de bien-être. Il ne remplace pas un avis médical, psychologique ou professionnel.";
 
 export async function getConsultationExperience(
   question: string,
@@ -79,12 +109,12 @@ export async function getConsultationExperience(
       body: JSON.stringify({
         model: OPENAI_MODEL,
         temperature: 0.7,
-        max_output_tokens: 700,
+        max_output_tokens: 900,
         input: [
           {
             role: "system",
             content:
-              "Tu es un conseiller en lithothérapie prudent, chaleureux et concret. Tu réponds en français clair. Tu ne fais aucune promesse médicale. Tu t'appuies sur des traditions de bien-être. Ta réponse doit contenir un message de chat court, empathique et conversationnel, qui écoute activement l'utilisateur, rappelle que la synthèse détaillée est affichée sous le dialogue et précise que la lithothérapie ne remplace jamais un avis médical. Tu proposes aussi une synthèse globale claire avec 2 à 3 pierres du catalogue."
+              "Tu es un conseiller en lithothérapie prudent, chaleureux, humain et concret. Tu réponds en français naturel, élégant et varié. Évite les tournures répétitives, robotiques ou standardisées. Ne mentionne jamais que tu es une IA. N'insère aucun disclaimer dans le message de chat. Le message de chat doit être court, empathique, actif, personnalisé, poser une question utile si besoin et rappeler que la synthèse détaillée apparaît sous le dialogue. La synthèse globale doit être plus complète, structurée, avec tous les problèmes ou tensions soulevés, une lecture claire de chacun et les pierres idéales du catalogue pour chaque point. Aucune promesse médicale, aucun langage de guérison ou de traitement."
           },
           {
             role: "user",
@@ -122,12 +152,14 @@ export async function getConsultationExperience(
         ?.find((item: { type: string }) => item.type === "output_text")?.text;
 
     if (!rawText) throw new Error("OPENAI_EMPTY_RESPONSE");
+
     return sanitizeConsultation(
       JSON.parse(rawText) as {
         title: string;
         answer: string;
         grounding: string;
         chatMessage: string;
+        insights: Array<{ issue: string; reading: string; stoneNames: string[] }>;
         stones: Array<{ name: string; reason: string }>;
       },
       question,
@@ -144,6 +176,7 @@ function sanitizeConsultation(
     answer: string;
     grounding: string;
     chatMessage: string;
+    insights: Array<{ issue: string; reading: string; stoneNames: string[] }>;
     stones: Array<{ name: string; reason: string }>;
   },
   question: string,
@@ -166,21 +199,30 @@ function sanitizeConsultation(
 
   const fallback = buildFallbackExperience(question, profile);
 
+  const insights =
+    payload.insights
+      ?.map((insight) => ({
+        issue: insight.issue.slice(0, 90),
+        reading: insight.reading.slice(0, 260),
+        stoneNames: insight.stoneNames.slice(0, 3)
+      }))
+      .filter((insight) => insight.issue && insight.reading) ?? [];
+
   return {
-    chatMessage: payload.chatMessage.slice(0, 420),
+    chatMessage: payload.chatMessage.slice(0, 520),
     consultation: {
       title: payload.title.slice(0, 90),
-      answer: payload.answer.slice(0, 1200),
-      grounding: payload.grounding.slice(0, 220),
-      stones: selected.length >= 2 ? selected.slice(0, 3) : fallback.consultation.stones,
-      disclaimer:
-        "Conseil basé sur les traditions de lithothérapie et une démarche de bien-être. Il ne remplace pas un avis médical, psychologique ou professionnel."
+      answer: payload.answer.slice(0, 1800),
+      grounding: payload.grounding.slice(0, 260),
+      insights: insights.length >= 2 ? insights : fallback.consultation.insights,
+      stones: selected.length >= 3 ? selected.slice(0, 5) : fallback.consultation.stones,
+      disclaimer
     }
   };
 }
 
 function buildFallbackExperience(question: string, profile: ConsultationProfile): ConsultationExperience {
-  const defaults = ["labradorite", "quartz-rose", "amethyste"]
+  const defaults = ["labradorite", "quartz-rose", "amethyste", "oeil-de-tigre", "cornaline"]
     .map((slug) => stones.find((stone) => stone.slug === slug))
     .filter(Boolean)
     .map((stone) => ({
@@ -193,22 +235,43 @@ function buildFallbackExperience(question: string, profile: ConsultationProfile)
     .filter((stone) => stone.braceletUrl !== "#");
 
   const recipient = profile.recipient?.trim() ? `pour ${profile.recipient.trim()}` : "pour la personne concernée";
+  const hasAge = profile.age?.trim();
+  const hasSex = profile.sex?.trim();
+  const contextParts = [recipient, hasAge ? `avec un repère d’âge ${profile.age?.trim()}` : "", hasSex ? `et un contexte ${profile.sex?.trim()}` : ""]
+    .filter(Boolean)
+    .join(" ");
 
   return {
     chatMessage:
       question.trim().length > 0
-        ? `Merci, j’ai bien pris votre demande ${recipient}. Je reste ici pour échanger avec vous, et vous trouverez juste en dessous une réponse globale plus structurée avec les pierres et bracelets associés. La lithothérapie reste une approche de bien-être et ne remplace jamais un avis médical.`
-        : "Je suis ici pour vous aider. Dites-moi pour qui est ce conseil, l’âge, le sexe, puis décrivez votre besoin avec vos mots. La synthèse détaillée apparaîtra juste sous le dialogue.",
+        ? `Merci, je comprends mieux la situation ${contextParts}. Je vous laisse regarder la synthèse juste en dessous, puis nous pouvons affiner ensemble point par point si vous le souhaitez.`
+        : "Je suis là pour vous aider. Dites-moi pour qui est ce conseil, l’âge, le sexe si c’est utile, puis ce que vous cherchez à apaiser, renforcer ou retrouver.",
     consultation: {
-      title: "Un premier repère pour votre question",
+      title: "Première lecture de votre situation",
       answer:
         question.trim().length > 0
-          ? "Votre question appelle avant tout de la clarté et un recentrage simple. Je vous propose de partir sur quelques pierres très lisibles, afin de ne pas multiplier les signaux et de garder une intention nette."
-          : "Commencez par une intention simple et choisissez une pierre qui vous aide à vous sentir plus stable, plus doux avec vous-même ou plus clair dans votre action.",
-      grounding: "Gardez une seule intention pour aujourd’hui et observez ce qui vous apaise ou vous remet en mouvement.",
-      stones: defaults.slice(0, 3),
-      disclaimer:
-        "Conseil basé sur les traditions de lithothérapie et une démarche de bien-être. Il ne remplace pas un avis médical, psychologique ou professionnel."
+          ? "Votre demande montre surtout un besoin de recentrage, de protection émotionnelle et d’apaisement intérieur. Pour éviter de se disperser, mieux vaut partir sur quelques pierres très lisibles, chacune avec un rôle précis, puis observer ce qui soutient le plus la personne concernée au quotidien."
+          : "Commencez par une intention simple, puis choisissez des pierres qui soutiennent l’apaisement, la clarté et la stabilité. Une sélection courte fonctionne souvent mieux qu’une accumulation de références.",
+      grounding: "Gardez une intention principale aujourd’hui, puis observez quelles pierres apportent le plus de calme, de protection ou d’élan.",
+      insights: [
+        {
+          issue: "Besoin d’apaisement",
+          reading: "Quand la charge mentale ou émotionnelle prend trop de place, mieux vaut revenir à des pierres associées à la douceur, au calme et à la respiration intérieure.",
+          stoneNames: ["Améthyste", "Quartz rose", "Lépidolite"]
+        },
+        {
+          issue: "Besoin de protection émotionnelle",
+          reading: "Si la personne se sent vite envahie, sensible ou poreuse à son entourage, des pierres liées au recentrage et à la protection symbolique sont plus adaptées.",
+          stoneNames: ["Labradorite", "Obsidienne œil céleste", "Onyx"]
+        },
+        {
+          issue: "Besoin de retrouver un élan plus stable",
+          reading: "Quand l’envie, la confiance ou l’énergie baissent, il est souvent utile d’ajouter une pierre plus dynamique pour remettre du mouvement sans brusquer.",
+          stoneNames: ["Œil de tigre", "Cornaline", "Pierre de soleil"]
+        }
+      ],
+      stones: defaults.slice(0, 5),
+      disclaimer
     }
   };
 }

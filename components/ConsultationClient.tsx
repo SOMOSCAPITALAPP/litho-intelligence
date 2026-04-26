@@ -8,7 +8,7 @@ import { ConsultationCheckoutButton } from "@/components/ConsultationCheckoutBut
 import type { ConsultationChatMessage, ConsultationProfile, ConsultationResponse } from "@/lib/consultation";
 
 const initialMessage =
-  "Bonjour, je suis votre conseiller en lithothérapie. Je suis ici pour vous aider à clarifier votre besoin. Sous ce dialogue, vous trouverez une réponse globale plus détaillée avec les pierres conseillées. Dites-moi d’abord pour qui ce conseil est destiné, l’âge, le sexe, puis ce qui vous préoccupe. La lithothérapie reste une approche de bien-être et ne remplace jamais un avis médical.";
+  "Bonjour, je suis votre conseiller en lithothérapie. Je suis ici pour vous aider à clarifier votre besoin. Sous ce dialogue, vous trouverez une réponse globale plus détaillée avec les pierres conseillées. Dites-moi d’abord pour qui ce conseil est destiné, l’âge, le sexe si c’est utile, puis ce qui vous préoccupe.";
 
 export function ConsultationClient({
   accessible,
@@ -152,7 +152,7 @@ export function ConsultationClient({
                 {message.content}
               </div>
             ))}
-            {loading ? <div className="chat-bubble assistant">Je vous écoute et je prépare à la fois la réponse courte ici et la synthèse détaillée juste en dessous.</div> : null}
+            {loading ? <div className="chat-bubble assistant">Je vous lis attentivement. La réponse courte arrive ici, et la synthèse complète se met à jour juste en dessous.</div> : null}
           </div>
 
           <div className="field">
@@ -181,9 +181,23 @@ export function ConsultationClient({
               <h2>{result.title}</h2>
               <p>{result.answer}</p>
               <p className="intention-line">{result.grounding}</p>
+
+              <div className="stack-list" style={{ marginTop: 18 }}>
+                {result.insights.map((insight) => (
+                  <article className="card nested-card" key={insight.issue}>
+                    <h3>{insight.issue}</h3>
+                    <p>{insight.reading}</p>
+                    <p className="fineprint">Pierres idéales : {insight.stoneNames.join(", ")}</p>
+                  </article>
+                ))}
+              </div>
+
+              <p className="fineprint" style={{ marginTop: 18 }}>
+                {result.disclaimer}
+              </p>
             </>
           ) : (
-            <p>La réponse globale détaillée apparaîtra ici au fil du dialogue, avec une lecture plus complète et les pierres à privilégier.</p>
+            <p>La réponse globale détaillée apparaîtra ici au fil du dialogue, avec une lecture plus complète des points soulevés et les pierres à privilégier.</p>
           )}
         </aside>
       </section>
@@ -208,7 +222,6 @@ export function ConsultationClient({
               </article>
             ))}
           </div>
-          <p className="fineprint">{result.disclaimer}</p>
         </section>
       ) : null}
     </main>
