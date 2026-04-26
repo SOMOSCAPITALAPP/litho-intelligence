@@ -991,6 +991,39 @@ button {
   color: white;
 }
 
+.dashboard-hero-card .button.secondary,
+.dashboard-hero-card .icon-action,
+.premium-result-card .icon-action {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #fff;
+}
+
+.dashboard-hero-card .button.secondary:hover,
+.dashboard-hero-card .icon-action:hover,
+.premium-result-card .icon-action:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.34);
+  color: #fff;
+}
+
+.dashboard-hero-card .icon-action.active,
+.premium-result-card .icon-action.active {
+  background: rgba(214, 173, 98, 0.16);
+  border-color: rgba(214, 173, 98, 0.38);
+  color: #fff;
+}
+
+.dashboard-hero-card .icon-action small,
+.premium-result-card .icon-action small {
+  color: var(--premium-gold);
+}
+
+.dashboard-hero-card .icon-action span,
+.premium-result-card .icon-action span {
+  color: #fff;
+}
+
 .auth-panel .field span {
   color: rgba(255, 255, 255, 0.82);
   font-weight: 800;

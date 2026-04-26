@@ -21,7 +21,7 @@ export function AddFavoriteButton({ stoneSlug, initialActive = false }: { stoneS
       const next = Array.from(new Set([...current, stoneSlug])).slice(0, 5);
       window.localStorage.setItem("litho:favorites", JSON.stringify(next));
       setActive(true);
-      setMessage("Ajouté");
+      setMessage("Ajoute");
       setLoading(false);
       return;
     }
@@ -35,7 +35,7 @@ export function AddFavoriteButton({ stoneSlug, initialActive = false }: { stoneS
       const next = Array.from(new Set([...current, stoneSlug])).slice(0, 5);
       window.localStorage.setItem("litho:favorites", JSON.stringify(next));
       setActive(true);
-      setMessage("Ajouté");
+      setMessage("Ajoute");
       setLoading(false);
       return;
     }
@@ -49,13 +49,13 @@ export function AddFavoriteButton({ stoneSlug, initialActive = false }: { stoneS
     );
 
     if (error) {
-      setMessage("Réessayez");
+      setMessage("Reessayez");
       setLoading(false);
       return;
     }
 
     setActive(true);
-    setMessage("Ajouté");
+    setMessage("Ajoute");
     setLoading(false);
   }
 
