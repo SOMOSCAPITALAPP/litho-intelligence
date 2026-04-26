@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { Heart, History, Search, Shield, Sparkles, UserCircle, Wand2 } from "lucide-react";
+import { Download, Heart, MoonStar, Search, Shield, Sparkles, UserCircle, Wand2 } from "lucide-react";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { CheckoutButton } from "@/components/CheckoutButton";
 import { LocalMemberDashboard } from "@/components/LocalMemberDashboard";
 import { getCurrentUser, isPremium } from "@/lib/auth";
+import { withAffiliate } from "@/lib/affiliate";
 import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
 import { getStone, stones } from "@/lib/stones";
 
@@ -11,18 +12,15 @@ export const metadata = { title: "Espace membre | Litho Intelligence" };
 export const dynamic = "force-dynamic";
 
 type FavoriteRow = { id: string; stone_slug: string };
-type HistoryRow = { id: string; created_at: string; user_input: Record<string, string | null>; result: unknown };
 type UsageRow = { recommendations_count: number | null };
+
+const guideUrl = "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf";
+const sleepMeditationUrl = "https://youtu.be/Y1rP0iOVG0Q";
 
 function getDisplayName(profileName?: string | null, metadataName?: unknown, email?: string | null) {
   const name = profileName?.trim() || (typeof metadataName === "string" ? metadataName.trim() : "");
   if (name) return name.split(" ")[0];
   return email?.split("@")[0] ?? "";
-}
-
-function summarizeInput(input?: Record<string, string | null>) {
-  if (!input) return "Recommandation personnalisée";
-  return [input.emotional, input.physical, input.goal].filter(Boolean).join(" · ") || "Recommandation personnalisée";
 }
 
 export default async function DashboardPage() {
@@ -51,21 +49,14 @@ export default async function DashboardPage() {
   const supabase = createSupabaseAdminClient();
   const today = new Date().toISOString().slice(0, 10);
 
-  const [{ data: favorites }, { data: history }, { data: usage }] = supabase
+  const [{ data: favorites }, { data: usage }] = supabase
     ? await Promise.all([
         supabase.from("favorites").select("*").eq("user_id", user.id).order("created_at", { ascending: false }).limit(5),
-        supabase
-          .from("recommendation_history")
-          .select("*")
-          .eq("user_id", user.id)
-          .order("created_at", { ascending: false })
-          .limit(premium ? 10 : 3),
         supabase.from("usage_limits").select("recommendations_count").eq("user_id", user.id).eq("date", today).maybeSingle()
       ])
-    : [{ data: [] }, { data: [] }, { data: null }];
+    : [{ data: [] }, { data: null }];
 
   const favoriteRows = (favorites ?? []) as FavoriteRow[];
-  const historyRows = (history ?? []) as HistoryRow[];
   const usageRow = usage as UsageRow | null;
   const remainingRecommendations = premium ? Infinity : Math.max(0, 3 - Number(usageRow?.recommendations_count ?? 0));
   const favoriteSlugs = new Set(favoriteRows.map((favorite) => favorite.stone_slug));
@@ -135,9 +126,20 @@ export default async function DashboardPage() {
             <ul className="clean-list">
               {favoriteRows.map((favorite) => {
                 const stone = getStone(favorite.stone_slug);
+                const product = stone?.products[0];
                 return (
-                  <li key={favorite.id}>
+                  <li className="favorite-entry" key={favorite.id}>
                     <Link href={`/stone/${favorite.stone_slug}`}>{stone?.name ?? favorite.stone_slug}</Link>
+                    {product ? (
+                      <a
+                        className="subtle-link"
+                        href={withAffiliate(product.url)}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Acheter sur Amazon
+                      </a>
+                    ) : null}
                   </li>
                 );
               })}
@@ -149,22 +151,23 @@ export default async function DashboardPage() {
         </article>
 
         <article className="card">
-          <History size={22} />
-          <h2>Historique</h2>
-          {historyRows.length ? (
-            <ul className="clean-list">
-              {historyRows.map((item) => (
-                <li key={item.id}>
-                  <Link href="/recommendation">
-                    {new Date(item.created_at).toLocaleDateString("fr-FR")} · {summarizeInput(item.user_input)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Votre historique apparaîtra ici dès votre première recommandation personnalisée.</p>
-          )}
-          <Link className="button secondary" href="/recommendation">Créer une recommandation</Link>
+          <Download size={22} />
+          <h2>Guide offert</h2>
+          <p>Retrouvez le PDF des 10 pierres essentielles à télécharger à tout moment depuis votre espace membre.</p>
+          <div className="card-actions">
+            <a className="button gold-button" href={guideUrl} target="_blank" rel="noreferrer">
+              Télécharger le guide
+            </a>
+          </div>
+          <div className="card-divider" />
+          <MoonStar size={22} />
+          <h2>Méditation pour dormir</h2>
+          <p>Une méditation douce de la chaîne Quintessence Cristal pour calmer le mental et préparer le sommeil.</p>
+          <div className="card-actions">
+            <a className="button secondary" href={sleepMeditationUrl} target="_blank" rel="noreferrer">
+              Lancer sur YouTube
+            </a>
+          </div>
         </article>
       </div>
 

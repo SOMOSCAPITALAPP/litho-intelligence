@@ -2,10 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, Heart, History, Sparkles, UserCircle } from "lucide-react";
+import { ArrowRight, Download, Heart, MoonStar, Sparkles, UserCircle } from "lucide-react";
 import { CheckoutButton } from "@/components/CheckoutButton";
+import { withAffiliate } from "@/lib/affiliate";
 import { getLocalFavorites, getLocalMember, getLocalRecommendationUsage, type LocalMember } from "@/lib/localMember";
 import { getStone, stones } from "@/lib/stones";
+
+const guideUrl = "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf";
+const sleepMeditationUrl = "https://youtu.be/Y1rP0iOVG0Q";
 
 export function LocalMemberDashboard() {
   const [member, setMember] = useState<LocalMember | null>(null);
@@ -71,7 +75,7 @@ export function LocalMemberDashboard() {
         <article className="card dashboard-hero-card">
           <UserCircle size={24} />
           <h2>Plan gratuit</h2>
-          <p>{remaining} recommandation{remaining > 1 ? "s" : ""} restante{remaining > 1 ? "s" : ""} aujourd’hui.</p>
+          <p>{remaining} recommandation{remaining > 1 ? "s" : ""} restante{remaining > 1 ? "s" : ""} aujourd'hui.</p>
           <CheckoutButton />
         </article>
 
@@ -87,12 +91,20 @@ export function LocalMemberDashboard() {
           <Heart size={22} />
           <h2>Favoris</h2>
           {favoriteStones.length ? (
-            <ul>
-              {favoriteStones.map((stone) => (
-                <li key={stone!.slug}>
-                  <Link href={`/stone/${stone!.slug}`}>{stone!.name}</Link>
-                </li>
-              ))}
+            <ul className="clean-list">
+              {favoriteStones.map((stone) => {
+                const product = stone?.products[0];
+                return (
+                  <li className="favorite-entry" key={stone!.slug}>
+                    <Link href={`/stone/${stone!.slug}`}>{stone!.name}</Link>
+                    {product ? (
+                      <a className="subtle-link" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">
+                        Acheter sur Amazon
+                      </a>
+                    ) : null}
+                  </li>
+                );
+              })}
             </ul>
           ) : (
             <p>Aucun favori pour le moment. Ajoutez les pierres qui résonnent avec votre besoin du moment.</p>
@@ -102,14 +114,24 @@ export function LocalMemberDashboard() {
       </div>
 
       <section className="section compact-section no-side-padding">
-        <article className="card">
-          <History size={22} />
-          <h2>Dernière recommandation</h2>
-          <p>
-            Votre historique complet sera disponible avec Premium. Pour l’instant, reprenez un conseil rapide et ajoutez vos pierres clés aux favoris.
-          </p>
-          <Link className="button gold-button" href="/recommendation">Continuer mon rituel</Link>
-        </article>
+        <div className="grid">
+          <article className="card">
+            <Download size={22} />
+            <h2>Guide offert</h2>
+            <p>Le guide des 10 pierres essentielles reste disponible à tout moment dans votre espace.</p>
+            <a className="button gold-button" href={guideUrl} target="_blank" rel="noreferrer">
+              Télécharger le guide
+            </a>
+          </article>
+          <article className="card">
+            <MoonStar size={22} />
+            <h2>Méditation sommeil</h2>
+            <p>Une proposition de Quintessence Cristal pour ralentir avant le coucher et apaiser l'esprit.</p>
+            <a className="button secondary" href={sleepMeditationUrl} target="_blank" rel="noreferrer">
+              Ouvrir sur YouTube
+            </a>
+          </article>
+        </div>
       </section>
     </main>
   );
