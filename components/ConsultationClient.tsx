@@ -9,10 +9,12 @@ import type { ConsultationResponse } from "@/lib/consultation";
 
 export function ConsultationClient({
   accessible,
-  sessionId
+  sessionId,
+  testMode = false
 }: {
   accessible: boolean;
   sessionId?: string;
+  testMode?: boolean;
 }) {
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,14 +22,16 @@ export function ConsultationClient({
   const [error, setError] = useState("");
 
   async function submit() {
-    if (!question.trim() || !sessionId) return;
+    if (!question.trim()) return;
+    if (!testMode && !sessionId) return;
+
     setLoading(true);
     setError("");
 
     const response = await fetch("/api/consultation", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question, sessionId })
+      body: JSON.stringify({ question, sessionId, testMode })
     });
 
     const data = await response.json();
@@ -58,8 +62,8 @@ export function ConsultationClient({
           </ul>
           <div className="card-actions">
             <ConsultationCheckoutButton />
-            <Link className="button secondary" href="/login">
-              Me connecter d’abord
+            <Link className="button secondary" href="/consultation?mode=test">
+              Essayer la consultation test
             </Link>
           </div>
           <p>Consultation ponctuelle à 20 €.</p>
@@ -70,11 +74,20 @@ export function ConsultationClient({
 
   return (
     <main className="section">
-      <p className="eyebrow">Consultation privée</p>
-      <h1>Votre conseiller en lithothérapie</h1>
+      <p className="eyebrow">{testMode ? "Consultation test" : "Consultation privée"}</p>
+      <h1>{testMode ? "Essai de votre conseiller en lithothérapie" : "Votre conseiller en lithothérapie"}</h1>
       <p className="section-lead">
         Décrivez votre situation avec vos mots. Le conseiller vous répond de façon claire, symbolique et structurée, sans promesse médicale.
       </p>
+
+      {testMode ? (
+        <section className="section compact-section no-side-padding">
+          <article className="card">
+            <h2>Mode test actif</h2>
+            <p>Vous essayez ici l’expérience de consultation sans paiement. Le ton, la structure et la mise en avant des pierres sont les mêmes que dans la version payante.</p>
+          </article>
+        </section>
+      ) : null}
 
       <section className="guided-layout">
         <div className="form-panel guided-panel">
@@ -105,7 +118,7 @@ export function ConsultationClient({
               <p className="intention-line">{result.grounding}</p>
             </>
           ) : (
-            <p>Après votre paiement, vous pouvez poser ici une vraie question libre et recevoir une réponse guidée avec pierres et bracelets associés.</p>
+            <p>{testMode ? "Posez ici une vraie question libre pour tester la consultation complète." : "Après votre paiement, vous pouvez poser ici une vraie question libre et recevoir une réponse guidée avec pierres et bracelets associés."}</p>
           )}
         </aside>
       </section>
