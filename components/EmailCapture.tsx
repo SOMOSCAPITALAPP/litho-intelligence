@@ -47,7 +47,7 @@ export function EmailCapture({ source = "results" }: { source?: string }) {
       {status === "success" ? (
         <div className="capture-success">
           <p className="capture-status">
-            Votre adresse est bien enregistrée. Le guide s'ouvre immédiatement ici, mais l'envoi automatique par email n'est pas encore activé.
+            Votre adresse est bien enregistrée. Le guide s’ouvre immédiatement ici. L’envoi automatique par email n’est pas encore activé.
           </p>
           <a className="button secondary" href={guideUrl} target="_blank" rel="noreferrer">
             <Download size={17} />
@@ -55,7 +55,7 @@ export function EmailCapture({ source = "results" }: { source?: string }) {
           </a>
         </div>
       ) : null}
-      {status === "error" ? <p className="capture-status">Impossible d'enregistrer pour le moment. Réessayez dans un instant.</p> : null}
+      {status === "error" ? <p className="capture-status">Impossible d’enregistrer pour le moment. Réessayez dans un instant.</p> : null}
     </section>
   );
 }

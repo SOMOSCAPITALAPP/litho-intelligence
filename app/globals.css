@@ -908,6 +908,18 @@ button {
   color: rgba(255, 255, 255, 0.76);
 }
 
+.email-capture .button.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #fff;
+}
+
+.email-capture .button.secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.34);
+  color: #fff;
+}
+
 .capture-success {
   display: grid;
   gap: 12px;
