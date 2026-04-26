@@ -13,7 +13,11 @@ export async function POST(request: Request) {
   const supabase = createSupabaseAdminClient();
 
   if (!supabase) {
-    return NextResponse.json({ ok: true, stored: false });
+    return NextResponse.json({
+      ok: true,
+      stored: false,
+      downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
+    });
   }
 
   const { error } = await supabase.from("leads").upsert(
@@ -29,5 +33,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Supabase insert failed" }, { status: 500 });
   }
 
-  return NextResponse.json({ ok: true, stored: true });
+  return NextResponse.json({
+    ok: true,
+    stored: true,
+    downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
+  });
 }

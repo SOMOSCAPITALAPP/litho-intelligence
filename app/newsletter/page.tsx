@@ -1,25 +1,23 @@
-import { Mail } from "lucide-react";
+import { EmailCapture } from "@/components/EmailCapture";
 import { wellbeingDisclaimer } from "@/lib/legal";
+
+export const metadata = {
+  title: "Guide offert | Litho Intelligence",
+  description: "Recevez le guide PDF gratuit des 10 pierres essentielles pour choisir une pierre selon vos intentions."
+};
 
 export default function NewsletterPage() {
   return (
     <main className="section">
-      <h1>Newsletter et guide offert</h1>
+      <p className="eyebrow">Guide offert</p>
+      <h1>Les 10 pierres essentielles pour débuter</h1>
       <p className="section-lead">
-        Recevez le guide PDF gratuit « 10 pierres essentielles pour débuter ».
+        Recevez un guide PDF clair, élégant et pratique pour choisir vos premières pierres selon vos émotions et vos intentions.
       </p>
 
-      <form className="form-panel">
-        <div className="field">
-          <label htmlFor="email">Email</label>
-          <input id="email" name="email" placeholder="vous@email.com" type="email" />
-        </div>
-        <button className="button" type="button">
-          <Mail size={17} />
-          Recevoir le guide
-        </button>
-        <p className="fineprint">{wellbeingDisclaimer}</p>
-      </form>
+      <EmailCapture source="newsletter-page" />
+
+      <p className="fineprint">{wellbeingDisclaimer}</p>
     </main>
   );
 }
