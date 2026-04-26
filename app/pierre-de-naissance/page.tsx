@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BirthstoneFinder } from "@/components/BirthstoneFinder";
+import { EmailCapture } from "@/components/EmailCapture";
 import { FormationCTA } from "@/components/FormationCTA";
 
 export const metadata: Metadata = {
@@ -50,6 +51,10 @@ export default function BirthstonePage() {
             </p>
           </article>
         </div>
+      </section>
+
+      <section className="section compact-section">
+        <EmailCapture source="birthstone" />
       </section>
 
       <FormationCTA />

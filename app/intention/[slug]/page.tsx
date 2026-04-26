@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Gift, ShoppingBag } from "lucide-react";
 import { FormationCTA } from "@/components/FormationCTA";
+import { EmailCapture } from "@/components/EmailCapture";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
 import { getIntentionPage, intentionPages } from "@/data/intentions";
@@ -137,6 +138,10 @@ export default function IntentionPage({ params }: { params: { slug: string } }) 
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="section compact-section">
+        <EmailCapture source={`intention:${page.slug}`} />
       </section>
 
       <FormationCTA />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EmailCapture } from "@/components/EmailCapture";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
 import { getMeditationSuggestion } from "@/lib/getMeditationSuggestion";
 
@@ -28,6 +29,9 @@ export default function MeditationsPage() {
           <StoneMeditationCard key={meditation.stoneName} meditation={meditation} />
         ))}
       </div>
+      <section className="section compact-section no-side-padding">
+        <EmailCapture source="meditations" />
+      </section>
     </main>
   );
 }

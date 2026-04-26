@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Gem } from "lucide-react";
+import { EmailCapture } from "@/components/EmailCapture";
 import { getNativeStoneImage, nativeStones } from "@/lib/nativeStones";
 
 export const metadata = {
@@ -49,6 +50,10 @@ export default function StonesPage() {
           );
         })}
       </div>
+
+      <section className="section compact-section no-side-padding">
+        <EmailCapture source="stones-catalog" />
+      </section>
     </main>
   );
 }

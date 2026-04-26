@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { EmailCapture } from "@/components/EmailCapture";
 
 export const metadata: Metadata = {
   title: "Formation lithothérapie pratique | Litho Intelligence",
@@ -52,6 +53,10 @@ export default function FormationPage() {
           </Link>
         </div>
       </div>
+
+      <section className="section compact-section no-side-padding">
+        <EmailCapture source="formation" />
+      </section>
     </main>
   );
 }

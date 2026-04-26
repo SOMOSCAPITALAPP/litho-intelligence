@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowRight, HeartHandshake, Moon, Shield, ShoppingBag, Sparkles } from "lucide-react";
+import { EmailCapture } from "@/components/EmailCapture";
 import { recommendStones } from "@/lib/recommendation";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { withAffiliate } from "@/lib/affiliate";
@@ -129,6 +130,10 @@ export default function SosPage() {
           </div>
         </aside>
       </div>
+
+      <section className="section compact-section no-side-padding">
+        <EmailCapture source="sos" />
+      </section>
 
       <section className="section compact-section no-side-padding">
         <div className="grid">

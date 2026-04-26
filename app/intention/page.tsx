@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Search } from "lucide-react";
+import { EmailCapture } from "@/components/EmailCapture";
 import { intentionPages } from "@/data/intentions";
 import { wellbeingDisclaimer } from "@/lib/legal";
 
@@ -40,6 +41,10 @@ export default function IntentionsPage() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="section compact-section">
+        <EmailCapture source="intentions-index" />
       </section>
 
       <section className="answer-band">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EmailCapture } from "@/components/EmailCapture";
 import { GiftStoneFinder } from "@/components/GiftStoneFinder";
 import { FormationCTA } from "@/components/FormationCTA";
 
@@ -31,6 +32,10 @@ export default function GiftPage() {
             selon les traditions de lithothérapie, sans promesse médicale.
           </p>
         </article>
+      </section>
+
+      <section className="section compact-section">
+        <EmailCapture source="gift" />
       </section>
 
       <FormationCTA />

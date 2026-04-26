@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Layers } from "lucide-react";
+import { EmailCapture } from "@/components/EmailCapture";
 import { analyzeCombination } from "@/lib/recommendation";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { stones } from "@/lib/stones";
@@ -75,6 +76,9 @@ export default function CombinationPage() {
           <p>Commencez avec deux ou trois pierres maximum, une intention claire et une observation simple de votre ressenti.</p>
         </article>
       </div>
+      <section className="section compact-section no-side-padding">
+        <EmailCapture source="combination" />
+      </section>
       <p className="fineprint">{wellbeingDisclaimer}</p>
     </main>
   );

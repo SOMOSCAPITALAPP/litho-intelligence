@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EmailCapture } from "@/components/EmailCapture";
 import { FormationCTA } from "@/components/FormationCTA";
 import { LoveCompatibility } from "@/components/LoveCompatibility";
 
@@ -46,6 +47,10 @@ export default function LoveCompatibilityPage() {
             </p>
           </article>
         </div>
+      </section>
+
+      <section className="section compact-section">
+        <EmailCapture source="love-compatibility" />
       </section>
 
       <FormationCTA />

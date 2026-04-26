@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Brain, Heart, Moon, Search, Shield, UserCircle, Wallet, Zap } from "lucide-react";
+import { EmailCapture } from "@/components/EmailCapture";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { stones } from "@/lib/stones";
 
@@ -119,6 +120,10 @@ export default function HomePage() {
           <Link className="button gold-button" href="/register">Créer mon espace gratuit</Link>
           <Link className="button ghost-dark" href="/login">Me connecter</Link>
         </div>
+      </section>
+
+      <section className="section compact-section">
+        <EmailCapture source="home" />
       </section>
 
       <section className="section compact-section">
