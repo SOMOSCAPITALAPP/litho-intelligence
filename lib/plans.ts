@@ -35,5 +35,5 @@ export const premiumFeatures = [
   "Pierre du jour",
   "Rituels personnalisés",
   "Guides PDF premium",
-  "Offres spéciales Felicidade / Vera Mentis"
+  "Offres spéciales produits"
 ];

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, Heart, Search, Shield, Sparkles, UserCircle, Wand2 } from "lucide-react";
+import { Download, Heart, MessageCircle, Search, Shield, Sparkles, UserCircle, Wand2 } from "lucide-react";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { CheckoutButton } from "@/components/CheckoutButton";
 import { LocalMemberDashboard } from "@/components/LocalMemberDashboard";
@@ -33,12 +33,14 @@ export default async function DashboardPage() {
       <main className="section">
         <p className="eyebrow">Espace membre gratuit</p>
         <h1>Connectez-vous à votre espace</h1>
-        <p className="section-lead">
-          Créez un compte gratuit pour retrouver vos recommandations, vos favoris et votre pierre du jour.
-        </p>
+        <p className="section-lead">Créez un compte gratuit pour retrouver vos recommandations, vos favoris et votre pierre du jour.</p>
         <div className="hero-actions">
-          <Link className="button gold-button" href="/register">Créer mon espace gratuit</Link>
-          <Link className="button secondary" href="/login">Me connecter</Link>
+          <Link className="button gold-button" href="/register">
+            Créer mon espace gratuit
+          </Link>
+          <Link className="button secondary" href="/login">
+            Me connecter
+          </Link>
         </div>
       </main>
     );
@@ -70,9 +72,7 @@ export default async function DashboardPage() {
     <main className="section dashboard-page">
       <p className="eyebrow">Espace membre</p>
       <h1>Bienvenue{displayName ? `, ${displayName}` : ""}</h1>
-      <p className="section-lead">
-        Votre espace rassemble vos conseils, vos pierres favorites et les actions les plus utiles pour avancer aujourd'hui.
-      </p>
+      <p className="section-lead">Votre espace rassemble vos conseils, vos pierres favorites et les actions les plus utiles pour avancer aujourd'hui.</p>
 
       <section className="dashboard-action-panel">
         <article className="dashboard-status-card">
@@ -94,15 +94,15 @@ export default async function DashboardPage() {
           </Link>
           <Link className="quick-action-card" href="/sos">
             <Shield size={20} />
-            <span>Mode SOS émotionnel</span>
+            <span>Soutien rapide</span>
           </Link>
           <Link className="quick-action-card" href="/combination">
             <Wand2 size={20} />
             <span>Analyser mes pierres</span>
           </Link>
-          <Link className="quick-action-card" href="/stones">
-            <Heart size={20} />
-            <span>Ajouter des favoris</span>
+          <Link className="quick-action-card" href="/consultation">
+            <MessageCircle size={20} />
+            <span>Consultation privée</span>
           </Link>
         </div>
       </section>
@@ -114,7 +114,9 @@ export default async function DashboardPage() {
           <img className="stone-thumb wide" src={stoneOfDay.image.url} alt={stoneOfDay.image.alt} />
           <p>{stoneOfDay.name} vous accompagne aujourd'hui dans une intention de présence et de clarté.</p>
           <div className="card-actions">
-            <Link className="button secondary" href={`/stone/${stoneOfDay.slug}`}>Voir la fiche</Link>
+            <Link className="button secondary" href={`/stone/${stoneOfDay.slug}`}>
+              Voir la fiche
+            </Link>
             <AddFavoriteButton initialActive={favoriteSlugs.has(stoneOfDay.slug)} stoneSlug={stoneOfDay.slug} />
           </div>
         </article>
@@ -131,12 +133,7 @@ export default async function DashboardPage() {
                   <li className="favorite-entry" key={favorite.id}>
                     <Link href={`/stone/${favorite.stone_slug}`}>{stone?.name ?? favorite.stone_slug}</Link>
                     {product ? (
-                      <a
-                        className="subtle-link"
-                        href={withAffiliate(product.url)}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
+                      <a className="subtle-link" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">
                         Acheter sur Amazon
                       </a>
                     ) : null}
@@ -147,7 +144,9 @@ export default async function DashboardPage() {
           ) : (
             <p>Aucun favori pour le moment. Ajoutez les pierres qui vous attirent pour retrouver rapidement vos choix.</p>
           )}
-          <Link className="button secondary" href="/stones">Explorer les pierres</Link>
+          <Link className="button secondary" href="/stones">
+            Explorer les pierres
+          </Link>
         </article>
 
         <article className="card">
@@ -164,9 +163,7 @@ export default async function DashboardPage() {
 
       <section className="section compact-section no-side-padding">
         <h2>Méditation pour dormir</h2>
-        <p className="section-lead">
-          Une proposition de Quintessence Cristal intégrée dans votre espace membre pour rester dans l'application tout en lançant la lecture.
-        </p>
+        <p className="section-lead">Une proposition de Quintessence Cristal intégrée dans votre espace membre pour rester dans l'application tout en lançant la lecture.</p>
         <YouTubeEmbed
           videoId="Y1rP0iOVG0Q"
           title="Méditation pour aider à dormir"
@@ -191,7 +188,9 @@ export default async function DashboardPage() {
                 <h3>{stone.name}</h3>
                 <p>{stone.intentions.slice(0, 2).join(" · ")}</p>
                 <div className="card-actions">
-                  <Link className="button secondary" href={`/stone/${stone.slug}`}>Voir</Link>
+                  <Link className="button secondary" href={`/stone/${stone.slug}`}>
+                    Voir
+                  </Link>
                   <AddFavoriteButton initialActive={favoriteSlugs.has(stone.slug)} stoneSlug={stone.slug} />
                 </div>
               </article>

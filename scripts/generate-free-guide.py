@@ -7,20 +7,18 @@ from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import cm
-from reportlab.platypus import Image, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import Image, KeepInFrame, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "guides" / "guide-10-pierres-essentielles-litho-intelligence.pdf"
 IMAGES = ROOT / "public" / "images" / "stones"
 
-PAPER = colors.HexColor("#f7f1e8")
 CARD = colors.HexColor("#fffaf4")
 INK = colors.HexColor("#1f1725")
 MUTED = colors.HexColor("#675d6f")
 VIOLET = colors.HexColor("#2a1838")
 GOLD = colors.HexColor("#d3ac67")
-GOLD_SOFT = colors.HexColor("#efe1c8")
 LINE = colors.HexColor("#e6d5bb")
 
 STONES = [
@@ -139,99 +137,14 @@ STONES = [
 
 def build_styles():
     styles = getSampleStyleSheet()
-    styles.add(
-        ParagraphStyle(
-            name="CoverKicker",
-            fontName="Helvetica-Bold",
-            fontSize=11,
-            leading=14,
-            textColor=GOLD,
-            alignment=TA_CENTER,
-            spaceAfter=8,
-        )
-    )
-    styles.add(
-        ParagraphStyle(
-            name="CoverTitle",
-            fontName="Helvetica-Bold",
-            fontSize=28,
-            leading=33,
-            textColor=INK,
-            alignment=TA_CENTER,
-            spaceAfter=10,
-        )
-    )
-    styles.add(
-        ParagraphStyle(
-            name="CoverLead",
-            fontName="Helvetica",
-            fontSize=12.5,
-            leading=18,
-            textColor=MUTED,
-            alignment=TA_CENTER,
-            spaceAfter=8,
-        )
-    )
-    styles.add(
-        ParagraphStyle(
-            name="SectionTitle",
-            fontName="Helvetica-Bold",
-            fontSize=18,
-            leading=22,
-            textColor=VIOLET,
-            spaceAfter=6,
-        )
-    )
-    styles.add(
-        ParagraphStyle(
-            name="StoneTitle",
-            fontName="Helvetica-Bold",
-            fontSize=15,
-            leading=19,
-            textColor=VIOLET,
-            spaceAfter=3,
-        )
-    )
-    styles.add(
-        ParagraphStyle(
-            name="Body",
-            fontName="Helvetica",
-            fontSize=9.7,
-            leading=13.5,
-            textColor=INK,
-            alignment=TA_LEFT,
-        )
-    )
-    styles.add(
-        ParagraphStyle(
-            name="BodyMuted",
-            fontName="Helvetica",
-            fontSize=9.2,
-            leading=13,
-            textColor=MUTED,
-            alignment=TA_LEFT,
-        )
-    )
-    styles.add(
-        ParagraphStyle(
-            name="Meta",
-            fontName="Helvetica-Bold",
-            fontSize=8.8,
-            leading=12,
-            textColor=GOLD,
-            alignment=TA_LEFT,
-        )
-    )
-    styles.add(
-        ParagraphStyle(
-            name="Small",
-            fontName="Helvetica",
-            fontSize=8.1,
-            leading=11.2,
-            textColor=MUTED,
-            alignment=TA_LEFT,
-        )
-    )
+    styles.add(ParagraphStyle(name="CoverKicker", fontName="Helvetica-Bold", fontSize=11, leading=14, textColor=GOLD, alignment=TA_CENTER, spaceAfter=8))
+    styles.add(ParagraphStyle(name="CoverTitle", fontName="Helvetica-Bold", fontSize=28, leading=33, textColor=INK, alignment=TA_CENTER, spaceAfter=10))
+    styles.add(ParagraphStyle(name="CoverLead", fontName="Helvetica", fontSize=12.5, leading=18, textColor=MUTED, alignment=TA_CENTER, spaceAfter=8))
+    styles.add(ParagraphStyle(name="SectionTitle", fontName="Helvetica-Bold", fontSize=18, leading=22, textColor=VIOLET, spaceAfter=6))
+    styles.add(ParagraphStyle(name="StoneTitle", fontName="Helvetica-Bold", fontSize=15, leading=18, textColor=VIOLET, spaceAfter=3))
+    styles.add(ParagraphStyle(name="Body", fontName="Helvetica", fontSize=9.2, leading=12.6, textColor=INK, alignment=TA_LEFT))
+    styles.add(ParagraphStyle(name="Meta", fontName="Helvetica-Bold", fontSize=8.6, leading=11.5, textColor=GOLD, alignment=TA_LEFT))
+    styles.add(ParagraphStyle(name="Small", fontName="Helvetica", fontSize=8.1, leading=11.2, textColor=MUTED, alignment=TA_LEFT))
     return styles
 
 
@@ -253,11 +166,11 @@ def optimized_image(path):
         buffer = BytesIO()
         image.save(buffer, format="JPEG", quality=84, optimize=True)
         buffer.seek(0)
-    return Image(buffer, width=4.45 * cm, height=4.45 * cm)
+    return Image(buffer, width=4.15 * cm, height=4.15 * cm)
 
 
 def premium_panel(text, styles, padding=14):
-    panel = Table([[Paragraph(text, styles["Body"])]], colWidths=[16.3 * cm])
+    panel = Table([[Paragraph(text, styles["Body"])]], colWidths=[16.2 * cm])
     panel.setStyle(
         TableStyle(
             [
@@ -283,12 +196,12 @@ def stone_card(styles, stone, index):
         else "Lien produit à venir dans le catalogue."
     )
 
-    rows = [
+    text_flow = [
         Paragraph(f"{index}. {stone['name']}", styles["StoneTitle"]),
         Paragraph(stone["intention"], styles["Meta"]),
-        Spacer(1, 0.08 * cm),
+        Spacer(1, 0.05 * cm),
         Paragraph(stone["summary"], styles["Body"]),
-        Spacer(1, 0.12 * cm),
+        Spacer(1, 0.08 * cm),
         Paragraph(f"<b>Quand la choisir :</b> {stone['when']}", styles["Body"]),
         Paragraph(f"<b>Utilisation simple :</b> {stone['usage']}", styles["Body"]),
         Paragraph(f"<b>Mini-rituel :</b> {stone['ritual']}", styles["Body"]),
@@ -297,29 +210,19 @@ def stone_card(styles, stone, index):
         Paragraph(amazon_line, styles["Body"]),
     ]
 
-    text_table = Table([[item] for item in rows], colWidths=[11.15 * cm])
-    text_table.setStyle(
-        TableStyle(
-            [
-                ("LEFTPADDING", (0, 0), (-1, -1), 0),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                ("TOPPADDING", (0, 0), (-1, -1), 0),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
-            ]
-        )
-    )
+    safe_text = KeepInFrame(10.85 * cm, 6.25 * cm, text_flow, mode="shrink")
 
-    card = Table([[image, text_table]], colWidths=[4.9 * cm, 11.4 * cm])
+    card = Table([[image, safe_text]], colWidths=[4.6 * cm, 10.95 * cm])
     card.setStyle(
         TableStyle(
             [
                 ("BACKGROUND", (0, 0), (-1, -1), CARD),
                 ("BOX", (0, 0), (-1, -1), 0.8, LINE),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 11),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 11),
-                ("TOPPADDING", (0, 0), (-1, -1), 11),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 11),
+                ("LEFTPADDING", (0, 0), (-1, -1), 10),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 10),
+                ("TOPPADDING", (0, 0), (-1, -1), 10),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
             ]
         )
     )
@@ -341,80 +244,67 @@ def build_pdf():
     )
 
     story = [
-        Spacer(1, 0.4 * cm),
+        Spacer(1, 0.35 * cm),
         Paragraph("Guide offert", styles["CoverKicker"]),
         Paragraph("Les 10 pierres essentielles", styles["CoverTitle"]),
-        Paragraph(
-            "Un guide premium, visuel et pratique pour choisir vos premières pierres selon vos émotions, vos intentions et vos moments de vie.",
-            styles["CoverLead"],
-        ),
-        Spacer(1, 0.15 * cm),
+        Paragraph("Un guide premium, visuel et pratique pour choisir vos premières pierres selon vos émotions, vos intentions et vos moments de vie.", styles["CoverLead"]),
+        Spacer(1, 0.12 * cm),
         premium_panel(
-            "Ce guide n’a pas vocation à promettre, ni à compliquer. Son rôle est de vous aider à repérer les pierres les plus classiques, "
-            "à comprendre leur symbolique et à les utiliser avec simplicité dans une démarche de bien-être.",
+            "Ce guide n’a pas vocation à promettre, ni à compliquer. Son rôle est de vous aider à repérer les pierres les plus classiques, à comprendre leur symbolique et à les utiliser avec simplicité dans une démarche de bien-être.",
             styles,
         ),
-        Spacer(1, 0.22 * cm),
+        Spacer(1, 0.18 * cm),
         Paragraph(
-            "Les informations proposées reposent sur les traditions de lithothérapie, les croyances associées aux pierres naturelles et les usages symboliques de bien-être. "
-            "Elles ne remplacent jamais un avis médical, psychologique ou professionnel.",
+            "Les informations proposées reposent sur les traditions de lithothérapie, les croyances associées aux pierres naturelles et les usages symboliques de bien-être. Elles ne remplacent jamais un avis médical, psychologique ou professionnel.",
             styles["Small"],
         ),
-        Spacer(1, 0.28 * cm),
+        Spacer(1, 0.2 * cm),
         Paragraph("Qu’est-ce que la lithothérapie ?", styles["SectionTitle"]),
         Paragraph(
-            "La lithothérapie est une pratique de bien-être qui s’appuie sur les traditions, les symboles et les ressentis associés aux pierres naturelles. "
-            "Elle invite à choisir une pierre comme support d’intention : retrouver du calme, poser des limites, nourrir la confiance, traverser une transition ou se reconnecter à une qualité intérieure.",
+            "La lithothérapie est une pratique de bien-être qui s’appuie sur les traditions, les symboles et les ressentis associés aux pierres naturelles. Elle invite à choisir une pierre comme support d’intention : retrouver du calme, poser des limites, nourrir la confiance, traverser une transition ou se reconnecter à une qualité intérieure.",
             styles["Body"],
         ),
-        Spacer(1, 0.12 * cm),
+        Spacer(1, 0.09 * cm),
         Paragraph(
-            "Dans ce cadre, une pierre n’est pas pensée comme une solution médicale. Elle agit plutôt comme un repère concret : un objet que l’on porte, que l’on tient, "
-            "ou que l’on place près de soi pour accompagner un rituel simple, une respiration, une décision ou un recentrage.",
-            styles["Body"],
-        ),
-        Spacer(1, 0.24 * cm),
-        Paragraph("Comment utiliser ce guide", styles["SectionTitle"]),
-        Paragraph(
-            "Commencez par nommer votre besoin principal : protection, calme, amour, confiance, énergie, clarté ou renouveau. Choisissez ensuite une pierre dont l’image, la symbolique ou l’intention vous parle sincèrement. "
-            "La régularité d’usage compte souvent davantage que la complexité du rituel.",
-            styles["Body"],
-        ),
-        Spacer(1, 0.1 * cm),
-        Paragraph(
-            "<b>Méthode simple :</b> une pierre, une intention, un geste. Portez-la, tenez-la quelques minutes ou placez-la dans un espace lié à votre objectif du moment.",
+            "Dans ce cadre, une pierre n’est pas pensée comme une solution médicale. Elle agit plutôt comme un repère concret : un objet que l’on porte, que l’on tient, ou que l’on place près de soi pour accompagner un rituel simple, une respiration, une décision ou un recentrage.",
             styles["Body"],
         ),
         Spacer(1, 0.18 * cm),
+        Paragraph("Comment utiliser ce guide", styles["SectionTitle"]),
+        Paragraph(
+            "Commencez par nommer votre besoin principal : protection, calme, amour, confiance, énergie, clarté ou renouveau. Choisissez ensuite une pierre dont l’image, la symbolique ou l’intention vous parle sincèrement. La régularité d’usage compte souvent davantage que la complexité du rituel.",
+            styles["Body"],
+        ),
+        Spacer(1, 0.08 * cm),
+        Paragraph("<b>Méthode simple :</b> une pierre, une intention, un geste. Portez-la, tenez-la quelques minutes ou placez-la dans un espace lié à votre objectif du moment.", styles["Body"]),
+        Spacer(1, 0.14 * cm),
     ]
 
     for index, stone in enumerate(STONES, start=1):
         story.append(stone_card(styles, stone, index))
-        story.append(Spacer(1, 0.18 * cm))
+        story.append(Spacer(1, 0.14 * cm))
 
     story.extend(
         [
-            Spacer(1, 0.14 * cm),
             Paragraph("Purifier, recharger, observer", styles["SectionTitle"]),
             Paragraph(
-                "Pour un usage simple, privilégiez la fumigation douce, la lumière lunaire ou le repos sur une géode de quartz. Évitez l’eau si vous n’êtes pas certain que la pierre la tolère bien. "
-                "Le plus important n’est pas d’accumuler les techniques, mais de garder un cadre sobre, cohérent et régulier.",
+                "Pour un usage simple, privilégiez la fumigation douce, la lumière lunaire ou le repos sur une géode de quartz. Évitez l’eau si vous n’êtes pas certain que la pierre la tolère bien. Le plus important n’est pas d’accumuler les techniques, mais de garder un cadre sobre, cohérent et régulier.",
                 styles["Body"],
             ),
-            Spacer(1, 0.1 * cm),
+            Spacer(1, 0.08 * cm),
             Paragraph(
                 "Le meilleur indicateur reste votre usage réel : est-ce que la pierre vous aide à vous souvenir d’une intention utile, à mieux respirer, à poser une limite ou à retrouver une qualité intérieure ?",
                 styles["Body"],
             ),
-            Spacer(1, 0.18 * cm),
+            Spacer(1, 0.14 * cm),
             Paragraph("Continuer avec Litho Intelligence", styles["SectionTitle"]),
             Paragraph(
                 "Vous pouvez prolonger ce guide sur Litho Intelligence pour obtenir une recommandation personnalisée, comparer plusieurs pierres, explorer les compatibilités et retrouver le bracelet associé à votre intention.",
                 styles["Body"],
             ),
-            Spacer(1, 0.08 * cm),
+            Spacer(1, 0.06 * cm),
             Paragraph('<link href="https://litho-intelligence.vercel.app" color="#8b4656"><u>https://litho-intelligence.vercel.app</u></link>', styles["Body"]),
-            Spacer(1, 0.18 * cm),
+            Spacer(1, 0.12 * cm),
             Paragraph(
                 "Disclaimer : les informations proposées sont issues des traditions de lithothérapie et des usages symboliques de bien-être. Elles ne remplacent pas un avis médical, un diagnostic, un traitement ou un accompagnement professionnel.",
                 styles["Small"],

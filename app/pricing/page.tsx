@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { CheckoutButton } from "@/components/CheckoutButton";
+import { ConsultationCheckoutButton } from "@/components/ConsultationCheckoutButton";
 import { premiumFeatures } from "@/lib/plans";
 
 export const metadata = {
   title: "Tarifs | Litho Intelligence",
-  description: "Comparez les plans gratuit et Premium de Litho Intelligence."
+  description: "Comparez les accès gratuit, Premium et la consultation privée de Litho Intelligence."
 };
 
 export default function PricingPage() {
@@ -11,7 +13,7 @@ export default function PricingPage() {
     <main className="section pricing-page">
       <p className="eyebrow">Espace membre</p>
       <h1>Choisissez votre niveau d'accompagnement</h1>
-      <p className="section-lead">Commencez gratuitement, puis débloquez l'expérience illimitée quand vous voulez.</p>
+      <p className="section-lead">Commencez gratuitement, puis débloquez l’expérience illimitée ou une consultation privée quand vous en avez besoin.</p>
 
       <div className="pricing-grid">
         <article className="pricing-card">
@@ -37,6 +39,20 @@ export default function PricingPage() {
           <p>Annulable à tout moment.</p>
         </article>
       </div>
+
+      <section className="section compact-section no-side-padding">
+        <article className="pricing-card">
+          <span className="mystic-kicker">Consultation privée</span>
+          <h2>20 €</h2>
+          <p>Posez votre question librement à un conseiller en lithothérapie assisté par IA, recevez une réponse claire et une sélection de bracelets associés.</p>
+          <div className="card-actions">
+            <ConsultationCheckoutButton />
+            <Link className="button secondary" href="/consultation">
+              Voir le détail
+            </Link>
+          </div>
+        </article>
+      </section>
     </main>
   );
 }

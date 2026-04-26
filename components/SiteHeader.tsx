@@ -10,9 +10,10 @@ const primaryLinks = [
   { href: "/intention", label: "Intentions" },
   { href: "/pierre-de-naissance", label: "Pierre de naissance" },
   { href: "/idee-cadeau", label: "Idée cadeau" },
-  { href: "/compatibilite-amoureuse", label: "Compatibilité amoureuse" },
+  { href: "/compatibilite-amoureuse", label: "Compatibilité" },
   { href: "/meditations", label: "Méditations" },
-  { href: "/formation", label: "Formation" }
+  { href: "/formation", label: "Formation" },
+  { href: "/consultation", label: "Consultation" }
 ];
 
 const secondaryLinks = [

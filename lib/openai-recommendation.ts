@@ -67,10 +67,7 @@ const schema = {
   }
 };
 
-export async function getStoneRecommendations(
-  input: RecommendationInput,
-  user: RecommendationUser = {}
-): Promise<AIRecommendationResponse> {
+export async function getStoneRecommendations(input: RecommendationInput, user: RecommendationUser = {}): Promise<AIRecommendationResponse> {
   const normalized = normalizeRecommendationInput(input);
   if (!normalizeInput(normalized)) {
     const fallback = getGlobalFallback();
@@ -113,13 +110,9 @@ export async function getCachedResult(input: RecommendationInput) {
   const supabase = createSupabaseAdminClient();
   if (!supabase) return null;
 
-  const { data } = await supabase
-    .from("ai_cache")
-    .select("response_json")
-    .eq("input_hash", getInputHash(input))
-    .maybeSingle();
-
+  const { data } = await supabase.from("ai_cache").select("response_json").eq("input_hash", getInputHash(input)).maybeSingle();
   if (!data?.response_json) return null;
+
   return {
     ...(data.response_json as AIRecommendationResponse),
     source: "cache" as const
@@ -247,11 +240,7 @@ function getFallbackRecommendations(input: RecommendationInput, source: AIRecomm
   };
 }
 
-function sanitizeRecommendations(
-  response: OpenAIResponsePayload,
-  input: RecommendationInput,
-  source: AIRecommendationSource
-): AIRecommendationResponse {
+function sanitizeRecommendations(response: OpenAIResponsePayload, input: RecommendationInput, source: AIRecommendationSource): AIRecommendationResponse {
   const fallback = getFallbackRecommendations(input, "fallback");
   const valid = response.stones
     .map((item) => {
@@ -274,12 +263,7 @@ function sanitizeRecommendations(
   return { stones: valid.length >= 3 ? valid.slice(0, 5) : fallback.stones, source };
 }
 
-async function logAIUsage(
-  userId: string | null | undefined,
-  input: RecommendationInput,
-  source: AIRecommendationSource,
-  payload: Record<string, unknown> = {}
-) {
+async function logAIUsage(userId: string | null | undefined, input: RecommendationInput, source: AIRecommendationSource, payload: Record<string, unknown> = {}) {
   const supabase = createSupabaseAdminClient();
   if (!supabase) return;
 
