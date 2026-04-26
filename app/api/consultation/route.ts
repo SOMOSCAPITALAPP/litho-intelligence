@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
-import { getConsultationAdvice } from "@/lib/consultation";
+import { getConsultationExperience } from "@/lib/consultation";
 
 export async function POST(request: Request) {
   const stripe = getStripe();
@@ -15,6 +15,8 @@ export async function POST(request: Request) {
   const sessionId = typeof body.sessionId === "string" ? body.sessionId : "";
   const question = typeof body.question === "string" ? body.question : "";
   const testMode = Boolean(body.testMode);
+  const profile = typeof body.profile === "object" && body.profile ? body.profile : {};
+  const history = Array.isArray(body.history) ? body.history : [];
 
   const {
     data: { user }
@@ -29,7 +31,7 @@ export async function POST(request: Request) {
   }
 
   if (testMode) {
-    const advice = await getConsultationAdvice(question);
+    const advice = await getConsultationExperience(question, profile, history);
     return NextResponse.json(advice);
   }
 
@@ -49,6 +51,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Cette consultation n'est pas accessible." }, { status: 403 });
   }
 
-  const advice = await getConsultationAdvice(question);
+  const advice = await getConsultationExperience(question, profile, history);
   return NextResponse.json(advice);
 }

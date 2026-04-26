@@ -18,14 +18,31 @@ export type ConsultationResponse = {
   disclaimer: string;
 };
 
+export type ConsultationChatMessage = {
+  role: "user" | "assistant";
+  content: string;
+};
+
+export type ConsultationProfile = {
+  recipient?: string;
+  age?: string;
+  sex?: string;
+};
+
+export type ConsultationExperience = {
+  chatMessage: string;
+  consultation: ConsultationResponse;
+};
+
 const consultationSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["title", "answer", "grounding", "stones"],
+  required: ["title", "answer", "grounding", "chatMessage", "stones"],
   properties: {
     title: { type: "string" },
     answer: { type: "string" },
     grounding: { type: "string" },
+    chatMessage: { type: "string" },
     stones: {
       type: "array",
       minItems: 2,
@@ -43,9 +60,13 @@ const consultationSchema = {
   }
 };
 
-export async function getConsultationAdvice(question: string): Promise<ConsultationResponse> {
+export async function getConsultationExperience(
+  question: string,
+  profile: ConsultationProfile = {},
+  history: ConsultationChatMessage[] = []
+): Promise<ConsultationExperience> {
   if (!process.env.OPENAI_API_KEY) {
-    return buildFallbackConsultation(question);
+    return buildFallbackExperience(question, profile);
   }
 
   try {
@@ -58,17 +79,19 @@ export async function getConsultationAdvice(question: string): Promise<Consultat
       body: JSON.stringify({
         model: OPENAI_MODEL,
         temperature: 0.7,
-        max_output_tokens: 550,
+        max_output_tokens: 700,
         input: [
           {
             role: "system",
             content:
-              "Tu es un conseiller en lithothérapie prudent, chaleureux et concret. Tu réponds en français clair. Tu ne fais aucune promesse médicale. Tu t'appuies sur des traditions de bien-être, tu proposes 2 à 3 pierres du catalogue et tu expliques pourquoi elles conviennent."
+              "Tu es un conseiller en lithothérapie prudent, chaleureux et concret. Tu réponds en français clair. Tu ne fais aucune promesse médicale. Tu t'appuies sur des traditions de bien-être. Ta réponse doit contenir un message de chat court, empathique et conversationnel, qui écoute activement l'utilisateur, rappelle que la synthèse détaillée est affichée sous le dialogue et précise que la lithothérapie ne remplace jamais un avis médical. Tu proposes aussi une synthèse globale claire avec 2 à 3 pierres du catalogue."
           },
           {
             role: "user",
             content: JSON.stringify({
               question,
+              profile,
+              history,
               available_stones: stones.map((stone) => ({
                 name: stone.name,
                 slug: stone.slug,
@@ -99,13 +122,33 @@ export async function getConsultationAdvice(question: string): Promise<Consultat
         ?.find((item: { type: string }) => item.type === "output_text")?.text;
 
     if (!rawText) throw new Error("OPENAI_EMPTY_RESPONSE");
-    return sanitizeConsultation(JSON.parse(rawText) as { title: string; answer: string; grounding: string; stones: Array<{ name: string; reason: string }> });
+    return sanitizeConsultation(
+      JSON.parse(rawText) as {
+        title: string;
+        answer: string;
+        grounding: string;
+        chatMessage: string;
+        stones: Array<{ name: string; reason: string }>;
+      },
+      question,
+      profile
+    );
   } catch {
-    return buildFallbackConsultation(question);
+    return buildFallbackExperience(question, profile);
   }
 }
 
-function sanitizeConsultation(payload: { title: string; answer: string; grounding: string; stones: Array<{ name: string; reason: string }> }): ConsultationResponse {
+function sanitizeConsultation(
+  payload: {
+    title: string;
+    answer: string;
+    grounding: string;
+    chatMessage: string;
+    stones: Array<{ name: string; reason: string }>;
+  },
+  question: string,
+  profile: ConsultationProfile
+): ConsultationExperience {
   const selected = payload.stones
     .map((item) => {
       const stone = stones.find((entry) => normalize(entry.name) === normalize(item.name));
@@ -121,17 +164,22 @@ function sanitizeConsultation(payload: { title: string; answer: string; groundin
     })
     .filter(Boolean) as ConsultationStone[];
 
+  const fallback = buildFallbackExperience(question, profile);
+
   return {
-    title: payload.title.slice(0, 90),
-    answer: payload.answer.slice(0, 1200),
-    grounding: payload.grounding.slice(0, 220),
-    stones: selected.length >= 2 ? selected.slice(0, 3) : buildFallbackConsultation("").stones,
-    disclaimer:
-      "Conseil basé sur les traditions de lithothérapie et une démarche de bien-être. Il ne remplace pas un avis médical, psychologique ou professionnel."
+    chatMessage: payload.chatMessage.slice(0, 420),
+    consultation: {
+      title: payload.title.slice(0, 90),
+      answer: payload.answer.slice(0, 1200),
+      grounding: payload.grounding.slice(0, 220),
+      stones: selected.length >= 2 ? selected.slice(0, 3) : fallback.consultation.stones,
+      disclaimer:
+        "Conseil basé sur les traditions de lithothérapie et une démarche de bien-être. Il ne remplace pas un avis médical, psychologique ou professionnel."
+    }
   };
 }
 
-function buildFallbackConsultation(question: string): ConsultationResponse {
+function buildFallbackExperience(question: string, profile: ConsultationProfile): ConsultationExperience {
   const defaults = ["labradorite", "quartz-rose", "amethyste"]
     .map((slug) => stones.find((stone) => stone.slug === slug))
     .filter(Boolean)
@@ -144,16 +192,24 @@ function buildFallbackConsultation(question: string): ConsultationResponse {
     }))
     .filter((stone) => stone.braceletUrl !== "#");
 
+  const recipient = profile.recipient?.trim() ? `pour ${profile.recipient.trim()}` : "pour la personne concernée";
+
   return {
-    title: "Un premier repère pour votre question",
-    answer:
+    chatMessage:
       question.trim().length > 0
-        ? "Votre question appelle avant tout de la clarté et un recentrage simple. Je vous propose de partir sur quelques pierres très lisibles, afin de ne pas multiplier les signaux et de garder une intention nette."
-        : "Commencez par une intention simple et choisissez une pierre qui vous aide à vous sentir plus stable, plus doux avec vous-même ou plus clair dans votre action.",
-    grounding: "Gardez une seule intention pour aujourd’hui et observez ce qui vous apaise ou vous remet en mouvement.",
-    stones: defaults.slice(0, 3),
-    disclaimer:
-      "Conseil basé sur les traditions de lithothérapie et une démarche de bien-être. Il ne remplace pas un avis médical, psychologique ou professionnel."
+        ? `Merci, j’ai bien pris votre demande ${recipient}. Je reste ici pour échanger avec vous, et vous trouverez juste en dessous une réponse globale plus structurée avec les pierres et bracelets associés. La lithothérapie reste une approche de bien-être et ne remplace jamais un avis médical.`
+        : "Je suis ici pour vous aider. Dites-moi pour qui est ce conseil, l’âge, le sexe, puis décrivez votre besoin avec vos mots. La synthèse détaillée apparaîtra juste sous le dialogue.",
+    consultation: {
+      title: "Un premier repère pour votre question",
+      answer:
+        question.trim().length > 0
+          ? "Votre question appelle avant tout de la clarté et un recentrage simple. Je vous propose de partir sur quelques pierres très lisibles, afin de ne pas multiplier les signaux et de garder une intention nette."
+          : "Commencez par une intention simple et choisissez une pierre qui vous aide à vous sentir plus stable, plus doux avec vous-même ou plus clair dans votre action.",
+      grounding: "Gardez une seule intention pour aujourd’hui et observez ce qui vous apaise ou vous remet en mouvement.",
+      stones: defaults.slice(0, 3),
+      disclaimer:
+        "Conseil basé sur les traditions de lithothérapie et une démarche de bien-être. Il ne remplace pas un avis médical, psychologique ou professionnel."
+    }
   };
 }
 

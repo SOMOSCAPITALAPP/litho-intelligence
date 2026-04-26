@@ -1300,6 +1300,35 @@ button {
   top: 16px;
 }
 
+.consultation-chat {
+  display: grid;
+  gap: 10px;
+  max-height: 340px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.chat-bubble {
+  border-radius: 14px;
+  line-height: 1.55;
+  max-width: 92%;
+  padding: 12px 14px;
+}
+
+.chat-bubble.assistant {
+  background: #f4e5df;
+  border: 1px solid #e1c5bd;
+  color: var(--ink);
+  justify-self: start;
+}
+
+.chat-bubble.user {
+  background: var(--accent-strong);
+  border: 1px solid var(--accent-strong);
+  color: #fff;
+  justify-self: end;
+}
+
 .dashboard-section-header {
   align-items: flex-end;
   display: flex;
