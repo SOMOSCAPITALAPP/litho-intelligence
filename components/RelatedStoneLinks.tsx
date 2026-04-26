@@ -9,7 +9,6 @@ type RelatedStone = {
   name: string;
   pageHref: string;
   amazonUrl?: string;
-  brand?: string;
 };
 
 export function RelatedStoneLinks({
@@ -34,13 +33,8 @@ export function RelatedStoneLinks({
                 {stone.name}
               </Link>
               {stone.amazonUrl ? (
-                <Link
-                  className="related-amazon-link"
-                  href={withAffiliate(stone.amazonUrl)}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Bracelet {stone.brand ?? "associé"}
+                <Link className="related-amazon-link" href={withAffiliate(stone.amazonUrl)} rel="noopener noreferrer" target="_blank">
+                  Voir le bracelet associé
                   <ExternalLink size={13} />
                 </Link>
               ) : null}
@@ -63,13 +57,11 @@ function resolveRelatedStone(value: string): RelatedStone | null {
     stones.find((stone) => normalizeNativeValue(stone.name) === normalizeNativeValue(cleaned));
 
   if (productStone) {
-    const product = productStone.products[0];
     return {
       key: productStone.slug,
       name: productStone.name,
       pageHref: `/stone/${productStone.slug}`,
-      amazonUrl: product?.url,
-      brand: product?.brand
+      amazonUrl: productStone.products[0]?.url
     };
   }
 
@@ -81,14 +73,12 @@ function resolveRelatedStone(value: string): RelatedStone | null {
   if (!native) return null;
 
   const nativeProduct = native.amazon_product_slug ? getStone(native.amazon_product_slug) : null;
-  const product = nativeProduct?.products[0];
 
   return {
     key: native.slug,
     name: native.name,
     pageHref: `/stones/${native.slug}`,
-    amazonUrl: product?.url,
-    brand: product?.brand
+    amazonUrl: nativeProduct?.products[0]?.url
   };
 }
 

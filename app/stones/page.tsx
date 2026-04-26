@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Gem } from "lucide-react";
 import { EmailCapture } from "@/components/EmailCapture";
 import { getNativeStoneImage, nativeStones } from "@/lib/nativeStones";
+import { slugifyVirtue } from "@/lib/virtues";
 
 export const metadata = {
   title: "Pierres | Litho Intelligence",
@@ -12,10 +13,7 @@ export default function StonesPage() {
   return (
     <main className="section">
       <h1>Catalogue des pierres</h1>
-      <p className="section-lead">
-        Accédez rapidement aux fiches, usages symboliques, compatibilités, purifications
-        et conseils de port.
-      </p>
+      <p className="section-lead">Accédez rapidement aux fiches, usages symboliques, compatibilités, purifications et conseils de port.</p>
 
       <div className="catalog-toolbar">
         <Link className="button" href="/recommendation">
@@ -32,21 +30,21 @@ export default function StonesPage() {
           const image = getNativeStoneImage(stone);
 
           return (
-            <Link className="card catalog-card" href={`/stones/${stone.slug}`} key={stone.slug}>
+            <article className="card catalog-card" key={stone.slug}>
               <img className="stone-thumb" src={image.url} alt={image.alt} />
               <h2>{stone.name}</h2>
               <p>{stone.short_description}</p>
               <div className="pill-row">
                 {stone.intentions.slice(0, 3).map((property) => (
-                  <span className="pill" key={property}>
+                  <Link className="pill pill-link" href={`/vertus/${slugifyVirtue(property)}`} key={property}>
                     {property}
-                  </span>
+                  </Link>
                 ))}
               </div>
-              <span className="micro-action">
+              <Link className="micro-action" href={`/stones/${stone.slug}`}>
                 Ouvrir la fiche <ArrowRight size={15} />
-              </span>
-            </Link>
+              </Link>
+            </article>
           );
         })}
       </div>

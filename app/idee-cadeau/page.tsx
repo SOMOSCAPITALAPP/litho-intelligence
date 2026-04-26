@@ -9,37 +9,13 @@ import { getStone } from "@/lib/stones";
 
 export const metadata: Metadata = {
   title: "Idée cadeau pierre naturelle personnalisée | Litho Intelligence",
-  description:
-    "Trouvez une pierre naturelle à offrir selon une date de naissance, une relation, une occasion et une intention symbolique."
+  description: "Trouvez une pierre naturelle à offrir selon une date de naissance, une relation, une occasion et une intention symbolique."
 };
 
-const felicidadeGiftSlugs = [
-  "quartz-rose",
-  "oeil-de-tigre",
-  "labradorite",
-  "cornaline",
-  "jaspe-rouge",
-  "aventurine-verte"
-];
+const giftSelectionOne = ["quartz-rose", "oeil-de-tigre", "labradorite", "cornaline", "jaspe-rouge", "aventurine-verte"];
+const giftSelectionTwo = ["labradorite-foncee-larvikite", "labradorite", "apatite-bleue", "jade-emeraude", "quartz-rose", "calcedoine-bleue"];
 
-const veraMentisGiftSlugs = [
-  "labradorite-foncee-larvikite",
-  "labradorite",
-  "apatite-bleue",
-  "jade-emeraude",
-  "quartz-rose",
-  "calcedoine-bleue"
-];
-
-function ProductGallery({
-  title,
-  lead,
-  slugs
-}: {
-  title: string;
-  lead: string;
-  slugs: string[];
-}) {
+function ProductGallery({ title, lead, slugs }: { title: string; lead: string; slugs: string[] }) {
   const galleryStones = slugs.map((slug) => getStone(slug)).filter(Boolean);
 
   return (
@@ -52,7 +28,6 @@ function ProductGallery({
           return (
             <article className="card catalog-card" key={`${title}-${stone!.slug}`}>
               <img className="stone-thumb wide" src={stone!.image.url} alt={stone!.image.alt} />
-              <span className="mystic-kicker">{product.brand}</span>
               <h3>{stone!.name}</h3>
               <p>{stone!.description}</p>
               <div className="pill-row">
@@ -86,8 +61,7 @@ export default function GiftPage() {
         <p className="eyebrow">Idée cadeau personnalisée</p>
         <h1>Trouver une pierre à offrir</h1>
         <p className="section-lead">
-          Cette page est pensée comme une vraie galerie cadeau : bijoux prêts à offrir, lecture émotionnelle et sélection
-          simple par intention.
+          Cette page est pensée comme une vraie galerie cadeau : bijoux prêts à offrir, lecture émotionnelle et sélection simple par intention.
         </p>
       </section>
 
@@ -98,23 +72,22 @@ export default function GiftPage() {
           <Gift size={22} />
           <h2>Pourquoi offrir une pierre avec une intention ?</h2>
           <p>
-            Une pierre naturelle ne remplace pas une parole, mais elle peut donner une forme concrète à une attention :
-            soutien moral, nouveau départ, amour, gratitude ou confiance. Litho Intelligence formule ces suggestions
-            selon les traditions de lithothérapie, sans promesse médicale.
+            Une pierre naturelle ne remplace pas une parole, mais elle peut donner une forme concrète à une attention : soutien moral, nouveau départ, amour,
+            gratitude ou confiance. Litho Intelligence formule ces suggestions selon les traditions de lithothérapie, sans promesse médicale.
           </p>
         </article>
       </section>
 
       <ProductGallery
-        title="Sélection cadeau Felicidade"
+        title="Sélection cadeau douce"
         lead="Des bracelets symboliques, faciles à offrir, pour un anniversaire, une déclaration douce ou un nouveau départ."
-        slugs={felicidadeGiftSlugs}
+        slugs={giftSelectionOne}
       />
 
       <ProductGallery
-        title="Sélection cadeau Vera Mentis"
-        lead="Une sélection plus sobre et premium pour offrir une intention de protection, d'apaisement ou de clarté."
-        slugs={veraMentisGiftSlugs}
+        title="Sélection cadeau premium"
+        lead="Une sélection plus sobre et élégante pour offrir une intention de protection, d’apaisement ou de clarté."
+        slugs={giftSelectionTwo}
       />
 
       <section className="section compact-section">

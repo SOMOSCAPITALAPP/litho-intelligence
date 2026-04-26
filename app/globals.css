@@ -224,6 +224,28 @@ button {
   background: #efe8df;
 }
 
+.member-band .button.secondary,
+.auth-panel .button.secondary,
+.paywall-card .button.secondary,
+.pricing-card .button.secondary,
+.dashboard-status-card .button.secondary,
+.premium-result-card .button.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #fff;
+}
+
+.member-band .button.secondary:hover,
+.auth-panel .button.secondary:hover,
+.paywall-card .button.secondary:hover,
+.pricing-card .button.secondary:hover,
+.dashboard-status-card .button.secondary:hover,
+.premium-result-card .button.secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.34);
+  color: #fff;
+}
+
 .hero {
   display: grid;
   gap: 34px;
@@ -1447,6 +1469,16 @@ button {
   color: var(--muted);
   font-size: 13px;
   padding: 7px 10px;
+}
+
+.pill-link {
+  transition: 0.18s ease;
+}
+
+.pill-link:hover {
+  background: #f7e7e1;
+  border-color: var(--accent);
+  color: var(--accent-strong);
 }
 
 .related-stone-block h3 {

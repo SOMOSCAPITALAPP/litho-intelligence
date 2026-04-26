@@ -7,6 +7,7 @@ import { withAffiliate } from "@/lib/affiliate";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { EmailCapture } from "@/components/EmailCapture";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
+import { slugifyVirtue } from "@/lib/virtues";
 
 export function generateStaticParams() {
   return stones.map((stone) => ({ slug: stone.slug }));
@@ -50,7 +51,11 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             <h2>Propriétés symboliques</h2>
             <ul>
               {stone.properties.map((property) => (
-                <li key={property}>{property}</li>
+                <li key={property}>
+                  <Link className="micro-action" href={`/vertus/${slugifyVirtue(property)}`}>
+                    {property}
+                  </Link>
+                </li>
               ))}
             </ul>
           </article>
@@ -78,11 +83,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
           </article>
           <article className="card">
             <h2>Incompatibilités</h2>
-            <RelatedStoneLinks
-              emptyText="Aucune incompatibilité notable dans cette base."
-              items={stone.incompatibilities}
-              title="Associations à doser"
-            />
+            <RelatedStoneLinks emptyText="Aucune incompatibilité notable dans cette base." items={stone.incompatibilities} title="Associations à doser" />
           </article>
           <article className="card">
             <h2>Purification</h2>
@@ -109,21 +110,13 @@ export default function StonePage({ params }: { params: { slug: string } }) {
 
         <div className="form-panel">
           <h2>Cette pierre vous correspond ?</h2>
-          <p>
-            Gardez cette pierre dans vos favoris ou découvrez le bracelet associé pour l’intégrer à votre quotidien.
-          </p>
+          <p>Gardez cette pierre dans vos favoris ou découvrez le bracelet associé pour l’intégrer à votre quotidien.</p>
           <div className="premium-actions">
             <AddFavoriteButton stoneSlug={stone.slug} />
           </div>
           <div className="product-grid">
             {stone.products.map((product) => (
-              <Link
-                className="product-card"
-                href={withAffiliate(product.url)}
-                key={product.label}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <Link className="product-card" href={withAffiliate(product.url)} key={product.label} rel="noopener noreferrer" target="_blank">
                 <span className="product-brand">{product.brand}</span>
                 {product.badge ? <span className="product-badge">{product.badge}</span> : null}
                 <strong>{product.label}</strong>
@@ -135,7 +128,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
                 </div>
                 <span className="button">
                   <ShoppingBag size={17} />
-                  Voir le bracelet recommandé
+                  Voir le bracelet associé
                 </span>
               </Link>
             ))}

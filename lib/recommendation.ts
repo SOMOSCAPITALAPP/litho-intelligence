@@ -14,6 +14,20 @@ export type Recommendation = {
   intention: string;
 };
 
+export type CombinationInsight = {
+  stones: [string, string];
+  title: string;
+  summary: string;
+  tone: "positive" | "warning" | "neutral";
+};
+
+export type StoneProfile = {
+  slug: string;
+  name: string;
+  properties: string[];
+  goals: string[];
+};
+
 const normalize = (value?: string) =>
   value
     ?.trim()
@@ -97,6 +111,13 @@ export function analyzeCombination(slugs: string[]) {
   const selected = stones.filter((stone) => slugs.includes(stone.slug));
   const warnings: string[] = [];
   const synergies: string[] = [];
+  const pairInsights: CombinationInsight[] = [];
+  const stoneProfiles: StoneProfile[] = selected.map((stone) => ({
+    slug: stone.slug,
+    name: stone.name,
+    properties: stone.properties.slice(0, 3),
+    goals: stone.goals.slice(0, 3)
+  }));
 
   selected.forEach((stone) => {
     stone.compatibilities.forEach((slug) => {
@@ -110,18 +131,68 @@ export function analyzeCombination(slugs: string[]) {
     });
   });
 
+  for (let index = 0; index < selected.length; index += 1) {
+    for (let secondIndex = index + 1; secondIndex < selected.length; secondIndex += 1) {
+      pairInsights.push(buildPairInsight(selected[index], selected[secondIndex]));
+    }
+  }
+
   const uniqueSynergies = Array.from(new Set(synergies));
   const uniqueWarnings = Array.from(new Set(warnings));
   const score = Math.max(35, Math.min(96, 70 + uniqueSynergies.length * 8 - uniqueWarnings.length * 12));
 
   return {
     selected,
+    stoneProfiles,
     score,
     synergies: uniqueSynergies,
     warnings: uniqueWarnings,
+    pairInsights,
     verdict:
       uniqueWarnings.length > 0
         ? "Association intéressante, mais à utiliser avec une intention claire et peu de pierres à la fois."
         : "Association harmonieuse pour un rituel simple et lisible."
   };
+}
+
+function buildPairInsight(first: Stone, second: Stone): CombinationInsight {
+  const sharedGoals = intersect(first.goals, second.goals);
+  const sharedProperties = intersect(first.properties, second.properties);
+  const directConflict = first.incompatibilities.includes(second.slug) || second.incompatibilities.includes(first.slug);
+
+  if (directConflict) {
+    return {
+      stones: [first.name, second.name],
+      title: `${first.name} et ${second.name} demandent du dosage`,
+      summary: `${first.name} met en avant ${listValues(first.properties.slice(0, 2))}, tandis que ${second.name} accentue ${listValues(second.properties.slice(0, 2))}. Leur association peut sembler trop contrastée si vous cherchez un seul message intérieur clair.`,
+      tone: "warning"
+    };
+  }
+
+  if (sharedGoals.length > 0 || sharedProperties.length > 0) {
+    return {
+      stones: [first.name, second.name],
+      title: `${first.name} et ${second.name} se renforcent`,
+      summary: `Ces deux pierres se rejoignent autour de ${listValues(sharedGoals.slice(0, 2).length ? sharedGoals.slice(0, 2) : sharedProperties.slice(0, 2))}. ${first.name} apporte ${listValues(first.properties.slice(0, 2))} et ${second.name} complète avec ${listValues(second.properties.slice(0, 2))}.`,
+      tone: "positive"
+    };
+  }
+
+  return {
+    stones: [first.name, second.name],
+    title: `${first.name} et ${second.name} peuvent se compléter`,
+    summary: `${first.name} travaille plutôt autour de ${listValues(first.goals.slice(0, 2))}, alors que ${second.name} soutient davantage ${listValues(second.goals.slice(0, 2))}. Le duo peut fonctionner si vous séparez bien vos moments d’usage et votre intention.`,
+    tone: "neutral"
+  };
+}
+
+function intersect(first: string[], second: string[]) {
+  return first.filter((item, index) => second.includes(item) && first.indexOf(item) === index);
+}
+
+function listValues(values: string[]) {
+  if (values.length === 0) return "une intention plus générale";
+  if (values.length === 1) return values[0];
+  if (values.length === 2) return `${values[0]} et ${values[1]}`;
+  return `${values.slice(0, -1).join(", ")} et ${values.at(-1)}`;
 }

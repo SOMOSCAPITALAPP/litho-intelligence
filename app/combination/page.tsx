@@ -19,19 +19,13 @@ export default function CombinationPage() {
     <main className="section">
       <h1>Analyse de combinaison</h1>
       <p className="section-lead">
-        Sélectionnez les pierres que vous possédez pour estimer leur compatibilité symbolique, leurs synergies
-        et les points d'attention énergétiques.
+        Sélectionnez les pierres que vous possédez pour estimer leur compatibilité symbolique, leurs synergies et les points d'attention énergétiques.
       </p>
 
       <div className="form-panel">
         <div className="pill-row">
           {stones.map((stone) => (
-            <button
-              className={selected.includes(stone.slug) ? "button" : "button secondary"}
-              key={stone.slug}
-              onClick={() => toggle(stone.slug)}
-              type="button"
-            >
+            <button className={selected.includes(stone.slug) ? "button" : "button secondary"} key={stone.slug} onClick={() => toggle(stone.slug)} type="button">
               {stone.name}
             </button>
           ))}
@@ -46,10 +40,7 @@ export default function CombinationPage() {
               <Layers size={24} /> Score global
             </h2>
             <p>{analysis.verdict}</p>
-            <p>
-              Pierres analysées :{" "}
-              {analysis.selected.length > 0 ? analysis.selected.map((stone) => stone.name).join(", ") : "aucune"}
-            </p>
+            <p>Pierres analysées : {analysis.selected.length > 0 ? analysis.selected.map((stone) => stone.name).join(", ") : "aucune"}</p>
           </div>
         </div>
       </section>
@@ -76,6 +67,36 @@ export default function CombinationPage() {
           <p>Commencez avec deux ou trois pierres maximum, une intention claire et une observation simple de votre ressenti.</p>
         </article>
       </div>
+
+      <section className="section compact-section no-side-padding">
+        <h2>Pourquoi cette combinaison fonctionne ou non</h2>
+        <div className="grid" style={{ marginTop: 16 }}>
+          {analysis.pairInsights.map((insight) => (
+            <article className="card" key={insight.title}>
+              <span className={insight.tone === "warning" ? "status-warn" : "status-ok"}>
+                {insight.tone === "warning" ? "À doser" : insight.tone === "positive" ? "Harmonie" : "À clarifier"}
+              </span>
+              <h3>{insight.title}</h3>
+              <p>{insight.summary}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section compact-section no-side-padding">
+        <h2>Lecture pierre par pierre</h2>
+        <div className="grid" style={{ marginTop: 16 }}>
+          {analysis.stoneProfiles.map((stone) => (
+            <article className="card" key={stone.slug}>
+              <h3>{stone.name}</h3>
+              <p>
+                Cette pierre met surtout l'accent sur {stone.properties.join(", ")} et peut accompagner une intention de {stone.goals.join(", ")}.
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section compact-section no-side-padding">
         <EmailCapture source="combination" />
       </section>

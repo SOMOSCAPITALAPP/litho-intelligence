@@ -46,10 +46,7 @@ export default function HomePage() {
         <div>
           <p className="eyebrow">Lithothérapie traditionnelle, recommandation intelligente</p>
           <h1>Comment te sens-tu aujourd’hui ?</h1>
-          <p>
-            En un clic, obtenez un conseil personnalisé, un rituel simple et le bracelet associé
-            Felicidade ou Vera Mentis.
-          </p>
+          <p>En un clic, obtenez un conseil personnalisé, un rituel simple et le bracelet associé.</p>
           <form className="search-box" action="/recommendation">
             <Search size={20} />
             <input name="goal" placeholder="Ex : stress, amour, protection, argent, confiance..." />
@@ -100,7 +97,7 @@ export default function HomePage() {
         <div>
           <Brain size={24} />
           <strong>Une réponse claire, pas un discours compliqué</strong>
-          <span>3 à 5 pierres, une raison simple, un geste à faire aujourd’hui et un accès direct au bracelet recommandé.</span>
+          <span>3 à 5 pierres, une raison simple, un geste à faire aujourd’hui et un accès direct au bracelet associé.</span>
         </div>
       </section>
 
@@ -111,14 +108,15 @@ export default function HomePage() {
             Espace membre
           </span>
           <h2>Gardez vos recommandations, vos favoris et votre progression énergétique.</h2>
-          <p>
-            Créez un compte gratuit pour retrouver votre historique, suivre vos pierres favorites et débloquer
-            progressivement les fonctions Premium.
-          </p>
+          <p>Créez un compte gratuit pour suivre vos pierres favorites et débloquer progressivement les fonctions Premium.</p>
         </div>
         <div className="member-actions">
-          <Link className="button gold-button" href="/register">Créer mon espace gratuit</Link>
-          <Link className="button ghost-dark" href="/login">Me connecter</Link>
+          <Link className="button gold-button" href="/register">
+            Créer mon espace gratuit
+          </Link>
+          <Link className="button ghost-dark" href="/login">
+            Me connecter
+          </Link>
         </div>
       </section>
 
@@ -135,22 +133,30 @@ export default function HomePage() {
           <Link className="card emotional-card" href="/intention/stress">
             <h3>Pierre pour le stress</h3>
             <p>Améthyste, lépidolite, howlite, quartz rose : choisir une pierre associée au calme et au recentrage.</p>
-            <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
+            <span className="micro-action">
+              Lire le guide <ArrowRight size={15} />
+            </span>
           </Link>
           <Link className="card emotional-card" href="/intention/argent">
             <h3>Pierre pour l’argent</h3>
             <p>Citrine, pyrite, aventurine verte : travailler symboliquement l’abondance, la confiance et l’action.</p>
-            <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
+            <span className="micro-action">
+              Lire le guide <ArrowRight size={15} />
+            </span>
           </Link>
           <Link className="card emotional-card" href="/intention/amour">
             <h3>Pierre pour l’amour</h3>
             <p>Quartz rose, rhodonite, pierre de lune : soutenir une intention de douceur, de lien et d’ouverture du cœur.</p>
-            <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
+            <span className="micro-action">
+              Lire le guide <ArrowRight size={15} />
+            </span>
           </Link>
           <Link className="card emotional-card" href="/intention/confiance">
             <h3>Pierre pour la confiance</h3>
             <p>Œil de tigre, citrine, cornaline : symboliser le courage, l’affirmation et la sécurité intérieure.</p>
-            <span className="micro-action">Lire le guide <ArrowRight size={15} /></span>
+            <span className="micro-action">
+              Lire le guide <ArrowRight size={15} />
+            </span>
           </Link>
         </div>
       </section>
@@ -158,8 +164,7 @@ export default function HomePage() {
       <section className="section compact-section">
         <h2>Commencer par ce que vous ressentez</h2>
         <p className="section-lead">
-          L’utilisateur n’a pas besoin de connaître les pierres. Il part de sa tension intérieure,
-          puis l’application traduit ce ressenti en choix simple.
+          L’utilisateur n’a pas besoin de connaître les pierres. Il part de sa tension intérieure, puis l’application traduit ce ressenti en choix simple.
         </p>
         <div className="grid">
           {emotionalPaths.map((path) => (
@@ -177,8 +182,7 @@ export default function HomePage() {
       <section className="section">
         <h2>Accès direct aux pierres</h2>
         <p className="section-lead">
-          Pour ceux qui savent déjà ce qu’ils cherchent : fiche claire, compatibilités, purification,
-          port recommandé et lien d’achat.
+          Pour ceux qui savent déjà ce qu’ils cherchent : fiche claire, compatibilités, purification, port recommandé et lien d’achat.
         </p>
         <div className="grid">
           {stones.slice(0, 6).map((stone) => (
