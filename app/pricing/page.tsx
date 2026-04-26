@@ -18,10 +18,10 @@ export default function PricingPage() {
           <span className="mystic-kicker">Gratuit</span>
           <h2>0 €</h2>
           <ul>
-            <li>Test SOS</li>
-            <li>3 recommandations / jour</li>
+            <li>Soutien rapide</li>
+            <li>3 recommandations par jour</li>
             <li>Fiches pierres essentielles</li>
-            <li>Newsletter gratuite</li>
+            <li>Guide offert</li>
           </ul>
         </article>
 

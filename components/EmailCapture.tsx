@@ -46,7 +46,9 @@ export function EmailCapture({ source = "results" }: { source?: string }) {
       </form>
       {status === "success" ? (
         <div className="capture-success">
-          <p className="capture-status">Parfait, votre demande est enregistrée. Votre guide est prêt.</p>
+          <p className="capture-status">
+            Votre adresse est bien enregistrée. Le guide s'ouvre immédiatement ici, mais l'envoi automatique par email n'est pas encore activé.
+          </p>
           <a className="button secondary" href={guideUrl} target="_blank" rel="noreferrer">
             <Download size={17} />
             Télécharger le PDF

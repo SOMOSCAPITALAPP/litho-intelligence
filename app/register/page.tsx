@@ -7,7 +7,7 @@ export default function RegisterPage() {
   return (
     <main className="auth-page">
       <AuthForm mode="register" />
-      <p>
+      <p className="auth-footnote">
         Déjà membre ? <Link href="/login">Se connecter</Link>
       </p>
     </main>
