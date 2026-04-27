@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import { Heart } from "lucide-react";
-import { createSupabaseBrowserClient } from "@/lib/supabase/client";
+
+function saveLocalFavorite(stoneSlug: string) {
+  const current = JSON.parse(window.localStorage.getItem("litho:favorites") ?? "[]") as string[];
+  const next = Array.from(new Set([...current, stoneSlug])).slice(0, 5);
+  window.localStorage.setItem("litho:favorites", JSON.stringify(next));
+}
 
 export function AddFavoriteButton({ stoneSlug, initialActive = false }: { stoneSlug: string; initialActive?: boolean }) {
   const [active, setActive] = useState(initialActive);
@@ -14,48 +19,38 @@ export function AddFavoriteButton({ stoneSlug, initialActive = false }: { stoneS
     setLoading(true);
     setMessage("");
 
-    const supabase = createSupabaseBrowserClient();
+    let response: Response;
+    let data: { upgradeRequired?: boolean } = {};
 
-    if (!supabase) {
-      const current = JSON.parse(window.localStorage.getItem("litho:favorites") ?? "[]") as string[];
-      const next = Array.from(new Set([...current, stoneSlug])).slice(0, 5);
-      window.localStorage.setItem("litho:favorites", JSON.stringify(next));
-      setActive(true);
-      setMessage("Ajoute");
+    try {
+      response = await fetch("/api/favorites", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ stoneSlug })
+      });
+      data = await response.json().catch(() => ({}));
+    } catch {
+      setMessage("Réessayez");
       setLoading(false);
       return;
     }
 
-    const {
-      data: { user }
-    } = await supabase.auth.getUser();
-
-    if (!user) {
-      const current = JSON.parse(window.localStorage.getItem("litho:favorites") ?? "[]") as string[];
-      const next = Array.from(new Set([...current, stoneSlug])).slice(0, 5);
-      window.localStorage.setItem("litho:favorites", JSON.stringify(next));
+    if (response.status === 401) {
+      saveLocalFavorite(stoneSlug);
       setActive(true);
-      setMessage("Ajoute");
+      setMessage("Ajouté");
       setLoading(false);
       return;
     }
 
-    const { error } = await supabase.from("favorites").upsert(
-      {
-        user_id: user.id,
-        stone_slug: stoneSlug
-      },
-      { onConflict: "user_id,stone_slug" }
-    );
-
-    if (error) {
-      setMessage("Reessayez");
+    if (!response.ok) {
+      setMessage(data.upgradeRequired ? "Limite atteinte" : "Réessayez");
       setLoading(false);
       return;
     }
 
     setActive(true);
-    setMessage("Ajoute");
+    setMessage("Ajouté");
     setLoading(false);
   }
 
