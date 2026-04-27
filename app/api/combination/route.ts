@@ -6,9 +6,9 @@ import { checkUsageLimit, incrementUsage } from "@/lib/usage";
 import { stones } from "@/lib/stones";
 
 export async function POST(request: Request) {
-  const body = await request.json().catch(() => ({}));
+  const body = (await request.json().catch(() => ({}))) as { selected?: unknown };
   const selected = Array.isArray(body.selected)
-    ? body.selected.filter((item): item is string => typeof item === "string").map((item) => item.trim())
+    ? body.selected.filter((item: unknown): item is string => typeof item === "string").map((item) => item.trim())
     : [];
   const knownSlugs = new Set(stones.map((stone) => stone.slug));
   const slugs = Array.from(new Set(selected.filter((slug) => knownSlugs.has(slug)))).slice(0, 12);
