@@ -27,7 +27,8 @@ export default async function ConsultationPage({
   } else if (user && stripe && sessionId) {
     try {
       const session = await stripe.checkout.sessions.retrieve(sessionId);
-      accessible = session.payment_status === "paid" && session.metadata?.user_id === user.id && session.metadata?.kind === "consultation";
+      accessible =
+        session.payment_status === "paid" && session.metadata?.user_id === user.id && session.metadata?.kind === "consultation";
     } catch {
       accessible = false;
     }

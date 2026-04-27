@@ -6,11 +6,13 @@ import { useState } from "react";
 export function YouTubeEmbed({
   videoId,
   title,
-  description
+  description,
+  shareText
 }: {
   videoId: string;
   title: string;
   description?: string;
+  shareText?: string;
 }) {
   const [active, setActive] = useState(false);
   const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
@@ -47,6 +49,9 @@ export function YouTubeEmbed({
       </div>
       <h3>{title}</h3>
       {description ? <p>{description}</p> : null}
+      {shareText ? (
+        <div className="share-inline-note">{shareText}</div>
+      ) : null}
     </article>
   );
 }

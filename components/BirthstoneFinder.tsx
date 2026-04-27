@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Gift, Share2, ShoppingBag } from "lucide-react";
+import { Gift, ShoppingBag } from "lucide-react";
 import { useState } from "react";
+import { ShareActions } from "@/components/ShareActions";
 import { getBirthstone } from "@/lib/getBirthstone";
 import { getMeditationSuggestion } from "@/lib/getMeditationSuggestion";
 import { getStone } from "@/lib/stones";
@@ -20,13 +21,9 @@ export function BirthstoneFinder() {
   const productStone = result ? getStone(result.alternativeStoneSlug) ?? getStone(result.mainStoneSlug) : null;
   const product = productStone?.products[0];
   const meditation = result ? getMeditationSuggestion(result.alternativeStone, intention || result.meditationTheme) : null;
-
-  function shareResult() {
-    if (!result) return;
-    const text = `${firstName || "Ma"} pierre de naissance : ${stoneWithDefiniteArticle(result.mainStone)}. Alternative accessible : ${stoneWithDefiniteArticle(result.alternativeStone)}.`;
-    if (navigator.share) navigator.share({ title: "Pierre de naissance", text, url: window.location.href });
-    else navigator.clipboard.writeText(text);
-  }
+  const shareText = result
+    ? `${firstName || "Ma"} pierre de naissance : ${stoneWithDefiniteArticle(result.mainStone)}. Alternative accessible : ${stoneWithDefiniteArticle(result.alternativeStone)}.`
+    : "Je découvre ma pierre de naissance sur Litho Intelligence.";
 
   return (
     <section className="guided-layout birthstone-module">
@@ -86,11 +83,8 @@ export function BirthstoneFinder() {
                 <Gift size={16} />
                 Offrir cette pierre
               </Link>
-              <button className="button secondary" type="button" onClick={shareResult}>
-                <Share2 size={16} />
-                Partager mon résultat
-              </button>
             </div>
+            <ShareActions compact text={shareText} title="Pierre de naissance | Litho Intelligence" />
           </>
         ) : (
           <p>Choisissez une date pour obtenir une lecture symbolique immédiate.</p>

@@ -35,5 +35,7 @@ export const premiumFeatures = [
   "Pierre du jour",
   "Rituels personnalisés",
   "Guides PDF premium",
-  "Offres spéciales produits"
+  "Offres spéciales produits",
+  "Newsletter mensuelle Premium",
+  "Un bracelet offert par trimestre"
 ];

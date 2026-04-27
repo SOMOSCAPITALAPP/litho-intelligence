@@ -2,13 +2,21 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { MessageCircle, ShoppingBag } from "lucide-react";
+import { Download, MessageCircle, ShoppingBag } from "lucide-react";
 import { withAffiliate } from "@/lib/affiliate";
 import { ConsultationCheckoutButton } from "@/components/ConsultationCheckoutButton";
+import { ShareActions } from "@/components/ShareActions";
 import type { ConsultationChatMessage, ConsultationProfile, ConsultationResponse } from "@/lib/consultation";
 
 const initialMessage =
   "Bonjour, je suis votre conseiller en lithothérapie. Je suis ici pour vous aider à clarifier votre besoin. Sous ce dialogue, vous trouverez une réponse globale plus détaillée avec les pierres conseillées. Dites-moi d’abord pour qui ce conseil est destiné, l’âge, le sexe si c’est utile, puis ce qui vous préoccupe.";
+
+type SessionMeta = {
+  id: string;
+  remainingMinutes: number;
+  messagesRemaining: number;
+  reportUrl: string;
+};
 
 export function ConsultationClient({
   accessible,
@@ -23,10 +31,12 @@ export function ConsultationClient({
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ConsultationResponse | null>(null);
   const [error, setError] = useState("");
+  const [closed, setClosed] = useState(false);
+  const [sessionMeta, setSessionMeta] = useState<SessionMeta | null>(null);
   const [profile, setProfile] = useState<ConsultationProfile>({ recipient: "", age: "", sex: "" });
   const [messages, setMessages] = useState<ConsultationChatMessage[]>([{ role: "assistant", content: initialMessage }]);
 
-  const canSubmit = useMemo(() => question.trim().length > 0, [question]);
+  const canSubmit = useMemo(() => question.trim().length > 0 && !closed, [question, closed]);
 
   async function submit() {
     if (!canSubmit) return;
@@ -60,8 +70,16 @@ export function ConsultationClient({
       return;
     }
 
-    setMessages((current) => [...current, { role: "assistant", content: data.chatMessage }]);
-    setResult(data.consultation);
+    const assistantMessages = Array.isArray(data.chatMessages)
+      ? data.chatMessages.map((content: string) => ({ role: "assistant" as const, content }))
+      : [];
+
+    if (assistantMessages.length) {
+      setMessages((current) => [...current, ...assistantMessages]);
+    }
+    setResult(data.consultation?.title && Array.isArray(data.consultation?.stones) ? data.consultation : null);
+    setClosed(Boolean(data.closed));
+    setSessionMeta(data.session ?? null);
   }
 
   if (!accessible) {
@@ -77,7 +95,7 @@ export function ConsultationClient({
             <li>Question libre sur votre situation</li>
             <li>Échange de type chat, court et guidé</li>
             <li>Réponse globale structurée juste en dessous</li>
-            <li>Bracelets associés à découvrir ensuite</li>
+            <li>PDF de synthèse conservable à la fin</li>
           </ul>
           <div className="card-actions">
             <ConsultationCheckoutButton />
@@ -90,6 +108,10 @@ export function ConsultationClient({
       </section>
     );
   }
+
+  const shareText = result
+    ? `${result.title}. ${result.grounding}`
+    : "Je découvre une consultation privée en lithothérapie sur Litho Intelligence.";
 
   return (
     <main className="section">
@@ -105,6 +127,28 @@ export function ConsultationClient({
             <h2>Mode test actif</h2>
             <p>Vous essayez ici l’expérience de consultation sans paiement. Le ton, la structure et la mise en avant des pierres sont les mêmes que dans la version payante.</p>
           </article>
+        </section>
+      ) : null}
+
+      {sessionMeta ? (
+        <section className="consultation-status-grid">
+          <article className="dashboard-status-card">
+            <strong>{sessionMeta.remainingMinutes} min restantes</strong>
+            <span>La consultation se clôture automatiquement au bout de 30 minutes.</span>
+          </article>
+          <article className="dashboard-status-card">
+            <strong>{sessionMeta.messagesRemaining} message{sessionMeta.messagesRemaining > 1 ? "s" : ""} restant{sessionMeta.messagesRemaining > 1 ? "s" : ""}</strong>
+            <span>Nous limitons volontairement le rythme pour garder un échange clair et maîtrisé.</span>
+          </article>
+          {sessionMeta.reportUrl ? (
+            <article className="dashboard-status-card">
+              <strong>PDF de synthèse</strong>
+              <a className="button secondary" href={sessionMeta.reportUrl} rel="noreferrer" target="_blank">
+                <Download size={16} />
+                Ouvrir le PDF
+              </a>
+            </article>
+          ) : null}
         </section>
       ) : null}
 
@@ -160,6 +204,7 @@ export function ConsultationClient({
             <textarea
               id="consultation-question"
               value={question}
+              disabled={closed}
               onChange={(event) => setQuestion(event.target.value)}
               placeholder="Décrivez ce que vous vivez, ce que vous cherchez à apaiser ou à retrouver."
               rows={5}
@@ -169,7 +214,7 @@ export function ConsultationClient({
 
           <button className="button gold-button" disabled={loading || !canSubmit} onClick={submit} type="button">
             <MessageCircle size={16} />
-            {loading ? "Réponse en cours..." : "Envoyer"}
+            {closed ? "Consultation terminée" : loading ? "Réponse en cours..." : "Envoyer"}
           </button>
           {error ? <p className="light-error">{error}</p> : null}
         </div>
@@ -204,7 +249,23 @@ export function ConsultationClient({
 
       {result ? (
         <section className="section compact-section no-side-padding">
-          <h2>Pierres et bracelets associés</h2>
+          <div className="dashboard-section-header">
+            <div>
+              <h2>Pierres et bracelets associés</h2>
+              <p className="section-lead">Vous pouvez conserver cette synthèse en PDF ou la partager de manière élégante.</p>
+            </div>
+            <div className="consultation-export-actions">
+              {sessionMeta?.reportUrl ? (
+                <a className="button gold-button" href={sessionMeta.reportUrl} rel="noreferrer" target="_blank">
+                  <Download size={16} />
+                  Télécharger le PDF
+                </a>
+              ) : null}
+            </div>
+          </div>
+
+          <ShareActions compact text={shareText} title="Synthèse de consultation Litho Intelligence" />
+
           <div className="grid" style={{ marginTop: 16 }}>
             {result.stones.map((stone) => (
               <article className="card catalog-card" key={stone.slug}>

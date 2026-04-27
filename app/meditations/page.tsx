@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EmailCapture } from "@/components/EmailCapture";
+import { ShareActions } from "@/components/ShareActions";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { getMeditationSuggestion } from "@/lib/getMeditationSuggestion";
@@ -11,11 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function MeditationsPage() {
-  const meditations = [
-    getMeditationSuggestion("Quartz rose"),
-    getMeditationSuggestion("Améthyste"),
-    getMeditationSuggestion("Citrine")
-  ];
+  const meditations = [getMeditationSuggestion("Quartz rose"), getMeditationSuggestion("Améthyste"), getMeditationSuggestion("Citrine")];
 
   return (
     <main className="section">
@@ -25,6 +22,7 @@ export default function MeditationsPage() {
         Des pratiques courtes, symboliques et non médicales pour poser une intention avec une pierre naturelle.
         La version gratuite dure 3 à 5 minutes, les méditations premium pourront durer 15 à 30 minutes.
       </p>
+      <ShareActions compact title="Méditations Litho Intelligence" text="Je découvre des méditations avec pierres naturelles sur Litho Intelligence." />
 
       <div className="grid">
         {meditations.map((meditation) => (

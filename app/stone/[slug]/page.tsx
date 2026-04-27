@@ -7,6 +7,7 @@ import { withAffiliate } from "@/lib/affiliate";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { EmailCapture } from "@/components/EmailCapture";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
+import { ShareActions } from "@/components/ShareActions";
 import { slugifyVirtue } from "@/lib/virtues";
 
 export function generateStaticParams() {
@@ -111,6 +112,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
         <div className="form-panel">
           <h2>Cette pierre vous correspond ?</h2>
           <p>Gardez cette pierre dans vos favoris ou découvrez le bracelet associé pour l’intégrer à votre quotidien.</p>
+          <ShareActions compact title={`${stone.name} | Litho Intelligence`} text={`Je découvre ${stone.name} sur Litho Intelligence.`} />
           <div className="premium-actions">
             <AddFavoriteButton stoneSlug={stone.slug} />
           </div>

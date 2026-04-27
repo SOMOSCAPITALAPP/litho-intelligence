@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Gem, Heart, Shield, Sparkles } from "lucide-react";
 import { EmailCapture } from "@/components/EmailCapture";
+import { ShareActions } from "@/components/ShareActions";
 
 export const metadata: Metadata = {
   title: "Qu'est-ce que la lithothérapie ? | Litho Intelligence",
@@ -46,6 +47,11 @@ export default function LithotherapiePage() {
               Explorer les pierres
             </Link>
           </div>
+          <ShareActions
+            compact
+            title="Comprendre la lithothérapie"
+            text="Je découvre une présentation claire et prudente de la lithothérapie sur Litho Intelligence."
+          />
         </div>
 
         <aside className="hero-panel editorial-visual-panel">

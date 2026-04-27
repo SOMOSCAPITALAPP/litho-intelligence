@@ -1244,6 +1244,9 @@ button {
 .video-card {
   display: grid;
   gap: 14px;
+  justify-self: start;
+  max-width: min(100%, 760px);
+  width: 100%;
 }
 
 .video-card h3,
@@ -1298,6 +1301,59 @@ button {
   padding: 10px 14px;
   position: absolute;
   top: 16px;
+}
+
+.share-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.share-actions.compact {
+  margin-top: 10px;
+}
+
+.share-status,
+.share-inline-note {
+  color: var(--muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.consultation-status-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.consultation-export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stack-list {
+  display: grid;
+  gap: 12px;
+}
+
+.nested-card {
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid var(--line);
+  box-shadow: none;
+  padding: 16px;
+}
+
+.nested-card h3,
+.nested-card p {
+  margin: 0;
+}
+
+.nested-card p + p {
+  margin-top: 8px;
 }
 
 .consultation-chat {
@@ -1604,6 +1660,7 @@ button {
   .pricing-grid,
   .dashboard-grid,
   .dashboard-action-panel,
+  .consultation-status-grid,
   .dashboard-quick-actions,
   .favorite-suggestion-grid {
     grid-template-columns: 1fr;

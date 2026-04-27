@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BirthstoneFinder } from "@/components/BirthstoneFinder";
 import { EmailCapture } from "@/components/EmailCapture";
 import { FormationCTA } from "@/components/FormationCTA";
+import { ShareActions } from "@/components/ShareActions";
 
 export const metadata: Metadata = {
   title: "Pierre de naissance : découvrez votre pierre selon votre date de naissance",
@@ -17,9 +18,10 @@ export default function BirthstonePage() {
         <p className="eyebrow">Pierre de naissance</p>
         <h1>Découvrez votre pierre selon votre date de naissance</h1>
         <p className="section-lead">
-          Une lecture symbolique, personnelle et cadeau-oriented pour relier un mois de naissance à une pierre,
+          Une lecture symbolique, personnelle et orientée cadeau pour relier un mois de naissance à une pierre,
           une intention, un bijou recommandé et une méditation courte.
         </p>
+        <ShareActions compact title="Pierre de naissance" text="Je découvre ma pierre de naissance sur Litho Intelligence." />
       </section>
 
       <BirthstoneFinder />
