@@ -11,16 +11,16 @@ export function FormationCTA() {
         </p>
         <h2>Comprendre et utiliser les pierres au quotidien</h2>
         <p>
-          Une passerelle simple vers une mini formation gratuite de 7 jours, puis une formation premium pour choisir,
-          associer, méditer et offrir les pierres avec sens.
+          Une formation gratuite avec inscription, cours PDF et QCM en ligne, puis un parcours certifiant à 199 € pour
+          aller plus loin.
         </p>
       </div>
       <div className="member-actions">
         <Link className="button gold-button" href="/formation">
           Commencer gratuitement
         </Link>
-        <Link className="button ghost-dark" href="/pricing">
-          Découvrir la formation complète
+        <Link className="button ghost-dark" href="/formation#formation-certifiante">
+          Formation certifiante 199 €
         </Link>
       </div>
     </section>

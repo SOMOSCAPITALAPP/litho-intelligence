@@ -5,18 +5,31 @@ import { Download, Mail } from "lucide-react";
 
 const guideUrl = "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf";
 
-export function EmailCapture({ source = "results" }: { source?: string }) {
+export function EmailCapture({ source = "results", askName = false }: { source?: string; askName?: boolean }) {
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!email.includes("@")) return;
+    if (askName && !fullName.trim()) {
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
     const response = await fetch("/api/email-capture", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, source })
+      body: JSON.stringify({
+        email,
+        fullName,
+        source,
+        metadata: {
+          capture_component: "EmailCapture",
+          guide: "guide-10-pierres-essentielles"
+        }
+      })
     });
     setStatus(response.ok ? "success" : "error");
   }
@@ -31,7 +44,17 @@ export function EmailCapture({ source = "results" }: { source?: string }) {
         <h2>Recevez le guide des 10 pierres essentielles</h2>
         <p>Un repère simple pour choisir vos pierres selon vos émotions, vos intentions et vos moments de vie.</p>
       </div>
-      <form className="email-form" onSubmit={submit}>
+      <form className={askName ? "email-form has-name" : "email-form"} onSubmit={submit}>
+        {askName ? (
+          <input
+            aria-label="Nom et prénom"
+            autoComplete="name"
+            onChange={(event) => setFullName(event.target.value)}
+            placeholder="Nom et prénom"
+            type="text"
+            value={fullName}
+          />
+        ) : null}
         <input
           aria-label="Email"
           autoComplete="email"

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, CheckCircle2, ClipboardCheck, Download, FileText, GraduationCap } from "lucide-react";
+import { ArrowRight, CheckCircle2, GraduationCap } from "lucide-react";
 import { EmailCapture } from "@/components/EmailCapture";
-import { FormationQuiz } from "@/components/FormationQuiz";
+import { FormationAccess } from "@/components/FormationAccess";
 import formationModules from "@/data/formation.modules.json";
 import { wellbeingDisclaimer } from "@/lib/legal";
 
@@ -36,12 +36,11 @@ export default function FormationPage() {
             QCM en ligne pour valider les acquis.
           </p>
           <div className="hero-actions">
-            <a className="button gold-button" href="#programme">
-              Commencer la formation <ArrowRight size={16} />
+            <a className="button gold-button" href="#inscription">
+              S'inscrire gratuitement <ArrowRight size={16} />
             </a>
-            <a className="button secondary" href={formationModules[0].pdfUrl} target="_blank" rel="noreferrer">
-              <Download size={16} />
-              Télécharger le module 1
+            <a className="button secondary" href="#formation-certifiante">
+              Formation certifiante 199 €
             </a>
           </div>
         </div>
@@ -81,66 +80,12 @@ export default function FormationPage() {
             <p className="eyebrow">Programme</p>
             <h2>Votre parcours en 7 étapes</h2>
           </div>
-          <Link className="button secondary" href="/newsletter">
-            Recevoir les ressources
+          <Link className="button secondary" href="#formation-certifiante">
+            Voir le parcours certifiant
           </Link>
         </div>
 
-        <div className="formation-timeline">
-          {formationModules.map((module) => (
-            <article className="formation-module" id={`module-${module.step}`} key={module.id}>
-              <header className="formation-module-header">
-                <span className="score">{module.step}</span>
-                <div>
-                  <p className="mystic-kicker">
-                    <BookOpen size={15} />
-                    {module.duration} · {module.level}
-                  </p>
-                  <h2>{module.title}</h2>
-                  <p>{module.goal}</p>
-                </div>
-              </header>
-
-              <div className="formation-module-grid">
-                <section className="formation-course">
-                  <div className="formation-block-title">
-                    <FileText size={18} />
-                    <h3>Cours écrit</h3>
-                  </div>
-                  {module.course.map((section) => (
-                    <div className="lesson-block" key={section.heading}>
-                      <h4>{section.heading}</h4>
-                      <p>{section.body}</p>
-                    </div>
-                  ))}
-                </section>
-
-                <aside className="formation-module-side">
-                  <div className="resource-card">
-                    <span className="mystic-kicker">
-                      <Download size={15} />
-                      PDF du module
-                    </span>
-                    <p>Support de cours à conserver, imprimer ou relire hors ligne.</p>
-                    <a className="button gold-button" href={module.pdfUrl} target="_blank" rel="noreferrer">
-                      Télécharger le PDF
-                    </a>
-                  </div>
-
-                  <div className="resource-card">
-                    <span className="mystic-kicker">
-                      <ClipboardCheck size={15} />
-                      Exercice
-                    </span>
-                    <p>{module.exercise}</p>
-                  </div>
-                </aside>
-              </div>
-
-              <FormationQuiz moduleId={module.id} questions={module.quiz} />
-            </article>
-          ))}
-        </div>
+        <FormationAccess />
       </section>
 
       <section className="formation-completion-panel">

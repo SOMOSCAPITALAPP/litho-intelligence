@@ -931,6 +931,10 @@ button {
   grid-template-columns: 1fr auto;
 }
 
+.email-form.has-name {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) auto;
+}
+
 .email-form input {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -1691,6 +1695,115 @@ button {
   gap: 20px;
 }
 
+.formation-lock-panel,
+.formation-access-banner,
+.certification-panel {
+  align-items: start;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+}
+
+.formation-lock-panel,
+.formation-access-banner {
+  background: rgba(255, 250, 247, 0.82);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: clamp(20px, 4vw, 30px);
+}
+
+.formation-lock-panel h2,
+.formation-access-banner h2,
+.certification-panel h2 {
+  font-size: clamp(28px, 3.4vw, 42px);
+  margin: 8px 0 12px;
+}
+
+.formation-lock-panel p,
+.formation-access-banner p,
+.certification-panel p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.formation-lock-list,
+.certification-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.formation-lock-list span {
+  align-items: center;
+  color: var(--accent-strong);
+  display: flex;
+  font-weight: 800;
+  gap: 8px;
+}
+
+.formation-register-card,
+.certification-interest-card {
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.formation-register-card .field,
+.certification-interest-card .field {
+  margin: 0;
+}
+
+.formation-access-banner {
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.certification-panel {
+  background: linear-gradient(135deg, var(--luxury), var(--deep));
+  border: 1px solid rgba(214, 173, 98, 0.24);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  color: white;
+  margin-top: 22px;
+  padding: clamp(20px, 4vw, 30px);
+}
+
+.certification-panel p,
+.certification-panel li {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.certification-list {
+  padding-left: 18px;
+}
+
+.certification-interest-card {
+  background: rgba(255, 250, 247, 0.94);
+  color: var(--ink);
+}
+
+.certification-interest-card h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.price-tag {
+  align-items: center;
+  background: var(--premium-gold);
+  border-radius: 999px;
+  color: #1d1408;
+  display: inline-flex;
+  font-weight: 900;
+  justify-content: center;
+  min-height: 42px;
+  width: 86px;
+}
+
 .formation-module {
   display: grid;
   gap: 22px;
@@ -1958,7 +2071,10 @@ button {
   .formation-hero,
   .formation-standard-grid,
   .formation-module-grid,
-  .formation-completion-panel {
+  .formation-completion-panel,
+  .formation-lock-panel,
+  .formation-access-banner,
+  .certification-panel {
     grid-template-columns: 1fr;
   }
 
@@ -2078,7 +2194,8 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .email-form {
+  .email-form,
+  .email-form.has-name {
     grid-template-columns: 1fr;
   }
 }

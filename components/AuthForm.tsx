@@ -57,6 +57,26 @@ function ensureProfileInBackground(fullName: string, newsletter: boolean, mode: 
     .finally(() => window.clearTimeout(timeout));
 }
 
+function captureMemberLead(email: string, fullName: string, newsletter: boolean, mode: "login" | "register") {
+  if (mode !== "register") return;
+
+  fetch("/api/email-capture", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email,
+      fullName: fullName.trim(),
+      source: "membre-gratuit",
+      metadata: {
+        intent: "free_member_signup",
+        newsletter_opt_in: newsletter
+      }
+    })
+  }).catch(() => {
+    // L'inscription Supabase reste prioritaire. La capture lead est rejouable via les événements/profils si besoin.
+  });
+}
+
 function getRedirectTarget() {
   const redirect = new URLSearchParams(window.location.search).get("redirect");
   return redirect?.startsWith("/") ? redirect : "/dashboard";
@@ -97,6 +117,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
     const supabase = createSupabaseBrowserClient();
     if (!supabase) {
       saveLocalMember({ email, fullName, newsletterOptIn: newsletter });
+      captureMemberLead(email, fullName, newsletter, mode);
       setLoading(false);
       router.push("/dashboard");
       router.refresh();
@@ -126,6 +147,8 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
         setError(getFriendlyAuthError(result.error.message));
         return;
       }
+
+      captureMemberLead(email, fullName, newsletter, mode);
 
       if (result.data.session) {
         saveLocalMember({
