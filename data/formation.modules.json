@@ -1,0 +1,345 @@
+[
+  {
+    "id": "bases",
+    "step": 1,
+    "title": "Comprendre la lithothérapie sans confusion",
+    "duration": "25 min",
+    "level": "Débutant",
+    "pdfUrl": "/guides/formation-litho-01-bases.pdf",
+    "goal": "Savoir expliquer ce qu'est la lithothérapie, ce qu'elle n'est pas, et poser un cadre de pratique responsable.",
+    "objectives": [
+      "Distinguer tradition symbolique, ressenti personnel et promesse médicale",
+      "Comprendre le rôle d'une pierre comme support d'intention",
+      "Adopter un vocabulaire prudent, clair et non médical"
+    ],
+    "course": [
+      {
+        "heading": "Le cadre juste",
+        "body": "La lithothérapie est présentée ici comme une pratique de bien-être fondée sur les traditions, les usages symboliques et le ressenti. Une pierre n'est pas un traitement : elle sert de repère concret pour revenir à une intention, ralentir, poser une limite ou accompagner un rituel simple."
+      },
+      {
+        "heading": "Le rôle de l'intention",
+        "body": "L'intention donne une direction à la pratique. Sans intention, la pierre devient un objet décoratif. Avec une intention simple, elle devient un rappel visible : respirer, se recentrer, oser parler, prendre soin de soi ou avancer avec plus de clarté."
+      },
+      {
+        "heading": "La posture responsable",
+        "body": "Une pratique saine évite les promesses absolues. Elle ne remplace jamais un avis médical, psychologique ou professionnel. Elle invite plutôt à observer son état, à choisir un symbole utile et à garder une trace de ce que l'on ressent."
+      }
+    ],
+    "exercise": "Écrivez en une phrase votre définition responsable de la lithothérapie, puis ajoutez une phrase de disclaimer que vous seriez à l'aise de répéter à quelqu'un.",
+    "quiz": [
+      {
+        "question": "Dans cette formation, une pierre est surtout présentée comme...",
+        "options": ["Un support d'intention", "Un traitement garanti", "Un diagnostic énergétique"],
+        "answer": 0,
+        "explanation": "Le cadre retenu est symbolique et non médical : la pierre accompagne une intention."
+      },
+      {
+        "question": "Quelle phrase respecte le mieux le cadre responsable ?",
+        "options": ["Cette pierre soigne l'anxiété", "Cette pierre peut soutenir une intention de calme", "Cette pierre remplace un suivi professionnel"],
+        "answer": 1,
+        "explanation": "La formulation parle de soutien symbolique, sans promesse médicale."
+      },
+      {
+        "question": "Pourquoi formuler une intention ?",
+        "options": ["Pour donner une direction à la pratique", "Pour éviter de purifier les pierres", "Pour garantir un résultat immédiat"],
+        "answer": 0,
+        "explanation": "L'intention clarifie l'usage et transforme la pierre en rappel concret."
+      }
+    ]
+  },
+  {
+    "id": "choisir",
+    "step": 2,
+    "title": "Choisir une pierre selon une intention",
+    "duration": "30 min",
+    "level": "Débutant",
+    "pdfUrl": "/guides/formation-litho-02-choisir.pdf",
+    "goal": "Apprendre à partir d'un besoin réel plutôt que d'une liste de propriétés abstraites.",
+    "objectives": [
+      "Identifier une intention prioritaire",
+      "Relier une intention à une famille de pierres",
+      "Éviter l'accumulation de pierres sans logique"
+    ],
+    "course": [
+      {
+        "heading": "Partir du besoin",
+        "body": "Le choix le plus simple commence par une question : qu'est-ce que je veux soutenir aujourd'hui ? Calme, protection, confiance, amour, sommeil, clarté, ancrage ou énergie. Cette question évite de choisir dix pierres à la fois."
+      },
+      {
+        "heading": "Associer une famille symbolique",
+        "body": "Les pierres douces comme le quartz rose sont souvent liées au cœur et au réconfort. Les pierres sombres comme la tourmaline noire évoquent l'ancrage et les limites. Les pierres lumineuses comme la citrine ou la cornaline soutiennent symboliquement l'élan."
+      },
+      {
+        "heading": "Choisir peu, mais mieux",
+        "body": "Une bonne pratique commence avec une à trois pierres maximum. Le but n'est pas de tout couvrir, mais de créer une relation claire entre une pierre, une intention et un geste quotidien."
+      }
+    ],
+    "exercise": "Choisissez une intention du jour, puis sélectionnez une pierre principale et une pierre complémentaire. Expliquez pourquoi en deux lignes.",
+    "quiz": [
+      {
+        "question": "Quelle est la première question à poser avant de choisir une pierre ?",
+        "options": ["Quelle pierre est la plus chère ?", "Quelle intention ai-je besoin de soutenir ?", "Quelle pierre est la plus rare ?"],
+        "answer": 1,
+        "explanation": "Le besoin réel oriente le choix et rend la pratique plus lisible."
+      },
+      {
+        "question": "Pour une intention de protection et de limites, quelle famille symbolique est souvent choisie ?",
+        "options": ["Pierres sombres d'ancrage", "Pierres uniquement transparentes", "Pierres sans couleur"],
+        "answer": 0,
+        "explanation": "Les pierres sombres sont traditionnellement associées à l'ancrage et à la protection."
+      },
+      {
+        "question": "Pourquoi limiter le nombre de pierres au départ ?",
+        "options": ["Pour garder une intention claire", "Parce que les pierres s'annulent toujours", "Pour éviter de les regarder"],
+        "answer": 0,
+        "explanation": "Une sélection courte facilite l'observation et la régularité."
+      }
+    ]
+  },
+  {
+    "id": "purifier",
+    "step": 3,
+    "title": "Purifier, recharger et entretenir ses pierres",
+    "duration": "35 min",
+    "level": "Débutant",
+    "pdfUrl": "/guides/formation-litho-03-purifier.pdf",
+    "goal": "Mettre en place une routine simple d'entretien sans abîmer les pierres.",
+    "objectives": [
+      "Comprendre la différence entre purification et recharge",
+      "Choisir des méthodes douces et prudentes",
+      "Créer une routine réaliste"
+    ],
+    "course": [
+      {
+        "heading": "Purifier : revenir au neutre",
+        "body": "Dans les traditions, purifier signifie symboliquement remettre la pierre dans un état plus neutre. La fumigation douce, le son, l'intention ou le repos sur un support adapté sont des méthodes simples et prudentes."
+      },
+      {
+        "heading": "Recharger : soutenir l'intention",
+        "body": "Recharger consiste à redonner une direction symbolique à la pierre. La lumière lunaire, un espace calme ou une courte phrase d'intention peuvent suffire. L'important est la régularité, pas la complexité."
+      },
+      {
+        "heading": "Éviter les automatismes risqués",
+        "body": "Toutes les pierres ne tolèrent pas l'eau, le sel ou le soleil direct. Quand vous ne savez pas, choisissez une méthode douce : chiffon sec, repos, fumigation légère ou intention formulée."
+      }
+    ],
+    "exercise": "Créez une routine d'entretien en trois gestes : quand purifier, comment recharger, où ranger vos pierres.",
+    "quiz": [
+      {
+        "question": "Quelle méthode est généralement prudente quand on ne connaît pas bien une pierre ?",
+        "options": ["Sel humide pendant une nuit", "Fumigation douce ou intention", "Soleil direct prolongé"],
+        "answer": 1,
+        "explanation": "Les méthodes douces limitent le risque d'abîmer une pierre sensible."
+      },
+      {
+        "question": "La recharge sert surtout à...",
+        "options": ["Soutenir une intention", "Transformer la pierre en médicament", "Changer sa composition"],
+        "answer": 0,
+        "explanation": "La recharge est comprise ici comme un geste symbolique d'intention."
+      },
+      {
+        "question": "Pourquoi éviter l'eau par défaut ?",
+        "options": ["Certaines pierres peuvent être fragiles", "L'eau annule toujours les pierres", "L'eau rend toutes les pierres noires"],
+        "answer": 0,
+        "explanation": "Certaines pierres se dégradent ou se fragilisent au contact de l'eau."
+      }
+    ]
+  },
+  {
+    "id": "emotions",
+    "step": 4,
+    "title": "Pierres, émotions et journal d'observation",
+    "duration": "40 min",
+    "level": "Débutant à intermédiaire",
+    "pdfUrl": "/guides/formation-litho-04-emotions.pdf",
+    "goal": "Utiliser les pierres comme support d'écoute émotionnelle sans surinterprétation.",
+    "objectives": [
+      "Nommer un état émotionnel simplement",
+      "Associer une pierre à un geste d'apaisement",
+      "Tenir un journal d'observation sobre"
+    ],
+    "course": [
+      {
+        "heading": "Nommer avant de choisir",
+        "body": "Une émotion floue pousse souvent à chercher une réponse compliquée. Avant de choisir une pierre, nommez l'état présent : stress, tristesse, colère, solitude, confusion, fatigue ou peur. Ce mot donne une porte d'entrée."
+      },
+      {
+        "heading": "Transformer la pierre en repère",
+        "body": "La pierre peut devenir un signal : poser la main sur le cœur avec un quartz rose, respirer avec une améthyste, revenir aux pieds avec un jaspe rouge. Le geste compte autant que l'objet."
+      },
+      {
+        "heading": "Observer sans conclure trop vite",
+        "body": "Un journal permet de noter le contexte, la pierre utilisée, l'intention et le ressenti après quelques minutes ou quelques jours. Il ne s'agit pas de prouver, mais de mieux se connaître."
+      }
+    ],
+    "exercise": "Pendant trois jours, notez une émotion, une pierre, un geste et une phrase d'observation. Gardez les phrases courtes.",
+    "quiz": [
+      {
+        "question": "Quelle étape vient avant le choix d'une pierre émotionnelle ?",
+        "options": ["Nommer l'état présent", "Acheter plusieurs pierres", "Lire toutes les fiches d'un coup"],
+        "answer": 0,
+        "explanation": "Nommer l'émotion clarifie l'intention et évite la dispersion."
+      },
+      {
+        "question": "Un journal d'observation sert à...",
+        "options": ["Mieux repérer son ressenti", "Établir un diagnostic médical", "Classer les pierres par prix"],
+        "answer": 0,
+        "explanation": "Le journal aide à observer sans transformer la pratique en promesse."
+      },
+      {
+        "question": "Quel duo geste/pierre est cohérent pour l'apaisement ?",
+        "options": ["Respirer doucement avec une améthyste", "Courir en tenant dix pierres", "Laisser la pierre remplacer le sommeil"],
+        "answer": 0,
+        "explanation": "Le geste simple renforce l'intention de calme."
+      }
+    ]
+  },
+  {
+    "id": "mediter",
+    "step": 5,
+    "title": "Méditer avec une pierre sans vidéo",
+    "duration": "30 min",
+    "level": "Tous niveaux",
+    "pdfUrl": "/guides/formation-litho-05-mediter.pdf",
+    "goal": "Créer une pratique guidée par texte, respiration et intention, sans support vidéo.",
+    "objectives": [
+      "Préparer un espace court et réaliste",
+      "Utiliser une pierre comme ancre d'attention",
+      "Clôturer la pratique avec une action concrète"
+    ],
+    "course": [
+      {
+        "heading": "Préparer une pratique courte",
+        "body": "Une méditation avec pierre peut durer cinq minutes. Choisissez une posture confortable, une pierre et une intention. L'objectif n'est pas de réussir une performance intérieure, mais de revenir doucement à un point d'appui."
+      },
+      {
+        "heading": "Ancrer l'attention",
+        "body": "Tenez la pierre ou posez-la devant vous. Inspirez lentement, expirez un peu plus longtemps, puis revenez au contact, à la couleur ou au poids de la pierre chaque fois que le mental part ailleurs."
+      },
+      {
+        "heading": "Terminer par un geste",
+        "body": "La fin de pratique est importante. Notez une phrase, buvez un verre d'eau, rangez la pierre avec soin ou choisissez une action simple en lien avec l'intention."
+      }
+    ],
+    "exercise": "Faites une méditation de cinq minutes avec une pierre. Écrivez ensuite : intention, sensation, action à poser.",
+    "quiz": [
+      {
+        "question": "Dans une méditation avec pierre, la pierre sert principalement de...",
+        "options": ["Ancre d'attention", "Objet magique obligatoire", "Substitut au repos"],
+        "answer": 0,
+        "explanation": "Elle aide à revenir au moment présent et à l'intention."
+      },
+      {
+        "question": "Quelle durée est suffisante pour commencer ?",
+        "options": ["5 minutes", "3 heures obligatoires", "Uniquement une nuit entière"],
+        "answer": 0,
+        "explanation": "Une pratique courte et régulière vaut mieux qu'un rituel trop ambitieux."
+      },
+      {
+        "question": "Pourquoi clôturer par une action ?",
+        "options": ["Pour relier l'intention au quotidien", "Pour oublier la pratique", "Pour éviter de respirer"],
+        "answer": 0,
+        "explanation": "L'action concrète donne une suite simple à la pratique intérieure."
+      }
+    ]
+  },
+  {
+    "id": "rituel",
+    "step": 6,
+    "title": "Créer un rituel simple et durable",
+    "duration": "35 min",
+    "level": "Intermédiaire",
+    "pdfUrl": "/guides/formation-litho-06-rituel.pdf",
+    "goal": "Construire un rituel sobre : une intention, une pierre, un moment, une trace.",
+    "objectives": [
+      "Structurer un rituel en quatre étapes",
+      "Choisir le bon moment de pratique",
+      "Évaluer si le rituel reste utile"
+    ],
+    "course": [
+      {
+        "heading": "La structure en quatre temps",
+        "body": "Un rituel simple peut suivre quatre temps : nommer l'intention, choisir la pierre, poser un geste, garder une trace. Cette structure suffit pour créer de la régularité sans surcharger la pratique."
+      },
+      {
+        "heading": "Le bon moment",
+        "body": "Le meilleur rituel est celui que vous pouvez répéter. Matin, soir, transition de travail, fin de journée ou moment d'écriture : choisissez un contexte réaliste plutôt qu'un scénario parfait."
+      },
+      {
+        "heading": "Garder ou ajuster",
+        "body": "Après une semaine, demandez-vous si le rituel vous aide vraiment à revenir à votre intention. Si oui, gardez-le. Sinon, simplifiez-le encore ou changez de pierre."
+      }
+    ],
+    "exercise": "Écrivez votre rituel en quatre lignes : intention, pierre, geste, trace. Testez-le pendant sept jours.",
+    "quiz": [
+      {
+        "question": "Quel élément n'appartient pas à la structure simple proposée ?",
+        "options": ["Une intention", "Une trace", "Une promesse de résultat garanti"],
+        "answer": 2,
+        "explanation": "La formation évite les promesses garanties et privilégie l'observation."
+      },
+      {
+        "question": "Le meilleur moment de rituel est...",
+        "options": ["Celui que l'on peut répéter", "Toujours minuit exactement", "Uniquement quand on possède vingt pierres"],
+        "answer": 0,
+        "explanation": "La durabilité vient d'un moment réaliste et accessible."
+      },
+      {
+        "question": "Quand ajuster un rituel ?",
+        "options": ["Quand il devient trop lourd ou peu utile", "Jamais", "Avant même de l'avoir testé"],
+        "answer": 0,
+        "explanation": "L'observation permet d'ajuster sans rigidité."
+      }
+    ]
+  },
+  {
+    "id": "offrir",
+    "step": 7,
+    "title": "Offrir une pierre avec sens",
+    "duration": "30 min",
+    "level": "Tous niveaux",
+    "pdfUrl": "/guides/formation-litho-07-offrir.pdf",
+    "goal": "Choisir une pierre à offrir avec tact, intention et respect de la personne.",
+    "objectives": [
+      "Identifier l'intention d'un cadeau",
+      "Choisir une pierre accessible et symboliquement claire",
+      "Formuler un message d'accompagnement juste"
+    ],
+    "course": [
+      {
+        "heading": "Offrir sans projeter",
+        "body": "Offrir une pierre demande de la délicatesse. Le cadeau doit soutenir une intention positive sans imposer une lecture de la personne. On évite de dire : tu as besoin de changer. On préfère : j'ai pensé à cette pierre pour t'accompagner avec douceur."
+      },
+      {
+        "heading": "Choisir une pierre lisible",
+        "body": "Pour un cadeau, privilégiez les pierres dont la symbolique est facile à comprendre : quartz rose pour la douceur, améthyste pour le calme, œil de tigre pour la confiance, labradorite pour la protection symbolique."
+      },
+      {
+        "heading": "Ajouter une carte",
+        "body": "La carte donne le sens du geste. Une phrase courte suffit : Que cette pierre te rappelle de respirer, de te respecter et d'avancer à ton rythme. Le message compte souvent autant que la pierre."
+      }
+    ],
+    "exercise": "Choisissez une personne, une intention, une pierre et rédigez une carte de trois lignes maximum.",
+    "quiz": [
+      {
+        "question": "Quel est le risque principal quand on offre une pierre ?",
+        "options": ["Projeter son interprétation sur l'autre", "Choisir une pierre trop claire", "Écrire une carte trop courte"],
+        "answer": 0,
+        "explanation": "Le cadeau doit rester délicat et respectueux de la personne."
+      },
+      {
+        "question": "Quelle pierre est facile à offrir pour une intention de douceur ?",
+        "options": ["Quartz rose", "Pierre inconnue sans explication", "Sel brut"],
+        "answer": 0,
+        "explanation": "Le quartz rose est lisible et associé traditionnellement à la douceur."
+      },
+      {
+        "question": "À quoi sert la carte d'accompagnement ?",
+        "options": ["Donner le sens du geste", "Garantir l'effet de la pierre", "Remplacer le cadeau"],
+        "answer": 0,
+        "explanation": "La carte clarifie l'intention sans faire de promesse."
+      }
+    ]
+  }
+]
