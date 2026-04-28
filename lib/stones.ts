@@ -57,6 +57,7 @@ type StoneSeed = {
   slug: string;
   name: string;
   productUrl?: string;
+  productLabel?: string;
   category?: string;
   properties: string[];
   emotions: string[];
@@ -83,8 +84,14 @@ type StoneSeed = {
   badge?: string;
 };
 
-const product = (name: string, url: string, brand: "Felicidade" | "Vera Mentis" = "Felicidade", badge?: string): Product => ({
-  label: `Bracelet ${name}`,
+const product = (
+  name: string,
+  url: string,
+  brand: "Felicidade" | "Vera Mentis" = "Felicidade",
+  badge?: string,
+  label?: string
+): Product => ({
+  label: label ?? `Bracelet ${name}`,
   brand,
   url,
   badge: badge ?? "Produit direct"
@@ -143,7 +150,7 @@ const createStone = (seed: StoneSeed): Stone => ({
     [`${seed.name.toLowerCase()} signification`, `${seed.name.toLowerCase()} bracelet`, `pierre ${seed.goals[0] ?? "bien-être"}`],
   scores: seed.scores ?? {},
   wear: "Bracelet au poignet selon le ressenti : main gauche pour accueillir, main droite pour agir.",
-  products: seed.productUrl ? [product(seed.name, seed.productUrl, seed.brand, seed.badge)] : []
+  products: seed.productUrl ? [product(seed.name, seed.productUrl, seed.brand, seed.badge, seed.productLabel)] : []
 });
 
 const seeds: StoneSeed[] = [
@@ -512,7 +519,7 @@ const seeds: StoneSeed[] = [
   {
     slug: "obsidienne-noire",
     name: "Obsidienne noire",
-    productUrl: "https://amzn.eu/d/0gmfb5rl",
+    productUrl: "https://amzn.eu/d/09thIdst",
     category: "protection",
     properties: ["protection", "ancrage", "lucidité", "limites"],
     emotions: ["peur", "colère", "stress", "blocage"],
@@ -553,6 +560,8 @@ const seeds: StoneSeed[] = [
   {
     slug: "amethyste",
     name: "Améthyste",
+    productUrl: "https://amzn.eu/d/075cfZhd",
+    productLabel: "Pendentif cœur Améthyste",
     category: "calme",
     properties: ["calme", "spiritualité", "apaisement", "intuition"],
     emotions: ["stress", "anxiété", "confusion", "tension"],
@@ -630,6 +639,189 @@ const seeds: StoneSeed[] = [
     description: "Pierre polyvalente utilisée pour clarifier une intention et amplifier symboliquement une pratique de bien-être.",
     compatibilities: ["amethyste", "quartz-rose", "labradorite"],
     badge: "Clarté"
+  },
+  {
+    slug: "hematite",
+    name: "Hématite",
+    productUrl: "https://amzn.eu/d/0i9x4eJJ",
+    properties: ["ancrage", "présence", "force calme", "stabilité"],
+    emotions: ["dispersion", "fatigue", "doute", "tension"],
+    goals: ["ancrage", "stabilité", "confiance"],
+    chakra: "Racine",
+    visual: "Gris métallique à noir argenté, dense et brillant.",
+    description: "Pierre traditionnellement associée à l'ancrage, à la présence et à la stabilité intérieure.",
+    compatibilities: ["jaspe-rouge", "tourmaline-noire", "pierre-de-lave"],
+    badge: "Ancrage"
+  },
+  {
+    slug: "pierre-de-lave",
+    name: "Pierre de lave",
+    productUrl: "https://amzn.eu/d/06nXWhgt",
+    properties: ["ancrage", "transformation", "courage", "stabilité"],
+    emotions: ["colère", "fatigue", "blocage", "dispersion"],
+    goals: ["ancrage", "courage", "transformation"],
+    chakra: "Racine",
+    visual: "Noir volcanique poreux, mat et brut.",
+    description: "Pierre volcanique associée à l'ancrage, au courage et aux périodes de transformation.",
+    compatibilities: ["jaspe-rouge", "hématite", "tourmaline-noire"],
+    badge: "Transformation"
+  },
+  {
+    slug: "unakite",
+    name: "Unakite",
+    productUrl: "https://amzn.eu/d/01HlwvvJ",
+    properties: ["équilibre émotionnel", "patience", "cœur", "intégration"],
+    emotions: ["tristesse", "stress", "frustration", "instabilité"],
+    goals: ["équilibre", "amour", "apaisement"],
+    chakra: "Cœur",
+    visual: "Mélange vert et rose, aspect moucheté et naturel.",
+    description: "Pierre traditionnellement reliée à l'équilibre du cœur, à la patience et à l'intégration émotionnelle.",
+    compatibilities: ["quartz-rose", "aventurine-verte", "rhodonite"],
+    badge: "Équilibre du cœur"
+  },
+  {
+    slug: "jaspe-dalmatien",
+    name: "Jaspe dalmatien",
+    productUrl: "https://amzn.eu/d/0dIWq1Lv",
+    properties: ["légèreté", "joie simple", "ancrage doux", "spontanéité"],
+    emotions: ["morosité", "stress", "dispersion", "fatigue"],
+    goals: ["joie", "ancrage", "optimisme"],
+    chakra: "Racine",
+    visual: "Fond beige clair parsemé de taches noires.",
+    description: "Pierre associée à la légèreté, à la spontanéité et à un ancrage plus joyeux.",
+    compatibilities: ["jaspe-rouge", "quartz-rose", "citrine"],
+    badge: "Joie simple"
+  },
+  {
+    slug: "jaspe-acajou",
+    name: "Jaspe acajou",
+    productUrl: "https://amzn.eu/d/0dIWq1Lv",
+    productLabel: "Pendentif cœur Jaspe acajou",
+    properties: ["ancrage", "courage", "sécurité", "vitalité douce"],
+    emotions: ["peur", "fatigue", "instabilité", "doute"],
+    goals: ["ancrage", "courage", "stabilité"],
+    chakra: "Racine",
+    visual: "Brun rouge profond, chaleureux et terreux.",
+    description: "Variété de jaspe associée à la sécurité intérieure, au courage calme et à l'ancrage.",
+    compatibilities: ["jaspe-rouge", "hématite", "pierre-de-lave"],
+    badge: "Pendentif cœur"
+  },
+  {
+    slug: "agate-fuchsia",
+    name: "Agate fuchsia",
+    productUrl: "https://amzn.eu/d/03wuRENA",
+    properties: ["joie", "expression", "vitalité douce", "confiance"],
+    emotions: ["tristesse", "blocage", "doute", "fatigue"],
+    goals: ["joie", "confiance", "créativité"],
+    chakra: "Cœur / Gorge",
+    visual: "Rose fuchsia vif, lumineux et expressif.",
+    description: "Agate colorée associée à l'expression joyeuse, à l'élan créatif et à la confiance douce.",
+    compatibilities: ["quartz-rose", "cornaline", "citrine"],
+    badge: "Élan coloré"
+  },
+  {
+    slug: "calcite-bleue",
+    name: "Calcite bleue",
+    productUrl: "https://amzn.eu/d/0b7HT9WX",
+    properties: ["apaisement", "communication douce", "clarté", "relâchement"],
+    emotions: ["stress", "colère", "tension", "surcharge mentale"],
+    goals: ["sérénité", "communication", "apaisement"],
+    chakra: "Gorge",
+    visual: "Bleu pâle à laiteux, doux et rassurant.",
+    description: "Pierre associée à la parole apaisée, au relâchement et à une clarté émotionnelle plus douce.",
+    compatibilities: ["calcedoine-bleue", "sodalite", "amethyste"],
+    badge: "Bracelet"
+  },
+  {
+    slug: "quartz-blanc-laiteux",
+    name: "Quartz blanc laiteux",
+    productUrl: "https://amzn.eu/d/0bi3d8Gs",
+    properties: ["clarté douce", "harmonie", "apaisement", "neutralité"],
+    emotions: ["confusion", "fatigue", "tension", "dispersion"],
+    goals: ["clarté", "équilibre", "sérénité"],
+    chakra: "Couronne",
+    visual: "Blanc laiteux, translucide et doux.",
+    description: "Quartz doux associé à la clarification progressive, à l'harmonie et au retour à une intention simple.",
+    compatibilities: ["amethyste", "quartz-rose", "sélénite"],
+    badge: "Bracelet"
+  },
+  {
+    slug: "agate-pourpre",
+    name: "Agate pourpre",
+    productUrl: "https://amzn.eu/d/07ta5Fgd",
+    properties: ["intuition", "créativité", "protection douce", "confiance"],
+    emotions: ["doute", "stress", "blocage", "fatigue"],
+    goals: ["intuition", "confiance", "créativité"],
+    chakra: "Troisième œil",
+    visual: "Pourpre profond à violet, avec nuances minérales.",
+    description: "Agate colorée associée à l'intuition, à la créativité et à une protection symbolique douce.",
+    compatibilities: ["amethyste", "quartz-clair", "lapis-lazuli"],
+    badge: "Intuition"
+  },
+  {
+    slug: "opaline",
+    name: "Opaline",
+    productUrl: "https://amzn.eu/d/05cQrjmj",
+    properties: ["douceur", "clarté émotionnelle", "transition", "lumière"],
+    emotions: ["tristesse", "stress", "hypersensibilité", "confusion"],
+    goals: ["apaisement", "clarté", "transition"],
+    chakra: "Couronne / Cœur",
+    visual: "Reflets laiteux bleutés, aspect lumineux et nacré.",
+    description: "Pierre d'aspect opalescent associée à la douceur, aux transitions et à la clarté émotionnelle.",
+    compatibilities: ["quartz-rose", "amethyste", "pierre-de-lune"],
+    badge: "Douceur lumineuse"
+  },
+  {
+    slug: "agate-bleue",
+    name: "Agate bleue",
+    productUrl: "https://amzn.eu/d/0ebLTZmN",
+    properties: ["communication", "apaisement", "patience", "harmonie"],
+    emotions: ["stress", "colère", "tension relationnelle", "peur de dire"],
+    goals: ["communication", "sérénité", "relations"],
+    chakra: "Gorge",
+    visual: "Bleu doux, parfois rubané, avec une présence calme.",
+    description: "Agate associée à la parole calme, à l'harmonie relationnelle et à l'apaisement.",
+    compatibilities: ["calcedoine-bleue", "sodalite", "quartz-rose"],
+    badge: "Communication douce"
+  },
+  {
+    slug: "jaspe-vert",
+    name: "Jaspe vert",
+    productUrl: "https://amzn.eu/d/0ebLTZmN",
+    properties: ["stabilité", "renouveau", "ancrage", "équilibre"],
+    emotions: ["fatigue", "stress", "dispersion", "frustration"],
+    goals: ["équilibre", "ancrage", "renouveau"],
+    chakra: "Cœur / Racine",
+    visual: "Vert naturel, dense et terreux.",
+    description: "Jaspe associé à la stabilité, au renouveau et à un ancrage plus doux.",
+    compatibilities: ["aventurine-verte", "unakite", "jaspe-rouge"],
+    badge: "Renouveau stable"
+  },
+  {
+    slug: "oeil-de-taureau",
+    name: "Œil de taureau",
+    productUrl: "https://amzn.eu/d/08wpifet",
+    properties: ["courage", "force", "ancrage", "détermination"],
+    emotions: ["peur", "doute", "fatigue", "hésitation"],
+    goals: ["courage", "confiance", "action"],
+    chakra: "Racine / Plexus solaire",
+    visual: "Brun rouge chatoyant, proche de l'œil de tigre mais plus terrien.",
+    description: "Pierre associée à la force tranquille, au courage et à la détermination dans l'action.",
+    compatibilities: ["jaspe-rouge", "grenat", "hématite"],
+    badge: "Force & courage"
+  },
+  {
+    slug: "olivine",
+    name: "Olivine",
+    productUrl: "https://amzn.eu/d/00GtHayF",
+    properties: ["renouveau", "joie", "ouverture du cœur", "légèreté"],
+    emotions: ["tristesse", "jalousie", "fatigue", "frustration"],
+    goals: ["joie", "amour", "renouveau"],
+    chakra: "Cœur",
+    visual: "Vert olive lumineux, frais et solaire.",
+    description: "Pierre associée au renouveau, à l'ouverture du cœur et à une joie plus légère.",
+    compatibilities: ["aventurine-verte", "quartz-rose", "citrine"],
+    badge: "Renouveau du cœur"
   }
 ];
 

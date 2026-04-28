@@ -3,18 +3,61 @@
     "slug": "labradorite",
     "name": "Labradorite",
     "short_description": "Pierre aux reflets irisés, traditionnellement associée à la protection des personnes sensibles aux ambiances.",
-    "traditional_uses": ["protection symbolique", "intuition", "limites personnelles"],
-    "emotional_keywords": ["stress", "hypersensibilité", "fatigue émotionnelle"],
-    "intentions": ["protection", "équilibre", "intuition"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "surcharge", "récupération douce"],
-    "chakras": ["troisième œil"],
-    "colors": ["gris", "bleu", "vert", "doré"],
-    "recommended_forms": ["bracelet", "pendentif", "pierre roulée"],
-    "usage_advice": ["À porter lorsque l’on se sent trop perméable aux émotions extérieures.", "À tenir quelques minutes avant un échange important."],
-    "purification": ["fumigation", "son", "lune"],
-    "recharge": ["lune", "géode de quartz"],
-    "positive_combinations": ["améthyste", "quartz clair", "tourmaline noire"],
-    "avoid_combinations": ["pyrite"],
+    "traditional_uses": [
+      "protection symbolique",
+      "intuition",
+      "limites personnelles"
+    ],
+    "emotional_keywords": [
+      "stress",
+      "hypersensibilité",
+      "fatigue émotionnelle"
+    ],
+    "intentions": [
+      "protection",
+      "équilibre",
+      "intuition"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "surcharge",
+      "récupération douce"
+    ],
+    "chakras": [
+      "troisième œil"
+    ],
+    "colors": [
+      "gris",
+      "bleu",
+      "vert",
+      "doré"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on se sent trop perméable aux émotions extérieures.",
+      "À tenir quelques minutes avant un échange important."
+    ],
+    "purification": [
+      "fumigation",
+      "son",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "géode de quartz"
+    ],
+    "positive_combinations": [
+      "améthyste",
+      "quartz clair",
+      "tourmaline noire"
+    ],
+    "avoid_combinations": [
+      "pyrite"
+    ],
     "seo_title": "Labradorite : signification, usages et bracelet",
     "seo_description": "Découvrez la labradorite, pierre traditionnellement associée à la protection, à l’intuition et à l’équilibre émotionnel.",
     "amazon_product_slug": "labradorite",
@@ -24,39 +67,117 @@
     "slug": "obsidienne-noire",
     "name": "Obsidienne noire",
     "short_description": "Pierre volcanique sombre, utilisée dans les pratiques de bien-être comme symbole d’ancrage et de lucidité.",
-    "traditional_uses": ["ancrage", "protection symbolique", "retour au réel"],
-    "emotional_keywords": ["peur", "colère", "tension intérieure"],
-    "intentions": ["protection", "courage", "clarté"],
-    "physical_wellbeing_keywords": ["tensions ressenties", "besoin de stabilité"],
-    "chakras": ["racine"],
-    "colors": ["noir"],
-    "recommended_forms": ["bracelet", "pendentif", "pierre roulée"],
-    "usage_advice": ["À utiliser sur de courtes périodes si l’on recherche une énergie très directe.", "À associer à une intention simple d’ancrage."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "amas de quartz"],
-    "positive_combinations": ["jaspe rouge", "tourmaline noire", "quartz clair"],
-    "avoid_combinations": ["quartz rose"],
+    "traditional_uses": [
+      "ancrage",
+      "protection symbolique",
+      "retour au réel"
+    ],
+    "emotional_keywords": [
+      "peur",
+      "colère",
+      "tension intérieure"
+    ],
+    "intentions": [
+      "protection",
+      "courage",
+      "clarté"
+    ],
+    "physical_wellbeing_keywords": [
+      "tensions ressenties",
+      "besoin de stabilité"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "noir"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser sur de courtes périodes si l’on recherche une énergie très directe.",
+      "À associer à une intention simple d’ancrage."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "amas de quartz"
+    ],
+    "positive_combinations": [
+      "jaspe rouge",
+      "tourmaline noire",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "quartz rose"
+    ],
     "seo_title": "Obsidienne noire : signification et usages symboliques",
     "seo_description": "L’obsidienne noire est traditionnellement associée à l’ancrage, à la lucidité et à la protection symbolique.",
-    "amazon_product_slug": "obsidienne-oeil-celeste",
+    "amazon_product_slug": "obsidienne-noire",
     "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
   },
   {
     "slug": "oeil-de-tigre",
     "name": "Œil de tigre",
     "short_description": "Pierre dorée et brune, associée dans les traditions à la confiance, au courage et à la décision.",
-    "traditional_uses": ["confiance", "protection symbolique", "passage à l’action"],
-    "emotional_keywords": ["doute", "peur", "hésitation"],
-    "intentions": ["confiance", "réussite", "protection"],
-    "physical_wellbeing_keywords": ["manque d’élan", "fatigue ressentie"],
-    "chakras": ["plexus solaire"],
-    "colors": ["brun", "doré", "miel"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lors d’une journée où il faut décider ou s’affirmer.", "À tenir avant un entretien, une vente ou une prise de parole."],
-    "purification": ["fumigation", "son", "lune"],
-    "recharge": ["soleil doux", "quartz"],
-    "positive_combinations": ["cornaline", "citrine", "jaspe rouge"],
-    "avoid_combinations": ["quartz rose"],
+    "traditional_uses": [
+      "confiance",
+      "protection symbolique",
+      "passage à l’action"
+    ],
+    "emotional_keywords": [
+      "doute",
+      "peur",
+      "hésitation"
+    ],
+    "intentions": [
+      "confiance",
+      "réussite",
+      "protection"
+    ],
+    "physical_wellbeing_keywords": [
+      "manque d’élan",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "plexus solaire"
+    ],
+    "colors": [
+      "brun",
+      "doré",
+      "miel"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors d’une journée où il faut décider ou s’affirmer.",
+      "À tenir avant un entretien, une vente ou une prise de parole."
+    ],
+    "purification": [
+      "fumigation",
+      "son",
+      "lune"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "cornaline",
+      "citrine",
+      "jaspe rouge"
+    ],
+    "avoid_combinations": [
+      "quartz rose"
+    ],
     "seo_title": "Œil de tigre : confiance, protection et bracelet",
     "seo_description": "L’œil de tigre peut accompagner symboliquement la confiance, le courage et la protection selon les traditions de lithothérapie.",
     "amazon_product_slug": "oeil-de-tigre",
@@ -66,18 +187,56 @@
     "slug": "tourmaline-noire",
     "name": "Tourmaline noire",
     "short_description": "Pierre noire striée, souvent choisie pour symboliser l’ancrage, la stabilité et les limites énergétiques.",
-    "traditional_uses": ["ancrage", "protection symbolique", "stabilité"],
-    "emotional_keywords": ["stress", "dispersion", "insécurité"],
-    "intentions": ["protection", "ancrage", "stabilité"],
-    "physical_wellbeing_keywords": ["surcharge", "besoin de repos"],
-    "chakras": ["racine"],
-    "colors": ["noir"],
-    "recommended_forms": ["bracelet", "pierre brute", "pierre roulée"],
-    "usage_advice": ["À placer près de l’entrée ou sur le bureau selon les traditions énergétiques.", "À porter lorsque l’on veut se sentir plus stable."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["terre", "quartz"],
-    "positive_combinations": ["labradorite", "obsidienne noire", "jaspe rouge"],
-    "avoid_combinations": ["pyrite"],
+    "traditional_uses": [
+      "ancrage",
+      "protection symbolique",
+      "stabilité"
+    ],
+    "emotional_keywords": [
+      "stress",
+      "dispersion",
+      "insécurité"
+    ],
+    "intentions": [
+      "protection",
+      "ancrage",
+      "stabilité"
+    ],
+    "physical_wellbeing_keywords": [
+      "surcharge",
+      "besoin de repos"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "noir"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre brute",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À placer près de l’entrée ou sur le bureau selon les traditions énergétiques.",
+      "À porter lorsque l’on veut se sentir plus stable."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "terre",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "labradorite",
+      "obsidienne noire",
+      "jaspe rouge"
+    ],
+    "avoid_combinations": [
+      "pyrite"
+    ],
     "seo_title": "Tourmaline noire : ancrage et protection symbolique",
     "seo_description": "La tourmaline noire est utilisée dans les pratiques de bien-être pour accompagner l’ancrage et la protection symbolique.",
     "amazon_product_slug": "",
@@ -87,18 +246,58 @@
     "slug": "quartz-rose",
     "name": "Quartz rose",
     "short_description": "Pierre rose douce, traditionnellement associée à l’amour de soi, à la tendresse et au réconfort.",
-    "traditional_uses": ["amour de soi", "douceur", "réconfort émotionnel"],
-    "emotional_keywords": ["tristesse", "solitude", "besoin d’affection"],
-    "intentions": ["amour", "réconfort", "paix intérieure"],
-    "physical_wellbeing_keywords": ["tension ressentie", "besoin de calme"],
-    "chakras": ["cœur"],
-    "colors": ["rose pâle", "rose laiteux"],
-    "recommended_forms": ["bracelet", "pendentif", "pierre roulée"],
-    "usage_advice": ["À porter près du cœur ou au poignet dans les périodes de fragilité.", "À utiliser dans un rituel simple d’amour de soi."],
-    "purification": ["fumigation", "lune", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["rhodonite", "aventurine verte", "améthyste"],
-    "avoid_combinations": ["obsidienne noire"],
+    "traditional_uses": [
+      "amour de soi",
+      "douceur",
+      "réconfort émotionnel"
+    ],
+    "emotional_keywords": [
+      "tristesse",
+      "solitude",
+      "besoin d’affection"
+    ],
+    "intentions": [
+      "amour",
+      "réconfort",
+      "paix intérieure"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "besoin de calme"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "rose pâle",
+      "rose laiteux"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter près du cœur ou au poignet dans les périodes de fragilité.",
+      "À utiliser dans un rituel simple d’amour de soi."
+    ],
+    "purification": [
+      "fumigation",
+      "lune",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "rhodonite",
+      "aventurine verte",
+      "améthyste"
+    ],
+    "avoid_combinations": [
+      "obsidienne noire"
+    ],
     "seo_title": "Quartz rose : amour, douceur et signification",
     "seo_description": "Le quartz rose est traditionnellement associé à l’amour de soi, à la tendresse et au soutien émotionnel symbolique.",
     "amazon_product_slug": "quartz-rose",
@@ -108,18 +307,57 @@
     "slug": "rhodonite",
     "name": "Rhodonite",
     "short_description": "Pierre rose veinée de noir, utilisée dans les traditions pour accompagner les blessures affectives et le pardon.",
-    "traditional_uses": ["réconfort du cœur", "pardon", "sécurité affective"],
-    "emotional_keywords": ["blessure affective", "tristesse", "colère douce"],
-    "intentions": ["amour", "réconciliation", "apaisement"],
-    "physical_wellbeing_keywords": ["tension émotionnelle", "fatigue affective"],
-    "chakras": ["cœur"],
-    "colors": ["rose", "noir"],
-    "recommended_forms": ["bracelet", "pendentif", "pierre roulée"],
-    "usage_advice": ["À porter lorsque l’on veut adoucir une mémoire émotionnelle.", "À associer à une phrase de pardon ou de recentrage."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune", "quartz rose"],
-    "positive_combinations": ["quartz rose", "aventurine verte", "améthyste"],
-    "avoid_combinations": ["pyrite"],
+    "traditional_uses": [
+      "réconfort du cœur",
+      "pardon",
+      "sécurité affective"
+    ],
+    "emotional_keywords": [
+      "blessure affective",
+      "tristesse",
+      "colère douce"
+    ],
+    "intentions": [
+      "amour",
+      "réconciliation",
+      "apaisement"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension émotionnelle",
+      "fatigue affective"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "rose",
+      "noir"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on veut adoucir une mémoire émotionnelle.",
+      "À associer à une phrase de pardon ou de recentrage."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz rose"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "aventurine verte",
+      "améthyste"
+    ],
+    "avoid_combinations": [
+      "pyrite"
+    ],
     "seo_title": "Rhodonite : signification et usages du cœur",
     "seo_description": "La rhodonite peut accompagner symboliquement le réconfort affectif, le pardon et la sécurité émotionnelle.",
     "amazon_product_slug": "rhodonite",
@@ -129,18 +367,58 @@
     "slug": "pierre-de-lune",
     "name": "Pierre de lune",
     "short_description": "Pierre nacrée, reliée dans les traditions à l’intuition, aux cycles et à la douceur intérieure.",
-    "traditional_uses": ["intuition", "féminin symbolique", "cycles"],
-    "emotional_keywords": ["hypersensibilité", "émotion changeante", "besoin de douceur"],
-    "intentions": ["intuition", "amour", "équilibre"],
-    "physical_wellbeing_keywords": ["rythme personnel", "repos émotionnel"],
-    "chakras": ["sacré", "couronne"],
-    "colors": ["blanc", "nacré", "crème"],
-    "recommended_forms": ["bracelet", "pendentif", "pierre roulée"],
-    "usage_advice": ["À utiliser lors d’un nouveau départ ou d’une période de transition.", "À porter le soir pour installer une intention douce."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune"],
-    "positive_combinations": ["quartz rose", "labradorite", "améthyste"],
-    "avoid_combinations": ["grenat"],
+    "traditional_uses": [
+      "intuition",
+      "féminin symbolique",
+      "cycles"
+    ],
+    "emotional_keywords": [
+      "hypersensibilité",
+      "émotion changeante",
+      "besoin de douceur"
+    ],
+    "intentions": [
+      "intuition",
+      "amour",
+      "équilibre"
+    ],
+    "physical_wellbeing_keywords": [
+      "rythme personnel",
+      "repos émotionnel"
+    ],
+    "chakras": [
+      "sacré",
+      "couronne"
+    ],
+    "colors": [
+      "blanc",
+      "nacré",
+      "crème"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser lors d’un nouveau départ ou d’une période de transition.",
+      "À porter le soir pour installer une intention douce."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "labradorite",
+      "améthyste"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
     "seo_title": "Pierre de lune : intuition, cycles et bracelet",
     "seo_description": "La pierre de lune est traditionnellement associée à l’intuition, aux cycles et à l’équilibre émotionnel symbolique.",
     "amazon_product_slug": "pierre-de-lune",
@@ -150,18 +428,58 @@
     "slug": "citrine",
     "name": "Citrine",
     "short_description": "Pierre jaune lumineuse, associée à l’élan, à la confiance et à l’abondance symbolique.",
-    "traditional_uses": ["motivation", "abondance", "confiance"],
-    "emotional_keywords": ["démotivation", "doute", "peur du manque"],
-    "intentions": ["énergie", "argent", "réussite"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "manque d’élan"],
-    "chakras": ["plexus solaire"],
-    "colors": ["jaune", "doré", "miel"],
-    "recommended_forms": ["bracelet", "pierre roulée", "pendentif"],
-    "usage_advice": ["À porter lors d’une journée de lancement, de vente ou de décision.", "À utiliser avec une action concrète liée à l’objectif."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["soleil doux", "quartz"],
-    "positive_combinations": ["œil de tigre", "cornaline", "pyrite"],
-    "avoid_combinations": ["améthyste"],
+    "traditional_uses": [
+      "motivation",
+      "abondance",
+      "confiance"
+    ],
+    "emotional_keywords": [
+      "démotivation",
+      "doute",
+      "peur du manque"
+    ],
+    "intentions": [
+      "énergie",
+      "argent",
+      "réussite"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "manque d’élan"
+    ],
+    "chakras": [
+      "plexus solaire"
+    ],
+    "colors": [
+      "jaune",
+      "doré",
+      "miel"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter lors d’une journée de lancement, de vente ou de décision.",
+      "À utiliser avec une action concrète liée à l’objectif."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "œil de tigre",
+      "cornaline",
+      "pyrite"
+    ],
+    "avoid_combinations": [
+      "améthyste"
+    ],
     "seo_title": "Citrine : abondance, motivation et signification",
     "seo_description": "La citrine peut accompagner symboliquement la motivation, l’abondance et la confiance selon les traditions de lithothérapie.",
     "amazon_product_slug": "",
@@ -171,18 +489,56 @@
     "slug": "cornaline",
     "name": "Cornaline",
     "short_description": "Pierre orangée, utilisée dans les pratiques de bien-être pour soutenir symboliquement l’élan et la créativité.",
-    "traditional_uses": ["créativité", "vitalité symbolique", "passion"],
-    "emotional_keywords": ["blocage", "fatigue", "démotivation"],
-    "intentions": ["énergie", "créativité", "confiance"],
-    "physical_wellbeing_keywords": ["élan personnel", "fatigue ressentie"],
-    "chakras": ["sacré"],
-    "colors": ["orange", "rouge orangé"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lorsque l’on veut retrouver de l’audace.", "À associer à une action créative courte."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["soleil doux", "quartz"],
-    "positive_combinations": ["œil de tigre", "citrine", "grenat"],
-    "avoid_combinations": ["améthyste"],
+    "traditional_uses": [
+      "créativité",
+      "vitalité symbolique",
+      "passion"
+    ],
+    "emotional_keywords": [
+      "blocage",
+      "fatigue",
+      "démotivation"
+    ],
+    "intentions": [
+      "énergie",
+      "créativité",
+      "confiance"
+    ],
+    "physical_wellbeing_keywords": [
+      "élan personnel",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "sacré"
+    ],
+    "colors": [
+      "orange",
+      "rouge orangé"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on veut retrouver de l’audace.",
+      "À associer à une action créative courte."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "œil de tigre",
+      "citrine",
+      "grenat"
+    ],
+    "avoid_combinations": [
+      "améthyste"
+    ],
     "seo_title": "Cornaline : énergie, créativité et bracelet",
     "seo_description": "La cornaline est traditionnellement associée à la créativité, à l’élan personnel et à la confiance.",
     "amazon_product_slug": "cornaline",
@@ -192,18 +548,56 @@
     "slug": "jaspe-rouge",
     "name": "Jaspe rouge",
     "short_description": "Pierre rouge terreuse, traditionnellement associée à l’ancrage, au courage et à la constance.",
-    "traditional_uses": ["ancrage", "courage", "endurance symbolique"],
-    "emotional_keywords": ["dispersion", "peur", "fatigue"],
-    "intentions": ["ancrage", "énergie", "courage"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "besoin de stabilité"],
-    "chakras": ["racine"],
-    "colors": ["rouge", "brun rouge"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter pour revenir au corps et à l’action simple.", "À utiliser dans un rituel court de présence."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["terre", "soleil doux"],
-    "positive_combinations": ["tourmaline noire", "cornaline", "œil de tigre"],
-    "avoid_combinations": ["angélite"],
+    "traditional_uses": [
+      "ancrage",
+      "courage",
+      "endurance symbolique"
+    ],
+    "emotional_keywords": [
+      "dispersion",
+      "peur",
+      "fatigue"
+    ],
+    "intentions": [
+      "ancrage",
+      "énergie",
+      "courage"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de stabilité"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "rouge",
+      "brun rouge"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter pour revenir au corps et à l’action simple.",
+      "À utiliser dans un rituel court de présence."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "terre",
+      "soleil doux"
+    ],
+    "positive_combinations": [
+      "tourmaline noire",
+      "cornaline",
+      "œil de tigre"
+    ],
+    "avoid_combinations": [
+      "angélite"
+    ],
     "seo_title": "Jaspe rouge : ancrage, courage et signification",
     "seo_description": "Le jaspe rouge peut accompagner symboliquement l’ancrage, le courage et la stabilité selon les traditions.",
     "amazon_product_slug": "jaspe-rouge",
@@ -213,39 +607,120 @@
     "slug": "amethyste",
     "name": "Améthyste",
     "short_description": "Pierre violette, associée au calme intérieur, à la méditation et à la clarté spirituelle.",
-    "traditional_uses": ["calme", "méditation", "spiritualité"],
-    "emotional_keywords": ["stress", "anxiété", "agitation mentale"],
-    "intentions": ["sérénité", "sommeil", "spiritualité"],
-    "physical_wellbeing_keywords": ["tension ressentie", "repos"],
-    "chakras": ["troisième œil", "couronne"],
-    "colors": ["violet", "mauve"],
-    "recommended_forms": ["bracelet", "pendentif", "pierre roulée"],
-    "usage_advice": ["À poser près de soi pendant une méditation.", "À porter lorsque l’on veut ralentir le mental."],
-    "purification": ["fumigation", "son", "lune"],
-    "recharge": ["lune", "géode de quartz"],
-    "positive_combinations": ["quartz rose", "labradorite", "quartz clair"],
-    "avoid_combinations": ["cornaline"],
+    "traditional_uses": [
+      "calme",
+      "méditation",
+      "spiritualité"
+    ],
+    "emotional_keywords": [
+      "stress",
+      "anxiété",
+      "agitation mentale"
+    ],
+    "intentions": [
+      "sérénité",
+      "sommeil",
+      "spiritualité"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "repos"
+    ],
+    "chakras": [
+      "troisième œil",
+      "couronne"
+    ],
+    "colors": [
+      "violet",
+      "mauve"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À poser près de soi pendant une méditation.",
+      "À porter lorsque l’on veut ralentir le mental."
+    ],
+    "purification": [
+      "fumigation",
+      "son",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "géode de quartz"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "labradorite",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "cornaline"
+    ],
     "seo_title": "Améthyste : calme, sommeil symbolique et spiritualité",
     "seo_description": "L’améthyste est traditionnellement associée au calme, à la méditation et à la clarté intérieure.",
-    "amazon_product_slug": "",
+    "amazon_product_slug": "amethyste",
     "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
   },
   {
     "slug": "lapis-lazuli",
     "name": "Lapis lazuli",
     "short_description": "Pierre bleu profond, symbole de vérité, de sagesse et d’expression personnelle.",
-    "traditional_uses": ["expression", "vérité", "sagesse"],
-    "emotional_keywords": ["doute", "peur de parler", "confusion"],
-    "intentions": ["communication", "clarté", "confiance"],
-    "physical_wellbeing_keywords": ["tension de communication", "surcharge mentale"],
-    "chakras": ["gorge", "troisième œil"],
-    "colors": ["bleu", "doré", "blanc"],
-    "recommended_forms": ["bracelet", "pendentif"],
-    "usage_advice": ["À porter avant une conversation importante.", "À tenir en formulant une phrase vraie et simple."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["sodalite", "quartz clair", "améthyste"],
-    "avoid_combinations": ["grenat"],
+    "traditional_uses": [
+      "expression",
+      "vérité",
+      "sagesse"
+    ],
+    "emotional_keywords": [
+      "doute",
+      "peur de parler",
+      "confusion"
+    ],
+    "intentions": [
+      "communication",
+      "clarté",
+      "confiance"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension de communication",
+      "surcharge mentale"
+    ],
+    "chakras": [
+      "gorge",
+      "troisième œil"
+    ],
+    "colors": [
+      "bleu",
+      "doré",
+      "blanc"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter avant une conversation importante.",
+      "À tenir en formulant une phrase vraie et simple."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "sodalite",
+      "quartz clair",
+      "améthyste"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
     "seo_title": "Lapis lazuli : communication et signification",
     "seo_description": "Le lapis lazuli peut accompagner symboliquement l’expression, la vérité intérieure et la clarté mentale.",
     "amazon_product_slug": "lapis-lazuli",
@@ -255,18 +730,57 @@
     "slug": "sodalite",
     "name": "Sodalite",
     "short_description": "Pierre bleue veinée de blanc, associée à la logique, au calme mental et à la parole posée.",
-    "traditional_uses": ["calme mental", "logique", "communication"],
-    "emotional_keywords": ["confusion", "stress", "rumination"],
-    "intentions": ["clarté", "focus", "communication"],
-    "physical_wellbeing_keywords": ["surcharge mentale", "fatigue de concentration"],
-    "chakras": ["gorge", "troisième œil"],
-    "colors": ["bleu", "blanc"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À utiliser lors d’une session de travail ou d’écriture.", "À porter pour soutenir une parole plus calme."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["lapis lazuli", "fluorite", "quartz clair"],
-    "avoid_combinations": ["cornaline"],
+    "traditional_uses": [
+      "calme mental",
+      "logique",
+      "communication"
+    ],
+    "emotional_keywords": [
+      "confusion",
+      "stress",
+      "rumination"
+    ],
+    "intentions": [
+      "clarté",
+      "focus",
+      "communication"
+    ],
+    "physical_wellbeing_keywords": [
+      "surcharge mentale",
+      "fatigue de concentration"
+    ],
+    "chakras": [
+      "gorge",
+      "troisième œil"
+    ],
+    "colors": [
+      "bleu",
+      "blanc"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser lors d’une session de travail ou d’écriture.",
+      "À porter pour soutenir une parole plus calme."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "lapis lazuli",
+      "fluorite",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "cornaline"
+    ],
     "seo_title": "Sodalite : clarté mentale et communication",
     "seo_description": "La sodalite est traditionnellement associée à la clarté, au calme mental et à l’expression posée.",
     "amazon_product_slug": "sodalite-du-bresil",
@@ -276,18 +790,56 @@
     "slug": "aventurine-verte",
     "name": "Aventurine verte",
     "short_description": "Pierre verte douce, liée à la chance symbolique, au cœur et aux nouveaux départs.",
-    "traditional_uses": ["chance", "ouverture du cœur", "croissance"],
-    "emotional_keywords": ["frustration", "doute", "fermeture affective"],
-    "intentions": ["abondance", "amour", "opportunité"],
-    "physical_wellbeing_keywords": ["tension ressentie", "besoin de douceur"],
-    "chakras": ["cœur"],
-    "colors": ["vert"],
-    "recommended_forms": ["bracelet", "pendentif", "pierre roulée"],
-    "usage_advice": ["À porter au début d’un projet ou d’une rencontre.", "À associer à une action concrète d’ouverture."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["quartz rose", "jade", "citrine"],
-    "avoid_combinations": ["obsidienne noire"],
+    "traditional_uses": [
+      "chance",
+      "ouverture du cœur",
+      "croissance"
+    ],
+    "emotional_keywords": [
+      "frustration",
+      "doute",
+      "fermeture affective"
+    ],
+    "intentions": [
+      "abondance",
+      "amour",
+      "opportunité"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "besoin de douceur"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "vert"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter au début d’un projet ou d’une rencontre.",
+      "À associer à une action concrète d’ouverture."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "jade",
+      "citrine"
+    ],
+    "avoid_combinations": [
+      "obsidienne noire"
+    ],
     "seo_title": "Aventurine verte : chance, cœur et signification",
     "seo_description": "L’aventurine verte peut accompagner symboliquement la chance, l’ouverture du cœur et les nouveaux départs.",
     "amazon_product_slug": "aventurine-verte",
@@ -297,18 +849,58 @@
     "slug": "amazonite",
     "name": "Amazonite",
     "short_description": "Pierre bleu-vert, associée à l’apaisement relationnel, à l’authenticité et à la parole douce.",
-    "traditional_uses": ["communication douce", "équilibre émotionnel", "authenticité"],
-    "emotional_keywords": ["frustration", "peur de dire", "tension relationnelle"],
-    "intentions": ["communication", "sérénité", "équilibre"],
-    "physical_wellbeing_keywords": ["tension ressentie", "surcharge relationnelle"],
-    "chakras": ["cœur", "gorge"],
-    "colors": ["vert d’eau", "turquoise"],
-    "recommended_forms": ["bracelet", "pendentif", "pierre roulée"],
-    "usage_advice": ["À porter avant une discussion sensible.", "À tenir en respirant avant de répondre."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["quartz rose", "calcédoine bleue", "sodalite"],
-    "avoid_combinations": ["grenat"],
+    "traditional_uses": [
+      "communication douce",
+      "équilibre émotionnel",
+      "authenticité"
+    ],
+    "emotional_keywords": [
+      "frustration",
+      "peur de dire",
+      "tension relationnelle"
+    ],
+    "intentions": [
+      "communication",
+      "sérénité",
+      "équilibre"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "surcharge relationnelle"
+    ],
+    "chakras": [
+      "cœur",
+      "gorge"
+    ],
+    "colors": [
+      "vert d’eau",
+      "turquoise"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter avant une discussion sensible.",
+      "À tenir en respirant avant de répondre."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "calcédoine bleue",
+      "sodalite"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
     "seo_title": "Amazonite : communication et apaisement symbolique",
     "seo_description": "L’amazonite est utilisée dans les pratiques de bien-être pour accompagner la communication douce et l’équilibre émotionnel.",
     "amazon_product_slug": "",
@@ -318,18 +910,58 @@
     "slug": "fluorite",
     "name": "Fluorite",
     "short_description": "Pierre multicolore, traditionnellement associée au tri mental, à l’organisation et au discernement.",
-    "traditional_uses": ["focus", "clarté", "organisation"],
-    "emotional_keywords": ["confusion", "dispersion", "surcharge mentale"],
-    "intentions": ["clarté", "focus", "discernement"],
-    "physical_wellbeing_keywords": ["fatigue de concentration", "surcharge"],
-    "chakras": ["troisième œil", "cœur"],
-    "colors": ["violet", "vert", "transparent"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À utiliser sur le bureau pendant une tâche précise.", "À associer à une liste courte de priorités."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["sodalite", "quartz clair", "améthyste"],
-    "avoid_combinations": ["cornaline"],
+    "traditional_uses": [
+      "focus",
+      "clarté",
+      "organisation"
+    ],
+    "emotional_keywords": [
+      "confusion",
+      "dispersion",
+      "surcharge mentale"
+    ],
+    "intentions": [
+      "clarté",
+      "focus",
+      "discernement"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue de concentration",
+      "surcharge"
+    ],
+    "chakras": [
+      "troisième œil",
+      "cœur"
+    ],
+    "colors": [
+      "violet",
+      "vert",
+      "transparent"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser sur le bureau pendant une tâche précise.",
+      "À associer à une liste courte de priorités."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "sodalite",
+      "quartz clair",
+      "améthyste"
+    ],
+    "avoid_combinations": [
+      "cornaline"
+    ],
     "seo_title": "Fluorite : focus, clarté et signification",
     "seo_description": "La fluorite peut accompagner symboliquement la concentration, l’organisation mentale et le discernement.",
     "amazon_product_slug": "fluorite",
@@ -339,18 +971,56 @@
     "slug": "pyrite",
     "name": "Pyrite",
     "short_description": "Pierre dorée métallique, symbole d’abondance, de structure et d’action concrète.",
-    "traditional_uses": ["abondance", "structure", "confiance"],
-    "emotional_keywords": ["doute", "peur du manque", "démotivation"],
-    "intentions": ["argent", "réussite", "action"],
-    "physical_wellbeing_keywords": ["manque d’élan", "fatigue ressentie"],
-    "chakras": ["plexus solaire"],
-    "colors": ["doré", "métallique"],
-    "recommended_forms": ["pierre brute", "pierre roulée"],
-    "usage_advice": ["À placer sur un bureau pour symboliser la structure et l’action.", "À utiliser avec un objectif financier clair et réaliste."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["soleil doux", "quartz"],
-    "positive_combinations": ["citrine", "œil de tigre", "grenat"],
-    "avoid_combinations": ["labradorite"],
+    "traditional_uses": [
+      "abondance",
+      "structure",
+      "confiance"
+    ],
+    "emotional_keywords": [
+      "doute",
+      "peur du manque",
+      "démotivation"
+    ],
+    "intentions": [
+      "argent",
+      "réussite",
+      "action"
+    ],
+    "physical_wellbeing_keywords": [
+      "manque d’élan",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "plexus solaire"
+    ],
+    "colors": [
+      "doré",
+      "métallique"
+    ],
+    "recommended_forms": [
+      "pierre brute",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À placer sur un bureau pour symboliser la structure et l’action.",
+      "À utiliser avec un objectif financier clair et réaliste."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "citrine",
+      "œil de tigre",
+      "grenat"
+    ],
+    "avoid_combinations": [
+      "labradorite"
+    ],
     "seo_title": "Pyrite : abondance, confiance et action",
     "seo_description": "La pyrite est traditionnellement associée à l’abondance symbolique, à la structure et au passage à l’action.",
     "amazon_product_slug": "",
@@ -360,18 +1030,56 @@
     "slug": "malachite",
     "name": "Malachite",
     "short_description": "Pierre verte intense, utilisée comme symbole de transformation, de courage et d’ouverture du cœur.",
-    "traditional_uses": ["transformation", "courage émotionnel", "cœur"],
-    "emotional_keywords": ["blocage", "peur", "frustration"],
-    "intentions": ["transformation", "courage", "amour"],
-    "physical_wellbeing_keywords": ["tension émotionnelle", "besoin de changement"],
-    "chakras": ["cœur"],
-    "colors": ["vert", "vert foncé"],
-    "recommended_forms": ["pendentif", "pierre roulée"],
-    "usage_advice": ["À utiliser avec une intention claire, car sa symbolique est intense.", "À associer à un moment de vérité personnelle."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["quartz rose", "rhodonite", "tourmaline noire"],
-    "avoid_combinations": ["pyrite"],
+    "traditional_uses": [
+      "transformation",
+      "courage émotionnel",
+      "cœur"
+    ],
+    "emotional_keywords": [
+      "blocage",
+      "peur",
+      "frustration"
+    ],
+    "intentions": [
+      "transformation",
+      "courage",
+      "amour"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension émotionnelle",
+      "besoin de changement"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "vert",
+      "vert foncé"
+    ],
+    "recommended_forms": [
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser avec une intention claire, car sa symbolique est intense.",
+      "À associer à un moment de vérité personnelle."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "rhodonite",
+      "tourmaline noire"
+    ],
+    "avoid_combinations": [
+      "pyrite"
+    ],
     "seo_title": "Malachite : transformation et cœur",
     "seo_description": "La malachite peut accompagner symboliquement la transformation, le courage émotionnel et l’ouverture du cœur.",
     "amazon_product_slug": "",
@@ -381,18 +1089,56 @@
     "slug": "grenat",
     "name": "Grenat",
     "short_description": "Pierre rouge profonde, associée à l’énergie, à la passion et à la volonté d’avancer.",
-    "traditional_uses": ["vitalité symbolique", "passion", "courage"],
-    "emotional_keywords": ["fatigue", "démotivation", "peur d’agir"],
-    "intentions": ["énergie", "désir", "confiance"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "besoin d’élan"],
-    "chakras": ["racine"],
-    "colors": ["rouge", "bordeaux"],
-    "recommended_forms": ["bracelet", "pendentif"],
-    "usage_advice": ["À porter lorsque l’on veut retrouver une présence plus affirmée.", "À éviter le soir si l’on recherche une énergie très douce."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["soleil doux", "quartz"],
-    "positive_combinations": ["cornaline", "jaspe rouge", "pyrite"],
-    "avoid_combinations": ["pierre de lune"],
+    "traditional_uses": [
+      "vitalité symbolique",
+      "passion",
+      "courage"
+    ],
+    "emotional_keywords": [
+      "fatigue",
+      "démotivation",
+      "peur d’agir"
+    ],
+    "intentions": [
+      "énergie",
+      "désir",
+      "confiance"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin d’élan"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "rouge",
+      "bordeaux"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on veut retrouver une présence plus affirmée.",
+      "À éviter le soir si l’on recherche une énergie très douce."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "cornaline",
+      "jaspe rouge",
+      "pyrite"
+    ],
+    "avoid_combinations": [
+      "pierre de lune"
+    ],
     "seo_title": "Grenat : énergie, passion et signification",
     "seo_description": "Le grenat est traditionnellement associé à l’énergie symbolique, à la passion et au courage.",
     "amazon_product_slug": "grenat",
@@ -402,17 +1148,55 @@
     "slug": "quartz-clair",
     "name": "Quartz clair",
     "short_description": "Pierre transparente, utilisée pour clarifier une intention et amplifier symboliquement une pratique.",
-    "traditional_uses": ["clarté", "amplification symbolique", "harmonie"],
-    "emotional_keywords": ["confusion", "dispersion", "fatigue mentale"],
-    "intentions": ["clarté", "équilibre", "spiritualité"],
-    "physical_wellbeing_keywords": ["surcharge", "fatigue ressentie"],
-    "chakras": ["tous chakras"],
-    "colors": ["transparent", "blanc"],
-    "recommended_forms": ["bracelet", "pointe", "pierre roulée"],
-    "usage_advice": ["À associer à une intention unique pour éviter la dispersion.", "À utiliser avec d’autres pierres pour soutenir symboliquement leur intention."],
-    "purification": ["eau douce", "fumigation", "son"],
-    "recharge": ["lune", "soleil doux"],
-    "positive_combinations": ["améthyste", "quartz rose", "labradorite"],
+    "traditional_uses": [
+      "clarté",
+      "amplification symbolique",
+      "harmonie"
+    ],
+    "emotional_keywords": [
+      "confusion",
+      "dispersion",
+      "fatigue mentale"
+    ],
+    "intentions": [
+      "clarté",
+      "équilibre",
+      "spiritualité"
+    ],
+    "physical_wellbeing_keywords": [
+      "surcharge",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "tous chakras"
+    ],
+    "colors": [
+      "transparent",
+      "blanc"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pointe",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À associer à une intention unique pour éviter la dispersion.",
+      "À utiliser avec d’autres pierres pour soutenir symboliquement leur intention."
+    ],
+    "purification": [
+      "eau douce",
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "soleil doux"
+    ],
+    "positive_combinations": [
+      "améthyste",
+      "quartz rose",
+      "labradorite"
+    ],
     "avoid_combinations": [],
     "seo_title": "Quartz clair : clarté, intention et bracelet",
     "seo_description": "Le quartz clair peut accompagner symboliquement la clarté, l’équilibre et l’amplification d’une intention.",
@@ -423,18 +1207,56 @@
     "slug": "howlite",
     "name": "Howlite",
     "short_description": "Pierre blanche veinée, traditionnellement associée au calme, à la patience et au ralentissement.",
-    "traditional_uses": ["calme", "patience", "repos"],
-    "emotional_keywords": ["stress", "colère", "impatience"],
-    "intentions": ["sérénité", "sommeil", "patience"],
-    "physical_wellbeing_keywords": ["tension ressentie", "besoin de repos"],
-    "chakras": ["couronne"],
-    "colors": ["blanc", "gris"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter en fin de journée pour symboliser le ralentissement.", "À tenir pendant une respiration lente."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["améthyste", "lépidolite", "angélite"],
-    "avoid_combinations": ["grenat"],
+    "traditional_uses": [
+      "calme",
+      "patience",
+      "repos"
+    ],
+    "emotional_keywords": [
+      "stress",
+      "colère",
+      "impatience"
+    ],
+    "intentions": [
+      "sérénité",
+      "sommeil",
+      "patience"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "besoin de repos"
+    ],
+    "chakras": [
+      "couronne"
+    ],
+    "colors": [
+      "blanc",
+      "gris"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter en fin de journée pour symboliser le ralentissement.",
+      "À tenir pendant une respiration lente."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "améthyste",
+      "lépidolite",
+      "angélite"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
     "seo_title": "Howlite : calme, patience et sommeil symbolique",
     "seo_description": "La howlite est traditionnellement associée au calme, à la patience et au repos dans les pratiques de bien-être.",
     "amazon_product_slug": "howlite",
@@ -444,18 +1266,55 @@
     "slug": "angelite",
     "name": "Angélite",
     "short_description": "Pierre bleu pâle, reliée à la paix intérieure, à la douceur et à la spiritualité moderne.",
-    "traditional_uses": ["paix", "réconfort", "spiritualité"],
-    "emotional_keywords": ["tristesse", "solitude", "sensibilité"],
-    "intentions": ["sérénité", "réconfort", "spiritualité"],
-    "physical_wellbeing_keywords": ["besoin de calme", "tension ressentie"],
-    "chakras": ["gorge", "couronne"],
-    "colors": ["bleu pâle"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À utiliser dans un rituel de paix ou de douceur.", "À éviter au contact prolongé de l’eau."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune"],
-    "positive_combinations": ["howlite", "améthyste", "calcédoine bleue"],
-    "avoid_combinations": ["jaspe rouge"],
+    "traditional_uses": [
+      "paix",
+      "réconfort",
+      "spiritualité"
+    ],
+    "emotional_keywords": [
+      "tristesse",
+      "solitude",
+      "sensibilité"
+    ],
+    "intentions": [
+      "sérénité",
+      "réconfort",
+      "spiritualité"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de calme",
+      "tension ressentie"
+    ],
+    "chakras": [
+      "gorge",
+      "couronne"
+    ],
+    "colors": [
+      "bleu pâle"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser dans un rituel de paix ou de douceur.",
+      "À éviter au contact prolongé de l’eau."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune"
+    ],
+    "positive_combinations": [
+      "howlite",
+      "améthyste",
+      "calcédoine bleue"
+    ],
+    "avoid_combinations": [
+      "jaspe rouge"
+    ],
     "seo_title": "Angélite : paix intérieure et douceur",
     "seo_description": "L’angélite peut accompagner symboliquement la paix intérieure, le réconfort et une spiritualité douce.",
     "amazon_product_slug": "angelite",
@@ -465,18 +1324,57 @@
     "slug": "lepidolite",
     "name": "Lépidolite",
     "short_description": "Pierre lilas, associée à l’apaisement, aux transitions et au retour progressif au calme.",
-    "traditional_uses": ["apaisement", "transition", "repos"],
-    "emotional_keywords": ["stress", "anxiété", "changement"],
-    "intentions": ["sérénité", "sommeil", "transition"],
-    "physical_wellbeing_keywords": ["tension ressentie", "fatigue émotionnelle"],
-    "chakras": ["cœur", "couronne"],
-    "colors": ["lilas", "violet pâle"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lors d’une période de transition.", "À associer à une routine simple de respiration."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["améthyste", "howlite", "quartz rose"],
-    "avoid_combinations": ["cornaline"],
+    "traditional_uses": [
+      "apaisement",
+      "transition",
+      "repos"
+    ],
+    "emotional_keywords": [
+      "stress",
+      "anxiété",
+      "changement"
+    ],
+    "intentions": [
+      "sérénité",
+      "sommeil",
+      "transition"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "fatigue émotionnelle"
+    ],
+    "chakras": [
+      "cœur",
+      "couronne"
+    ],
+    "colors": [
+      "lilas",
+      "violet pâle"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors d’une période de transition.",
+      "À associer à une routine simple de respiration."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "améthyste",
+      "howlite",
+      "quartz rose"
+    ],
+    "avoid_combinations": [
+      "cornaline"
+    ],
     "seo_title": "Lépidolite : apaisement et transition",
     "seo_description": "La lépidolite est utilisée dans les pratiques de bien-être pour accompagner l’apaisement et les transitions émotionnelles.",
     "amazon_product_slug": "lepidolite",
@@ -486,18 +1384,55 @@
     "slug": "calcite-jaune",
     "name": "Calcite jaune",
     "short_description": "Pierre solaire douce, associée à l’optimisme, à la confiance et à la clarté d’action.",
-    "traditional_uses": ["optimisme", "confiance", "élan doux"],
-    "emotional_keywords": ["doute", "fatigue", "démotivation"],
-    "intentions": ["confiance", "énergie", "réussite"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "manque d’élan"],
-    "chakras": ["plexus solaire"],
-    "colors": ["jaune"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lors d’une journée où l’on veut avancer sans pression.", "À associer à une intention courte de confiance."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["soleil doux", "quartz"],
-    "positive_combinations": ["citrine", "œil de tigre", "pierre de soleil"],
-    "avoid_combinations": ["lépidolite"],
+    "traditional_uses": [
+      "optimisme",
+      "confiance",
+      "élan doux"
+    ],
+    "emotional_keywords": [
+      "doute",
+      "fatigue",
+      "démotivation"
+    ],
+    "intentions": [
+      "confiance",
+      "énergie",
+      "réussite"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "manque d’élan"
+    ],
+    "chakras": [
+      "plexus solaire"
+    ],
+    "colors": [
+      "jaune"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors d’une journée où l’on veut avancer sans pression.",
+      "À associer à une intention courte de confiance."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "citrine",
+      "œil de tigre",
+      "pierre de soleil"
+    ],
+    "avoid_combinations": [
+      "lépidolite"
+    ],
     "seo_title": "Calcite jaune : confiance et énergie douce",
     "seo_description": "La calcite jaune peut accompagner symboliquement l’optimisme, la confiance et l’énergie douce.",
     "amazon_product_slug": "calcite-jaune",
@@ -507,18 +1442,55 @@
     "slug": "pierre-de-soleil",
     "name": "Pierre de soleil",
     "short_description": "Pierre orangée lumineuse, symbole de joie, de rayonnement et de confiance intérieure.",
-    "traditional_uses": ["joie", "rayonnement", "confiance"],
-    "emotional_keywords": ["tristesse", "doute", "manque d’élan"],
-    "intentions": ["joie", "confiance", "réussite"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "élan personnel"],
-    "chakras": ["plexus solaire"],
-    "colors": ["orange", "doré"],
-    "recommended_forms": ["bracelet", "pendentif"],
-    "usage_advice": ["À porter lorsque l’on veut se sentir plus visible et plus présent.", "À associer à une action qui nourrit la joie."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["soleil doux"],
-    "positive_combinations": ["calcite jaune", "citrine", "cornaline"],
-    "avoid_combinations": ["améthyste"],
+    "traditional_uses": [
+      "joie",
+      "rayonnement",
+      "confiance"
+    ],
+    "emotional_keywords": [
+      "tristesse",
+      "doute",
+      "manque d’élan"
+    ],
+    "intentions": [
+      "joie",
+      "confiance",
+      "réussite"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "élan personnel"
+    ],
+    "chakras": [
+      "plexus solaire"
+    ],
+    "colors": [
+      "orange",
+      "doré"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on veut se sentir plus visible et plus présent.",
+      "À associer à une action qui nourrit la joie."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "soleil doux"
+    ],
+    "positive_combinations": [
+      "calcite jaune",
+      "citrine",
+      "cornaline"
+    ],
+    "avoid_combinations": [
+      "améthyste"
+    ],
     "seo_title": "Pierre de soleil : joie, confiance et bracelet",
     "seo_description": "La pierre de soleil est traditionnellement associée à la joie, au rayonnement et à la confiance.",
     "amazon_product_slug": "pierre-de-soleil",
@@ -528,18 +1500,55 @@
     "slug": "calcedoine-bleue",
     "name": "Calcédoine bleue",
     "short_description": "Pierre bleu pâle, traditionnellement associée à la parole douce et à l’apaisement relationnel.",
-    "traditional_uses": ["communication douce", "harmonie", "apaisement"],
-    "emotional_keywords": ["colère", "stress", "peur de parler"],
-    "intentions": ["communication", "sérénité", "relations"],
-    "physical_wellbeing_keywords": ["tension ressentie", "surcharge émotionnelle"],
-    "chakras": ["gorge"],
-    "colors": ["bleu pâle"],
-    "recommended_forms": ["bracelet", "pendentif"],
-    "usage_advice": ["À porter avant une discussion où l’on veut rester posé.", "À tenir en respirant avant de formuler une réponse."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["amazonite", "angélite", "sodalite"],
-    "avoid_combinations": ["grenat"],
+    "traditional_uses": [
+      "communication douce",
+      "harmonie",
+      "apaisement"
+    ],
+    "emotional_keywords": [
+      "colère",
+      "stress",
+      "peur de parler"
+    ],
+    "intentions": [
+      "communication",
+      "sérénité",
+      "relations"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "surcharge émotionnelle"
+    ],
+    "chakras": [
+      "gorge"
+    ],
+    "colors": [
+      "bleu pâle"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter avant une discussion où l’on veut rester posé.",
+      "À tenir en respirant avant de formuler une réponse."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "amazonite",
+      "angélite",
+      "sodalite"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
     "seo_title": "Calcédoine bleue : parole douce et sérénité",
     "seo_description": "La calcédoine bleue peut accompagner symboliquement la communication apaisée et l’harmonie relationnelle.",
     "amazon_product_slug": "calcedoine-bleue",
@@ -549,18 +1558,56 @@
     "slug": "apatite-bleue",
     "name": "Apatite bleue",
     "short_description": "Pierre bleue vive, associée à l’expression personnelle, à la motivation et à l’inspiration.",
-    "traditional_uses": ["expression", "motivation", "inspiration"],
-    "emotional_keywords": ["blocage", "doute", "manque d’inspiration"],
-    "intentions": ["communication", "clarté", "motivation"],
-    "physical_wellbeing_keywords": ["fatigue mentale", "manque d’élan"],
-    "chakras": ["gorge"],
-    "colors": ["bleu", "turquoise"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lorsque l’on veut reprendre la parole ou créer.", "À associer à une courte action d’écriture."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["sodalite", "lapis lazuli", "quartz clair"],
-    "avoid_combinations": ["jaspe rouge"],
+    "traditional_uses": [
+      "expression",
+      "motivation",
+      "inspiration"
+    ],
+    "emotional_keywords": [
+      "blocage",
+      "doute",
+      "manque d’inspiration"
+    ],
+    "intentions": [
+      "communication",
+      "clarté",
+      "motivation"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue mentale",
+      "manque d’élan"
+    ],
+    "chakras": [
+      "gorge"
+    ],
+    "colors": [
+      "bleu",
+      "turquoise"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on veut reprendre la parole ou créer.",
+      "À associer à une courte action d’écriture."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "sodalite",
+      "lapis lazuli",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "jaspe rouge"
+    ],
     "seo_title": "Apatite bleue : expression et motivation",
     "seo_description": "L’apatite bleue est traditionnellement associée à l’expression, à la motivation et à l’inspiration.",
     "amazon_product_slug": "apatite-bleue",
@@ -570,18 +1617,57 @@
     "slug": "agate-du-botswana",
     "name": "Agate du Botswana",
     "short_description": "Pierre à bandes douces, associée aux transitions lentes, à la patience et au réconfort.",
-    "traditional_uses": ["transition", "patience", "stabilité"],
-    "emotional_keywords": ["tristesse", "incertitude", "stress"],
-    "intentions": ["apaisement", "changement", "stabilité"],
-    "physical_wellbeing_keywords": ["fatigue émotionnelle", "besoin de rythme"],
-    "chakras": ["racine"],
-    "colors": ["gris", "rose", "brun"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lors d’une période de changement progressif.", "À utiliser pour revenir à un rythme plus stable."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["quartz rose", "jaspe rouge", "howlite"],
-    "avoid_combinations": ["pyrite"],
+    "traditional_uses": [
+      "transition",
+      "patience",
+      "stabilité"
+    ],
+    "emotional_keywords": [
+      "tristesse",
+      "incertitude",
+      "stress"
+    ],
+    "intentions": [
+      "apaisement",
+      "changement",
+      "stabilité"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue émotionnelle",
+      "besoin de rythme"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "gris",
+      "rose",
+      "brun"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors d’une période de changement progressif.",
+      "À utiliser pour revenir à un rythme plus stable."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "jaspe rouge",
+      "howlite"
+    ],
+    "avoid_combinations": [
+      "pyrite"
+    ],
     "seo_title": "Agate du Botswana : transition et stabilité",
     "seo_description": "L’agate du Botswana peut accompagner symboliquement les transitions, la patience et la stabilité émotionnelle.",
     "amazon_product_slug": "agate-du-botswana",
@@ -591,18 +1677,56 @@
     "slug": "jade",
     "name": "Jade",
     "short_description": "Pierre verte, symbole d’harmonie, de sagesse et de chance dans plusieurs traditions.",
-    "traditional_uses": ["harmonie", "chance", "équilibre"],
-    "emotional_keywords": ["agitation", "jalousie", "stress"],
-    "intentions": ["équilibre", "abondance", "amour"],
-    "physical_wellbeing_keywords": ["besoin de calme", "tension ressentie"],
-    "chakras": ["cœur"],
-    "colors": ["vert", "vert clair"],
-    "recommended_forms": ["bracelet", "pendentif"],
-    "usage_advice": ["À porter comme rappel de mesure, d’élégance et d’équilibre.", "À associer à une intention de chance réaliste."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["aventurine verte", "quartz rose", "citrine"],
-    "avoid_combinations": ["obsidienne noire"],
+    "traditional_uses": [
+      "harmonie",
+      "chance",
+      "équilibre"
+    ],
+    "emotional_keywords": [
+      "agitation",
+      "jalousie",
+      "stress"
+    ],
+    "intentions": [
+      "équilibre",
+      "abondance",
+      "amour"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de calme",
+      "tension ressentie"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "vert",
+      "vert clair"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter comme rappel de mesure, d’élégance et d’équilibre.",
+      "À associer à une intention de chance réaliste."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "aventurine verte",
+      "quartz rose",
+      "citrine"
+    ],
+    "avoid_combinations": [
+      "obsidienne noire"
+    ],
     "seo_title": "Jade : harmonie, chance et signification",
     "seo_description": "Le jade est traditionnellement associé à l’harmonie, à la chance symbolique et à l’équilibre du cœur.",
     "amazon_product_slug": "jade-emeraude",
@@ -612,18 +1736,56 @@
     "slug": "turquoise",
     "name": "Turquoise",
     "short_description": "Pierre bleu-vert, traditionnellement associée à la protection douce, au voyage et à la parole vraie.",
-    "traditional_uses": ["protection symbolique", "communication", "voyage"],
-    "emotional_keywords": ["peur", "stress", "blocage"],
-    "intentions": ["protection", "communication", "sérénité"],
-    "physical_wellbeing_keywords": ["tension ressentie", "besoin de stabilité"],
-    "chakras": ["gorge"],
-    "colors": ["turquoise", "bleu", "vert"],
-    "recommended_forms": ["pendentif", "bracelet"],
-    "usage_advice": ["À porter lors d’un déplacement ou d’une prise de parole.", "À associer à une intention de sécurité intérieure."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune"],
-    "positive_combinations": ["labradorite", "amazonite", "calcédoine bleue"],
-    "avoid_combinations": ["grenat"],
+    "traditional_uses": [
+      "protection symbolique",
+      "communication",
+      "voyage"
+    ],
+    "emotional_keywords": [
+      "peur",
+      "stress",
+      "blocage"
+    ],
+    "intentions": [
+      "protection",
+      "communication",
+      "sérénité"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "besoin de stabilité"
+    ],
+    "chakras": [
+      "gorge"
+    ],
+    "colors": [
+      "turquoise",
+      "bleu",
+      "vert"
+    ],
+    "recommended_forms": [
+      "pendentif",
+      "bracelet"
+    ],
+    "usage_advice": [
+      "À porter lors d’un déplacement ou d’une prise de parole.",
+      "À associer à une intention de sécurité intérieure."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune"
+    ],
+    "positive_combinations": [
+      "labradorite",
+      "amazonite",
+      "calcédoine bleue"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
     "seo_title": "Turquoise : protection douce et communication",
     "seo_description": "La turquoise peut accompagner symboliquement la protection, la communication et la sérénité.",
     "amazon_product_slug": "turquoise",
@@ -633,18 +1795,55 @@
     "slug": "onyx",
     "name": "Onyx",
     "short_description": "Pierre noire élégante, associée à la force intérieure, à la discipline et à l’ancrage.",
-    "traditional_uses": ["discipline", "force calme", "protection symbolique"],
-    "emotional_keywords": ["doute", "dispersion", "peur"],
-    "intentions": ["confiance", "protection", "discipline"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "besoin de constance"],
-    "chakras": ["racine"],
-    "colors": ["noir"],
-    "recommended_forms": ["bracelet", "pendentif"],
-    "usage_advice": ["À porter lorsque l’on veut tenir une décision.", "À associer à une action répétée chaque jour."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["terre", "quartz"],
-    "positive_combinations": ["œil de tigre", "jaspe rouge", "quartz clair"],
-    "avoid_combinations": ["quartz rose"],
+    "traditional_uses": [
+      "discipline",
+      "force calme",
+      "protection symbolique"
+    ],
+    "emotional_keywords": [
+      "doute",
+      "dispersion",
+      "peur"
+    ],
+    "intentions": [
+      "confiance",
+      "protection",
+      "discipline"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de constance"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "noir"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on veut tenir une décision.",
+      "À associer à une action répétée chaque jour."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "terre",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "œil de tigre",
+      "jaspe rouge",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "quartz rose"
+    ],
     "seo_title": "Onyx : force intérieure et discipline",
     "seo_description": "L’onyx est traditionnellement associé à la force calme, à la discipline et à l’ancrage.",
     "amazon_product_slug": "onyx",
@@ -654,18 +1853,56 @@
     "slug": "chrysoprase",
     "name": "Chrysoprase",
     "short_description": "Pierre verte lumineuse, associée au renouveau, à l’optimisme doux et à l’ouverture du cœur.",
-    "traditional_uses": ["renouveau", "joie douce", "ouverture du cœur"],
-    "emotional_keywords": ["tristesse", "frustration", "peur d’ouvrir"],
-    "intentions": ["joie", "amour", "renouveau"],
-    "physical_wellbeing_keywords": ["besoin de fraîcheur", "fatigue émotionnelle"],
-    "chakras": ["cœur"],
-    "colors": ["vert", "vert citron"],
-    "recommended_forms": ["bracelet", "pendentif"],
-    "usage_advice": ["À porter lors d’un nouveau départ affectif ou créatif.", "À associer à une action légère qui remet du vivant."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["quartz rose", "aventurine verte", "jade"],
-    "avoid_combinations": ["obsidienne noire"],
+    "traditional_uses": [
+      "renouveau",
+      "joie douce",
+      "ouverture du cœur"
+    ],
+    "emotional_keywords": [
+      "tristesse",
+      "frustration",
+      "peur d’ouvrir"
+    ],
+    "intentions": [
+      "joie",
+      "amour",
+      "renouveau"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de fraîcheur",
+      "fatigue émotionnelle"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "vert",
+      "vert citron"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter lors d’un nouveau départ affectif ou créatif.",
+      "À associer à une action légère qui remet du vivant."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "aventurine verte",
+      "jade"
+    ],
+    "avoid_combinations": [
+      "obsidienne noire"
+    ],
     "seo_title": "Chrysoprase : renouveau et ouverture du cœur",
     "seo_description": "La chrysoprase peut accompagner symboliquement le renouveau, la joie douce et l’ouverture émotionnelle.",
     "amazon_product_slug": "chrysoprase-citron",
@@ -675,18 +1912,58 @@
     "slug": "larvikite",
     "name": "Larvikite",
     "short_description": "Pierre gris-noir à reflets, associée à la stabilité, à la protection calme et au discernement.",
-    "traditional_uses": ["stabilité", "protection symbolique", "discernement"],
-    "emotional_keywords": ["dispersion", "stress", "surcharge"],
-    "intentions": ["ancrage", "protection", "clarté"],
-    "physical_wellbeing_keywords": ["besoin de stabilité", "fatigue ressentie"],
-    "chakras": ["racine", "troisième œil"],
-    "colors": ["gris", "noir", "argenté"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lorsque l’on veut une protection plus sobre et stable.", "À associer à une décision rationnelle."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["labradorite", "tourmaline noire", "quartz clair"],
-    "avoid_combinations": ["pyrite"],
+    "traditional_uses": [
+      "stabilité",
+      "protection symbolique",
+      "discernement"
+    ],
+    "emotional_keywords": [
+      "dispersion",
+      "stress",
+      "surcharge"
+    ],
+    "intentions": [
+      "ancrage",
+      "protection",
+      "clarté"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de stabilité",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "racine",
+      "troisième œil"
+    ],
+    "colors": [
+      "gris",
+      "noir",
+      "argenté"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on veut une protection plus sobre et stable.",
+      "À associer à une décision rationnelle."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "labradorite",
+      "tourmaline noire",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "pyrite"
+    ],
     "seo_title": "Larvikite : stabilité, protection et bracelet",
     "seo_description": "La larvikite est traditionnellement associée à la protection calme, à l’ancrage et au discernement.",
     "amazon_product_slug": "labradorite-foncee-larvikite",
@@ -696,18 +1973,57 @@
     "slug": "labradorite-de-madagascar",
     "name": "Labradorite de Madagascar",
     "short_description": "Variété de labradorite aux reflets marqués, associée à la protection intuitive et à l’élégance minérale.",
-    "traditional_uses": ["protection symbolique", "intuition", "récupération douce"],
-    "emotional_keywords": ["fatigue émotionnelle", "hypersensibilité", "stress"],
-    "intentions": ["protection", "intuition", "équilibre"],
-    "physical_wellbeing_keywords": ["surcharge", "fatigue ressentie"],
-    "chakras": ["troisième œil"],
-    "colors": ["gris", "bleu", "vert"],
-    "recommended_forms": ["bracelet", "pendentif"],
-    "usage_advice": ["À porter pour une présence protectrice plus visuelle et premium.", "À tenir avant un moment social intense."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["améthyste", "quartz clair", "larvikite"],
-    "avoid_combinations": ["pyrite"],
+    "traditional_uses": [
+      "protection symbolique",
+      "intuition",
+      "récupération douce"
+    ],
+    "emotional_keywords": [
+      "fatigue émotionnelle",
+      "hypersensibilité",
+      "stress"
+    ],
+    "intentions": [
+      "protection",
+      "intuition",
+      "équilibre"
+    ],
+    "physical_wellbeing_keywords": [
+      "surcharge",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "troisième œil"
+    ],
+    "colors": [
+      "gris",
+      "bleu",
+      "vert"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter pour une présence protectrice plus visuelle et premium.",
+      "À tenir avant un moment social intense."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "améthyste",
+      "quartz clair",
+      "larvikite"
+    ],
+    "avoid_combinations": [
+      "pyrite"
+    ],
     "seo_title": "Labradorite de Madagascar : protection et reflets",
     "seo_description": "La labradorite de Madagascar peut accompagner symboliquement la protection, l’intuition et l’équilibre émotionnel.",
     "amazon_product_slug": "labradorite-de-madagascar",
@@ -717,60 +2033,174 @@
     "slug": "hematite",
     "name": "Hématite",
     "short_description": "Pierre métallique sombre, utilisée comme symbole de présence, d’ancrage et de force calme.",
-    "traditional_uses": ["ancrage", "présence", "force calme"],
-    "emotional_keywords": ["dispersion", "doute", "fatigue"],
-    "intentions": ["ancrage", "confiance", "stabilité"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "besoin de présence"],
-    "chakras": ["racine"],
-    "colors": ["gris métallique", "noir argenté"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lorsque l’on veut revenir au concret.", "À associer à une posture droite et à une respiration basse."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["terre", "quartz"],
-    "positive_combinations": ["jaspe rouge", "onyx", "œil de tigre"],
-    "avoid_combinations": ["angélite"],
+    "traditional_uses": [
+      "ancrage",
+      "présence",
+      "force calme"
+    ],
+    "emotional_keywords": [
+      "dispersion",
+      "doute",
+      "fatigue"
+    ],
+    "intentions": [
+      "ancrage",
+      "confiance",
+      "stabilité"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de présence"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "gris métallique",
+      "noir argenté"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on veut revenir au concret.",
+      "À associer à une posture droite et à une respiration basse."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "terre",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "jaspe rouge",
+      "onyx",
+      "œil de tigre"
+    ],
+    "avoid_combinations": [
+      "angélite"
+    ],
     "seo_title": "Hématite : ancrage, présence et force calme",
     "seo_description": "L’hématite est traditionnellement associée à l’ancrage, à la présence et à la stabilité intérieure.",
-    "amazon_product_slug": "",
+    "amazon_product_slug": "hematite",
     "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
   },
   {
     "slug": "pierre-de-lave",
     "name": "Pierre de lave",
     "short_description": "Pierre volcanique poreuse, associée à l’ancrage, à la transformation et à la force primitive.",
-    "traditional_uses": ["ancrage", "transformation", "force intérieure"],
-    "emotional_keywords": ["colère", "tension", "besoin de repartir"],
-    "intentions": ["ancrage", "courage", "renouveau"],
-    "physical_wellbeing_keywords": ["tension ressentie", "besoin de stabilité"],
-    "chakras": ["racine"],
-    "colors": ["noir", "gris"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lors d’une période de transformation concrète.", "À utiliser comme rappel de solidité."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["terre", "soleil doux"],
-    "positive_combinations": ["jaspe rouge", "tourmaline noire", "hématite"],
-    "avoid_combinations": ["pierre de lune"],
+    "traditional_uses": [
+      "ancrage",
+      "transformation",
+      "force intérieure"
+    ],
+    "emotional_keywords": [
+      "colère",
+      "tension",
+      "besoin de repartir"
+    ],
+    "intentions": [
+      "ancrage",
+      "courage",
+      "renouveau"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "besoin de stabilité"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "noir",
+      "gris"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors d’une période de transformation concrète.",
+      "À utiliser comme rappel de solidité."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "terre",
+      "soleil doux"
+    ],
+    "positive_combinations": [
+      "jaspe rouge",
+      "tourmaline noire",
+      "hématite"
+    ],
+    "avoid_combinations": [
+      "pierre de lune"
+    ],
     "seo_title": "Pierre de lave : ancrage et transformation",
     "seo_description": "La pierre de lave peut accompagner symboliquement l’ancrage, le courage et les périodes de transformation.",
-    "amazon_product_slug": "",
+    "amazon_product_slug": "pierre-de-lave",
     "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
   },
   {
     "slug": "serpentine",
     "name": "Serpentine",
     "short_description": "Pierre verte aux nuances naturelles, associée au relâchement, au renouveau et à la flexibilité intérieure.",
-    "traditional_uses": ["relâchement", "renouveau", "adaptabilité"],
-    "emotional_keywords": ["rigidité", "stress", "peur du changement"],
-    "intentions": ["souplesse", "équilibre", "renouveau"],
-    "physical_wellbeing_keywords": ["tension ressentie", "besoin de mouvement doux"],
-    "chakras": ["cœur"],
-    "colors": ["vert", "jaune vert"],
-    "recommended_forms": ["pierre roulée", "bracelet"],
-    "usage_advice": ["À utiliser lorsque l’on veut accueillir le changement plus doucement.", "À associer à une marche lente ou un étirement."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["aventurine verte", "amazonite", "quartz clair"],
-    "avoid_combinations": ["grenat"],
+    "traditional_uses": [
+      "relâchement",
+      "renouveau",
+      "adaptabilité"
+    ],
+    "emotional_keywords": [
+      "rigidité",
+      "stress",
+      "peur du changement"
+    ],
+    "intentions": [
+      "souplesse",
+      "équilibre",
+      "renouveau"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "besoin de mouvement doux"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "vert",
+      "jaune vert"
+    ],
+    "recommended_forms": [
+      "pierre roulée",
+      "bracelet"
+    ],
+    "usage_advice": [
+      "À utiliser lorsque l’on veut accueillir le changement plus doucement.",
+      "À associer à une marche lente ou un étirement."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "aventurine verte",
+      "amazonite",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
     "seo_title": "Serpentine : renouveau et souplesse intérieure",
     "seo_description": "La serpentine est traditionnellement associée au relâchement, à l’adaptabilité et au renouveau symbolique.",
     "amazon_product_slug": "",
@@ -780,39 +2210,119 @@
     "slug": "unakite",
     "name": "Unakite",
     "short_description": "Pierre verte et rose, associée à l’équilibre du cœur, à la patience et à l’intégration émotionnelle.",
-    "traditional_uses": ["équilibre du cœur", "patience", "intégration"],
-    "emotional_keywords": ["tristesse", "frustration", "ambivalence"],
-    "intentions": ["équilibre", "amour", "patience"],
-    "physical_wellbeing_keywords": ["fatigue émotionnelle", "besoin d’harmonie"],
-    "chakras": ["cœur"],
-    "colors": ["vert", "rose", "saumon"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lors d’une phase de réconciliation intérieure.", "À associer à une intention de patience."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["quartz rose", "aventurine verte", "rhodonite"],
-    "avoid_combinations": ["obsidienne noire"],
+    "traditional_uses": [
+      "équilibre du cœur",
+      "patience",
+      "intégration"
+    ],
+    "emotional_keywords": [
+      "tristesse",
+      "frustration",
+      "ambivalence"
+    ],
+    "intentions": [
+      "équilibre",
+      "amour",
+      "patience"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue émotionnelle",
+      "besoin d’harmonie"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "vert",
+      "rose",
+      "saumon"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors d’une phase de réconciliation intérieure.",
+      "À associer à une intention de patience."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "aventurine verte",
+      "rhodonite"
+    ],
+    "avoid_combinations": [
+      "obsidienne noire"
+    ],
     "seo_title": "Unakite : équilibre émotionnel et cœur",
     "seo_description": "L’unakite peut accompagner symboliquement l’équilibre du cœur, la patience et l’intégration émotionnelle.",
-    "amazon_product_slug": "",
+    "amazon_product_slug": "unakite",
     "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
   },
   {
     "slug": "mokaite",
     "name": "Mokaïte",
     "short_description": "Jaspe australien aux couleurs chaudes, associé à la décision, à l’ancrage et à l’audace prudente.",
-    "traditional_uses": ["décision", "ancrage", "adaptation"],
-    "emotional_keywords": ["hésitation", "doute", "peur de choisir"],
-    "intentions": ["courage", "choix", "stabilité"],
-    "physical_wellbeing_keywords": ["besoin de stabilité", "fatigue ressentie"],
-    "chakras": ["racine", "plexus solaire"],
-    "colors": ["ocre", "rouge", "jaune", "brun"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À utiliser avant une décision concrète.", "À associer à une liste simple : garder, changer, arrêter."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["terre", "soleil doux"],
-    "positive_combinations": ["œil de tigre", "jaspe rouge", "citrine"],
-    "avoid_combinations": ["angélite"],
+    "traditional_uses": [
+      "décision",
+      "ancrage",
+      "adaptation"
+    ],
+    "emotional_keywords": [
+      "hésitation",
+      "doute",
+      "peur de choisir"
+    ],
+    "intentions": [
+      "courage",
+      "choix",
+      "stabilité"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de stabilité",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "racine",
+      "plexus solaire"
+    ],
+    "colors": [
+      "ocre",
+      "rouge",
+      "jaune",
+      "brun"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser avant une décision concrète.",
+      "À associer à une liste simple : garder, changer, arrêter."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "terre",
+      "soleil doux"
+    ],
+    "positive_combinations": [
+      "œil de tigre",
+      "jaspe rouge",
+      "citrine"
+    ],
+    "avoid_combinations": [
+      "angélite"
+    ],
     "seo_title": "Mokaïte : décision, ancrage et audace",
     "seo_description": "La mokaïte est traditionnellement associée à la décision, à l’ancrage et à l’adaptation.",
     "amazon_product_slug": "",
@@ -822,18 +2332,56 @@
     "slug": "aigue-marine",
     "name": "Aigue-marine",
     "short_description": "Pierre bleu clair, associée à la fluidité, à la parole apaisée et au courage tranquille.",
-    "traditional_uses": ["communication", "fluidité", "calme"],
-    "emotional_keywords": ["peur de parler", "stress", "tension relationnelle"],
-    "intentions": ["communication", "sérénité", "courage doux"],
-    "physical_wellbeing_keywords": ["tension ressentie", "besoin de calme"],
-    "chakras": ["gorge"],
-    "colors": ["bleu clair", "bleu vert"],
-    "recommended_forms": ["pendentif", "bracelet"],
-    "usage_advice": ["À porter proche de la gorge lors d’un échange important.", "À associer à une respiration lente avant de parler."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["calcédoine bleue", "amazonite", "lapis lazuli"],
-    "avoid_combinations": ["grenat"],
+    "traditional_uses": [
+      "communication",
+      "fluidité",
+      "calme"
+    ],
+    "emotional_keywords": [
+      "peur de parler",
+      "stress",
+      "tension relationnelle"
+    ],
+    "intentions": [
+      "communication",
+      "sérénité",
+      "courage doux"
+    ],
+    "physical_wellbeing_keywords": [
+      "tension ressentie",
+      "besoin de calme"
+    ],
+    "chakras": [
+      "gorge"
+    ],
+    "colors": [
+      "bleu clair",
+      "bleu vert"
+    ],
+    "recommended_forms": [
+      "pendentif",
+      "bracelet"
+    ],
+    "usage_advice": [
+      "À porter proche de la gorge lors d’un échange important.",
+      "À associer à une respiration lente avant de parler."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "calcédoine bleue",
+      "amazonite",
+      "lapis lazuli"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
     "seo_title": "Aigue-marine : communication et calme",
     "seo_description": "L’aigue-marine peut accompagner symboliquement la communication fluide, le calme et le courage doux.",
     "amazon_product_slug": "",
@@ -843,18 +2391,55 @@
     "slug": "celestine",
     "name": "Célestine",
     "short_description": "Pierre bleu ciel, associée à la paix, à l’inspiration et à la douceur spirituelle.",
-    "traditional_uses": ["paix", "inspiration", "spiritualité douce"],
-    "emotional_keywords": ["agitation", "tristesse", "sensibilité"],
-    "intentions": ["sérénité", "inspiration", "réconfort"],
-    "physical_wellbeing_keywords": ["besoin de repos", "tension ressentie"],
-    "chakras": ["gorge", "couronne"],
-    "colors": ["bleu ciel"],
-    "recommended_forms": ["pierre brute", "pierre roulée"],
-    "usage_advice": ["À placer près d’un espace calme ou de méditation.", "À éviter dans l’eau, pierre délicate."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune"],
-    "positive_combinations": ["angélite", "améthyste", "howlite"],
-    "avoid_combinations": ["jaspe rouge"],
+    "traditional_uses": [
+      "paix",
+      "inspiration",
+      "spiritualité douce"
+    ],
+    "emotional_keywords": [
+      "agitation",
+      "tristesse",
+      "sensibilité"
+    ],
+    "intentions": [
+      "sérénité",
+      "inspiration",
+      "réconfort"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de repos",
+      "tension ressentie"
+    ],
+    "chakras": [
+      "gorge",
+      "couronne"
+    ],
+    "colors": [
+      "bleu ciel"
+    ],
+    "recommended_forms": [
+      "pierre brute",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À placer près d’un espace calme ou de méditation.",
+      "À éviter dans l’eau, pierre délicate."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune"
+    ],
+    "positive_combinations": [
+      "angélite",
+      "améthyste",
+      "howlite"
+    ],
+    "avoid_combinations": [
+      "jaspe rouge"
+    ],
     "seo_title": "Célestine : paix, inspiration et douceur",
     "seo_description": "La célestine est traditionnellement associée à la paix intérieure, à l’inspiration et au réconfort symbolique.",
     "amazon_product_slug": "",
@@ -864,18 +2449,56 @@
     "slug": "selenite",
     "name": "Sélénite",
     "short_description": "Pierre blanche satinée, associée à la clarté, à la purification symbolique et à la douceur lunaire.",
-    "traditional_uses": ["clarté", "purification symbolique", "paix"],
-    "emotional_keywords": ["confusion", "agitation", "fatigue mentale"],
-    "intentions": ["clarté", "sérénité", "spiritualité"],
-    "physical_wellbeing_keywords": ["besoin de repos", "surcharge"],
-    "chakras": ["couronne"],
-    "colors": ["blanc", "nacré"],
-    "recommended_forms": ["bâton", "pierre brute", "pierre roulée"],
-    "usage_advice": ["À utiliser comme support visuel de purification symbolique.", "À garder au sec, pierre sensible à l’eau."],
-    "purification": ["son", "fumigation"],
-    "recharge": ["lune"],
-    "positive_combinations": ["améthyste", "quartz clair", "angélite"],
-    "avoid_combinations": ["pierre de lave"],
+    "traditional_uses": [
+      "clarté",
+      "purification symbolique",
+      "paix"
+    ],
+    "emotional_keywords": [
+      "confusion",
+      "agitation",
+      "fatigue mentale"
+    ],
+    "intentions": [
+      "clarté",
+      "sérénité",
+      "spiritualité"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de repos",
+      "surcharge"
+    ],
+    "chakras": [
+      "couronne"
+    ],
+    "colors": [
+      "blanc",
+      "nacré"
+    ],
+    "recommended_forms": [
+      "bâton",
+      "pierre brute",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser comme support visuel de purification symbolique.",
+      "À garder au sec, pierre sensible à l’eau."
+    ],
+    "purification": [
+      "son",
+      "fumigation"
+    ],
+    "recharge": [
+      "lune"
+    ],
+    "positive_combinations": [
+      "améthyste",
+      "quartz clair",
+      "angélite"
+    ],
+    "avoid_combinations": [
+      "pierre de lave"
+    ],
     "seo_title": "Sélénite : clarté et purification symbolique",
     "seo_description": "La sélénite peut accompagner symboliquement la clarté, la sérénité et les rituels de bien-être.",
     "amazon_product_slug": "",
@@ -885,18 +2508,57 @@
     "slug": "apatite-verte",
     "name": "Apatite verte",
     "short_description": "Pierre verte lumineuse, associée à l’élan de renouveau, à la motivation douce et à l’ouverture.",
-    "traditional_uses": ["renouveau", "motivation", "croissance"],
-    "emotional_keywords": ["frustration", "blocage", "fatigue"],
-    "intentions": ["croissance", "énergie", "équilibre"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "besoin de mouvement"],
-    "chakras": ["cœur", "plexus solaire"],
-    "colors": ["vert", "jaune vert"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter quand on veut reprendre une direction plus vivante.", "À associer à un petit engagement quotidien."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["aventurine verte", "citrine", "quartz clair"],
-    "avoid_combinations": ["obsidienne noire"],
+    "traditional_uses": [
+      "renouveau",
+      "motivation",
+      "croissance"
+    ],
+    "emotional_keywords": [
+      "frustration",
+      "blocage",
+      "fatigue"
+    ],
+    "intentions": [
+      "croissance",
+      "énergie",
+      "équilibre"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de mouvement"
+    ],
+    "chakras": [
+      "cœur",
+      "plexus solaire"
+    ],
+    "colors": [
+      "vert",
+      "jaune vert"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter quand on veut reprendre une direction plus vivante.",
+      "À associer à un petit engagement quotidien."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "aventurine verte",
+      "citrine",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "obsidienne noire"
+    ],
     "seo_title": "Apatite verte : renouveau et motivation douce",
     "seo_description": "L’apatite verte est traditionnellement associée au renouveau, à la croissance et à la motivation douce.",
     "amazon_product_slug": "",
@@ -906,18 +2568,57 @@
     "slug": "jaspe-paysage",
     "name": "Jaspe paysage",
     "short_description": "Pierre aux dessins naturels, associée à la patience, à l’ancrage et à la vision à long terme.",
-    "traditional_uses": ["patience", "ancrage", "vision"],
-    "emotional_keywords": ["impatience", "dispersion", "découragement"],
-    "intentions": ["stabilité", "persévérance", "clarté"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "besoin de rythme"],
-    "chakras": ["racine"],
-    "colors": ["beige", "brun", "ocre"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À utiliser lorsque le projet demande du temps.", "À associer à une vision simple et régulière."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["terre", "soleil doux"],
-    "positive_combinations": ["jaspe rouge", "mokaïte", "quartz clair"],
-    "avoid_combinations": ["pyrite"],
+    "traditional_uses": [
+      "patience",
+      "ancrage",
+      "vision"
+    ],
+    "emotional_keywords": [
+      "impatience",
+      "dispersion",
+      "découragement"
+    ],
+    "intentions": [
+      "stabilité",
+      "persévérance",
+      "clarté"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de rythme"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "beige",
+      "brun",
+      "ocre"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser lorsque le projet demande du temps.",
+      "À associer à une vision simple et régulière."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "terre",
+      "soleil doux"
+    ],
+    "positive_combinations": [
+      "jaspe rouge",
+      "mokaïte",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "pyrite"
+    ],
     "seo_title": "Jaspe paysage : patience et vision",
     "seo_description": "Le jaspe paysage peut accompagner symboliquement la patience, l’ancrage et la vision à long terme.",
     "amazon_product_slug": "jaspe",
@@ -927,39 +2628,116 @@
     "slug": "jaspe-dalmatien",
     "name": "Jaspe dalmatien",
     "short_description": "Pierre claire tachetée, associée à la légèreté, au jeu et au retour à une joie simple.",
-    "traditional_uses": ["joie simple", "ancrage léger", "spontanéité"],
-    "emotional_keywords": ["lourdeur", "frustration", "fatigue émotionnelle"],
-    "intentions": ["joie", "équilibre", "légèreté"],
-    "physical_wellbeing_keywords": ["besoin de légèreté", "fatigue ressentie"],
-    "chakras": ["racine", "sacré"],
-    "colors": ["beige", "noir"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter lorsque l’on veut retrouver un rapport plus simple à la journée.", "À associer à une petite action ludique."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["soleil doux", "quartz"],
-    "positive_combinations": ["pierre de soleil", "cornaline", "quartz clair"],
-    "avoid_combinations": ["obsidienne noire"],
+    "traditional_uses": [
+      "joie simple",
+      "ancrage léger",
+      "spontanéité"
+    ],
+    "emotional_keywords": [
+      "lourdeur",
+      "frustration",
+      "fatigue émotionnelle"
+    ],
+    "intentions": [
+      "joie",
+      "équilibre",
+      "légèreté"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de légèreté",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "racine",
+      "sacré"
+    ],
+    "colors": [
+      "beige",
+      "noir"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lorsque l’on veut retrouver un rapport plus simple à la journée.",
+      "À associer à une petite action ludique."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "pierre de soleil",
+      "cornaline",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "obsidienne noire"
+    ],
     "seo_title": "Jaspe dalmatien : légèreté et joie simple",
     "seo_description": "Le jaspe dalmatien est traditionnellement associé à la légèreté, à la spontanéité et à l’ancrage doux.",
-    "amazon_product_slug": "jaspe",
+    "amazon_product_slug": "jaspe-dalmatien",
     "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
   },
   {
     "slug": "prehnite",
     "name": "Prehnite",
     "short_description": "Pierre vert tendre, associée à la confiance douce, à l’ordre intérieur et à l’apaisement.",
-    "traditional_uses": ["apaisement", "confiance douce", "ordre intérieur"],
-    "emotional_keywords": ["stress", "désordre mental", "peur douce"],
-    "intentions": ["sérénité", "clarté", "confiance"],
-    "physical_wellbeing_keywords": ["besoin de repos", "surcharge"],
-    "chakras": ["cœur"],
-    "colors": ["vert pâle", "jaune vert"],
-    "recommended_forms": ["pendentif", "pierre roulée"],
-    "usage_advice": ["À utiliser pour simplifier ses priorités.", "À tenir pendant un rangement symbolique ou concret."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["aventurine verte", "quartz clair", "amazonite"],
-    "avoid_combinations": ["grenat"],
+    "traditional_uses": [
+      "apaisement",
+      "confiance douce",
+      "ordre intérieur"
+    ],
+    "emotional_keywords": [
+      "stress",
+      "désordre mental",
+      "peur douce"
+    ],
+    "intentions": [
+      "sérénité",
+      "clarté",
+      "confiance"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de repos",
+      "surcharge"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "vert pâle",
+      "jaune vert"
+    ],
+    "recommended_forms": [
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser pour simplifier ses priorités.",
+      "À tenir pendant un rangement symbolique ou concret."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "aventurine verte",
+      "quartz clair",
+      "amazonite"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
     "seo_title": "Prehnite : apaisement et ordre intérieur",
     "seo_description": "La prehnite peut accompagner symboliquement l’apaisement, la confiance douce et la clarté intérieure.",
     "amazon_product_slug": "",
@@ -969,18 +2747,58 @@
     "slug": "labradorite-blanche",
     "name": "Labradorite blanche",
     "short_description": "Pierre claire aux reflets lunaires, associée à l’intuition, à la douceur et aux nouveaux départs.",
-    "traditional_uses": ["intuition", "nouveau départ", "douceur"],
-    "emotional_keywords": ["hypersensibilité", "doute", "transition"],
-    "intentions": ["intuition", "équilibre", "renouveau"],
-    "physical_wellbeing_keywords": ["fatigue émotionnelle", "besoin de douceur"],
-    "chakras": ["troisième œil", "couronne"],
-    "colors": ["blanc", "bleuté", "nacré"],
-    "recommended_forms": ["bracelet", "pendentif"],
-    "usage_advice": ["À porter lors d’un changement de cycle ou d’un nouveau projet.", "À associer à une intention de clarté intuitive."],
-    "purification": ["fumigation", "lune"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["pierre de lune", "quartz clair", "améthyste"],
-    "avoid_combinations": ["pyrite"],
+    "traditional_uses": [
+      "intuition",
+      "nouveau départ",
+      "douceur"
+    ],
+    "emotional_keywords": [
+      "hypersensibilité",
+      "doute",
+      "transition"
+    ],
+    "intentions": [
+      "intuition",
+      "équilibre",
+      "renouveau"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue émotionnelle",
+      "besoin de douceur"
+    ],
+    "chakras": [
+      "troisième œil",
+      "couronne"
+    ],
+    "colors": [
+      "blanc",
+      "bleuté",
+      "nacré"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif"
+    ],
+    "usage_advice": [
+      "À porter lors d’un changement de cycle ou d’un nouveau projet.",
+      "À associer à une intention de clarté intuitive."
+    ],
+    "purification": [
+      "fumigation",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "pierre de lune",
+      "quartz clair",
+      "améthyste"
+    ],
+    "avoid_combinations": [
+      "pyrite"
+    ],
     "seo_title": "Labradorite blanche : intuition et nouveau départ",
     "seo_description": "La labradorite blanche est traditionnellement associée à l’intuition, à la douceur et aux nouveaux départs.",
     "amazon_product_slug": "labradorite",
@@ -990,18 +2808,57 @@
     "slug": "quartz-fume",
     "name": "Quartz fumé",
     "short_description": "Pierre brune transparente, utilisée comme symbole d’ancrage mental, de recul et de stabilité.",
-    "traditional_uses": ["ancrage", "recul", "stabilité"],
-    "emotional_keywords": ["stress", "rumination", "dispersion"],
-    "intentions": ["ancrage", "clarté", "protection"],
-    "physical_wellbeing_keywords": ["surcharge mentale", "fatigue ressentie"],
-    "chakras": ["racine"],
-    "colors": ["brun", "gris fumé"],
-    "recommended_forms": ["bracelet", "pierre roulée", "pointe"],
-    "usage_advice": ["À utiliser lorsque les pensées tournent trop vite.", "À associer à une action très concrète et simple."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["lune", "quartz"],
-    "positive_combinations": ["tourmaline noire", "quartz clair", "jaspe rouge"],
-    "avoid_combinations": ["angélite"],
+    "traditional_uses": [
+      "ancrage",
+      "recul",
+      "stabilité"
+    ],
+    "emotional_keywords": [
+      "stress",
+      "rumination",
+      "dispersion"
+    ],
+    "intentions": [
+      "ancrage",
+      "clarté",
+      "protection"
+    ],
+    "physical_wellbeing_keywords": [
+      "surcharge mentale",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "brun",
+      "gris fumé"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée",
+      "pointe"
+    ],
+    "usage_advice": [
+      "À utiliser lorsque les pensées tournent trop vite.",
+      "À associer à une action très concrète et simple."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "tourmaline noire",
+      "quartz clair",
+      "jaspe rouge"
+    ],
+    "avoid_combinations": [
+      "angélite"
+    ],
     "seo_title": "Quartz fumé : ancrage mental et stabilité",
     "seo_description": "Le quartz fumé peut accompagner symboliquement l’ancrage mental, le recul et la stabilité émotionnelle.",
     "amazon_product_slug": "",
@@ -1011,18 +2868,58 @@
     "slug": "quartz-rutile",
     "name": "Quartz rutile",
     "short_description": "Quartz traversé d’aiguilles dorées, associé à la clarté d’intention et au mouvement intérieur.",
-    "traditional_uses": ["clarté", "élan", "amplification symbolique"],
-    "emotional_keywords": ["hésitation", "confusion", "doute"],
-    "intentions": ["clarté", "réussite", "énergie"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "besoin d’élan"],
-    "chakras": ["plexus solaire", "couronne"],
-    "colors": ["transparent", "doré"],
-    "recommended_forms": ["pendentif", "bracelet", "pierre roulée"],
-    "usage_advice": ["À utiliser pour clarifier une intention ambitieuse.", "À associer à une action précise le jour même."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["soleil doux", "quartz"],
-    "positive_combinations": ["citrine", "pyrite", "quartz clair"],
-    "avoid_combinations": ["lépidolite"],
+    "traditional_uses": [
+      "clarté",
+      "élan",
+      "amplification symbolique"
+    ],
+    "emotional_keywords": [
+      "hésitation",
+      "confusion",
+      "doute"
+    ],
+    "intentions": [
+      "clarté",
+      "réussite",
+      "énergie"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin d’élan"
+    ],
+    "chakras": [
+      "plexus solaire",
+      "couronne"
+    ],
+    "colors": [
+      "transparent",
+      "doré"
+    ],
+    "recommended_forms": [
+      "pendentif",
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À utiliser pour clarifier une intention ambitieuse.",
+      "À associer à une action précise le jour même."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "citrine",
+      "pyrite",
+      "quartz clair"
+    ],
+    "avoid_combinations": [
+      "lépidolite"
+    ],
     "seo_title": "Quartz rutile : clarté et intention",
     "seo_description": "Le quartz rutile est traditionnellement associé à la clarté d’intention, à l’élan et à l’amplification symbolique.",
     "amazon_product_slug": "",
@@ -1032,21 +2929,648 @@
     "slug": "apatite-jaune",
     "name": "Apatite jaune",
     "short_description": "Pierre jaune vive, associée à l’affirmation, à la digestion symbolique des expériences et à la motivation.",
-    "traditional_uses": ["affirmation", "motivation", "clarté d’action"],
-    "emotional_keywords": ["doute", "blocage", "démotivation"],
-    "intentions": ["confiance", "énergie", "action"],
-    "physical_wellbeing_keywords": ["fatigue ressentie", "besoin d’élan"],
-    "chakras": ["plexus solaire"],
-    "colors": ["jaune", "doré"],
-    "recommended_forms": ["bracelet", "pierre roulée"],
-    "usage_advice": ["À porter au moment de démarrer une tâche importante.", "À associer à une phrase d’affirmation réaliste."],
-    "purification": ["fumigation", "son"],
-    "recharge": ["soleil doux", "quartz"],
-    "positive_combinations": ["citrine", "calcite jaune", "œil de tigre"],
-    "avoid_combinations": ["howlite"],
+    "traditional_uses": [
+      "affirmation",
+      "motivation",
+      "clarté d’action"
+    ],
+    "emotional_keywords": [
+      "doute",
+      "blocage",
+      "démotivation"
+    ],
+    "intentions": [
+      "confiance",
+      "énergie",
+      "action"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin d’élan"
+    ],
+    "chakras": [
+      "plexus solaire"
+    ],
+    "colors": [
+      "jaune",
+      "doré"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter au moment de démarrer une tâche importante.",
+      "À associer à une phrase d’affirmation réaliste."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "citrine",
+      "calcite jaune",
+      "œil de tigre"
+    ],
+    "avoid_combinations": [
+      "howlite"
+    ],
     "seo_title": "Apatite jaune : confiance et action",
     "seo_description": "L’apatite jaune peut accompagner symboliquement la confiance, l’action et la motivation.",
     "amazon_product_slug": "",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "jaspe-acajou",
+    "name": "Jaspe acajou",
+    "short_description": "Jaspe brun rouge, associé à l'ancrage, au courage calme et à la sécurité intérieure.",
+    "traditional_uses": [
+      "ancrage",
+      "courage",
+      "sécurité intérieure"
+    ],
+    "emotional_keywords": [
+      "peur",
+      "fatigue",
+      "instabilité"
+    ],
+    "intentions": [
+      "ancrage",
+      "courage",
+      "stabilité"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de stabilité"
+    ],
+    "chakras": [
+      "racine"
+    ],
+    "colors": [
+      "brun",
+      "rouge",
+      "acajou"
+    ],
+    "recommended_forms": [
+      "pendentif cœur",
+      "pierre roulée",
+      "bracelet"
+    ],
+    "usage_advice": [
+      "À porter lors des périodes où l'on recherche plus de stabilité.",
+      "À tenir quelques minutes avant une décision concrète."
+    ],
+    "purification": [
+      "fumigation",
+      "son",
+      "lune"
+    ],
+    "recharge": [
+      "terre",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "jaspe rouge",
+      "hématite",
+      "pierre de lave"
+    ],
+    "avoid_combinations": [
+      "améthyste"
+    ],
+    "seo_title": "Jaspe acajou : ancrage, courage et pendentif cœur",
+    "seo_description": "Le jaspe acajou est associé à l'ancrage, au courage calme et à la sécurité intérieure.",
+    "amazon_product_slug": "jaspe-acajou",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "agate-fuchsia",
+    "name": "Agate fuchsia",
+    "short_description": "Agate rose intense, associée à la joie, à l'expression et à l'élan créatif.",
+    "traditional_uses": [
+      "joie",
+      "expression",
+      "vitalité douce"
+    ],
+    "emotional_keywords": [
+      "tristesse",
+      "doute",
+      "blocage"
+    ],
+    "intentions": [
+      "joie",
+      "confiance",
+      "créativité"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "manque d'élan"
+    ],
+    "chakras": [
+      "cœur",
+      "gorge"
+    ],
+    "colors": [
+      "fuchsia",
+      "rose"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lorsque l'on souhaite remettre de la couleur dans sa journée.",
+      "À associer à une intention d'expression joyeuse."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "cornaline",
+      "citrine"
+    ],
+    "avoid_combinations": [
+      "obsidienne noire"
+    ],
+    "seo_title": "Agate fuchsia : joie, expression et bracelet",
+    "seo_description": "L'agate fuchsia peut accompagner symboliquement la joie, l'expression et la confiance créative.",
+    "amazon_product_slug": "agate-fuchsia",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "calcite-bleue",
+    "name": "Calcite bleue",
+    "short_description": "Pierre bleu pâle, reliée à l'apaisement, à la parole douce et au relâchement.",
+    "traditional_uses": [
+      "apaisement",
+      "communication douce",
+      "clarté"
+    ],
+    "emotional_keywords": [
+      "stress",
+      "colère",
+      "tension"
+    ],
+    "intentions": [
+      "sérénité",
+      "communication",
+      "apaisement"
+    ],
+    "physical_wellbeing_keywords": [
+      "tensions ressenties",
+      "surcharge mentale"
+    ],
+    "chakras": [
+      "gorge"
+    ],
+    "colors": [
+      "bleu pâle",
+      "bleu laiteux"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors des échanges sensibles.",
+      "À tenir quelques minutes avant une prise de parole."
+    ],
+    "purification": [
+      "fumigation",
+      "son",
+      "lune"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "calcédoine bleue",
+      "sodalite",
+      "améthyste"
+    ],
+    "avoid_combinations": [
+      "grenat"
+    ],
+    "seo_title": "Calcite bleue : apaisement et communication douce",
+    "seo_description": "La calcite bleue est associée à l'apaisement, à la communication douce et au relâchement.",
+    "amazon_product_slug": "calcite-bleue",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "quartz-blanc-laiteux",
+    "name": "Quartz blanc laiteux",
+    "short_description": "Quartz blanc doux, associé à la clarté progressive, à l'harmonie et à l'apaisement.",
+    "traditional_uses": [
+      "clarté douce",
+      "harmonie",
+      "neutralité"
+    ],
+    "emotional_keywords": [
+      "confusion",
+      "fatigue",
+      "dispersion"
+    ],
+    "intentions": [
+      "clarté",
+      "équilibre",
+      "sérénité"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de calme"
+    ],
+    "chakras": [
+      "couronne"
+    ],
+    "colors": [
+      "blanc",
+      "laiteux"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter pour soutenir une intention simple et claire.",
+      "À utiliser comme repère de calme dans une routine courte."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "améthyste",
+      "quartz rose",
+      "sélénite"
+    ],
+    "avoid_combinations": [],
+    "seo_title": "Quartz blanc laiteux : clarté douce et bracelet",
+    "seo_description": "Le quartz blanc laiteux peut accompagner symboliquement la clarté, l'harmonie et l'apaisement.",
+    "amazon_product_slug": "quartz-blanc-laiteux",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "agate-pourpre",
+    "name": "Agate pourpre",
+    "short_description": "Agate violette ou pourpre, associée à l'intuition, à la créativité et à la confiance.",
+    "traditional_uses": [
+      "intuition",
+      "créativité",
+      "protection douce"
+    ],
+    "emotional_keywords": [
+      "doute",
+      "stress",
+      "blocage"
+    ],
+    "intentions": [
+      "intuition",
+      "confiance",
+      "créativité"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de recul"
+    ],
+    "chakras": [
+      "troisième œil"
+    ],
+    "colors": [
+      "pourpre",
+      "violet"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors des périodes de réflexion ou de création.",
+      "À associer à une intention de confiance intuitive."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "améthyste",
+      "quartz clair",
+      "lapis lazuli"
+    ],
+    "avoid_combinations": [],
+    "seo_title": "Agate pourpre : intuition, créativité et bracelet",
+    "seo_description": "L'agate pourpre est reliée aux traditions d'intuition, de créativité et de protection douce.",
+    "amazon_product_slug": "agate-pourpre",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "opaline",
+    "name": "Opaline",
+    "short_description": "Pierre lumineuse à reflets laiteux, associée à la douceur et aux transitions émotionnelles.",
+    "traditional_uses": [
+      "douceur",
+      "clarté émotionnelle",
+      "transition"
+    ],
+    "emotional_keywords": [
+      "tristesse",
+      "hypersensibilité",
+      "confusion"
+    ],
+    "intentions": [
+      "apaisement",
+      "clarté",
+      "transition"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de douceur"
+    ],
+    "chakras": [
+      "cœur",
+      "couronne"
+    ],
+    "colors": [
+      "blanc",
+      "bleuté",
+      "nacré"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pendentif",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter dans les périodes de changement.",
+      "À associer à une phrase d'apaisement courte."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "quartz rose",
+      "améthyste",
+      "pierre de lune"
+    ],
+    "avoid_combinations": [
+      "obsidienne noire"
+    ],
+    "seo_title": "Opaline : douceur, clarté émotionnelle et transition",
+    "seo_description": "L'opaline peut accompagner symboliquement la douceur, la clarté émotionnelle et les transitions.",
+    "amazon_product_slug": "opaline",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "agate-bleue",
+    "name": "Agate bleue",
+    "short_description": "Agate bleue associée à la communication, à la patience et à l'harmonie relationnelle.",
+    "traditional_uses": [
+      "communication",
+      "apaisement",
+      "patience"
+    ],
+    "emotional_keywords": [
+      "stress",
+      "colère",
+      "peur de dire"
+    ],
+    "intentions": [
+      "communication",
+      "sérénité",
+      "relations"
+    ],
+    "physical_wellbeing_keywords": [
+      "tensions ressenties",
+      "surcharge mentale"
+    ],
+    "chakras": [
+      "gorge"
+    ],
+    "colors": [
+      "bleu"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors d'un échange important.",
+      "À utiliser comme rappel de parole calme."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "calcédoine bleue",
+      "sodalite",
+      "quartz rose"
+    ],
+    "avoid_combinations": [],
+    "seo_title": "Agate bleue : communication douce et apaisement",
+    "seo_description": "L'agate bleue est associée à la communication douce, à la patience et à l'harmonie.",
+    "amazon_product_slug": "agate-bleue",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "jaspe-vert",
+    "name": "Jaspe vert",
+    "short_description": "Jaspe vert associé à la stabilité, au renouveau et à un ancrage doux.",
+    "traditional_uses": [
+      "stabilité",
+      "renouveau",
+      "ancrage"
+    ],
+    "emotional_keywords": [
+      "fatigue",
+      "stress",
+      "frustration"
+    ],
+    "intentions": [
+      "équilibre",
+      "ancrage",
+      "renouveau"
+    ],
+    "physical_wellbeing_keywords": [
+      "besoin de stabilité",
+      "fatigue ressentie"
+    ],
+    "chakras": [
+      "cœur",
+      "racine"
+    ],
+    "colors": [
+      "vert"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lorsque l'on veut retrouver une base calme.",
+      "À associer à une intention de renouveau progressif."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "terre",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "aventurine verte",
+      "unakite",
+      "jaspe rouge"
+    ],
+    "avoid_combinations": [],
+    "seo_title": "Jaspe vert : stabilité, renouveau et ancrage",
+    "seo_description": "Le jaspe vert peut accompagner symboliquement la stabilité, le renouveau et l'équilibre.",
+    "amazon_product_slug": "jaspe-vert",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "oeil-de-taureau",
+    "name": "Œil de taureau",
+    "short_description": "Pierre brun rouge chatoyante, associée au courage, à la force et à la détermination.",
+    "traditional_uses": [
+      "courage",
+      "force",
+      "ancrage"
+    ],
+    "emotional_keywords": [
+      "peur",
+      "doute",
+      "hésitation"
+    ],
+    "intentions": [
+      "courage",
+      "confiance",
+      "action"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "manque d'élan"
+    ],
+    "chakras": [
+      "racine",
+      "plexus solaire"
+    ],
+    "colors": [
+      "brun",
+      "rouge",
+      "doré"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter lors des journées où l'on doit agir.",
+      "À tenir avant une décision ou une prise de parole."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "soleil doux",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "jaspe rouge",
+      "grenat",
+      "hématite"
+    ],
+    "avoid_combinations": [
+      "quartz rose"
+    ],
+    "seo_title": "Œil de taureau : courage, force et détermination",
+    "seo_description": "L'œil de taureau est associé au courage, à la force tranquille et à la détermination.",
+    "amazon_product_slug": "oeil-de-taureau",
+    "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
+  },
+  {
+    "slug": "olivine",
+    "name": "Olivine",
+    "short_description": "Pierre verte lumineuse, associée au renouveau, à la joie et à l'ouverture du cœur.",
+    "traditional_uses": [
+      "renouveau",
+      "joie",
+      "ouverture du cœur"
+    ],
+    "emotional_keywords": [
+      "tristesse",
+      "jalousie",
+      "frustration"
+    ],
+    "intentions": [
+      "joie",
+      "amour",
+      "renouveau"
+    ],
+    "physical_wellbeing_keywords": [
+      "fatigue ressentie",
+      "besoin de légèreté"
+    ],
+    "chakras": [
+      "cœur"
+    ],
+    "colors": [
+      "vert olive",
+      "vert lumineux"
+    ],
+    "recommended_forms": [
+      "bracelet",
+      "pierre roulée"
+    ],
+    "usage_advice": [
+      "À porter dans les périodes où l'on veut retrouver de la légèreté.",
+      "À associer à une intention de renouveau affectif."
+    ],
+    "purification": [
+      "fumigation",
+      "son"
+    ],
+    "recharge": [
+      "lune",
+      "quartz"
+    ],
+    "positive_combinations": [
+      "aventurine verte",
+      "quartz rose",
+      "citrine"
+    ],
+    "avoid_combinations": [],
+    "seo_title": "Olivine : renouveau, joie et ouverture du cœur",
+    "seo_description": "L'olivine peut accompagner symboliquement le renouveau, la joie et l'ouverture du cœur.",
+    "amazon_product_slug": "olivine",
     "disclaimer": "Informations issues des traditions de lithothérapie. Ne remplace pas un avis médical."
   }
 ]

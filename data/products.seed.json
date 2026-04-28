@@ -1,31 +1,354 @@
 [
-  { "stone_slug": "labradorite", "product_slug": "labradorite", "title": "Bracelet Labradorite", "brand": "Vera Mentis", "amazon_url": "https://amzn.eu/d/03nqLs0J", "image_url": "/images/stones/labradorite.png" },
-  { "stone_slug": "larvikite", "product_slug": "labradorite-foncee-larvikite", "title": "Bracelet Labradorite foncée Larvikite", "brand": "Vera Mentis", "amazon_url": "https://amzn.eu/d/01zLtXoD", "image_url": "/images/stones/labradorite-foncee-larvikite.png" },
-  { "stone_slug": "apatite-bleue", "product_slug": "apatite-bleue", "title": "Bracelet Apatite bleue", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/09lQ0omu", "image_url": "/images/stones/apatite-bleue.png" },
-  { "stone_slug": "obsidienne-noire", "product_slug": "obsidienne-oeil-celeste", "title": "Bracelet Obsidienne œil céleste", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0gmfb5rl", "image_url": "/images/stones/obsidienne-oeil-celeste.png" },
-  { "stone_slug": "calcedoine-bleue", "product_slug": "calcedoine-bleue", "title": "Bracelet Calcédoine bleue", "brand": "Vera Mentis", "amazon_url": "https://amzn.eu/d/01234ZUc", "image_url": "/images/stones/calcedoine-bleue.png" },
-  { "stone_slug": "oeil-de-tigre", "product_slug": "oeil-de-tigre", "title": "Bracelet Œil de tigre", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0gcKGhLS", "image_url": "/images/stones/oeil-de-tigre.png" },
-  { "stone_slug": "jaspe-rouge", "product_slug": "jaspe-rouge", "title": "Bracelet Jaspe rouge", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/06Ckfi9B", "image_url": "/images/stones/jaspe-rouge.png" },
-  { "stone_slug": "quartz-rose", "product_slug": "quartz-rose", "title": "Bracelet Quartz rose", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/04WjJOpA", "image_url": "/images/stones/quartz-rose.png" },
-  { "stone_slug": "agate-du-botswana", "product_slug": "agate-du-botswana", "title": "Bracelet Agate du Botswana", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0cuJCJKe", "image_url": "/images/stones/agate-du-botswana.png" },
-  { "stone_slug": "jade", "product_slug": "jade-emeraude", "title": "Bracelet Jade émeraude", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0bjy729l", "image_url": "/images/stones/jade-emeraude.png" },
-  { "stone_slug": "fluorite", "product_slug": "fluorite", "title": "Bracelet Fluorite", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0gLFmf2t", "image_url": "/images/stones/fluorite.png" },
-  { "stone_slug": "howlite", "product_slug": "howlite", "title": "Bracelet Howlite", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0gJSNeon", "image_url": "/images/stones/howlite.png" },
-  { "stone_slug": "angelite", "product_slug": "angelite", "title": "Bracelet Angélite", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/00a0r4Pn", "image_url": "/images/stones/angelite.png" },
-  { "stone_slug": "lapis-lazuli", "product_slug": "lapis-lazuli", "title": "Bracelet Lapis-lazuli", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0f9b1aSP", "image_url": "/images/stones/lapis-lazuli.png" },
-  { "stone_slug": "labradorite-de-madagascar", "product_slug": "labradorite-de-madagascar", "title": "Bracelet Labradorite de Madagascar", "brand": "Vera Mentis", "amazon_url": "https://amzn.eu/d/0jbrLvpi", "image_url": "/images/stones/labradorite-de-madagascar.png" },
-  { "stone_slug": "rhodonite", "product_slug": "rhodonite", "title": "Bracelet Rhodonite", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0dRHPu8I", "image_url": "/images/stones/rhodonite.png" },
-  { "stone_slug": "aventurine-verte", "product_slug": "aventurine-verte", "title": "Bracelet Aventurine verte", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0jgKsV3H", "image_url": "/images/stones/aventurine-verte.png" },
-  { "stone_slug": "sodalite", "product_slug": "sodalite-du-bresil", "title": "Bracelet Sodalite du Brésil", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/00ImK7Yk", "image_url": "/images/stones/sodalite-du-bresil.png" },
-  { "stone_slug": "lepidolite", "product_slug": "lepidolite", "title": "Bracelet Lépidolite", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/09MOxfGm", "image_url": "/images/stones/lepidolite.png" },
-  { "stone_slug": "jaspe-paysage", "product_slug": "jaspe", "title": "Bracelet Jaspe", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0iNjLB8L", "image_url": "/images/stones/jaspe.png" },
-  { "stone_slug": "onyx", "product_slug": "onyx", "title": "Bracelet Onyx", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0aGhOHac", "image_url": "/images/stones/onyx.png" },
-  { "stone_slug": "pierre-de-lune", "product_slug": "pierre-de-lune", "title": "Bracelet Pierre de lune", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0h4MtOHt", "image_url": "/images/stones/pierre-de-lune.png" },
-  { "stone_slug": "chrysoprase", "product_slug": "chrysoprase-citron", "title": "Bracelet Chrysoprase citron", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0dTyJSbX", "image_url": "/images/stones/chrysoprase-citron.png" },
-  { "stone_slug": "grenat", "product_slug": "grenat", "title": "Bracelet Grenat", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/09r5D11i", "image_url": "/images/stones/grenat.png" },
-  { "stone_slug": "quartz-clair", "product_slug": "cristal-de-roche", "title": "Bracelet Cristal de roche", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/05I8kdHa", "image_url": "/images/stones/cristal-de-roche.png" },
-  { "stone_slug": "turquoise", "product_slug": "turquoise", "title": "Pendentif Turquoise", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0hGqPisd", "image_url": "/images/stones/turquoise.png" },
-  { "stone_slug": "cornaline", "product_slug": "cornaline", "title": "Bracelet Cornaline", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0ekcqK2r", "image_url": "/images/stones/cornaline.png" },
-  { "stone_slug": "calcite-jaune", "product_slug": "calcite-jaune", "title": "Bracelet Calcite jaune", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0cs2tF8H", "image_url": "/images/stones/calcite-jaune.png" },
-  { "stone_slug": "pierre-de-soleil", "product_slug": "pierre-de-soleil", "title": "Bracelet Pierre de soleil", "brand": "Felicidade", "amazon_url": "https://amzn.eu/d/0iE8Hf1Q", "image_url": "/images/stones/pierre-de-soleil.png" }
+  {
+    "stone_slug": "labradorite",
+    "product_slug": "labradorite",
+    "title": "Bracelet Labradorite",
+    "brand": "Vera Mentis",
+    "amazon_url": "https://amzn.eu/d/03nqLs0J",
+    "image_url": "/images/stones/labradorite.png"
+  },
+  {
+    "stone_slug": "larvikite",
+    "product_slug": "labradorite-foncee-larvikite",
+    "title": "Bracelet Labradorite foncée Larvikite",
+    "brand": "Vera Mentis",
+    "amazon_url": "https://amzn.eu/d/01zLtXoD",
+    "image_url": "/images/stones/labradorite-foncee-larvikite.png"
+  },
+  {
+    "stone_slug": "apatite-bleue",
+    "product_slug": "apatite-bleue",
+    "title": "Bracelet Apatite bleue",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/09lQ0omu",
+    "image_url": "/images/stones/apatite-bleue.png"
+  },
+  {
+    "stone_slug": "obsidienne-noire",
+    "product_slug": "obsidienne-noire",
+    "title": "Bracelet Obsidienne noire",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/09thIdst",
+    "image_url": "/images/stones/obsidienne-noire.png"
+  },
+  {
+    "stone_slug": "calcedoine-bleue",
+    "product_slug": "calcedoine-bleue",
+    "title": "Bracelet Calcédoine bleue",
+    "brand": "Vera Mentis",
+    "amazon_url": "https://amzn.eu/d/01234ZUc",
+    "image_url": "/images/stones/calcedoine-bleue.png"
+  },
+  {
+    "stone_slug": "oeil-de-tigre",
+    "product_slug": "oeil-de-tigre",
+    "title": "Bracelet Œil de tigre",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0gcKGhLS",
+    "image_url": "/images/stones/oeil-de-tigre.png"
+  },
+  {
+    "stone_slug": "jaspe-rouge",
+    "product_slug": "jaspe-rouge",
+    "title": "Bracelet Jaspe rouge",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/06Ckfi9B",
+    "image_url": "/images/stones/jaspe-rouge.png"
+  },
+  {
+    "stone_slug": "quartz-rose",
+    "product_slug": "quartz-rose",
+    "title": "Bracelet Quartz rose",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/04WjJOpA",
+    "image_url": "/images/stones/quartz-rose.png"
+  },
+  {
+    "stone_slug": "agate-du-botswana",
+    "product_slug": "agate-du-botswana",
+    "title": "Bracelet Agate du Botswana",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0cuJCJKe",
+    "image_url": "/images/stones/agate-du-botswana.png"
+  },
+  {
+    "stone_slug": "jade",
+    "product_slug": "jade-emeraude",
+    "title": "Bracelet Jade émeraude",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0bjy729l",
+    "image_url": "/images/stones/jade-emeraude.png"
+  },
+  {
+    "stone_slug": "fluorite",
+    "product_slug": "fluorite",
+    "title": "Bracelet Fluorite",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0gLFmf2t",
+    "image_url": "/images/stones/fluorite.png"
+  },
+  {
+    "stone_slug": "howlite",
+    "product_slug": "howlite",
+    "title": "Bracelet Howlite",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0gJSNeon",
+    "image_url": "/images/stones/howlite.png"
+  },
+  {
+    "stone_slug": "angelite",
+    "product_slug": "angelite",
+    "title": "Bracelet Angélite",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/00a0r4Pn",
+    "image_url": "/images/stones/angelite.png"
+  },
+  {
+    "stone_slug": "lapis-lazuli",
+    "product_slug": "lapis-lazuli",
+    "title": "Bracelet Lapis-lazuli",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0f9b1aSP",
+    "image_url": "/images/stones/lapis-lazuli.png"
+  },
+  {
+    "stone_slug": "labradorite-de-madagascar",
+    "product_slug": "labradorite-de-madagascar",
+    "title": "Bracelet Labradorite de Madagascar",
+    "brand": "Vera Mentis",
+    "amazon_url": "https://amzn.eu/d/0jbrLvpi",
+    "image_url": "/images/stones/labradorite-de-madagascar.png"
+  },
+  {
+    "stone_slug": "rhodonite",
+    "product_slug": "rhodonite",
+    "title": "Bracelet Rhodonite",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0dRHPu8I",
+    "image_url": "/images/stones/rhodonite.png"
+  },
+  {
+    "stone_slug": "aventurine-verte",
+    "product_slug": "aventurine-verte",
+    "title": "Bracelet Aventurine verte",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0jgKsV3H",
+    "image_url": "/images/stones/aventurine-verte.png"
+  },
+  {
+    "stone_slug": "sodalite",
+    "product_slug": "sodalite-du-bresil",
+    "title": "Bracelet Sodalite du Brésil",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/00ImK7Yk",
+    "image_url": "/images/stones/sodalite-du-bresil.png"
+  },
+  {
+    "stone_slug": "lepidolite",
+    "product_slug": "lepidolite",
+    "title": "Bracelet Lépidolite",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/09MOxfGm",
+    "image_url": "/images/stones/lepidolite.png"
+  },
+  {
+    "stone_slug": "jaspe-paysage",
+    "product_slug": "jaspe",
+    "title": "Bracelet Jaspe",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0iNjLB8L",
+    "image_url": "/images/stones/jaspe.png"
+  },
+  {
+    "stone_slug": "onyx",
+    "product_slug": "onyx",
+    "title": "Bracelet Onyx",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0aGhOHac",
+    "image_url": "/images/stones/onyx.png"
+  },
+  {
+    "stone_slug": "pierre-de-lune",
+    "product_slug": "pierre-de-lune",
+    "title": "Bracelet Pierre de lune",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0h4MtOHt",
+    "image_url": "/images/stones/pierre-de-lune.png"
+  },
+  {
+    "stone_slug": "chrysoprase",
+    "product_slug": "chrysoprase-citron",
+    "title": "Bracelet Chrysoprase citron",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0dTyJSbX",
+    "image_url": "/images/stones/chrysoprase-citron.png"
+  },
+  {
+    "stone_slug": "grenat",
+    "product_slug": "grenat",
+    "title": "Bracelet Grenat",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/09r5D11i",
+    "image_url": "/images/stones/grenat.png"
+  },
+  {
+    "stone_slug": "quartz-clair",
+    "product_slug": "cristal-de-roche",
+    "title": "Bracelet Cristal de roche",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/05I8kdHa",
+    "image_url": "/images/stones/cristal-de-roche.png"
+  },
+  {
+    "stone_slug": "turquoise",
+    "product_slug": "turquoise",
+    "title": "Pendentif Turquoise",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0hGqPisd",
+    "image_url": "/images/stones/turquoise.png"
+  },
+  {
+    "stone_slug": "cornaline",
+    "product_slug": "cornaline",
+    "title": "Bracelet Cornaline",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0ekcqK2r",
+    "image_url": "/images/stones/cornaline.png"
+  },
+  {
+    "stone_slug": "calcite-jaune",
+    "product_slug": "calcite-jaune",
+    "title": "Bracelet Calcite jaune",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0cs2tF8H",
+    "image_url": "/images/stones/calcite-jaune.png"
+  },
+  {
+    "stone_slug": "pierre-de-soleil",
+    "product_slug": "pierre-de-soleil",
+    "title": "Bracelet Pierre de soleil",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0iE8Hf1Q",
+    "image_url": "/images/stones/pierre-de-soleil.png"
+  },
+  {
+    "stone_slug": "hematite",
+    "product_slug": "hematite",
+    "title": "Bracelet Hématite",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0i9x4eJJ",
+    "image_url": "/images/stones/hematite.png"
+  },
+  {
+    "stone_slug": "pierre-de-lave",
+    "product_slug": "pierre-de-lave",
+    "title": "Bracelet Pierre de lave",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/06nXWhgt",
+    "image_url": "/images/stones/pierre-de-lave.png"
+  },
+  {
+    "stone_slug": "unakite",
+    "product_slug": "unakite",
+    "title": "Bracelet Unakite",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/01HlwvvJ",
+    "image_url": "/images/stones/unakite.png"
+  },
+  {
+    "stone_slug": "jaspe-dalmatien",
+    "product_slug": "jaspe-dalmatien",
+    "title": "Bracelet Jaspe dalmatien",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0dIWq1Lv",
+    "image_url": "/images/stones/jaspe-dalmatien.png"
+  },
+  {
+    "stone_slug": "jaspe-acajou",
+    "product_slug": "jaspe-acajou",
+    "title": "Pendentif cœur Jaspe acajou",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0dIWq1Lv",
+    "image_url": "/images/stones/jaspe-acajou.png"
+  },
+  {
+    "stone_slug": "amethyste",
+    "product_slug": "amethyste",
+    "title": "Pendentif cœur Améthyste",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/075cfZhd",
+    "image_url": "/images/stones/amethyste.png"
+  },
+  {
+    "stone_slug": "agate-fuchsia",
+    "product_slug": "agate-fuchsia",
+    "title": "Bracelet Agate fuchsia",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/03wuRENA",
+    "image_url": "/images/stones/agate-fuchsia.png"
+  },
+  {
+    "stone_slug": "calcite-bleue",
+    "product_slug": "calcite-bleue",
+    "title": "Bracelet Calcite bleue",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0b7HT9WX",
+    "image_url": "/images/stones/calcite-bleue.png"
+  },
+  {
+    "stone_slug": "quartz-blanc-laiteux",
+    "product_slug": "quartz-blanc-laiteux",
+    "title": "Bracelet Quartz blanc laiteux",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0bi3d8Gs",
+    "image_url": "/images/stones/quartz-blanc-laiteux.png"
+  },
+  {
+    "stone_slug": "agate-pourpre",
+    "product_slug": "agate-pourpre",
+    "title": "Bracelet Agate pourpre",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/07ta5Fgd",
+    "image_url": "/images/stones/agate-pourpre.png"
+  },
+  {
+    "stone_slug": "opaline",
+    "product_slug": "opaline",
+    "title": "Bracelet Opaline",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/05cQrjmj",
+    "image_url": "/images/stones/opaline.png"
+  },
+  {
+    "stone_slug": "agate-bleue",
+    "product_slug": "agate-bleue",
+    "title": "Bracelet Agate bleue",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0ebLTZmN",
+    "image_url": "/images/stones/agate-bleue.png"
+  },
+  {
+    "stone_slug": "jaspe-vert",
+    "product_slug": "jaspe-vert",
+    "title": "Bracelet Jaspe vert",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0ebLTZmN",
+    "image_url": "/images/stones/jaspe-vert.png"
+  },
+  {
+    "stone_slug": "oeil-de-taureau",
+    "product_slug": "oeil-de-taureau",
+    "title": "Bracelet Œil de taureau",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/08wpifet",
+    "image_url": "/images/stones/oeil-de-taureau.png"
+  },
+  {
+    "stone_slug": "olivine",
+    "product_slug": "olivine",
+    "title": "Bracelet Olivine",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/00GtHayF",
+    "image_url": "/images/stones/olivine.png"
+  }
 ]
