@@ -168,6 +168,11 @@ export function FormationAccess() {
 
             <div className="formation-module-grid">
               <section className="formation-course">
+                <figure className="formation-lesson-visual">
+                  <img src={module.image.src} alt={module.image.alt} loading="lazy" />
+                  <figcaption>{module.image.caption}</figcaption>
+                </figure>
+
                 <div className="formation-block-title">
                   <FileText size={18} />
                   <h3>Cours écrit</h3>
@@ -176,6 +181,13 @@ export function FormationAccess() {
                   <div className="lesson-block" key={section.heading}>
                     <h4>{section.heading}</h4>
                     <p>{section.body}</p>
+                    {section.bullets.length ? (
+                      <ul className="lesson-bullet-list">
+                        {section.bullets.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </div>
                 ))}
               </section>

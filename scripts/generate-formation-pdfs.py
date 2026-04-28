@@ -7,7 +7,7 @@ from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import cm
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import Image, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -112,9 +112,23 @@ def build_module_pdf(module, styles):
         Spacer(1, 0.25 * cm),
     ]
 
+    image = module.get("image")
+    if image:
+        image_path = ROOT / "public" / image["src"].lstrip("/")
+        if image_path.exists():
+            story.extend(
+                [
+                    Image(str(image_path), width=8.4 * cm, height=4.7 * cm, kind="proportional"),
+                    Paragraph(clean(image.get("caption", "")), styles["FormationSmall"]),
+                    Spacer(1, 0.18 * cm),
+                ]
+            )
+
     for section in module["course"]:
         story.append(Paragraph(clean(section["heading"]), styles["FormationHeading"]))
         story.append(Paragraph(clean(section["body"]), styles["FormationBody"]))
+        for bullet in section.get("bullets", []):
+            story.append(Paragraph(f"- {clean(bullet)}", styles["FormationBody"]))
 
     story.extend(
         [
