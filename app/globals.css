@@ -1319,6 +1319,10 @@ button {
   margin-top: 10px;
 }
 
+.social-share-button {
+  min-width: 0;
+}
+
 .share-status,
 .share-inline-note {
   color: var(--muted);
@@ -1513,13 +1517,12 @@ button {
   display: grid;
   gap: 28px;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-  padding: 50px clamp(18px, 5vw, 64px);
+  padding: 38px clamp(18px, 5vw, 64px) 26px;
 }
 
 .stone-visual {
   border-radius: 8px;
   margin: 0;
-  min-height: 360px;
   overflow: hidden;
   position: relative;
 }
@@ -1534,7 +1537,37 @@ button {
 }
 
 .stone-visual img {
-  height: 360px;
+  height: clamp(260px, 34vw, 360px);
+}
+
+.stone-detail-section {
+  padding-top: 22px;
+}
+
+.stone-detail-section .grid {
+  align-items: start;
+}
+
+.stone-detail-section .card {
+  align-self: start;
+}
+
+.stone-detail-section .card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.stone-detail-section .card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.stone-detail-section .card p {
+  margin-bottom: 10px;
+}
+
+.stone-detail-section .card p:last-child {
+  margin-bottom: 0;
 }
 
 .featured-stone-image {

@@ -133,7 +133,9 @@ def save_og():
     paste_stone(image, PUBLIC / "images" / "stones" / "quartz-rose.png", (930, 302, 1124, 540))
     paste_stone(image, PUBLIC / "images" / "stones" / "citrine.png", (700, 330, 900, 548))
 
-    image.convert("RGB").save(BRAND_DIR / "litho-intelligence-og.png", quality=92)
+    rendered = image.convert("RGB")
+    rendered.save(BRAND_DIR / "litho-intelligence-og.png", quality=92)
+    rendered.save(BRAND_DIR / "litho-intelligence-og-v2.png", quality=92)
 
 
 def main():
@@ -146,6 +148,7 @@ def main():
     print("app/apple-icon.png")
     print("public/brand/litho-intelligence-icon.png")
     print("public/brand/litho-intelligence-og.png")
+    print("public/brand/litho-intelligence-og-v2.png")
 
 
 if __name__ == "__main__":

@@ -7,6 +7,7 @@ import { getStone } from "@/lib/stones";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { EmailCapture } from "@/components/EmailCapture";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
+import { ShareActions } from "@/components/ShareActions";
 import { slugifyVirtue } from "@/lib/virtues";
 
 export function generateStaticParams() {
@@ -53,7 +54,7 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
         </figure>
       </section>
 
-      <section className="section">
+      <section className="section stone-detail-section">
         <div className="grid">
           <InfoCard title="Usages traditionnels" items={stone.traditional_uses} linkable />
           <InfoCard title="Mots-clés émotionnels" items={stone.emotional_keywords} linkable />
@@ -71,6 +72,13 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
         <div className="form-panel">
           <h2>Cette pierre vous correspond ?</h2>
           <p>Sauvegardez-la dans votre espace ou passez au bracelet associé pour transformer cette intention en geste concret.</p>
+          <ShareActions
+            compact
+            networks
+            title={`${stone.name} | Litho Intelligence`}
+            text={`Je découvre la fiche ${stone.name} sur Litho Intelligence.`}
+            url={`https://litho-intelligence.vercel.app/stones/${stone.slug}`}
+          />
           <div className="premium-actions">
             {product ? (
               <Link className="button gold-button" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">

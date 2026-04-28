@@ -42,7 +42,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
         </figure>
       </section>
 
-      <section className="section">
+      <section className="section stone-detail-section">
         <div className="grid">
           <article className="card">
             <h2>Description visuelle</h2>
@@ -112,7 +112,13 @@ export default function StonePage({ params }: { params: { slug: string } }) {
         <div className="form-panel">
           <h2>Cette pierre vous correspond ?</h2>
           <p>Gardez cette pierre dans vos favoris ou découvrez le bracelet associé pour l’intégrer à votre quotidien.</p>
-          <ShareActions compact title={`${stone.name} | Litho Intelligence`} text={`Je découvre ${stone.name} sur Litho Intelligence.`} />
+          <ShareActions
+            compact
+            networks
+            title={`${stone.name} | Litho Intelligence`}
+            text={`Je découvre ${stone.name} sur Litho Intelligence.`}
+            url={`https://litho-intelligence.vercel.app/stone/${stone.slug}`}
+          />
           <div className="premium-actions">
             <AddFavoriteButton stoneSlug={stone.slug} />
           </div>

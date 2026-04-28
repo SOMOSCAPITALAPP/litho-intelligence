@@ -7,12 +7,14 @@ export function ShareActions({
   title,
   text,
   url,
-  compact = false
+  compact = false,
+  networks = false
 }: {
   title: string;
   text: string;
   url?: string;
   compact?: boolean;
+  networks?: boolean;
 }) {
   const [status, setStatus] = useState("");
 
@@ -37,6 +39,15 @@ export function ShareActions({
   }
 
   const mailto = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(`${text}\n${resolvedUrl}`.trim())}`;
+  const encodedUrl = encodeURIComponent(resolvedUrl);
+  const encodedText = encodeURIComponent(text);
+  const encodedTitle = encodeURIComponent(title);
+  const socialLinks = [
+    { label: "WhatsApp", href: `https://wa.me/?text=${encodedText}%20${encodedUrl}` },
+    { label: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}` },
+    { label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}` },
+    { label: "X", href: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}` }
+  ];
 
   return (
     <div className={compact ? "share-actions compact" : "share-actions"}>
@@ -44,6 +55,13 @@ export function ShareActions({
         <Share2 size={16} />
         Partager
       </button>
+      {networks
+        ? socialLinks.map((link) => (
+            <a className="button secondary social-share-button" href={link.href} key={link.label} rel="noopener noreferrer" target="_blank">
+              {link.label}
+            </a>
+          ))
+        : null}
       <button className="button secondary" onClick={copyLink} type="button">
         <Copy size={16} />
         Copier le lien
