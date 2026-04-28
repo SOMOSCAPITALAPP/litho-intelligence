@@ -16,9 +16,31 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const stone = getStone(params.slug);
+  const title = stone ? `${stone.name} | Litho Intelligence` : "Pierre | Litho Intelligence";
+  const description = stone?.description ?? "Fiche pierre Litho Intelligence.";
+
   return {
-    title: stone ? `${stone.name} | Litho Intelligence` : "Pierre | Litho Intelligence",
-    description: stone?.description
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `/stone/${params.slug}`,
+      images: [
+        {
+          url: "/brand/litho-intelligence-og-v3.png",
+          width: 1200,
+          height: 630,
+          alt: "Litho Intelligence - pierres, intentions et rituels responsables"
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/brand/litho-intelligence-og-v3.png"]
+    }
   };
 }
 

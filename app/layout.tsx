@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/brand/litho-intelligence-og-v2.png",
+        url: "/brand/litho-intelligence-og-v3.png",
         width: 1200,
         height: 630,
         alt: "Litho Intelligence - pierres, intentions et rituels responsables"
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Litho Intelligence",
     description: "Recommandations personnalisées, formation gratuite, PDF, QCM et espace membre.",
-    images: ["/brand/litho-intelligence-og-v2.png"]
+    images: ["/brand/litho-intelligence-og-v3.png"]
   }
 };
 

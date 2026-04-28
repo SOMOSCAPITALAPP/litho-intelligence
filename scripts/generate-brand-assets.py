@@ -136,6 +136,7 @@ def save_og():
     rendered = image.convert("RGB")
     rendered.save(BRAND_DIR / "litho-intelligence-og.png", quality=92)
     rendered.save(BRAND_DIR / "litho-intelligence-og-v2.png", quality=92)
+    rendered.save(BRAND_DIR / "litho-intelligence-og-v3.png", quality=92)
 
 
 def main():
@@ -149,6 +150,7 @@ def main():
     print("public/brand/litho-intelligence-icon.png")
     print("public/brand/litho-intelligence-og.png")
     print("public/brand/litho-intelligence-og-v2.png")
+    print("public/brand/litho-intelligence-og-v3.png")
 
 
 if __name__ == "__main__":
