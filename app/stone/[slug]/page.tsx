@@ -9,6 +9,7 @@ import { EmailCapture } from "@/components/EmailCapture";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { ShareActions } from "@/components/ShareActions";
 import { slugifyVirtue } from "@/lib/virtues";
+import { productStoneVirtueSummary } from "@/lib/stoneVirtueSummary";
 
 export function generateStaticParams() {
   return stones.map((stone) => ({ slug: stone.slug }));
@@ -47,6 +48,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 export default function StonePage({ params }: { params: { slug: string } }) {
   const stone = getStone(params.slug);
   if (!stone) notFound();
+  const virtueSummary = productStoneVirtueSummary(stone);
 
   return (
     <main>
@@ -65,6 +67,14 @@ export default function StonePage({ params }: { params: { slug: string } }) {
       </section>
 
       <section className="section stone-detail-section">
+        <article className="card stone-virtues-card">
+          <p className="eyebrow">Vertus de la pierre</p>
+          <h2>Comprendre les bienfaits symboliques de {stone.name}</h2>
+          {virtueSummary.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </article>
+
         <div className="grid">
           <article className="card">
             <h2>Description visuelle</h2>

@@ -1541,6 +1541,8 @@ button {
 }
 
 .stone-detail-section {
+  display: grid;
+  gap: 18px;
   padding-top: 22px;
 }
 
@@ -1568,6 +1570,25 @@ button {
 
 .stone-detail-section .card p:last-child {
   margin-bottom: 0;
+}
+
+.stone-virtues-card {
+  display: grid;
+  gap: 12px;
+  max-width: 1040px;
+}
+
+.stone-virtues-card h2 {
+  font-size: clamp(28px, 3.6vw, 42px);
+  margin: 0;
+}
+
+.stone-virtues-card .eyebrow {
+  margin: 0;
+}
+
+.stone-virtues-card p {
+  max-width: 980px;
 }
 
 .featured-stone-image {

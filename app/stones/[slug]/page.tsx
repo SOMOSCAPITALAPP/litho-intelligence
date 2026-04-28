@@ -9,6 +9,7 @@ import { EmailCapture } from "@/components/EmailCapture";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { ShareActions } from "@/components/ShareActions";
 import { slugifyVirtue } from "@/lib/virtues";
+import { nativeStoneVirtueSummary } from "@/lib/stoneVirtueSummary";
 
 export function generateStaticParams() {
   return nativeStones.map((stone) => ({ slug: stone.slug }));
@@ -51,6 +52,7 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
   const productStone = getStone(stone.amazon_product_slug || stone.slug);
   const product = productStone?.products[0];
   const image = getNativeStoneImage(stone);
+  const virtueSummary = nativeStoneVirtueSummary(stone);
 
   return (
     <main>
@@ -76,6 +78,14 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
       </section>
 
       <section className="section stone-detail-section">
+        <article className="card stone-virtues-card">
+          <p className="eyebrow">Vertus de la pierre</p>
+          <h2>Comprendre les bienfaits symboliques de {stone.name}</h2>
+          {virtueSummary.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </article>
+
         <div className="grid">
           <InfoCard title="Usages traditionnels" items={stone.traditional_uses} linkable />
           <InfoCard title="Mots-clés émotionnels" items={stone.emotional_keywords} linkable />
