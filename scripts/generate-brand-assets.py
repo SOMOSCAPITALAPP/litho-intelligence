@@ -11,9 +11,11 @@ BRAND_DIR = PUBLIC / "brand"
 INK = "#241b1d"
 DEEP = "#314f4a"
 ACCENT = "#8b4656"
-GOLD = "#c9923e"
+ACCENT_STRONG = "#683241"
+GOLD = "#b98434"
 CREAM = "#fffaf7"
 SOFT = "#f7e7e1"
+BG = "#f9f2ee"
 
 
 def font(size, bold=False):
@@ -40,28 +42,59 @@ def gradient(size, top=CREAM, bottom=SOFT):
     return image
 
 
-def draw_logo(draw, center, radius):
+def logo_image(size):
+    image = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    center = size / 2
+    radius = size * 0.46
+    pixels = image.load()
+
+    warm = (244, 220, 182)
+    rose = (145, 87, 108)
+    highlight = (255, 255, 255)
+    for y in range(size):
+        for x in range(size):
+            dx = x - center
+            dy = y - center
+            distance = (dx * dx + dy * dy) ** 0.5
+            if distance > radius:
+                continue
+            angle_mix = min(1, max(0, (x + y) / (size * 2)))
+            base = tuple(round(warm[i] * (1 - angle_mix) + rose[i] * angle_mix) for i in range(3))
+            shine_distance = ((x - size * 0.34) ** 2 + (y - size * 0.30) ** 2) ** 0.5
+            shine = max(0, 1 - shine_distance / (size * 0.28))
+            if shine > 0.2:
+                base = tuple(round(base[i] * (1 - shine * 0.45) + highlight[i] * shine * 0.45) for i in range(3))
+            edge_alpha = 255 if distance < radius - 1 else 190
+            pixels[x, y] = (*base, edge_alpha)
+
+    draw = ImageDraw.Draw(image)
+    shadow = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    shadow_draw = ImageDraw.Draw(shadow)
+    shadow_draw.ellipse((size * 0.08, size * 0.11, size * 0.94, size * 0.97), fill=(107, 50, 65, 45))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(max(2, size // 20)))
+    composed = Image.alpha_composite(shadow, image)
+    draw = ImageDraw.Draw(composed)
+
+    draw.ellipse(
+        (center - radius * 0.62, center - radius * 0.62, center + radius * 0.62, center + radius * 0.62),
+        outline=(255, 255, 255, 132),
+        width=max(1, size // 44),
+    )
+    draw.ellipse(
+        (center - radius * 0.29, center - radius * 0.29, center + radius * 0.29, center + radius * 0.29),
+        fill=(255, 250, 247, 232),
+    )
+    return composed
+
+
+def draw_logo(draw, canvas, center, size):
+    logo = logo_image(size)
     x, y = center
-    draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=DEEP)
-    draw.ellipse((x - radius + 8, y - radius + 8, x + radius - 8, y + radius - 8), outline=GOLD, width=max(4, radius // 9))
-    crystal = [
-        (x, y - int(radius * 0.68)),
-        (x + int(radius * 0.34), y - int(radius * 0.1)),
-        (x + int(radius * 0.22), y + int(radius * 0.58)),
-        (x - int(radius * 0.22), y + int(radius * 0.58)),
-        (x - int(radius * 0.34), y - int(radius * 0.1)),
-    ]
-    draw.polygon(crystal, fill=CREAM)
-    draw.line((x, y - int(radius * 0.55), x, y + int(radius * 0.48)), fill=GOLD, width=max(2, radius // 14))
-    draw.line((x, y - int(radius * 0.08), x + int(radius * 0.24), y - int(radius * 0.1)), fill=GOLD, width=max(2, radius // 15))
-    draw.line((x, y - int(radius * 0.08), x - int(radius * 0.24), y - int(radius * 0.1)), fill=GOLD, width=max(2, radius // 15))
+    canvas.alpha_composite(logo, (int(x - size / 2), int(y - size / 2)))
 
 
 def save_icon(size, target):
-    image = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(image)
-    draw_logo(draw, (size // 2, size // 2), int(size * 0.43))
-    image.save(target)
+    logo_image(size).save(target)
 
 
 def paste_stone(canvas, path, box):
@@ -78,11 +111,11 @@ def paste_stone(canvas, path, box):
 
 
 def save_og():
-    image = gradient((1200, 630)).convert("RGBA")
+    image = gradient((1200, 630), top=CREAM, bottom=BG).convert("RGBA")
     draw = ImageDraw.Draw(image)
 
     draw.rounded_rectangle((54, 54, 1146, 576), radius=32, fill=(255, 250, 247, 235), outline="#e3d4cd", width=2)
-    draw_logo(draw, (142, 142), 56)
+    draw_logo(draw, image, (142, 142), 112)
 
     draw.text((220, 92), "Litho Intelligence", fill=INK, font=font(56, bold=True))
     draw.text((224, 160), "Pierres, intentions et rituels responsables", fill=ACCENT, font=font(25))
