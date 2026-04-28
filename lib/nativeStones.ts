@@ -32,7 +32,7 @@ export function getNativeStoneImage(stone: Pick<NativeStone, "slug" | "name">) {
   return {
     url: `/images/stones/${stone.slug}.png`,
     alt: `${stone.name} en pierre naturelle`,
-    credit: "Image générée par ChatGPT"
+    credit: "Image de présentation de la pierre"
   };
 }
 

@@ -100,7 +100,7 @@ const product = (
 const image = (slug: string, name: string) => ({
   url: `/images/stones/${slug}.png`,
   alt: `${name} en pierre naturelle`,
-  credit: "Image générée par ChatGPT",
+  credit: "Image de présentation de la pierre",
   sourceUrl: "/"
 });
 
@@ -695,7 +695,7 @@ const seeds: StoneSeed[] = [
   {
     slug: "jaspe-acajou",
     name: "Jaspe acajou",
-    productUrl: "https://amzn.eu/d/0dIWq1Lv",
+    productUrl: "https://www.amazon.fr/dp/B0D9YWXR1P",
     productLabel: "Pendentif cœur Jaspe acajou",
     properties: ["ancrage", "courage", "sécurité", "vitalité douce"],
     emotions: ["peur", "fatigue", "instabilité", "doute"],
