@@ -281,6 +281,37 @@ button {
   text-transform: uppercase;
 }
 
+.hero-topline {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.hero-topline .eyebrow {
+  margin: 0;
+}
+
+.member-access-link {
+  align-items: center;
+  border: 1px solid rgba(142, 110, 94, 0.24);
+  border-radius: 999px;
+  color: var(--muted);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 800;
+  gap: 7px;
+  min-height: 34px;
+  padding: 0 12px;
+}
+
+.member-access-link:hover {
+  background: rgba(255, 250, 247, 0.78);
+  color: var(--accent-strong);
+}
+
 .search-box {
   align-items: center;
   background: var(--surface);
@@ -326,6 +357,25 @@ button {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 16px;
+}
+
+.hero-helper-links {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.hero-helper-links a {
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.hero-helper-links a:hover {
+  text-decoration: underline;
 }
 
 .question-list a {
@@ -2272,6 +2322,11 @@ button {
 
   .search-box svg {
     display: none;
+  }
+
+  .hero-topline {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .choice-grid {

@@ -232,6 +232,14 @@
     "image_url": "/images/stones/pierre-de-soleil.png"
   },
   {
+    "stone_slug": "pyrite",
+    "product_slug": "pyrite",
+    "title": "Bracelet Pyrite",
+    "brand": "Felicidade",
+    "amazon_url": "https://amzn.eu/d/0iBGGVsE",
+    "image_url": "/images/stones/pyrite.png"
+  },
+  {
     "stone_slug": "hematite",
     "product_slug": "hematite",
     "title": "Bracelet Hématite",

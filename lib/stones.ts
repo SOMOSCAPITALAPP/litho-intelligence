@@ -602,6 +602,7 @@ const seeds: StoneSeed[] = [
   {
     slug: "pyrite",
     name: "Pyrite",
+    productUrl: "https://amzn.eu/d/0iBGGVsE",
     category: "puissance",
     properties: ["abondance", "structure", "action", "rayonnement"],
     emotions: ["doute", "manque", "démotivation"],
