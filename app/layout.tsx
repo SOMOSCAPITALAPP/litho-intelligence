@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
+import { PWARegistration } from "@/components/PWARegistration";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,9 +11,22 @@ export const metadata: Metadata = {
   },
   description: "Recommandations personnalisées de pierres basées sur les traditions de lithothérapie.",
   applicationName: "Litho Intelligence",
+  manifest: "/manifest.webmanifest",
   icons: {
-    icon: [{ url: "/icon.png", sizes: "32x32", type: "image/png" }],
+    icon: [
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/pwa-icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/pwa-icon-512.png", sizes: "512x512", type: "image/png" }
+    ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }]
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Litho"
+  },
+  formatDetection: {
+    telephone: false
   },
   openGraph: {
     title: "Litho Intelligence",
@@ -38,10 +52,18 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#b77a65"
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <body>
+        <PWARegistration />
         <div className="site-shell">
           <SiteHeader />
           {children}
