@@ -92,7 +92,7 @@ function countBy<T>(items: T[], getKey: (item: T) => string | null | undefined) 
     const key = getKey(item)?.trim() || "Non renseigné";
     counts.set(key, (counts.get(key) ?? 0) + 1);
   }
-  return [...counts.entries()]
+  return Array.from(counts.entries())
     .map(([label, count]) => ({ label, count }))
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "fr"));
 }
@@ -152,10 +152,11 @@ async function getAdminStats(): Promise<AdminStats> {
   const errors: string[] = [];
   const since7Days = isoDaysAgo(7);
   const today = todayKey();
+  const adminSupabase = supabase;
 
   async function safeCount(label: string, table: string, since?: string) {
     try {
-      return await getTableCount(supabase, table, since);
+      return await getTableCount(adminSupabase, table, since);
     } catch (error) {
       errors.push(error instanceof Error ? error.message : `${label}: erreur inconnue`);
       return 0;
@@ -197,14 +198,14 @@ async function getAdminStats(): Promise<AdminStats> {
     { data: usageRows, error: usageError },
     { count: activePremiumCount, error: premiumError }
   ] = await Promise.all([
-    supabase.from("events").select("event_name, created_at, payload").order("created_at", { ascending: false }).limit(12),
-    supabase.from("profiles").select("plan, created_at").order("created_at", { ascending: false }).limit(500),
-    supabase.from("ai_usage_logs").select("source, created_at").gte("created_at", since7Days).limit(500),
-    supabase.from("usage_limits").select("date, recommendations_count, combinations_count").gte("date", today).limit(500),
-    supabase.from("subscriptions").select("*", { count: "exact", head: true }).in("status", ["active", "trialing"])
+    adminSupabase.from("events").select("event_name, created_at, payload").order("created_at", { ascending: false }).limit(12),
+    adminSupabase.from("profiles").select("plan, created_at").order("created_at", { ascending: false }).limit(500),
+    adminSupabase.from("ai_usage_logs").select("source, created_at").gte("created_at", since7Days).limit(500),
+    adminSupabase.from("usage_limits").select("date, recommendations_count, combinations_count").gte("date", today).limit(500),
+    adminSupabase.from("subscriptions").select("*", { count: "exact", head: true }).in("status", ["active", "trialing"])
   ]);
 
-  const { data: recentLeads, error: leadsError } = await getRecentLeads(supabase);
+  const { data: recentLeads, error: leadsError } = await getRecentLeads(adminSupabase);
 
   for (const error of [leadsError, eventsError, profilesError, aiError, usageError, premiumError]) {
     if (error) errors.push(error.message);
