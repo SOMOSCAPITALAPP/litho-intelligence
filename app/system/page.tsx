@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { getAdminEmails, isAdminEmail } from "@/lib/admin";
+import { getCurrentUser } from "@/lib/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/server";
 
 export const metadata = {
@@ -37,6 +41,23 @@ const tableChecks: Record<string, string> = {
 };
 
 export default async function SystemPage() {
+  const { user } = await getCurrentUser();
+  if (!user) redirect("/login?redirect=/system");
+
+  const configuredAdmins = getAdminEmails();
+  if (!configuredAdmins.length || !isAdminEmail(user.email)) {
+    return (
+      <main className="section">
+        <p className="eyebrow">Accès restreint</p>
+        <h1>Statut système réservé à l'administration.</h1>
+        <p className="section-lead">Connectez-vous avec un email présent dans la variable ADMIN_EMAILS.</p>
+        <Link className="button secondary" href="/dashboard">
+          Retour espace membre
+        </Link>
+      </main>
+    );
+  }
+
   const supabase = createSupabaseAdminClient();
   const tableStatus: Array<{ table: string; ok: boolean }> = [];
 
