@@ -323,7 +323,7 @@ export default async function AdminPage() {
         })}
       </section>
 
-      <section className="admin-grid">
+      <section className="admin-grid admin-table-grid">
         <article className="admin-panel">
           <h2>Plans membres</h2>
           <div className="admin-list">
