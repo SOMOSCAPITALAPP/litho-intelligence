@@ -1,4 +1,4 @@
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://litho-intelligence.vercel.app";
+export const siteUrl = "https://www.litho-intelligence.com";
 
 export const shareImage = "/brand/litho-intelligence-app-share-v1.png";
 
