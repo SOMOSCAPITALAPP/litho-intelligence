@@ -108,7 +108,7 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
             networks
             title={`${stone.name} | Litho Intelligence`}
             text={`Je découvre la fiche ${stone.name} sur Litho Intelligence.`}
-            url={`https://litho-intelligence.vercel.app/stones/${stone.slug}`}
+            url={`/stones/${stone.slug}`}
           />
           <div className="premium-actions">
             {product ? (

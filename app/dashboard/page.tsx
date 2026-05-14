@@ -278,7 +278,7 @@ export default async function DashboardPage() {
               Recommandations illimitées, synthèses conservées, espace de consultation plus profond et ressources exclusives regroupées au même endroit.
             </p>
             {premium ? (
-              <ShareActions compact title="Espace Premium Litho Intelligence" text="Je découvre l’espace Premium de Litho Intelligence." url="https://litho-intelligence.vercel.app/pricing" />
+              <ShareActions compact title="Espace Premium Litho Intelligence" text="Je découvre l’espace Premium de Litho Intelligence." url="/pricing" />
             ) : (
               <CheckoutButton label="Activer Premium" />
             )}

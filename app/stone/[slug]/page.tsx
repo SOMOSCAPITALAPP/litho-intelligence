@@ -176,7 +176,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             networks
             title={`${stone.name} | Litho Intelligence`}
             text={`Je découvre ${stone.name} sur Litho Intelligence.`}
-            url={`https://litho-intelligence.vercel.app/stone/${stone.slug}`}
+            url={`/stone/${stone.slug}`}
           />
           <div className="premium-actions">
             <AddFavoriteButton stoneSlug={stone.slug} />
