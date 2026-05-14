@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PWARegistration } from "@/components/PWARegistration";
 import { wellbeingDisclaimer } from "@/lib/legal";
-import { defaultShareAlt, defaultShareDescription, defaultShareTitle, shareImage, siteUrl } from "@/lib/site";
+import { defaultShareAlt, defaultShareDescription, defaultShareTitle, shareImage, shareImageType, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -41,6 +41,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: shareImage,
+        secureUrl: shareImage,
+        type: shareImageType,
         width: 1200,
         height: 630,
         alt: defaultShareAlt

@@ -7,7 +7,7 @@ import { ProductRecommendationCard } from "@/components/ProductRecommendationCar
 import { ShareActions } from "@/components/ShareActions";
 import { recommendedProducts } from "@/lib/products";
 import { wellbeingDisclaimer } from "@/lib/legal";
-import { defaultShareAlt, shareImage } from "@/lib/site";
+import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Idée cadeau pierre naturelle : bracelet femme, homme et protection",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "Idée cadeau pierre naturelle : trouvez le bon bracelet",
     description: "Choisissez un bracelet en pierre naturelle selon la personne, l'occasion, l'intention et le budget.",
     url: "/idee-cadeau",
-    images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+    images: [{ url: shareImage, secureUrl: shareImage, type: shareImageType, width: 1200, height: 630, alt: defaultShareAlt }]
   },
   twitter: {
     card: "summary_large_image",

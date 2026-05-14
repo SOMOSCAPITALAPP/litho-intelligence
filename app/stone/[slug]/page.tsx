@@ -12,7 +12,7 @@ import { ShareActions } from "@/components/ShareActions";
 import { slugifyVirtue } from "@/lib/virtues";
 import { productStoneVirtueSummary } from "@/lib/stoneVirtueSummary";
 import { getProductByStone } from "@/lib/products";
-import { defaultShareAlt, shareImage } from "@/lib/site";
+import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
 
 export function generateStaticParams() {
   return stones.map((stone) => ({ slug: stone.slug }));
@@ -32,9 +32,14 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
       title,
       description,
       url: `/stone/${params.slug}`,
+      siteName: "Litho Intelligence",
+      locale: "fr_FR",
+      type: "website",
       images: [
         {
           url: shareImage,
+          secureUrl: shareImage,
+          type: shareImageType,
           width: 1200,
           height: 630,
           alt: defaultShareAlt

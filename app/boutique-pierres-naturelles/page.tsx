@@ -5,7 +5,7 @@ import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ShareActions } from "@/components/ShareActions";
 import { recommendedProducts } from "@/lib/products";
 import { wellbeingDisclaimer } from "@/lib/legal";
-import { defaultShareAlt, shareImage } from "@/lib/site";
+import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Boutique pierres naturelles : bracelets recommandés par intention",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Boutique pierres naturelles : bracelets recommandés par intention",
     description: "Découvrez une sélection de bracelets en pierres naturelles selon votre intention du moment.",
     url: "/boutique-pierres-naturelles",
-    images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+    images: [{ url: shareImage, secureUrl: shareImage, type: shareImageType, width: 1200, height: 630, alt: defaultShareAlt }]
   },
   twitter: {
     card: "summary_large_image",

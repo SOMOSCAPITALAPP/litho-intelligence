@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { RecommendationClient } from "@/app/recommendation/RecommendationClient";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
-import { defaultShareAlt, defaultShareDescription, shareImage } from "@/lib/site";
+import { defaultShareAlt, defaultShareDescription, shareImage, shareImageType } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Test pierre naturelle gratuit : trouvez votre bracelet recommandé",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Test gratuit Litho Intelligence - trouvez votre pierre naturelle",
     description: defaultShareDescription,
-    images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+    images: [{ url: shareImage, secureUrl: shareImage, type: shareImageType, width: 1200, height: 630, alt: defaultShareAlt }]
   },
   twitter: {
     card: "summary_large_image",

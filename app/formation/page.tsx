@@ -6,7 +6,7 @@ import { FormationAccess } from "@/components/FormationAccess";
 import { ShareActions } from "@/components/ShareActions";
 import formationModules from "@/data/formation.modules.json";
 import { wellbeingDisclaimer } from "@/lib/legal";
-import { defaultShareAlt, shareImage } from "@/lib/site";
+import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Formation lithothérapie gratuite",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Formation gratuite Litho Intelligence : 7 modules, PDF et QCM",
     description: "Apprenez les bases de la lithothérapie symbolique avec 7 modules gratuits, des PDF et 70 questions de QCM.",
     url: "/formation",
-    images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+    images: [{ url: shareImage, secureUrl: shareImage, type: shareImageType, width: 1200, height: 630, alt: defaultShareAlt }]
   },
   twitter: {
     card: "summary_large_image",

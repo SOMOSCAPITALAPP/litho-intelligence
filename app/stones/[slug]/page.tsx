@@ -10,7 +10,7 @@ import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { ShareActions } from "@/components/ShareActions";
 import { slugifyVirtue } from "@/lib/virtues";
 import { nativeStoneVirtueSummary } from "@/lib/stoneVirtueSummary";
-import { defaultShareAlt, shareImage } from "@/lib/site";
+import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
 
 export function generateStaticParams() {
   return nativeStones.map((stone) => ({ slug: stone.slug }));
@@ -30,9 +30,14 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
       title,
       description,
       url: `/stones/${params.slug}`,
+      siteName: "Litho Intelligence",
+      locale: "fr_FR",
+      type: "website",
       images: [
         {
           url: shareImage,
+          secureUrl: shareImage,
+          type: shareImageType,
           width: 1200,
           height: 630,
           alt: defaultShareAlt

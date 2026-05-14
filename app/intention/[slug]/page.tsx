@@ -15,7 +15,7 @@ import { getNativeStone, getNativeStoneImage } from "@/lib/nativeStones";
 import { getStone } from "@/lib/stones";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { getProductByStone } from "@/lib/products";
-import { defaultShareAlt, shareImage } from "@/lib/site";
+import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
 
 export function generateStaticParams() {
   return intentionPages.map((page) => ({ slug: page.slug }));
@@ -32,7 +32,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
           title: page.seoTitle,
           description: page.seoDescription,
           url: `/intention/${page.slug}`,
-          images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+          images: [{ url: shareImage, secureUrl: shareImage, type: shareImageType, width: 1200, height: 630, alt: defaultShareAlt }]
         }
       : undefined,
     twitter: page
