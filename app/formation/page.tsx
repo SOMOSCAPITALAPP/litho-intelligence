@@ -3,17 +3,32 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, GraduationCap } from "lucide-react";
 import { EmailCapture } from "@/components/EmailCapture";
 import { FormationAccess } from "@/components/FormationAccess";
+import { ShareActions } from "@/components/ShareActions";
 import formationModules from "@/data/formation.modules.json";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { defaultShareAlt, shareImage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Formation lithothérapie gratuite | Litho Intelligence",
+  title: "Formation lithothérapie gratuite",
   description:
-    "Formation gratuite en lithothérapie sans vidéo : cours écrits, PDF téléchargeables et QCM en ligne à chaque étape."
+    "Formation gratuite en lithothérapie au format écrit : cours structurés, PDF téléchargeables et QCM en ligne à chaque étape.",
+  openGraph: {
+    title: "Formation gratuite Litho Intelligence : 7 modules, PDF et QCM",
+    description: "Apprenez les bases de la lithothérapie symbolique avec 7 modules gratuits, des PDF et 70 questions de QCM.",
+    url: "/formation",
+    images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Formation gratuite Litho Intelligence : 7 modules, PDF et QCM",
+    description: "Cours écrits, PDF téléchargeables et QCM en ligne pour découvrir les pierres avec discernement.",
+    images: [shareImage]
+  }
 };
 
 const standards = [
-  "7 étapes progressives",
+  "7 modules progressifs",
+  "70 questions de QCM au total",
   "Cours écrits consultables en ligne",
   "PDF téléchargeable pour chaque module",
   "QCM immédiat avec correction",
@@ -31,8 +46,8 @@ export default function FormationPage() {
           <p className="eyebrow">Formation lithothérapie gratuite</p>
           <h1>Apprendre les pierres avec cours, PDF et QCM</h1>
           <p className="section-lead">
-            Un parcours gratuit, sans vidéo, pour comprendre les bases de la lithothérapie symbolique, choisir les pierres
-            avec discernement et créer des pratiques simples. Chaque étape contient un cours écrit, un PDF à garder et un
+            Un parcours gratuit au format écrit pour comprendre les bases de la lithothérapie symbolique, choisir les pierres
+            avec discernement et créer des pratiques simples. Chaque module contient un cours écrit, un PDF à garder et un
             QCM en ligne pour valider les acquis.
           </p>
           <div className="hero-actions">
@@ -43,6 +58,12 @@ export default function FormationPage() {
               Formation certifiante 199 €
             </a>
           </div>
+          <ShareActions
+            compact
+            title="Formation gratuite Litho Intelligence"
+            text="Je découvre une formation gratuite de lithothérapie symbolique avec cours, PDF et QCM."
+            url="/formation"
+          />
         </div>
         <aside className="formation-summary-card">
           <GraduationCap size={26} />
@@ -55,10 +76,6 @@ export default function FormationPage() {
             <div>
               <strong>{totalQuizzes}</strong>
               <span>questions</span>
-            </div>
-            <div>
-              <strong>0</strong>
-              <span>vidéo</span>
             </div>
           </div>
           <p>{wellbeingDisclaimer}</p>
@@ -78,7 +95,7 @@ export default function FormationPage() {
         <div className="dashboard-section-header">
           <div>
             <p className="eyebrow">Programme</p>
-            <h2>Votre parcours en 7 étapes</h2>
+            <h2>Votre parcours en 7 modules</h2>
           </div>
           <Link className="button secondary" href="#formation-certifiante">
             Voir le parcours certifiant

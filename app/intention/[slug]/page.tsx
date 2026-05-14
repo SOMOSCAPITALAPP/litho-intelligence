@@ -6,6 +6,7 @@ import { FormationCTA } from "@/components/FormationCTA";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
+import { ShareActions } from "@/components/ShareActions";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
 import { getIntentionPage, intentionPages } from "@/data/intentions";
 import { withAffiliate } from "@/lib/affiliate";
@@ -14,6 +15,7 @@ import { getNativeStone, getNativeStoneImage } from "@/lib/nativeStones";
 import { getStone } from "@/lib/stones";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { getProductByStone } from "@/lib/products";
+import { defaultShareAlt, shareImage } from "@/lib/site";
 
 export function generateStaticParams() {
   return intentionPages.map((page) => ({ slug: page.slug }));
@@ -24,7 +26,23 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   return {
     title: page?.seoTitle ?? "Pierres par intention | Litho Intelligence",
-    description: page?.seoDescription
+    description: page?.seoDescription,
+    openGraph: page
+      ? {
+          title: page.seoTitle,
+          description: page.seoDescription,
+          url: `/intention/${page.slug}`,
+          images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+        }
+      : undefined,
+    twitter: page
+      ? {
+          card: "summary_large_image",
+          title: page.seoTitle,
+          description: page.seoDescription,
+          images: [shareImage]
+        }
+      : undefined
   };
 }
 
@@ -53,6 +71,12 @@ export default function IntentionPage({ params }: { params: { slug: string } }) 
             Trouver une idée cadeau
           </Link>
         </div>
+        <ShareActions
+          compact
+          title={`${page.title} | Litho Intelligence`}
+          text={`Je découvre les pierres traditionnellement associées à cette intention : ${page.shortLabel}.`}
+          url={`/intention/${page.slug}`}
+        />
       </section>
 
       <section className="answer-band">

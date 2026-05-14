@@ -2,38 +2,58 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
+import { ShareActions } from "@/components/ShareActions";
 import { recommendedProducts } from "@/lib/products";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { defaultShareAlt, shareImage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Boutique pierres naturelles : bracelets recommandes par intention",
+  title: "Boutique pierres naturelles : bracelets recommandés par intention",
   description:
-    "Selection de bracelets en pierres naturelles par intention : protection, amour, calme, energie, confiance, cadeaux, homme et femme."
+    "Sélection de bracelets en pierres naturelles par intention : protection, amour, calme, énergie, confiance, cadeaux, homme et femme.",
+  openGraph: {
+    title: "Boutique pierres naturelles : bracelets recommandés par intention",
+    description: "Découvrez une sélection de bracelets en pierres naturelles selon votre intention du moment.",
+    url: "/boutique-pierres-naturelles",
+    images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boutique pierres naturelles Litho Intelligence",
+    description: "Bracelets recommandés par intention avec liens Amazon.",
+    images: [shareImage]
+  }
 };
 
 const sections = [
-  { title: "Protection", key: "protection", intro: "Bracelets associes a l'ancrage, aux limites personnelles et a la stabilite symbolique." },
+  { title: "Protection", key: "protection", intro: "Bracelets associés à l'ancrage, aux limites personnelles et à la stabilité symbolique." },
   { title: "Amour", key: "amour", intro: "Pierres douces pour symboliser la tendresse, le lien et l'amour de soi." },
-  { title: "Stress & calme", key: "stress", intro: "Pierres traditionnellement associees au calme, au rituel du soir et au recentrage." },
-  { title: "Energie", key: "energie", intro: "Pierres solaires et colorees pour accompagner une intention d'elan personnel." },
-  { title: "Confiance", key: "confiance", intro: "Bracelets pour symboliser courage, posture et passage a l'action." },
-  { title: "Cadeaux", key: "cadeau", intro: "Choix faciles a offrir avec un message symbolique clair." },
-  { title: "Homme", key: "homme", intro: "Selections sobres, minerales et faciles a porter." },
-  { title: "Femme", key: "femme", intro: "Selections douces, elegantes et intentionnelles." }
+  { title: "Stress & calme", key: "stress", intro: "Pierres traditionnellement associées au calme, au rituel du soir et au recentrage." },
+  { title: "Énergie", key: "energie", intro: "Pierres solaires et colorées pour accompagner une intention d'élan personnel." },
+  { title: "Confiance", key: "confiance", intro: "Bracelets pour symboliser courage, posture et passage à l'action." },
+  { title: "Cadeaux", key: "cadeau", intro: "Choix faciles à offrir avec un message symbolique clair." },
+  { title: "Homme", key: "homme", intro: "Sélections sobres, minérales et faciles à porter." },
+  { title: "Femme", key: "femme", intro: "Sélections douces, élégantes et intentionnelles." }
 ];
 
 export default function NaturalStoneShopPage() {
   return (
     <main>
       <section className="section compact-section">
-        <p className="eyebrow">Boutique recommandee</p>
-        <h1>Bracelets en pierres naturelles recommandes par intention</h1>
+        <p className="eyebrow">Boutique recommandée</p>
+        <h1>Bracelets en pierres naturelles recommandés par intention</h1>
         <p className="section-lead">
-          Cette selection vous aide a choisir un bracelet selon votre intention du moment. Les liens peuvent rediriger vers Amazon.
+          Cette sélection vous aide à choisir un bracelet selon votre intention du moment. Les liens peuvent rediriger vers Amazon.
         </p>
         <p className="fineprint">
-          Certains liens peuvent etre affilies ou commerciaux. Le prix final et la disponibilite dependent d'Amazon.
+          Certains liens peuvent être affiliés ou commerciaux. Le prix final et la disponibilité dépendent d'Amazon.
         </p>
+        <ShareActions
+          compact
+          title="Boutique pierres naturelles Litho Intelligence"
+          text="Je découvre une sélection de bracelets en pierres naturelles classés par intention."
+          url="/boutique-pierres-naturelles"
+        />
       </section>
 
       {sections.map((section) => {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowRight, HeartPulse, ShoppingBag, Sparkles } from "lucide-react";
 import { EmailCapture } from "@/components/EmailCapture";
+import { ShareActions } from "@/components/ShareActions";
 import { recommendStones } from "@/lib/recommendation";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { withAffiliate } from "@/lib/affiliate";
@@ -85,6 +86,12 @@ export default function TestPage() {
               Fiche pierre <ArrowRight size={16} />
             </Link>
           </div>
+          <ShareActions
+            compact
+            title={`Test Litho Intelligence : ${main.stone.name}`}
+            text={`Mon test Litho Intelligence recommande ${main.stone.name}, avec une intention simple à explorer.`}
+            url="/test"
+          />
         </aside>
       </div>
 

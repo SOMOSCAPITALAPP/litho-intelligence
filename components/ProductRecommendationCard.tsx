@@ -14,6 +14,18 @@ type ProductRecommendationCardProps = {
   disclaimer?: string;
 };
 
+const intentionLabels: Record<string, string> = {
+  "argent-abondance": "argent & abondance",
+  creativite: "créativité",
+  energie: "énergie",
+  equilibre: "équilibre",
+  spiritualite: "spiritualité"
+};
+
+function formatIntention(value: string) {
+  return intentionLabels[value] ?? value;
+}
+
 export function ProductRecommendationCard({
   imageUrl,
   title,
@@ -34,7 +46,7 @@ export function ProductRecommendationCard({
       <div className="product-recommendation-content">
         <p className="mystic-kicker">
           <Sparkles size={15} />
-          {intention}
+          {formatIntention(intention)}
         </p>
         <h3>{title}</h3>
         <p className="product-stone-name">{stoneName}</p>

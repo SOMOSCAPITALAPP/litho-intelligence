@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Gem, Search, Shield, Sparkles } from "lucide-react";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
+import { ShareActions } from "@/components/ShareActions";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { recommendedProducts } from "@/lib/products";
 import { getStone } from "@/lib/stones";
@@ -10,17 +11,17 @@ import { getStone } from "@/lib/stones";
 export const metadata: Metadata = {
   title: "Litho Intelligence by Quintessence Cristal - Trouvez votre pierre naturelle",
   description:
-    "Test gratuit pour decouvrir la pierre naturelle associee a votre intention : stress, amour, protection, energie, confiance ou cadeau."
+    "Test gratuit pour découvrir la pierre naturelle associée à votre intention : stress, amour, protection, énergie, confiance ou cadeau."
 };
 
 const popularIntentions = [
   { label: "Stress", href: "/intention/stress", text: "Calme, respiration et recentrage." },
-  { label: "Protection", href: "/intention/protection", text: "Limites, ancrage et stabilite." },
+  { label: "Protection", href: "/intention/protection", text: "Limites, ancrage et stabilité." },
   { label: "Amour", href: "/intention/amour", text: "Douceur, lien et tendresse." },
   { label: "Sommeil", href: "/intention/sommeil", text: "Rituel du soir et apaisement." },
-  { label: "Energie", href: "/intention/energie", text: "Elan, motivation et action." },
+  { label: "Énergie", href: "/intention/energie", text: "Élan, motivation et action." },
   { label: "Confiance", href: "/intention/confiance", text: "Courage, posture et affirmation." },
-  { label: "Cadeau", href: "/intention/cadeau", text: "Choisir une pierre a offrir." }
+  { label: "Cadeau", href: "/intention/cadeau", text: "Choisir une pierre à offrir." }
 ];
 
 const popularStoneSlugs = [
@@ -43,26 +44,26 @@ export default function HomePage() {
     <main>
       <section className="conversion-hero">
         <div className="conversion-hero-copy">
-          <p className="eyebrow">Quintessence Cristal presente</p>
+          <p className="eyebrow">Quintessence Cristal présente</p>
           <h1>Litho Intelligence</h1>
           <p className="brand-byline">by Quintessence Cristal</p>
-          <h2>Trouvez la pierre qui correspond a votre energie du moment.</h2>
+          <h2>Trouvez la pierre qui correspond à votre énergie du moment.</h2>
           <p>
-            Un guide intelligent pour decouvrir les pierres naturelles associees a vos intentions : calme, protection,
-            amour, energie, confiance et equilibre interieur.
+            Un guide intelligent pour découvrir les pierres naturelles associées à vos intentions : calme, protection,
+            amour, énergie, confiance et équilibre intérieur.
           </p>
           <div className="hero-actions">
             <Link className="button gold-button" href="/test">
               Faire le test gratuit <ArrowRight size={16} />
             </Link>
             <Link className="button secondary" href="/stones">
-              Decouvrir les pierres
+              Découvrir les pierres
             </Link>
           </div>
           <div className="trust-row">
             <span>Gratuit</span>
             <span>Simple</span>
-            <span>Resultat immediat</span>
+            <span>Résultat immédiat</span>
           </div>
         </div>
         <aside className="conversion-hero-panel">
@@ -80,8 +81,8 @@ export default function HomePage() {
       <section className="section compact-section">
         <div className="section-heading-row">
           <div>
-            <p className="eyebrow">Comment ca marche ?</p>
-            <h2>Un parcours clair en trois etapes</h2>
+            <p className="eyebrow">Comment ça marche ?</p>
+            <h2>Un parcours clair en trois étapes</h2>
           </div>
           <Link className="micro-action" href="/test">
             Commencer <ArrowRight size={15} />
@@ -90,8 +91,8 @@ export default function HomePage() {
         <div className="how-grid">
           {[
             ["1", "Dites comment vous vous sentez", "Posez votre besoin avec vos mots : stress, doute, fatigue, amour ou protection."],
-            ["2", "Recevez une pierre recommandee", "Litho Intelligence associe votre intention aux traditions symboliques des pierres naturelles."],
-            ["3", "Decouvrez le rituel et le bracelet associe", "Repartez avec un geste simple, une fiche claire et une suggestion disponible sur Amazon."]
+            ["2", "Recevez une pierre recommandée", "Litho Intelligence associe votre intention aux traditions symboliques des pierres naturelles."],
+            ["3", "Découvrez le rituel et le bracelet associé", "Repartez avec un geste simple, une fiche claire et une suggestion disponible sur Amazon."]
           ].map(([step, title, text]) => (
             <article className="how-card" key={step}>
               <span>{step}</span>
@@ -117,7 +118,7 @@ export default function HomePage() {
 
       <section className="section compact-section">
         <h2>Pierres populaires</h2>
-        <p className="section-lead">Des fiches SEO claires pour comprendre la signification symbolique, les associations et les bracelets recommandes.</p>
+        <p className="section-lead">Des fiches SEO claires pour comprendre la signification symbolique, les associations et les bracelets recommandés.</p>
         <div className="popular-stone-grid">
           {popularStones.map((stone) => (
             <Link className="popular-stone-card" href={`/stone/${stone!.slug}`} key={stone!.slug}>
@@ -133,7 +134,7 @@ export default function HomePage() {
         <LeadCaptureCard
           source="home-guide"
           title="Recevez gratuitement le Guide des 10 pierres essentielles"
-          subtitle="Stress, amour, protection, energie, confiance : decouvrez les pierres les plus utilisees selon les traditions symboliques."
+          subtitle="Stress, amour, protection, énergie, confiance : découvrez les pierres les plus utilisées selon les traditions symboliques."
           buttonLabel="Recevoir mon guide gratuit"
         />
       </section>
@@ -141,8 +142,8 @@ export default function HomePage() {
       <section className="section compact-section">
         <div className="section-heading-row">
           <div>
-            <p className="eyebrow">Boutique recommandee</p>
-            <h2>Bracelets selectionnes par intention</h2>
+            <p className="eyebrow">Boutique recommandée</p>
+            <h2>Bracelets sélectionnés par intention</h2>
           </div>
           <Link className="button secondary" href="/boutique-pierres-naturelles">
             Voir toute la boutique
@@ -163,6 +164,15 @@ export default function HomePage() {
             />
           ))}
         </div>
+      </section>
+
+      <section className="section compact-section">
+        <ShareActions
+          compact
+          title="Litho Intelligence by Quintessence Cristal"
+          text="Je découvre le test gratuit pour trouver une pierre naturelle selon mon énergie du moment."
+          url="/"
+        />
       </section>
 
       <section className="section compact-section">

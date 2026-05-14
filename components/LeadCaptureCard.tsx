@@ -16,7 +16,7 @@ type LeadCaptureCardProps = {
 
 export function LeadCaptureCard({
   title = "Recevez votre guide gratuit",
-  subtitle = "Les 10 pierres essentielles pour choisir selon votre intention : stress, amour, protection, energie et confiance.",
+  subtitle = "Les 10 pierres essentielles pour choisir selon votre intention : stress, amour, protection, énergie et confiance.",
   placeholder = "votre@email.com",
   buttonLabel = "Recevoir mon guide",
   source = "lead-capture-card",

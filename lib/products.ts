@@ -16,13 +16,13 @@ export type RecommendedProduct = {
 const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & { fallbackUrl?: string }> = [
   {
     id: "bracelet-labradorite-foncee-8mm",
-    title: "Bracelet Labradorite Foncee 8mm",
-    stone: "Labradorite foncee",
+    title: "Bracelet Labradorite Foncée 8mm",
+    stone: "Labradorite foncée",
     stoneSlug: "labradorite-foncee-larvikite",
     intentions: ["protection", "confiance", "femme", "homme"],
     price: "Prix variable",
     badge: "Protection",
-    description: "Un bracelet sombre et mineral pour symboliser l'ancrage, les limites personnelles et la protection interieure."
+    description: "Un bracelet sombre et minéral pour symboliser l'ancrage, les limites personnelles et la protection intérieure."
   },
   {
     id: "bracelet-labradorite-pochette",
@@ -41,8 +41,8 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
     stoneSlug: "jade-emeraude",
     intentions: ["equilibre", "abondance", "cadeau"],
     price: "Prix variable",
-    badge: "Equilibre",
-    description: "Une pierre verte traditionnellement associee a l'harmonie, a l'equilibre et a la croissance personnelle."
+    badge: "Équilibre",
+    description: "Une pierre verte traditionnellement associée à l'harmonie, à l'équilibre et à la croissance personnelle."
   },
   {
     id: "bracelet-quartz-rose",
@@ -52,22 +52,22 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
     intentions: ["amour", "calme", "cadeau", "femme"],
     price: "Prix variable",
     badge: "Amour",
-    description: "Un bracelet doux pour accompagner une intention de tendresse, d'amour de soi et d'ouverture du coeur."
+    description: "Un bracelet doux pour accompagner une intention de tendresse, d'amour de soi et d'ouverture du cœur."
   },
   {
     id: "bracelet-obsidienne-oeil-celeste",
-    title: "Bracelet Obsidienne Oeil Celeste",
-    stone: "Obsidienne oeil celeste",
+    title: "Bracelet Obsidienne Œil Céleste",
+    stone: "Obsidienne œil céleste",
     stoneSlug: "obsidienne-oeil-celeste",
     intentions: ["protection", "ancrage", "homme"],
     price: "Prix variable",
     badge: "Protection forte",
-    description: "Une pierre intense, a presenter avec prudence, pour les rituels symboliques de protection et de retour a soi."
+    description: "Une pierre intense, à présenter avec prudence, pour les rituels symboliques de protection et de retour à soi."
   },
   {
     id: "bracelet-oeil-de-tigre",
-    title: "Bracelet Oeil de Tigre",
-    stone: "Oeil de tigre",
+    title: "Bracelet Œil de Tigre",
+    stone: "Œil de tigre",
     stoneSlug: "oeil-de-tigre",
     intentions: ["confiance", "protection", "energie", "homme"],
     price: "Prix variable",
@@ -76,13 +76,13 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
   },
   {
     id: "bracelet-amethyste",
-    title: "Bracelet Amethyste",
-    stone: "Amethyste",
+    title: "Bracelet Améthyste",
+    stone: "Améthyste",
     stoneSlug: "amethyste",
     intentions: ["stress", "sommeil", "calme"],
     price: "Prix variable",
     badge: "Calme",
-    description: "Une pierre violette traditionnellement associee au recul, au calme et au rituel du soir."
+    description: "Une pierre violette traditionnellement associée au recul, au calme et au rituel du soir."
   },
   {
     id: "bracelet-howlite",
@@ -102,7 +102,7 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
     intentions: ["communication", "energie", "confiance"],
     price: "Prix variable",
     badge: "Expression",
-    description: "Un bleu profond pour accompagner une intention de parole claire, de motivation et d'elan personnel."
+    description: "Un bleu profond pour accompagner une intention de parole claire, de motivation et d'élan personnel."
   },
   {
     id: "bracelet-cornaline",
@@ -111,8 +111,8 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
     stoneSlug: "cornaline",
     intentions: ["energie", "confiance", "creativite"],
     price: "Prix variable",
-    badge: "Energie",
-    description: "Une pierre chaude pour symboliser l'elan, la creativite et le passage a l'action."
+    badge: "Énergie",
+    description: "Une pierre chaude pour symboliser l'élan, la créativité et le passage à l'action."
   },
   {
     id: "bracelet-tourmaline-noire",
@@ -122,7 +122,7 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
     intentions: ["protection", "ancrage", "homme"],
     price: "Prix variable",
     badge: "Ancrage",
-    description: "Une pierre sombre et sobre pour les intentions de stabilite et de protection symbolique."
+    description: "Une pierre sombre et sobre pour les intentions de stabilité et de protection symbolique."
   },
   {
     id: "bracelet-pyrite",
@@ -132,7 +132,7 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
     intentions: ["argent-abondance", "confiance", "energie"],
     price: "Prix variable",
     badge: "Abondance",
-    description: "Une pierre doree associee symboliquement a la clarte, a l'organisation et a l'abondance responsable."
+    description: "Une pierre dorée associée symboliquement à la clarté, à l'organisation et à l'abondance responsable."
   }
 ];
 

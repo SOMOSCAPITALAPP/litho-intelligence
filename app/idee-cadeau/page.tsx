@@ -4,19 +4,33 @@ import { Gift } from "lucide-react";
 import { FormationCTA } from "@/components/FormationCTA";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
+import { ShareActions } from "@/components/ShareActions";
 import { recommendedProducts } from "@/lib/products";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { defaultShareAlt, shareImage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Idee cadeau pierre naturelle : bracelet femme, homme et protection",
+  title: "Idée cadeau pierre naturelle : bracelet femme, homme et protection",
   description:
-    "Trouvez un bracelet en pierre naturelle a offrir selon la personne, l'occasion, l'intention et le budget."
+    "Trouvez un bracelet en pierre naturelle à offrir selon la personne, l'occasion, l'intention et le budget.",
+  openGraph: {
+    title: "Idée cadeau pierre naturelle : trouvez le bon bracelet",
+    description: "Choisissez un bracelet en pierre naturelle selon la personne, l'occasion, l'intention et le budget.",
+    url: "/idee-cadeau",
+    images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Idée cadeau pierre naturelle",
+    description: "Bracelets symboliques à offrir selon une intention : amour, protection, calme ou confiance.",
+    images: [shareImage]
+  }
 };
 
 const filters = {
-  "Pour qui ?": ["Femme", "Homme", "Mere", "Amie", "Conjoint", "Collegue"],
-  Occasion: ["Anniversaire", "Fete des meres", "Noel", "Remerciement", "Encouragement", "Protection"],
-  Intention: ["Amour", "Protection", "Confiance", "Calme", "Energie"],
+  "Pour qui ?": ["Femme", "Homme", "Mère", "Amie", "Conjoint", "Collègue"],
+  Occasion: ["Anniversaire", "Fête des mères", "Noël", "Remerciement", "Encouragement", "Protection"],
+  Intention: ["Amour", "Protection", "Confiance", "Calme", "Énergie"],
   Budget: ["Moins de 15 EUR", "15-25 EUR", "25 EUR+"]
 };
 
@@ -27,7 +41,7 @@ const picks = [
 ].filter((item): item is { label: string; product: (typeof recommendedProducts)[number] } => Boolean(item.product));
 
 const futureSeoPages = [
-  ["/cadeau/fete-des-meres", "Fete des meres"],
+  ["/cadeau/fete-des-meres", "Fête des mères"],
   ["/cadeau/anniversaire-femme", "Anniversaire femme"],
   ["/cadeau/bracelet-pierre-naturelle-femme", "Bracelet femme"],
   ["/cadeau/bracelet-pierre-naturelle-homme", "Bracelet homme"],
@@ -40,10 +54,16 @@ export default function GiftPage() {
     <main>
       <section className="section compact-section">
         <p className="eyebrow">Tunnel cadeau</p>
-        <h1>Trouver un bracelet en pierre naturelle a offrir</h1>
+        <h1>Trouver un bracelet en pierre naturelle à offrir</h1>
         <p className="section-lead">
-          Choisissez selon la personne, l'occasion et l'intention. Litho Intelligence propose ensuite des bracelets lisibles, symboliques et faciles a offrir.
+          Choisissez selon la personne, l'occasion et l'intention. Litho Intelligence propose ensuite des bracelets lisibles, symboliques et faciles à offrir.
         </p>
+        <ShareActions
+          compact
+          title="Idée cadeau pierre naturelle"
+          text="Je découvre des idées de bracelets en pierres naturelles à offrir selon une intention."
+          url="/idee-cadeau"
+        />
       </section>
 
       <section className="section compact-section">
@@ -66,8 +86,8 @@ export default function GiftPage() {
       <section className="section compact-section">
         <div className="section-heading-row">
           <div>
-            <p className="eyebrow">Selection immediate</p>
-            <h2>Trois idees cadeau simples</h2>
+            <p className="eyebrow">Sélection immédiate</p>
+            <h2>Trois idées cadeau simples</h2>
           </div>
           <Link className="button secondary" href="/boutique-pierres-naturelles">
             Voir plus de bracelets
@@ -95,7 +115,7 @@ export default function GiftPage() {
           <Gift size={22} />
           <h2>Pourquoi offrir une pierre avec une intention ?</h2>
           <p>
-            Une pierre naturelle donne une forme concrete a une attention : soutien, gratitude, amour, protection ou encouragement.
+            Une pierre naturelle donne une forme concrète à une attention : soutien, gratitude, amour, protection ou encouragement.
             La valeur du cadeau vient du message qui l'accompagne, pas d'une promesse d'effet.
           </p>
           <p className="fineprint">{wellbeingDisclaimer}</p>
@@ -103,7 +123,7 @@ export default function GiftPage() {
       </section>
 
       <section className="section compact-section">
-        <h2>Guides cadeaux a developper</h2>
+        <h2>Guides cadeaux à développer</h2>
         <div className="pill-row">
           {futureSeoPages.map(([href, label]) => (
             <Link className="pill" href={href} key={href}>

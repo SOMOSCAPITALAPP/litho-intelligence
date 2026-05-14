@@ -6,6 +6,7 @@ import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
+import { ShareActions } from "@/components/ShareActions";
 import type { AIStoneRecommendation } from "@/lib/openai-recommendation";
 import { getProductByStone } from "@/lib/products";
 
@@ -82,11 +83,17 @@ export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
             </Link>
           ) : null}
         </div>
+        <ShareActions
+          compact
+          title={`Recommandation Litho Intelligence : ${stone?.name ?? result.name}`}
+          text={`Litho Intelligence me recommande ${stone?.name ?? result.name} comme pierre associée à mon intention du moment.`}
+          url={stone ? `/stone/${stone.slug}` : "/recommendation"}
+        />
         <LeadCaptureCard
           source="recommendation-result"
           recommendedStone={stone?.name ?? result.name}
           title="Recevoir ma recommandation complète par email"
-          subtitle="Gardez votre pierre, son intention, son rituel et le lien du bracelet recommande."
+          subtitle="Gardez votre pierre, son intention, son rituel et le lien du bracelet recommandé."
           buttonLabel="Recevoir ma recommandation"
         />
       </div>

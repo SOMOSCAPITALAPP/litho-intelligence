@@ -10,11 +10,11 @@ function getFriendlyAuthError(message: string) {
   const normalized = message.toLowerCase();
 
   if (normalized.includes("failed to fetch") || normalized.includes("fetch failed") || normalized.includes("networkerror")) {
-    return "Connexion a Supabase impossible pour le moment. Le projet Supabase est peut-etre en pause, deconnecte, ou les cles Supabase configurees dans Vercel sont incorrectes.";
+    return "Connexion à Supabase impossible pour le moment. Le projet Supabase est peut-être en pause, déconnecté, ou les clés Supabase configurées dans Vercel sont incorrectes.";
   }
 
   if (normalized.includes("database error") || normalized.includes("saving new user")) {
-    return "La creation du compte est bloquee cote base de donnees Supabase. Verifiez les migrations, notamment la table profiles et le trigger d'inscription.";
+    return "La création du compte est bloquée côté base de données Supabase. Vérifiez les migrations, notamment la table profiles et le trigger d'inscription.";
   }
 
   if (normalized.includes("invalid login credentials")) {
