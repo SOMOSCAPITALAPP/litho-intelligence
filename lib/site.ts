@@ -1,4 +1,4 @@
-export const siteUrl = "https://www.litho-intelligence.com";
+export const siteUrl = "https://litho-intelligence.com";
 
 export const shareImage = "/brand/litho-intelligence-app-share-v1.png";
 
