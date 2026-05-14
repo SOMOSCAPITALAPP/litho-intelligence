@@ -3,12 +3,16 @@ import { ArrowRight, ShoppingBag, Sparkles } from "lucide-react";
 import { withAffiliate } from "@/lib/affiliate";
 import { getStone } from "@/lib/stones";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
+import { LeadCaptureCard } from "@/components/LeadCaptureCard";
+import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import type { AIStoneRecommendation } from "@/lib/openai-recommendation";
+import { getProductByStone } from "@/lib/products";
 
 export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
   const stone = getStone(result.slug);
   const product = stone?.products[0];
+  const recommendedProduct = getProductByStone(result.slug);
 
   return (
     <article className="premium-result-card">
@@ -21,17 +25,43 @@ export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
           </span>
           <span className="premium-score">{result.score}%</span>
         </div>
-        <h2>{result.emotional_message}</h2>
-        <p>{result.reason}</p>
+        <h2>Ce que votre réponse révèle</h2>
+        <p>
+          Votre réponse montre un besoin de calme, de protection intérieure ou de recentrage. Selon les traditions
+          symboliques, cette pierre peut devenir un rappel concret pour revenir à votre intention.
+        </p>
         <div className="ritual-box">
-          <strong>Utilisation</strong>
+          <strong>Votre pierre recommandée</strong>
+          <span>{result.emotional_message}</span>
+        </div>
+        <div className="ritual-box">
+          <strong>Pourquoi cette pierre correspond à votre intention</strong>
+          <span>{result.reason}</span>
+        </div>
+        <div className="ritual-box">
+          <strong>Comment l'utiliser</strong>
           <span>{result.usage}</span>
         </div>
         <div className="ritual-box">
-          <strong>Rituel rapide</strong>
+          <strong>Votre rituel simple de 2 minutes</strong>
           <span>{result.ritual}</span>
         </div>
         <p className="micro-warning">{result.warning}</p>
+        {recommendedProduct ? (
+          <div>
+            <h3>Le bracelet associé</h3>
+            <ProductRecommendationCard
+              imageUrl={recommendedProduct.imageUrl}
+              title={recommendedProduct.title}
+              stoneName={recommendedProduct.stone}
+              intention={recommendedProduct.intentions[0] ?? "intention"}
+              emotionalBenefit={recommendedProduct.description}
+              price={recommendedProduct.price}
+              amazonUrl={recommendedProduct.amazonUrl}
+              badge={recommendedProduct.badge}
+            />
+          </div>
+        ) : null}
         {stone ? (
           <RelatedStoneLinks
             items={stone.compatibilities.slice(0, 3)}
@@ -52,6 +82,13 @@ export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
             </Link>
           ) : null}
         </div>
+        <LeadCaptureCard
+          source="recommendation-result"
+          recommendedStone={stone?.name ?? result.name}
+          title="Recevoir ma recommandation complète par email"
+          subtitle="Gardez votre pierre, son intention, son rituel et le lien du bracelet recommande."
+          buttonLabel="Recevoir ma recommandation"
+        />
       </div>
     </article>
   );

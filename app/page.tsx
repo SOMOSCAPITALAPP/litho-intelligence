@@ -1,197 +1,179 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Brain, Heart, Moon, Search, Shield, UserCircle, Wallet, Zap } from "lucide-react";
-import { EmailCapture } from "@/components/EmailCapture";
+import { ArrowRight, CheckCircle2, Gem, Search, Shield, Sparkles } from "lucide-react";
+import { LeadCaptureCard } from "@/components/LeadCaptureCard";
+import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { wellbeingDisclaimer } from "@/lib/legal";
-import { stones } from "@/lib/stones";
+import { recommendedProducts } from "@/lib/products";
+import { getStone } from "@/lib/stones";
 
-const quickLinks = [
-  { label: "Stressé", detail: "Retrouver du calme", href: "/recommendation?emotional=stress&goal=serenite", icon: Moon },
-  { label: "Fatigué", detail: "Récupérer de l'élan", href: "/recommendation?physical=fatigue&goal=energie", icon: Zap },
-  { label: "Manque d'énergie", detail: "Relancer l'action", href: "/recommendation?physical=fatigue&goal=confiance", icon: Wallet },
-  { label: "Besoin d'amour", detail: "Adoucir le cœur", href: "/recommendation?emotional=solitude&goal=amour", icon: Heart },
-  { label: "Protection", detail: "Poser des limites", href: "/recommendation?emotional=peur&goal=protection", icon: Shield }
+export const metadata: Metadata = {
+  title: "Litho Intelligence by Quintessence Cristal - Trouvez votre pierre naturelle",
+  description:
+    "Test gratuit pour decouvrir la pierre naturelle associee a votre intention : stress, amour, protection, energie, confiance ou cadeau."
+};
+
+const popularIntentions = [
+  { label: "Stress", href: "/intention/stress", text: "Calme, respiration et recentrage." },
+  { label: "Protection", href: "/intention/protection", text: "Limites, ancrage et stabilite." },
+  { label: "Amour", href: "/intention/amour", text: "Douceur, lien et tendresse." },
+  { label: "Sommeil", href: "/intention/sommeil", text: "Rituel du soir et apaisement." },
+  { label: "Energie", href: "/intention/energie", text: "Elan, motivation et action." },
+  { label: "Confiance", href: "/intention/confiance", text: "Courage, posture et affirmation." },
+  { label: "Cadeau", href: "/intention/cadeau", text: "Choisir une pierre a offrir." }
 ];
 
-const commonQuestions = [
-  { label: "Pierre pour le stress", href: "/intention/stress" },
-  { label: "Pierre pour l'argent", href: "/intention/argent" },
-  { label: "Pierre pour l'amour", href: "/intention/amour" },
-  { label: "Pierre pour la confiance", href: "/intention/confiance" },
-  { label: "Pierre de naissance", href: "/pierre-de-naissance" },
-  { label: "Idée cadeau", href: "/idee-cadeau" }
+const popularStoneSlugs = [
+  "labradorite",
+  "quartz-rose",
+  "oeil-de-tigre",
+  "obsidienne-noire",
+  "jade-emeraude",
+  "amethyste",
+  "howlite",
+  "apatite-bleue"
 ];
 
-const emotionalPaths = [
-  {
-    title: "Je me sens perdu",
-    text: "Quand tout semble flou, commence par une pierre associée à la clarté et à une intention simple.",
-    href: "/recommendation?emotional=confusion&goal=clarte"
-  },
-  {
-    title: "Je me sens seul",
-    text: "Quand le cœur manque de chaleur, choisis un soutien symbolique centré sur la douceur et l'amour de soi.",
-    href: "/recommendation?emotional=solitude&goal=amour"
-  },
-  {
-    title: "Je n'ose pas agir",
-    text: "Quand la peur bloque le mouvement, cherche une pierre associée au courage, à l'ancrage et à la décision.",
-    href: "/recommendation?emotional=peur&goal=confiance"
-  }
-];
+const shopPreview = recommendedProducts.slice(0, 6);
 
 export default function HomePage() {
+  const popularStones = popularStoneSlugs.map((slug) => getStone(slug)).filter(Boolean);
+
   return (
     <main>
-      <section className="hero app-hero">
-        <div>
-          <div className="hero-topline">
-            <p className="eyebrow">Lithothérapie traditionnelle, recommandation intelligente</p>
-            <Link className="member-access-link" href="/dashboard">
-              <UserCircle size={15} />
-              Espace membre
+      <section className="conversion-hero">
+        <div className="conversion-hero-copy">
+          <p className="eyebrow">Quintessence Cristal presente</p>
+          <h1>Litho Intelligence</h1>
+          <p className="brand-byline">by Quintessence Cristal</p>
+          <h2>Trouvez la pierre qui correspond a votre energie du moment.</h2>
+          <p>
+            Un guide intelligent pour decouvrir les pierres naturelles associees a vos intentions : calme, protection,
+            amour, energie, confiance et equilibre interieur.
+          </p>
+          <div className="hero-actions">
+            <Link className="button gold-button" href="/test">
+              Faire le test gratuit <ArrowRight size={16} />
+            </Link>
+            <Link className="button secondary" href="/stones">
+              Decouvrir les pierres
             </Link>
           </div>
-          <h1>Comment te sens-tu aujourd'hui ?</h1>
-          <p>En un clic, obtenez un conseil personnalisé, un rituel simple et le bracelet associé.</p>
-          <form className="search-box" action="/recommendation">
-            <Search size={20} />
-            <input name="goal" placeholder="Ex : stress, amour, protection, argent, confiance..." />
-            <button type="submit">Obtenir mon conseil</button>
-          </form>
-          <div className="hero-helper-links">
-            <Link href="/test">Faire le test guidé</Link>
-            <span aria-hidden="true">·</span>
-            <Link href="/sos">Conseil express</Link>
-          </div>
-          <div className="question-list">
-            {commonQuestions.map((question) => (
-              <Link key={question.label} href={question.href}>
-                {question.label}
-              </Link>
-            ))}
+          <div className="trust-row">
+            <span>Gratuit</span>
+            <span>Simple</span>
+            <span>Resultat immediat</span>
           </div>
         </div>
-        <aside className="hero-panel" aria-label="Besoins fréquents">
-          <h2>Choisir par ressenti</h2>
-          <div className="quick-grid">
-            {quickLinks.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link key={item.label} className="quick-link" href={item.href}>
-                  <Icon size={22} />
-                  <strong>{item.label}</strong>
-                  <span>{item.detail}</span>
-                </Link>
-              );
-            })}
-          </div>
+        <aside className="conversion-hero-panel">
+          <Gem size={28} />
+          <strong>Votre intention du moment</strong>
+          <form className="search-box" action="/recommendation">
+            <Search size={20} />
+            <input name="goal" placeholder="stress, amour, protection, confiance..." />
+            <button type="submit">Obtenir mon conseil</button>
+          </form>
           <p className="fineprint">{wellbeingDisclaimer}</p>
         </aside>
       </section>
 
-      <section className="answer-band">
-        <div>
-          <Brain size={24} />
-          <strong>Une réponse claire, pas un discours compliqué</strong>
-          <span>3 à 5 pierres, une raison simple, un geste à faire aujourd'hui et un accès direct au bracelet associé.</span>
-        </div>
-      </section>
-
-      <section className="member-band">
-        <div>
-          <span className="mystic-kicker">
-            <UserCircle size={15} />
-            Espace membre
-          </span>
-          <h2>Gardez vos recommandations, vos favoris et votre progression énergétique.</h2>
-          <p>Créez un compte gratuit pour suivre vos pierres favorites et débloquer progressivement les fonctions Premium.</p>
-        </div>
-        <div className="member-actions">
-          <Link className="button gold-button" href="/register">
-            Créer mon espace gratuit
+      <section className="section compact-section">
+        <div className="section-heading-row">
+          <div>
+            <p className="eyebrow">Comment ca marche ?</p>
+            <h2>Un parcours clair en trois etapes</h2>
+          </div>
+          <Link className="micro-action" href="/test">
+            Commencer <ArrowRight size={15} />
           </Link>
-          <Link className="button ghost-dark" href="/login">
-            Me connecter
-          </Link>
+        </div>
+        <div className="how-grid">
+          {[
+            ["1", "Dites comment vous vous sentez", "Posez votre besoin avec vos mots : stress, doute, fatigue, amour ou protection."],
+            ["2", "Recevez une pierre recommandee", "Litho Intelligence associe votre intention aux traditions symboliques des pierres naturelles."],
+            ["3", "Decouvrez le rituel et le bracelet associe", "Repartez avec un geste simple, une fiche claire et une suggestion disponible sur Amazon."]
+          ].map(([step, title, text]) => (
+            <article className="how-card" key={step}>
+              <span>{step}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="section compact-section">
-        <EmailCapture source="home" />
-      </section>
-
-      <section className="section compact-section">
-        <h2>Guides par intention</h2>
-        <p className="section-lead">
-          Des pages claires pour partir d'un besoin précis et découvrir les pierres traditionnellement associées à cette intention.
-        </p>
-        <div className="grid">
-          <Link className="card emotional-card" href="/intention/stress">
-            <h3>Pierre pour le stress</h3>
-            <p>Améthyste, lépidolite, howlite, quartz rose : choisir une pierre associée au calme et au recentrage.</p>
-            <span className="micro-action">
-              Lire le guide <ArrowRight size={15} />
-            </span>
-          </Link>
-          <Link className="card emotional-card" href="/intention/argent">
-            <h3>Pierre pour l'argent</h3>
-            <p>Citrine, pyrite, aventurine verte : travailler symboliquement l'abondance, la confiance et l'action.</p>
-            <span className="micro-action">
-              Lire le guide <ArrowRight size={15} />
-            </span>
-          </Link>
-          <Link className="card emotional-card" href="/intention/amour">
-            <h3>Pierre pour l'amour</h3>
-            <p>Quartz rose, rhodonite, pierre de lune : soutenir une intention de douceur, de lien et d'ouverture du cœur.</p>
-            <span className="micro-action">
-              Lire le guide <ArrowRight size={15} />
-            </span>
-          </Link>
-          <Link className="card emotional-card" href="/intention/confiance">
-            <h3>Pierre pour la confiance</h3>
-            <p>Œil de tigre, citrine, cornaline : symboliser le courage, l'affirmation et la sécurité intérieure.</p>
-            <span className="micro-action">
-              Lire le guide <ArrowRight size={15} />
-            </span>
-          </Link>
-        </div>
-      </section>
-
-      <section className="section compact-section">
-        <h2>Commencer par ce que vous ressentez</h2>
-        <p className="section-lead">
-          L'utilisateur n'a pas besoin de connaître les pierres. Il part de sa tension intérieure, puis l'application traduit ce ressenti en choix simple.
-        </p>
-        <div className="grid">
-          {emotionalPaths.map((path) => (
-            <Link className="card emotional-card" href={path.href} key={path.title}>
-              <h3>{path.title}</h3>
-              <p>{path.text}</p>
-              <span className="micro-action">
-                Obtenir mon conseil <ArrowRight size={15} />
-              </span>
+        <h2>Intentions populaires</h2>
+        <div className="intentions-conversion-grid">
+          {popularIntentions.map((item) => (
+            <Link className="intention-tile" href={item.href} key={item.href}>
+              <CheckCircle2 size={18} />
+              <strong>{item.label}</strong>
+              <span>{item.text}</span>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="section">
-        <h2>Accès direct aux pierres</h2>
-        <p className="section-lead">
-          Pour ceux qui savent déjà ce qu'ils cherchent : fiche claire, compatibilités, purification, port recommandé et lien d'achat.
-        </p>
-        <div className="grid">
-          {stones.slice(0, 6).map((stone) => (
-            <Link className="card" key={stone.slug} href={`/stone/${stone.slug}`}>
-              <img className="stone-thumb wide" src={stone.image.url} alt={stone.image.alt} />
-              <h3>{stone.name}</h3>
-              <p>{stone.description}</p>
-              <span className="button secondary">
-                Voir la fiche <ArrowRight size={16} />
-              </span>
+      <section className="section compact-section">
+        <h2>Pierres populaires</h2>
+        <p className="section-lead">Des fiches SEO claires pour comprendre la signification symbolique, les associations et les bracelets recommandes.</p>
+        <div className="popular-stone-grid">
+          {popularStones.map((stone) => (
+            <Link className="popular-stone-card" href={`/stone/${stone!.slug}`} key={stone!.slug}>
+              <img src={stone!.image.url} alt={stone!.image.alt} />
+              <strong>{stone!.name}</strong>
+              <span>{stone!.goals.slice(0, 2).join(" • ")}</span>
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="section compact-section">
+        <LeadCaptureCard
+          source="home-guide"
+          title="Recevez gratuitement le Guide des 10 pierres essentielles"
+          subtitle="Stress, amour, protection, energie, confiance : decouvrez les pierres les plus utilisees selon les traditions symboliques."
+          buttonLabel="Recevoir mon guide gratuit"
+        />
+      </section>
+
+      <section className="section compact-section">
+        <div className="section-heading-row">
+          <div>
+            <p className="eyebrow">Boutique recommandee</p>
+            <h2>Bracelets selectionnes par intention</h2>
+          </div>
+          <Link className="button secondary" href="/boutique-pierres-naturelles">
+            Voir toute la boutique
+          </Link>
+        </div>
+        <div className="product-recommendation-grid">
+          {shopPreview.map((product) => (
+            <ProductRecommendationCard
+              key={product.id}
+              imageUrl={product.imageUrl}
+              title={product.title}
+              stoneName={product.stone}
+              intention={product.intentions[0] ?? "intention"}
+              emotionalBenefit={product.description}
+              price={product.price}
+              amazonUrl={product.amazonUrl}
+              badge={product.badge}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="section compact-section">
+        <article className="compliance-panel">
+          <Shield size={22} />
+          <div>
+            <h2>Une approche symbolique, claire et responsable</h2>
+            <p>{wellbeingDisclaimer}</p>
+          </div>
+          <Sparkles size={22} />
+        </article>
       </section>
     </main>
   );

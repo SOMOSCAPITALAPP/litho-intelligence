@@ -26,7 +26,7 @@ export const intentionPages: IntentionPage[] = [
     intro:
       "Lorsque le mental s’agite, une pierre peut devenir un rappel concret : ralentir, respirer et revenir à une intention plus douce.",
     emotionalPromise:
-      "L’objectif n’est pas de promettre un effet médical, mais de choisir un support symbolique simple pour accompagner une intention de calme.",
+      "L’objectif n’est pas de promettre une action sur la santé, mais de choisir un support symbolique simple pour accompagner une intention de calme.",
     recommendedStoneSlugs: ["amethyste", "lepidolite", "howlite", "quartz-rose", "labradorite"],
     meditationStone: "Améthyste",
     meditationIntention: "calme intérieur",
@@ -136,7 +136,7 @@ export const intentionPages: IntentionPage[] = [
     seoTitle: "Pierre pour l’amour : quartz rose, rhodonite et pierre de lune",
     seoDescription: "Pierres traditionnellement associées à l’amour, à la tendresse et au réconfort émotionnel.",
     intro: "Les pierres d’amour accompagnent symboliquement l’ouverture du cœur, la tendresse et le respect de soi.",
-    emotionalPromise: "Ici, l’amour commence par une intention simple : se traiter avec plus de douceur, puis créer un espace plus ouvert pour le lien.",
+    emotionalPromise: "Ici, l’amour commence par une intention simple : se considérer avec plus de douceur, puis créer un espace plus ouvert pour le lien.",
     recommendedStoneSlugs: ["quartz-rose", "rhodonite", "pierre-de-lune", "aventurine-verte", "grenat"],
     meditationStone: "Quartz rose",
     meditationIntention: "douceur du cœur",
@@ -252,6 +252,111 @@ export const intentionPages: IntentionPage[] = [
         question: "Quelle pierre choisir pour l’ancrage ?",
         answer: "Le jaspe rouge, la tourmaline noire et l’onyx sont souvent associés à l’ancrage symbolique."
       }
+    ]
+  },
+  {
+    slug: "energie",
+    queryLabel: "pierre pour l'energie",
+    shortLabel: "Energie",
+    title: "Pierres pour l'energie : retrouver un elan symbolique",
+    seoTitle: "Quelle pierre pour l'energie ? Cornaline, citrine et apatite bleue",
+    seoDescription: "Pierres traditionnellement associees a l'elan, a la motivation et au passage a l'action dans les croyances de lithotherapie.",
+    intro: "Quand l'elan manque, une pierre chaude ou lumineuse peut devenir un rappel concret : choisir une action simple et avancer avec douceur.",
+    emotionalPromise: "Ces pierres accompagnent symboliquement une intention de mouvement et de confiance, sans promesse de résultat.",
+    recommendedStoneSlugs: ["cornaline", "citrine", "apatite-bleue", "pyrite", "oeil-de-tigre"],
+    meditationStone: "Cornaline",
+    meditationIntention: "elan personnel",
+    giftAngle: "Pour encourager un nouveau depart, la cornaline ou l'apatite bleue portent une symbolique claire et positive.",
+    solutionSteps: ["Choisir une pierre solaire ou coloree.", "La porter le matin.", "Associer le bracelet a une action realiste dans la journee."],
+    faq: [
+      { question: "Quelle pierre est associee a l'energie ?", answer: "La cornaline, la citrine et l'apatite bleue sont souvent associees a l'elan symbolique et a la motivation." },
+      { question: "Comment porter une pierre d'energie ?", answer: "Le bracelet est pratique pour garder l'intention visible pendant une journee active." },
+      { question: "Ces pierres donnent-elles de l'energie physiquement ?", answer: "Non. Elles sont presentees comme supports symboliques et ne remplacent jamais un avis professionnel." },
+      { question: "Quelle pierre offrir pour encourager quelqu'un ?", answer: "La cornaline et l'oeil de tigre sont des choix lisibles pour symboliser courage et action." }
+    ]
+  },
+  {
+    slug: "cadeau",
+    queryLabel: "pierre naturelle a offrir",
+    shortLabel: "Cadeau",
+    title: "Quelle pierre offrir ? Guide cadeau par intention",
+    seoTitle: "Quelle pierre naturelle offrir ? Idees cadeaux et bracelets recommandes",
+    seoDescription: "Guide cadeau pour choisir une pierre naturelle selon une intention : amour, protection, calme, confiance ou energie.",
+    intro: "Offrir une pierre, c'est donner une intention visible : soutien, douceur, protection, courage ou gratitude.",
+    emotionalPromise: "La valeur du cadeau vient du message symbolique qui l'accompagne et de la clarte de l'intention.",
+    recommendedStoneSlugs: ["quartz-rose", "labradorite", "oeil-de-tigre", "howlite", "amethyste"],
+    meditationStone: "Quartz rose",
+    meditationIntention: "attention sincere",
+    giftAngle: "Choisissez une pierre facile a comprendre et ajoutez une phrase courte pour expliquer votre intention.",
+    solutionSteps: ["Choisir la relation.", "Choisir l'occasion.", "Associer une intention simple au bracelet."],
+    faq: [
+      { question: "Quelle pierre offrir a une femme ?", answer: "Le quartz rose, l'amethyste et la labradorite sont des choix populaires selon l'intention du cadeau." },
+      { question: "Quelle pierre offrir a un homme ?", answer: "L'oeil de tigre, la labradorite foncee et la tourmaline noire sont des options sobres et symboliques." },
+      { question: "Quelle pierre offrir pour la protection ?", answer: "La labradorite et l'oeil de tigre sont traditionnellement associes a la protection symbolique." },
+      { question: "Faut-il purifier une pierre offerte ?", answer: "On peut proposer un rituel simple de fumigation douce ou de repos, sans obligation." }
+    ]
+  },
+  {
+    slug: "hypersensibilite",
+    queryLabel: "pierre pour hypersensibilite",
+    shortLabel: "Hypersensibilite",
+    title: "Pierres pour l'hypersensibilite : protection douce et limites",
+    seoTitle: "Pierre pour hypersensibilite : labradorite, quartz rose et howlite",
+    seoDescription: "Pierres traditionnellement associees aux personnes sensibles : protection symbolique, douceur et recentrage.",
+    intro: "Pour les personnes qui absorbent beaucoup, une pierre peut symboliser une limite douce et un retour a soi.",
+    emotionalPromise: "L'objectif est d'accompagner un rituel personnel de protection symbolique, sans promesse medicale.",
+    recommendedStoneSlugs: ["labradorite", "quartz-rose", "howlite", "tourmaline-noire", "amethyste"],
+    meditationStone: "Labradorite",
+    meditationIntention: "limites douces",
+    giftAngle: "La labradorite est un cadeau tres lisible pour une personne sensible aux ambiances.",
+    solutionSteps: ["Choisir une pierre de protection douce.", "La porter lors des journees chargees.", "Respirer 2 minutes en formulant une limite simple."],
+    faq: [
+      { question: "Quelle pierre est associee a l'hypersensibilite ?", answer: "La labradorite est souvent associee a la protection symbolique des personnes sensibles." },
+      { question: "Peut-on l'associer au quartz rose ?", answer: "Oui, cette association symbolise protection et douceur." },
+      { question: "Quelle forme choisir ?", answer: "Un bracelet est pratique car il reste visible pendant la journee." },
+      { question: "Est-ce une solution medicale ?", answer: "Non, il s'agit d'une pratique symbolique ou culturelle." }
+    ]
+  },
+  {
+    slug: "fatigue-emotionnelle",
+    queryLabel: "pierre pour fatigue emotionnelle",
+    shortLabel: "Fatigue emotionnelle",
+    title: "Pierres pour la fatigue emotionnelle : douceur et recuperation symbolique",
+    seoTitle: "Pierre pour fatigue emotionnelle : labradorite, amethyste et quartz rose",
+    seoDescription: "Guide symbolique des pierres associees a la fatigue emotionnelle, au recentrage et a la douceur interieure.",
+    intro: "Quand l'emotionnel est sature, les pierres douces ou protectrices peuvent rappeler de ralentir et de revenir a l'essentiel.",
+    emotionalPromise: "Elles accompagnent une intention de repos symbolique et de recentrage personnel.",
+    recommendedStoneSlugs: ["labradorite", "amethyste", "quartz-rose", "howlite", "apatite-bleue"],
+    meditationStone: "Amethyste",
+    meditationIntention: "repos interieur",
+    giftAngle: "Pour soutenir quelqu'un avec delicatesse, le quartz rose ou l'amethyste sont faciles a offrir.",
+    solutionSteps: ["Choisir une pierre douce.", "La garder pres de soi dans un moment calme.", "Associer la pierre a une respiration lente."],
+    faq: [
+      { question: "Quelle pierre choisir en fatigue emotionnelle ?", answer: "La labradorite, l'amethyste et le quartz rose sont souvent associes au recentrage et a la douceur." },
+      { question: "Comment l'utiliser ?", answer: "Un rituel court de respiration avec la pierre suffit pour poser l'intention." },
+      { question: "Peut-on porter plusieurs pierres ?", answer: "Oui, mais il vaut mieux rester simple : une pierre de protection et une pierre douce." },
+      { question: "La pierre remplace-t-elle un accompagnement ?", answer: "Non. Elle ne remplace jamais un avis medical, psychologique ou professionnel." }
+    ]
+  },
+  {
+    slug: "argent-abondance",
+    queryLabel: "pierre pour argent et abondance",
+    shortLabel: "Argent & abondance",
+    title: "Pierres pour l'argent et l'abondance : clarte, confiance et action",
+    seoTitle: "Pierre pour argent et abondance : pyrite, citrine et oeil de tigre",
+    seoDescription: "Pierres traditionnellement associees a l'abondance symbolique, a la confiance et a l'action responsable.",
+    intro: "Les pierres d'abondance ne promettent pas de gain financier. Elles servent de support symbolique pour clarifier une intention et poser une action.",
+    emotionalPromise: "Le bracelet devient un rappel : organiser son energie, faire un choix concret et avancer avec discernement.",
+    recommendedStoneSlugs: ["pyrite", "citrine", "oeil-de-tigre", "aventurine-verte", "cornaline"],
+    meditationStone: "Pyrite",
+    meditationIntention: "abondance responsable",
+    giftAngle: "La pyrite ou l'oeil de tigre conviennent bien a une personne qui lance un projet.",
+    solutionSteps: ["Choisir une pierre doree ou solaire.", "La relier a une action realiste.", "Eviter toute promesse de resultat financier."],
+    faq: [
+      { question: "Quelle pierre est associee a l'abondance ?", answer: "La pyrite et la citrine sont traditionnellement associees a l'abondance symbolique." },
+      { question: "Quelle pierre pour un projet professionnel ?", answer: "L'oeil de tigre et la pyrite symbolisent confiance, structure et action." },
+      { question: "Est-ce que cela attire l'argent ?", answer: "Le site ne promet aucun resultat. Il s'agit d'un support symbolique d'intention." },
+      { question: "Comment porter la pyrite ?", answer: "En bracelet ou pres du bureau, comme rappel d'organisation et de clarte." }
     ]
   },
   {

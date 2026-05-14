@@ -1,15 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PWARegistration } from "@/components/PWARegistration";
+import { wellbeingDisclaimer } from "@/lib/legal";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://litho-intelligence.vercel.app"),
+  metadataBase: new URL("https://www.litho-intelligence.com"),
   title: {
-    default: "Litho Intelligence",
+    default: "Litho Intelligence by Quintessence Cristal",
     template: "%s | Litho Intelligence"
   },
-  description: "Recommandations personnalisées de pierres basées sur les traditions de lithothérapie.",
+  description:
+    "Test gratuit pour decouvrir la pierre naturelle associee a votre intention : stress, amour, protection, energie, confiance ou cadeau.",
   applicationName: "Litho Intelligence",
   manifest: "/manifest.webmanifest",
   icons: {
@@ -29,8 +31,8 @@ export const metadata: Metadata = {
     telephone: false
   },
   openGraph: {
-    title: "Litho Intelligence",
-    description: "Trouvez la pierre adaptée à votre intention grâce aux recommandations, guides et formations Litho Intelligence.",
+    title: "Litho Intelligence by Quintessence Cristal",
+    description: "Trouvez la pierre qui correspond a votre energie du moment avec un guide symbolique, clair et responsable.",
     url: "/",
     siteName: "Litho Intelligence",
     locale: "fr_FR",
@@ -46,8 +48,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Litho Intelligence",
-    description: "Recommandations personnalisées, formation gratuite, PDF, QCM et espace membre.",
+    title: "Litho Intelligence by Quintessence Cristal",
+    description: "Recommandations personnalisees, formation gratuite, PDF, QCM et espace membre.",
     images: ["/brand/litho-intelligence-og-v3.png"]
   }
 };
@@ -68,7 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteHeader />
           {children}
           <footer className="footer">
-            Les informations proposées reposent sur les traditions, croyances et usages symboliques associés aux pierres naturelles. Elles ne remplacent pas un avis médical, psychologique ou professionnel.
+            <strong>Litho Intelligence by Quintessence Cristal.</strong> {wellbeingDisclaimer}
           </footer>
         </div>
       </body>

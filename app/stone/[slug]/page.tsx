@@ -5,11 +5,13 @@ import { getStone, stones } from "@/lib/stones";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { withAffiliate } from "@/lib/affiliate";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
-import { EmailCapture } from "@/components/EmailCapture";
+import { LeadCaptureCard } from "@/components/LeadCaptureCard";
+import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { ShareActions } from "@/components/ShareActions";
 import { slugifyVirtue } from "@/lib/virtues";
 import { productStoneVirtueSummary } from "@/lib/stoneVirtueSummary";
+import { getProductByStone } from "@/lib/products";
 
 export function generateStaticParams() {
   return stones.map((stone) => ({ slug: stone.slug }));
@@ -17,7 +19,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const stone = getStone(params.slug);
-  const title = stone ? `${stone.name} | Litho Intelligence` : "Pierre | Litho Intelligence";
+  const title = stone ? `${stone.name} : signification, vertus symboliques et bracelet recommandé` : "Pierre | Litho Intelligence";
   const description = stone?.description ?? "Fiche pierre Litho Intelligence.";
 
   return {
@@ -49,12 +51,13 @@ export default function StonePage({ params }: { params: { slug: string } }) {
   const stone = getStone(params.slug);
   if (!stone) notFound();
   const virtueSummary = productStoneVirtueSummary(stone);
+  const recommendedProduct = getProductByStone(stone.slug);
 
   return (
     <main>
       <section className="stone-hero">
         <div>
-          <h1>{stone.name}</h1>
+          <h1>{stone.name} : signification, vertus symboliques et bracelet recommandé</h1>
           <p className="section-lead">{stone.description}</p>
           <div className="pill-row">
             <span className="pill">Chakra : {stone.chakra}</span>
@@ -67,8 +70,21 @@ export default function StonePage({ params }: { params: { slug: string } }) {
       </section>
 
       <section className="section stone-detail-section">
+        {recommendedProduct ? (
+          <ProductRecommendationCard
+            imageUrl={recommendedProduct.imageUrl}
+            title={recommendedProduct.title}
+            stoneName={recommendedProduct.stone}
+            intention={recommendedProduct.intentions[0] ?? stone.goals[0] ?? "intention"}
+            emotionalBenefit={recommendedProduct.description}
+            price={recommendedProduct.price}
+            amazonUrl={recommendedProduct.amazonUrl}
+            badge={recommendedProduct.badge}
+          />
+        ) : null}
+
         <article className="card stone-virtues-card">
-          <p className="eyebrow">Vertus de la pierre</p>
+          <p className="eyebrow">Signification symbolique</p>
           <h2>Comprendre les bienfaits symboliques de {stone.name}</h2>
           {virtueSummary.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
@@ -76,6 +92,16 @@ export default function StonePage({ params }: { params: { slug: string } }) {
         </article>
 
         <div className="grid">
+          <article className="card">
+            <h2>À quelles intentions cette pierre est-elle associée ?</h2>
+            <div className="pill-row">
+              {stone.goals.map((goal) => (
+                <Link className="pill" href={`/intention/${goal}`} key={goal}>
+                  {goal}
+                </Link>
+              ))}
+            </div>
+          </article>
           <article className="card">
             <h2>Description visuelle</h2>
             <p>{stone.visual}</p>
@@ -93,7 +119,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             </ul>
           </article>
           <article className="card">
-            <h2>Utilisation</h2>
+            <h2>Comment la porter ?</h2>
             <p>{stone.usage}</p>
             <p>{stone.wear}</p>
             <ul>
@@ -111,12 +137,13 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             </ul>
           </article>
           <article className="card">
-            <h2>Compatibilités</h2>
+            <h2>Avec quelles pierres l'associer ?</h2>
             <RelatedStoneLinks items={stone.compatibilities} title="Pierres compatibles" />
           </article>
           <article className="card">
-            <h2>Incompatibilités</h2>
+            <h2>Quand l'éviter ou l'utiliser avec prudence ?</h2>
             <RelatedStoneLinks emptyText="Aucune incompatibilité notable dans cette base." items={stone.incompatibilities} title="Associations à doser" />
+            <p>Si une pierre semble trop intense, gardez une approche simple et choisissez une association plus douce.</p>
           </article>
           <article className="card">
             <h2>Purification</h2>
@@ -175,7 +202,23 @@ export default function StonePage({ params }: { params: { slug: string } }) {
           </div>
           <p className="fineprint">{wellbeingDisclaimer}</p>
         </div>
-        <EmailCapture source={`stone:${stone.slug}`} />
+        <section className="section compact-section no-side-padding">
+          <h2>Questions fréquentes sur {stone.name}</h2>
+          <div className="grid">
+            {[
+              ["Quelle est la signification symbolique de cette pierre ?", `${stone.name} est traditionnellement associée à ${stone.properties.slice(0, 3).join(", ")}.`],
+              ["Comment porter cette pierre au quotidien ?", stone.wear],
+              ["Peut-on l'associer à d'autres pierres ?", `Oui, notamment avec ${stone.compatibilities.slice(0, 3).join(", ")} selon l'intention recherchée.`],
+              ["Cette pierre a-t-elle un effet médical ?", "Non. Elle est présentée comme un support symbolique et ne remplace jamais un avis médical, psychologique ou professionnel."]
+            ].map(([question, answer]) => (
+              <article className="card" key={question}>
+                <h3>{question}</h3>
+                <p>{answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <LeadCaptureCard source={`stone:${stone.slug}`} recommendedStone={stone.name} />
       </section>
     </main>
   );

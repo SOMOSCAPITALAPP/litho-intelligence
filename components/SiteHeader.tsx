@@ -8,6 +8,7 @@ const primaryLinks = [
   { href: "/lithotherapie", label: "Lithothérapie" },
   { href: "/stones", label: "Pierres" },
   { href: "/intention", label: "Intentions" },
+  { href: "/boutique-pierres-naturelles", label: "Boutique" },
   { href: "/pierre-de-naissance", label: "Pierre de naissance" },
   { href: "/idee-cadeau", label: "Idée cadeau" },
   { href: "/compatibilite-amoureuse", label: "Compatibilité" },
@@ -38,7 +39,7 @@ export function SiteHeader() {
           </span>
           <span className="brand-copy">
             <strong>Litho Intelligence</strong>
-            <small>pierres, intentions et rituels</small>
+            <small>by Quintessence Cristal</small>
           </span>
         </Link>
 

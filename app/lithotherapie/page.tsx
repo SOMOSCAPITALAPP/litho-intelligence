@@ -36,7 +36,7 @@ export default function LithotherapiePage() {
           <p className="eyebrow">Comprendre la lithothérapie</p>
           <h1>Une pratique de bien-être, de symbole et d'intention</h1>
           <p>
-            La lithothérapie ne promet pas de soigner. Elle aide à choisir une pierre comme support de présence, de sens
+            La lithothérapie est présentée ici comme une tradition symbolique. Elle aide à choisir une pierre comme support de présence, de sens
             et de rituel personnel selon les traditions associées aux minéraux.
           </p>
           <div className="hero-actions">
@@ -104,8 +104,8 @@ export default function LithotherapiePage() {
           <article className="card">
             <h2>Ce qu'il faut garder en tête</h2>
             <p>
-              Les pierres sont présentées comme des supports symboliques dans une démarche de bien-être. Elles n'ont pas
-              vocation à diagnostiquer, traiter ou remplacer un professionnel de santé.
+              Les pierres sont présentées comme des supports symboliques dans une démarche de bien-être. Elles ne remplacent jamais
+              un avis médical, psychologique ou professionnel.
             </p>
           </article>
         </div>

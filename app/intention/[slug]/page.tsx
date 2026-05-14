@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Gift, ShoppingBag } from "lucide-react";
 import { FormationCTA } from "@/components/FormationCTA";
-import { EmailCapture } from "@/components/EmailCapture";
+import { LeadCaptureCard } from "@/components/LeadCaptureCard";
+import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
 import { getIntentionPage, intentionPages } from "@/data/intentions";
@@ -12,6 +13,7 @@ import { getMeditationSuggestion } from "@/lib/getMeditationSuggestion";
 import { getNativeStone, getNativeStoneImage } from "@/lib/nativeStones";
 import { getStone } from "@/lib/stones";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { getProductByStone } from "@/lib/products";
 
 export function generateStaticParams() {
   return intentionPages.map((page) => ({ slug: page.slug }));
@@ -130,6 +132,20 @@ export default function IntentionPage({ params }: { params: { slug: string } }) 
 
       <section className="section compact-section">
         <h2>Questions fréquentes</h2>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: page.faq.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer }
+              }))
+            })
+          }}
+        />
         <div className="grid">
           {page.faq.map((item) => (
             <article className="card" key={item.question}>
@@ -141,7 +157,7 @@ export default function IntentionPage({ params }: { params: { slug: string } }) 
       </section>
 
       <section className="section compact-section">
-        <EmailCapture source={`intention:${page.slug}`} />
+        <LeadCaptureCard source={`intention:${page.slug}`} intention={page.slug} />
       </section>
 
       <FormationCTA />
@@ -153,6 +169,7 @@ function IntentionStoneCard({ slug, intention }: { slug: string; intention: stri
   const nativeStone = getNativeStone(slug);
   const productStone = getStone(nativeStone?.amazon_product_slug || slug);
   const product = productStone?.products[0];
+  const recommendedProduct = getProductByStone(productStone?.slug ?? slug);
   const title = nativeStone?.name ?? productStone?.name ?? slug;
   const description =
     nativeStone?.short_description ??
@@ -184,6 +201,18 @@ function IntentionStoneCard({ slug, intention }: { slug: string; intention: stri
           </Link>
         ) : null}
       </div>
+      {recommendedProduct ? (
+        <ProductRecommendationCard
+          imageUrl={recommendedProduct.imageUrl}
+          title={recommendedProduct.title}
+          stoneName={recommendedProduct.stone}
+          intention={intention}
+          emotionalBenefit={recommendedProduct.description}
+          price={recommendedProduct.price}
+          amazonUrl={recommendedProduct.amazonUrl}
+          badge={recommendedProduct.badge}
+        />
+      ) : null}
     </article>
   );
 }
