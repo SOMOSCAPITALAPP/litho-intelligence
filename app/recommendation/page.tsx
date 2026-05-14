@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
 import { RecommendationClient } from "@/app/recommendation/RecommendationClient";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
+import { defaultShareAlt, defaultShareDescription, shareImage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Test pierre naturelle gratuit : trouvez votre bracelet recommandé",
   description:
     "Décrivez votre intention du moment et recevez une pierre naturelle recommandée, un rituel symbolique et un bracelet associé.",
   openGraph: {
-    title: "Test pierre naturelle gratuit | Litho Intelligence",
-    description:
-      "Trouvez la pierre naturelle associée à votre intention : stress, amour, protection, énergie, confiance ou cadeau.",
-    images: ["/brand/litho-intelligence-og-v3.png"]
+    title: "Test gratuit Litho Intelligence - trouvez votre pierre naturelle",
+    description: defaultShareDescription,
+    images: [{ url: shareImage, width: 1200, height: 630, alt: defaultShareAlt }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Test gratuit Litho Intelligence - trouvez votre pierre naturelle",
+    description: defaultShareDescription,
+    images: [shareImage]
   }
 };
 

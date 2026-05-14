@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { intentionPages } from "@/data/intentions";
 import { stones } from "@/lib/stones";
+import { siteUrl } from "@/lib/site";
 
-const baseUrl = "https://www.litho-intelligence.com";
+const baseUrl = siteUrl.replace(/\/$/, "");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [

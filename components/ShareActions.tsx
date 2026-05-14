@@ -2,11 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Copy, Mail, Share2 } from "lucide-react";
+import { siteUrl } from "@/lib/site";
 
 function getAbsoluteUrl(value?: string, currentOrigin?: string) {
   if (!value) return "";
   if (value.startsWith("http://") || value.startsWith("https://")) return value;
-  if (value.startsWith("/")) return `${currentOrigin ?? "https://www.litho-intelligence.com"}${value}`;
+  if (value.startsWith("/")) return `${currentOrigin ?? siteUrl}${value}`;
   return `https://${value}`;
 }
 
@@ -56,12 +57,12 @@ export function ShareActions({
   const mailto = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(shareText)}`;
   const encodedUrl = encodeURIComponent(resolvedUrl);
   const encodedText = encodeURIComponent(shareText);
-  const encodedTitle = encodeURIComponent(title);
+  const encodedTweetText = encodeURIComponent(`${title} - ${text}`);
   const socialLinks = [
     { label: "WhatsApp", href: `https://api.whatsapp.com/send?text=${encodedText}` },
     { label: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}` },
     { label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}` },
-    { label: "X", href: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}` }
+    { label: "X", href: `https://twitter.com/intent/tweet?text=${encodedTweetText}&url=${encodedUrl}` }
   ];
 
   async function share() {

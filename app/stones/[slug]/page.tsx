@@ -10,6 +10,7 @@ import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { ShareActions } from "@/components/ShareActions";
 import { slugifyVirtue } from "@/lib/virtues";
 import { nativeStoneVirtueSummary } from "@/lib/stoneVirtueSummary";
+import { defaultShareAlt, shareImage } from "@/lib/site";
 
 export function generateStaticParams() {
   return nativeStones.map((stone) => ({ slug: stone.slug }));
@@ -18,7 +19,9 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const stone = getNativeStone(params.slug);
   const title = stone?.seo_title ?? "Pierre naturelle | Litho Intelligence";
-  const description = stone?.seo_description ?? "Fiche pierre naturelle Litho Intelligence.";
+  const description = stone
+    ? `Découvrez ${stone.name}, ses usages symboliques, ses intentions associées et le bracelet recommandé sur Litho Intelligence.`
+    : "Fiche pierre naturelle Litho Intelligence.";
 
   return {
     title,
@@ -29,10 +32,10 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
       url: `/stones/${params.slug}`,
       images: [
         {
-          url: "/brand/litho-intelligence-og-v3.png",
+          url: shareImage,
           width: 1200,
           height: 630,
-          alt: "Litho Intelligence - pierres, intentions et rituels responsables"
+          alt: defaultShareAlt
         }
       ]
     },
@@ -40,7 +43,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
       card: "summary_large_image",
       title,
       description,
-      images: ["/brand/litho-intelligence-og-v3.png"]
+      images: [shareImage]
     }
   };
 }

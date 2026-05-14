@@ -2,16 +2,17 @@ import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PWARegistration } from "@/components/PWARegistration";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { defaultShareAlt, defaultShareDescription, defaultShareTitle, shareImage, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.litho-intelligence.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Litho Intelligence by Quintessence Cristal",
     template: "%s | Litho Intelligence"
   },
   description:
-    "Test gratuit pour decouvrir la pierre naturelle associee a votre intention : stress, amour, protection, energie, confiance ou cadeau.",
+    "Test gratuit pour découvrir la pierre naturelle associée à votre intention : stress, amour, protection, énergie, confiance ou cadeau.",
   applicationName: "Litho Intelligence",
   manifest: "/manifest.webmanifest",
   icons: {
@@ -31,26 +32,26 @@ export const metadata: Metadata = {
     telephone: false
   },
   openGraph: {
-    title: "Litho Intelligence by Quintessence Cristal",
-    description: "Trouvez la pierre qui correspond a votre energie du moment avec un guide symbolique, clair et responsable.",
+    title: defaultShareTitle,
+    description: defaultShareDescription,
     url: "/",
     siteName: "Litho Intelligence",
     locale: "fr_FR",
     type: "website",
     images: [
       {
-        url: "/brand/litho-intelligence-og-v3.png",
+        url: shareImage,
         width: 1200,
         height: 630,
-        alt: "Litho Intelligence - pierres, intentions et rituels responsables"
+        alt: defaultShareAlt
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Litho Intelligence by Quintessence Cristal",
-    description: "Recommandations personnalisees, formation gratuite, PDF, QCM et espace membre.",
-    images: ["/brand/litho-intelligence-og-v3.png"]
+    title: defaultShareTitle,
+    description: defaultShareDescription,
+    images: [shareImage]
   }
 };
 
