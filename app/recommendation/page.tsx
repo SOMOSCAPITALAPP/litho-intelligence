@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RecommendationClient } from "@/app/recommendation/RecommendationClient";
+import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 
 export const metadata: Metadata = {
   title: "Test pierre naturelle gratuit : trouvez votre bracelet recommandé",
@@ -32,6 +33,14 @@ export default function RecommendationPage({
           goal: searchParams.goal ?? ""
         }}
       />
+      <section className="section compact-section no-side-padding">
+        <LeadCaptureCard
+          source="recommendation-page"
+          title="Recevez le guide gratuit des 10 pierres essentielles"
+          subtitle="Stress, amour, protection, énergie et confiance : gardez une base claire pour choisir vos pierres selon les traditions symboliques."
+          buttonLabel="Recevoir le guide"
+        />
+      </section>
     </main>
   );
 }
