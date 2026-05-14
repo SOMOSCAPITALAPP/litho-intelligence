@@ -9,6 +9,14 @@ import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 function getFriendlyAuthError(message: string) {
   const normalized = message.toLowerCase();
 
+  if (normalized.includes("failed to fetch") || normalized.includes("fetch failed") || normalized.includes("networkerror")) {
+    return "Connexion a Supabase impossible pour le moment. Le projet Supabase est peut-etre en pause, deconnecte, ou les cles Supabase configurees dans Vercel sont incorrectes.";
+  }
+
+  if (normalized.includes("database error") || normalized.includes("saving new user")) {
+    return "La creation du compte est bloquee cote base de donnees Supabase. Verifiez les migrations, notamment la table profiles et le trigger d'inscription.";
+  }
+
   if (normalized.includes("invalid login credentials")) {
     return "Email ou mot de passe incorrect.";
   }
@@ -165,8 +173,13 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
       setLoading(false);
       setNotice("Compte créé. Vérifiez votre email pour activer votre accès si une confirmation est demandée.");
     } catch (authError) {
+      const friendlyError = getFriendlyAuthError(authError instanceof Error ? authError.message : "");
       setLoading(false);
       setNotice("");
+      if (!(authError instanceof Error && authError.message === "TIMEOUT")) {
+        setError(friendlyError);
+        return;
+      }
       setError(
         authError instanceof Error && authError.message === "TIMEOUT"
           ? "La connexion prend trop de temps. Vérifiez votre réseau puis réessayez."
