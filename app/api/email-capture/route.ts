@@ -60,7 +60,7 @@ export async function POST(request: Request) {
 
   const { error } = await supabase.from("leads").upsert(leadPayload, { onConflict: "email" });
 
-  if (error && (error.message.includes("full_name") || error.message.includes("metadata") || error.message.includes("updated_at"))) {
+  if (error) {
     const fallback = await supabase.from("leads").upsert(
       {
         email,
@@ -71,7 +71,27 @@ export async function POST(request: Request) {
     );
 
     if (fallback.error) {
-      return NextResponse.json({ error: "Supabase insert failed" }, { status: 500 });
+      await supabase.from("events").insert({
+        event_name: "lead_capture_failed",
+        payload: {
+          email,
+          fullName: fullName || null,
+          source,
+          metadata,
+          enriched_error: error.message,
+          fallback_error: fallback.error.message
+        }
+      });
+
+      return NextResponse.json(
+        {
+          ok: true,
+          stored: false,
+          degraded: true,
+          downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
+        },
+        { status: 202 }
+      );
     }
 
     await supabase.from("events").insert({
@@ -91,10 +111,6 @@ export async function POST(request: Request) {
       fallback: true,
       downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
     });
-  }
-
-  if (error) {
-    return NextResponse.json({ error: "Supabase insert failed" }, { status: 500 });
   }
 
   await supabase.from("events").insert({
