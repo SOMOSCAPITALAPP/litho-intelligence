@@ -1118,7 +1118,7 @@ button {
 }
 
 .admin-header {
-  align-items: start;
+  align-items: flex-start;
   display: flex;
   gap: 18px;
   justify-content: space-between;

@@ -59,12 +59,12 @@ export default async function SystemPage() {
   }
 
   const supabase = createSupabaseAdminClient();
-  const tableStatus: Array<{ table: string; ok: boolean }> = [];
+  const tableStatus: Array<{ table: string; ok: boolean; error?: string }> = [];
 
   if (supabase) {
     for (const table of requiredTables) {
       const { error } = await supabase.from(table).select(tableChecks[table] ?? "*").limit(1);
-      tableStatus.push({ table, ok: !error });
+      tableStatus.push({ table, ok: !error, error: error?.message });
     }
   }
 
@@ -77,6 +77,9 @@ export default async function SystemPage() {
     ["Stripe webhook", Boolean(process.env.STRIPE_WEBHOOK_SECRET)],
     ["URL application", Boolean(process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL)]
   ];
+  const displayedTableStatus: Array<{ table: string; ok: boolean; error?: string }> = tableStatus.length
+    ? tableStatus
+    : requiredTables.map((table) => ({ table, ok: false }));
 
   return (
     <main className="section">
@@ -98,10 +101,11 @@ export default async function SystemPage() {
       <section className="section compact-section no-side-padding">
         <h2>Tables Supabase</h2>
         <div className="grid">
-          {(tableStatus.length ? tableStatus : requiredTables.map((table) => ({ table, ok: false }))).map((item) => (
+          {displayedTableStatus.map((item) => (
             <article className="card" key={item.table}>
               <h3>{item.table}</h3>
               <p className={item.ok ? "status-ok" : "status-warn"}>{item.ok ? "OK" : "Manquante ou inaccessible"}</p>
+              {!item.ok && item.error ? <p className="fineprint">{item.error}</p> : null}
             </article>
           ))}
         </div>

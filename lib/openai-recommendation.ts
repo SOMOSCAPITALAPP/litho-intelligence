@@ -146,7 +146,8 @@ export async function checkAIUsageLimit(userId: string | null | undefined, userP
     .gte("created_at", `${today}T00:00:00.000Z`);
 
   if ((globalCalls ?? 0) >= maxDailyCalls) return { allowed: false, reason: "GLOBAL_AI_LIMIT_REACHED" };
-  if (userPlan === "premium" || userPlan === "elite" || !userId) return { allowed: true };
+  if (!userId) return { allowed: false, reason: "ANONYMOUS_AI_DISABLED" };
+  if (userPlan === "premium" || userPlan === "elite") return { allowed: true };
 
   const { count: userCalls } = await supabase
     .from("ai_usage_logs")

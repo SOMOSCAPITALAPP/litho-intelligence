@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { createSupabaseAdminClient } from "@/lib/supabase/server";
+import { isAdminEmail } from "@/lib/admin";
+import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
 import { getStripe } from "@/lib/stripe";
 
 export const dynamic = "force-dynamic";
@@ -35,14 +36,29 @@ const tableChecks: Record<string, string> = {
 };
 
 export async function GET() {
+  const authClient = createSupabaseServerClient();
+  const {
+    data: { user }
+  } = authClient ? await authClient.auth.getUser() : { data: { user: null } };
+
+  if (!user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  if (!isAdminEmail(user.email)) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
   const supabase = createSupabaseAdminClient();
   const tableStatus: Record<string, boolean> = {};
+  const tableErrors: Record<string, string> = {};
 
   if (supabase) {
     await Promise.all(
       requiredTables.map(async (table) => {
         const { error } = await supabase.from(table).select(tableChecks[table] ?? "*").limit(1);
         tableStatus[table] = !error;
+        if (error) tableErrors[table] = error.message;
       })
     );
   }
@@ -66,6 +82,7 @@ export async function GET() {
       appUrl: Boolean(process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL)
     },
     tables: tableStatus,
+    tableErrors,
     requiredTables
   });
 }

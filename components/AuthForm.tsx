@@ -66,6 +66,7 @@ function captureMemberLead(email: string, fullName: string, newsletter: boolean,
     body: JSON.stringify({
       email,
       fullName: fullName.trim(),
+      consent: newsletter,
       source: "membre-gratuit",
       metadata: {
         intent: "free_member_signup",
@@ -87,7 +88,7 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
-  const [newsletter, setNewsletter] = useState(true);
+  const [newsletter, setNewsletter] = useState(false);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const [loading, setLoading] = useState(false);

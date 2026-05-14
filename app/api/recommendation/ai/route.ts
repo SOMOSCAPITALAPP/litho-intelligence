@@ -5,19 +5,52 @@ import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/sup
 import { checkUsageLimit, incrementUsage } from "@/lib/usage";
 import { trackEvent } from "@/lib/analytics";
 import type { MembershipPlan } from "@/lib/plans";
+import { checkRateLimit, getRequestIp } from "@/lib/rate-limit";
+
+function cleanInput(value: unknown) {
+  return typeof value === "string" ? value.trim().slice(0, 240) : "";
+}
 
 export async function POST(request: Request) {
-  const body = await request.json();
+  const ip = getRequestIp(request);
+  const requestLimit = checkRateLimit({
+    key: `recommendation-ai:ip:${ip}`,
+    limit: 30,
+    windowMs: 10 * 60 * 1000
+  });
+
+  if (!requestLimit.allowed) {
+    return NextResponse.json({ error: "Trop de demandes. Réessayez dans quelques minutes." }, { status: 429 });
+  }
+
+  const body = await request.json().catch(() => ({}));
   const input = {
-    physical: body.physical,
-    emotional: body.emotional,
-    goal: body.goal
+    physical: cleanInput(body.physical),
+    emotional: cleanInput(body.emotional),
+    goal: cleanInput(body.goal)
   };
+
+  if (!input.physical && !input.emotional && !input.goal) {
+    return NextResponse.json({ error: "Indiquez au moins un besoin." }, { status: 400 });
+  }
+
   const supabase = createSupabaseServerClient();
   const admin = createSupabaseAdminClient();
   const {
     data: { user }
   } = supabase ? await supabase.auth.getUser() : { data: { user: null } };
+
+  if (!user) {
+    const anonymousLimit = checkRateLimit({
+      key: `recommendation-ai:anonymous:${ip}`,
+      limit: 5,
+      windowMs: 60 * 60 * 1000
+    });
+
+    if (!anonymousLimit.allowed) {
+      return NextResponse.json({ error: "Créez un compte gratuit pour continuer les recommandations." }, { status: 429 });
+    }
+  }
 
   let plan: MembershipPlan = "free";
 
