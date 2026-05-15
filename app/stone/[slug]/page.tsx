@@ -60,6 +60,12 @@ export default function StonePage({ params }: { params: { slug: string } }) {
   if (!stone) notFound();
   const virtueSummary = productStoneVirtueSummary(stone);
   const recommendedProduct = getProductByStone(stone.slug);
+  const faq = [
+    ["Quelle est la signification symbolique de cette pierre ?", `${stone.name} est traditionnellement associée à ${stone.properties.slice(0, 3).join(", ")}.`],
+    ["Comment porter cette pierre au quotidien ?", stone.wear],
+    ["Peut-on l'associer à d'autres pierres ?", `Oui, notamment avec ${stone.compatibilities.slice(0, 3).join(", ")} selon l'intention recherchée.`],
+    ["Cette pierre a-t-elle un effet médical ?", "Non. Elle est présentée comme un support symbolique et ne remplace jamais un avis médical, psychologique ou professionnel."]
+  ];
 
   return (
     <main>
@@ -212,13 +218,22 @@ export default function StonePage({ params }: { params: { slug: string } }) {
         </div>
         <section className="section compact-section no-side-padding">
           <h2>Questions fréquentes sur {stone.name}</h2>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: faq.map(([question, answer]) => ({
+                  "@type": "Question",
+                  name: question,
+                  acceptedAnswer: { "@type": "Answer", text: answer }
+                }))
+              })
+            }}
+          />
           <div className="grid">
-            {[
-              ["Quelle est la signification symbolique de cette pierre ?", `${stone.name} est traditionnellement associée à ${stone.properties.slice(0, 3).join(", ")}.`],
-              ["Comment porter cette pierre au quotidien ?", stone.wear],
-              ["Peut-on l'associer à d'autres pierres ?", `Oui, notamment avec ${stone.compatibilities.slice(0, 3).join(", ")} selon l'intention recherchée.`],
-              ["Cette pierre a-t-elle un effet médical ?", "Non. Elle est présentée comme un support symbolique et ne remplace jamais un avis médical, psychologique ou professionnel."]
-            ].map(([question, answer]) => (
+            {faq.map(([question, answer]) => (
               <article className="card" key={question}>
                 <h3>{question}</h3>
                 <p>{answer}</p>

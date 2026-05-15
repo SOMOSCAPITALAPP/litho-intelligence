@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { aiCrawlerUserAgents } from "@/lib/aiDiscovery";
 import { siteUrl } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,6 +7,11 @@ export default function robots(): MetadataRoute.Robots {
 
   return {
     rules: [
+      {
+        userAgent: aiCrawlerUserAgents,
+        allow: ["/", "/llms.txt", "/sitemap.xml", "/stones/", "/stone/", "/intention/", "/formation", "/boutique-pierres-naturelles"],
+        disallow: ["/admin", "/system", "/api/", "/account", "/profile", "/dashboard"]
+      },
       {
         userAgent: ["facebookexternalhit", "Facebot", "Twitterbot", "LinkedInBot", "WhatsApp", "Slackbot"],
         allow: ["/", "/brand/", "/images/", "/icon.png", "/apple-icon.png"]

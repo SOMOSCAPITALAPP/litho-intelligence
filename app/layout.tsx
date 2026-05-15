@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { InstallAppPrompt } from "@/components/InstallAppPrompt";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PWARegistration } from "@/components/PWARegistration";
+import { StructuredData } from "@/components/StructuredData";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { defaultShareAlt, defaultShareDescription, defaultShareTitle, shareImage, shareImageType, siteUrl } from "@/lib/site";
 import "./globals.css";
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <body>
+        <StructuredData />
         <PWARegistration />
         <InstallAppPrompt />
         <div className="site-shell">
