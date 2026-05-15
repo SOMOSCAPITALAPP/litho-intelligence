@@ -8,11 +8,15 @@ const guideUrl = "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf";
 export function EmailCapture({ source = "results", askName = false }: { source?: string; askName?: boolean }) {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!email.includes("@")) return;
+    if (!email.includes("@") || !consent) {
+      setStatus("error");
+      return;
+    }
     if (askName && !fullName.trim()) {
       setStatus("error");
       return;
@@ -24,6 +28,7 @@ export function EmailCapture({ source = "results", askName = false }: { source?:
       body: JSON.stringify({
         email,
         fullName,
+        consent,
         source,
         metadata: {
           capture_component: "EmailCapture",
@@ -66,6 +71,10 @@ export function EmailCapture({ source = "results", askName = false }: { source?:
         <button className="button gold-button" disabled={status === "loading"} type="submit">
           {status === "loading" ? "Envoi..." : "Recevoir mon guide"}
         </button>
+        <label className="consent-row lead-consent">
+          <input checked={consent} onChange={(event) => setConsent(event.target.checked)} required type="checkbox" />
+          <span>J'accepte de recevoir les conseils, guides et offres Litho Intelligence by Quintessence Cristal. Désinscription possible à tout moment.</span>
+        </label>
       </form>
       {status === "success" ? (
         <div className="capture-success">
@@ -78,7 +87,7 @@ export function EmailCapture({ source = "results", askName = false }: { source?:
           </a>
         </div>
       ) : null}
-      {status === "error" ? <p className="capture-status">Impossible d’enregistrer pour le moment. Réessayez dans un instant.</p> : null}
+      {status === "error" ? <p className="capture-status">Vérifiez votre email et acceptez l'envoi des conseils pour recevoir le guide.</p> : null}
     </section>
   );
 }

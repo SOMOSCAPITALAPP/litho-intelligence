@@ -4,6 +4,7 @@ export type LeadPayload = {
   intention?: string;
   recommendedStone?: string;
   fullName?: string;
+  consent?: boolean;
 };
 
 const localStorageKey = "litho:leads";
@@ -31,6 +32,7 @@ export async function saveLead(payload: LeadPayload) {
       body: JSON.stringify({
         email: payload.email,
         fullName: payload.fullName,
+        consent: Boolean(payload.consent),
         source: payload.source ?? "lead-capture-card",
         metadata: {
           intention: payload.intention,

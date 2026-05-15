@@ -1553,6 +1553,23 @@ button {
   line-height: 1.45;
 }
 
+.lead-consent {
+  color: var(--muted);
+  font-size: 0.82rem;
+  grid-column: 1 / -1;
+}
+
+.email-capture .lead-consent {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.lead-consent input {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  min-height: auto;
+  width: auto;
+}
+
 .form-error {
   color: #ffb7b7;
 }

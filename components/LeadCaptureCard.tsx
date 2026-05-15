@@ -24,17 +24,18 @@ export function LeadCaptureCard({
   recommendedStone
 }: LeadCaptureCardProps) {
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!email.includes("@")) {
+    if (!email.includes("@") || !consent) {
       setStatus("error");
       return;
     }
 
     setStatus("loading");
-    const result = await saveLead({ email, source, intention, recommendedStone });
+    const result = await saveLead({ email, source, intention, recommendedStone, consent });
     setStatus(result.ok || result.local ? "success" : "error");
   }
 
@@ -60,9 +61,13 @@ export function LeadCaptureCard({
         <button className="button gold-button" disabled={status === "loading"} type="submit">
           {status === "loading" ? "Envoi..." : buttonLabel}
         </button>
+        <label className="consent-row lead-consent">
+          <input checked={consent} onChange={(event) => setConsent(event.target.checked)} required type="checkbox" />
+          <span>J'accepte de recevoir les conseils, guides et offres Litho Intelligence by Quintessence Cristal. Désinscription possible à tout moment.</span>
+        </label>
       </form>
       {status === "success" ? <p className="capture-status">Votre demande est bien prise en compte. Le guide est accessible depuis votre espace et les ressources du site.</p> : null}
-      {status === "error" ? <p className="form-error">Indiquez une adresse email valide.</p> : null}
+      {status === "error" ? <p className="form-error">Indiquez une adresse email valide et acceptez l'envoi des conseils pour recevoir le guide.</p> : null}
     </section>
   );
 }

@@ -122,7 +122,30 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
 STRIPE_PREMIUM_PRICE_ID=
 
 NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=
+
+# Optionnel, plan gratuit Brevo possible au demarrage.
+# Si absent, les leads restent stockes dans Supabase et l'application continue de fonctionner.
+BREVO_API_KEY=
+BREVO_LIST_ID=
+# ou plusieurs listes: BREVO_LIST_IDS=12,34
+BREVO_SYNC_DEFAULT_ATTRIBUTES=false
 ```
+
+## Email marketing gratuit
+
+La capture email passe par `POST /api/email-capture`.
+
+- Supabase reste la base maitre: email, nom, source, consentement et metadata.
+- Brevo est optionnel: si `BREVO_API_KEY` est configuree, les contacts avec consentement explicite sont synchronises.
+- Les contacts sans consentement restent en base, mais ne sont pas envoyes vers Brevo pour prospection.
+- Les champs `source`, `intention` et `recommendedStone` restent dans Supabase pour segmenter les campagnes et exporter si besoin.
+
+Flux recommande:
+
+1. Guide gratuit immediat.
+2. Email J+1 selon intention ou pierre recommandee.
+3. Email J+3 avec conseil d'usage symbolique.
+4. Email J+7 avec bracelet Amazon ou formation certifiante.
 
 ## Supabase
 
