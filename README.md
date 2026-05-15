@@ -147,6 +147,8 @@ Flux recommande:
 3. Email J+3 avec conseil d'usage symbolique.
 4. Email J+7 avec bracelet Amazon ou formation certifiante.
 
+Les emails prets a integrer dans Brevo sont disponibles dans `docs/brevo-email-sequences.md`.
+
 ## Supabase
 
 Executer les migrations:
