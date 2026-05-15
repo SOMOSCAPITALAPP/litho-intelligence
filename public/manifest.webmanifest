@@ -9,7 +9,7 @@
   "orientation": "portrait",
   "background_color": "#f7f1ea",
   "theme_color": "#b77a65",
-  "categories": ["education", "health", "lifestyle"],
+  "categories": ["education", "lifestyle", "shopping"],
   "lang": "fr-FR",
   "dir": "ltr",
   "prefer_related_applications": false,

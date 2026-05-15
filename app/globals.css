@@ -2602,6 +2602,77 @@ button {
   padding: 26px clamp(18px, 5vw, 64px);
 }
 
+.install-app-prompt {
+  align-items: center;
+  background: rgba(255, 250, 247, 0.96);
+  border: 1px solid rgba(139, 70, 86, 0.18);
+  border-radius: 18px;
+  bottom: 18px;
+  box-shadow: 0 18px 50px rgba(72, 38, 46, 0.16);
+  color: var(--ink);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  left: 50%;
+  max-width: min(560px, calc(100vw - 28px));
+  padding: 14px 48px 14px 14px;
+  position: fixed;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 80;
+}
+
+.install-app-icon {
+  align-items: center;
+  background: rgba(217, 144, 145, 0.18);
+  border-radius: 999px;
+  color: var(--accent);
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.install-app-prompt strong {
+  display: block;
+  font-size: 0.96rem;
+  margin-bottom: 2px;
+}
+
+.install-app-prompt p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.install-app-button {
+  min-height: 42px;
+  padding: 0 16px;
+  white-space: nowrap;
+}
+
+.install-app-dismiss {
+  align-items: center;
+  background: rgba(36, 27, 29, 0.08);
+  border: 0;
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 28px;
+}
+
+.install-app-dismiss:hover {
+  background: rgba(36, 27, 29, 0.14);
+  color: var(--ink);
+}
+
 @media (max-width: 900px) {
   .hero,
   .stone-hero {
@@ -2736,6 +2807,19 @@ button {
 }
 
 @media (max-width: 520px) {
+  .install-app-prompt {
+    border-radius: 16px;
+    bottom: 12px;
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 14px 44px 14px 14px;
+    width: calc(100vw - 24px);
+  }
+
+  .install-app-button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
   .nav {
     gap: 14px;
   }

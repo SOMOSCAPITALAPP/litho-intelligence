@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { InstallAppPrompt } from "@/components/InstallAppPrompt";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PWARegistration } from "@/components/PWARegistration";
 import { wellbeingDisclaimer } from "@/lib/legal";
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr">
       <body>
         <PWARegistration />
+        <InstallAppPrompt />
         <div className="site-shell">
           <SiteHeader />
           {children}
