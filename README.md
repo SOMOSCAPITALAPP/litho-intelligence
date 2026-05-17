@@ -151,6 +151,7 @@ Flux recommande:
 4. Email J+7 avec bracelet Amazon ou formation certifiante.
 
 Les emails prets a integrer dans Brevo sont disponibles dans `docs/brevo-email-sequences.md`.
+Les automatisations systeme.io a creer avec les tags envoyes par l'application sont disponibles dans `docs/systeme-io-automations.md`.
 
 ## Supabase
 
