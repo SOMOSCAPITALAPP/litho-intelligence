@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { syncLeadToBrevo } from "@/lib/brevo";
 import { checkRateLimit, getRequestIp } from "@/lib/rate-limit";
+import { syncLeadToSysteme } from "@/lib/systeme";
 import { createSupabaseAdminClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
@@ -44,12 +45,20 @@ export async function POST(request: Request) {
     consent,
     metadata
   });
+  const systemeResult = await syncLeadToSysteme({
+    email,
+    fullName,
+    source,
+    consent,
+    metadata
+  });
 
   if (!supabase) {
     return NextResponse.json({
       ok: true,
       stored: false,
       brevo: brevoResult,
+      systeme: systemeResult,
       downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
     });
   }
@@ -64,6 +73,7 @@ export async function POST(request: Request) {
       latest_source: source,
       marketing_consent: consent,
       brevo_sync: brevoResult,
+      systeme_sync: systemeResult,
       captured_at: new Date().toISOString()
     },
     updated_at: new Date().toISOString()
@@ -90,6 +100,7 @@ export async function POST(request: Request) {
           source,
           metadata,
           brevo: brevoResult,
+          systeme: systemeResult,
           enriched_error: error.message,
           fallback_error: fallback.error.message
         }
@@ -101,6 +112,7 @@ export async function POST(request: Request) {
           stored: false,
           degraded: true,
           brevo: brevoResult,
+          systeme: systemeResult,
           downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
         },
         { status: 202 }
@@ -115,6 +127,7 @@ export async function POST(request: Request) {
         source,
         metadata,
         brevo: brevoResult,
+        systeme: systemeResult,
         fallback: true
       }
     });
@@ -123,6 +136,7 @@ export async function POST(request: Request) {
       ok: true,
       stored: true,
       brevo: brevoResult,
+      systeme: systemeResult,
       fallback: true,
       downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
     });
@@ -135,7 +149,8 @@ export async function POST(request: Request) {
       fullName: fullName || null,
       source,
       metadata,
-      brevo: brevoResult
+      brevo: brevoResult,
+      systeme: systemeResult
     }
   });
 
@@ -143,6 +158,7 @@ export async function POST(request: Request) {
     ok: true,
     stored: true,
     brevo: brevoResult,
+    systeme: systemeResult,
     downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
   });
 }

@@ -116,6 +116,8 @@ NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 
+SYSTEME_IO_API_KEY=
+
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
@@ -136,6 +138,7 @@ BREVO_SYNC_DEFAULT_ATTRIBUTES=false
 La capture email passe par `POST /api/email-capture`.
 
 - Supabase reste la base maitre: email, nom, source, consentement et metadata.
+- Systeme.io peut devenir le CRM marketing principal: si `SYSTEME_IO_API_KEY` est configuree, les contacts consentants sont crees ou mis a jour, puis tags selon source/intention.
 - Brevo est optionnel: si `BREVO_API_KEY` est configuree, les contacts avec consentement explicite sont synchronises.
 - Les contacts sans consentement restent en base, mais ne sont pas envoyes vers Brevo pour prospection.
 - Les champs `source`, `intention` et `recommendedStone` restent dans Supabase pour segmenter les campagnes et exporter si besoin.
