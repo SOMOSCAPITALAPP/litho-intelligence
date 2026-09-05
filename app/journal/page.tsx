@@ -11,6 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default function JournalPage() {
+  const [featuredArticle, ...otherArticles] = journalArticles;
+  const priorityArticles = otherArticles.slice(0, 6);
+  const archiveArticles = otherArticles.slice(6);
+
   return (
     <main className="section compact-section">
       <p className="eyebrow">Journal</p>
@@ -20,15 +24,28 @@ export default function JournalPage() {
         tradition symbolique et choix responsable.
       </p>
 
+      {featuredArticle ? (
+        <section className="section compact-section no-side-padding">
+          <article className="card">
+            <p className="eyebrow">À la une | {featuredArticle.category} | {featuredArticle.readingTime}</p>
+            <h2>{featuredArticle.title}</h2>
+            <p>{featuredArticle.description}</p>
+            <Link className="primary-button" href={`/journal/${featuredArticle.slug}`}>
+              Lire le dossier <ArrowRight size={17} />
+            </Link>
+          </article>
+        </section>
+      ) : null}
+
       <section className="section compact-section no-side-padding">
         <div className="section-heading-row">
           <div>
             <p className="eyebrow">Articles de fond</p>
-            <h2>Les analyses à lire en priorité</h2>
+            <h2>Les dossiers à lire en priorité</h2>
           </div>
         </div>
         <div className="grid">
-          {journalArticles.map((article) => (
+          {priorityArticles.map((article) => (
             <article className="card" key={article.slug}>
               <BookOpen size={22} />
               <p className="eyebrow">{article.category} | {article.readingTime}</p>
@@ -41,6 +58,30 @@ export default function JournalPage() {
           ))}
         </div>
       </section>
+
+      {archiveArticles.length > 0 ? (
+        <section className="section compact-section no-side-padding">
+          <div className="section-heading-row">
+            <div>
+              <p className="eyebrow">Bibliothèque</p>
+              <h2>Tous les autres articles</h2>
+            </div>
+          </div>
+          <div className="grid">
+            {archiveArticles.map((article) => (
+              <article className="card" key={article.slug}>
+                <BookOpen size={22} />
+                <p className="eyebrow">{article.category} | {article.readingTime}</p>
+                <h2>{article.title}</h2>
+                <p>{article.description}</p>
+                <Link className="micro-action" href={`/journal/${article.slug}`}>
+                  Lire l'article <ArrowRight size={15} />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="section compact-section no-side-padding">
         <div className="section-heading-row">
