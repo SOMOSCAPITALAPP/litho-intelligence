@@ -79,7 +79,7 @@ export function EmailCapture({ source = "results", askName = false }: { source?:
       {status === "success" ? (
         <div className="capture-success">
           <p className="capture-status">
-            Votre adresse est bien enregistrée. Le guide s’ouvre immédiatement ici. L’envoi automatique par email n’est pas encore activé.
+            Votre demande est bien prise en compte. Le guide s’ouvre immédiatement ici et vous pourrez recevoir nos conseils par email.
           </p>
           <a className="button secondary" href={guideUrl} target="_blank" rel="noreferrer">
             <Download size={17} />
