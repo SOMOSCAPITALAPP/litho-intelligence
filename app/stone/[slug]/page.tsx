@@ -9,6 +9,7 @@ import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { ShareActions } from "@/components/ShareActions";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { slugifyVirtue } from "@/lib/virtues";
 import { productStoneVirtueSummary } from "@/lib/stoneVirtueSummary";
 import { getProductByStone } from "@/lib/products";
@@ -31,7 +32,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     openGraph: {
       title,
       description,
-      url: `/stone/${params.slug}`,
+      url: `/pierres/${params.slug}`,
       siteName: "Litho Intelligence",
       locale: "fr_FR",
       type: "website",
@@ -110,7 +111,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             <h2>À quelles intentions cette pierre est-elle associée ?</h2>
             <div className="pill-row">
               {stone.goals.map((goal) => (
-                <Link className="pill" href={`/intention/${goal}`} key={goal}>
+                <Link className="pill" href={`/intentions/${goal}`} key={goal}>
                   {goal}
                 </Link>
               ))}
@@ -190,14 +191,22 @@ export default function StonePage({ params }: { params: { slug: string } }) {
             networks
             title={`${stone.name} | Litho Intelligence`}
             text={`Je découvre ${stone.name} sur Litho Intelligence.`}
-            url={`/stone/${stone.slug}`}
+            url={`/pierres/${stone.slug}`}
           />
           <div className="premium-actions">
             <AddFavoriteButton stoneSlug={stone.slug} />
           </div>
           <div className="product-grid">
             {stone.products.map((product) => (
-              <Link className="product-card" href={withAffiliate(product.url)} key={product.label} rel="noopener noreferrer" target="_blank">
+              <TrackedOutboundLink
+                className="product-card"
+                eventName="amazon_click"
+                href={withAffiliate(product.url)}
+                key={product.label}
+                payload={{ stone: stone.name, product: product.label, source: "legacy-stone-product-grid" }}
+                rel="noopener noreferrer sponsored"
+                target="_blank"
+              >
                 <span className="product-brand">{product.brand}</span>
                 {product.badge ? <span className="product-badge">{product.badge}</span> : null}
                 <strong>{product.label}</strong>
@@ -211,7 +220,7 @@ export default function StonePage({ params }: { params: { slug: string } }) {
                   <ShoppingBag size={17} />
                   Voir le bracelet associé
                 </span>
-              </Link>
+              </TrackedOutboundLink>
             ))}
           </div>
           <p className="fineprint">{wellbeingDisclaimer}</p>

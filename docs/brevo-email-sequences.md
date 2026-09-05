@@ -66,7 +66,7 @@ Corps :
 
 Bonjour,
 
-Quand on découvre les pierres naturelles, on peut vite se sentir perdu : labradorite, quartz rose, oeil de tigre, améthyste, obsidienne, jade, howlite...
+Quand on découvre les pierres naturelles, on peut vite se sentir perdu : labradorite, quartz rose, œil de tigre, améthyste, obsidienne, jade, howlite...
 
 La bonne question n'est pas forcément : quelle est la meilleure pierre ?
 
@@ -79,7 +79,7 @@ Voici quelques repères simples :
 - Besoin de protection : labradorite, obsidienne noire, tourmaline noire
 - Besoin de douceur : quartz rose, rhodonite, jade
 - Besoin de calme : améthyste, howlite, calcite bleue
-- Besoin de confiance : oeil de tigre, citrine, pyrite
+- Besoin de confiance : œil de tigre, citrine, pyrite
 - Besoin d'énergie : cornaline, jaspe rouge, pierre de soleil
 
 Litho Intelligence vous aide à partir de votre intention, puis à découvrir les pierres traditionnellement associées à ce besoin symbolique.
@@ -115,7 +115,7 @@ Exemples :
 
 - Labradorite : "Je protège mon énergie et je respecte mes limites."
 - Quartz rose : "Je m'accorde plus de douceur."
-- Oeil de tigre : "J'avance avec confiance."
+- Œil de tigre : "J'avance avec confiance."
 - Améthyste : "Je reviens au calme."
 - Obsidienne noire : "Je m'ancre dans le réel."
 
@@ -125,7 +125,7 @@ CTA :
 Découvrir les fiches pierres
 
 Lien :
-https://litho-intelligence.com/stones
+https://litho-intelligence.com/pierres
 
 ### Email 4 - J+5
 
@@ -152,7 +152,7 @@ Quelques choix classiques :
 
 - Labradorite : protection symbolique et sensibilité
 - Quartz rose : douceur et amour de soi
-- Oeil de tigre : confiance et passage à l'action
+- Œil de tigre : confiance et passage à l'action
 - Améthyste : calme et recentrage
 - Pyrite : structure, rayonnement et abondance symbolique
 
@@ -263,7 +263,7 @@ CTA :
 Explorer les intentions
 
 Lien :
-https://litho-intelligence.com/intention
+https://litho-intelligence.com/intentions
 
 ### Email 3 - J+4
 

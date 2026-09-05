@@ -38,12 +38,12 @@ export function getPriorityAiPages() {
     },
     {
       title: "Catalogue des pierres naturelles",
-      url: absoluteUrl("/stones"),
+      url: absoluteUrl("/pierres"),
       description: "Fiches pierres, significations symboliques, intentions associées et conseils d'utilisation."
     },
     {
       title: "Pierres par intention",
-      url: absoluteUrl("/intention"),
+      url: absoluteUrl("/intentions"),
       description: "Guides SEO par intention : stress, sommeil, protection, amour, énergie, confiance et cadeau."
     },
     {
@@ -62,7 +62,7 @@ export function getPriorityAiPages() {
 export function getAiIntentionPages() {
   return intentionPages.slice(0, 14).map((page) => ({
     title: page.seoTitle,
-    url: absoluteUrl(`/intention/${page.slug}`),
+    url: absoluteUrl(`/intentions/${page.slug}`),
     description: page.seoDescription
   }));
 }
@@ -70,13 +70,13 @@ export function getAiIntentionPages() {
 export function getAiStonePages() {
   const native = nativeStones.slice(0, 30).map((stone) => ({
     title: `${stone.name} : fiche pierre naturelle`,
-    url: absoluteUrl(`/stones/${stone.slug}`),
+    url: absoluteUrl(`/pierres/${stone.slug}`),
     description: stone.short_description
   }));
 
   const productPages = stones.slice(0, 24).map((stone) => ({
     title: `${stone.name} : signification et bracelet recommandé`,
-    url: absoluteUrl(`/stone/${stone.slug}`),
+    url: absoluteUrl(`/pierres/${stone.slug}`),
     description: stone.description
   }));
 

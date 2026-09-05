@@ -15,7 +15,7 @@
     "course": [
       {
         "heading": "Pourquoi ce module compte",
-        "body": "Ce module approfondit le cadre responsable de la lithothérapie. L'objectif n'est pas seulement de mémoriser quelques définitions, mais de comprendre la logique qui permet de pratiquer avec discernement. La question centrale est la suivante : comment utiliser les pierres comme supports symboliques sans leur attribuer un pouvoir médical. Pour y répondre, il faut partir de situations concrètes, accepter que les pierres appartiennent ici à un champ symbolique et garder une posture d'observation. Une formation sérieuse ne cherche pas à impressionner par des promesses, mais à donner des repères stables. Elle aide à nommer une intention, à choisir un geste adapté, à observer ce qui se passe et à rester libre d'ajuster. Cette base change tout : l'apprenant ne subit plus des listes de propriétés, il apprend à construire une pratique claire, personnelle et responsable. Dans ce cadre, chaque pierre devient un support de présence, un rappel matériel et une invitation à agir avec plus de cohérence.",
+        "body": "Ce module approfondit le cadre responsable de la lithothérapie. L'objectif n'est pas seulement de mémoriser quelques définitions, mais de comprendre la logique qui permet de pratiquer avec discernement. La question centrale est la suivante : comment utiliser les pierres comme supports symboliques sans leur attribuer une action sur la santé. Pour y répondre, il faut partir de situations concrètes, accepter que les pierres appartiennent ici à un champ symbolique et garder une posture d'observation. Une formation sérieuse ne cherche pas à impressionner par des promesses, mais à donner des repères stables. Elle aide à nommer une intention, à choisir un geste adapté, à observer ce qui se passe et à rester libre d'ajuster. Cette base change tout : l'apprenant ne subit plus des listes de propriétés, il apprend à construire une pratique claire, personnelle et responsable. Dans ce cadre, chaque pierre devient un support de présence, un rappel matériel et une invitation à agir avec plus de cohérence.",
         "bullets": []
       },
       {
@@ -45,9 +45,9 @@
       },
       {
         "heading": "Erreurs fréquentes",
-        "body": "Les erreurs fréquentes sont connues : promettre une guérison, remplacer un avis professionnel, copier une liste de propriétés sans contexte, ou présenter son ressenti personnel comme une vérité universelle. Ces erreurs partent souvent d'une bonne intention, mais elles fragilisent la crédibilité de la pratique. Quand on promet trop, on crée de la déception. Quand on accumule trop, on perd le fil. Quand on copie sans comprendre, on ne sait plus pourquoi on fait les choses. Pour éviter cela, utilisez une règle simple : si vous ne pouvez pas expliquer votre choix en deux phrases, simplifiez. Si vous ne pouvez pas répéter le geste trois jours de suite, réduisez-le. Si vous sentez que la pratique remplace une demande d'aide importante, arrêtez-vous et cherchez un soutien adapté. La lithothérapie symbolique peut accompagner, ritualiser, rassurer ou structurer, mais elle ne doit pas isoler ni retarder une aide nécessaire.",
+        "body": "Les erreurs fréquentes sont connues : promettre une transformation certaine, remplacer un avis professionnel, copier une liste de propriétés sans contexte, ou présenter son ressenti personnel comme une vérité universelle. Ces erreurs partent souvent d'une bonne intention, mais elles fragilisent la crédibilité de la pratique. Quand on promet trop, on crée de la déception. Quand on accumule trop, on perd le fil. Quand on copie sans comprendre, on ne sait plus pourquoi on fait les choses. Pour éviter cela, utilisez une règle simple : si vous ne pouvez pas expliquer votre choix en deux phrases, simplifiez. Si vous ne pouvez pas répéter le geste trois jours de suite, réduisez-le. Si vous sentez que la pratique remplace une demande d'aide importante, arrêtez-vous et cherchez un soutien adapté. La lithothérapie symbolique peut accompagner, ritualiser, rassurer ou structurer, mais elle ne doit pas isoler ni retarder une aide nécessaire.",
         "bullets": [
-          "promettre un résultat garanti",
+          "promettre un effet certain",
           "accumuler trop de pierres à la fois",
           "copier un rituel sans comprendre son intention",
           "oublier qu'une aide professionnelle reste prioritaire si nécessaire"
@@ -69,13 +69,13 @@
         ]
       }
     ],
-    "exercise": "Redigez votre charte personnelle en trois parties : votre définition responsable de la lithothérapie, trois phrases que vous refusez d'utiliser car elles promettent trop, puis trois phrases justes que vous pouvez employer avec un proche ou un client.",
+    "exercise": "Rédigez votre charte personnelle en trois parties : votre définition responsable de la lithothérapie, trois phrases que vous refusez d'utiliser car elles promettent trop, puis trois phrases justes que vous pouvez employer avec un proche ou un client.",
     "quiz": [
       {
         "question": "Dans cette formation, une pierre est surtout présentée comme...",
         "options": [
           "Un support d'intention",
-          "Un traitement garanti",
+          "Une réponse automatique",
           "Un diagnostic énergétique"
         ],
         "answer": 0,
@@ -84,7 +84,7 @@
       {
         "question": "Quelle phrase respecte le mieux le cadre responsable ?",
         "options": [
-          "Cette pierre soigne l'anxiété",
+          "Cette pierre règle tout à elle seule",
           "Cette pierre peut soutenir une intention de calme",
           "Cette pierre remplace un suivi professionnel"
         ],
@@ -95,14 +95,14 @@
         "question": "Pourquoi formuler une intention avant d'utiliser une pierre ?",
         "options": [
           "Pour donner une direction à la pratique",
-          "Pour garantir un résultat immédiat",
+          "Pour obtenir un effet automatique",
           "Pour éviter toute observation"
         ],
         "answer": 0,
         "explanation": "L'intention clarifie l'usage et rend le geste plus conscient."
       },
       {
-        "question": "Que faut-il faire face à un symptome physique ou psychologique important ?",
+        "question": "Que faut-il faire face à un symptôme physique ou psychologique important ?",
         "options": [
           "Consulter un professionnel qualifié",
           "Multiplier les pierres",
@@ -115,7 +115,7 @@
         "question": "Quel vocabulaire est le plus prudent ?",
         "options": [
           "Soutenir, accompagner, symboliser",
-          "Guérir, diagnostiquer, remplacer",
+          "Promettre, imposer, remplacer",
           "Forcer, prouver, imposer"
         ],
         "answer": 0,
@@ -136,7 +136,7 @@
         "options": [
           "Pour mieux observer ce qui aide vraiment",
           "Pour prouver que tout fonctionne",
-          "Pour éviter de reflechir"
+          "Pour éviter de réfléchir"
         ],
         "answer": 0,
         "explanation": "La trace favorise l'observation et l'ajustement."
@@ -194,7 +194,7 @@
     "course": [
       {
         "heading": "Pourquoi ce module compte",
-        "body": "Ce module approfondit le choix d'une pierre à partir d'une intention claire. L'objectif n'est pas seulement de mémoriser quelques définitions, mais de comprendre la logique qui permet de pratiquer avec discernement. La question centrale est la suivante : comment passer d'un besoin personnel à une selection courte, cohérente et facile à pratiquer. Pour y répondre, il faut partir de situations concrètes, accepter que les pierres appartiennent ici à un champ symbolique et garder une posture d'observation. Une formation sérieuse ne cherche pas à impressionner par des promesses, mais à donner des repères stables. Elle aide à nommer une intention, à choisir un geste adapté, à observer ce qui se passe et à rester libre d'ajuster. Cette base change tout : l'apprenant ne subit plus des listes de propriétés, il apprend à construire une pratique claire, personnelle et responsable. Dans ce cadre, chaque pierre devient un support de présence, un rappel matériel et une invitation à agir avec plus de cohérence.",
+        "body": "Ce module approfondit le choix d'une pierre à partir d'une intention claire. L'objectif n'est pas seulement de mémoriser quelques définitions, mais de comprendre la logique qui permet de pratiquer avec discernement. La question centrale est la suivante : comment passer d'un besoin personnel à une sélection courte, cohérente et facile à pratiquer. Pour y répondre, il faut partir de situations concrètes, accepter que les pierres appartiennent ici à un champ symbolique et garder une posture d'observation. Une formation sérieuse ne cherche pas à impressionner par des promesses, mais à donner des repères stables. Elle aide à nommer une intention, à choisir un geste adapté, à observer ce qui se passe et à rester libre d'ajuster. Cette base change tout : l'apprenant ne subit plus des listes de propriétés, il apprend à construire une pratique claire, personnelle et responsable. Dans ce cadre, chaque pierre devient un support de présence, un rappel matériel et une invitation à agir avec plus de cohérence.",
         "bullets": []
       },
       {
@@ -226,7 +226,7 @@
         "heading": "Erreurs fréquentes",
         "body": "Les erreurs fréquentes sont connues : acheter trop vite, mélanger dix intentions, confondre esthetique et usage, choisir une pierre parce qu'elle est rare plutot que parce qu'elle correspond au moment. Ces erreurs partent souvent d'une bonne intention, mais elles fragilisent la crédibilité de la pratique. Quand on promet trop, on crée de la déception. Quand on accumule trop, on perd le fil. Quand on copie sans comprendre, on ne sait plus pourquoi on fait les choses. Pour éviter cela, utilisez une règle simple : si vous ne pouvez pas expliquer votre choix en deux phrases, simplifiez. Si vous ne pouvez pas répéter le geste trois jours de suite, réduisez-le. Si vous sentez que la pratique remplace une demande d'aide importante, arrêtez-vous et cherchez un soutien adapté. La lithothérapie symbolique peut accompagner, ritualiser, rassurer ou structurer, mais elle ne doit pas isoler ni retarder une aide nécessaire.",
         "bullets": [
-          "promettre un résultat garanti",
+          "promettre un effet certain",
           "accumuler trop de pierres à la fois",
           "copier un rituel sans comprendre son intention",
           "oublier qu'une aide professionnelle reste prioritaire si nécessaire"
@@ -248,7 +248,7 @@
         ]
       }
     ],
-    "exercise": "Choisissez trois situations reelles de votre semaine. Pour chacune, formulez une intention en une phrase, selectionnez une pierre principale, expliquez votre choix et indiquez le geste concret qui accompagnera la pierre.",
+    "exercise": "Choisissez trois situations réelles de votre semaine. Pour chacune, formulez une intention en une phrase, sélectionnez une pierre principale, expliquez votre choix et indiquez le geste concret qui accompagnera la pierre.",
     "quiz": [
       {
         "question": "Quelle est la première question à poser avant de choisir une pierre ?",
@@ -268,7 +268,7 @@
           "Pour éviter de les regarder"
         ],
         "answer": 0,
-        "explanation": "Une selection courte facilite la régularité."
+        "explanation": "Une sélection courte facilite la régularité."
       },
       {
         "question": "Pour une intention de limites, quelle famille est souvent choisie ?",
@@ -368,7 +368,7 @@
     "objectives": [
       "Comprendre la difference entre purification et recharge",
       "Choisir des méthodes douces et prudentes",
-      "Creer une routine réaliste"
+      "Créer une routine réaliste"
     ],
     "course": [
       {
@@ -405,7 +405,7 @@
         "heading": "Erreurs fréquentes",
         "body": "Les erreurs fréquentes sont connues : mettre toutes les pierres dans l'eau, utiliser du sel humide par automatisme, exposer longuement au soleil une pierre sensible, ou croire qu'un rituel complique vaut mieux qu'une routine stable. Ces erreurs partent souvent d'une bonne intention, mais elles fragilisent la crédibilité de la pratique. Quand on promet trop, on crée de la déception. Quand on accumule trop, on perd le fil. Quand on copie sans comprendre, on ne sait plus pourquoi on fait les choses. Pour éviter cela, utilisez une règle simple : si vous ne pouvez pas expliquer votre choix en deux phrases, simplifiez. Si vous ne pouvez pas répéter le geste trois jours de suite, réduisez-le. Si vous sentez que la pratique remplace une demande d'aide importante, arrêtez-vous et cherchez un soutien adapté. La lithothérapie symbolique peut accompagner, ritualiser, rassurer ou structurer, mais elle ne doit pas isoler ni retarder une aide nécessaire.",
         "bullets": [
-          "promettre un résultat garanti",
+          "promettre un effet certain",
           "accumuler trop de pierres à la fois",
           "copier un rituel sans comprendre son intention",
           "oublier qu'une aide professionnelle reste prioritaire si nécessaire"
@@ -584,7 +584,7 @@
         "heading": "Erreurs fréquentes",
         "body": "Les erreurs fréquentes sont connues : surinterpréter chaque sensation, croire qu'une émotion doit disparaitre immediatement, utiliser une pierre pour éviter une conversation nécessaire, ou confondre observation et diagnostic. Ces erreurs partent souvent d'une bonne intention, mais elles fragilisent la crédibilité de la pratique. Quand on promet trop, on crée de la déception. Quand on accumule trop, on perd le fil. Quand on copie sans comprendre, on ne sait plus pourquoi on fait les choses. Pour éviter cela, utilisez une règle simple : si vous ne pouvez pas expliquer votre choix en deux phrases, simplifiez. Si vous ne pouvez pas répéter le geste trois jours de suite, réduisez-le. Si vous sentez que la pratique remplace une demande d'aide importante, arrêtez-vous et cherchez un soutien adapté. La lithothérapie symbolique peut accompagner, ritualiser, rassurer ou structurer, mais elle ne doit pas isoler ni retarder une aide nécessaire.",
         "bullets": [
-          "promettre un résultat garanti",
+          "promettre un effet certain",
           "accumuler trop de pierres à la fois",
           "copier un rituel sans comprendre son intention",
           "oublier qu'une aide professionnelle reste prioritaire si nécessaire"
@@ -722,7 +722,7 @@
     "duration": "75 min",
     "level": "Tous niveaux",
     "pdfUrl": "/guides/formation-litho-05-mediter.pdf",
-    "goal": "Creer une pratique guidée par texte, respiration et intention, sans support vidéo.",
+    "goal": "Créer une pratique guidée par texte, respiration et intention, sans support vidéo.",
     "objectives": [
       "Preparer un espace court et réaliste",
       "Utiliser une pierre comme ancre d'attention",
@@ -763,7 +763,7 @@
         "heading": "Erreurs fréquentes",
         "body": "Les erreurs fréquentes sont connues : chercher une performance interieure, rester trop longtemps dès le début, se juger quand le mental bouge, ou oublier de relier la méditation à une action concrète. Ces erreurs partent souvent d'une bonne intention, mais elles fragilisent la crédibilité de la pratique. Quand on promet trop, on crée de la déception. Quand on accumule trop, on perd le fil. Quand on copie sans comprendre, on ne sait plus pourquoi on fait les choses. Pour éviter cela, utilisez une règle simple : si vous ne pouvez pas expliquer votre choix en deux phrases, simplifiez. Si vous ne pouvez pas répéter le geste trois jours de suite, réduisez-le. Si vous sentez que la pratique remplace une demande d'aide importante, arrêtez-vous et cherchez un soutien adapté. La lithothérapie symbolique peut accompagner, ritualiser, rassurer ou structurer, mais elle ne doit pas isoler ni retarder une aide nécessaire.",
         "bullets": [
-          "promettre un résultat garanti",
+          "promettre un effet certain",
           "accumuler trop de pierres à la fois",
           "copier un rituel sans comprendre son intention",
           "oublier qu'une aide professionnelle reste prioritaire si nécessaire"
@@ -897,7 +897,7 @@
   {
     "id": "rituel",
     "step": 6,
-    "title": "Creer un rituel simple et durable",
+    "title": "Créer un rituel simple et durable",
     "duration": "80 min",
     "level": "Intermédiaire",
     "pdfUrl": "/guides/formation-litho-06-rituel.pdf",
@@ -942,7 +942,7 @@
         "heading": "Erreurs fréquentes",
         "body": "Les erreurs fréquentes sont connues : créer un rituel trop long, attendre le moment parfait, multiplier les objets, oublier la trace, ou garder un rituel qui n'aide plus par habitude. Ces erreurs partent souvent d'une bonne intention, mais elles fragilisent la crédibilité de la pratique. Quand on promet trop, on crée de la déception. Quand on accumule trop, on perd le fil. Quand on copie sans comprendre, on ne sait plus pourquoi on fait les choses. Pour éviter cela, utilisez une règle simple : si vous ne pouvez pas expliquer votre choix en deux phrases, simplifiez. Si vous ne pouvez pas répéter le geste trois jours de suite, réduisez-le. Si vous sentez que la pratique remplace une demande d'aide importante, arrêtez-vous et cherchez un soutien adapté. La lithothérapie symbolique peut accompagner, ritualiser, rassurer ou structurer, mais elle ne doit pas isoler ni retarder une aide nécessaire.",
         "bullets": [
-          "promettre un résultat garanti",
+          "promettre un effet certain",
           "accumuler trop de pierres à la fois",
           "copier un rituel sans comprendre son intention",
           "oublier qu'une aide professionnelle reste prioritaire si nécessaire"
@@ -969,7 +969,7 @@
       {
         "question": "Quel element n'appartient pas à la structure simple proposée ?",
         "options": [
-          "Une promesse de résultat garanti",
+          "Une promesse d'effet certain",
           "Une intention",
           "Une trace"
         ],
@@ -1103,7 +1103,7 @@
       },
       {
         "heading": "Méthode pas à pas",
-        "body": "La méthode proposée est volontairement simple : partir de la relation, choisir une intention positive, selectionner une pierre lisible, écrire une carte sobre, laisser la personne libre de s'approprier ou non le cadeau. Chaque étape a une fonction précise. Nommer l'intention évite la dispersion. Choisir peu de pierres rend l'expérience lisible. Poser un geste transforme l'idée en pratique. Observer empêche de fonctionner uniquement par croyance automatique. Ajuster permet de rester vivant dans sa pratique. Pour appliquer cette méthode, prenez un carnet ou une note numérique et répondez à quatre questions : qu'est-ce que je veux soutenir, pourquoi maintenant, quelle pierre représente le mieux cette direction, et quel geste puis-je répéter sans effort excessif ? Une pratique trop lourde finit souvent abandonnée. Une pratique courte, claire et répétée devient un appui. Le but n'est pas de faire parfaitement, mais de créer une relation stable entre l'objet, l'intention et le quotidien.",
+        "body": "La méthode proposée est volontairement simple : partir de la relation, choisir une intention positive, sélectionner une pierre lisible, écrire une carte sobre, laisser la personne libre de s'approprier ou non le cadeau. Chaque étape a une fonction précise. Nommer l'intention évite la dispersion. Choisir peu de pierres rend l'expérience lisible. Poser un geste transforme l'idée en pratique. Observer empêche de fonctionner uniquement par croyance automatique. Ajuster permet de rester vivant dans sa pratique. Pour appliquer cette méthode, prenez un carnet ou une note numérique et répondez à quatre questions : qu'est-ce que je veux soutenir, pourquoi maintenant, quelle pierre représente le mieux cette direction, et quel geste puis-je répéter sans effort excessif ? Une pratique trop lourde finit souvent abandonnée. Une pratique courte, claire et répétée devient un appui. Le but n'est pas de faire parfaitement, mais de créer une relation stable entre l'objet, l'intention et le quotidien.",
         "bullets": [
           "formuler le besoin en une phrase simple",
           "choisir une pierre principale et un geste associé",
@@ -1121,7 +1121,7 @@
         "heading": "Erreurs fréquentes",
         "body": "Les erreurs fréquentes sont connues : dire à quelqu'un ce qu'il doit changer, offrir une pierre comme diagnostic, choisir une symbolique trop lourde, ou écrire une carte qui promet un effet garanti. Ces erreurs partent souvent d'une bonne intention, mais elles fragilisent la crédibilité de la pratique. Quand on promet trop, on crée de la déception. Quand on accumule trop, on perd le fil. Quand on copie sans comprendre, on ne sait plus pourquoi on fait les choses. Pour éviter cela, utilisez une règle simple : si vous ne pouvez pas expliquer votre choix en deux phrases, simplifiez. Si vous ne pouvez pas répéter le geste trois jours de suite, réduisez-le. Si vous sentez que la pratique remplace une demande d'aide importante, arrêtez-vous et cherchez un soutien adapté. La lithothérapie symbolique peut accompagner, ritualiser, rassurer ou structurer, mais elle ne doit pas isoler ni retarder une aide nécessaire.",
         "bullets": [
-          "promettre un résultat garanti",
+          "promettre un effet certain",
           "accumuler trop de pierres à la fois",
           "copier un rituel sans comprendre son intention",
           "oublier qu'une aide professionnelle reste prioritaire si nécessaire"
@@ -1248,8 +1248,8 @@
     ],
     "image": {
       "src": "/images/stones/oeil-de-tigre.png",
-      "alt": "Oeil de tigre pour illustrer une pierre offerte avec intention",
-      "caption": "L'oeil de tigre montre comment une pierre lisible peut porter un message simple."
+      "alt": "Œil de tigre pour illustrer une pierre offerte avec intention",
+      "caption": "L'œil de tigre montre comment une pierre lisible peut porter un message simple."
     }
   }
 ]

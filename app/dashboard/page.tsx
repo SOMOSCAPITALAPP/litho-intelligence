@@ -14,6 +14,7 @@ import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { CheckoutButton } from "@/components/CheckoutButton";
 import { LocalMemberDashboard } from "@/components/LocalMemberDashboard";
 import { ShareActions } from "@/components/ShareActions";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { getCurrentUser, isPremium } from "@/lib/auth";
 import { withAffiliate } from "@/lib/affiliate";
@@ -148,7 +149,7 @@ export default async function DashboardPage() {
           <img className="stone-thumb wide" src={stoneOfDay.image.url} alt={stoneOfDay.image.alt} />
           <p>{stoneOfDay.name} vous accompagne aujourd'hui dans une intention de présence et de clarté.</p>
           <div className="card-actions">
-            <Link className="button secondary" href={`/stone/${stoneOfDay.slug}`}>
+            <Link className="button secondary" href={`/pierres/${stoneOfDay.slug}`}>
               Voir la fiche
             </Link>
             <AddFavoriteButton initialActive={favoriteSlugs.has(stoneOfDay.slug)} stoneSlug={stoneOfDay.slug} />
@@ -165,11 +166,18 @@ export default async function DashboardPage() {
                 const product = stone?.products[0];
                 return (
                   <li className="favorite-entry" key={favorite.id}>
-                    <Link href={`/stone/${favorite.stone_slug}`}>{stone?.name ?? favorite.stone_slug}</Link>
+                    <Link href={`/pierres/${favorite.stone_slug}`}>{stone?.name ?? favorite.stone_slug}</Link>
                     {product ? (
-                      <a className="subtle-link" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">
+                      <TrackedOutboundLink
+                        className="subtle-link"
+                        eventName="amazon_click"
+                        href={withAffiliate(product.url)}
+                        payload={{ stone: stone?.name, source: "dashboard-favorites" }}
+                        rel="noopener noreferrer sponsored"
+                        target="_blank"
+                      >
                         Acheter sur Amazon
-                      </a>
+                      </TrackedOutboundLink>
                     ) : null}
                   </li>
                 );
@@ -178,7 +186,7 @@ export default async function DashboardPage() {
           ) : (
             <p>Aucun favori pour le moment. Ajoutez les pierres qui vous attirent pour retrouver rapidement vos choix.</p>
           )}
-          <Link className="button secondary" href="/stones">
+          <Link className="button secondary" href="/pierres">
             Explorer les pierres
           </Link>
         </article>
@@ -255,7 +263,7 @@ export default async function DashboardPage() {
                   : "Votre bracelet offert de ce trimestre a déjà été réservé. Le prochain avantage reviendra au trimestre suivant."
                 : "Le plan Premium inclut un bracelet offert par trimestre à choisir parmi les bracelets présents dans l’application."}
             </p>
-            <Link className="button secondary" href="/stones">
+            <Link className="button secondary" href="/pierres">
               Choisir dans le catalogue
             </Link>
           </article>
@@ -314,7 +322,7 @@ export default async function DashboardPage() {
                 <h3>{stone.name}</h3>
                 <p>{stone.intentions.slice(0, 2).join(" · ")}</p>
                 <div className="card-actions">
-                  <Link className="button secondary" href={`/stone/${stone.slug}`}>
+                  <Link className="button secondary" href={`/pierres/${stone.slug}`}>
                     Voir
                   </Link>
                   <AddFavoriteButton initialActive={favoriteSlugs.has(stone.slug)} stoneSlug={stone.slug} />

@@ -6,7 +6,10 @@ import { editorialGuides } from "@/lib/editorialGuides";
 export const metadata: Metadata = {
   title: "Guides pierres naturelles | Litho Intelligence",
   description:
-    "Guides de référence pour comprendre les pierres naturelles, les traditions de lithothérapie, l'authenticité, l'entretien et le choix d'un bracelet."
+    "Guides de référence pour comprendre les pierres naturelles, les traditions de lithothérapie, l'authenticité, l'entretien et le choix d'un bracelet.",
+  alternates: {
+    canonical: "/guides"
+  }
 };
 
 export default function GuidesPage() {

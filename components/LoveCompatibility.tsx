@@ -8,6 +8,7 @@ import { getStone } from "@/lib/stones";
 import { withAffiliate } from "@/lib/affiliate";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
 import { stoneWithDefiniteArticle } from "@/lib/french";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 
 const contexts = ["couple", "rencontre", "relation compliquée", "attirance", "réconciliation"];
 
@@ -81,10 +82,17 @@ export function LoveCompatibility() {
             <p>{result.coupleRitual}</p>
             <div className="sos-actions">
               {product ? (
-                <Link className="button gold-button" href={withAffiliate(product.url)} target="_blank" rel="noopener noreferrer">
+                <TrackedOutboundLink
+                  className="button gold-button"
+                  eventName="amazon_click"
+                  href={withAffiliate(product.url)}
+                  payload={{ stone: productStone?.name, source: "love-compatibility" }}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                >
                   <ShoppingBag size={16} />
                   Offrir un bracelet d’amour
-                </Link>
+                </TrackedOutboundLink>
               ) : null}
               <a className="button secondary" href="#couple-meditation">
                 Lancer une méditation de couple

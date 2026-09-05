@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Formation lithothérapie gratuite",
   description:
     "Formation gratuite en lithothérapie au format écrit : cours structurés, PDF téléchargeables et QCM en ligne à chaque étape.",
+  alternates: {
+    canonical: "/formation"
+  },
   openGraph: {
     title: "Formation gratuite Litho Intelligence : 7 modules, PDF et QCM",
     description: "Apprenez les bases de la lithothérapie symbolique avec 7 modules gratuits, des PDF et 70 questions de QCM.",

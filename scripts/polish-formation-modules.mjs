@@ -35,8 +35,8 @@ const images = {
   },
   offrir: {
     src: "/images/stones/oeil-de-tigre.png",
-    alt: "Oeil de tigre pour illustrer une pierre offerte avec intention",
-    caption: "L'oeil de tigre montre comment une pierre lisible peut porter un message simple."
+    alt: "Œil de tigre pour illustrer une pierre offerte avec intention",
+    caption: "L'œil de tigre montre comment une pierre lisible peut porter un message simple."
   }
 };
 
@@ -54,7 +54,7 @@ const bulletsByHeading = {
     "ajuster si la pratique devient trop lourde"
   ],
   "Erreurs fréquentes": [
-    "promettre un résultat garanti",
+    "promettre un effet certain",
     "accumuler trop de pierres à la fois",
     "copier un rituel sans comprendre son intention",
     "oublier qu'une aide professionnelle reste prioritaire si nécessaire"
@@ -146,8 +146,11 @@ const replacements = [
   ["cloturer", "clôturer"],
   ["cloture", "clôture"],
   ["creer", "créer"],
+  ["Creer", "Créer"],
   ["ecrit", "écrit"],
   ["ecrire", "écrire"],
+  ["redigez", "rédigez"],
+  ["Redigez", "Rédigez"],
   ["ecrivez", "écrivez"],
   ["Ecrivez", "Écrivez"],
   ["ecriture", "écriture"],
@@ -172,6 +175,7 @@ const replacements = [
   ["realiste", "réaliste"],
   ["reel", "réel"],
   ["reelle", "réelle"],
+  ["reelles", "réelles"],
   ["realites", "réalités"],
   ["repere", "repère"],
   ["reperes", "repères"],
@@ -298,6 +302,9 @@ const replacements = [
   ["frequence", "fréquence"],
   ["systematiquement", "systématiquement"],
   ["systeme", "système"],
+  ["selection", "sélection"],
+  ["selectionner", "sélectionner"],
+  ["selectionnez", "sélectionnez"],
   ["soutien adapte", "soutien adapté"],
   ["adapte", "adapté"],
   ["adaptee", "adaptée"],
@@ -314,6 +321,8 @@ const replacements = [
   ["scenarios", "scénarios"],
   ["oeil", "œil"],
   ["Oeil", "Œil"],
+  ["reflechir", "réfléchir"],
+  ["symptome", "symptôme"],
   ["etre", "être"],
   ["Etre", "Être"],
   ["meme", "même"],
@@ -359,7 +368,10 @@ const replacements = [
 ];
 
 const cleanupReplacements = [
-  ["Chaque étape à une fonction", "Chaque étape a une fonction"]
+  ["Chaque étape à une fonction", "Chaque étape a une fonction"],
+  ["promettre un résultat garanti", "promettre un effet certain"],
+  ["Une promesse de résultat garanti", "Une promesse d'effet certain"],
+  ["Il n'a pas vocation à produire un résultat garanti", "Il n'a pas vocation à produire un effet certain"]
 ];
 
 function accentize(value) {

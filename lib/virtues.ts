@@ -59,7 +59,7 @@ export function findStonesByVirtue(input: string): VirtueMatch[] {
     matches.set(`native:${stone.slug}`, {
       slug: stone.slug,
       label: stone.name,
-      pageHref: `/stones/${stone.slug}`,
+      pageHref: `/pierres/${stone.slug}`,
       description: stone.short_description,
       image: {
         url: `/images/stones/${stone.slug}.png`,
@@ -77,7 +77,7 @@ export function findStonesByVirtue(input: string): VirtueMatch[] {
     matches.set(`product:${stone.slug}`, {
       slug: stone.slug,
       label: stone.name,
-      pageHref: `/stone/${stone.slug}`,
+      pageHref: `/pierres/${stone.slug}`,
       description: stone.description,
       image: stone.image,
       amazonUrl: stone.products[0]?.url
@@ -100,7 +100,7 @@ export function resolveStonePage(slugOrName: string) {
 
   if (productStone) {
     return {
-      href: `/stone/${productStone.slug}`,
+      href: `/pierres/${productStone.slug}`,
       label: productStone.name,
       amazonUrl: productStone.products[0]?.url
     };
@@ -114,7 +114,7 @@ export function resolveStonePage(slugOrName: string) {
 
   const productStoneFromNative = native.amazon_product_slug ? getStone(native.amazon_product_slug) : null;
   return {
-    href: `/stones/${native.slug}`,
+    href: `/pierres/${native.slug}`,
     label: native.name,
     amazonUrl: productStoneFromNative?.products[0]?.url
   };

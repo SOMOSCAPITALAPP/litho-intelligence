@@ -31,7 +31,7 @@ export default function IntentionsPage() {
         <h2>Intentions disponibles</h2>
         <div className="grid intention-choice-grid">
           {intentionPages.map((page) => (
-            <Link className="card emotional-card intention-choice-card" href={`/intention/${page.slug}`} key={page.slug}>
+            <Link className="card emotional-card intention-choice-card" href={`/intentions/${page.slug}`} key={page.slug}>
               <span className="mystic-kicker">{page.queryLabel}</span>
               <h3>{page.shortLabel}</h3>
               <p>{page.emotionalPromise}</p>

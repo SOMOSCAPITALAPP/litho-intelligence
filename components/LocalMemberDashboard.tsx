@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowRight, Download, Heart, Sparkles, UserCircle } from "lucide-react";
 import { CheckoutButton } from "@/components/CheckoutButton";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { withAffiliate } from "@/lib/affiliate";
 import { getLocalFavorites, getLocalMember, getLocalRecommendationUsage, type LocalMember } from "@/lib/localMember";
@@ -84,7 +85,7 @@ export function LocalMemberDashboard() {
           <h2>Pierre du jour</h2>
           <img className="stone-thumb wide" src={stoneOfDay.image.url} alt={stoneOfDay.image.alt} />
           <p>{stoneOfDay.name}</p>
-          <Link className="button secondary" href={`/stone/${stoneOfDay.slug}`}>Comprendre cette pierre</Link>
+          <Link className="button secondary" href={`/pierres/${stoneOfDay.slug}`}>Comprendre cette pierre</Link>
         </article>
 
         <article className="card">
@@ -96,11 +97,18 @@ export function LocalMemberDashboard() {
                 const product = stone?.products[0];
                 return (
                   <li className="favorite-entry" key={stone!.slug}>
-                    <Link href={`/stone/${stone!.slug}`}>{stone!.name}</Link>
+                    <Link href={`/pierres/${stone!.slug}`}>{stone!.name}</Link>
                     {product ? (
-                      <a className="subtle-link" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">
+                      <TrackedOutboundLink
+                        className="subtle-link"
+                        eventName="amazon_click"
+                        href={withAffiliate(product.url)}
+                        payload={{ stone: stone?.name, source: "local-dashboard-favorites" }}
+                        rel="noopener noreferrer sponsored"
+                        target="_blank"
+                      >
                         Acheter sur Amazon
-                      </a>
+                      </TrackedOutboundLink>
                     ) : null}
                   </li>
                 );
@@ -109,7 +117,7 @@ export function LocalMemberDashboard() {
           ) : (
             <p>Aucun favori pour le moment. Ajoutez les pierres qui résonnent avec votre besoin du moment.</p>
           )}
-          <Link className="button secondary" href="/stones">Explorer les pierres</Link>
+          <Link className="button secondary" href="/pierres">Explorer les pierres</Link>
         </article>
       </div>
 

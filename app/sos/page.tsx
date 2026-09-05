@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowRight, HeartHandshake, Moon, Shield, ShoppingBag, Sparkles } from "lucide-react";
 import { EmailCapture } from "@/components/EmailCapture";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { recommendStones } from "@/lib/recommendation";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { withAffiliate } from "@/lib/affiliate";
@@ -115,16 +116,18 @@ export default function SosPage() {
           <p className="intention-line">{result.intention}</p>
           <p>Geste simple : {result.usage}</p>
           <div className="sos-actions">
-            <Link
+            <TrackedOutboundLink
               className="button gold-button"
+              eventName="amazon_click"
               href={withAffiliate(result.stone.products[0].url)}
-              rel="noopener noreferrer"
+              payload={{ stone: result.stone.name, source: "sos" }}
+              rel="noopener noreferrer sponsored"
               target="_blank"
             >
               <ShoppingBag size={16} />
               Voir le bracelet recommandé
-            </Link>
-            <Link className="button secondary" href={`/stone/${result.stone.slug}`}>
+            </TrackedOutboundLink>
+            <Link className="button secondary" href={`/pierres/${result.stone.slug}`}>
               Comprendre cette pierre <ArrowRight size={16} />
             </Link>
           </div>

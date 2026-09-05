@@ -1,27 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Gem, Search, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Gem, Shield, Sparkles } from "lucide-react";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
+import { SearchBox } from "@/components/SearchBox";
 import { ShareActions } from "@/components/ShareActions";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { recommendedProducts } from "@/lib/products";
+import { routes } from "@/lib/routes";
 import { getStone } from "@/lib/stones";
 
 export const metadata: Metadata = {
   title: "Litho Intelligence by Quintessence Cristal - Trouvez votre pierre naturelle",
   description:
-    "Test gratuit pour découvrir la pierre naturelle associée à votre intention : stress, amour, protection, énergie, confiance ou cadeau."
+    "Test gratuit pour découvrir la pierre naturelle associée à votre intention : stress, amour, protection, énergie, confiance ou cadeau.",
+  alternates: {
+    canonical: "/"
+  }
 };
 
 const popularIntentions = [
-  { label: "Stress", href: "/intention/stress", text: "Calme, respiration et recentrage." },
-  { label: "Protection", href: "/intention/protection", text: "Limites, ancrage et stabilité." },
-  { label: "Amour", href: "/intention/amour", text: "Douceur, lien et tendresse." },
-  { label: "Sommeil", href: "/intention/sommeil", text: "Rituel du soir et apaisement." },
-  { label: "Énergie", href: "/intention/energie", text: "Élan, motivation et action." },
-  { label: "Confiance", href: "/intention/confiance", text: "Courage, posture et affirmation." },
-  { label: "Cadeau", href: "/intention/cadeau", text: "Choisir une pierre à offrir." }
+  { label: "Stress", href: routes.intention("stress"), text: "Calme, respiration et recentrage." },
+  { label: "Protection", href: routes.intention("protection"), text: "Limites, ancrage et stabilité." },
+  { label: "Amour", href: routes.intention("amour"), text: "Douceur, lien et tendresse." },
+  { label: "Sommeil", href: routes.intention("sommeil"), text: "Rituel du soir et apaisement." },
+  { label: "Énergie", href: routes.intention("energie"), text: "Élan, motivation et action." },
+  { label: "Confiance", href: routes.intention("confiance"), text: "Courage, posture et affirmation." },
+  { label: "Cadeau", href: routes.intention("cadeau"), text: "Choisir une pierre à offrir." }
 ];
 
 const popularStoneSlugs = [
@@ -56,7 +61,7 @@ export default function HomePage() {
             <Link className="button gold-button" href="/test">
               Faire le test gratuit <ArrowRight size={16} />
             </Link>
-            <Link className="button secondary" href="/stones">
+            <Link className="button secondary" href={routes.stones}>
               Découvrir les pierres
             </Link>
           </div>
@@ -69,11 +74,7 @@ export default function HomePage() {
         <aside className="conversion-hero-panel">
           <Gem size={28} />
           <strong>Votre intention du moment</strong>
-          <form className="search-box" action="/recommendation">
-            <Search size={20} />
-            <input name="goal" placeholder="stress, amour, protection, confiance..." />
-            <button type="submit">Obtenir mon conseil</button>
-          </form>
+          <SearchBox source="home-hero" />
           <p className="fineprint">{wellbeingDisclaimer}</p>
         </aside>
       </section>
@@ -121,7 +122,7 @@ export default function HomePage() {
         <p className="section-lead">Des fiches SEO claires pour comprendre la signification symbolique, les associations et les bracelets recommandés.</p>
         <div className="popular-stone-grid">
           {popularStones.map((stone) => (
-            <Link className="popular-stone-card" href={`/stone/${stone!.slug}`} key={stone!.slug}>
+            <Link className="popular-stone-card" href={routes.stone(stone!.slug)} key={stone!.slug}>
               <img src={stone!.image.url} alt={stone!.image.alt} />
               <strong>{stone!.name}</strong>
               <span>{stone!.goals.slice(0, 2).join(" • ")}</span>

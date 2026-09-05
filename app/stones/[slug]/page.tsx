@@ -8,6 +8,7 @@ import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { EmailCapture } from "@/components/EmailCapture";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { ShareActions } from "@/components/ShareActions";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { slugifyVirtue } from "@/lib/virtues";
 import { nativeStoneVirtueSummary } from "@/lib/stoneVirtueSummary";
 import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
@@ -29,7 +30,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     openGraph: {
       title,
       description,
-      url: `/stones/${params.slug}`,
+      url: `/pierres/${params.slug}`,
       siteName: "Litho Intelligence",
       locale: "fr_FR",
       type: "website",
@@ -66,7 +67,7 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
     <main>
       <section className="stone-hero">
         <div>
-          <Link className="micro-action" href="/stones">
+          <Link className="micro-action" href="/pierres">
             <ArrowLeft size={15} />
             Catalogue
           </Link>
@@ -116,14 +117,21 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
             networks
             title={`${stone.name} | Litho Intelligence`}
             text={`Je découvre la fiche ${stone.name} sur Litho Intelligence.`}
-            url={`/stones/${stone.slug}`}
+            url={`/pierres/${stone.slug}`}
           />
           <div className="premium-actions">
             {product ? (
-              <Link className="button gold-button" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">
+              <TrackedOutboundLink
+                className="button gold-button"
+                eventName="amazon_click"
+                href={withAffiliate(product.url)}
+                payload={{ stone: stone.name, source: "legacy-native-stone-page" }}
+                rel="noopener noreferrer sponsored"
+                target="_blank"
+              >
                 <ShoppingBag size={17} />
                 Voir le bracelet associé
-              </Link>
+              </TrackedOutboundLink>
             ) : null}
             <AddFavoriteButton stoneSlug={stone.slug} />
           </div>

@@ -1,6 +1,8 @@
-import Link from "next/link";
+"use client";
+
 import { ExternalLink, Sparkles } from "lucide-react";
 import { withAffiliate } from "@/lib/affiliate";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 
 type ProductRecommendationCardProps = {
   imageUrl: string;
@@ -55,9 +57,16 @@ export function ProductRecommendationCard({
           <strong>{price}</strong>
           <span>{disclaimer}</span>
         </div>
-        <Link className="button gold-button" href={withAffiliate(amazonUrl)} target="_blank" rel="noopener noreferrer sponsored">
+        <TrackedOutboundLink
+          className="button gold-button"
+          eventName="amazon_click"
+          href={withAffiliate(amazonUrl)}
+          payload={{ stone: stoneName, title, intention }}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+        >
           Voir sur Amazon <ExternalLink size={16} />
-        </Link>
+        </TrackedOutboundLink>
       </div>
     </article>
   );

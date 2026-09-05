@@ -10,6 +10,7 @@ import { getStone } from "@/lib/stones";
 import { withAffiliate } from "@/lib/affiliate";
 import { stoneWithDefiniteArticle } from "@/lib/french";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 
 const intentions = ["amour", "protection", "calme", "confiance", "abondance", "énergie", "intuition", "cadeau"];
 
@@ -71,10 +72,17 @@ export function BirthstoneFinder() {
             <p>Suggestion : {result.productTypes.join(", ")}.</p>
             <div className="sos-actions">
               {product ? (
-                <Link className="button gold-button" href={withAffiliate(product.url)} target="_blank" rel="noopener noreferrer">
+                <TrackedOutboundLink
+                  className="button gold-button"
+                  eventName="amazon_click"
+                  href={withAffiliate(product.url)}
+                  payload={{ stone: productStone?.name, source: "birthstone" }}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                >
                   <ShoppingBag size={16} />
                   Voir le bracelet recommandé
-                </Link>
+                </TrackedOutboundLink>
               ) : null}
               <a className="button secondary" href="#meditation">
                 Faire une méditation

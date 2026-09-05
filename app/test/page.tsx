@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { ArrowRight, HeartPulse, ShoppingBag, Sparkles } from "lucide-react";
 import { EmailCapture } from "@/components/EmailCapture";
 import { ShareActions } from "@/components/ShareActions";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { recommendStones } from "@/lib/recommendation";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { withAffiliate } from "@/lib/affiliate";
@@ -73,16 +74,18 @@ export default function TestPage() {
           <p className="intention-line">{main.intention}</p>
           <p>Geste simple : {main.usage}</p>
           <div className="sos-actions">
-            <Link
+            <TrackedOutboundLink
               className="button"
+              eventName="amazon_click"
               href={withAffiliate(main.stone.products[0].url)}
+              payload={{ stone: main.stone.name, source: "quick-test" }}
               rel="noopener noreferrer"
               target="_blank"
             >
               <ShoppingBag size={16} />
               {main.stone.products[0].price ?? "Voir les bracelets"}
-            </Link>
-            <Link className="button secondary" href={`/stone/${main.stone.slug}`}>
+            </TrackedOutboundLink>
+            <Link className="button secondary" href={`/pierres/${main.stone.slug}`}>
               Fiche pierre <ArrowRight size={16} />
             </Link>
           </div>
@@ -99,7 +102,7 @@ export default function TestPage() {
         <h2>Autres pierres possibles</h2>
         <div className="grid">
           {results.slice(1).map((item) => (
-            <Link className="card" href={`/stone/${item.stone.slug}`} key={item.stone.slug}>
+            <Link className="card" href={`/pierres/${item.stone.slug}`} key={item.stone.slug}>
               <img className="stone-thumb wide" src={item.stone.image.url} alt={item.stone.image.alt} />
               <Sparkles size={20} />
               <h3>{item.stone.name}</h3>

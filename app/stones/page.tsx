@@ -41,7 +41,7 @@ export default function StonesPage() {
                   </Link>
                 ))}
               </div>
-              <Link className="micro-action" href={`/stones/${stone.slug}`}>
+              <Link className="micro-action" href={`/pierres/${stone.slug}`}>
                 Ouvrir la fiche <ArrowRight size={15} />
               </Link>
             </article>

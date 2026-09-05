@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ShoppingBag } from "lucide-react";
 import { EmailCapture } from "@/components/EmailCapture";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { withAffiliate } from "@/lib/affiliate";
 import { findStonesByVirtue, getAllVirtues, getVirtueLabel } from "@/lib/virtues";
 import { wellbeingDisclaimer } from "@/lib/legal";
@@ -36,7 +37,7 @@ export default function VirtuePage({ params }: { params: { slug: string } }) {
           <Link className="button gold-button" href={`/recommendation?goal=${encodeURIComponent(virtue)}`}>
             Recevoir un conseil personnalisé <ArrowRight size={16} />
           </Link>
-          <Link className="button secondary" href="/stones">
+          <Link className="button secondary" href="/pierres">
             Retour au catalogue
           </Link>
         </div>
@@ -61,10 +62,17 @@ export default function VirtuePage({ params }: { params: { slug: string } }) {
                   Voir la fiche
                 </Link>
                 {stone.amazonUrl ? (
-                  <a className="button gold-button" href={withAffiliate(stone.amazonUrl)} target="_blank" rel="noreferrer">
+                  <TrackedOutboundLink
+                    className="button gold-button"
+                    eventName="amazon_click"
+                    href={withAffiliate(stone.amazonUrl)}
+                    payload={{ stone: stone.label, source: "virtue-page" }}
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                  >
                     <ShoppingBag size={16} />
                     Voir le bracelet associé
-                  </a>
+                  </TrackedOutboundLink>
                 ) : null}
               </div>
             </article>

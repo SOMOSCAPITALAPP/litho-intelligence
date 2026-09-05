@@ -8,20 +8,21 @@ Décision de cette première phase : ne pas migrer brutalement les pages existan
 
 | Ancienne ou alternative | Destination actuelle | Type | Raison |
 | --- | --- | --- | --- |
-| `/pierres` | `/stones` | 301 | Alias français préparatoire vers le catalogue existant. |
-| `/pierres/:slug` | `/stones/:slug` | 301 | Alias français préparatoire vers les fiches natives existantes. |
-| `/intentions` | `/intention` | 301 | Alias français préparatoire vers le hub existant. |
-| `/intentions/:slug` | `/intention/:slug` | 301 | Alias français préparatoire vers les pages intentions existantes. |
+| `/stones` | `/pierres` | 301 | Ancien catalogue anglais redirigé vers le catalogue canonique français. |
+| `/stones/:slug` | `/pierres/:slug` | 301 | Anciennes fiches natives redirigées vers les fiches canoniques françaises. |
+| `/stone/:slug` | `/pierres/:slug` | 301 | Anciennes fiches produits redirigées vers les fiches canoniques françaises. |
+| `/intention` | `/intentions` | 301 | Ancien hub redirigé vers le hub canonique français. |
+| `/intention/:slug` | `/intentions/:slug` | 301 | Anciennes pages intentions redirigées vers les pages canoniques françaises. |
 | `/authenticite-entretien` | `/entretien` | 301 | Nom court retenu pour le hub authenticité et entretien. |
-| `/stone/obsidienne` | `/stone/obsidienne-noire` | 301 | Fiche produit existante plus précise. |
+| `/stone/obsidienne` | `/pierres/obsidienne-noire` | 301 | Fiche produit existante plus précise. |
 
 ## Redirections temporaires existantes à réévaluer
 
 | URL actuelle | Destination | Type actuel | Recommandation |
 | --- | --- | --- | --- |
-| `/stone/jade-blanc` | `/stone/jade-emeraude` | 302 | Créer une vraie fiche si la donnée et le produit existent, sinon passer en 301 vers la fiche la plus pertinente. |
-| `/stone/agate` | `/stone/agate-du-botswana` | 302 | Créer une page famille Agate ou passer en 301 vers une fiche famille claire. |
-| `/intention/argent` | `/intention/argent-abondance` | 302 | Passer en 301 après validation du libellé SEO final. |
+| `/stone/jade-blanc` | `/pierres/jade-emeraude` | 302 | Créer une vraie fiche si la donnée et le produit existent, sinon passer en 301 vers la fiche la plus pertinente. |
+| `/stone/agate` | `/pierres/agate-du-botswana` | 302 | Créer une page famille Agate ou passer en 301 vers une fiche famille claire. |
+| `/intention/argent` | `/intentions/argent-abondance` | 302 | Passer en 301 après validation du libellé SEO final. |
 
 ## Architecture cible à valider
 
@@ -29,7 +30,7 @@ Décision de cette première phase : ne pas migrer brutalement les pages existan
 | --- | --- | --- |
 | Catalogue pierres | `/pierres` | À migrer après validation. |
 | Fiche pierre | `/pierres/[slug]` | À migrer après table complète. |
-| Intentions | `/intentions/[slug]` | À migrer après mise à jour des liens internes. |
+| Intentions | `/intentions/[slug]` | Canonique validée et prête pour indexation. |
 | Guides | `/guides/[slug]` | Créé en première phase. |
 | Comparatifs | `/comparatifs/[slug]` | Hub créé, détails à développer. |
 | Entretien | `/entretien/[slug]` | Hub créé, détails à développer sous guides pour l'instant. |

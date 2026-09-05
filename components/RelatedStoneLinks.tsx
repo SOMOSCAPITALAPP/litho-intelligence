@@ -3,6 +3,8 @@ import { ExternalLink } from "lucide-react";
 import { withAffiliate } from "@/lib/affiliate";
 import { getNativeStone, nativeStones, normalizeNativeValue } from "@/lib/nativeStones";
 import { getStone, stones } from "@/lib/stones";
+import { routes } from "@/lib/routes";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 
 type RelatedStone = {
   key: string;
@@ -33,10 +35,17 @@ export function RelatedStoneLinks({
                 {stone.name}
               </Link>
               {stone.amazonUrl ? (
-                <Link className="related-amazon-link" href={withAffiliate(stone.amazonUrl)} rel="noopener noreferrer" target="_blank">
+                <TrackedOutboundLink
+                  className="related-amazon-link"
+                  eventName="amazon_click"
+                  href={withAffiliate(stone.amazonUrl)}
+                  payload={{ stone: stone.name, source: "related-stone-links" }}
+                  rel="noopener noreferrer sponsored"
+                  target="_blank"
+                >
                   Voir le bracelet associé
                   <ExternalLink size={13} />
-                </Link>
+                </TrackedOutboundLink>
               ) : null}
             </div>
           ))}
@@ -60,7 +69,7 @@ function resolveRelatedStone(value: string): RelatedStone | null {
     return {
       key: productStone.slug,
       name: productStone.name,
-      pageHref: `/stone/${productStone.slug}`,
+      pageHref: routes.stone(productStone.slug),
       amazonUrl: productStone.products[0]?.url
     };
   }
@@ -77,7 +86,7 @@ function resolveRelatedStone(value: string): RelatedStone | null {
   return {
     key: native.slug,
     name: native.name,
-    pageHref: `/stones/${native.slug}`,
+    pageHref: routes.stone(native.slug),
     amazonUrl: nativeProduct?.products[0]?.url
   };
 }

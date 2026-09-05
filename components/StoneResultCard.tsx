@@ -7,6 +7,7 @@ import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { ShareActions } from "@/components/ShareActions";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import type { AIStoneRecommendation } from "@/lib/openai-recommendation";
 import { getProductByStone } from "@/lib/products";
 
@@ -71,14 +72,21 @@ export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
         ) : null}
         <div className="premium-actions">
           {product ? (
-            <Link className="button gold-button" href={withAffiliate(product.url)} rel="noopener noreferrer" target="_blank">
+            <TrackedOutboundLink
+              className="button gold-button"
+              eventName="amazon_click"
+              href={withAffiliate(product.url)}
+              payload={{ stone: stone.name, source: "recommendation-result" }}
+              rel="noopener noreferrer sponsored"
+              target="_blank"
+            >
               <ShoppingBag size={16} />
               Voir le bracelet recommandé
-            </Link>
+            </TrackedOutboundLink>
           ) : null}
           {stone ? <AddFavoriteButton stoneSlug={stone.slug} /> : null}
           {stone ? (
-            <Link className="button ghost-dark" href={`/stone/${stone.slug}`}>
+            <Link className="button ghost-dark" href={`/pierres/${stone.slug}`}>
               Comprendre cette pierre <ArrowRight size={16} />
             </Link>
           ) : null}
@@ -87,7 +95,7 @@ export function StoneResultCard({ result }: { result: AIStoneRecommendation }) {
           compact
           title={`Recommandation Litho Intelligence : ${stone?.name ?? result.name}`}
           text={`Litho Intelligence me recommande ${stone?.name ?? result.name} comme pierre associée à mon intention du moment.`}
-          url={stone ? `/stone/${stone.slug}` : "/recommendation"}
+          url={stone ? `/pierres/${stone.slug}` : "/recommendation"}
         />
         <LeadCaptureCard
           source="recommendation-result"

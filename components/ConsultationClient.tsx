@@ -6,6 +6,7 @@ import { Download, MessageCircle, ShoppingBag } from "lucide-react";
 import { withAffiliate } from "@/lib/affiliate";
 import { ConsultationCheckoutButton } from "@/components/ConsultationCheckoutButton";
 import { ShareActions } from "@/components/ShareActions";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import type { ConsultationChatMessage, ConsultationProfile, ConsultationResponse } from "@/lib/consultation";
 
 const initialMessage =
@@ -272,13 +273,20 @@ export function ConsultationClient({
                 <h3>{stone.name}</h3>
                 <p>{stone.reason}</p>
                 <div className="card-actions">
-                  <Link className="button secondary" href={`/stone/${stone.slug}`}>
+                  <Link className="button secondary" href={`/pierres/${stone.slug}`}>
                     Voir la fiche
                   </Link>
-                  <a className="button gold-button" href={withAffiliate(stone.braceletUrl)} target="_blank" rel="noreferrer">
+                  <TrackedOutboundLink
+                    className="button gold-button"
+                    eventName="amazon_click"
+                    href={withAffiliate(stone.braceletUrl)}
+                    payload={{ stone: stone.name, source: "consultation-result" }}
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                  >
                     <ShoppingBag size={16} />
                     Voir le bracelet associé
-                  </a>
+                  </TrackedOutboundLink>
                 </div>
               </article>
             ))}

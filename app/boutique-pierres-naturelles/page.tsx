@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Boutique pierres naturelles : bracelets recommandés par intention",
   description:
     "Sélection de bracelets en pierres naturelles par intention : protection, amour, calme, énergie, confiance, cadeaux, homme et femme.",
+  alternates: {
+    canonical: "/boutique-pierres-naturelles"
+  },
   openGraph: {
     title: "Boutique pierres naturelles : bracelets recommandés par intention",
     description: "Découvrez une sélection de bracelets en pierres naturelles selon votre intention du moment.",
@@ -67,7 +70,7 @@ export default function NaturalStoneShopPage() {
                 <h2>{section.title}</h2>
                 <p className="section-lead">{section.intro}</p>
               </div>
-              <Link className="micro-action" href={`/intention/${section.key}`}>
+              <Link className="micro-action" href={`/intentions/${section.key}`}>
                 Guide intention
               </Link>
             </div>

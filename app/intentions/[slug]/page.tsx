@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Gift, ShoppingBag } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { FormationCTA } from "@/components/FormationCTA";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
@@ -12,11 +13,12 @@ import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { getIntentionPage, intentionPages } from "@/data/intentions";
 import { withAffiliate } from "@/lib/affiliate";
 import { getMeditationSuggestion } from "@/lib/getMeditationSuggestion";
-import { getNativeStone, getNativeStoneImage } from "@/lib/nativeStones";
-import { getStone } from "@/lib/stones";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { getNativeStone, getNativeStoneImage } from "@/lib/nativeStones";
 import { getProductByStone } from "@/lib/products";
-import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
+import { routes } from "@/lib/routes";
+import { defaultShareAlt, shareImage, shareImageType, siteUrl } from "@/lib/site";
+import { getStone } from "@/lib/stones";
 
 export function generateStaticParams() {
   return intentionPages.map((page) => ({ slug: page.slug }));
@@ -28,11 +30,16 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: page?.seoTitle ?? "Pierres par intention | Litho Intelligence",
     description: page?.seoDescription,
+    alternates: page
+      ? {
+          canonical: `${siteUrl}${routes.intention(page.slug)}`
+        }
+      : undefined,
     openGraph: page
       ? {
           title: page.seoTitle,
           description: page.seoDescription,
-          url: `/intentions/${page.slug}`,
+          url: routes.intention(page.slug),
           images: [{ url: shareImage, secureUrl: shareImage, type: shareImageType, width: 1200, height: 630, alt: defaultShareAlt }]
         }
       : undefined,
@@ -56,6 +63,13 @@ export default function IntentionPage({ params }: { params: { slug: string } }) 
 
   return (
     <main>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", href: routes.home },
+          { name: "Intentions", href: routes.intentions },
+          { name: page.shortLabel, href: routes.intention(page.slug) }
+        ]}
+      />
       <section className="section compact-section">
         <p className="eyebrow">Solution par intention</p>
         <h1>{page.title}</h1>
@@ -64,8 +78,8 @@ export default function IntentionPage({ params }: { params: { slug: string } }) 
           <Link className="button gold-button" href={`/recommendation?goal=${page.slug}`}>
             Obtenir mon conseil personnalisé <ArrowRight size={16} />
           </Link>
-          <Link className="button secondary" href="/intentions">
-            Changer d’intention
+          <Link className="button secondary" href={routes.intentions}>
+            Changer d'intention
           </Link>
           <Link className="button secondary" href="/idee-cadeau">
             <Gift size={16} />
@@ -76,7 +90,7 @@ export default function IntentionPage({ params }: { params: { slug: string } }) 
           compact
           title={`${page.title} | Litho Intelligence`}
           text={`Je découvre les pierres traditionnellement associées à cette intention : ${page.shortLabel}.`}
-          url={`/intentions/${page.slug}`}
+          url={routes.intention(page.slug)}
         />
       </section>
 
@@ -142,7 +156,7 @@ export default function IntentionPage({ params }: { params: { slug: string } }) 
             <h2>Autres intentions</h2>
             <div className="pill-row">
               {otherIntentions.map((item) => (
-                <Link className="pill" href={`/intentions/${item.slug}`} key={item.slug}>
+                <Link className="pill" href={routes.intention(item.slug)} key={item.slug}>
                   {item.shortLabel}
                 </Link>
               ))}
@@ -201,7 +215,7 @@ function IntentionStoneCard({ slug, intention }: { slug: string; intention: stri
     productStone?.description ??
     "Pierre traditionnellement utilisée comme support symbolique dans les pratiques de bien-être.";
   const image = nativeStone ? getNativeStoneImage(nativeStone) : productStone?.image;
-  const href = `/pierres/${nativeStone?.slug ?? productStone?.slug ?? slug}`;
+  const href = routes.stone(nativeStone?.slug ?? productStone?.slug ?? slug);
 
   return (
     <article className="card catalog-card">
@@ -224,7 +238,7 @@ function IntentionStoneCard({ slug, intention }: { slug: string; intention: stri
             className="button gold-button"
             eventName="amazon_click"
             href={withAffiliate(product.url)}
-            payload={{ stone: title, intention, source: "legacy-intention-stone-card" }}
+            payload={{ stone: title, intention, source: "intention-stone-card" }}
             target="_blank"
             rel="noopener noreferrer sponsored"
           >

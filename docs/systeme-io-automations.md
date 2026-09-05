@@ -127,7 +127,7 @@ Découvrir les pierres associées au stress
 
 Lien :
 
-https://litho-intelligence.com/intention/stress
+https://litho-intelligence.com/intentions/stress
 
 ### Email 2 - J+2
 
@@ -248,7 +248,7 @@ Lire la fiche labradorite
 
 Lien :
 
-https://litho-intelligence.com/stone/labradorite
+https://litho-intelligence.com/pierres/labradorite
 
 ### Email 2 - J+2
 
@@ -267,7 +267,7 @@ Bonjour,
 La labradorite peut se porter de plusieurs façons :
 
 - en bracelet, pour garder l'intention visible ;
-- en pendentif, pour un symbole proche du coeur ;
+- en pendentif, pour un symbole proche du cœur ;
 - en pierre roulée, pour un rituel court dans la poche ou sur le bureau.
 
 Le bracelet reste souvent le format le plus pratique, parce qu'il accompagne les gestes du quotidien.
@@ -313,7 +313,7 @@ Découvrir les pierres compatibles
 
 Lien :
 
-https://litho-intelligence.com/stone/labradorite
+https://litho-intelligence.com/pierres/labradorite
 
 ## Règles à créer dans systeme.io
 

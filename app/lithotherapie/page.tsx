@@ -43,7 +43,7 @@ export default function LithotherapiePage() {
             <Link className="button gold-button" href="/recommendation">
               Trouver ma pierre <ArrowRight size={16} />
             </Link>
-            <Link className="button secondary" href="/stones">
+            <Link className="button secondary" href="/pierres">
               Explorer les pierres
             </Link>
           </div>

@@ -7,6 +7,7 @@ import { getGiftRecommendation } from "@/lib/getGiftRecommendation";
 import { getStone } from "@/lib/stones";
 import { withAffiliate } from "@/lib/affiliate";
 import { StoneMeditationCard } from "@/components/StoneMeditationCard";
+import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 
 const relations = ["amour", "ami(e)", "mère", "père", "enfant", "collègue", "soi-même"];
 const occasions = ["anniversaire", "fête des mères", "Noël", "Saint-Valentin", "remerciement", "soutien moral", "nouveau départ"];
@@ -67,10 +68,17 @@ export function GiftStoneFinder() {
             <p>Bijou recommandé : {result.recommendedJewelry}.</p>
             <div className="sos-actions">
               {product ? (
-                <Link className="button gold-button" href={withAffiliate(product.url)} target="_blank" rel="noopener noreferrer">
+                <TrackedOutboundLink
+                  className="button gold-button"
+                  eventName="amazon_click"
+                  href={withAffiliate(product.url)}
+                  payload={{ stone: productStone?.name, source: "gift-finder" }}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                >
                   <ShoppingBag size={16} />
                   Voir les bijoux recommandés
-                </Link>
+                </TrackedOutboundLink>
               ) : null}
               <button className="button secondary" type="button" onClick={copyMessage}>
                 <Copy size={16} />

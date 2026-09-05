@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { editorialGuides, getEditorialGuide } from "@/lib/editorialGuides";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { routes } from "@/lib/routes";
 import { siteUrl } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -53,6 +55,13 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
   return (
     <main className="section compact-section editorial-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", href: routes.home },
+          { name: "Guides", href: routes.guides },
+          { name: guide.title, href: routes.guide(guide.slug) }
+        ]}
+      />
       <p className="eyebrow">Guide Litho Intelligence</p>
       <h1>{guide.title}</h1>
       <p className="section-lead">{guide.description}</p>
@@ -62,7 +71,10 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
         {guide.sections.map((section) => (
           <article className="card" key={section.title}>
             <h2>{section.title}</h2>
-            <p>{section.body}</p>
+            {section.body ? <p>{section.body}</p> : null}
+            {section.paragraphs?.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
             {section.bullets ? (
               <ul>
                 {section.bullets.map((item) => (
