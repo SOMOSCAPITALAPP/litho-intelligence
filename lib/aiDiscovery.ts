@@ -1,4 +1,5 @@
 import { intentionPages } from "@/data/intentions";
+import { journalArticles } from "@/lib/journalArticles";
 import { nativeStones } from "@/lib/nativeStones";
 import { stones } from "@/lib/stones";
 import { siteUrl } from "@/lib/site";
@@ -67,6 +68,14 @@ export function getAiIntentionPages() {
     title: page.seoTitle,
     url: absoluteUrl(`/intentions/${page.slug}`),
     description: page.seoDescription
+  }));
+}
+
+export function getAiJournalPages() {
+  return journalArticles.map((article) => ({
+    title: article.seoTitle,
+    url: absoluteUrl(`/journal/${article.slug}`),
+    description: article.description
   }));
 }
 

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getAiIntentionPages, getAiStonePages, getPriorityAiPages } from "@/lib/aiDiscovery";
+import { getAiIntentionPages, getAiJournalPages, getAiStonePages, getPriorityAiPages } from "@/lib/aiDiscovery";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { siteUrl } from "@/lib/site";
 
@@ -40,6 +40,10 @@ ${formatLinks(getPriorityAiPages())}
 ## Guides par intention
 
 ${formatLinks(getAiIntentionPages())}
+
+## Articles de fond
+
+${formatLinks(getAiJournalPages())}
 
 ## Fiches pierres prioritaires
 

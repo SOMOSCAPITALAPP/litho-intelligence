@@ -1376,6 +1376,87 @@ button {
   text-underline-offset: 3px;
 }
 
+.journal-article-shell {
+  display: grid;
+  gap: 28px;
+}
+
+.journal-article-hero {
+  align-items: stretch;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+}
+
+.journal-article-hero-copy,
+.article-summary-card,
+.article-product-highlight,
+.article-prose > section,
+.article-sources {
+  background: rgba(255, 250, 247, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.journal-article-hero-copy {
+  display: grid;
+  gap: 16px;
+  padding: clamp(24px, 5vw, 48px);
+}
+
+.journal-article-hero-image {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.journal-article-hero-image img {
+  object-fit: cover;
+}
+
+.article-summary-card,
+.article-product-highlight,
+.article-prose > section,
+.article-sources {
+  padding: clamp(20px, 4vw, 34px);
+}
+
+.article-summary-card ul,
+.article-prose ul {
+  color: var(--muted);
+  line-height: 1.75;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.article-prose {
+  display: grid;
+  gap: 20px;
+}
+
+.article-prose h2 {
+  margin-top: 0;
+}
+
+.article-prose p {
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.85;
+}
+
+.article-product-highlight {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(280px, 1fr);
+}
+
+.article-faq {
+  gap: 14px;
+}
+
 .compliance-panel {
   align-items: center;
   display: flex;
@@ -1389,6 +1470,8 @@ button {
 
 @media (max-width: 980px) {
   .conversion-hero,
+  .journal-article-hero,
+  .article-product-highlight,
   .lead-capture-card {
     grid-template-columns: 1fr;
   }

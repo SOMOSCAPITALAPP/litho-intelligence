@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: aiCrawlerUserAgents,
-        allow: ["/", "/llms.txt", "/sitemap.xml", "/pierres/", "/intentions/", "/guides/", "/formation", "/boutique-pierres-naturelles"],
+        allow: ["/", "/llms.txt", "/sitemap.xml", "/pierres/", "/intentions/", "/guides/", "/journal/", "/formation", "/boutique-pierres-naturelles"],
         disallow: ["/admin", "/system", "/api/", "/account", "/profile", "/dashboard"]
       },
       {

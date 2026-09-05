@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { intentionPages } from "@/data/intentions";
 import { editorialGuides } from "@/lib/editorialGuides";
+import { journalArticles } from "@/lib/journalArticles";
 import { nativeStones } from "@/lib/nativeStones";
 import { siteUrl } from "@/lib/site";
 import { stones } from "@/lib/stones";
@@ -37,6 +38,12 @@ export function getCanonicalSeoUrls(now = new Date()): MetadataRoute.Sitemap {
       lastModified: new Date(guide.updatedAt),
       changeFrequency: "monthly" as const,
       priority: 0.82
+    })),
+    ...journalArticles.map((article) => ({
+      url: `${baseUrl}/journal/${article.slug}`,
+      lastModified: new Date(article.updatedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.84
     })),
     ...intentionPages.map((page) => ({
       url: `${baseUrl}/intentions/${page.slug}`,
