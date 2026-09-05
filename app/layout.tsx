@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Link from "next/link";
 import { InstallAppPrompt } from "@/components/InstallAppPrompt";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PWARegistration } from "@/components/PWARegistration";
@@ -77,6 +78,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteHeader />
           {children}
           <footer className="footer">
+            <div className="footer-links">
+              <Link href="/formation">Formation</Link>
+              <Link href="/meditations">Méditations</Link>
+              <Link href="/consultation">Consultation</Link>
+              <Link href="/pierre-de-naissance">Pierre de naissance</Link>
+              <Link href="/compatibilite-amoureuse">Compatibilité</Link>
+              <Link href="/idee-cadeau">Idées cadeaux</Link>
+              <Link href="/guides">Guides</Link>
+            </div>
             <strong>Litho Intelligence by Quintessence Cristal.</strong> {wellbeingDisclaimer}
           </footer>
         </div>

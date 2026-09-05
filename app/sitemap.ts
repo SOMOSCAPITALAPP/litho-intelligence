@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { intentionPages } from "@/data/intentions";
 import { nativeStones } from "@/lib/nativeStones";
+import { editorialGuides } from "@/lib/editorialGuides";
 import { stones } from "@/lib/stones";
 import { siteUrl } from "@/lib/site";
 
@@ -17,13 +18,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/idee-cadeau",
     "/boutique-pierres-naturelles",
     "/pierre-de-naissance",
-    "/lithotherapie"
+    "/lithotherapie",
+    "/guides",
+    "/entretien",
+    "/comparatifs",
+    "/journal"
   ];
 
   const now = new Date();
 
   return [
     ...staticRoutes.map((route) => ({ url: `${baseUrl}${route}`, lastModified: now, changeFrequency: "weekly" as const, priority: route === "" ? 1 : 0.8 })),
+    ...editorialGuides.map((guide) => ({ url: `${baseUrl}/guides/${guide.slug}`, lastModified: new Date(guide.updatedAt), changeFrequency: "monthly" as const, priority: 0.82 })),
     ...intentionPages.map((page) => ({ url: `${baseUrl}/intention/${page.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.85 })),
     ...nativeStones.map((stone) => ({ url: `${baseUrl}/stones/${stone.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.75 })),
     ...stones.map((stone) => ({ url: `${baseUrl}/stone/${stone.slug}`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.75 }))

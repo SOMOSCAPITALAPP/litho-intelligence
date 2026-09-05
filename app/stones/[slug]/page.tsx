@@ -127,7 +127,6 @@ export default function NativeStonePage({ params }: { params: { slug: string } }
             ) : null}
             <AddFavoriteButton stoneSlug={stone.slug} />
           </div>
-          {!product ? <p>Produit associé à compléter dans le catalogue.</p> : null}
           <p className="fineprint">{stone.disclaimer}</p>
         </div>
         <EmailCapture source={`native-stone:${stone.slug}`} />

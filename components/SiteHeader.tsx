@@ -6,15 +6,11 @@ import { useState } from "react";
 
 const primaryLinks = [
   { href: "/lithotherapie", label: "Lithothérapie" },
-  { href: "/stones", label: "Pierres" },
-  { href: "/intention", label: "Intentions" },
-  { href: "/boutique-pierres-naturelles", label: "Boutique" },
-  { href: "/pierre-de-naissance", label: "Pierre de naissance" },
-  { href: "/idee-cadeau", label: "Idée cadeau" },
-  { href: "/compatibilite-amoureuse", label: "Compatibilité" },
-  { href: "/meditations", label: "Méditations" },
-  { href: "/formation", label: "Formation" },
-  { href: "/consultation", label: "Consultation" }
+  { href: "/stones", label: "Pierres de A à Z" },
+  { href: "/intention", label: "Choisir selon son besoin" },
+  { href: "/entretien", label: "Authenticité et entretien" },
+  { href: "/journal", label: "Journal" },
+  { href: "/boutique-pierres-naturelles", label: "Boutique" }
 ];
 
 const secondaryLinks = [
