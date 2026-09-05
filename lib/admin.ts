@@ -1,5 +1,9 @@
 export function getAdminEmails() {
-  return (process.env.ADMIN_EMAILS ?? process.env.ADMIN_EMAIL ?? "")
+  return [
+    process.env.ADMIN_EMAILS ?? process.env.ADMIN_EMAIL ?? "",
+    process.env.ADMIN_EXTRA_EMAILS ?? ""
+  ]
+    .join(",")
     .split(",")
     .map((email) => email.trim().toLowerCase())
     .filter(Boolean);
