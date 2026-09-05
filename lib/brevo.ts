@@ -8,7 +8,7 @@ export type BrevoSyncPayload = {
 
 type BrevoSyncResult =
   | { ok: true; skipped?: false }
-  | { ok: true; skipped: true; reason: "missing_api_key" | "no_consent" }
+  | { ok: true; skipped: true; reason: "disabled" | "missing_api_key" | "no_consent" }
   | { ok: false; error: string };
 
 function getListIds() {
@@ -27,6 +27,10 @@ export async function syncLeadToBrevo(payload: BrevoSyncPayload): Promise<BrevoS
 
   if (!payload.consent) {
     return { ok: true, skipped: true, reason: "no_consent" };
+  }
+
+  if (process.env.BREVO_SYNC_ENABLED !== "true") {
+    return { ok: true, skipped: true, reason: "disabled" };
   }
 
   if (!apiKey) {

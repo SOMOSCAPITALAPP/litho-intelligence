@@ -7,6 +7,12 @@ export type LeadPayload = {
   consent?: boolean;
 };
 
+type SaveLeadResult = {
+  ok: boolean;
+  local?: boolean;
+  downloadUrl?: string;
+};
+
 const localStorageKey = "litho:leads";
 
 export function saveLeadLocally(payload: LeadPayload) {
@@ -24,7 +30,7 @@ export function saveLeadLocally(payload: LeadPayload) {
   );
 }
 
-export async function saveLead(payload: LeadPayload) {
+export async function saveLead(payload: LeadPayload): Promise<SaveLeadResult> {
   try {
     const response = await fetch("/api/email-capture", {
       method: "POST",
@@ -49,7 +55,11 @@ export async function saveLead(payload: LeadPayload) {
 
     const data = await response.json().catch(() => ({}));
     if (data?.stored === false) saveLeadLocally(payload);
-    return { ok: true, local: data?.stored === false };
+    return {
+      ok: true,
+      local: data?.stored === false,
+      downloadUrl: typeof data?.downloadUrl === "string" ? data.downloadUrl : undefined
+    };
   } catch {
     saveLeadLocally(payload);
     return { ok: false, local: true };
