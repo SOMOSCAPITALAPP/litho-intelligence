@@ -185,11 +185,11 @@
     "duration": "75 min",
     "level": "Débutant",
     "pdfUrl": "/guides/formation-litho-02-choisir.pdf",
-    "goal": "Apprendre à partir d'un besoin réel plutot que d'une liste de propriétés abstraites.",
+    "goal": "Apprendre à partir d'un besoin réel plutôt que d'une liste de propriétés abstraites.",
     "objectives": [
       "Identifier une intention prioritaire",
       "Relier une intention à une famille de pierres",
-      "Eviter l'accumulation de pierres sans logique"
+      "Éviter l'accumulation de pierres sans logique"
     ],
     "course": [
       {
@@ -463,7 +463,7 @@
         "question": "Le nettoyage matériel consiste à...",
         "options": [
           "Retirer poussière et traces physiques",
-          "Garantir une guérison",
+          "Garantir un résultat",
           "Changer la couleur de la pierre"
         ],
         "answer": 0,
@@ -1210,7 +1210,7 @@
         "options": [
           "Une pierre, une intention positive, une carte sobre",
           "Une pierre présentée comme diagnostic",
-          "Une promesse de guérison"
+          "Une promesse de résultat"
         ],
         "answer": 0,
         "explanation": "Le cadre reste symbolique."

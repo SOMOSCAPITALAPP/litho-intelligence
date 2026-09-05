@@ -4,10 +4,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { BookRecommendationSection } from "@/components/BookRecommendationSection";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { ShareActions } from "@/components/ShareActions";
 import { wellbeingDisclaimer } from "@/lib/legal";
+import { getBooksByPlacement, getBooksForStone } from "@/lib/books";
 import { getJournalArticle, journalArticles } from "@/lib/journalArticles";
 import { getProductByStone } from "@/lib/products";
 import { routes } from "@/lib/routes";
@@ -62,6 +64,7 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
   if (!article) notFound();
 
   const product = article.productStoneSlug ? getProductByStone(article.productStoneSlug) : undefined;
+  const books = article.productStoneSlug ? getBooksForStone(article.productStoneSlug, 2) : getBooksByPlacement("journal", 2);
   const articleUrl = `${baseUrl}/journal/${article.slug}`;
 
   const articleJsonLd = {
@@ -182,6 +185,14 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
             />
           </section>
         ) : null}
+
+        <BookRecommendationSection
+          books={books}
+          eyebrow="Pour approfondir"
+          source={`journal:${article.slug}`}
+          title="Lectures recommandées après cet article"
+          intro="Ces livres prolongent la lecture avec une approche culturelle et symbolique, utile avant de choisir une pierre ou un bracelet."
+        />
 
         <section className="article-prose article-faq">
           <h2>Questions fréquentes</h2>

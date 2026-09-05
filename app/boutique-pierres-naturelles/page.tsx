@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BookRecommendationSection } from "@/components/BookRecommendationSection";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ShareActions } from "@/components/ShareActions";
+import { getBooksByPlacement } from "@/lib/books";
 import { recommendedProducts } from "@/lib/products";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
@@ -38,6 +40,8 @@ const sections = [
   { title: "Homme", key: "homme", intro: "Sélections sobres, minérales et faciles à porter." },
   { title: "Femme", key: "femme", intro: "Sélections douces, élégantes et intentionnelles." }
 ];
+
+const shopBooks = getBooksByPlacement("shop", 3);
 
 export default function NaturalStoneShopPage() {
   return (
@@ -92,6 +96,14 @@ export default function NaturalStoneShopPage() {
           </section>
         );
       })}
+
+      <BookRecommendationSection
+        books={shopBooks}
+        eyebrow="Livres et guides papier"
+        source="shop"
+        title="Comprendre les pierres avant de choisir"
+        intro="Une sélection éditoriale de livres pour compléter l'achat d'un bracelet et mieux formuler son intention."
+      />
 
       <section className="section compact-section">
         <LeadCaptureCard source="shop" />

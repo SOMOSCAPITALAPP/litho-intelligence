@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
+import { BookRecommendationSection } from "@/components/BookRecommendationSection";
+import { getBooksByPlacement } from "@/lib/books";
 import { editorialGuides } from "@/lib/editorialGuides";
 import { journalArticles } from "@/lib/journalArticles";
 
@@ -14,6 +16,7 @@ export default function JournalPage() {
   const [featuredArticle, ...otherArticles] = journalArticles;
   const priorityArticles = otherArticles.slice(0, 6);
   const archiveArticles = otherArticles.slice(6);
+  const journalBooks = getBooksByPlacement("journal", 3);
 
   return (
     <main className="section compact-section">
@@ -82,6 +85,13 @@ export default function JournalPage() {
           </div>
         </section>
       ) : null}
+
+      <BookRecommendationSection
+        books={journalBooks}
+        source="journal-index"
+        title="La bibliothèque à garder sous la main"
+        intro="Trois lectures papier pour prolonger les dossiers du journal : protection, amour de soi et fondamentaux des pierres naturelles."
+      />
 
       <section className="section compact-section no-side-padding">
         <div className="section-heading-row">

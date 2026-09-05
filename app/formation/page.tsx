@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, GraduationCap } from "lucide-react";
+import { BookRecommendationSection } from "@/components/BookRecommendationSection";
 import { EmailCapture } from "@/components/EmailCapture";
 import { FormationAccess } from "@/components/FormationAccess";
 import { ShareActions } from "@/components/ShareActions";
 import formationModules from "@/data/formation.modules.json";
+import { getBooksByPlacement } from "@/lib/books";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
 
@@ -41,6 +43,7 @@ const standards = [
 
 export default function FormationPage() {
   const totalQuizzes = formationModules.reduce((total, module) => total + module.quiz.length, 0);
+  const formationBooks = getBooksByPlacement("formation", 3);
 
   return (
     <main className="section formation-page">
@@ -127,6 +130,14 @@ export default function FormationPage() {
           </Link>
         </div>
       </section>
+
+      <BookRecommendationSection
+        books={formationBooks}
+        eyebrow="Bibliothèque complémentaire"
+        source="formation"
+        title="Livres à lire pendant la formation"
+        intro="Pour garder une trace papier du parcours, ces ouvrages complètent les modules gratuits sans remplacer les cours et QCM en ligne."
+      />
 
       <section className="section compact-section no-side-padding">
         <EmailCapture source="formation" />

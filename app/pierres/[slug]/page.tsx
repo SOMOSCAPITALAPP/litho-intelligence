@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ShoppingBag } from "lucide-react";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
+import { BookRecommendationSection } from "@/components/BookRecommendationSection";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
@@ -10,6 +11,7 @@ import { RelatedStoneLinks } from "@/components/RelatedStoneLinks";
 import { ShareActions } from "@/components/ShareActions";
 import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { getNativeStone, getNativeStoneImage, nativeStones } from "@/lib/nativeStones";
+import { getBooksForStone } from "@/lib/books";
 import { getProductByStone } from "@/lib/products";
 import { routes } from "@/lib/routes";
 import { defaultShareAlt, shareImage, shareImageType, siteUrl } from "@/lib/site";
@@ -83,6 +85,7 @@ export default function PierrePage({ params }: { params: { slug: string } }) {
   const image = getNativeStoneImage(nativeStone);
   const virtueSummary = nativeStoneVirtueSummary(nativeStone);
   const editorialDetail = getStoneEditorialDetail(nativeStone.slug);
+  const books = getBooksForStone(linkedProductStone?.slug ?? nativeStone.slug, 2);
 
   return (
     <main>
@@ -138,6 +141,14 @@ export default function PierrePage({ params }: { params: { slug: string } }) {
 
         <StoneEditorialDetailBlock detail={editorialDetail} stoneName={nativeStone.name} />
 
+        <BookRecommendationSection
+          books={books}
+          eyebrow="Livre associé"
+          source={`native-stone:${nativeStone.slug}`}
+          title={`Approfondir ${nativeStone.name}`}
+          intro="Une lecture complémentaire pour replacer cette pierre dans les traditions symboliques et mieux choisir votre intention."
+        />
+
         <div className="grid">
           <InfoCard title="Usages traditionnels" items={nativeStone.traditional_uses} linkable />
           <InfoCard title="Mots-clés émotionnels" items={nativeStone.emotional_keywords} linkable />
@@ -190,6 +201,7 @@ function ProductStonePage({ stone }: { stone: Stone }) {
   const virtueSummary = productStoneVirtueSummary(stone);
   const recommendedProduct = getProductByStone(stone.slug);
   const editorialDetail = getStoneEditorialDetail(stone.slug);
+  const books = getBooksForStone(stone.slug, 2);
   const faq = [
     ["Quelle est la signification symbolique de cette pierre ?", `${stone.name} est traditionnellement associée à ${stone.properties.slice(0, 3).join(", ")}.`],
     ["Comment porter cette pierre au quotidien ?", stone.wear],
@@ -247,6 +259,14 @@ function ProductStonePage({ stone }: { stone: Stone }) {
         </article>
 
         <StoneEditorialDetailBlock detail={editorialDetail} stoneName={stone.name} />
+
+        <BookRecommendationSection
+          books={books}
+          eyebrow="Livre associé"
+          source={`stone:${stone.slug}`}
+          title={`Approfondir ${stone.name}`}
+          intro="Une lecture complémentaire pour comprendre la pierre, son histoire symbolique et les gestes simples qui peuvent accompagner son port."
+        />
 
         <div className="grid">
           <article className="card">
@@ -488,4 +508,3 @@ function RelatedCard({ title, items, emptyText }: { title: string; items: string
     </article>
   );
 }
-

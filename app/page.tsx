@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Gem, Shield, Sparkles } from "lucide-react";
 import { LeadCaptureCard } from "@/components/LeadCaptureCard";
+import { BookRecommendationSection } from "@/components/BookRecommendationSection";
 import { ProductRecommendationCard } from "@/components/ProductRecommendationCard";
 import { SearchBox } from "@/components/SearchBox";
 import { ShareActions } from "@/components/ShareActions";
+import { getBooksByPlacement } from "@/lib/books";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { recommendedProducts } from "@/lib/products";
 import { routes } from "@/lib/routes";
@@ -41,6 +43,7 @@ const popularStoneSlugs = [
 ];
 
 const shopPreview = recommendedProducts.slice(0, 6);
+const homeBooks = getBooksByPlacement("home", 3);
 
 export default function HomePage() {
   const popularStones = popularStoneSlugs.map((slug) => getStone(slug)).filter(Boolean);
@@ -139,6 +142,13 @@ export default function HomePage() {
           buttonLabel="Recevoir mon guide gratuit"
         />
       </section>
+
+      <BookRecommendationSection
+        books={homeBooks}
+        source="home"
+        title="Les livres Quintessence Cristal à découvrir"
+        intro="Après le test gratuit, ces livres permettent d'approfondir les pierres phares : labradorite, quartz rose et bases de lithothérapie symbolique."
+      />
 
       <section className="section compact-section">
         <div className="section-heading-row">
