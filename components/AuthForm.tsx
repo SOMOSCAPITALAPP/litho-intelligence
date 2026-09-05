@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { saveLocalMember } from "@/lib/localMember";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
@@ -91,6 +92,8 @@ function getRedirectTarget() {
   return redirect?.startsWith("/") ? redirect : "/dashboard";
 }
 
+const useNextAuth = process.env.NEXT_PUBLIC_AUTH_PROVIDER === "nextauth";
+
 export function AuthForm({ mode }: { mode: "login" | "register" }) {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -122,6 +125,57 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
     setLoading(true);
     setError("");
     setNotice(mode === "register" ? "Création de votre espace..." : "Connexion à votre espace...");
+
+    if (useNextAuth) {
+      try {
+        if (mode === "register") {
+          const response = await fetch("/api/auth/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email,
+              password,
+              fullName: fullName.trim(),
+              newsletterOptIn: newsletter
+            })
+          });
+
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            setLoading(false);
+            setNotice("");
+            setError(typeof data?.error === "string" ? data.error : "Création du compte impossible pour le moment.");
+            return;
+          }
+        }
+
+        const login = await signIn("credentials", {
+          email,
+          password,
+          redirect: false
+        });
+
+        if (login?.error) {
+          setLoading(false);
+          setNotice("");
+          setError("Email ou mot de passe incorrect.");
+          return;
+        }
+
+        saveLocalMember({
+          email,
+          fullName: mode === "register" ? fullName.trim() : undefined,
+          newsletterOptIn: newsletter
+        });
+        window.location.assign(getRedirectTarget());
+        return;
+      } catch {
+        setLoading(false);
+        setNotice("");
+        setError("Connexion momentanément impossible. Réessayez dans quelques secondes.");
+        return;
+      }
+    }
 
     const supabase = createSupabaseBrowserClient();
     if (!supabase) {

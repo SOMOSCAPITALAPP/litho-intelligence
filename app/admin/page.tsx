@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { Activity, BarChart3, Database, Download, Mail, ShieldCheck, Sparkles, Users } from "lucide-react";
 import { getAdminEmails, isAdminEmail } from "@/lib/admin";
 import { getCurrentUser } from "@/lib/auth";
+import { getNeonAdminStats } from "@/lib/neon-admin";
 import { createSupabaseAdminClient } from "@/lib/supabase/server";
 
 export const metadata = {
@@ -135,6 +136,33 @@ async function getRecentLeads(supabase: NonNullable<ReturnType<typeof createSupa
 }
 
 async function getAdminStats(): Promise<AdminStats> {
+  const errors: string[] = [];
+  const since7Days = isoDaysAgo(7);
+  const today = todayKey();
+  const neonStats = await getNeonAdminStats(since7Days);
+
+  if (neonStats) {
+    return {
+      metrics: [
+        { label: "Membres", value: neonStats.totalProfiles, detail: `+${neonStats.profiles7Days} sur 7 jours`, icon: Users },
+        { label: "Emails capturés", value: neonStats.totalLeads, detail: `+${neonStats.leads7Days} sur 7 jours`, icon: Mail },
+        { label: "Actions suivies", value: neonStats.totalEvents, detail: `+${neonStats.events7Days} sur 7 jours`, icon: Activity },
+        { label: "Recommandations", value: "—", detail: "À migrer dans Neon", icon: Sparkles },
+        { label: "Favoris", value: "—", detail: "À migrer dans Neon", icon: ShieldCheck },
+        { label: "Consultations", value: "—", detail: "À migrer dans Neon", icon: BarChart3 },
+        { label: "Appels IA", value: "—", detail: "À migrer dans Neon", icon: Database },
+        { label: "Premium actifs", value: "—", detail: "Stripe reste actif", icon: Download }
+      ],
+      profilePlanCounts: countBy(neonStats.profiles, (profile) => profile.plan ?? "free"),
+      leadSources: countBy(neonStats.recentLeads, getLeadIntent),
+      aiSources: [],
+      recentLeads: neonStats.recentLeads,
+      recentEvents: neonStats.recentEvents,
+      todayUsage: { recommendations: 0, combinations: 0 },
+      errors: neonStats.errors
+    };
+  }
+
   const supabase = createSupabaseAdminClient();
   if (!supabase) {
     return {
@@ -145,13 +173,10 @@ async function getAdminStats(): Promise<AdminStats> {
       recentLeads: [],
       recentEvents: [],
       todayUsage: { recommendations: 0, combinations: 0 },
-      errors: ["Supabase service role n'est pas configuré."]
+      errors: ["Aucune base centrale n'est configurée. Ajoutez DATABASE_URL via Neon ou corrigez Supabase."]
     };
   }
 
-  const errors: string[] = [];
-  const since7Days = isoDaysAgo(7);
-  const today = todayKey();
   const adminSupabase = supabase;
 
   async function safeCount(label: string, table: string, since?: string) {

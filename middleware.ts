@@ -5,6 +5,11 @@ const protectedRoutes = ["/account", "/dashboard"];
 
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
+
+  if (process.env.NEXT_PUBLIC_AUTH_PROVIDER === "nextauth") {
+    return response;
+  }
+
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 

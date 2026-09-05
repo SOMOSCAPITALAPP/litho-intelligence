@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { isAdminEmail } from "@/lib/admin";
-import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
+import { getCurrentUser } from "@/lib/auth";
+import { getAuthProvider } from "@/lib/auth-provider";
+import { isNeonConfigured } from "@/lib/neon";
+import { createSupabaseAdminClient } from "@/lib/supabase/server";
 import { isIndexNowConfigured } from "@/lib/indexnow";
 import { getStripe } from "@/lib/stripe";
 
@@ -37,10 +40,7 @@ const tableChecks: Record<string, string> = {
 };
 
 export async function GET() {
-  const authClient = createSupabaseServerClient();
-  const {
-    data: { user }
-  } = authClient ? await authClient.auth.getUser() : { data: { user: null } };
+  const { user } = await getCurrentUser();
 
   if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -77,6 +77,8 @@ export async function GET() {
     services: {
       supabase: Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY),
       supabaseServiceRole: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY),
+      neon: isNeonConfigured(),
+      authProvider: getAuthProvider(),
       openai: Boolean(process.env.OPENAI_API_KEY),
       stripe: Boolean(getStripe() && process.env.STRIPE_PREMIUM_PRICE_ID),
       stripeWebhook: Boolean(process.env.STRIPE_WEBHOOK_SECRET),

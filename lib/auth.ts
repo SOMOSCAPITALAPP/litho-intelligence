@@ -1,4 +1,6 @@
 import { redirect } from "next/navigation";
+import { auth as getNextAuthSession } from "@/auth";
+import { isNextAuthProvider } from "@/lib/auth-provider";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { ensureProfile } from "@/lib/profile";
 import type { MembershipPlan } from "@/lib/plans";
@@ -13,6 +15,31 @@ export type UserProfile = {
 };
 
 export async function getCurrentUser() {
+  if (isNextAuthProvider()) {
+    const session = await getNextAuthSession();
+    const sessionUser = session?.user as { id?: string; email?: string | null; name?: string | null; plan?: MembershipPlan } | undefined;
+
+    if (!sessionUser?.id || !sessionUser.email) return { user: null, profile: null };
+
+    return {
+      user: {
+        id: sessionUser.id,
+        email: sessionUser.email,
+        user_metadata: {
+          full_name: sessionUser.name ?? ""
+        }
+      },
+      profile: {
+        id: sessionUser.id,
+        email: sessionUser.email,
+        full_name: sessionUser.name ?? null,
+        plan: sessionUser.plan ?? "free",
+        stripe_customer_id: null,
+        newsletter_opt_in: null
+      } satisfies UserProfile
+    };
+  }
+
   const supabase = createSupabaseServerClient();
   if (!supabase) return { user: null, profile: null };
 

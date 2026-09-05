@@ -1,8 +1,21 @@
 import { NextResponse } from "next/server";
 import { syncLeadToBrevo } from "@/lib/brevo";
+import { saveLeadToNeon, trackEventToNeon } from "@/lib/neon-store";
 import { checkRateLimit, getRequestIp } from "@/lib/rate-limit";
 import { syncLeadToSysteme } from "@/lib/systeme";
 import { createSupabaseAdminClient } from "@/lib/supabase/server";
+
+const guideDownloadUrl = "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf";
+
+function withTimeout<T>(promise: PromiseLike<T>, milliseconds = 4500): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timeout = setTimeout(() => reject(new Error("DATABASE_TIMEOUT")), milliseconds);
+    Promise.resolve(promise)
+      .then(resolve)
+      .catch(reject)
+      .finally(() => clearTimeout(timeout));
+  });
+}
 
 export async function POST(request: Request) {
   const ip = getRequestIp(request);
@@ -37,7 +50,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
 
-  const supabase = createSupabaseAdminClient();
   const brevoResult = await syncLeadToBrevo({
     email,
     fullName,
@@ -52,14 +64,58 @@ export async function POST(request: Request) {
     consent,
     metadata
   });
+  const leadMetadata = {
+    ...metadata,
+    latest_source: source,
+    marketing_consent: consent,
+    brevo_sync: brevoResult,
+    systeme_sync: systemeResult,
+    captured_at: new Date().toISOString()
+  };
 
+  const neonResult = await saveLeadToNeon({
+    email,
+    fullName,
+    source,
+    consent,
+    metadata: leadMetadata
+  });
+
+  if (neonResult.ok && !neonResult.skipped) {
+    await trackEventToNeon({
+      eventName: "lead_capture",
+      payload: {
+        email,
+        fullName: fullName || null,
+        source,
+        metadata,
+        brevo: brevoResult,
+        systeme: systemeResult,
+        database: "neon"
+      }
+    });
+
+    return NextResponse.json({
+      ok: true,
+      stored: true,
+      database: "neon",
+      neon: neonResult,
+      brevo: brevoResult,
+      systeme: systemeResult,
+      downloadUrl: guideDownloadUrl
+    });
+  }
+
+  const supabase = createSupabaseAdminClient();
   if (!supabase) {
     return NextResponse.json({
       ok: true,
       stored: false,
+      degraded: !neonResult.ok,
+      neon: neonResult,
       brevo: brevoResult,
       systeme: systemeResult,
-      downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
+      downloadUrl: guideDownloadUrl
     });
   }
 
@@ -68,97 +124,124 @@ export async function POST(request: Request) {
     full_name: fullName || null,
     source,
     consent,
-    metadata: {
-      ...metadata,
-      latest_source: source,
-      marketing_consent: consent,
-      brevo_sync: brevoResult,
-      systeme_sync: systemeResult,
-      captured_at: new Date().toISOString()
-    },
+    metadata: leadMetadata,
     updated_at: new Date().toISOString()
   };
 
-  const { error } = await supabase.from("leads").upsert(leadPayload, { onConflict: "email" });
-
-  if (error) {
-    const fallback = await supabase.from("leads").upsert(
-      {
-        email,
-        source,
-        consent
-      },
-      { onConflict: "email" }
+  try {
+    const { error } = await withTimeout<{ error: { message: string } | null }>(
+      supabase.from("leads").upsert(leadPayload, { onConflict: "email" })
     );
 
-    if (fallback.error) {
-      await supabase.from("events").insert({
-        event_name: "lead_capture_failed",
+    if (error) {
+      const fallback = await withTimeout<{ error: { message: string } | null }>(
+        supabase.from("leads").upsert(
+          {
+            email,
+            source,
+            consent
+          },
+          { onConflict: "email" }
+        )
+      );
+
+      if (fallback.error) {
+        await withTimeout(
+          supabase.from("events").insert({
+            event_name: "lead_capture_failed",
+            payload: {
+              email,
+              fullName: fullName || null,
+              source,
+              metadata,
+              neon: neonResult,
+              brevo: brevoResult,
+              systeme: systemeResult,
+              enriched_error: error.message,
+              fallback_error: fallback.error.message
+            }
+          })
+        ).catch(() => null);
+
+        return NextResponse.json(
+          {
+            ok: true,
+            stored: false,
+            degraded: true,
+            neon: neonResult,
+            brevo: brevoResult,
+            systeme: systemeResult,
+            downloadUrl: guideDownloadUrl
+          },
+          { status: 202 }
+        );
+      }
+
+      await withTimeout(
+        supabase.from("events").insert({
+          event_name: "lead_capture",
+          payload: {
+            email,
+            fullName: fullName || null,
+            source,
+            metadata,
+            neon: neonResult,
+            brevo: brevoResult,
+            systeme: systemeResult,
+            fallback: true
+          }
+        })
+      ).catch(() => null);
+
+      return NextResponse.json({
+        ok: true,
+        stored: true,
+        database: "supabase",
+        neon: neonResult,
+        brevo: brevoResult,
+        systeme: systemeResult,
+        fallback: true,
+        downloadUrl: guideDownloadUrl
+      });
+    }
+
+    await withTimeout(
+      supabase.from("events").insert({
+        event_name: "lead_capture",
         payload: {
           email,
           fullName: fullName || null,
           source,
           metadata,
+          neon: neonResult,
           brevo: brevoResult,
-          systeme: systemeResult,
-          enriched_error: error.message,
-          fallback_error: fallback.error.message
+          systeme: systemeResult
         }
-      });
-
-      return NextResponse.json(
-        {
-          ok: true,
-          stored: false,
-          degraded: true,
-          brevo: brevoResult,
-          systeme: systemeResult,
-          downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
-        },
-        { status: 202 }
-      );
-    }
-
-    await supabase.from("events").insert({
-      event_name: "lead_capture",
-      payload: {
-        email,
-        fullName: fullName || null,
-        source,
-        metadata,
-        brevo: brevoResult,
-        systeme: systemeResult,
-        fallback: true
-      }
-    });
+      })
+    ).catch(() => null);
 
     return NextResponse.json({
       ok: true,
       stored: true,
+      database: "supabase",
+      neon: neonResult,
       brevo: brevoResult,
       systeme: systemeResult,
-      fallback: true,
-      downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
+      downloadUrl: guideDownloadUrl
     });
+  } catch (error) {
+    return NextResponse.json(
+      {
+        ok: true,
+        stored: false,
+        degraded: true,
+        neon: neonResult,
+        supabase: { ok: false, error: error instanceof Error ? error.message : "Supabase timeout" },
+        brevo: brevoResult,
+        systeme: systemeResult,
+        downloadUrl: guideDownloadUrl
+      },
+      { status: 202 }
+    );
   }
-
-  await supabase.from("events").insert({
-    event_name: "lead_capture",
-    payload: {
-      email,
-      fullName: fullName || null,
-      source,
-      metadata,
-      brevo: brevoResult,
-      systeme: systemeResult
-    }
-  });
-
-  return NextResponse.json({
-    ok: true,
-    stored: true,
-    brevo: brevoResult,
-    systeme: systemeResult,
-    downloadUrl: "/guides/guide-10-pierres-essentielles-litho-intelligence.pdf"
-  });
 }

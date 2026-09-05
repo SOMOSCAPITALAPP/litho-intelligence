@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { trackEventToNeon } from "@/lib/neon-store";
 import { checkRateLimit, getRequestIp } from "@/lib/rate-limit";
 import { createSupabaseAdminClient } from "@/lib/supabase/server";
 
@@ -24,23 +25,32 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Invalid event" }, { status: 400 });
   }
 
+  const eventPayload = {
+    ...payload,
+    captured_at: new Date().toISOString()
+  };
+  const neonResult = await trackEventToNeon({
+    eventName: eventName.slice(0, 80),
+    payload: eventPayload
+  });
+
+  if (neonResult.ok && !neonResult.skipped) {
+    return NextResponse.json({ ok: true, stored: true, database: "neon" });
+  }
+
   const supabase = createSupabaseAdminClient();
   if (!supabase) {
-    return NextResponse.json({ ok: true, stored: false });
+    return NextResponse.json({ ok: true, stored: false, neon: neonResult });
   }
 
   const { error } = await supabase.from("events").insert({
     event_name: eventName.slice(0, 80),
-    payload: {
-      ...payload,
-      captured_at: new Date().toISOString()
-    }
+    payload: eventPayload
   });
 
   if (error) {
-    return NextResponse.json({ ok: true, stored: false, degraded: true }, { status: 202 });
+    return NextResponse.json({ ok: true, stored: false, degraded: true, neon: neonResult }, { status: 202 });
   }
 
-  return NextResponse.json({ ok: true, stored: true });
+  return NextResponse.json({ ok: true, stored: true, database: "supabase", neon: neonResult });
 }
-

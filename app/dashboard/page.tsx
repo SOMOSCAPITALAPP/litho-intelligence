@@ -17,6 +17,7 @@ import { ShareActions } from "@/components/ShareActions";
 import { TrackedOutboundLink } from "@/components/TrackedOutboundLink";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { getCurrentUser, isPremium } from "@/lib/auth";
+import { isNextAuthProvider } from "@/lib/auth-provider";
 import { withAffiliate } from "@/lib/affiliate";
 import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
 import { getStone, stones } from "@/lib/stones";
@@ -48,10 +49,13 @@ function getQuarterKey(date = new Date()) {
 }
 
 export default async function DashboardPage() {
-  const supabaseClient = createSupabaseServerClient();
-  if (!supabaseClient) return <LocalMemberDashboard />;
-
   const { user, profile } = await getCurrentUser();
+
+  if (!isNextAuthProvider()) {
+    const supabaseClient = createSupabaseServerClient();
+    if (!supabaseClient) return <LocalMemberDashboard />;
+  }
+
   if (!user) {
     return (
       <main className="section">
@@ -72,7 +76,7 @@ export default async function DashboardPage() {
 
   const premium = isPremium(profile);
   const displayName = getDisplayName(profile?.full_name, user.user_metadata?.full_name, profile?.email ?? user.email);
-  const supabase = createSupabaseAdminClient();
+  const supabase = isNextAuthProvider() ? null : createSupabaseAdminClient();
   const today = new Date().toISOString().slice(0, 10);
   const currentQuarter = getQuarterKey();
 

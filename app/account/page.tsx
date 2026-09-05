@@ -2,16 +2,20 @@ import { LocalMemberAccount } from "@/components/LocalMemberAccount";
 import { LogoutButton } from "@/components/LogoutButton";
 import { PortalButton } from "@/components/PortalButton";
 import { getCurrentUser } from "@/lib/auth";
+import { isNextAuthProvider } from "@/lib/auth-provider";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 export const metadata = { title: "Compte | Litho Intelligence" };
 export const dynamic = "force-dynamic";
 
 export default async function AccountPage() {
-  const supabase = createSupabaseServerClient();
-  if (!supabase) return <LocalMemberAccount />;
-
   const { user, profile } = await getCurrentUser();
+
+  if (!isNextAuthProvider()) {
+    const supabase = createSupabaseServerClient();
+    if (!supabase) return <LocalMemberAccount />;
+  }
+
   if (!user) return <LocalMemberAccount />;
 
   return (
