@@ -10,7 +10,8 @@
     "verify:membership": "node scripts/verify-membership.mjs",
     "import:stones": "node scripts/import-stones.mjs",
     "import:catalog": "node scripts/import-catalog.mjs",
-    "generate:formation-pdfs": "python scripts/generate-formation-pdfs.py"
+    "generate:formation-pdfs": "python scripts/generate-formation-pdfs.py",
+    "seo:indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

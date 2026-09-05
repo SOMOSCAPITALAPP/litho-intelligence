@@ -8,6 +8,7 @@ const baseUrl = siteUrl.replace(/\/$/, "");
 export const aiCrawlerUserAgents = [
   "GPTBot",
   "OAI-SearchBot",
+  "OAI-AdsBot",
   "ChatGPT-User",
   "ClaudeBot",
   "Claude-SearchBot",
@@ -15,8 +16,10 @@ export const aiCrawlerUserAgents = [
   "PerplexityBot",
   "Perplexity-User",
   "Google-Extended",
+  "GoogleOther",
   "Googlebot",
-  "Bingbot"
+  "Bingbot",
+  "Applebot"
 ];
 
 export function absoluteUrl(path: string) {

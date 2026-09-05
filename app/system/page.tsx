@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getAdminEmails, isAdminEmail } from "@/lib/admin";
 import { getCurrentUser } from "@/lib/auth";
+import { isIndexNowConfigured } from "@/lib/indexnow";
 import { createSupabaseAdminClient } from "@/lib/supabase/server";
 
 export const metadata = {
@@ -75,7 +76,9 @@ export default async function SystemPage() {
     ["Stripe secret", Boolean(process.env.STRIPE_SECRET_KEY)],
     ["Stripe prix Premium", Boolean(process.env.STRIPE_PREMIUM_PRICE_ID)],
     ["Stripe webhook", Boolean(process.env.STRIPE_WEBHOOK_SECRET)],
-    ["URL application", Boolean(process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL)]
+    ["URL application", Boolean(process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL)],
+    ["IndexNow", isIndexNowConfigured()],
+    ["Secret soumission SEO", Boolean(process.env.SEO_SUBMIT_SECRET ?? process.env.INDEXNOW_SUBMIT_SECRET)]
   ];
   const displayedTableStatus: Array<{ table: string; ok: boolean; error?: string }> = tableStatus.length
     ? tableStatus

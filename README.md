@@ -131,7 +131,31 @@ BREVO_API_KEY=
 BREVO_LIST_ID=
 # ou plusieurs listes: BREVO_LIST_IDS=12,34
 BREVO_SYNC_DEFAULT_ATTRIBUTES=false
+
+# SEO / moteurs IA
+INDEXNOW_KEY=
+SEO_SUBMIT_SECRET=
 ```
+
+## SEO et moteurs IA
+
+Le domaine canonique est `https://litho-intelligence.com`.
+
+Routes techniques:
+
+- `GET /sitemap.xml`: URLs canoniques indexables.
+- `GET /robots.txt`: autorise les moteurs de recherche, les crawlers sociaux et les crawlers IA utiles.
+- `GET /llms.txt`: resume public de Litho Intelligence pour les moteurs conversationnels.
+- `GET /indexnow-key.txt`: cle publique IndexNow si `INDEXNOW_KEY` est configuree.
+- `POST /api/seo/indexnow`: soumission protegee des URLs mises a jour a IndexNow.
+
+Soumettre le sitemap a Bing/Copilot avec IndexNow:
+
+```bash
+npm run seo:indexnow
+```
+
+Le plan operationnel est dans `docs/seo-ai-playbook.md`.
 
 ## Email marketing gratuit
 

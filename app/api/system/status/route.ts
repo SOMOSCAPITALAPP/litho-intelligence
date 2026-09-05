@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { isAdminEmail } from "@/lib/admin";
 import { createSupabaseAdminClient, createSupabaseServerClient } from "@/lib/supabase/server";
+import { isIndexNowConfigured } from "@/lib/indexnow";
 import { getStripe } from "@/lib/stripe";
 
 export const dynamic = "force-dynamic";
@@ -79,7 +80,9 @@ export async function GET() {
       openai: Boolean(process.env.OPENAI_API_KEY),
       stripe: Boolean(getStripe() && process.env.STRIPE_PREMIUM_PRICE_ID),
       stripeWebhook: Boolean(process.env.STRIPE_WEBHOOK_SECRET),
-      appUrl: Boolean(process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL)
+      appUrl: Boolean(process.env.NEXT_PUBLIC_APP_URL ?? process.env.NEXT_PUBLIC_SITE_URL),
+      indexNow: isIndexNowConfigured(),
+      seoSubmitSecret: Boolean(process.env.SEO_SUBMIT_SECRET ?? process.env.INDEXNOW_SUBMIT_SECRET)
     },
     tables: tableStatus,
     tableErrors,
