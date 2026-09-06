@@ -9,7 +9,10 @@ import { journalArticles } from "@/lib/journalArticles";
 export const metadata: Metadata = {
   title: "Journal Litho Intelligence | Pierres naturelles et lithothérapie",
   description:
-    "Journal éditorial Litho Intelligence : guides, conseils, comparatifs et repères responsables sur les pierres naturelles."
+    "Journal éditorial Litho Intelligence : guides, conseils, comparatifs et repères responsables sur les pierres naturelles.",
+  alternates: {
+    canonical: "/journal"
+  }
 };
 
 export default function JournalPage() {
