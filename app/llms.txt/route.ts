@@ -41,7 +41,7 @@ ${formatLinks(getPriorityAiPages())}
 
 ${formatLinks(getAiIntentionPages())}
 
-## Articles de fond
+## Guides lithothérapie et articles de fond
 
 ${formatLinks(getAiJournalPages())}
 

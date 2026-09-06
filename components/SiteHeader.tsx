@@ -9,7 +9,7 @@ const primaryLinks = [
   { href: "/pierres", label: "Pierres de A à Z" },
   { href: "/intentions", label: "Choisir selon son besoin" },
   { href: "/entretien", label: "Authenticité et entretien" },
-  { href: "/journal", label: "Journal" },
+  { href: "/conseils-lithotherapie", label: "Guides lithothérapie" },
   { href: "/boutique-pierres-naturelles", label: "Boutique" }
 ];
 

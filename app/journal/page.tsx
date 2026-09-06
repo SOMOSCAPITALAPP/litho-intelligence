@@ -7,11 +7,11 @@ import { editorialGuides } from "@/lib/editorialGuides";
 import { journalArticles } from "@/lib/journalArticles";
 
 export const metadata: Metadata = {
-  title: "Journal Litho Intelligence | Pierres naturelles et lithothérapie",
+  title: "Guides lithothérapie | Pierres naturelles, conseils et dossiers",
   description:
-    "Journal éditorial Litho Intelligence : guides, conseils, comparatifs et repères responsables sur les pierres naturelles.",
+    "Guides lithothérapie Litho Intelligence : conseils, comparatifs et dossiers responsables pour choisir les pierres naturelles selon votre intention.",
   alternates: {
-    canonical: "/journal"
+    canonical: "/conseils-lithotherapie"
   }
 };
 
@@ -23,8 +23,8 @@ export default function JournalPage() {
 
   return (
     <main className="section compact-section">
-      <p className="eyebrow">Journal</p>
-      <h1>Le journal des pierres naturelles</h1>
+      <p className="eyebrow">Guides lithothérapie</p>
+      <h1>Conseils et dossiers sur les pierres naturelles</h1>
       <p className="section-lead">
         Articles, guides et repères pour construire une culture claire des pierres naturelles, entre observation,
         tradition symbolique et choix responsable.
@@ -36,7 +36,7 @@ export default function JournalPage() {
             <p className="eyebrow">À la une | {featuredArticle.category} | {featuredArticle.readingTime}</p>
             <h2>{featuredArticle.title}</h2>
             <p>{featuredArticle.description}</p>
-            <Link className="primary-button" href={`/journal/${featuredArticle.slug}`}>
+            <Link className="primary-button" href={`/conseils-lithotherapie/${featuredArticle.slug}`}>
               Lire le dossier <ArrowRight size={17} />
             </Link>
           </article>
@@ -57,7 +57,7 @@ export default function JournalPage() {
               <p className="eyebrow">{article.category} | {article.readingTime}</p>
               <h2>{article.title}</h2>
               <p>{article.description}</p>
-              <Link className="micro-action" href={`/journal/${article.slug}`}>
+              <Link className="micro-action" href={`/conseils-lithotherapie/${article.slug}`}>
                 Lire l'article <ArrowRight size={15} />
               </Link>
             </article>
@@ -80,7 +80,7 @@ export default function JournalPage() {
                 <p className="eyebrow">{article.category} | {article.readingTime}</p>
                 <h2>{article.title}</h2>
                 <p>{article.description}</p>
-                <Link className="micro-action" href={`/journal/${article.slug}`}>
+                <Link className="micro-action" href={`/conseils-lithotherapie/${article.slug}`}>
                   Lire l'article <ArrowRight size={15} />
                 </Link>
               </article>
@@ -91,9 +91,9 @@ export default function JournalPage() {
 
       <BookRecommendationSection
         books={journalBooks}
-        source="journal-index"
+        source="conseils-lithotherapie"
         title="La bibliothèque à garder sous la main"
-        intro="Trois lectures papier pour prolonger les dossiers du journal : protection, amour de soi et fondamentaux des pierres naturelles."
+        intro="Trois lectures papier pour prolonger les guides : protection, amour de soi et fondamentaux des pierres naturelles."
       />
 
       <section className="section compact-section no-side-padding">

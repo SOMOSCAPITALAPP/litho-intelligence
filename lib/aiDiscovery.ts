@@ -59,6 +59,11 @@ export function getPriorityAiPages() {
       title: "Formation gratuite",
       url: absoluteUrl("/formation"),
       description: "Formation gratuite en ligne avec PDF, cours écrits et QCM, sans vidéo."
+    },
+    {
+      title: "Guides lithothérapie",
+      url: absoluteUrl("/conseils-lithotherapie"),
+      description: "Dossiers éditoriaux, conseils d'achat et articles de fond sur les pierres naturelles."
     }
   ];
 }
@@ -74,7 +79,7 @@ export function getAiIntentionPages() {
 export function getAiJournalPages() {
   return journalArticles.map((article) => ({
     title: article.seoTitle,
-    url: absoluteUrl(`/journal/${article.slug}`),
+    url: absoluteUrl(`/conseils-lithotherapie/${article.slug}`),
     description: article.description
   }));
 }

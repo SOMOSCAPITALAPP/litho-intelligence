@@ -25,7 +25,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const article = getJournalArticle(params.slug);
   if (!article) return { title: "Journal | Litho Intelligence" };
 
-  const url = `${baseUrl}/journal/${article.slug}`;
+  const url = `${baseUrl}${routes.journalArticle(article.slug)}`;
 
   return {
     title: article.seoTitle,
@@ -65,7 +65,7 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
 
   const product = article.productStoneSlug ? getProductByStone(article.productStoneSlug) : undefined;
   const books = article.productStoneSlug ? getBooksForStone(article.productStoneSlug, 2) : getBooksByPlacement("journal", 2);
-  const articleUrl = `${baseUrl}/journal/${article.slug}`;
+  const articleUrl = `${baseUrl}${routes.journalArticle(article.slug)}`;
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -111,15 +111,15 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
       <BreadcrumbJsonLd
         items={[
           { name: "Accueil", href: routes.home },
-          { name: "Journal", href: "/journal" },
-          { name: article.title, href: `/journal/${article.slug}` }
+          { name: "Guides lithothérapie", href: routes.journal },
+          { name: article.title, href: routes.journalArticle(article.slug) }
         ]}
       />
 
       <article className="journal-article-shell">
         <header className="journal-article-hero">
           <div className="journal-article-hero-copy">
-            <p className="eyebrow">Journal | {article.category}</p>
+            <p className="eyebrow">Guides lithothérapie | {article.category}</p>
             <h1>{article.title}</h1>
             <p className="section-lead">{article.description}</p>
             <p className="fineprint">
@@ -129,7 +129,7 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
               compact
               title={article.title}
               text="Un guide clair pour choisir une pierre naturelle selon son intention, avec une approche responsable et symbolique."
-              url={`/journal/${article.slug}`}
+              url={routes.journalArticle(article.slug)}
             />
           </div>
           <div className="journal-article-hero-image">
@@ -189,7 +189,7 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
         <BookRecommendationSection
           books={books}
           eyebrow="Pour approfondir"
-          source={`journal:${article.slug}`}
+          source={`conseils-lithotherapie:${article.slug}`}
           title="Lectures recommandées après cet article"
           intro="Ces livres prolongent la lecture avec une approche culturelle et symbolique, utile avant de choisir une pierre ou un bracelet."
         />
@@ -206,7 +206,7 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
 
         <LeadCaptureCard
           buttonLabel="Recevoir le guide"
-          source={`journal:${article.slug}`}
+          source={`conseils-lithotherapie:${article.slug}`}
           subtitle="Les 10 pierres essentielles pour choisir selon votre intention, avec une approche claire et responsable."
           title="Recevez gratuitement le guide des 10 pierres essentielles"
         />

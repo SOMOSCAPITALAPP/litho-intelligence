@@ -22,7 +22,7 @@ const staticRoutes = [
   "/guides",
   "/entretien",
   "/comparatifs",
-  "/journal"
+  "/conseils-lithotherapie"
 ];
 
 export function getCanonicalSeoUrls(now = new Date()): MetadataRoute.Sitemap {
@@ -40,7 +40,7 @@ export function getCanonicalSeoUrls(now = new Date()): MetadataRoute.Sitemap {
       priority: 0.82
     })),
     ...journalArticles.map((article) => ({
-      url: `${baseUrl}/journal/${article.slug}`,
+      url: `${baseUrl}/conseils-lithotherapie/${article.slug}`,
       lastModified: new Date(article.updatedAt),
       changeFrequency: "monthly" as const,
       priority: 0.84

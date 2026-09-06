@@ -6,6 +6,8 @@ const nextConfig = {
       { source: "/stone/jade-vert", destination: "/pierres/jade-emeraude", permanent: true },
       { source: "/stone/jade-blanc", destination: "/pierres/jade-emeraude", permanent: false },
       { source: "/stone/agate", destination: "/pierres/agate-du-botswana", permanent: false },
+      { source: "/journal", destination: "/conseils-lithotherapie", permanent: true },
+      { source: "/journal/:slug", destination: "/conseils-lithotherapie/:slug", permanent: true },
       { source: "/intention/argent", destination: "/intentions/argent-abondance", permanent: false },
       { source: "/pierre-pour-stress", destination: "/intentions/stress", permanent: true },
       { source: "/pierre-pour-amour", destination: "/intentions/amour", permanent: true },

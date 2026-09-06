@@ -85,6 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/pierre-de-naissance">Pierre de naissance</Link>
               <Link href="/compatibilite-amoureuse">Compatibilité</Link>
               <Link href="/idee-cadeau">Idées cadeaux</Link>
+              <Link href="/conseils-lithotherapie">Guides lithothérapie</Link>
               <Link href="/guides">Guides</Link>
             </div>
             <strong>Litho Intelligence by Quintessence Cristal.</strong> {wellbeingDisclaimer}
