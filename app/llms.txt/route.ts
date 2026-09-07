@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getAiIntentionPages, getAiJournalPages, getAiStonePages, getPriorityAiPages } from "@/lib/aiDiscovery";
+import { getAiGuidePages, getAiIntentionPages, getAiJournalPages, getAiStonePages, getPriorityAiPages } from "@/lib/aiDiscovery";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { siteUrl } from "@/lib/site";
 
@@ -44,6 +44,10 @@ ${formatLinks(getAiIntentionPages())}
 ## Guides lithothérapie et articles de fond
 
 ${formatLinks(getAiJournalPages())}
+
+## Guides longs de référence
+
+${formatLinks(getAiGuidePages())}
 
 ## Fiches pierres prioritaires
 

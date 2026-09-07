@@ -1,4 +1,5 @@
 import { intentionPages } from "@/data/intentions";
+import { editorialGuides } from "@/lib/editorialGuides";
 import { journalArticles } from "@/lib/journalArticles";
 import { nativeStones } from "@/lib/nativeStones";
 import { stones } from "@/lib/stones";
@@ -81,6 +82,14 @@ export function getAiJournalPages() {
     title: article.seoTitle,
     url: absoluteUrl(`/conseils-lithotherapie/${article.slug}`),
     description: article.description
+  }));
+}
+
+export function getAiGuidePages() {
+  return editorialGuides.map((guide) => ({
+    title: guide.title,
+    url: absoluteUrl(`/guides/${guide.slug}`),
+    description: guide.description
   }));
 }
 
