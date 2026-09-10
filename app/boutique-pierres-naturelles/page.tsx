@@ -41,7 +41,7 @@ const sections = [
   { title: "Femme", key: "femme", intro: "Sélections douces, élégantes et intentionnelles." }
 ];
 
-const shopBooks = getBooksByPlacement("shop", 3);
+const shopBooks = getBooksByPlacement("shop", 4);
 
 export default function NaturalStoneShopPage() {
   return (

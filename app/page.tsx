@@ -43,7 +43,7 @@ const popularStoneSlugs = [
 ];
 
 const shopPreview = recommendedProducts.slice(0, 6);
-const homeBooks = getBooksByPlacement("home", 3);
+const homeBooks = getBooksByPlacement("home", 4);
 
 export default function HomePage() {
   const popularStones = popularStoneSlugs.map((slug) => getStone(slug)).filter(Boolean);
@@ -147,7 +147,7 @@ export default function HomePage() {
         books={homeBooks}
         source="home"
         title="Les livres Quintessence Cristal à découvrir"
-        intro="Après le test gratuit, ces livres permettent d'approfondir les pierres phares : labradorite, quartz rose et bases de lithothérapie symbolique."
+        intro="Après le test gratuit, ces livres permettent d'approfondir les pierres phares : labradorite, quartz rose, œil de tigre et bases de lithothérapie symbolique."
       />
 
       <section className="section compact-section">

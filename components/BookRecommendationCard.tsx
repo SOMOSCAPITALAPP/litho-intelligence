@@ -14,7 +14,7 @@ export function BookRecommendationCard({ book, source }: BookRecommendationCardP
   return (
     <article className="book-recommendation-card">
       <div className="book-recommendation-cover">
-        <img src={book.imageUrl} alt={`Couverture du livre ${book.title}`} loading="lazy" />
+        <img src={book.imageUrl} alt={book.imageAlt ?? `Couverture du livre ${book.title}`} loading="lazy" />
         <span className="product-recommendation-badge">{book.badge}</span>
       </div>
       <div className="book-recommendation-content">

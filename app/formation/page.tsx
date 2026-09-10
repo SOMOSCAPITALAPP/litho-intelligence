@@ -43,7 +43,7 @@ const standards = [
 
 export default function FormationPage() {
   const totalQuizzes = formationModules.reduce((total, module) => total + module.quiz.length, 0);
-  const formationBooks = getBooksByPlacement("formation", 3);
+  const formationBooks = getBooksByPlacement("formation", 4);
 
   return (
     <main className="section formation-page">

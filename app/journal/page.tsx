@@ -19,7 +19,7 @@ export default function JournalPage() {
   const [featuredArticle, ...otherArticles] = journalArticles;
   const priorityArticles = otherArticles.slice(0, 6);
   const archiveArticles = otherArticles.slice(6);
-  const journalBooks = getBooksByPlacement("journal", 3);
+  const journalBooks = getBooksByPlacement("journal", 4);
 
   return (
     <main className="section compact-section">

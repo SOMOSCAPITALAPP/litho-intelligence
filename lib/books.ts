@@ -8,6 +8,7 @@ export type RecommendedBook = {
   intention: string;
   audience: string;
   imageUrl: string;
+  imageAlt?: string;
   amazonUrl: string;
   badge: string;
   description: string;
@@ -57,6 +58,28 @@ export const recommendedBooks: RecommendedBook[] = [
       "Créer un rituel personnel simple, symbolique et responsable."
     ],
     placementTags: ["home", "shop", "formation", "journal", "amour", "cadeau", "quartz-rose"]
+  },
+  {
+    id: "livre-oeil-de-tigre-confiance-action",
+    asin: "0cZ0pGNo",
+    title: "Œil de tigre : confiance, action et protection symbolique",
+    subtitle: "Un repère papier pour approfondir la pierre solaire de la collection",
+    stoneSlug: "oeil-de-tigre",
+    stoneName: "Œil de tigre",
+    intention: "confiance",
+    audience: "Pour les lecteurs qui veulent comprendre l'œil de tigre avant d'offrir ou de choisir un bracelet.",
+    imageUrl: "/images/stones/oeil-de-tigre.png",
+    imageAlt: "Œil de tigre brun et doré illustrant le livre dédié à cette pierre",
+    amazonUrl: "https://amzn.eu/d/0cZ0pGNo",
+    badge: "Nouveau livre",
+    description:
+      "Un ouvrage consacré à l'œil de tigre, à sa symbolique de confiance, de décision et de protection intérieure dans une approche culturelle, spirituelle et responsable.",
+    bestFor: [
+      "Comprendre pourquoi l'œil de tigre est souvent choisi pour la confiance et le passage à l'action.",
+      "Associer le livre, la fiche pierre et le bracelet dans un parcours d'achat clair.",
+      "Offrir une lecture courte et ciblée avec un bracelet au message solaire."
+    ],
+    placementTags: ["home", "shop", "formation", "journal", "confiance", "protection", "cadeau", "oeil-de-tigre"]
   },
   {
     id: "livre-secret-energetique-pierres",
