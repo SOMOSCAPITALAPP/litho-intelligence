@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ShoppingBag } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, Gift, Mail, ShoppingBag } from "lucide-react";
 import { AddFavoriteButton } from "@/components/AddFavoriteButton";
 import { BookRecommendationSection } from "@/components/BookRecommendationSection";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
@@ -22,6 +22,41 @@ import { wellbeingDisclaimer } from "@/lib/legal";
 import { slugifyVirtue } from "@/lib/virtues";
 import { withAffiliate } from "@/lib/affiliate";
 
+const priorityStoneSeo: Record<string, { title: string; description: string; searchIntent: string; guideHref: string; guideLabel: string }> = {
+  "howlite": {
+    title: "Pierre de howlite : signification, lithothérapie et bracelet",
+    description:
+      "Découvrez la howlite blanche, ses vertus symboliques en lithothérapie, ses usages pour le calme, le sommeil et le bracelet recommandé.",
+    searchIntent: "pierre de howlite, howlite lithothérapie, howlite blanche vertus",
+    guideHref: "/guides/howlite-stress-sommeil-guide",
+    guideLabel: "Lire le guide Howlite"
+  },
+  "agate-bleue": {
+    title: "Agate bleue : pierre, vertus symboliques et bracelet",
+    description:
+      "Guide de l'agate bleue naturelle : signification, vertus symboliques, communication douce, associations et bracelet recommandé.",
+    searchIntent: "agate bleue pierre, agate bleue naturelle, vertu agate bleue",
+    guideHref: "/intentions/communication",
+    guideLabel: "Voir les pierres de communication"
+  },
+  "oeil-de-tigre": {
+    title: "Œil de tigre : vertus, protection, confiance et bracelet",
+    description:
+      "Découvrez l'œil de tigre, pierre traditionnellement associée à la confiance, à la protection symbolique et au passage à l'action.",
+    searchIntent: "œil de tigre vertus, pierre œil de tigre, bracelet œil de tigre",
+    guideHref: "/guides/oeil-de-tigre-confiance-protection-guide",
+    guideLabel: "Lire le guide Œil de tigre"
+  },
+  "quartz-rose": {
+    title: "Quartz rose : signification, amour de soi et bracelet",
+    description:
+      "Découvrez le quartz rose, pierre de douceur et d'amour de soi dans les traditions symboliques, avec guide, livre et bracelet recommandé.",
+    searchIntent: "quartz rose, quartz rose signification, bracelet quartz rose",
+    guideHref: "/guides/quartz-rose-amour-soi-guide",
+    guideLabel: "Lire le guide Quartz rose"
+  }
+};
+
 export function generateStaticParams() {
   const slugs = new Set([...nativeStones.map((stone) => stone.slug), ...stones.map((stone) => stone.slug)]);
   return Array.from(slugs).map((slug) => ({ slug }));
@@ -30,14 +65,15 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const productStone = getStone(params.slug);
   const nativeStone = getNativeStone(params.slug);
-  const title = productStone
+  const prioritySeo = priorityStoneSeo[params.slug];
+  const title = prioritySeo?.title ?? (productStone
     ? `${productStone.name} : signification, vertus symboliques et bracelet recommandé`
-    : nativeStone?.seo_title ?? "Pierre naturelle | Litho Intelligence";
-  const description = productStone
+    : nativeStone?.seo_title ?? "Pierre naturelle | Litho Intelligence");
+  const description = prioritySeo?.description ?? (productStone
     ? `Découvrez ${productStone.name}, sa signification symbolique, ses intentions associées, ses conseils d'entretien et le bracelet recommandé sur Litho Intelligence.`
     : nativeStone
-      ? `Découvrez ${nativeStone.name}, ses usages symboliques, ses intentions associées et ses conseils d'entretien sur Litho Intelligence.`
-      : "Fiche pierre naturelle Litho Intelligence.";
+      ? nativeStone.seo_description
+      : "Fiche pierre naturelle Litho Intelligence.");
 
   return {
     title,
@@ -147,6 +183,15 @@ export default function PierrePage({ params }: { params: { slug: string } }) {
           source={`native-stone:${nativeStone.slug}`}
           title={`Approfondir ${nativeStone.name}`}
           intro="Une lecture complémentaire pour replacer cette pierre dans les traditions symboliques et mieux choisir votre intention."
+        />
+
+        <StoneConversionPath
+          amazonUrl={recommendedProduct?.amazonUrl ?? product?.url}
+          guideHref={priorityStoneSeo[nativeStone.slug]?.guideHref}
+          guideLabel={priorityStoneSeo[nativeStone.slug]?.guideLabel}
+          searchIntent={priorityStoneSeo[nativeStone.slug]?.searchIntent}
+          source={`native-stone:${nativeStone.slug}`}
+          stoneName={nativeStone.name}
         />
 
         <div className="grid">
@@ -266,6 +311,15 @@ function ProductStonePage({ stone }: { stone: Stone }) {
           source={`stone:${stone.slug}`}
           title={`Approfondir ${stone.name}`}
           intro="Une lecture complémentaire pour comprendre la pierre, son histoire symbolique et les gestes simples qui peuvent accompagner son port."
+        />
+
+        <StoneConversionPath
+          amazonUrl={recommendedProduct?.amazonUrl ?? stone.products[0]?.url}
+          guideHref={priorityStoneSeo[stone.slug]?.guideHref}
+          guideLabel={priorityStoneSeo[stone.slug]?.guideLabel}
+          searchIntent={priorityStoneSeo[stone.slug]?.searchIntent}
+          source={`stone:${stone.slug}`}
+          stoneName={stone.name}
         />
 
         <div className="grid">
@@ -415,6 +469,65 @@ function ProductStonePage({ stone }: { stone: Stone }) {
         <LeadCaptureCard source={`stone:${stone.slug}`} recommendedStone={stone.name} />
       </section>
     </main>
+  );
+}
+
+function StoneConversionPath({
+  amazonUrl,
+  guideHref,
+  guideLabel,
+  searchIntent,
+  source,
+  stoneName
+}: {
+  amazonUrl?: string;
+  guideHref?: string;
+  guideLabel?: string;
+  searchIntent?: string;
+  source: string;
+  stoneName: string;
+}) {
+  return (
+    <section className="form-panel">
+      <p className="eyebrow">À lire ensuite</p>
+      <h2>Transformer votre recherche sur {stoneName} en choix concret</h2>
+      <p>
+        Cette fiche répond aux recherches liées à {searchIntent ?? `${stoneName} signification et bracelet`}. Pour avancer simplement,
+        comparez le bracelet associé, gardez le guide gratuit ou poursuivez avec le dossier complet.
+      </p>
+      <div className="premium-actions">
+        {amazonUrl ? (
+          <TrackedOutboundLink
+            className="button gold-button"
+            eventName="amazon_click"
+            href={withAffiliate(amazonUrl)}
+            payload={{ stone: stoneName, source: `${source}:seo-conversion-path` }}
+            rel="noopener noreferrer sponsored"
+            target="_blank"
+          >
+            <ShoppingBag size={17} />
+            Voir le bracelet sur Amazon
+          </TrackedOutboundLink>
+        ) : null}
+        <Link className="button secondary" href="/newsletter">
+          <Mail size={17} />
+          Recevoir le guide gratuit
+        </Link>
+        {guideHref ? (
+          <Link className="button ghost-dark" href={guideHref}>
+            <BookOpen size={17} />
+            {guideLabel ?? "Lire le guide complet"}
+          </Link>
+        ) : null}
+        <Link className="micro-action" href="/boutique-pierres-naturelles">
+          <Gift size={15} />
+          Voir toute la boutique <ArrowRight size={15} />
+        </Link>
+      </div>
+      <p className="fineprint">
+        Les liens commerciaux peuvent rediriger vers Amazon. Les informations restent symboliques et ne remplacent jamais un avis professionnel.
+      </p>
+    </section>
   );
 }
 

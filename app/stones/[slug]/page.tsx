@@ -13,16 +13,38 @@ import { slugifyVirtue } from "@/lib/virtues";
 import { nativeStoneVirtueSummary } from "@/lib/stoneVirtueSummary";
 import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
 
+const priorityStoneSeo: Record<string, { title: string; description: string }> = {
+  "howlite": {
+    title: "Pierre de howlite : signification, lithothérapie et bracelet",
+    description:
+      "Découvrez la howlite blanche, ses vertus symboliques en lithothérapie, ses usages pour le calme, le sommeil et le bracelet recommandé."
+  },
+  "agate-bleue": {
+    title: "Agate bleue : pierre, vertus symboliques et bracelet",
+    description:
+      "Guide de l'agate bleue naturelle : signification, vertus symboliques, communication douce, associations et bracelet recommandé."
+  },
+  "oeil-de-tigre": {
+    title: "Œil de tigre : vertus, protection, confiance et bracelet",
+    description:
+      "Découvrez l'œil de tigre, pierre traditionnellement associée à la confiance, à la protection symbolique et au passage à l'action."
+  },
+  "quartz-rose": {
+    title: "Quartz rose : signification, amour de soi et bracelet",
+    description:
+      "Découvrez le quartz rose, pierre de douceur et d'amour de soi dans les traditions symboliques, avec guide, livre et bracelet recommandé."
+  }
+};
+
 export function generateStaticParams() {
   return nativeStones.map((stone) => ({ slug: stone.slug }));
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const stone = getNativeStone(params.slug);
-  const title = stone?.seo_title ?? "Pierre naturelle | Litho Intelligence";
-  const description = stone
-    ? `Découvrez ${stone.name}, ses usages symboliques, ses intentions associées et le bracelet recommandé sur Litho Intelligence.`
-    : "Fiche pierre naturelle Litho Intelligence.";
+  const prioritySeo = priorityStoneSeo[params.slug];
+  const title = prioritySeo?.title ?? stone?.seo_title ?? "Pierre naturelle | Litho Intelligence";
+  const description = prioritySeo?.description ?? (stone ? stone.seo_description : "Fiche pierre naturelle Litho Intelligence.");
 
   return {
     title,
