@@ -31,11 +31,151 @@ const sources = {
   giaTigerEye: { label: "GIA - Tiger's-Eye Quartz", href: "https://www.gia.edu/UK-EN/gia-museum-exhibit-tigers-eye-quartz" },
   giaAmethyst: { label: "GIA - Amethyst Care and Cleaning Guide", href: "https://www.gia.edu/amethyst-care-cleaning" },
   mindatLabradorite: { label: "Mindat - Labradorite", href: "https://www.mindat.org/show.php?id=2308" },
+  mindatHowlite: { label: "Mindat - Howlite", href: "https://www.mindat.org/min-1936.html" },
   mindatPyrite: { label: "Mindat - Pyrite", href: "https://www.mindat.org/min-3314.html" },
   mineralsHowlite: { label: "Minerals.net - Howlite", href: "https://www.minerals.net/mineral/howlite" }
 };
 
 export const journalArticles: JournalArticle[] = [
+  {
+    slug: "howlite-sommeil-calme-rituel-soir",
+    title: "Howlite : pourquoi cette pierre blanche revient dans les recherches liées au calme et au rituel du soir",
+    seoTitle: "Howlite, sommeil et calme : guide symbolique, rituel du soir et bracelet",
+    description:
+      "Guide de fond sur la howlite, pierre blanche veinée traditionnellement associée au calme, à la patience et au rituel du soir, avec conseils d'achat responsables.",
+    category: "culture",
+    publishedAt: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readingTime: "11 min",
+    heroImage: "/images/stones/howlite.png",
+    heroImageAlt: "Howlite blanche veinée de gris, pierre naturelle associée symboliquement au calme et au rituel du soir",
+    productStoneSlug: "howlite",
+    summary: [
+      "La howlite capte une intention très actuelle : ralentir, simplifier, créer un rituel du soir plus calme.",
+      "Son esthétique blanche veinée, sobre et facile à porter, en fait une pierre intéressante pour les bracelets du quotidien.",
+      "Elle doit rester présentée comme un support symbolique et culturel, sans promesse sur le sommeil ou la santé."
+    ],
+    sections: [
+      {
+        title: "Le signal : une pierre discrète, mais de plus en plus recherchée",
+        paragraphs: [
+          "Dans les données récentes de visibilité de Litho Intelligence, la howlite ressort comme l'une des premières pierres qui génèrent des impressions Google. Ce n'est pas anodin. Alors que des pierres plus célèbres comme le quartz rose, l'améthyste ou l'œil de tigre occupent déjà beaucoup l'espace, la howlite répond à une demande plus silencieuse : celle d'un bijou clair, minimaliste, symboliquement relié au calme et facile à intégrer dans une routine du soir.",
+          "Ce sujet mérite un article de fond parce qu'il touche trois intentions fortes. La première est le besoin de ralentir dans un quotidien saturé. La deuxième est la recherche d'un objet simple, presque neutre, que l'on peut porter sans afficher une démarche spirituelle trop marquée. La troisième est l'envie d'offrir ou de s'offrir un bracelet en pierre naturelle à prix accessible, avec une histoire facile à comprendre.",
+          "La howlite ne doit pourtant pas être racontée comme une solution miracle. Sur Litho Intelligence by Quintessence Cristal, elle est présentée comme une pierre de tradition symbolique : un support de rituel personnel, un rappel visuel, un objet culturel. Les informations proposées reposent sur les traditions associées aux pierres naturelles et ne remplacent jamais un avis médical, psychologique ou professionnel."
+        ]
+      },
+      {
+        title: "Qu'est-ce que la howlite ?",
+        paragraphs: [
+          "La howlite est reconnaissable à son apparence blanche ou blanc crème, souvent traversée de veines grises, brunes ou noires. Cette esthétique joue beaucoup dans son succès. Elle ressemble à un carnet blanc légèrement marqué, à une pierre de silence plutôt qu'à une pierre de démonstration. Là où l'œil de tigre attire par ses reflets dorés et la labradorite par ses éclats bleutés, la howlite séduit par sa retenue.",
+          "Les sources minéralogiques la décrivent comme un borosilicate de calcium. Elle est relativement tendre, avec une dureté autour de 3,5 sur l'échelle de Mohs selon les bases minéralogiques. Cette tendreté explique deux choses importantes pour l'acheteur : la howlite peut être agréable en perles, mais elle demande aussi un peu de soin ; elle est par ailleurs connue pour être facilement teintée, notamment pour imiter la turquoise.",
+          "Cette dernière information est capitale dans un guide d'achat responsable. Une howlite teintée n'est pas nécessairement un mauvais produit si le vendeur l'indique clairement. Le problème commence lorsque la description laisse croire à une autre pierre plus rare ou plus chère. Pour un bracelet howlite blanche, recherchez donc des photos nettes, des veines irrégulières, une description honnête et des conditions de retour lisibles."
+        ],
+        bullets: [
+          "Couleur courante : blanc, blanc crème, gris clair, avec veines plus foncées.",
+          "Famille minérale : borosilicate de calcium.",
+          "Point de vigilance : pierre tendre, poreuse et parfois teintée.",
+          "Usage courant : perles, bracelets, pierres roulées, objets décoratifs.",
+          "Style : minimaliste, doux, clair, facile à associer à une tenue."
+        ]
+      },
+      {
+        title: "Pourquoi l'associe-t-on au calme ?",
+        paragraphs: [
+          "Dans les croyances de lithothérapie, la howlite est traditionnellement associée à la patience, au ralentissement et à la clarté intérieure. Il faut comprendre cette association comme une lecture symbolique. Sa couleur blanche évoque l'espace, le silence, la page que l'on vide. Ses veines grises rappellent que le calme n'est pas forcément l'absence de mouvement, mais une manière plus douce de traverser ce qui circule.",
+          "Cette symbolique explique pourquoi la howlite est souvent citée dans les recherches liées au stress quotidien, au rituel du soir et au besoin de simplicité. Elle ne promet pas de transformer le sommeil ni de résoudre une tension profonde. Elle peut en revanche accompagner un geste personnel : poser le téléphone, ralentir la respiration, préparer la chambre, écrire une intention, retirer son bracelet avant de dormir et le déposer toujours au même endroit.",
+          "Ce déplacement est essentiel pour la conformité comme pour la qualité éditoriale. La pierre n'est pas l'actrice principale. L'actrice principale, c'est la personne qui choisit un rituel. La howlite devient un objet de rappel : elle matérialise la décision de faire plus simple, de parler moins vite, de se rendre disponible à une fin de journée moins bruyante."
+        ]
+      },
+      {
+        title: "Howlite, améthyste ou quartz rose : quelle différence pour le soir ?",
+        paragraphs: [
+          "Les trois pierres apparaissent souvent ensemble dans les recherches liées au calme. L'améthyste porte une image plus spirituelle, plus violette, presque méditative. Elle convient aux personnes qui aiment les pierres visibles, chargées d'une longue histoire culturelle. Le quartz rose, lui, parle davantage de douceur affective, de tendresse envers soi, de réconciliation intérieure. La howlite prend une place différente : elle est plus sobre, plus graphique, moins émotionnelle en apparence.",
+          "Pour un rituel du soir, cette sobriété peut devenir un atout. Certaines personnes ne veulent pas multiplier les symboles. Elles cherchent un bracelet simple, clair, qui s'accorde avec une chemise blanche, un pull beige, une tenue noire ou un style professionnel. La howlite répond bien à ce besoin : elle peut être portée sans expliquer toute sa démarche.",
+          "Dans une stratégie de contenu, c'est aussi une pierre intéressante parce qu'elle sert de passerelle. Elle mène vers les pages sur le stress quotidien, le sommeil, l'entretien des pierres, les imitations et les cadeaux. Elle peut être recommandée seule ou associée à l'améthyste et au quartz rose dans un trio très lisible pour les débutants."
+        ],
+        bullets: [
+          "Howlite : sobriété, patience, ralentissement symbolique.",
+          "Améthyste : recul, rituel du soir, couleur violette expressive.",
+          "Quartz rose : douceur, amour de soi, attention affective.",
+          "Association douce : howlite + quartz rose pour un cadeau tendre et discret.",
+          "Association du soir : howlite + améthyste pour un rituel calme et visuel."
+        ]
+      },
+      {
+        title: "Le rituel howlite de deux minutes",
+        paragraphs: [
+          "Un bon rituel doit être assez simple pour être répété. Le soir, prenez le bracelet howlite dans la main ou gardez-le au poignet quelques instants avant de le retirer. Inspirez lentement, puis expirez plus longtemps que vous n'inspirez. Ne cherchez pas une performance. Cherchez une transition.",
+          "La phrase d'intention peut être très courte : « je ralentis », « je ferme la journée », « je reviens à l'essentiel », « je laisse demain à demain ». Ce type de phrase ne constitue pas une réponse de santé ; il sert à donner une direction au geste. Le bracelet devient alors un repère matériel dans un monde où beaucoup de routines restent abstraites.",
+          "Vous pouvez ensuite poser la howlite au même endroit chaque soir : table de nuit, coupelle, livre, petit plateau. Cette répétition crée une mémoire d'usage. Elle donne au bijou une fonction plus profonde que la simple décoration, sans lui attribuer de pouvoir excessif."
+        ],
+        bullets: [
+          "Durée : deux minutes suffisent.",
+          "Geste : toucher le bracelet, respirer, formuler une intention simple.",
+          "Lieu : toujours le même endroit pour créer une routine.",
+          "Limite : ne pas dormir avec un bracelet si cela gêne le poignet ou le confort.",
+          "Objectif : accompagner une transition personnelle, pas garantir un résultat."
+        ]
+      },
+      {
+        title: "Comment choisir un bracelet howlite sans se tromper ?",
+        paragraphs: [
+          "Le choix d'un bracelet howlite doit rester concret. Commencez par regarder la taille des perles. Des perles de 6 mm sont discrètes ; des perles de 8 mm donnent plus de présence ; au-delà, le bijou devient plus affirmé. Regardez ensuite les veines : une variation naturelle est souvent plus crédible qu'un dessin parfaitement répété.",
+          "Lisez la description du vendeur. Les termes importants sont simples : howlite naturelle, howlite blanche, howlite teintée, perles, diamètre, taille du bracelet, fil élastique, conditions de retour. Une annonce responsable ne promet pas de résultat certain. Elle décrit le produit et laisse l'acheteur choisir.",
+          "Enfin, pensez au style de la personne. La howlite fonctionne bien en cadeau parce qu'elle est claire, neutre et facile à porter. Elle peut convenir à une femme, à un homme qui aime les bijoux minéraux sobres, à une collègue si le message reste délicat, ou à une personne qui préfère les objets discrets aux pierres très colorées."
+        ]
+      },
+      {
+        title: "Notre recommandation éditoriale",
+        paragraphs: [
+          "Nous mettons ici en avant un bracelet howlite parce qu'il correspond exactement à l'intention de cet article : un bijou simple, accessible, visuellement calme et facile à intégrer dans une routine. La recommandation reste commerciale, mais elle doit demeurer honnête : le prix, le stock et les conditions dépendent d'Amazon et du vendeur.",
+          "Pour aller plus loin, vous pouvez compléter ce choix avec le guide gratuit des 10 pierres essentielles ou faire le test Litho Intelligence. Le test aide à vérifier si votre intention dominante est vraiment le calme, ou si elle relève plutôt de la protection, de la confiance, de l'amour de soi ou de l'énergie. C'est souvent cette clarification qui rend l'achat plus juste.",
+          "La howlite est donc une pierre modeste en apparence, mais très intéressante pour une marque comme Litho Intelligence : elle parle de ralentissement sans dramatiser, de beauté sans excès, de spiritualité sans promesse. Et dans une période où beaucoup cherchent des objets simples pour reprendre la main sur leur quotidien, cette discrétion peut devenir une vraie force."
+        ]
+      }
+    ],
+    faq: [
+      {
+        question: "La howlite aide-t-elle vraiment à dormir ?",
+        answer:
+          "Litho Intelligence ne présente pas la howlite comme une solution pour dormir. Dans les traditions symboliques, elle est associée au calme et peut accompagner un rituel du soir, sans remplacer un avis médical ou professionnel."
+      },
+      {
+        question: "Pourquoi choisir un bracelet howlite ?",
+        answer:
+          "Le bracelet howlite est discret, clair et facile à porter. Il peut servir de rappel symbolique pour ralentir, respirer et créer une routine personnelle plus simple."
+      },
+      {
+        question: "Comment reconnaître une howlite blanche ?",
+        answer:
+          "Elle présente souvent une base blanche ou crème avec des veines grises ou foncées. Comme elle peut être teintée, il faut lire attentivement la description du vendeur."
+      },
+      {
+        question: "Quelle pierre associer à la howlite ?",
+        answer:
+          "L'améthyste peut compléter une intention de rituel du soir, tandis que le quartz rose ajoute une dimension de douceur symbolique."
+      },
+      {
+        question: "La howlite convient-elle pour un cadeau ?",
+        answer:
+          "Oui, c'est une pierre sobre et facile à offrir, surtout si le message porte sur la simplicité, le calme quotidien ou une attention délicate."
+      },
+      {
+        question: "Comment entretenir un bracelet howlite ?",
+        answer:
+          "Évitez l'eau prolongée, le parfum, la piscine, les chocs et le rangement en vrac. Rangez le bracelet séparément pour préserver les perles et le fil."
+      }
+    ],
+    sources: [sources.mindatHowlite, sources.mineralsHowlite, sources.giaJewelryCare],
+    relatedLinks: [
+      { href: "/pierres/howlite", label: "Fiche howlite" },
+      { href: "/intentions/sommeil", label: "Pierres associées au rituel du soir" },
+      { href: "/intentions/stress", label: "Pierres associées au calme" },
+      { href: "/guides/howlite-stress-sommeil-guide", label: "Guide complet howlite" },
+      { href: "/boutique-pierres-naturelles", label: "Bracelets recommandés" },
+      { href: "/test", label: "Faire le test gratuit" }
+    ]
+  },
   {
     slug: "quelle-pierre-choisir-intention",
     title: "Quelle pierre choisir selon son intention ?",
