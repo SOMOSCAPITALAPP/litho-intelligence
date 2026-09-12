@@ -1,3 +1,29 @@
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
+function loadLocalEnvFile(fileName) {
+  const path = resolve(process.cwd(), fileName);
+  if (!existsSync(path)) return;
+
+  const content = readFileSync(path, "utf8");
+  for (const line of content.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+
+    const separatorIndex = trimmed.indexOf("=");
+    if (separatorIndex === -1) continue;
+
+    const name = trimmed.slice(0, separatorIndex).trim();
+    const rawValue = trimmed.slice(separatorIndex + 1).trim();
+    if (!name || process.env[name] !== undefined) continue;
+
+    process.env[name] = rawValue.replace(/^['"]|['"]$/g, "");
+  }
+}
+
+loadLocalEnvFile(".env");
+loadLocalEnvFile(".env.local");
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_PUBLIC_APP_URL || "https://litho-intelligence.com";
 const key = process.env.INDEXNOW_KEY;
 const explicitUrls = process.argv.slice(2);
