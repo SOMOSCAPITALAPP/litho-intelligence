@@ -68,8 +68,8 @@ export const recommendedBooks: RecommendedBook[] = [
     stoneName: "Œil de tigre",
     intention: "confiance",
     audience: "Pour les lecteurs qui veulent comprendre l'œil de tigre avant d'offrir ou de choisir un bracelet.",
-    imageUrl: "/images/stones/oeil-de-tigre.png",
-    imageAlt: "Œil de tigre brun et doré illustrant le livre dédié à cette pierre",
+    imageUrl: "/images/books/oeil-de-tigre-marcus-rousseau.jpg",
+    imageAlt: "Couverture du livre Œil de Tigre : Pierre de protection, de courage et d'ancrage par Marcus Rousseau",
     amazonUrl: "https://amzn.eu/d/0cZ0pGNo",
     badge: "Nouveau livre",
     description:
