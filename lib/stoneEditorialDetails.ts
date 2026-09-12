@@ -161,6 +161,34 @@ export const priorityStoneEditorialDetails: StoneEditorialDetail[] = [
     ]
   },
   {
+    slug: "agate-bleue",
+    mineralogy: {
+      family: "Calcédoine, variété microcristalline du quartz",
+      composition: "SiO2, avec structure microcristalline et bandes ou nuances variables selon les spécimens",
+      crystalSystem: "Trigonal pour la famille quartz",
+      mohs: "Environ 6,5 à 7",
+      appearance: "Bleu clair à bleu gris, parfois rubané, avec des nuances douces ou plus soutenues selon la pierre et les traitements."
+    },
+    care: {
+      water: "Chiffon doux recommandé ; un nettoyage bref à peine humide est possible si le bracelet est bien séché.",
+      salt: "Éviter le sel direct, surtout sur perles teintées, montages élastiques ou pièces métalliques.",
+      sun: "Préférer une lumière douce indirecte pour préserver la couleur.",
+      daily: "Retirer avant douche, parfum, sport et piscine pour préserver le fil et l'éclat des perles."
+    },
+    imitations: {
+      common: ["agate teintée non indiquée", "verre bleu", "résine bleue veinée", "calcédoine vendue sous nom commercial flou"],
+      checkpoints: [
+        "Lire si la couleur bleue est naturelle, renforcée ou teintée.",
+        "Comparer plusieurs photos : une couleur parfaitement uniforme peut signaler une teinture.",
+        "Vérifier la taille des perles, le type de fil et les conditions de retour avant achat."
+      ]
+    },
+    sources: [
+      { label: "Mindat - Agate", href: "https://www.mindat.org/min-51.html" },
+      { label: "Mindat - Quartz", href: "https://www.mindat.org/min-3337.html" }
+    ]
+  },
+  {
     slug: "apatite-bleue",
     mineralogy: {
       family: "Groupe de l'apatite",
@@ -212,6 +240,34 @@ export const priorityStoneEditorialDetails: StoneEditorialDetail[] = [
     },
     sources: [
       { label: "Mindat - Howlite", href: "https://www.mindat.org/min-1936.html" }
+    ]
+  },
+  {
+    slug: "oeil-de-taureau",
+    mineralogy: {
+      family: "Quartz chatoyant, nom commercial proche de l'œil de tigre rouge",
+      composition: "SiO2, quartz avec structure fibreuse silicifiée et coloration brun rouge liée aux oxydes de fer ou à un chauffage",
+      crystalSystem: "Trigonal pour la matrice quartz",
+      mohs: "Environ 7",
+      appearance: "Brun rouge à acajou, avec effet chatoyant mobile lorsqu'il est bien poli."
+    },
+    care: {
+      water: "Nettoyage rapide au chiffon doux ou très légèrement humide, puis séchage immédiat.",
+      salt: "Éviter le sel direct et les bains abrasifs.",
+      sun: "Lumière douce possible, sans chaleur prolongée.",
+      daily: "Ranger séparément pour préserver le poli et éviter les frottements avec les pièces métalliques."
+    },
+    imitations: {
+      common: ["verre brun rouge", "quartz teinté sans chatoyance", "œil de tigre chauffé non indiqué", "résine imitation fibreuse"],
+      checkpoints: [
+        "Faire tourner une perle : la bande lumineuse doit bouger avec l'angle.",
+        "Chercher des nuances naturelles de brun, rouge et doré plutôt qu'une couleur plate.",
+        "Lire si le vendeur parle d'œil de tigre rouge, d'œil de taureau ou de traitement thermique."
+      ]
+    },
+    sources: [
+      { label: "Mindat discussion - Bull's Eye and Tiger's Eye trade names", href: "https://www.mindat.org/mesg-742579.html" },
+      { label: "Mindat - Quartz", href: "https://www.mindat.org/min-3337.html" }
     ]
   },
   {
@@ -301,4 +357,3 @@ export const priorityStoneEditorialDetails: StoneEditorialDetail[] = [
 export function getStoneEditorialDetail(slug: string) {
   return priorityStoneEditorialDetails.find((detail) => detail.slug === slug);
 }
-

@@ -35,9 +35,17 @@ const priorityStoneSeo: Record<string, { title: string; description: string; sea
     title: "Agate bleue : pierre, vertus symboliques et bracelet",
     description:
       "Guide de l'agate bleue naturelle : signification, vertus symboliques, communication douce, associations et bracelet recommandé.",
-    searchIntent: "agate bleue pierre, agate bleue naturelle, vertu agate bleue",
-    guideHref: "/intentions/communication",
-    guideLabel: "Voir les pierres de communication"
+    searchIntent: "agate bleue pierre, agate bleue signification, vertus agate bleue, bracelet agate bleue",
+    guideHref: "/conseils-lithotherapie/agate-bleue-signification-vertus-bracelet",
+    guideLabel: "Lire le guide Agate bleue"
+  },
+  "oeil-de-taureau": {
+    title: "Œil de taureau : vertus, signification, courage et bracelet",
+    description:
+      "Découvrez l'œil de taureau, pierre brun rouge associée symboliquement au courage, à l'ancrage et à la détermination, avec bracelet recommandé.",
+    searchIntent: "oeil de taureau vertus, vertue oeil de taureau, pierre oeil de taureau, bracelet oeil de taureau",
+    guideHref: "/intentions/confiance",
+    guideLabel: "Voir les pierres de confiance"
   },
   "oeil-de-tigre": {
     title: "Œil de tigre : vertus, protection, confiance et bracelet",

@@ -20,9 +20,14 @@ const priorityStoneSeo: Record<string, { title: string; description: string }> =
       "Découvrez la howlite blanche, ses vertus symboliques en lithothérapie, ses usages pour le calme, le sommeil et le bracelet recommandé."
   },
   "agate-bleue": {
-    title: "Agate bleue : pierre, vertus symboliques et bracelet",
+    title: "Agate bleue : signification, vertus symboliques et bracelet",
     description:
-      "Guide de l'agate bleue naturelle : signification, vertus symboliques, communication douce, associations et bracelet recommandé."
+      "Guide de l'agate bleue : signification, vertus symboliques, communication douce, bracelet recommandé et conseils d'achat responsables."
+  },
+  "oeil-de-taureau": {
+    title: "Œil de taureau : vertus, signification, courage et bracelet",
+    description:
+      "Découvrez l'œil de taureau, pierre brun rouge associée symboliquement au courage, à l'ancrage et à la détermination."
   },
   "oeil-de-tigre": {
     title: "Œil de tigre : vertus, protection, confiance et bracelet",

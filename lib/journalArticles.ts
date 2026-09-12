@@ -30,13 +30,162 @@ const sources = {
   giaTourmaline: { label: "GIA - Tourmaline Care and Cleaning Guide", href: "https://www.gia.edu/tourmaline-care-cleaning" },
   giaTigerEye: { label: "GIA - Tiger's-Eye Quartz", href: "https://www.gia.edu/UK-EN/gia-museum-exhibit-tigers-eye-quartz" },
   giaAmethyst: { label: "GIA - Amethyst Care and Cleaning Guide", href: "https://www.gia.edu/amethyst-care-cleaning" },
+  mindatAgate: { label: "Mindat - Agate", href: "https://www.mindat.org/min-51.html" },
   mindatLabradorite: { label: "Mindat - Labradorite", href: "https://www.mindat.org/show.php?id=2308" },
   mindatHowlite: { label: "Mindat - Howlite", href: "https://www.mindat.org/min-1936.html" },
   mindatPyrite: { label: "Mindat - Pyrite", href: "https://www.mindat.org/min-3314.html" },
+  mindatQuartz: { label: "Mindat - Quartz", href: "https://www.mindat.org/min-3337.html" },
   mineralsHowlite: { label: "Minerals.net - Howlite", href: "https://www.minerals.net/mineral/howlite" }
 };
 
 export const journalArticles: JournalArticle[] = [
+  {
+    slug: "agate-bleue-signification-vertus-bracelet",
+    title: "Agate bleue : signification, vertus symboliques et bracelet recommandé",
+    seoTitle: "Agate bleue : signification, vertus symboliques et bracelet recommandé",
+    description:
+      "Guide de fond sur l'agate bleue, pierre associée symboliquement à la communication douce, à l'apaisement relationnel et au choix d'un bracelet.",
+    category: "culture",
+    publishedAt: "2026-09-12",
+    updatedAt: "2026-09-12",
+    readingTime: "11 min",
+    heroImage: "/images/stones/agate-bleue.png",
+    heroImageAlt: "Agate bleue en pierre naturelle, associée symboliquement à la communication douce",
+    productStoneSlug: "agate-bleue",
+    summary: [
+      "L'agate bleue devient le signal SEO le plus visible de Litho Intelligence sur les dernières données GSC.",
+      "Les recherches portent surtout sur la signification, les vertus symboliques et l'achat d'un bracelet.",
+      "Le bon angle éditorial consiste à parler de communication douce, de calme relationnel et de choix responsable."
+    ],
+    sections: [
+      {
+        title: "Pourquoi parler d'agate bleue maintenant ?",
+        paragraphs: [
+          "Les dernières données Google Search Console montrent un signal clair : l'agate bleue concentre une part importante des impressions récentes de Litho Intelligence. Les requêtes ne sont pas seulement informatives. Elles révèlent une intention très précise : comprendre la signification de cette pierre, vérifier ses vertus symboliques et, souvent, trouver un bracelet simple à porter ou à offrir.",
+          "C'est exactement le type de sujet qu'un site jeune doit traiter en profondeur. Google teste déjà la page pierre. Il faut maintenant lui donner un environnement éditorial plus solide : un article long, des réponses naturelles aux questions des internautes, un maillage vers la fiche agate bleue, vers les intentions liées au calme et à la communication, et une recommandation produit visible sans être agressive.",
+          "L'agate bleue doit toutefois être présentée avec prudence. Sur Litho Intelligence by Quintessence Cristal, elle n'est pas décrite comme une solution médicale ou émotionnelle garantie. Elle est abordée comme une pierre de tradition symbolique, culturelle et spirituelle, susceptible d'accompagner un rituel personnel autour de la parole, de l'écoute et de l'apaisement relationnel."
+        ]
+      },
+      {
+        title: "Qu'est-ce que l'agate bleue ?",
+        paragraphs: [
+          "L'agate appartient à l'univers de la calcédoine, elle-même reliée à la grande famille du quartz. Son identité visuelle repose souvent sur des nuances douces, parfois rubanées, avec des bleus plus ou moins clairs selon les pierres et les traitements. Cette apparence compte énormément : avant même d'entrer dans la symbolique, l'agate bleue donne une impression de calme visuel, de fraîcheur et de respiration.",
+          "Dans le commerce, l'expression « agate bleue » peut recouvrir plusieurs réalités. Certaines agates présentent naturellement des nuances bleutées ou gris bleuté ; d'autres peuvent être teintées pour obtenir un bleu plus régulier ou plus vif. Ce n'est pas forcément un problème si le vendeur l'indique. Le point important est la transparence : l'acheteur doit savoir s'il choisit une pierre naturelle non traitée, une pierre colorée, ou un bijou vendu sous un nom commercial plus large.",
+          "Cette nuance renforce la crédibilité de l'article. Une approche responsable ne se contente pas de répéter une liste de vertus. Elle aide à mieux regarder l'objet : sa couleur, ses rubans, la description du vendeur, la taille des perles, la photo réelle, les conditions de retour et la cohérence du prix."
+        ],
+        bullets: [
+          "Famille : calcédoine, variété microcristalline liée au quartz.",
+          "Couleurs : bleu clair, bleu gris, bleu plus soutenu, parfois rubané.",
+          "Usage courant : bracelets, perles, pierres roulées et bijoux discrets.",
+          "Point de vigilance : certaines agates bleues peuvent être teintées.",
+          "Intention symbolique dominante : parole calme, écoute, harmonie relationnelle."
+        ]
+      },
+      {
+        title: "Signification symbolique de l'agate bleue",
+        paragraphs: [
+          "Dans les traditions de lithothérapie, l'agate bleue est souvent associée à la communication douce. Cette expression est plus intéressante qu'elle n'en a l'air. Elle ne parle pas seulement de parler davantage. Elle évoque aussi la capacité à choisir ses mots, à ralentir avant de répondre, à écouter vraiment et à ne pas transformer chaque échange en rapport de force.",
+          "La couleur bleue explique une partie de cette association. Dans beaucoup de cultures visuelles, le bleu évoque la distance, l'air, la clarté, l'eau calme ou le ciel dégagé. Reliée symboliquement au chakra de la gorge, l'agate bleue devient alors une pierre de parole posée : dire sans brusquer, exprimer sans se fermer, entendre sans se perdre dans l'émotion de l'autre.",
+          "Cette lecture reste symbolique. L'agate bleue ne remplace pas un travail relationnel, une aide professionnelle ou une décision personnelle. Elle peut en revanche accompagner un rituel très concret : tenir le bracelet avant un échange sensible, respirer, formuler une intention courte, puis choisir une phrase plus simple que celle qui serait sortie sous tension."
+        ]
+      },
+      {
+        title: "À qui peut convenir un bracelet agate bleue ?",
+        paragraphs: [
+          "Le bracelet agate bleue convient particulièrement aux personnes qui cherchent un bijou discret, doux et facile à intégrer au quotidien. Il peut parler à quelqu'un qui veut travailler symboliquement la parole, la patience, la diplomatie ou la paix dans les échanges. Son esthétique le rend aussi très accessible en cadeau : il est moins intime qu'un quartz rose, moins intense qu'une obsidienne, moins affirmé qu'un œil de tigre.",
+          "C'est un bon choix pour les personnes qui aiment les couleurs claires, les bijoux minéraux sobres, les associations avec le blanc, le gris, le jean, l'argenté ou les tons pastel. En bracelet, l'agate bleue garde une présence calme. Elle ne cherche pas à dominer la tenue. Elle ajoute plutôt une note de fraîcheur.",
+          "Pour un cadeau, le message peut rester délicat : « une pierre pour accompagner une parole plus douce », « un bracelet pour rappeler la patience dans les échanges », ou simplement « une pierre claire et apaisante à porter au quotidien ». Cette sobriété est commercialement précieuse : elle permet de vendre sans surpromettre."
+        ],
+        bullets: [
+          "Pour une personne qui cherche un bijou bleu discret.",
+          "Pour accompagner une intention de communication plus calme.",
+          "Pour un cadeau doux à une amie, une mère, une collègue ou une personne sensible.",
+          "Pour compléter un rituel de retour au calme avant une discussion importante.",
+          "Pour les lecteurs qui veulent une pierre simple, élégante et facile à porter."
+        ]
+      },
+      {
+        title: "Agate bleue, howlite ou apatite bleue : comment choisir ?",
+        paragraphs: [
+          "Ces trois pierres apparaissent souvent dans un même univers visuel, mais elles ne racontent pas la même chose. La howlite est plus blanche, plus minimaliste, liée à la patience et au ralentissement. L'apatite bleue est plus vive, plus expressive, souvent associée à l'élan, à la motivation et à la parole claire. L'agate bleue occupe une zone intermédiaire : elle est douce, relationnelle, accessible.",
+          "Si votre intention principale est le rituel du soir et la simplification intérieure, la howlite reste une excellente porte d'entrée. Si vous cherchez une pierre bleue plus dynamique, l'apatite bleue peut être plus cohérente. Si votre sujet est la communication relationnelle, l'écoute et l'harmonie dans les échanges, l'agate bleue devient très pertinente.",
+          "Cette comparaison est importante pour le SEO comme pour l'utilisateur. Elle aide les moteurs de recherche et les IA à comprendre les différences entre des pierres souvent rapprochées. Elle aide aussi l'acheteur à choisir un bracelet qui correspond vraiment à son besoin du moment."
+        ]
+      },
+      {
+        title: "Rituel simple avec l'agate bleue",
+        paragraphs: [
+          "Le rituel le plus naturel avec l'agate bleue tient en deux minutes. Avant un échange important, posez la main sur le bracelet. Respirez lentement. Demandez-vous : « quelle phrase serait à la fois vraie et calme ? » Cette question seule peut changer la qualité d'une conversation.",
+          "Vous pouvez aussi utiliser l'agate bleue comme rappel d'écoute. Pendant une journée chargée, le bracelet devient un signal discret : parler moins vite, reformuler, ne pas répondre immédiatement, laisser une respiration entre deux phrases. Le bijou n'agit pas à votre place ; il matérialise votre intention.",
+          "Le soir, retirez le bracelet et posez-le toujours au même endroit. Cette routine transforme l'objet en repère. Elle clôture la journée relationnelle et rappelle que la parole peut aussi se reposer."
+        ],
+        bullets: [
+          "Avant une discussion : poser la main sur le bracelet et respirer.",
+          "Pendant l'échange : ralentir le débit et choisir une phrase claire.",
+          "Après l'échange : noter ce qui a été dit avec plus de calme.",
+          "Le soir : retirer le bracelet comme geste de clôture.",
+          "Objectif : accompagner une intention personnelle avec un geste simple et responsable."
+        ]
+      },
+      {
+        title: "Comment acheter un bracelet agate bleue avec discernement ?",
+        paragraphs: [
+          "La première règle est de lire la description. Un bon vendeur précise la taille des perles, le type de montage, le tour de poignet, les matériaux et, idéalement, la nature de la pierre. Pour l'agate bleue, la question de la couleur est essentielle : bleu naturel, nuance renforcée, teinture ou nom commercial doivent être distingués autant que possible.",
+          "La deuxième règle est de regarder la photo comme un acheteur averti. Des perles toutes parfaitement identiques, sans nuance, peuvent être jolies mais doivent inviter à lire les détails. Un bracelet naturel présente souvent de petites variations. Un produit teinté peut rester décoratif et intéressant, mais il doit être choisi en connaissance de cause.",
+          "Enfin, choisissez selon l'usage. Pour un bijou quotidien, des perles de 6 à 8 mm sont souvent plus faciles à porter. Pour un cadeau, vérifiez la taille, la possibilité de retour et l'emballage. Pour une intention symbolique, privilégiez un bracelet que la personne aura vraiment envie de porter."
+        ]
+      },
+      {
+        title: "Notre recommandation éditoriale",
+        paragraphs: [
+          "L'agate bleue mérite une mise en avant claire parce qu'elle répond à une demande réelle : comprendre une pierre douce, bleue, accessible, et la transformer en choix de bracelet. La recommandation produit associée à cet article doit rester sobre : voir le bracelet, comparer, lire les conditions du vendeur et choisir selon son style.",
+          "Pour prolonger la lecture, la fiche agate bleue rassemble les informations essentielles, tandis que le guide gratuit des 10 pierres aide à comparer les intentions : calme, amour, protection, confiance, énergie. Le test gratuit permet aussi de vérifier si l'intention dominante relève vraiment de la communication ou plutôt du stress, du sommeil, de l'amour de soi ou de la protection symbolique.",
+          "L'agate bleue est donc un excellent sujet de croissance SEO : assez recherchée pour générer des impressions, assez spécifique pour se positionner, assez douce pour vendre un bracelet sans agressivité. C'est une pierre parfaite pour installer une voix de marque : documentée, sensible, claire et responsable."
+        ]
+      }
+    ],
+    faq: [
+      {
+        question: "Quelle est la signification de l'agate bleue ?",
+        answer:
+          "Dans les traditions symboliques, l'agate bleue est associée à la communication douce, à l'écoute, à la patience et à l'harmonie relationnelle."
+      },
+      {
+        question: "L'agate bleue est-elle une pierre naturelle ?",
+        answer:
+          "L'agate appartient à la famille de la calcédoine, mais certaines agates bleues vendues en bijoux peuvent être teintées. Il faut lire la description du vendeur."
+      },
+      {
+        question: "Pourquoi porter un bracelet agate bleue ?",
+        answer:
+          "Un bracelet agate bleue peut servir de rappel symbolique pour parler plus calmement, écouter davantage et poser une intention de paix dans les échanges."
+      },
+      {
+        question: "Avec quelles pierres associer l'agate bleue ?",
+        answer:
+          "Elle peut être associée à la howlite pour le ralentissement, au quartz rose pour la douceur ou à l'apatite bleue pour une intention d'expression plus dynamique."
+      },
+      {
+        question: "L'agate bleue convient-elle pour un cadeau ?",
+        answer:
+          "Oui, son bleu doux et sa symbolique relationnelle en font un cadeau discret, notamment pour une personne qui aime les bijoux clairs et apaisants."
+      },
+      {
+        question: "Comment entretenir un bracelet agate bleue ?",
+        answer:
+          "Préférez un chiffon doux, évitez le parfum, l'eau prolongée, le sel direct et les chocs. Rangez le bracelet séparément pour préserver les perles."
+      }
+    ],
+    sources: [sources.mindatAgate, sources.mindatQuartz, sources.giaJewelryCare],
+    relatedLinks: [
+      { href: "/pierres/agate-bleue", label: "Fiche agate bleue" },
+      { href: "/intentions/stress", label: "Pierres associées au calme" },
+      { href: "/pierres/howlite", label: "Comparer avec la howlite" },
+      { href: "/pierres/apatite-bleue", label: "Comparer avec l'apatite bleue" },
+      { href: "/boutique-pierres-naturelles", label: "Bracelets recommandés" },
+      { href: "/test", label: "Faire le test gratuit" }
+    ]
+  },
   {
     slug: "howlite-sommeil-calme-rituel-soir",
     title: "Howlite : pourquoi cette pierre blanche revient dans les recherches liées au calme et au rituel du soir",

@@ -105,6 +105,16 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
     description: "Un bleu profond pour accompagner une intention de parole claire, de motivation et d'élan personnel."
   },
   {
+    id: "bracelet-agate-bleue",
+    title: "Bracelet Agate Bleue",
+    stone: "Agate bleue",
+    stoneSlug: "agate-bleue",
+    intentions: ["communication", "stress", "calme", "cadeau"],
+    price: "Prix variable",
+    badge: "Communication douce",
+    description: "Une pierre bleue douce pour symboliser l'écoute, la parole posée et l'harmonie relationnelle."
+  },
+  {
     id: "bracelet-cornaline",
     title: "Bracelet Cornaline",
     stone: "Cornaline",
@@ -113,6 +123,16 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
     price: "Prix variable",
     badge: "Énergie",
     description: "Une pierre chaude pour symboliser l'élan, la créativité et le passage à l'action."
+  },
+  {
+    id: "bracelet-oeil-de-taureau",
+    title: "Bracelet Œil de Taureau",
+    stone: "Œil de taureau",
+    stoneSlug: "oeil-de-taureau",
+    intentions: ["confiance", "energie", "protection", "homme"],
+    price: "Prix variable",
+    badge: "Force tranquille",
+    description: "Un bracelet brun rouge pour symboliser le courage, l'ancrage et une détermination calme."
   },
   {
     id: "bracelet-tourmaline-noire",

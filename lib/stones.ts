@@ -781,7 +781,26 @@ const seeds: StoneSeed[] = [
     goals: ["communication", "sérénité", "relations"],
     chakra: "Gorge",
     visual: "Bleu doux, parfois rubané, avec une présence calme.",
-    description: "Agate associée à la parole calme, à l'harmonie relationnelle et à l'apaisement.",
+    description: "Pierre bleue douce traditionnellement associée à la communication calme, à l'écoute, à la patience et à l'harmonie relationnelle.",
+    usage: "À porter en bracelet lors des journées où la parole, l'écoute ou la diplomatie demandent plus de présence.",
+    usageTips: [
+      "Porter le bracelet avant une discussion importante.",
+      "Respirer quelques instants en posant la main sur les perles.",
+      "Formuler une intention simple : parler avec calme, écouter sans se fermer."
+    ],
+    rituals: [
+      "Avant un échange sensible, tenir le bracelet et choisir une phrase courte à dire avec clarté.",
+      "Le soir, retirer le bracelet comme geste de clôture des tensions relationnelles de la journée."
+    ],
+    purificationMethods: ["fumigation douce", "son", "chiffon doux"],
+    recharge: ["lune", "lumière douce indirecte", "géode de quartz"],
+    seo_keywords: [
+      "agate bleue signification",
+      "agate bleue vertus",
+      "pierre agate bleue",
+      "bracelet agate bleue",
+      "agate bleue communication"
+    ],
     compatibilities: ["calcedoine-bleue", "sodalite", "quartz-rose"],
     badge: "Communication douce"
   },
@@ -807,7 +826,26 @@ const seeds: StoneSeed[] = [
     goals: ["courage", "confiance", "action"],
     chakra: "Racine / Plexus solaire",
     visual: "Brun rouge chatoyant, proche de l'œil de tigre mais plus terrien.",
-    description: "Pierre associée à la force tranquille, au courage et à la détermination dans l'action.",
+    description: "Pierre brun rouge traditionnellement associée à la force tranquille, au courage, à l'ancrage et à la détermination dans l'action.",
+    usage: "À porter lorsque l'intention du jour demande plus de stabilité, de courage calme ou de passage à l'action.",
+    usageTips: [
+      "Porter le bracelet pendant une journée de décision ou d'effort.",
+      "L'utiliser comme rappel d'ancrage avant une prise de parole ou une action importante.",
+      "Associer le geste à une phrase courte : j'avance avec calme."
+    ],
+    rituals: [
+      "Le matin, tenir le bracelet et choisir une action concrète à terminer dans la journée.",
+      "Avant un défi, respirer lentement et poser les pieds au sol pour revenir au corps."
+    ],
+    purificationMethods: ["fumigation", "son", "chiffon doux"],
+    recharge: ["lumière douce", "géode de quartz", "repos au sec"],
+    seo_keywords: [
+      "oeil de taureau vertus",
+      "vertue oeil de taureau",
+      "pierre oeil de taureau",
+      "bracelet oeil de taureau",
+      "oeil de taureau signification"
+    ],
     compatibilities: ["jaspe-rouge", "grenat", "hématite"],
     badge: "Force & courage"
   },
