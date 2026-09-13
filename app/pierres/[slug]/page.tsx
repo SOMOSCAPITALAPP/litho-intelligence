@@ -24,28 +24,28 @@ import { withAffiliate } from "@/lib/affiliate";
 
 const priorityStoneSeo: Record<string, { title: string; description: string; searchIntent: string; guideHref: string; guideLabel: string }> = {
   "howlite": {
-    title: "Pierre de howlite : signification, lithothérapie et bracelet",
+    title: "Howlite : vertus symboliques, sommeil, calme et bracelet",
     description:
-      "Découvrez la howlite blanche, ses vertus symboliques en lithothérapie, ses usages pour le calme, le sommeil et le bracelet recommandé.",
+      "Howlite blanche : signification, vertus symboliques, rituel du soir, conseils d'achat et bracelet recommandé dans une approche responsable.",
     searchIntent: "pierre de howlite, howlite lithothérapie, howlite blanche vertus",
     guideHref: "/guides/howlite-stress-sommeil-guide",
     guideLabel: "Lire le guide Howlite"
   },
   "agate-bleue": {
-    title: "Agate bleue : pierre, vertus symboliques et bracelet",
+    title: "Agate bleue : signification, vertus et bracelet recommandé",
     description:
-      "Guide de l'agate bleue naturelle : signification, vertus symboliques, communication douce, associations et bracelet recommandé.",
+      "Agate bleue : signification, vertus symboliques, communication douce, FAQ, associations et bracelet recommandé pour choisir avec discernement.",
     searchIntent: "agate bleue pierre, agate bleue signification, vertus agate bleue, bracelet agate bleue",
     guideHref: "/conseils-lithotherapie/agate-bleue-signification-vertus-bracelet",
     guideLabel: "Lire le guide Agate bleue"
   },
   "oeil-de-taureau": {
-    title: "Œil de taureau : vertus, signification, courage et bracelet",
+    title: "Œil de taureau : vertus, signification et bracelet recommandé",
     description:
-      "Découvrez l'œil de taureau, pierre brun rouge associée symboliquement au courage, à l'ancrage et à la détermination, avec bracelet recommandé.",
+      "Œil de taureau : vertus symboliques, signification, courage, ancrage, différences avec l'œil de tigre et bracelet recommandé.",
     searchIntent: "oeil de taureau vertus, vertue oeil de taureau, pierre oeil de taureau, bracelet oeil de taureau",
-    guideHref: "/intentions/confiance",
-    guideLabel: "Voir les pierres de confiance"
+    guideHref: "/conseils-lithotherapie/oeil-de-taureau-vertus-signification-bracelet",
+    guideLabel: "Lire le guide Œil de taureau"
   },
   "oeil-de-tigre": {
     title: "Œil de tigre : vertus, protection, confiance et bracelet",
@@ -63,6 +63,53 @@ const priorityStoneSeo: Record<string, { title: string; description: string; sea
     guideHref: "/guides/quartz-rose-amour-soi-guide",
     guideLabel: "Lire le guide Quartz rose"
   }
+};
+
+const priorityStoneFaq: Record<string, Array<[string, string]>> = {
+  "agate-bleue": [
+    [
+      "Quelles sont les vertus symboliques de l'agate bleue ?",
+      "L'agate bleue est traditionnellement associée à la communication douce, à l'écoute, à la patience et à l'harmonie relationnelle. Elle accompagne surtout un rituel personnel de parole posée."
+    ],
+    [
+      "Pourquoi choisir un bracelet agate bleue ?",
+      "Le bracelet rend l'intention visible au quotidien : avant une discussion, il peut rappeler de respirer, ralentir et choisir des mots plus clairs."
+    ],
+    [
+      "Agate bleue naturelle ou teintée : que vérifier ?",
+      "Certaines agates bleues peuvent être teintées. Il faut lire la description du vendeur, regarder les variations de couleur et privilégier les annonces transparentes."
+    ],
+    [
+      "Avec quelles pierres associer l'agate bleue ?",
+      "Elle s'associe bien à la howlite pour le calme, au quartz rose pour la douceur et à l'apatite bleue pour une intention d'expression plus affirmée."
+    ],
+    [
+      "L'agate bleue agit-elle sur le stress ?",
+      "Elle ne remplace aucun avis professionnel. Dans les traditions symboliques, elle peut accompagner un rituel de calme relationnel et de recentrage."
+    ]
+  ],
+  "oeil-de-taureau": [
+    [
+      "Quelles sont les vertus symboliques de l'œil de taureau ?",
+      "L'œil de taureau est traditionnellement associé au courage, à l'ancrage, à la force tranquille et à la détermination dans l'action."
+    ],
+    [
+      "Quelle est la différence entre œil de taureau et œil de tigre ?",
+      "L'œil de tigre évoque davantage la confiance solaire et la vigilance, tandis que l'œil de taureau, plus brun rouge, porte une symbolique plus terrienne et plus ancrée."
+    ],
+    [
+      "Pourquoi porter un bracelet œil de taureau ?",
+      "Le bracelet peut servir de rappel concret pour avancer avec calme, tenir une décision ou accompagner une journée qui demande de la stabilité."
+    ],
+    [
+      "L'œil de taureau convient-il comme cadeau ?",
+      "Oui, surtout pour une personne qui aime les pierres sobres, chaudes et liées symboliquement au courage, à la confiance ou à l'action."
+    ],
+    [
+      "Comment reconnaître un œil de taureau de qualité ?",
+      "Observez la chatoyance : la bande lumineuse doit bouger avec l'angle. Vérifiez aussi la description, les photos réelles, la taille des perles et les conditions de retour."
+    ]
+  ]
 };
 
 export function generateStaticParams() {
@@ -260,7 +307,8 @@ function ProductStonePage({ stone }: { stone: Stone }) {
     ["Comment porter cette pierre au quotidien ?", stone.wear],
     ["Peut-on l'associer à d'autres pierres ?", `Oui, notamment avec ${stone.compatibilities.slice(0, 3).join(", ")} selon l'intention recherchée.`],
     ["Cette pierre a-t-elle un effet médical ?", "Non. Elle est présentée comme un support symbolique et ne remplace jamais un avis médical, psychologique ou professionnel."]
-  ];
+  ] as Array<[string, string]>;
+  const enhancedFaq = priorityStoneFaq[stone.slug] ?? faq;
 
   return (
     <main>
@@ -457,7 +505,7 @@ function ProductStonePage({ stone }: { stone: Stone }) {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "FAQPage",
-                mainEntity: faq.map(([question, answer]) => ({
+                mainEntity: enhancedFaq.map(([question, answer]) => ({
                   "@type": "Question",
                   name: question,
                   acceptedAnswer: { "@type": "Answer", text: answer }
@@ -466,7 +514,7 @@ function ProductStonePage({ stone }: { stone: Stone }) {
             }}
           />
           <div className="grid">
-            {faq.map(([question, answer]) => (
+            {enhancedFaq.map(([question, answer]) => (
               <article className="card" key={question}>
                 <h3>{question}</h3>
                 <p>{answer}</p>

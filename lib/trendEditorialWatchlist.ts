@@ -199,6 +199,6 @@ export const trendArticleBlueprint = {
     "Utiliser des titres descriptifs qui peuvent etre cites par les IA.",
     "Repondre aux questions principales en paragraphes autonomes.",
     "Ajouter des liens internes vers pierres, intentions, guides et boutique.",
-    "Eviter les allegations medicales et les effets garantis.",
+    "Eviter les allegations medicales et les promesses excessives.",
   ],
 };

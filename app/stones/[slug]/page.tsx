@@ -15,19 +15,19 @@ import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
 
 const priorityStoneSeo: Record<string, { title: string; description: string }> = {
   "howlite": {
-    title: "Pierre de howlite : signification, lithothérapie et bracelet",
+    title: "Howlite : vertus symboliques, sommeil, calme et bracelet",
     description:
-      "Découvrez la howlite blanche, ses vertus symboliques en lithothérapie, ses usages pour le calme, le sommeil et le bracelet recommandé."
+      "Howlite blanche : signification, vertus symboliques, rituel du soir, conseils d'achat et bracelet recommandé dans une approche responsable."
   },
   "agate-bleue": {
-    title: "Agate bleue : signification, vertus symboliques et bracelet",
+    title: "Agate bleue : signification, vertus et bracelet recommandé",
     description:
-      "Guide de l'agate bleue : signification, vertus symboliques, communication douce, bracelet recommandé et conseils d'achat responsables."
+      "Agate bleue : signification, vertus symboliques, communication douce, FAQ, associations et bracelet recommandé pour choisir avec discernement."
   },
   "oeil-de-taureau": {
-    title: "Œil de taureau : vertus, signification, courage et bracelet",
+    title: "Œil de taureau : vertus, signification et bracelet recommandé",
     description:
-      "Découvrez l'œil de taureau, pierre brun rouge associée symboliquement au courage, à l'ancrage et à la détermination."
+      "Œil de taureau : vertus symboliques, signification, courage, ancrage, différences avec l'œil de tigre et bracelet recommandé."
   },
   "oeil-de-tigre": {
     title: "Œil de tigre : vertus, protection, confiance et bracelet",

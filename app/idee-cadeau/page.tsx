@@ -116,7 +116,7 @@ export default function GiftPage() {
           <h2>Pourquoi offrir une pierre avec une intention ?</h2>
           <p>
             Une pierre naturelle donne une forme concrète à une attention : soutien, gratitude, amour, protection ou encouragement.
-            La valeur du cadeau vient du message qui l'accompagne, pas d'une promesse d'effet.
+            La valeur du cadeau vient du message qui l'accompagne, pas d'une promesse excessive.
           </p>
           <p className="fineprint">{wellbeingDisclaimer}</p>
         </article>

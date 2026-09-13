@@ -116,7 +116,7 @@ export const editorialGuides: EditorialGuide[] = [
         title: "Aucun test isolé ne suffit",
         paragraphs: [
           "Reconnaître une pierre naturelle demande de croiser plusieurs indices. La couleur, la température au toucher, le poids, les inclusions et le prix donnent des repères, mais aucun signe ne suffit à lui seul. Beaucoup de pierres naturelles peuvent être chauffées, teintées, stabilisées ou vendues sous un nom commercial.",
-          "La meilleure protection reste la transparence du vendeur. Une annonce fiable précise le nom de la pierre, le type de produit, les dimensions, les traitements connus et montre des photos suffisamment nettes. Une annonce qui promet des effets garantis, qui utilise seulement un nom vague ou qui affiche une couleur trop parfaite mérite plus de prudence."
+          "La meilleure protection reste la transparence du vendeur. Une annonce fiable précise le nom de la pierre, le type de produit, les dimensions, les traitements connus et montre des photos suffisamment nettes. Une annonce qui avance des promesses excessives, qui utilise seulement un nom vague ou qui affiche une couleur trop parfaite mérite plus de prudence."
         ]
       },
       {
@@ -1119,7 +1119,7 @@ export const editorialGuides: EditorialGuide[] = [
       {
         title: "Nommer l'hypersensibilité sans l'enfermer",
         paragraphs: [
-          "Beaucoup de personnes cherchent une pierre pour l'hypersensibilité lorsqu'elles se sentent traversées par les ambiances, les émotions des autres ou la densité des échanges. Il faut traiter cette demande avec délicatesse : elle touche à l'intime, mais elle ne doit pas être transformée en diagnostic.",
+          "Beaucoup de personnes cherchent une pierre pour l'hypersensibilité lorsqu'elles se sentent traversées par les ambiances, les émotions des autres ou la densité des échanges. Cette demande appelle de la délicatesse : elle touche à l'intime, mais elle ne doit pas être transformée en diagnostic.",
           "Dans le cadre de Litho Intelligence, l'hypersensibilité est abordée comme une expérience personnelle. Les pierres proposées sont des supports symboliques pour se recentrer, poser une limite et ritualiser un retour à soi."
         ]
       },

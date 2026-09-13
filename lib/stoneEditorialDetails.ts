@@ -151,7 +151,7 @@ export const priorityStoneEditorialDetails: StoneEditorialDetail[] = [
       common: ["verre noir industriel", "résine noire", "onyx vendu comme obsidienne"],
       checkpoints: [
         "Demander des photos nettes : l'aspect doit être vitreux, pas plastique.",
-        "Éviter les descriptions qui promettent un effet garanti.",
+        "Éviter les descriptions qui avancent des promesses excessives.",
         "Vérifier si la pierre est vendue comme obsidienne naturelle ou verre décoratif."
       ]
     },
