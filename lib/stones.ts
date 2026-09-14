@@ -795,10 +795,13 @@ const seeds: StoneSeed[] = [
     purificationMethods: ["fumigation douce", "son", "chiffon doux"],
     recharge: ["lune", "lumière douce indirecte", "géode de quartz"],
     seo_keywords: [
+      "agate bleue naturelle",
       "agate bleue signification",
       "agate bleue vertus",
+      "vraie agate bleue",
       "pierre agate bleue",
       "bracelet agate bleue",
+      "agate bleue teintée",
       "agate bleue communication"
     ],
     compatibilities: ["calcedoine-bleue", "sodalite", "quartz-rose"],

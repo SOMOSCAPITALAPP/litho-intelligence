@@ -32,12 +32,12 @@ const priorityStoneSeo: Record<string, { title: string; description: string; sea
     guideLabel: "Lire le guide Howlite"
   },
   "agate-bleue": {
-    title: "Agate bleue : signification, vertus et bracelet recommandé",
+    title: "Agate bleue naturelle : signification, vertus et bracelet",
     description:
-      "Agate bleue : signification, vertus symboliques, communication douce, FAQ, associations et bracelet recommandé pour choisir avec discernement.",
-    searchIntent: "agate bleue pierre, agate bleue signification, vertus agate bleue, bracelet agate bleue",
-    guideHref: "/conseils-lithotherapie/agate-bleue-signification-vertus-bracelet",
-    guideLabel: "Lire le guide Agate bleue"
+      "Agate bleue naturelle : signification, vertus symboliques, vraie pierre ou pierre teintée, FAQ, associations et bracelet recommandé.",
+    searchIntent: "agate bleue naturelle, agate bleue pierre, agate bleue signification, vertus agate bleue, bracelet agate bleue",
+    guideHref: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee",
+    guideLabel: "Lire le dossier Agate bleue naturelle"
   },
   "oeil-de-taureau": {
     title: "Œil de taureau : vertus, signification et bracelet recommandé",
@@ -80,8 +80,12 @@ const priorityStoneFaq: Record<string, Array<[string, string]>> = {
       "Certaines agates bleues peuvent être teintées. Il faut lire la description du vendeur, regarder les variations de couleur et privilégier les annonces transparentes."
     ],
     [
+      "Comment reconnaître une vraie agate bleue ?",
+      "Une agate bleue crédible doit être présentée avec des photos nettes, des variations naturelles et des informations sur la taille des perles, la matière et les traitements éventuels."
+    ],
+    [
       "Avec quelles pierres associer l'agate bleue ?",
-      "Elle s'associe bien à la howlite pour le calme, au quartz rose pour la douceur et à l'apatite bleue pour une intention d'expression plus affirmée."
+      "Elle s'associe bien à la howlite pour le calme, au quartz rose pour la douceur, à l'apatite bleue pour une expression plus affirmée et à l'œil de taureau si l'intention glisse vers le courage symbolique."
     ],
     [
       "L'agate bleue agit-elle sur le stress ?",

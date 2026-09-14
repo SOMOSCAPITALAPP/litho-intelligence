@@ -40,6 +40,145 @@ const sources = {
 
 export const journalArticles: JournalArticle[] = [
   {
+    slug: "agate-bleue-naturelle-vraie-pierre-teintee",
+    title: "Agate bleue naturelle : signification, vraie pierre ou pierre teintée ?",
+    seoTitle: "Agate bleue naturelle : signification, vraie pierre ou pierre teintée ?",
+    description:
+      "Guide complet pour comprendre l'agate bleue naturelle, sa signification symbolique, les traitements possibles, les critères d'achat et le bracelet recommandé.",
+    category: "achat",
+    publishedAt: "2026-09-14",
+    updatedAt: "2026-09-14",
+    readingTime: "12 min",
+    heroImage: "/images/stones/agate-bleue.png",
+    heroImageAlt: "Agate bleue naturelle en perles, pierre douce associée symboliquement à la communication calme",
+    productStoneSlug: "agate-bleue",
+    summary: [
+      "La requête « agate bleue naturelle » progresse dans Google Search Console et mérite un contenu dédié.",
+      "L'enjeu n'est pas seulement la signification : les internautes veulent savoir si la couleur est naturelle, renforcée ou teintée.",
+      "Un achat responsable passe par la lecture de l'annonce, la photo réelle, la taille des perles et la transparence du vendeur."
+    ],
+    sections: [
+      {
+        title: "Pourquoi la recherche « agate bleue naturelle » monte",
+        paragraphs: [
+          "Les données récentes de visibilité montrent un signal très net autour de l'agate bleue. Les internautes ne cherchent plus seulement « agate bleue vertus » ou « agate bleue signification ». Ils ajoutent désormais le mot « naturelle », ce qui change l'intention de recherche. La personne ne veut pas seulement connaître une tradition symbolique ; elle veut acheter, comparer et éviter une déception.",
+          "Cette nuance est importante pour Litho Intelligence. Une page sérieuse doit répondre aux deux besoins en même temps : expliquer ce que l'agate bleue représente dans les traditions de lithothérapie, puis aider à reconnaître les informations utiles avant de choisir un bracelet. C'est une approche plus journalistique, plus fiable et plus favorable au référencement naturel comme aux réponses des intelligences artificielles.",
+          "L'agate bleue reste présentée ici comme une pierre de tradition symbolique. Elle peut accompagner un rituel personnel autour de la parole, de l'écoute ou de la patience, mais elle ne remplace jamais un avis médical, psychologique ou professionnel."
+        ]
+      },
+      {
+        title: "Agate bleue naturelle : que veut vraiment dire ce nom ?",
+        paragraphs: [
+          "L'agate appartient à la famille de la calcédoine, une variété microcristalline du quartz. Selon les spécimens, elle peut présenter des bandes, des zones translucides, des nuances laiteuses, grises, blanches ou bleutées. Dans le commerce, l'expression « agate bleue » peut cependant recouvrir plusieurs réalités : pierre naturellement nuancée, agate colorée, agate teintée, calcédoine bleutée ou nom commercial plus large.",
+          "Il ne faut donc pas confondre deux questions. La première est minéralogique : quelle est la matière réelle du bijou ? La seconde est commerciale : la couleur bleue est-elle naturelle, renforcée ou obtenue par teinture ? Un produit teinté n'est pas forcément sans intérêt décoratif, mais il doit être présenté clairement. La confiance commence quand le vendeur donne assez d'éléments pour choisir en connaissance de cause.",
+          "Pour un bracelet, le mot « naturel » devrait idéalement être accompagné de photos nettes, de la taille des perles, du type de montage, des conditions de retour et d'une description prudente. Une annonce qui promet beaucoup d'effets mais explique peu le produit mérite davantage de recul."
+        ],
+        bullets: [
+          "Famille minérale : calcédoine, rattachée au quartz.",
+          "Aspect possible : bleu clair, bleu gris, nuances rubanées ou laiteuses.",
+          "Point clé : vérifier si la couleur est naturelle, renforcée ou teintée.",
+          "Critère d'achat : préférer une annonce descriptive à une annonce spectaculaire.",
+          "Usage courant : bracelet discret, bijou cadeau, support de rituel personnel."
+        ]
+      },
+      {
+        title: "Signification symbolique de l'agate bleue",
+        paragraphs: [
+          "Dans les croyances de lithothérapie, l'agate bleue est traditionnellement associée à la communication douce. Sa couleur claire évoque visuellement la respiration, l'espace, la fraîcheur et la parole posée. Elle est souvent reliée symboliquement au chakra de la gorge, non comme une promesse, mais comme une image culturelle : dire avec plus de clarté, écouter avec plus de patience, répondre avec moins de tension.",
+          "Cette lecture parle beaucoup aux personnes qui vivent des échanges denses : travail relationnel, famille, accompagnement, négociation, conversation sensible, besoin de diplomatie. Le bracelet devient alors un rappel concret. Avant une discussion, toucher les perles peut aider à formuler une intention simple : parler vrai, parler plus lentement, écouter avant de répondre.",
+          "La valeur de l'agate bleue vient donc moins d'une liste de propriétés que d'un usage personnel. Elle matérialise une décision : mettre de la douceur dans la parole. C'est précisément ce type de formulation qui rend la page plus crédible pour le lecteur comme pour les moteurs de recherche."
+        ]
+      },
+      {
+        title: "Vraie pierre, agate teintée ou imitation : les signaux à regarder",
+        paragraphs: [
+          "Le premier signal est la couleur. Un bleu parfaitement uniforme, très vif et identique sur toutes les perles peut indiquer une teinture ou une forte sélection commerciale. Ce n'est pas automatiquement un défaut, mais cela doit pousser à lire la description. À l'inverse, des nuances plus irrégulières, des rubans, de petites variations et une transparence partielle peuvent donner une impression plus naturelle.",
+          "Le deuxième signal est le texte du vendeur. Les mots « teintée », « colorée », « traitée », « reconstituée » ou « imitation » doivent être pris au sérieux. Leur présence n'est pas forcément négative si elle est claire. Leur absence n'est pas une garantie non plus. C'est pourquoi il faut croiser la photo, le prix, les avis, les dimensions et les conditions de retour.",
+          "Le troisième signal est la cohérence. Un bracelet très bon marché, très saturé, avec des photos floues et des promesses excessives n'offre pas le même niveau de confiance qu'une annonce sobre, précise et vérifiable. Pour un achat Amazon, la bonne démarche consiste à comparer plusieurs fiches avant de cliquer."
+        ],
+        bullets: [
+          "Regarder si les perles ont toutes exactement la même couleur.",
+          "Chercher les mentions de teinture, traitement ou nom commercial.",
+          "Vérifier la taille des perles, souvent 6 mm, 8 mm ou 10 mm.",
+          "Lire les avis récents et les conditions de retour.",
+          "Éviter les annonces qui mélangent bijou, promesse forte et absence de détails."
+        ]
+      },
+      {
+        title: "Comment porter un bracelet agate bleue naturelle",
+        paragraphs: [
+          "Le bracelet est le format le plus évident pour l'agate bleue, parce qu'il reste visible sans être trop présent. Il peut accompagner une journée de travail, une conversation importante, un rendez-vous ou une période où l'on souhaite parler avec plus de mesure. Sa couleur claire se porte facilement avec du blanc, du gris, du denim, de l'argenté ou des tons pastel.",
+          "Pour garder un rituel simple, il suffit de choisir une phrase d'intention. Par exemple : « je prends le temps de répondre », « j'écoute avant de conclure », « je parle avec clarté et douceur ». Le bracelet ne fait pas le travail à la place de la personne. Il sert de rappel, comme un objet de concentration.",
+          "Côté entretien, mieux vaut rester prudent : retirer le bracelet avant la douche, le sport, le parfum ou la piscine, puis l'essuyer avec un chiffon doux. Cette méthode protège à la fois les perles, la couleur éventuelle, l'élastique et les pièces métalliques."
+        ]
+      },
+      {
+        title: "Agate bleue, howlite et œil de taureau : trois recherches à relier",
+        paragraphs: [
+          "Le maillage interne est essentiel pour transformer un signal isolé en véritable cluster SEO. L'agate bleue parle de parole douce et d'harmonie relationnelle. La howlite parle davantage de ralentissement, de simplicité et de rituel du soir. L'œil de taureau, lui, répond à une intention plus terrienne : courage, ancrage et détermination calme.",
+          "Relier ces trois pages aide l'utilisateur à se situer. S'il cherche un bijou bleu et relationnel, l'agate bleue est cohérente. S'il cherche une pierre blanche, sobre et calme, la howlite devient plus pertinente. S'il veut une pierre chaude, brune, liée à l'action et au courage symbolique, l'œil de taureau mérite d'être consulté.",
+          "Ce maillage aide aussi Google et les IA à comprendre l'architecture du site : Litho Intelligence ne publie pas des fiches isolées, mais un réseau de contenus qui compare, nuance et oriente vers le bon choix."
+        ],
+        bullets: [
+          "Agate bleue : communication douce, écoute, relation.",
+          "Howlite : calme visuel, patience, rituel du soir.",
+          "Œil de taureau : courage symbolique, ancrage, action.",
+          "Apatite bleue : expression plus vive et plus dynamique.",
+          "Quartz rose : douceur affective et bienveillance envers soi."
+        ]
+      },
+      {
+        title: "Notre recommandation éditoriale",
+        paragraphs: [
+          "Si vous cherchez une agate bleue naturelle, partez d'abord de votre usage : bijou quotidien, cadeau doux, rappel de communication, couleur claire ou simple curiosité. Ensuite, comparez les annonces. Le bon bracelet n'est pas forcément celui qui promet le plus ; c'est celui qui donne assez d'informations pour décider tranquillement.",
+          "La recommandation produit mise en avant sur Litho Intelligence doit rester discrète et utile : voir le bracelet, vérifier la disponibilité Amazon, lire les conditions du vendeur et choisir selon son style. Cette démarche protège l'utilisateur tout en soutenant la conversion commerciale.",
+          "Pour prolonger votre recherche, consultez aussi la fiche agate bleue, le guide howlite si votre besoin dominant est le calme, et le guide œil de taureau si vous cherchez plutôt une symbolique de courage ou d'ancrage."
+        ]
+      }
+    ],
+    faq: [
+      {
+        question: "L'agate bleue est-elle toujours naturelle ?",
+        answer:
+          "L'agate est une pierre naturelle de la famille de la calcédoine, mais certaines agates bleues vendues en bijoux peuvent être teintées ou colorées. Il faut lire la description du vendeur."
+      },
+      {
+        question: "Comment reconnaître une agate bleue teintée ?",
+        answer:
+          "Une couleur très uniforme, très vive ou identique sur toutes les perles invite à vérifier l'annonce. La meilleure preuve reste une description transparente du vendeur."
+      },
+      {
+        question: "Quelle est la signification symbolique de l'agate bleue ?",
+        answer:
+          "Elle est traditionnellement associée à la communication douce, à l'écoute, à la patience et à l'harmonie relationnelle."
+      },
+      {
+        question: "Pourquoi porter un bracelet agate bleue ?",
+        answer:
+          "Le bracelet peut servir de rappel personnel avant une discussion : respirer, ralentir et choisir une parole plus claire."
+      },
+      {
+        question: "Quelle pierre associer à l'agate bleue ?",
+        answer:
+          "La howlite convient pour une intention de calme, le quartz rose pour la douceur et l'apatite bleue pour une expression plus dynamique."
+      },
+      {
+        question: "L'agate bleue remplace-t-elle un accompagnement professionnel ?",
+        answer:
+          "Non. Les informations proposées reposent sur des traditions symboliques et ne remplacent jamais un avis médical, psychologique ou professionnel."
+      }
+    ],
+    sources: [sources.mindatAgate, sources.mindatQuartz, sources.giaJewelryCare],
+    relatedLinks: [
+      { href: "/pierres/agate-bleue", label: "Fiche agate bleue" },
+      { href: "/conseils-lithotherapie/agate-bleue-signification-vertus-bracelet", label: "Guide agate bleue" },
+      { href: "/pierres/howlite", label: "Comparer avec la howlite" },
+      { href: "/conseils-lithotherapie/howlite-sommeil-calme-rituel-soir", label: "Guide howlite" },
+      { href: "/pierres/oeil-de-taureau", label: "Comparer avec l'œil de taureau" },
+      { href: "/boutique-pierres-naturelles", label: "Bracelets recommandés" }
+    ]
+  },
+  {
     slug: "agate-bleue-signification-vertus-bracelet",
     title: "Agate bleue : signification, vertus symboliques et bracelet recommandé",
     seoTitle: "Agate bleue : signification, vertus symboliques et bracelet recommandé",
@@ -179,6 +318,7 @@ export const journalArticles: JournalArticle[] = [
     sources: [sources.mindatAgate, sources.mindatQuartz, sources.giaJewelryCare],
     relatedLinks: [
       { href: "/pierres/agate-bleue", label: "Fiche agate bleue" },
+      { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Agate bleue naturelle ou teintée" },
       { href: "/intentions/stress", label: "Pierres associées au calme" },
       { href: "/pierres/howlite", label: "Comparer avec la howlite" },
       { href: "/pierres/apatite-bleue", label: "Comparer avec l'apatite bleue" },
@@ -311,6 +451,7 @@ export const journalArticles: JournalArticle[] = [
     relatedLinks: [
       { href: "/pierres/oeil-de-taureau", label: "Fiche œil de taureau" },
       { href: "/pierres/oeil-de-tigre", label: "Comparer avec l'œil de tigre" },
+      { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Comparer avec l'agate bleue naturelle" },
       { href: "/intentions/confiance", label: "Pierres pour la confiance" },
       { href: "/intentions/protection", label: "Pierres de protection symbolique" },
       { href: "/boutique-pierres-naturelles", label: "Bracelets recommandés" },
@@ -449,6 +590,7 @@ export const journalArticles: JournalArticle[] = [
     sources: [sources.mindatHowlite, sources.mineralsHowlite, sources.giaJewelryCare],
     relatedLinks: [
       { href: "/pierres/howlite", label: "Fiche howlite" },
+      { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Comparer avec l'agate bleue naturelle" },
       { href: "/intentions/sommeil", label: "Pierres associées au rituel du soir" },
       { href: "/intentions/stress", label: "Pierres associées au calme" },
       { href: "/guides/howlite-stress-sommeil-guide", label: "Guide complet howlite" },
