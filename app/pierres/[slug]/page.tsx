@@ -40,12 +40,20 @@ const priorityStoneSeo: Record<string, { title: string; description: string; sea
     guideLabel: "Lire le dossier Agate bleue naturelle"
   },
   "oeil-de-taureau": {
-    title: "Œil de taureau : vertus, signification et bracelet recommandé",
+    title: "Œil de taureau vertus : signification, courage et bracelet",
     description:
-      "Œil de taureau : vertus symboliques, signification, courage, ancrage, différences avec l'œil de tigre et bracelet recommandé.",
-    searchIntent: "oeil de taureau vertus, vertue oeil de taureau, pierre oeil de taureau, bracelet oeil de taureau",
+      "Œil de taureau : vertus symboliques, courage, ancrage, force tranquille, différences avec l'œil de tigre et bracelet recommandé.",
+    searchIntent: "oeil de taureau vertus, œil de taureau vertus, vertue oeil de taureau, pierre oeil de taureau, bracelet oeil de taureau",
     guideHref: "/conseils-lithotherapie/oeil-de-taureau-vertus-signification-bracelet",
     guideLabel: "Lire le guide Œil de taureau"
+  },
+  "apatite-bleue": {
+    title: "Apatite bleue : vertus, signification et bracelet recommandé",
+    description:
+      "Apatite bleue : vertus symboliques, signification, expression personnelle, communication, motivation et bracelet recommandé.",
+    searchIntent: "apatite bleue vertus, apatite bleue signification, pierre apatite bleue, bracelet apatite bleue",
+    guideHref: "/conseils-lithotherapie/apatite-bleue-vertus-signification-bracelet",
+    guideLabel: "Lire le guide Apatite bleue"
   },
   "oeil-de-tigre": {
     title: "Œil de tigre : vertus, protection, confiance et bracelet",
@@ -112,6 +120,28 @@ const priorityStoneFaq: Record<string, Array<[string, string]>> = {
     [
       "Comment reconnaître un œil de taureau de qualité ?",
       "Observez la chatoyance : la bande lumineuse doit bouger avec l'angle. Vérifiez aussi la description, les photos réelles, la taille des perles et les conditions de retour."
+    ]
+  ],
+  "apatite-bleue": [
+    [
+      "Quelles sont les vertus symboliques de l'apatite bleue ?",
+      "L'apatite bleue est traditionnellement associée à l'expression personnelle, à la clarté, à l'inspiration et à la motivation symbolique."
+    ],
+    [
+      "Pourquoi porter un bracelet apatite bleue ?",
+      "Le bracelet peut servir de rappel concret avant une prise de parole, une session d'écriture ou une action qui demande de formuler une idée."
+    ],
+    [
+      "Apatite bleue ou agate bleue : quelle différence ?",
+      "L'agate bleue évoque une communication plus douce et relationnelle, tandis que l'apatite bleue porte une symbolique plus vive d'expression et d'élan."
+    ],
+    [
+      "L'apatite bleue est-elle fragile ?",
+      "Elle demande un peu de soin : évitez les chocs, l'eau prolongée, le parfum, la piscine et le sport pour préserver le bracelet."
+    ],
+    [
+      "Avec quelles pierres associer l'apatite bleue ?",
+      "Elle peut être associée à l'agate bleue pour la parole douce, à la cornaline pour l'élan créatif et à la howlite pour une intention de calme."
     ]
   ]
 };

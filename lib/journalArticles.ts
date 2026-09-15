@@ -31,6 +31,7 @@ const sources = {
   giaTigerEye: { label: "GIA - Tiger's-Eye Quartz", href: "https://www.gia.edu/UK-EN/gia-museum-exhibit-tigers-eye-quartz" },
   giaAmethyst: { label: "GIA - Amethyst Care and Cleaning Guide", href: "https://www.gia.edu/amethyst-care-cleaning" },
   mindatAgate: { label: "Mindat - Agate", href: "https://www.mindat.org/min-51.html" },
+  mindatApatite: { label: "Mindat - Apatite", href: "https://www.mindat.org/min-29229.html" },
   mindatLabradorite: { label: "Mindat - Labradorite", href: "https://www.mindat.org/show.php?id=2308" },
   mindatHowlite: { label: "Mindat - Howlite", href: "https://www.mindat.org/min-1936.html" },
   mindatPyrite: { label: "Mindat - Pyrite", href: "https://www.mindat.org/min-3314.html" },
@@ -39,6 +40,145 @@ const sources = {
 };
 
 export const journalArticles: JournalArticle[] = [
+  {
+    slug: "apatite-bleue-vertus-signification-bracelet",
+    title: "Apatite bleue : vertus symboliques, signification et bracelet recommandé",
+    seoTitle: "Apatite bleue : vertus, signification et bracelet recommandé",
+    description:
+      "Guide complet sur l'apatite bleue : signification symbolique, vertus traditionnelles, communication, motivation, conseils d'achat et bracelet recommandé.",
+    category: "culture",
+    publishedAt: "2026-09-15",
+    updatedAt: "2026-09-15",
+    readingTime: "11 min",
+    heroImage: "/images/stones/apatite-bleue.png",
+    heroImageAlt: "Apatite bleue, pierre bleue lumineuse associée symboliquement à l'expression et à la motivation",
+    productStoneSlug: "apatite-bleue",
+    summary: [
+      "L'apatite bleue ouvre un cluster SEO complémentaire à l'agate bleue : parole claire, inspiration, motivation et bijou bleu.",
+      "Elle répond à des recherches à forte intention : vertus, signification, communication, bracelet et pierre bleue naturelle.",
+      "Le bon angle éditorial consiste à expliquer sa symbolique sans promesse, puis à orienter vers un bracelet sobre et vérifiable."
+    ],
+    sections: [
+      {
+        title: "Pourquoi travailler l'apatite bleue maintenant ?",
+        paragraphs: [
+          "Litho Intelligence commence à se positionner sur plusieurs requêtes liées aux pierres bleues. Après l'agate bleue, l'apatite bleue est un sujet naturel à renforcer : elle parle à la fois de couleur, de communication, d'inspiration et d'achat de bracelet. Elle permet donc d'élargir le territoire SEO sans sortir de l'univers déjà compris par Google.",
+          "La requête « apatite bleue vertus » attire souvent des personnes qui cherchent une réponse rapide, mais aussi une orientation concrète : que signifie cette pierre, à quoi l'associer symboliquement, comment la porter, comment choisir un bracelet ? Un bon article doit répondre à tout cela sans tomber dans la promesse excessive.",
+          "Sur Litho Intelligence by Quintessence Cristal, l'apatite bleue est présentée comme une pierre de tradition symbolique. Elle peut accompagner un rituel personnel autour de l'expression, de la clarté ou de l'élan, mais elle ne remplace jamais un avis médical, psychologique ou professionnel."
+        ]
+      },
+      {
+        title: "Qu'est-ce que l'apatite bleue ?",
+        paragraphs: [
+          "L'apatite désigne un groupe de minéraux phosphatés. L'apatite bleue, utilisée en bijouterie, séduit surtout par sa couleur : bleu profond, bleu vert, turquoise ou bleu plus nuageux selon les perles. Cette richesse visuelle explique son succès dans les bracelets, car elle attire immédiatement l'œil tout en restant plus fraîche qu'une pierre sombre.",
+          "Sur le plan matériel, l'apatite est plus tendre que le quartz. Cette information compte pour l'acheteur : un bracelet en apatite bleue doit être porté avec un minimum de soin. Il vaut mieux éviter les chocs, l'eau prolongée, le parfum, le sport intense et le rangement en vrac avec des pierres plus dures.",
+          "Dans le commerce, la couleur peut varier fortement d'un produit à l'autre. Une annonce de qualité doit montrer des photos nettes, préciser la taille des perles, le montage, les conditions de retour et éviter les promesses spectaculaires."
+        ],
+        bullets: [
+          "Famille : groupe de l'apatite, phosphates de calcium.",
+          "Aspect : bleu profond, bleu vert, turquoise ou nuances plus opaques.",
+          "Intention dominante : expression, clarté, inspiration et motivation symbolique.",
+          "Point de vigilance : pierre relativement sensible aux chocs et aux frottements.",
+          "Format conseillé : bracelet porté avec soin ou bijou choisi pour sa couleur expressive."
+        ]
+      },
+      {
+        title: "Vertus symboliques de l'apatite bleue",
+        paragraphs: [
+          "Dans les traditions de lithothérapie, l'apatite bleue est souvent associée à l'expression personnelle. Elle se situe dans l'univers symbolique de la parole, de la formulation, de l'inspiration et de la clarté. Elle peut donc parler aux personnes qui écrivent, créent, vendent, enseignent, prennent la parole ou veulent simplement mieux nommer ce qu'elles ressentent.",
+          "Sa couleur explique une partie de cette symbolique. Le bleu évoque l'espace, l'air, la parole et la vision plus claire. L'apatite bleue a toutefois une énergie visuelle plus vive que l'agate bleue : elle semble moins tournée vers la douceur relationnelle et davantage vers l'élan d'expression.",
+          "Il faut garder une formulation responsable. L'apatite bleue ne donne pas automatiquement confiance et ne garantit aucune transformation. Elle peut servir de support à un rituel personnel : choisir une idée à formuler, écrire une phrase, préparer une prise de parole ou clarifier une intention avant d'agir."
+        ],
+        bullets: [
+          "Expression : formuler plus clairement une idée.",
+          "Motivation : associer la pierre à une action concrète.",
+          "Inspiration : garder un rappel visuel pendant une phase créative.",
+          "Communication : préparer une parole plus posée et plus consciente.",
+          "Clarté : revenir à une intention simple avant de se disperser."
+        ]
+      },
+      {
+        title: "Apatite bleue ou agate bleue : comment choisir ?",
+        paragraphs: [
+          "L'agate bleue et l'apatite bleue appartiennent toutes deux à l'univers des pierres bleues, mais elles ne racontent pas la même histoire. L'agate bleue est plus douce, plus relationnelle, souvent associée à la parole calme et à l'écoute. L'apatite bleue est plus vive, plus expressive, plus liée à la motivation et à l'inspiration.",
+          "Si l'intention dominante est de calmer un échange, de parler avec plus de douceur ou d'offrir un bijou discret, l'agate bleue reste très cohérente. Si l'intention est de prendre la parole, écrire, créer, vendre une idée ou retrouver un élan d'expression, l'apatite bleue devient plus pertinente.",
+          "Cette comparaison est utile pour l'utilisateur et pour le SEO. Elle permet à Google et aux IA de comprendre que Litho Intelligence ne répète pas une liste de vertus : le site compare les usages, nuance les intentions et aide réellement au choix."
+        ],
+        bullets: [
+          "Agate bleue : douceur, écoute, communication relationnelle.",
+          "Apatite bleue : expression, inspiration, parole plus affirmée.",
+          "Howlite : calme, ralentissement, sobriété.",
+          "Calcédoine bleue : apaisement verbal et douceur.",
+          "Œil de taureau : courage symbolique et ancrage dans l'action."
+        ]
+      },
+      {
+        title: "Comment porter un bracelet apatite bleue ?",
+        paragraphs: [
+          "Le bracelet apatite bleue fonctionne bien comme rappel d'expression. Avant une réunion, une création de contenu, une discussion ou une session d'écriture, il peut être associé à une phrase simple : « je formule clairement », « je partage une idée utile », « je commence par une phrase ». Le geste importe plus que l'objet seul.",
+          "Pour un usage quotidien, il vaut mieux choisir un bracelet confortable et ne pas l'exposer aux situations agressives. L'apatite étant plus sensible que le quartz, retirez le bracelet avant la douche, le sport, le parfum et les activités où il risque les chocs.",
+          "Côté style, l'apatite bleue a une présence plus lumineuse que la howlite et plus intense que l'agate bleue. Elle peut être très belle avec du blanc, du noir, du jean, de l'argenté ou des matières naturelles."
+        ]
+      },
+      {
+        title: "Conseils d'achat pour un bracelet apatite bleue",
+        paragraphs: [
+          "Avant de cliquer vers Amazon, regardez d'abord les photos. Les perles doivent montrer une couleur cohérente, mais pas nécessairement identique. De petites variations donnent souvent plus de naturel. Vérifiez aussi la taille des perles : 6 mm pour un bracelet discret, 8 mm pour une présence plus visible.",
+          "Lisez ensuite la description du vendeur. Les mots importants sont simples : apatite bleue, perles, diamètre, taille du bracelet, fil élastique, couleur, photos réelles, conditions de retour. Une bonne annonce décrit le produit avant de promettre une expérience.",
+          "Enfin, choisissez selon l'intention. Si vous voulez un bijou doux et relationnel, comparez avec l'agate bleue. Si vous voulez un bijou plus expressif, l'apatite bleue peut mieux correspondre."
+        ]
+      },
+      {
+        title: "Notre recommandation éditoriale",
+        paragraphs: [
+          "L'apatite bleue mérite une page forte parce qu'elle complète parfaitement le cluster agate bleue. Elle permet de capter les recherches liées aux pierres bleues, à la communication, à l'expression et à la motivation sans répéter le même contenu.",
+          "Le bracelet recommandé ci-dessous doit être compris comme une piste d'achat responsable : comparez les photos, vérifiez le stock, lisez les conditions du vendeur et choisissez selon votre style. Le rôle de Litho Intelligence est de guider, pas de forcer l'achat.",
+          "Pour prolonger la lecture, consultez la fiche apatite bleue, le guide agate bleue naturelle si votre sujet est la douceur relationnelle, et le test gratuit si vous hésitez entre communication, énergie, calme ou confiance."
+        ]
+      }
+    ],
+    faq: [
+      {
+        question: "Quelles sont les vertus symboliques de l'apatite bleue ?",
+        answer:
+          "Elle est traditionnellement associée à l'expression personnelle, à la clarté, à l'inspiration et à la motivation symbolique."
+      },
+      {
+        question: "Quelle est la signification de l'apatite bleue ?",
+        answer:
+          "Sa signification tourne autour de la parole claire, de l'élan créatif et de la capacité à formuler une intention."
+      },
+      {
+        question: "Apatite bleue ou agate bleue : laquelle choisir ?",
+        answer:
+          "L'agate bleue convient mieux à une parole douce et relationnelle. L'apatite bleue convient mieux à une expression plus vive, créative ou motivée."
+      },
+      {
+        question: "Pourquoi porter un bracelet apatite bleue ?",
+        answer:
+          "Le bracelet peut servir de rappel personnel avant une prise de parole, une session d'écriture ou une action qui demande de clarifier une idée."
+      },
+      {
+        question: "L'apatite bleue est-elle fragile ?",
+        answer:
+          "Elle demande plus de soin que le quartz. Il vaut mieux éviter les chocs, l'eau prolongée, le parfum, la piscine et le sport."
+      },
+      {
+        question: "L'apatite bleue a-t-elle un effet médical ?",
+        answer:
+          "Non. Les informations proposées reposent sur des traditions symboliques et ne remplacent jamais un avis médical, psychologique ou professionnel."
+      }
+    ],
+    sources: [sources.mindatApatite, sources.giaJewelryCare],
+    relatedLinks: [
+      { href: "/pierres/apatite-bleue", label: "Fiche apatite bleue" },
+      { href: "/intentions/communication", label: "Pierres pour la communication" },
+      { href: "/intentions/energie", label: "Pierres pour l'énergie" },
+      { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Comparer avec l'agate bleue" },
+      { href: "/conseils-lithotherapie/cornaline-apatite-energie-creative", label: "Comparer avec la cornaline" },
+      { href: "/boutique-pierres-naturelles", label: "Bracelets recommandés" }
+    ]
+  },
   {
     slug: "agate-bleue-naturelle-vraie-pierre-teintee",
     title: "Agate bleue naturelle : signification, vraie pierre ou pierre teintée ?",
@@ -328,14 +468,14 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     slug: "oeil-de-taureau-vertus-signification-bracelet",
-    title: "Œil de taureau : vertus symboliques, signification et bracelet recommandé",
-    seoTitle: "Œil de taureau : vertus, signification et bracelet recommandé",
+    title: "Œil de taureau : vertus symboliques, signification, courage et bracelet",
+    seoTitle: "Œil de taureau vertus : signification, courage et bracelet",
     description:
-      "Guide de fond sur l'œil de taureau : signification symbolique, vertus traditionnelles, différence avec l'œil de tigre, choix d'un bracelet et conseils d'achat.",
+      "Guide de fond sur les vertus de l'œil de taureau : signification symbolique, courage, ancrage, différence avec l'œil de tigre, bracelet et conseils d'achat.",
     category: "culture",
     publishedAt: "2026-09-13",
-    updatedAt: "2026-09-13",
-    readingTime: "10 min",
+    updatedAt: "2026-09-15",
+    readingTime: "11 min",
     heroImage: "/images/stones/oeil-de-taureau.png",
     heroImageAlt: "Œil de taureau brun rouge chatoyant, pierre associée symboliquement au courage et à l'ancrage",
     productStoneSlug: "oeil-de-taureau",
@@ -374,6 +514,21 @@ export const journalArticles: JournalArticle[] = [
           "Dans les traditions de lithothérapie, l'œil de taureau est souvent associé à une force plus physique et plus terrienne que l'œil de tigre. Là où l'œil de tigre évoque la vigilance solaire, la posture et la confiance, l'œil de taureau parle davantage d'endurance, de présence au corps et de décision tenue dans la durée.",
           "Cette nuance est précieuse pour l'utilisateur. Beaucoup de personnes ne cherchent pas seulement à « avoir confiance ». Elles cherchent à tenir une action, à rester stables dans un moment de pression, à avancer sans agitation. L'œil de taureau peut alors devenir un symbole de force tranquille : pas une pierre spectaculaire, mais un rappel sobre que l'on peut poser les pieds au sol et faire le prochain geste.",
           "La couleur rouge brun joue évidemment dans cette lecture. Elle évoque la terre, la chaleur, l'effort, l'ancrage et la continuité. En bracelet, cette symbolique devient facile à comprendre : on porte un repère visuel qui rappelle le courage calme plutôt que l'impulsion."
+        ]
+      },
+      {
+        title: "Vertus de l'œil de taureau : courage, ancrage et force tranquille",
+        paragraphs: [
+          "La requête « œil de taureau vertus » appelle une réponse claire. Dans les traditions symboliques, cette pierre est généralement reliée à trois familles d'intentions : le courage, l'ancrage et la force tranquille. Ces mots ne doivent pas être compris comme des effets garantis, mais comme des repères culturels pour choisir un bijou qui porte un message.",
+          "Le courage associé à l'œil de taureau n'est pas forcément spectaculaire. Il peut évoquer une décision tenue, une action commencée sans agitation, une parole plus ferme ou une capacité à rester présent dans une période exigeante. L'ancrage, lui, renvoie à l'idée de revenir au corps, au geste concret, au pas suivant plutôt qu'à la rumination.",
+          "Cette pierre est donc pertinente pour les personnes qui veulent un bracelet sobre, chaud, masculin ou mixte, avec une symbolique d'action stable. Elle peut accompagner un rituel personnel du matin : choisir une seule action prioritaire, respirer, porter le bracelet, puis avancer sans multiplier les objectifs."
+        ],
+        bullets: [
+          "Courage symbolique : oser poser une action concrète.",
+          "Ancrage : revenir au corps, au calme et au prochain geste.",
+          "Détermination : tenir une décision sans chercher la perfection.",
+          "Force tranquille : avancer avec sobriété plutôt qu'avec agitation.",
+          "Protection symbolique : garder une posture plus stable dans les échanges."
         ]
       },
       {
@@ -451,6 +606,7 @@ export const journalArticles: JournalArticle[] = [
     relatedLinks: [
       { href: "/pierres/oeil-de-taureau", label: "Fiche œil de taureau" },
       { href: "/pierres/oeil-de-tigre", label: "Comparer avec l'œil de tigre" },
+      { href: "/conseils-lithotherapie/apatite-bleue-vertus-signification-bracelet", label: "Comparer avec l'apatite bleue" },
       { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Comparer avec l'agate bleue naturelle" },
       { href: "/intentions/confiance", label: "Pierres pour la confiance" },
       { href: "/intentions/protection", label: "Pierres de protection symbolique" },

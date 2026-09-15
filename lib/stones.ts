@@ -177,6 +177,14 @@ const seeds: StoneSeed[] = [
     chakra: "Gorge",
     visual: "Bleu profond à turquoise, lumineux et frais.",
     description: "Traditionnellement reliée à l'expression personnelle, à la clarté et à l'envie d'avancer.",
+    seo_keywords: [
+      "apatite bleue vertus",
+      "apatite bleue signification",
+      "pierre apatite bleue",
+      "bracelet apatite bleue",
+      "apatite bleue communication",
+      "apatite bleue motivation"
+    ],
     badge: "Clarté & expression"
   },
   {
@@ -844,10 +852,13 @@ const seeds: StoneSeed[] = [
     recharge: ["lumière douce", "géode de quartz", "repos au sec"],
     seo_keywords: [
       "oeil de taureau vertus",
+      "œil de taureau vertus",
       "vertue oeil de taureau",
+      "oeil de taureau signification",
       "pierre oeil de taureau",
       "bracelet oeil de taureau",
-      "oeil de taureau signification"
+      "oeil de taureau courage",
+      "oeil de taureau ancrage"
     ],
     compatibilities: ["jaspe-rouge", "grenat", "hématite"],
     badge: "Force & courage"
