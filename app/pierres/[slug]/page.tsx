@@ -32,12 +32,12 @@ const priorityStoneSeo: Record<string, { title: string; description: string; sea
     guideLabel: "Lire le guide Howlite"
   },
   "agate-bleue": {
-    title: "Agate bleue naturelle : signification, vertus et bracelet",
+    title: "Agate bleue claire et naturelle : signification, vertus et bracelet",
     description:
-      "Agate bleue naturelle : signification, vertus symboliques, vraie pierre ou pierre teintée, FAQ, associations et bracelet recommandé.",
-    searchIntent: "agate bleue naturelle, agate bleue pierre, agate bleue signification, vertus agate bleue, bracelet agate bleue",
-    guideHref: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee",
-    guideLabel: "Lire le dossier Agate bleue naturelle"
+      "Agate bleue claire ou naturelle : signification, vertus symboliques, vraie pierre ou pierre teintée, FAQ et bracelet recommandé.",
+    searchIntent: "agate bleue claire, agate bleu, agate bleue naturelle, agate bleue pierre, agate bleue signification, vertus agate bleue, vertu agate bleue, bracelet agate bleue",
+    guideHref: "/conseils-lithotherapie/agate-bleue-claire-signification-bracelet",
+    guideLabel: "Lire le dossier Agate bleue claire"
   },
   "oeil-de-taureau": {
     title: "Œil de taureau vertus : signification, courage et bracelet",
@@ -86,6 +86,10 @@ const priorityStoneFaq: Record<string, Array<[string, string]>> = {
     [
       "Agate bleue naturelle ou teintée : que vérifier ?",
       "Certaines agates bleues peuvent être teintées. Il faut lire la description du vendeur, regarder les variations de couleur et privilégier les annonces transparentes."
+    ],
+    [
+      "Que signifie l'agate bleue claire ?",
+      "L'agate bleue claire est traditionnellement associée à une parole douce, à l'écoute et à une communication plus posée. Sa nuance claire renforce l'idée de calme visuel."
     ],
     [
       "Comment reconnaître une vraie agate bleue ?",

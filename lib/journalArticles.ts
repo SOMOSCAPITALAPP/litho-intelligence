@@ -41,6 +41,146 @@ const sources = {
 
 export const journalArticles: JournalArticle[] = [
   {
+    slug: "agate-bleue-claire-signification-bracelet",
+    title: "Agate bleue claire : signification, vertus symboliques et bracelet recommandé",
+    seoTitle: "Agate bleue claire : signification, vertus et bracelet",
+    description:
+      "Guide complet sur l'agate bleue claire : signification symbolique, différences avec l'agate teintée, conseils d'achat et bracelet recommandé.",
+    category: "achat",
+    publishedAt: "2026-09-16",
+    updatedAt: "2026-09-16",
+    readingTime: "12 min",
+    heroImage: "/images/stones/agate-bleue.png",
+    heroImageAlt: "Agate bleue claire en bracelet, pierre douce associée symboliquement à la parole calme",
+    productStoneSlug: "agate-bleue",
+    summary: [
+      "La variante « agate bleue claire » apparaît dans les signaux récents et prolonge naturellement le cluster agate bleue.",
+      "L'intention de recherche mélange esthétique, signification, authenticité de la couleur et achat d'un bracelet.",
+      "Un bon contenu doit expliquer la nuance claire, rassurer sur les traitements possibles et orienter vers un choix Amazon responsable."
+    ],
+    sections: [
+      {
+        title: "Pourquoi l'agate bleue claire devient une requête à travailler",
+        paragraphs: [
+          "Dans les données récentes de Search Console, le sujet agate bleue domine déjà la visibilité de Litho Intelligence. Après les requêtes générales comme « agate bleue pierre », « agate bleue signification » ou « vertus agate bleue », une variante plus précise mérite maintenant un contenu dédié : l'agate bleue claire. Cette formulation n'est pas anodine. Elle indique que l'internaute ne cherche pas seulement une pierre, mais une couleur, une douceur visuelle et souvent un bracelet facile à porter.",
+          "L'agate bleue claire répond à une intention très concrète. La personne veut comprendre ce que cette pierre symbolise, mais elle veut aussi savoir si le bleu clair est naturel, teinté, renforcé ou simplement commercial. Elle veut éviter un achat trop artificiel, choisir un bijou harmonieux et vérifier que le bracelet correspondra à son style.",
+          "C'est précisément là que Litho Intelligence peut prendre de l'avance : en reliant la symbolique, la minéralogie accessible, le choix d'un bracelet et une recommandation produit responsable. L'objectif n'est pas de promettre un effet. L'objectif est d'aider à choisir une pierre claire, cohérente avec une intention de communication douce."
+        ]
+      },
+      {
+        title: "Que signifie l'agate bleue claire ?",
+        paragraphs: [
+          "L'agate bleue claire est généralement associée à la parole douce, à l'écoute, à la patience et à l'harmonie relationnelle. La nuance claire renforce cette lecture : elle évoque une parole plus aérée, un échange moins chargé, une manière de dire les choses avec plus de simplicité. Dans les traditions symboliques, elle peut donc accompagner un rituel personnel autour de la communication calme.",
+          "Il faut toutefois garder une formulation juste. L'agate bleue claire ne garantit pas une conversation réussie, ne remplace pas un accompagnement professionnel et ne règle pas à elle seule une tension relationnelle. Elle peut en revanche devenir un repère visuel : un bracelet que l'on touche avant de répondre trop vite, une couleur que l'on associe à une phrase plus claire, un objet qui rappelle de respirer avant de parler.",
+          "Cette nuance est importante pour la crédibilité de la marque. Une page sérieuse ne vend pas une promesse magique. Elle donne un vocabulaire, une histoire et un mode d'usage symbolique."
+        ],
+        bullets: [
+          "Communication douce : parler avec plus de mesure.",
+          "Écoute : laisser une respiration avant de répondre.",
+          "Patience : éviter la réaction immédiate dans un échange sensible.",
+          "Harmonie : chercher une phrase vraie, mais moins dure.",
+          "Clarté : formuler une intention simple avant une discussion."
+        ]
+      },
+      {
+        title: "Agate bleue claire, naturelle ou teintée : la vraie question",
+        paragraphs: [
+          "Le mot « claire » peut désigner une nuance naturellement douce, une sélection de perles pâles, une agate colorée ou une appellation commerciale. Dans le commerce des bracelets, il faut donc distinguer la matière, la couleur et la transparence de l'annonce. Une pierre teintée n'est pas automatiquement à rejeter, mais l'acheteur doit pouvoir le savoir.",
+          "Sur une photo produit, une agate bleue claire crédible peut présenter des variations : zones laiteuses, légères bandes, nuances gris bleuté, différences subtiles entre les perles. À l'inverse, un bleu parfaitement identique et très saturé doit pousser à lire la description avec attention. La régularité peut être jolie, mais elle doit être comprise comme un choix esthétique et commercial.",
+          "Pour un achat responsable, privilégiez les annonces qui indiquent la taille des perles, montrent plusieurs photos, précisent les conditions de retour et évitent les promesses excessives. Le meilleur bracelet n'est pas celui qui raconte le plus grand miracle ; c'est celui qui vous donne assez d'informations pour décider tranquillement."
+        ],
+        bullets: [
+          "Regarder la couleur : bleue claire, bleue gris, laiteuse ou très saturée.",
+          "Vérifier les mots : naturelle, teintée, colorée, traitée, imitation.",
+          "Observer les variations entre les perles.",
+          "Lire les avis récents et les conditions de retour.",
+          "Comparer le prix avec la qualité des photos et des détails fournis."
+        ]
+      },
+      {
+        title: "À qui offrir un bracelet agate bleue claire ?",
+        paragraphs: [
+          "Le bracelet agate bleue claire est un cadeau facile à comprendre. Il convient à une personne qui aime les bijoux doux, les couleurs pastel, les pierres discrètes et les messages délicats. Contrairement à certaines pierres très intenses, il ne force pas une interprétation. Il peut simplement dire : « je te souhaite plus de douceur dans les échanges » ou « voici un bijou clair, calme et facile à porter ».",
+          "C'est une piste intéressante pour une amie, une mère, une collègue, une personne qui travaille beaucoup avec la parole ou quelqu'un qui traverse une période où les conversations demandent plus de tact. Son côté clair et lumineux le rend aussi cohérent avec les cadeaux de printemps, les remerciements, les encouragements ou les petites attentions sans occasion officielle.",
+          "Commercialement, cette pierre a un avantage : elle n'est pas agressive. Le produit peut être mis en avant avec élégance, sans pression, en insistant sur la couleur, le confort, la symbolique douce et la disponibilité Amazon."
+        ]
+      },
+      {
+        title: "Agate bleue claire, apatite bleue ou howlite : comment choisir ?",
+        paragraphs: [
+          "Ces trois pierres peuvent attirer un public proche, mais elles ne répondent pas à la même intention. L'agate bleue claire est la plus relationnelle : elle parle d'écoute, de parole douce et d'harmonie dans les échanges. L'apatite bleue est plus expressive : elle évoque davantage l'élan, l'inspiration et la prise de parole. La howlite est plus minimaliste : elle renvoie au calme, à la sobriété et au rituel du soir.",
+          "Si vous cherchez un bracelet bleu clair pour une personne douce, l'agate bleue claire est probablement le choix le plus naturel. Si votre intention est de formuler une idée, de créer ou de prendre la parole, l'apatite bleue peut mieux correspondre. Si vous cherchez un bijou blanc, simple et très discret, la howlite reste une alternative solide.",
+          "Cette comparaison nourrit aussi le référencement naturel : Google comprend mieux le rôle de chaque pierre quand les pages se répondent entre elles au lieu d'être isolées."
+        ],
+        bullets: [
+          "Agate bleue claire : douceur relationnelle et parole calme.",
+          "Apatite bleue : expression, inspiration et motivation symbolique.",
+          "Howlite : calme, simplicité et rituel du soir.",
+          "Quartz rose : douceur affective et amour de soi.",
+          "Œil de taureau : courage et ancrage dans l'action."
+        ]
+      },
+      {
+        title: "Comment porter l'agate bleue claire au quotidien",
+        paragraphs: [
+          "Le bracelet est la forme la plus pratique pour garder l'intention visible. Avant une réunion, un appel ou une conversation importante, vous pouvez poser la main sur les perles et choisir une phrase très simple : « je réponds avec calme », « je prends le temps d'écouter », « je parle clairement ». Ce type de rituel ne demande ni croyance excessive ni mise en scène.",
+          "Pour préserver le bracelet, retirez-le avant la douche, le sport, la piscine et le parfum. Rangez-le séparément des pierres plus dures. Un chiffon doux suffit pour l'entretien courant. Cette prudence protège les perles, l'élastique et une éventuelle coloration.",
+          "Côté style, l'agate bleue claire se porte très bien avec du blanc, du beige clair, du jean, du gris, de l'argenté ou des matières naturelles. Elle peut aussi compléter un bracelet quartz rose si l'intention est plus affective, ou une howlite si l'intention est plus calme."
+        ]
+      },
+      {
+        title: "Notre recommandation d'achat",
+        paragraphs: [
+          "Pour un bracelet agate bleue claire, commencez par la photo. Le bijou doit vous plaire avant toute interprétation symbolique. Regardez ensuite la taille des perles, le diamètre du bracelet, les avis, la politique de retour et la clarté de la description. Si le vendeur précise les traitements éventuels, c'est un bon signe de transparence.",
+          "La recommandation produit ci-dessous est une piste pratique pour passer de la lecture à l'achat. Elle doit être comprise comme une sélection commerciale responsable : disponibilité, prix et conditions dépendent d'Amazon et du vendeur. Comparez toujours les annonces avant de choisir.",
+          "Pour approfondir, consultez aussi la fiche agate bleue, le guide sur l'agate bleue naturelle et le test gratuit si vous hésitez entre communication, calme, confiance ou énergie."
+        ]
+      }
+    ],
+    faq: [
+      {
+        question: "Quelle est la signification de l'agate bleue claire ?",
+        answer:
+          "Elle est traditionnellement associée à la communication douce, à l'écoute, à la patience et à une parole plus posée."
+      },
+      {
+        question: "L'agate bleue claire est-elle naturelle ?",
+        answer:
+          "Elle peut être naturelle, sélectionnée pour sa nuance, colorée ou teintée selon les produits. Il faut lire la description du vendeur et vérifier les photos."
+      },
+      {
+        question: "Pourquoi choisir un bracelet agate bleue claire ?",
+        answer:
+          "Le bracelet est discret, doux visuellement et peut servir de rappel symbolique avant une discussion ou une journée relationnelle dense."
+      },
+      {
+        question: "Agate bleue claire ou apatite bleue : laquelle choisir ?",
+        answer:
+          "L'agate bleue claire convient mieux à une intention de parole douce. L'apatite bleue convient mieux à une intention d'expression plus vive ou créative."
+      },
+      {
+        question: "Comment entretenir un bracelet agate bleue claire ?",
+        answer:
+          "Retirez-le avant l'eau, le sport et le parfum. Essuyez-le avec un chiffon doux et rangez-le séparément pour préserver les perles."
+      },
+      {
+        question: "L'agate bleue claire a-t-elle un effet médical ?",
+        answer:
+          "Non. Les informations proposées reposent sur les traditions symboliques associées aux pierres naturelles et ne remplacent jamais un avis médical, psychologique ou professionnel."
+      }
+    ],
+    sources: [sources.mindatAgate, sources.mindatQuartz, sources.giaJewelryCare],
+    relatedLinks: [
+      { href: "/pierres/agate-bleue", label: "Fiche agate bleue" },
+      { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Agate bleue naturelle ou teintée" },
+      { href: "/conseils-lithotherapie/agate-bleue-signification-vertus-bracelet", label: "Guide agate bleue" },
+      { href: "/pierres/apatite-bleue", label: "Comparer avec l'apatite bleue" },
+      { href: "/pierres/howlite", label: "Comparer avec la howlite" },
+      { href: "/boutique-pierres-naturelles", label: "Bracelets recommandés" },
+      { href: "/test", label: "Faire le test gratuit" }
+    ]
+  },
+  {
     slug: "apatite-bleue-vertus-signification-bracelet",
     title: "Apatite bleue : vertus symboliques, signification et bracelet recommandé",
     seoTitle: "Apatite bleue : vertus, signification et bracelet recommandé",
@@ -174,6 +314,7 @@ export const journalArticles: JournalArticle[] = [
       { href: "/pierres/apatite-bleue", label: "Fiche apatite bleue" },
       { href: "/intentions/communication", label: "Pierres pour la communication" },
       { href: "/intentions/energie", label: "Pierres pour l'énergie" },
+      { href: "/conseils-lithotherapie/agate-bleue-claire-signification-bracelet", label: "Comparer avec l'agate bleue claire" },
       { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Comparer avec l'agate bleue" },
       { href: "/conseils-lithotherapie/cornaline-apatite-energie-creative", label: "Comparer avec la cornaline" },
       { href: "/boutique-pierres-naturelles", label: "Bracelets recommandés" }
@@ -311,6 +452,7 @@ export const journalArticles: JournalArticle[] = [
     sources: [sources.mindatAgate, sources.mindatQuartz, sources.giaJewelryCare],
     relatedLinks: [
       { href: "/pierres/agate-bleue", label: "Fiche agate bleue" },
+      { href: "/conseils-lithotherapie/agate-bleue-claire-signification-bracelet", label: "Agate bleue claire" },
       { href: "/conseils-lithotherapie/agate-bleue-signification-vertus-bracelet", label: "Guide agate bleue" },
       { href: "/pierres/howlite", label: "Comparer avec la howlite" },
       { href: "/conseils-lithotherapie/howlite-sommeil-calme-rituel-soir", label: "Guide howlite" },
@@ -458,6 +600,7 @@ export const journalArticles: JournalArticle[] = [
     sources: [sources.mindatAgate, sources.mindatQuartz, sources.giaJewelryCare],
     relatedLinks: [
       { href: "/pierres/agate-bleue", label: "Fiche agate bleue" },
+      { href: "/conseils-lithotherapie/agate-bleue-claire-signification-bracelet", label: "Agate bleue claire" },
       { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Agate bleue naturelle ou teintée" },
       { href: "/intentions/stress", label: "Pierres associées au calme" },
       { href: "/pierres/howlite", label: "Comparer avec la howlite" },
@@ -607,6 +750,7 @@ export const journalArticles: JournalArticle[] = [
       { href: "/pierres/oeil-de-taureau", label: "Fiche œil de taureau" },
       { href: "/pierres/oeil-de-tigre", label: "Comparer avec l'œil de tigre" },
       { href: "/conseils-lithotherapie/apatite-bleue-vertus-signification-bracelet", label: "Comparer avec l'apatite bleue" },
+      { href: "/conseils-lithotherapie/agate-bleue-claire-signification-bracelet", label: "Comparer avec l'agate bleue claire" },
       { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Comparer avec l'agate bleue naturelle" },
       { href: "/intentions/confiance", label: "Pierres pour la confiance" },
       { href: "/intentions/protection", label: "Pierres de protection symbolique" },
