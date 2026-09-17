@@ -262,6 +262,17 @@ const seeds: StoneSeed[] = [
     chakra: "Cœur",
     visual: "Rose pâle laiteux, doux et lumineux.",
     description: "Symbole de tendresse, d'amour de soi et de réconfort.",
+    seo_keywords: [
+      "quartz rose",
+      "quartz rose vertus",
+      "vertus quartz rose",
+      "quartz rose signification",
+      "pierre quartz rose",
+      "bracelet quartz rose",
+      "bracelet quartz rose femme",
+      "quartz rose amour",
+      "cadeau quartz rose"
+    ],
     compatibilities: ["améthyste", "aventurine-verte", "rhodonite"],
     incompatibilities: ["obsidienne-oeil-celeste"],
     badge: "Amour & douceur"

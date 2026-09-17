@@ -64,12 +64,12 @@ const priorityStoneSeo: Record<string, { title: string; description: string; sea
     guideLabel: "Lire le guide Œil de tigre"
   },
   "quartz-rose": {
-    title: "Quartz rose : signification, amour de soi et bracelet",
+    title: "Quartz rose : signification, vertus symboliques et bracelet recommandé",
     description:
-      "Découvrez le quartz rose, pierre de douceur et d'amour de soi dans les traditions symboliques, avec guide, livre et bracelet recommandé.",
-    searchIntent: "quartz rose, quartz rose signification, bracelet quartz rose",
-    guideHref: "/guides/quartz-rose-amour-soi-guide",
-    guideLabel: "Lire le guide Quartz rose"
+      "Quartz rose : signification, vertus symboliques, amour de soi, conseils pour choisir un bracelet et idée cadeau avec livre recommandé.",
+    searchIntent: "quartz rose, quartz rose vertus, quartz rose signification, pierre quartz rose, bracelet quartz rose, bracelet quartz rose femme, quartz rose amour, cadeau quartz rose",
+    guideHref: "/conseils-lithotherapie/bracelet-quartz-rose-signification-choisir-offrir",
+    guideLabel: "Choisir un bracelet quartz rose"
   }
 };
 
@@ -146,6 +146,36 @@ const priorityStoneFaq: Record<string, Array<[string, string]>> = {
     [
       "Avec quelles pierres associer l'apatite bleue ?",
       "Elle peut être associée à l'agate bleue pour la parole douce, à la cornaline pour l'élan créatif et à la howlite pour une intention de calme."
+    ]
+  ],
+  "quartz-rose": [
+    [
+      "Quelles sont les vertus symboliques du quartz rose ?",
+      "Le quartz rose est traditionnellement associé à la douceur, à l'amour de soi, à la tendresse et à l'harmonie relationnelle. Ces associations relèvent des traditions symboliques autour des pierres."
+    ],
+    [
+      "Quelle est la signification d'un bracelet quartz rose ?",
+      "Un bracelet quartz rose peut symboliser une attention bienveillante envers soi ou envers une personne proche. Porté au quotidien, il sert surtout de rappel visuel d'une intention de douceur."
+    ],
+    [
+      "Comment choisir un bracelet quartz rose ?",
+      "Vérifiez la taille des perles, le tour de poignet, la qualité du montage, les variations naturelles de couleur, les photos du produit et les conditions de retour du vendeur."
+    ],
+    [
+      "Le quartz rose est-il une bonne idée cadeau ?",
+      "Oui. Sa couleur douce et sa symbolique immédiatement compréhensible conviennent notamment à une mère, une amie, une conjointe ou une personne à qui l'on souhaite transmettre une attention délicate."
+    ],
+    [
+      "Comment reconnaître un quartz rose crédible ?",
+      "Le quartz rose naturel est souvent pâle, laiteux, translucide et légèrement irrégulier. Une couleur très vive ou parfaitement uniforme doit conduire à vérifier attentivement la description du vendeur."
+    ],
+    [
+      "Comment entretenir un bracelet quartz rose ?",
+      "Nettoyez-le avec un chiffon doux et, si nécessaire, un peu d'eau tiède savonneuse. Évitez la vapeur, les ultrasons, les produits chimiques, les chocs et les expositions prolongées à une lumière intense."
+    ],
+    [
+      "Le quartz rose a-t-il un effet médical ?",
+      "Non. Litho Intelligence le présente comme un support symbolique, culturel ou spirituel. Il ne remplace jamais un avis médical, psychologique ou professionnel."
     ]
   ]
 };
