@@ -170,7 +170,7 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
               <p className="eyebrow">Sélection éditoriale</p>
               <h2>Le bracelet associé à cette lecture</h2>
               <p>
-                Une recommandation discrète pour prolonger l'intention de protection symbolique évoquée dans l'article.
+                Une recommandation discrète pour prolonger l'intention évoquée dans l'article et comparer l'offre disponible.
               </p>
             </div>
             <ProductRecommendationCard
