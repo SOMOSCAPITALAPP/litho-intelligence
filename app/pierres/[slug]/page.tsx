@@ -63,6 +63,14 @@ const priorityStoneSeo: Record<string, { title: string; description: string; sea
     guideHref: "/guides/oeil-de-tigre-confiance-protection-guide",
     guideLabel: "Lire le guide Œil de tigre"
   },
+  "obsidienne-noire": {
+    title: "Obsidienne noire : signification, protection symbolique et bracelet",
+    description:
+      "Obsidienne noire : origine volcanique, signification, vertus symboliques, ancrage, entretien, précautions et bracelet recommandé.",
+    searchIntent: "obsidienne noire, obsidienne noire vertus, pierre obsidienne noire, obsidienne protection, bracelet obsidienne noire",
+    guideHref: "/guides/pierres-de-protection-guide-labradorite-obsidienne-tourmaline",
+    guideLabel: "Comparer les pierres de protection"
+  },
   "quartz-rose": {
     title: "Quartz rose : signification, vertus symboliques et bracelet recommandé",
     description:
@@ -124,6 +132,32 @@ const priorityStoneFaq: Record<string, Array<[string, string]>> = {
     [
       "Comment reconnaître un œil de taureau de qualité ?",
       "Observez la chatoyance : la bande lumineuse doit bouger avec l'angle. Vérifiez aussi la description, les photos réelles, la taille des perles et les conditions de retour."
+    ]
+  ],
+  "obsidienne-noire": [
+    [
+      "Quelle est la signification symbolique de l'obsidienne noire ?",
+      "L'obsidienne noire est traditionnellement associée à l'ancrage, à la protection symbolique, à la lucidité et à la capacité de poser des limites."
+    ],
+    [
+      "L'obsidienne noire est-elle une pierre volcanique ?",
+      "Oui. L'obsidienne est un verre volcanique naturel formé lors du refroidissement rapide d'une lave riche en silice. Elle ne possède pas de structure cristalline organisée."
+    ],
+    [
+      "Pourquoi porter un bracelet obsidienne noire ?",
+      "Le bracelet peut servir de rappel concret pour revenir au présent, préserver son espace personnel et aborder une situation avec davantage de discernement."
+    ],
+    [
+      "Obsidienne noire ou tourmaline noire : laquelle choisir ?",
+      "L'obsidienne possède un aspect vitreux et une symbolique de lucidité. La tourmaline noire est cristalline et traditionnellement associée à un ancrage plus régulier. Le choix dépend surtout du style et de l'intention."
+    ],
+    [
+      "Comment entretenir l'obsidienne noire ?",
+      "Utilisez un chiffon doux légèrement humide, puis séchez immédiatement. Évitez les chocs, les produits chimiques, le sel et l'immersion prolongée du bracelet."
+    ],
+    [
+      "L'obsidienne noire remplace-t-elle un accompagnement professionnel ?",
+      "Non. Ses usages relèvent de traditions symboliques ou culturelles et ne remplacent jamais un avis médical, psychologique ou professionnel."
     ]
   ],
   "apatite-bleue": [

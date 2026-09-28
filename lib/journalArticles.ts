@@ -1,3 +1,5 @@
+import { protectionStressArticles } from "@/lib/protectionStressArticles";
+
 export type JournalArticleSection = {
   title: string;
   paragraphs?: string[];
@@ -6,6 +8,7 @@ export type JournalArticleSection = {
 
 export type JournalArticle = {
   slug: string;
+  canonicalPath?: string;
   title: string;
   seoTitle: string;
   description: string;
@@ -34,12 +37,626 @@ const sources = {
   mindatApatite: { label: "Mindat - Apatite", href: "https://www.mindat.org/min-29229.html" },
   mindatLabradorite: { label: "Mindat - Labradorite", href: "https://www.mindat.org/show.php?id=2308" },
   mindatHowlite: { label: "Mindat - Howlite", href: "https://www.mindat.org/min-1936.html" },
+  mindatMalachite: { label: "Mindat - Malachite", href: "https://www.mindat.org/min-2550.html" },
+  pubchemMalachite: { label: "PubChem - Malachite", href: "https://pubchem.ncbi.nlm.nih.gov/compound/Malachite" },
+  cdcCopper: { label: "CDC/NIOSH - Copper dusts and mists", href: "https://www.cdc.gov/niosh/npg/npgd0150.html" },
   mindatPyrite: { label: "Mindat - Pyrite", href: "https://www.mindat.org/min-3314.html" },
   mindatQuartz: { label: "Mindat - Quartz", href: "https://www.mindat.org/min-3337.html" },
+  mindatSelenite: { label: "Mindat - Selenite", href: "https://www.mindat.org/show.php?id=5527&ld=1" },
+  usgsGypsum: { label: "USGS - Gypsum and Anhydrite", href: "https://pubs.usgs.gov/bul/1105/report.pdf" },
+  googleTrendsFrance: { label: "Google Trends France - Tendances actuelles", href: "https://trends.google.com/trending?geo=FR&hl=fr" },
+  nasaSeptember2026: { label: "NASA - September 2026 Skywatching Tips", href: "https://science.nasa.gov/solar-system/skywatching/whats-up-september-2026-skywatching-tips-from-nasa/" },
+  usnoMoonPhases2026: { label: "US Naval Observatory - Moon Phases 2026", href: "https://aa.usno.navy.mil/calculated/moon/phases?year=2026" },
   mineralsHowlite: { label: "Minerals.net - Howlite", href: "https://www.minerals.net/mineral/howlite" }
 };
 
 export const journalArticles: JournalArticle[] = [
+  ...protectionStressArticles,
+  {
+    slug: "pleine-lune-septembre-2026-recharger-pierres-sans-risque",
+    title: "Pleine lune de septembre 2026 : quelles pierres recharger et quelles précautions prendre ?",
+    seoTitle: "Pleine lune septembre 2026 : recharger ses pierres sans risque",
+    description:
+      "Date et heure de la pleine lune de septembre 2026, rituel symbolique, pierres à protéger de l'eau ou du soleil et méthode douce pour ne pas les abîmer.",
+    category: "culture",
+    publishedAt: "2026-09-24",
+    updatedAt: "2026-09-24",
+    readingTime: "14 min",
+    heroImage: "/images/stones/pierre-de-lune.png",
+    heroImageAlt: "Pierre de lune claire évoquant la pleine lune de septembre et un rituel d'entretien des pierres",
+    productStoneSlug: "amethyste",
+    summary: [
+      "La pleine lune aura lieu le 26 septembre 2026 à 16 h 49 UTC, soit 18 h 49 en France métropolitaine, selon l'US Naval Observatory.",
+      "Le rechargement lunaire est un rituel symbolique : aucune exposition prolongée n'est nécessaire et la pierre peut rester derrière une fenêtre.",
+      "Sélénite, malachite, pyrite et autres minéraux sensibles doivent rester au sec ; améthyste et quartz rose doivent être rentrés avant le soleil."
+    ],
+    sections: [
+      {
+        title: "Pourquoi la pleine lune de septembre 2026 suscite un intérêt soudain",
+        paragraphs: [
+          "La requête « pleine lune septembre 2026 » est entrée aujourd'hui parmi les tendances actives de Google Trends France, avec plus de 10 000 recherches et une progression proche de 200 %. Le calendrier explique ce mouvement : la pleine lune arrive le samedi 26 septembre, quelques jours après l'équinoxe d'automne. La NASA la présente comme la Harvest Moon, ou lune des moissons, visible près de Saturne et de Neptune dans le ciel du soir.",
+          "Pour l'univers des pierres naturelles, ce pic est une occasion de répondre à une question concrète : peut-on laisser ses pierres dehors toute la nuit pour les « recharger » ? La réponse prudente est non. Le rituel lunaire relève d'une tradition symbolique et ne demande ni rosée, ni immersion, ni exposition jusqu'au lever du soleil. Certaines pierres supportent mal l'humidité ; d'autres peuvent perdre une partie de leur couleur sous une lumière solaire intense et répétée.",
+          "Ce guide réunit donc trois niveaux d'information qu'il faut garder distincts. L'astronomie permet de dater précisément la pleine lune. La minéralogie aide à protéger les pierres. La lithothérapie fournit un langage symbolique pour créer un moment de recentrage. Les informations symboliques proposées ici ne constituent pas une preuve d'effet physique et ne remplacent jamais un avis médical, psychologique ou professionnel."
+        ]
+      },
+      {
+        title: "Quelle est la date et l'heure de la pleine lune de septembre 2026 ?",
+        paragraphs: [
+          "L'US Naval Observatory fixe la pleine lune au 26 septembre 2026 à 16 h 49 en temps universel. En France métropolitaine, encore à l'heure d'été, cela correspond à 18 h 49. Cet horaire désigne l'instant astronomique où la Lune se trouve à l'opposé du Soleil vue depuis la Terre ; il ne constitue pas une heure obligatoire pour accomplir un rituel.",
+          "La NASA indique que la lune des moissons se lèvera à l'est peu après le coucher du Soleil. Saturne sera visible à proximité à l'œil nu, tandis que Neptune nécessitera un instrument. Pour observer le ciel, choisissez un horizon est dégagé et laissez vos yeux s'adapter progressivement à l'obscurité. L'observation peut devenir le cœur du rituel : regarder la Lune quelques minutes est plus cohérent que d'abandonner une collection fragile dehors.",
+          "Si le ciel est couvert ou si vous n'êtes pas disponible le 26 septembre, rien n'est perdu. Dans la tradition symbolique, l'intention compte davantage que la minute exacte. Vous pouvez organiser votre geste la veille, le lendemain ou simplement au moment qui convient à votre emploi du temps. Une pratique personnelle ne gagne pas en valeur parce qu'elle devient contraignante."
+        ],
+        bullets: [
+          "Date : samedi 26 septembre 2026.",
+          "Instant astronomique : 16 h 49 UTC.",
+          "Heure en France métropolitaine : 18 h 49.",
+          "Nom culturel courant : lune des moissons.",
+          "Observation : lever à l'est après le coucher du Soleil."
+        ]
+      },
+      {
+        title: "Recharger ses pierres à la pleine lune : que signifie vraiment ce rituel ?",
+        paragraphs: [
+          "Dans les croyances contemporaines de lithothérapie, « recharger » une pierre signifie renouveler l'intention qui lui est associée. Le vocabulaire évoque une batterie, mais cette image ne doit pas être prise au sens scientifique. Il n'existe pas de mesure reconnue montrant qu'un minéral accumule puis récupère une énergie de bien-être sous la lumière lunaire.",
+          "Le rituel peut néanmoins avoir une fonction personnelle compréhensible. Sortir un bracelet de sa pochette, vérifier son état, le nettoyer avec une méthode adaptée puis formuler une intention crée une pause volontaire. La pierre devient un repère matériel : elle rappelle une décision, une valeur ou une habitude que l'on souhaite cultiver. Le changement vient des gestes effectués et du sens donné à l'objet, pas d'une promesse automatique.",
+          "La méthode la plus simple consiste à placer la pierre sur un tissu propre, près d'une fenêtre fermée. Prenez quelques respirations lentes, puis écrivez une phrase courte : « Je souhaite protéger mon temps », « Je choisis une parole plus calme » ou « Je commence par une seule priorité ». Après quelques minutes, rangez le bijou dans sa pochette. Il n'est pas nécessaire de le laisser toute la nuit."
+        ],
+        bullets: [
+          "Nettoyer matériellement la pierre avec la méthode qui lui convient.",
+          "Choisir une intention précise et réalisable.",
+          "Installer la pierre sur un tissu sec, à l'intérieur.",
+          "Observer la Lune ou respirer calmement pendant deux minutes.",
+          "Ranger le bijou avant d'oublier son exposition."
+        ]
+      },
+      {
+        title: "Quelles pierres peuvent être placées près d'une fenêtre ?",
+        paragraphs: [
+          "Une exposition intérieure, sur un tissu sec et loin du bord, convient à la majorité des pierres polies. Le cristal de roche, le quartz rose, l'améthyste, l'œil de tigre, l'obsidienne et la labradorite peuvent participer à un rituel bref derrière une vitre. Le montage du bijou reste toutefois aussi important que la pierre : un fil élastique, un fermoir collé ou une perle traitée peut être plus fragile que le minéral lui-même.",
+          "Le quartz rose est traditionnellement associé à la douceur relationnelle et à l'attention portée à soi. L'améthyste accompagne souvent les rituels du soir et les intentions de calme. La labradorite est choisie pour une symbolique de limite et de protection. L'œil de tigre représente couramment la confiance et le discernement. Ces significations peuvent orienter la phrase écrite pendant le rituel sans devenir des certitudes.",
+          "L'améthyste constitue un choix éditorial pertinent pour cette pleine lune : sa couleur, son histoire et son association culturelle au soir en font un objet facile à relier au moment. Un bracelet permet de prolonger l'intention au quotidien, à condition de choisir un vendeur clair sur les dimensions, la matière et les conditions de retour. Le lien produit proposé sur cette page redirige vers Amazon ; disponibilité et prix dépendent du vendeur."
+        ]
+      },
+      {
+        title: "Quelles pierres ne faut-il pas laisser dehors pendant la nuit ?",
+        paragraphs: [
+          "La rosée est le principal risque d'une exposition extérieure. La sélénite, qui appartient au gypse, est très tendre et légèrement soluble : elle doit rester au sec. La malachite mérite elle aussi un entretien prudent, sans bain ni élixir. La pyrite peut s'altérer en présence d'humidité prolongée. Les bijoux comportant des parties métalliques, de la colle ou un fil élastique ne gagnent rien à passer la nuit dehors.",
+          "La calcite, l'angélite et certaines pierres poreuses ou tendres doivent également être protégées de l'eau. Même une pierre réputée robuste peut tomber d'un balcon, être déplacée par le vent ou subir un choc thermique. Une assiette posée dans l'herbe n'est donc pas une méthode universelle. Le rebord intérieur d'une fenêtre offre le même support symbolique avec beaucoup moins de risques.",
+          "Pour la sélénite, contentez-vous d'un pinceau souple ou d'un chiffon sec. Pour la pyrite, évitez les bains et rangez-la dans un endroit sec. Pour la malachite, ne préparez aucune eau à boire au contact direct de la pierre. Ces précautions reposent sur la nature des minéraux ; elles restent valables quelle que soit la croyance associée au rituel."
+        ],
+        bullets: [
+          "Sélénite : pas de rosée, de bain ou de sel.",
+          "Pyrite : éviter l'humidité prolongée et bien sécher le rangement.",
+          "Malachite : pas d'élixir direct ni d'eau destinée à être consommée.",
+          "Calcite et pierres tendres : privilégier un geste entièrement à sec.",
+          "Bracelets : protéger le fil, les colles et les éléments métalliques."
+        ]
+      },
+      {
+        title: "Pourquoi faut-il rentrer certaines pierres avant le soleil ?",
+        paragraphs: [
+          "Le piège le plus fréquent n'est pas la lumière de la Lune, mais le soleil du lendemain. Une personne pose ses pierres le soir, puis les oublie plusieurs heures après le lever du jour. Une exposition lumineuse intense et répétée peut altérer la couleur de certaines gemmes. L'améthyste mérite notamment d'être protégée d'une lumière forte et prolongée. Le quartz rose et certaines variétés colorées gagnent eux aussi à rester loin d'une fenêtre très ensoleillée.",
+          "Programmez un rappel ou choisissez dès le départ un rituel de dix minutes. Vous éviterez ainsi la rosée, les ultraviolets et l'oubli. Une lumière lunaire indirecte derrière une vitre suffit largement à représenter le geste. Le rituel n'a pas besoin d'une dose précise de lumière : sa fonction est symbolique, pas photométrique.",
+          "Si une pierre a déjà pâli, ne cherchez pas à restaurer sa couleur avec de la chaleur, un produit ou une nouvelle exposition. Conservez-la à l'abri de la lumière directe et demandez l'avis d'un gemmologue ou d'un bijoutier lorsque l'objet possède une valeur importante. Une couleur modifiée ne se corrige pas avec une recette improvisée."
+        ]
+      },
+      {
+        title: "Un rituel de pleine lune simple en cinq minutes",
+        paragraphs: [
+          "Commencez par choisir une seule pierre, plutôt que de déplacer toute votre collection. Essuyez-la doucement et vérifiez le fil ou le sertissage. Installez-vous près d'une fenêtre, sans poser le bijou sur un rebord instable. Coupez les notifications pendant cinq minutes et regardez le ciel si les conditions le permettent.",
+          "Formulez ensuite une intention sous forme d'action. « Je veux être protégé » reste vague ; « je garde une heure sans notifications demain matin » devient concret. « Je veux être calme » peut se transformer en « je prends trois respirations avant de répondre à un message difficile ». La pierre sert alors de rappel visible pour un comportement choisi.",
+          "Terminez en rangeant le bijou ou en le portant quelques heures le lendemain. Notez l'action sur votre téléphone ou dans un carnet. Cette dernière étape évite que le rituel reste une parenthèse esthétique sans conséquence dans le quotidien. Si vous cherchez quelle pierre correspond le mieux à votre intention, le test gratuit de Litho Intelligence peut vous orienter vers une fiche détaillée et un bracelet associé."
+        ],
+        bullets: [
+          "Minute 1 : vérifier et essuyer la pierre.",
+          "Minute 2 : respirer et observer.",
+          "Minute 3 : nommer l'intention.",
+          "Minute 4 : choisir une action concrète.",
+          "Minute 5 : ranger la pierre et noter l'action."
+        ]
+      },
+      {
+        title: "Ce qu'il faut retenir avant le 26 septembre",
+        paragraphs: [
+          "La pleine lune du 26 septembre 2026 constitue un moment culturel et astronomique intéressant, mais elle n'impose aucun protocole. Pour protéger les pierres, l'option la plus prudente reste une exposition courte, à l'intérieur, sur une surface sèche. La sélénite, la pyrite et la malachite ne doivent pas passer la nuit dans la rosée. L'améthyste et le quartz rose doivent être protégés du soleil direct au réveil.",
+          "La meilleure pratique associe trois choses : une information astronomique exacte, un entretien respectueux de la matière et une intention personnelle traduite en action. Cette approche conserve la beauté du rituel sans confondre tradition symbolique et effet démontré. Elle est aussi plus simple : une pierre, cinq minutes, une phrase et un geste concret suffisent.",
+          "Pour aller plus loin, consultez le guide complet consacré à la purification et au rechargement, la fiche de la sélénite publiée cette semaine et les pages de l'améthyste ou du quartz rose. Vous pouvez également recevoir le guide gratuit des dix pierres essentielles ou découvrir la sélection de bracelets recommandés selon votre intention."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Quand aura lieu la pleine lune de septembre 2026 ?", answer: "Elle aura lieu le samedi 26 septembre 2026 à 16 h 49 UTC, soit 18 h 49 en France métropolitaine selon l'US Naval Observatory." },
+      { question: "Combien de temps faut-il laisser ses pierres à la pleine lune ?", answer: "Aucune durée n'est scientifiquement requise. Pour un rituel symbolique, quelques minutes près d'une fenêtre suffisent et limitent les risques d'oubli ou d'altération." },
+      { question: "Peut-on laisser toutes les pierres dehors toute la nuit ?", answer: "Non. La rosée et l'humidité peuvent altérer des pierres comme la sélénite ou la pyrite, ainsi que les fils, colles et éléments métalliques des bijoux." },
+      { question: "Quelles pierres faut-il rentrer avant le lever du soleil ?", answer: "Par prudence, rentrez notamment l'améthyste et le quartz rose afin d'éviter une exposition solaire forte et prolongée susceptible d'altérer certaines couleurs." },
+      { question: "Peut-on recharger une sélénite à la pleine lune ?", answer: "Oui dans un sens symbolique, mais gardez-la impérativement à l'intérieur et au sec. La sélénite est un gypse très tendre qui ne doit pas rester dans la rosée." },
+      { question: "La pleine lune change-t-elle scientifiquement l'énergie d'une pierre ?", answer: "Aucune mesure reconnue ne démontre un rechargement énergétique des minéraux par la Lune. Cette pratique doit être comprise comme un rituel culturel ou spirituel personnel." }
+    ],
+    sources: [sources.googleTrendsFrance, sources.nasaSeptember2026, sources.usnoMoonPhases2026, sources.giaJewelryCare, sources.giaAmethyst, sources.mindatSelenite],
+    relatedLinks: [
+      { href: "/guides/purification-rechargement-pierres", label: "Guide de purification et rechargement" },
+      { href: "/conseils-lithotherapie/selenite-definition-vertus-symboliques-eau-entretien", label: "Sélénite : définition et entretien" },
+      { href: "/pierres/amethyste", label: "Découvrir l'améthyste" },
+      { href: "/pierres/quartz-rose", label: "Découvrir le quartz rose" },
+      { href: "/boutique-pierres-naturelles", label: "Voir les bracelets recommandés" },
+      { href: "/test", label: "Faire le test gratuit" },
+      { href: "/newsletter", label: "Recevoir le guide gratuit" }
+    ]
+  },
+  {
+    slug: "selenite-definition-vertus-symboliques-eau-entretien",
+    title: "Sélénite : définition, vertus symboliques, eau et entretien",
+    seoTitle: "Sélénite : définition, vertus symboliques et entretien",
+    description:
+      "Qu'est-ce que la sélénite ? Guide documenté sur le gypse, sa signification symbolique, ses usages, son entretien sans eau et les critères de choix.",
+    category: "fondamentaux",
+    publishedAt: "2026-09-23",
+    updatedAt: "2026-09-23",
+    readingTime: "13 min",
+    heroImage: "/images/stones/selenite.png",
+    heroImageAlt: "Sélénite blanche translucide, variété de gypse à l'éclat doux",
+    summary: [
+      "La sélénite est une variété de gypse, un sulfate de calcium hydraté très tendre dont le nom évoque la Lune.",
+      "Dans les traditions symboliques, elle est associée à la clarté, au calme rituel et à l'organisation d'un espace, sans promesse médicale.",
+      "Sa dureté faible impose un entretien délicat : pas de trempage, pas de sel, peu de frottements et un rangement séparé."
+    ],
+    sections: [
+      {
+        title: "Pourquoi la sélénite devient un sujet prioritaire",
+        paragraphs: [
+          "La sélénite sort du cercle des collectionneurs pour devenir une pierre recherchée dans les intérieurs, les rituels personnels et les contenus consacrés à l'entretien des minéraux. Google Trends France confirme ce mouvement : les requêtes « pierre de sélénite », « sélénite définition » et « sélénite vertus » apparaissent toutes en progression record sur les trente derniers jours. Le lecteur ne cherche donc pas seulement une jolie pierre blanche ; il veut savoir ce qu'elle est, ce qu'elle symbolise et comment éviter de l'abîmer.",
+          "Ce triple besoin rend le sujet particulièrement intéressant pour le référencement Google et les moteurs de réponse fondés sur l'intelligence artificielle. Une bonne page doit donner une définition dès le début, distinguer les faits minéralogiques des traditions spirituelles et répondre clairement aux questions pratiques sur l'eau, la fragilité et l'usage quotidien.",
+          "La sélénite permet aussi de montrer ce qui fait la valeur de Litho Intelligence : une approche qui conserve la poésie des pierres sans transformer une croyance en certitude. Les informations symboliques présentées ici relèvent de traditions culturelles ou spirituelles. Elles ne remplacent jamais un avis médical, psychologique ou professionnel."
+        ]
+      },
+      {
+        title: "Qu'est-ce que la sélénite ? Définition minéralogique",
+        paragraphs: [
+          "La sélénite est une variété cristalline du gypse. Sa formule est CaSO4·2H2O : il s'agit d'un sulfate de calcium contenant de l'eau dans sa structure cristalline. Mindat précise que le mot sélénite a historiquement désigné la variété transparente du gypse. Le nom vient du grec selene, la Lune, en référence aux reflets pâles et à la lumière douce transmise par certains cristaux.",
+          "Le gypse figure parmi les minéraux les plus tendres. L'USGS lui attribue une dureté comprise entre 1,5 et 2 sur l'échelle de Mohs. Il peut donc être rayé par un ongle. Cette propriété explique les marques que l'on observe parfois sur une baguette, une plaque ou une tour décorative : elles ne prouvent pas nécessairement que la pierre est fausse, mais montrent que la surface demande de la délicatesse.",
+          "La sélénite est souvent blanche ou incolore, transparente à translucide, avec un éclat vitreux. Dans le commerce, de nombreux objets vendus sous le nom de sélénite présentent une texture fibreuse et satinée. Minéralogiquement, ils correspondent souvent au satin spar, une autre forme de gypse. L'usage commercial du mot sélénite est large ; le plus important est que le vendeur décrive honnêtement la matière et son aspect."
+        ],
+        bullets: [
+          "Famille minérale : gypse.",
+          "Composition : sulfate de calcium hydraté, CaSO4·2H2O.",
+          "Dureté : environ 2 sur l'échelle de Mohs.",
+          "Aspect : blanc ou incolore, transparent à translucide.",
+          "Nom : référence historique à la Lune et à la lumière transmise."
+        ]
+      },
+      {
+        title: "Sélénite, satin spar et pierre de lune : ne pas les confondre",
+        paragraphs: [
+          "La sélénite véritable au sens minéralogique se présente souvent en cristaux transparents ou en lames. Le satin spar possède une structure fibreuse, un reflet soyeux et une apparence blanche très lumineuse. Les deux appartiennent au gypse, mais leur texture diffère. Les baguettes blanches parallèles et les plaques de recharge proposées en boutique sont fréquemment du satin spar commercialisé comme sélénite.",
+          "Cette convention n'est pas forcément trompeuse si la description reste claire. Elle devient problématique lorsque le vendeur invente une rareté, affirme une provenance sans preuve ou facture un objet courant comme une gemme exceptionnelle. Avant l'achat, regardez plusieurs photos et vérifiez si l'annonce mentionne gypse, sélénite ou satin spar.",
+          "La pierre de lune est tout autre chose. Elle appartient au groupe des feldspaths et peut présenter une adularescence, un reflet qui semble flotter sous la surface. Sa composition, sa dureté et sa structure ne sont pas celles de la sélénite. Le rapprochement vient surtout du nom et de l'imaginaire lunaire. Une pierre de lune n'est donc ni une variété de sélénite ni une forme de gypse."
+        ]
+      },
+      {
+        title: "Quelles vertus symboliques sont associées à la sélénite ?",
+        paragraphs: [
+          "Dans les traditions contemporaines de lithothérapie, la sélénite est associée à la clarté, à la purification symbolique et à la création d'une atmosphère calme. Sa couleur blanche et sa translucidité expliquent une grande partie de ce langage : la pierre évoque visuellement la lumière, l'ordre, le silence et le retour à l'essentiel.",
+          "Ces associations peuvent être utilisées comme supports de rituel personnel. Une baguette posée sur un bureau peut rappeler de commencer par une priorité. Une plaque placée près d'une collection de bijoux peut marquer le moment où l'on range et entretient ses pierres. Une pierre près d'un carnet peut accompagner quelques minutes de respiration ou d'écriture avant le coucher.",
+          "Il faut toutefois rester précis : la sélénite ne nettoie pas médicalement un organisme, ne modifie pas un état psychologique et ne garantit aucun changement. Le bénéfice concret vient du geste choisi par la personne : ranger, ralentir, respirer, écrire ou clarifier une intention. La pierre donne une forme visible à cette décision."
+        ],
+        bullets: [
+          "Clarté : revenir à une intention simple et formulée.",
+          "Calme symbolique : créer un repère visuel dans un espace de repos.",
+          "Rituel : marquer le début ou la fin d'un moment personnel.",
+          "Organisation : réserver une place aux bijoux et aux objets importants.",
+          "Transmission : offrir une pierre dont la symbolique est facile à expliquer."
+        ]
+      },
+      {
+        title: "Peut-on mettre la sélénite dans l'eau ?",
+        paragraphs: [
+          "Le conseil le plus simple est d'éviter l'eau. Le gypse est légèrement soluble et sa surface tendre peut perdre son éclat, devenir mate ou se marquer après une immersion répétée. Même lorsque la pierre ne semble pas se dissoudre immédiatement, le trempage n'apporte aucun avantage à son entretien et augmente le risque d'altération.",
+          "N'utilisez pas non plus de sel, de produits ménagers, de parfum, d'huile ou de nettoyeur à ultrasons. Pour retirer la poussière, choisissez un pinceau très souple, un chiffon sec ou une poire à air. Tenez la pièce sans la serrer et ne cherchez pas à effacer une rayure avec un produit abrasif : la surface est trop délicate pour un polissage improvisé.",
+          "Les méthodes de purification relèvent de pratiques symboliques. Elles ne nécessitent pas de mouiller la pierre. Vous pouvez simplement essuyer l'objet, le placer sur un tissu propre, aérer la pièce et formuler l'intention associée au rituel. Cette méthode protège le minéral tout en conservant la dimension personnelle du geste."
+        ],
+        bullets: [
+          "Ne pas immerger la sélénite.",
+          "Éviter le sel, les acides et les produits de nettoyage.",
+          "Dépoussiérer avec un pinceau souple ou un chiffon sec.",
+          "Manipuler au-dessus d'une surface protégée pour limiter la casse.",
+          "Ranger séparément des pierres plus dures."
+        ]
+      },
+      {
+        title: "Comment utiliser la sélénite dans un rituel responsable",
+        paragraphs: [
+          "La sélénite se prête mieux à un usage immobile qu'au port quotidien. Une baguette, une plaque ou une petite tour peut rester sur un bureau, une table de nuit ou une étagère dédiée. Sa fragilité la rend moins adaptée aux poches, aux sacs et aux bracelets soumis aux chocs. Le bon emplacement est celui où la pierre reste visible sans être souvent déplacée.",
+          "Pour un rituel de deux minutes, posez un carnet à côté de la pierre. Respirez lentement quatre fois, puis écrivez une phrase répondant à cette question : « Qu'est-ce qui mérite vraiment mon attention maintenant ? » Choisissez ensuite une action réalisable dans la journée. La sélénite sert de repère ; l'effet pratique vient de la clarté de la question et de l'action accomplie.",
+          "Elle peut aussi accompagner le rangement des bijoux. Nettoyez matériellement chaque bracelet selon la nature de sa pierre, vérifiez les fils et les fermoirs, puis replacez les objets autour de la plaque sans leur attribuer un résultat automatique. Ce rituel combine soin concret et dimension symbolique, ce qui le rend plus utile qu'une accumulation de promesses."
+        ]
+      },
+      {
+        title: "Comment choisir une sélénite ou un cadeau autour des pierres",
+        paragraphs: [
+          "Choisissez d'abord le format. Une baguette convient à un petit espace et se manipule facilement. Une plaque offre une surface pour poser quelques bijoux. Une tour devient un objet décoratif plus visible. Dans tous les cas, demandez les dimensions exactes : les photographies rapprochées peuvent donner l'impression d'une pièce plus grande qu'elle ne l'est.",
+          "Regardez ensuite les bords, la texture et l'emballage. De petites lignes ou fibres sont naturelles sur le satin spar, mais une pièce très ébréchée mérite d'être signalée. Un emballage protecteur est important, car le gypse se raye et se casse facilement. Vérifiez aussi les conditions de retour et les avis consacrés à l'état du produit à la livraison.",
+          "Pour offrir une découverte plus complète, un livre généraliste sur les pierres naturelles constitue une recommandation plus durable qu'un objet fragile choisi sans contexte. Le livre « Le secret énergétique des pierres » permet d'explorer les récits, les usages symboliques et les précautions d'entretien. La sélénite peut ensuite compléter ce cadeau comme objet de bureau ou de rituel, avec une carte sobre : « Un symbole de clarté pour accompagner tes moments de recentrage. »"
+        ]
+      }
+    ],
+    faq: [
+      { question: "Qu'est-ce que la sélénite ?", answer: "La sélénite est une variété cristalline du gypse, un sulfate de calcium hydraté de formule CaSO4·2H2O. Son nom fait référence à la Lune et à ses reflets pâles." },
+      { question: "Quelles sont les vertus symboliques de la sélénite ?", answer: "Elle est traditionnellement associée à la clarté, au calme rituel et à la purification symbolique d'un espace. Ces associations ne constituent pas des effets médicaux ou garantis." },
+      { question: "Peut-on mettre la sélénite dans l'eau ?", answer: "Il vaut mieux éviter l'immersion. Le gypse est tendre et légèrement soluble ; l'eau peut ternir ou altérer progressivement sa surface." },
+      { question: "Comment nettoyer une pierre de sélénite ?", answer: "Utilisez un pinceau très souple ou un chiffon sec. Évitez l'eau, le sel, les produits chimiques, les ultrasons et les abrasifs." },
+      { question: "Quelle différence entre sélénite et satin spar ?", answer: "Les deux sont des formes de gypse. La sélénite est historiquement la variété transparente, tandis que le satin spar est fibreux et soyeux. Le commerce emploie souvent sélénite pour les deux." },
+      { question: "La sélénite est-elle une pierre de lune ?", answer: "Non. La pierre de lune appartient aux feldspaths, alors que la sélénite est du gypse. Elles partagent seulement un nom et un imaginaire liés à la Lune." }
+    ],
+    sources: [sources.mindatSelenite, sources.usgsGypsum],
+    relatedLinks: [
+      { href: "/pierres", label: "Découvrir les pierres de A à Z" },
+      { href: "/entretien", label: "Guide d'entretien des pierres" },
+      { href: "/pierres/howlite", label: "Comparer avec la howlite" },
+      { href: "/pierres/amethyste", label: "Découvrir l'améthyste" },
+      { href: "/formation", label: "Suivre la formation gratuite" },
+      { href: "/test", label: "Faire le test gratuit" }
+    ]
+  },
+  {
+    slug: "malachite-danger-toxicite-eau-elixir-precautions",
+    title: "Malachite danger : toxicité, eau, élixir et précautions à connaître",
+    seoTitle: "Malachite danger : toxicité, eau et précautions",
+    description:
+      "La malachite est-elle dangereuse ? Réponse documentée sur le port en bracelet, l'eau, les élixirs, la poussière, l'entretien et les précautions utiles.",
+    category: "fondamentaux",
+    publishedAt: "2026-09-21",
+    updatedAt: "2026-09-21",
+    readingTime: "13 min",
+    heroImage: "/images/stones/malachite.png",
+    heroImageAlt: "Malachite verte polie illustrant un guide de sécurité et d'entretien",
+    productStoneSlug: "malachite",
+    summary: [
+      "Un bijou en malachite poli et intact se porte normalement comme un objet décoratif, avec les précautions habituelles pour une pierre délicate.",
+      "La prudence concerne surtout la poudre, le ponçage, les fragments, l'ingestion et les préparations dans lesquelles la pierre trempe dans une eau destinée à être bue.",
+      "Pour l'entretien, mieux vaut éviter les acides, les produits chimiques, les ultrasons et l'immersion prolongée, puis utiliser un chiffon doux."
+    ],
+    sections: [
+      {
+        title: "La malachite est-elle dangereuse ? La réponse courte",
+        paragraphs: [
+          "La malachite n'est pas un objet à craindre lorsqu'elle est montée en bracelet, polie, intacte et utilisée comme un bijou. Le contact ordinaire avec une pierre finie n'est pas comparable au fait de la couper, de la poncer, d'en respirer la poussière ou d'en ingérer des particules. Cette distinction simple répond à l'essentiel de la question : porter un bracelet et manipuler de la poudre minérale sont deux situations très différentes.",
+          "La malachite est un carbonate basique de cuivre, de formule Cu2CO3(OH)2. Cette composition explique la couleur verte qui la rend immédiatement reconnaissable, mais aussi les précautions concernant l'ingestion et les poussières. PubChem signale que le composé peut être nocif en cas d'ingestion et irritant pour les yeux. Le CDC/NIOSH encadre par ailleurs l'exposition professionnelle aux poussières et brouillards de cuivre.",
+          "Le conseil pratique est donc mesuré : porter la malachite comme bijou, oui ; fabriquer une boisson avec la pierre, la mettre en bouche, la réduire en poudre ou la travailler sans protection, non. En cas de réaction cutanée, de pierre cassée ou d'ingestion accidentelle, retirez le bijou et demandez conseil à un professionnel de santé ou à un centre antipoison."
+        ]
+      },
+      {
+        title: "Pourquoi la requête « malachite danger » progresse maintenant",
+        paragraphs: [
+          "La requête apparaît parmi les recherches associées en forte progression sur Google Trends France. Elle révèle une évolution utile : les lecteurs ne cherchent plus seulement une liste de vertus symboliques. Ils veulent savoir ce qu'ils peuvent réellement porter, nettoyer ou offrir sans prendre de risque inutile. Cette exigence de précision est saine et permet de séparer la minéralogie, l'entretien du bijou et les croyances de lithothérapie.",
+          "La confusion vient souvent de contenus qui placent toutes les situations sur le même plan. Une perle polie au poignet, une pierre brute friable, une poussière issue du ponçage et un élixir à boire ne présentent pas le même type d'exposition. Dire simplement que la malachite est toxique est trop alarmiste ; affirmer qu'elle ne demande aucune précaution est trop vague. Une réponse utile décrit les usages un par un.",
+          "Cette approche correspond à la ligne éditoriale de Litho Intelligence : documenter ce qui relève de la matière, nommer clairement les limites et réserver la symbolique au champ culturel ou spirituel. Les informations proposées sur les intentions associées aux pierres ne remplacent jamais un avis médical, psychologique ou professionnel."
+        ]
+      },
+      {
+        title: "Bracelet poli, pierre brute et poussière : trois usages différents",
+        paragraphs: [
+          "Un bracelet est constitué de perles polies dont la surface est normalement stable au toucher. Vérifiez régulièrement qu'aucune perle n'est fendue, ébréchée ou poudreuse. Si le fil casse et qu'une perle se brise, ramassez les morceaux sans les porter à la bouche, lavez-vous les mains et tenez les petits fragments hors de portée des enfants et des animaux.",
+          "Une pierre brute demande davantage d'attention lorsqu'elle présente des zones friables. Elle peut rester un bel objet de collection, mais elle ne doit pas être grattée, léchée ou utilisée dans une préparation alimentaire. Après une manipulation prolongée d'un spécimen poussiéreux, se laver les mains constitue une mesure simple et raisonnable.",
+          "La situation la plus sensible est le travail de la matière. Tailler, percer ou poncer une malachite peut produire des poussières contenant du cuivre. Ce travail appartient à un atelier équipé : captation des poussières, protection respiratoire adaptée, lunettes, hygiène et procédures professionnelles. Un particulier ne devrait pas improviser ce type d'opération dans une pièce de vie."
+        ],
+        bullets: [
+          "Bracelet intact : usage décoratif ordinaire, avec surveillance de l'état des perles.",
+          "Pierre cassée : ne pas conserver de fragments accessibles aux enfants ou aux animaux.",
+          "Pierre brute friable : éviter de gratter la surface et se laver les mains après manipulation.",
+          "Ponçage ou perçage : confier le travail à un professionnel correctement équipé.",
+          "Poudre minérale : ne pas inhaler, ingérer ni disperser dans la maison."
+        ]
+      },
+      {
+        title: "Peut-on mettre la malachite dans l'eau ou préparer un élixir ?",
+        paragraphs: [
+          "Il faut distinguer le nettoyage rapide d'un bijou et la préparation d'une eau destinée à être consommée. Pour une boisson ou un élixir direct, la réponse prudente est non : ne mettez pas la malachite dans l'eau que vous prévoyez de boire. La pierre contient du cuivre et n'est pas un ingrédient alimentaire. Une tradition spirituelle ne transforme pas un minéral en produit consommable.",
+          "Si vous souhaitez conserver un rituel symbolique autour de l'eau, choisissez une méthode indirecte. Placez la pierre à l'extérieur d'un récipient fermé contenant l'eau, sans contact entre le minéral et le liquide. Le geste reste alors un support d'intention et non une extraction de matière. Il ne faut pas présenter cette pratique comme produisant un effet physique ou médical.",
+          "Pour le bracelet lui-même, évitez l'immersion prolongée. La malachite est plus délicate que le quartz et peut être sensible aux acides, aux produits ménagers et aux nettoyages agressifs. Retirez le bijou avant la douche, la piscine, la vaisselle et le ménage. Cette habitude protège à la fois les perles, le fil élastique et les éventuelles pièces métalliques."
+        ]
+      },
+      {
+        title: "Comment nettoyer et entretenir la malachite sans l'abîmer",
+        paragraphs: [
+          "Le GIA déconseille l'usage d'un nettoyeur à ultrasons pour la malachite. Les vibrations peuvent endommager certaines gemmes délicates ou fragiliser leur montage. Les produits acides, les détergents puissants, le parfum et les cosmétiques appliqués directement sur la pierre sont également à éviter.",
+          "Pour l'entretien courant, passez un chiffon doux et sec après le port. Si le bijou exige un nettoyage plus complet, utilisez très peu d'eau tiède avec un savon doux, sans trempage, puis essuyez et séchez immédiatement. En cas de doute sur une pierre traitée, collée ou sertie, demandez conseil au vendeur ou à un bijoutier.",
+          "Rangez le bracelet séparément dans une pochette afin de limiter les chocs et les frottements avec des gemmes plus dures. Vérifiez aussi l'élastique : une pierre parfaitement entretenue peut tout de même tomber si le fil est usé. L'entretien matériel est plus important que les protocoles complexes de purification présentés en ligne."
+        ],
+        bullets: [
+          "Essuyer avec un chiffon doux après le port.",
+          "Éviter les ultrasons, la vapeur et les produits acides.",
+          "Retirer le bracelet avant l'eau, le sport et le ménage.",
+          "Éviter le contact direct avec parfum, crème et laque.",
+          "Ranger séparément et contrôler régulièrement le fil."
+        ]
+      },
+      {
+        title: "Enfants, animaux, peau sensible : quelles précautions ?",
+        paragraphs: [
+          "Un bracelet en petites perles ne convient pas à un jeune enfant sans surveillance, quelle que soit la pierre. Le risque immédiat est surtout mécanique : une perle détachée peut être avalée. Conservez également les pierres brutes, les fragments et les bijoux cassés hors de portée des enfants et des animaux.",
+          "Pour une peau sensible, observez la réaction au bracelet complet. Une irritation peut venir de la transpiration, du fil, d'un séparateur métallique, d'un produit appliqué sur la peau ou du frottement. Si une rougeur, une démangeaison ou un inconfort apparaît, retirez le bijou. Une gêne persistante justifie un avis professionnel.",
+          "Les personnes atteintes d'une affection particulière liée au cuivre, ou qui s'interrogent sur un risque personnel, doivent demander l'avis de leur médecin. Un article général ne peut pas évaluer une situation individuelle. Cette prudence ne rend pas le bijou inquiétant ; elle rappelle simplement que le contexte de chaque personne compte."
+        ]
+      },
+      {
+        title: "Choisir un bracelet malachite avec des attentes réalistes",
+        paragraphs: [
+          "Un bracelet malachite se choisit d'abord pour sa beauté, la qualité de son montage et le sens personnel qu'on souhaite lui donner. Examinez les photos, les motifs des perles, leur diamètre, le tour de poignet, les avis récents et les conditions de retour. Des dessins trop identiques ou très mécaniques peuvent inviter à vérifier plus attentivement la description de la matière.",
+          "Dans les traditions symboliques, la malachite est associée à la transformation, à l'affirmation et aux périodes de transition. Elle peut accompagner un rituel personnel, par exemple toucher le bracelet avant une décision et formuler une limite claire. Elle ne protège pas au sens médical et ne produit aucun résultat automatique.",
+          "Notre sélection Amazon est présentée comme un point de départ pour comparer les modèles disponibles. Le prix, le stock et les caractéristiques dépendent du vendeur. Avant l'achat, privilégiez une annonce détaillée et un bracelet que vous aurez réellement plaisir à porter ; c'est la condition la plus concrète pour qu'il trouve sa place dans le quotidien."
+        ]
+      }
+    ],
+    faq: [
+      { question: "La malachite est-elle dangereuse à porter en bracelet ?", answer: "Un bracelet poli, intact et utilisé normalement se porte comme un bijou. Évitez toutefois les perles cassées, l'ingestion, la poussière et le contact prolongé avec des produits chimiques." },
+      { question: "Peut-on dormir avec un bracelet malachite ?", answer: "Il est préférable de retirer les bijoux pour dormir afin d'éviter les frottements, la casse du fil et l'inconfort. Cette recommandation concerne la conservation du bracelet, pas un effet énergétique." },
+      { question: "Peut-on mettre la malachite dans l'eau ?", answer: "Évitez l'immersion prolongée. Pour le nettoyage, utilisez un chiffon doux et seulement un peu d'eau tiède savonneuse si nécessaire, puis séchez immédiatement." },
+      { question: "Peut-on boire un élixir de malachite ?", answer: "Non. Ne placez pas la malachite dans une eau destinée à être bue. Pour un rituel symbolique, utilisez une méthode indirecte sans contact entre la pierre et le liquide." },
+      { question: "La poussière de malachite est-elle nocive ?", answer: "La malachite contient du cuivre et sa poussière ne doit pas être inhalée ni ingérée. La taille, le perçage et le ponçage doivent être réalisés dans un atelier équipé." },
+      { question: "Comment nettoyer une malachite en sécurité ?", answer: "Essuyez-la avec un chiffon doux. Évitez les ultrasons, la vapeur, les acides, le parfum et les détergents puissants. Demandez conseil à un bijoutier pour un montage fragile." }
+    ],
+    sources: [sources.pubchemMalachite, sources.cdcCopper, sources.mindatMalachite, sources.giaJewelryCare],
+    relatedLinks: [
+      { href: "/pierres/malachite", label: "Fiche malachite" },
+      { href: "/conseils-lithotherapie/malachite-signification-vertus-symboliques-bracelet", label: "Signification et bracelet malachite" },
+      { href: "/intentions/protection", label: "Pierres de protection symbolique" },
+      { href: "/boutique-pierres-naturelles", label: "Voir les bracelets recommandés" },
+      { href: "/test", label: "Faire le test gratuit" }
+    ]
+  },
+  {
+    slug: "malachite-signification-vertus-symboliques-bracelet",
+    title: "Malachite : signification, vertus symboliques, vraie pierre et bracelet recommandé",
+    seoTitle: "Malachite : signification, vertus symboliques et bracelet",
+    description:
+      "Guide de fond sur la malachite : symbolique, couleur verte, authenticité, entretien, prudence et choix d'un bracelet recommandé.",
+    category: "achat",
+    publishedAt: "2026-09-19",
+    updatedAt: "2026-09-19",
+    readingTime: "12 min",
+    heroImage: "/images/stones/malachite.png",
+    heroImageAlt: "Malachite verte à bandes, pierre naturelle associée symboliquement à la transformation",
+    productStoneSlug: "malachite",
+    summary: [
+      "La malachite ressort comme l'un des signaux les plus forts dans Google Trends France sur les pierres naturelles.",
+      "Son intérêt vient autant de son vert très reconnaissable que de sa symbolique de transformation et d'affirmation personnelle.",
+      "Un bon achat repose sur la lecture des photos, la cohérence du prix, l'entretien et la prudence face aux promesses excessives."
+    ],
+    sections: [
+      {
+        title: "Pourquoi la malachite mérite un dossier prioritaire",
+        paragraphs: [
+          "La malachite n'est pas une pierre discrète. Elle attire l'œil par ses bandes vertes, ses dessins concentriques et cette impression de mouvement que l'on retrouve rarement avec autant d'intensité dans une pierre portée au poignet. Dans les tendances observées autour des pierres naturelles, elle possède un avantage très net : même une personne peu familière avec la lithothérapie comprend immédiatement qu'il s'agit d'une pierre expressive, visuelle et fortement identitaire.",
+          "Cette puissance esthétique explique son potentiel SEO et commercial. L'utilisateur qui recherche la malachite veut souvent comprendre trois choses à la fois : ce qu'elle symbolise, comment reconnaître une vraie pierre et quel bijou choisir sans tomber dans une annonce exagérée. C'est exactement le type de sujet que Litho Intelligence doit traiter avec une voix éditoriale sérieuse, chaleureuse et responsable.",
+          "Dans les traditions symboliques, la malachite est fréquemment associée au changement, à l'ouverture du cœur, au courage de traverser une transition et à l'affirmation personnelle. Ces associations doivent rester dans le champ culturel et spirituel. La malachite n'a pas de rôle médical, ne protège pas au sens clinique et ne promet aucun résultat. Elle peut en revanche devenir un support d'intention très fort pour une personne qui veut marquer une étape."
+        ]
+      },
+      {
+        title: "Signification symbolique de la malachite",
+        paragraphs: [
+          "La couleur verte occupe une place particulière dans l'imaginaire collectif : croissance, nature, réparation, renouveau, respiration. La malachite intensifie cette symbolique parce que son vert n'est pas uniforme. Ses lignes donnent l'impression d'une matière vivante, presque stratifiée, comme si la pierre portait visuellement l'idée de transformation progressive.",
+          "Dans une lecture de lithothérapie responsable, la malachite peut être présentée comme une pierre de passage. Elle accompagne symboliquement les périodes où l'on veut quitter une posture ancienne, poser une limite, reprendre de l'espace ou transformer une émotion en décision claire. Le bracelet devient alors un rappel concret : revenir à son axe avant de répondre, choisir une action simple, ne pas confondre intensité et urgence.",
+          "Cette lecture est particulièrement intéressante pour les contenus orientés bien-être, car elle évite les promesses spectaculaires. On ne dit pas que la pierre change la vie. On dit qu'elle peut soutenir un rituel personnel de clarté : écrire ce que l'on veut laisser derrière soi, choisir une limite, respirer avant une conversation importante ou se souvenir de la direction prise."
+        ],
+        bullets: [
+          "Transformation : marquer une transition personnelle ou professionnelle.",
+          "Affirmation : se rappeler que poser une limite peut être un geste calme.",
+          "Cœur symbolique : relier la force à une intention plus douce.",
+          "Présence : porter une pierre visuelle qui rappelle une décision.",
+          "Cadeau : offrir un bijou fort à quelqu'un qui traverse un nouveau chapitre."
+        ]
+      },
+      {
+        title: "Comment reconnaître une malachite cohérente",
+        paragraphs: [
+          "La malachite naturelle présente souvent des bandes, des courbes ou des variations de vert. Sur un bracelet, chaque perle peut avoir son propre dessin. Cette diversité est normale. Une imitation ou une présentation trop artificielle peut parfois montrer des motifs répétitifs, des lignes très mécaniques ou une couleur qui semble imprimée plutôt que minérale. À distance, il faut rester prudent : une photo ne remplace jamais une expertise gemmologique.",
+          "Le meilleur réflexe consiste à vérifier la description du vendeur. Le produit mentionne-t-il la pierre, le diamètre des perles, la taille du bracelet, les conditions de retour et les avis clients ? Une annonce transparente inspire davantage confiance qu'une annonce saturée de promesses. Le prix doit aussi être cohérent : une malachite affichée à un tarif étonnamment bas mérite une lecture plus attentive.",
+          "La malachite est également une pierre à entretenir avec délicatesse. Elle est plus tendre que le quartz et n'aime ni les chocs, ni les produits chimiques, ni l'eau prolongée. Pour un bracelet, cela signifie qu'il vaut mieux le retirer avant la douche, le sport, la piscine, le ménage ou l'application de parfum. Un chiffon doux suffit généralement pour l'entretien courant."
+        ],
+        bullets: [
+          "Chercher des variations naturelles de vert et de motifs.",
+          "Lire la description complète avant de se fier à la photo.",
+          "Vérifier les avis sur la couleur réelle et la solidité du montage.",
+          "Éviter l'eau prolongée, le parfum et les produits ménagers.",
+          "Ranger le bracelet séparément pour limiter les frottements."
+        ]
+      },
+      {
+        title: "Malachite, labradorite ou quartz rose : quelle intention choisir ?",
+        paragraphs: [
+          "La malachite convient lorsque l'intention dominante est le changement. Elle parle à celles et ceux qui veulent avancer, couper avec une habitude, clarifier une limite ou donner une forme visible à un nouveau départ. La labradorite, elle, reste plus adaptée aux intentions de protection symbolique, de recentrage et de sensibilité aux ambiances. Le quartz rose porte un registre plus doux : amour de soi, tendresse, lien et attention.",
+          "Ces trois pierres ne se remplacent pas. Elles racontent trois mouvements différents. La malachite dit : je transforme. La labradorite dit : je protège mon espace intérieur. Le quartz rose dit : je choisis plus de douceur. Pour un achat ou un cadeau, cette distinction est plus utile qu'une liste trop longue de propriétés supposées.",
+          "Notre recommandation éditoriale est simple : choisir d'abord l'intention, puis la couleur et enfin le format. Un bracelet malachite sera plus visible qu'un quartz rose pâle. Il convient donc mieux à quelqu'un qui aime les bijoux présents, les verts profonds ou les pièces qui racontent un choix assumé."
+        ]
+      },
+      {
+        title: "Le bracelet malachite recommandé",
+        paragraphs: [
+          "Un bracelet en malachite doit être choisi pour sa beauté, sa lisibilité et sa cohérence avec l'intention personnelle. Le lien recommandé permet de comparer les modèles disponibles sur Amazon, leurs photos, leurs avis et leurs conditions de vente. Comme toujours, le prix et le stock dépendent du vendeur.",
+          "Le bon achat n'est pas forcément le bracelet le plus spectaculaire. C'est celui dont la taille est claire, dont les perles correspondent au style de la personne et dont l'annonce reste sobre. Dans une logique de cadeau, une carte d'intention peut suffire : « J'ai choisi cette pierre comme symbole de transformation et de confiance dans ce nouveau chapitre. »"
+        ]
+      }
+    ],
+    faq: [
+      { question: "Quelle est la signification de la malachite ?", answer: "Dans les traditions symboliques, la malachite est associée au changement, à l'affirmation personnelle et à la transformation intérieure. Cette lecture reste culturelle et ne remplace aucun avis professionnel." },
+      { question: "Comment reconnaître une vraie malachite ?", answer: "Observez les variations de vert, les bandes naturelles, la description du vendeur, les avis et la cohérence du prix. À distance, aucune photo ne permet une certitude absolue." },
+      { question: "Peut-on porter la malachite en bracelet tous les jours ?", answer: "Oui, si le bracelet est confortable, mais il faut éviter l'eau prolongée, les chocs, le parfum et les produits chimiques." },
+      { question: "À qui offrir un bracelet malachite ?", answer: "À une personne qui aime les bijoux verts, les pierres visuelles et les symboles de nouveau départ, de limite posée ou de transformation." },
+      { question: "Malachite ou labradorite pour la protection ?", answer: "La labradorite est plus souvent associée à la protection symbolique. La malachite parle davantage de transformation et d'affirmation." }
+    ],
+    sources: [sources.mindatMalachite, sources.giaJewelryCare],
+    relatedLinks: [
+      { href: "/pierres/malachite", label: "Fiche malachite" },
+      { href: "/intentions/protection", label: "Pierres de protection symbolique" },
+      { href: "/pierres/labradorite", label: "Comparer avec la labradorite" },
+      { href: "/boutique-pierres-naturelles", label: "Voir les bracelets recommandés" },
+      { href: "/test", label: "Faire le test gratuit" }
+    ]
+  },
+  {
+    slug: "labradorite-protection-reflets-bracelet-guide",
+    title: "Labradorite : protection symbolique, reflets et bracelet recommandé",
+    seoTitle: "Labradorite : protection symbolique, reflets et bracelet",
+    description:
+      "Guide SEO sur la labradorite : reflets, signification, protection symbolique, vraie pierre, entretien et choix d'un bracelet.",
+    category: "fondamentaux",
+    publishedAt: "2026-09-19",
+    updatedAt: "2026-09-19",
+    readingTime: "11 min",
+    heroImage: "/images/stones/labradorite.png",
+    heroImageAlt: "Labradorite aux reflets bleus et verts, pierre de protection symbolique",
+    productStoneSlug: "labradorite",
+    summary: [
+      "La labradorite reste une pierre pilier pour les recherches protection, hypersensibilité et bracelet naturel.",
+      "Sa force vient de la labradorescence : des reflets changeants qui rendent la pierre immédiatement reconnaissable.",
+      "Le contenu doit relier beauté minérale, symbolique responsable, conseils d'achat et rituel simple."
+    ],
+    sections: [
+      {
+        title: "Pourquoi la labradorite doit rester une page pilier",
+        paragraphs: [
+          "La labradorite est l'une des pierres les plus stratégiques pour Litho Intelligence. Elle coche toutes les cases d'un bon contenu SEO et e-commerce : un nom recherché, une apparence spectaculaire, une symbolique très installée et un produit facile à porter en bracelet. Dans Google Trends, elle se maintient parmi les pierres fortes de l'univers lithothérapie, avec un intérêt supérieur à beaucoup de requêtes de niche.",
+          "Son avantage éditorial est simple : elle permet d'expliquer la différence entre un phénomène minéral réel et une interprétation symbolique. Les reflets de la labradorite existent dans la matière. La protection énergétique, elle, relève des traditions et des croyances. Un contenu responsable doit tenir ces deux plans ensemble sans les confondre.",
+          "Cette précision renforce la crédibilité de la marque. Litho Intelligence peut parler de beauté, de culture, de rituel et de choix personnel sans basculer dans une promesse impossible à vérifier. C'est aussi ce que les moteurs de recherche et les IA conversationnelles attendent de plus en plus : une réponse claire, nuancée, structurée et utile."
+        ]
+      },
+      {
+        title: "Les reflets de la labradorite : ce qu'il faut regarder",
+        paragraphs: [
+          "La labradorite appartient à la famille des feldspaths. Son effet visuel le plus recherché est la labradorescence : des reflets bleus, verts, dorés ou parfois multicolores qui apparaissent selon l'angle et la lumière. Sur un bracelet, toutes les perles ne brillent pas de la même façon. Certaines sont plus grises, d'autres plus lumineuses. Cette variation fait partie du charme de la pierre.",
+          "Pour choisir un bracelet, il faut donc regarder plusieurs photos. Une seule image peut surestimer les reflets si elle est prise sous une lumière très favorable. Les avis clients sont précieux lorsqu'ils parlent de la couleur réelle, du poids, du confort ou de la qualité du montage. Un bon vendeur ne promet pas que chaque perle aura un reflet intense ; il montre le produit avec honnêteté.",
+          "La labradorite foncée ou larvikite peut parfois être présentée dans le même univers esthétique. Les deux pierres ne racontent pas exactement la même chose, mais elles parlent toutes les deux à un public attiré par les tons sombres, les reflets minéraux et les bracelets sobres."
+        ],
+        bullets: [
+          "Chercher des photos sous plusieurs angles.",
+          "Accepter que les reflets varient d'une perle à l'autre.",
+          "Lire les avis sur la couleur réelle.",
+          "Vérifier le diamètre des perles et le tour de poignet.",
+          "Éviter les annonces qui garantissent des effets uniformes."
+        ]
+      },
+      {
+        title: "Protection symbolique et hypersensibilité",
+        paragraphs: [
+          "Dans les traditions de lithothérapie, la labradorite est souvent associée à la protection symbolique, à l'intuition et aux personnes sensibles aux ambiances. Cette formulation doit rester prudente. Elle ne signifie pas que la pierre bloque des émotions ou remplace un accompagnement psychologique. Elle signifie qu'elle peut devenir un support personnel pour poser une limite, respirer avant de répondre ou se rappeler que l'on a le droit de préserver son espace.",
+          "C'est pour cela que la labradorite convertit bien. Elle répond à une expérience très humaine : se sentir trop sollicité, absorber l'atmosphère d'un lieu, manquer de distance après une conversation. Le bracelet devient alors un objet de rappel. Il ne fait pas le travail à la place de la personne, mais il peut accompagner un rituel concret.",
+          "Un rituel simple consiste à toucher le bracelet pendant deux respirations, nommer mentalement ce qui appartient à l'autre et ce qui appartient à soi, puis choisir une action calme. Cette pratique n'est pas médicale. C'est une façon symbolique d'associer un geste à une intention."
+        ]
+      },
+      {
+        title: "Comment porter et entretenir un bracelet labradorite",
+        paragraphs: [
+          "La labradorite se porte facilement au quotidien grâce à ses couleurs neutres. Elle accompagne aussi bien une tenue sombre qu'un style plus naturel. En bracelet, le format 8 mm est souvent le plus équilibré : visible sans être trop imposant. Les perles plus petites donnent un rendu discret ; les plus grandes créent une présence plus affirmée.",
+          "Côté entretien, évitez les chocs, l'eau prolongée, le parfum et les produits chimiques. Un chiffon doux suffit pour nettoyer les perles. Rangez le bracelet séparément afin de limiter les frottements avec des pierres plus dures ou des éléments métalliques. Ce conseil est important pour les utilisateurs qui portent plusieurs bracelets en accumulation.",
+          "Pour un cadeau, la labradorite fonctionne particulièrement bien si la personne aime les couleurs profondes, les reflets et les objets discrets mais expressifs. Une phrase d'accompagnement peut rester sobre : « J'ai choisi cette pierre comme symbole de protection intérieure et de recentrage. »"
+        ]
+      },
+      {
+        title: "Le bracelet labradorite recommandé",
+        paragraphs: [
+          "La sélection recommandée met en avant un bracelet labradorite lisible, facile à porter et cohérent avec les recherches protection et hypersensibilité. Le lien Amazon permet de vérifier le stock, les photos, les avis et les conditions du vendeur. Le prix peut varier.",
+          "Dans notre stratégie éditoriale, la labradorite doit rester reliée aux pages protection, hypersensibilité, fatigue émotionnelle, guide d'achat bracelet et test gratuit. C'est une pierre pilier : chaque nouveau contenu sur la protection symbolique devrait lui envoyer au moins un lien interne."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Pourquoi la labradorite est-elle associée à la protection ?", answer: "Dans les traditions de lithothérapie, elle symbolise la protection intérieure et les limites personnelles, notamment pour les personnes sensibles. Cette association est culturelle et spirituelle." },
+      { question: "Comment reconnaître une belle labradorite ?", answer: "Regardez les reflets selon l'angle, les variations entre les perles, la qualité des photos et les avis clients. Les reflets ne sont jamais parfaitement uniformes." },
+      { question: "La labradorite convient-elle aux hommes ?", answer: "Oui. Ses tons gris, bleus ou verts profonds en font un bracelet sobre, souvent apprécié dans un style masculin ou mixte." },
+      { question: "Peut-on porter la labradorite avec d'autres pierres ?", answer: "Oui, mais gardez une intention simple. Elle s'associe bien à la tourmaline noire, l'œil de tigre ou le quartz rose selon le message recherché." },
+      { question: "Comment nettoyer un bracelet labradorite ?", answer: "Utilisez un chiffon doux, évitez l'eau prolongée, les produits chimiques et les chocs. Rangez-le séparément." }
+    ],
+    sources: [sources.mindatLabradorite, sources.giaJewelryCare],
+    relatedLinks: [
+      { href: "/pierres/labradorite", label: "Fiche labradorite" },
+      { href: "/intentions/protection", label: "Protection symbolique" },
+      { href: "/intentions/hypersensibilite", label: "Hypersensibilité" },
+      { href: "/guides/bracelet-labradorite-guide-achat", label: "Guide achat labradorite" },
+      { href: "/test", label: "Faire le test gratuit" }
+    ]
+  },
+  {
+    slug: "comment-recharger-quartz-rose-rituel-doux",
+    title: "Comment recharger le quartz rose : rituel doux, erreurs à éviter et bracelet recommandé",
+    seoTitle: "Comment recharger le quartz rose : rituel doux et erreurs",
+    description:
+      "Guide responsable pour recharger symboliquement le quartz rose : intention, lumière douce, entretien réel, erreurs à éviter et bracelet recommandé.",
+    category: "choix",
+    publishedAt: "2026-09-19",
+    updatedAt: "2026-09-19",
+    readingTime: "10 min",
+    heroImage: "/images/stones/quartz-rose.png",
+    heroImageAlt: "Quartz rose pâle associé à un rituel doux d'intention personnelle",
+    productStoneSlug: "quartz-rose",
+    summary: [
+      "La requête « comment recharger le quartz rose » apparaît dans les sujets en progression autour du quartz rose.",
+      "La meilleure réponse doit distinguer entretien matériel, rituel symbolique et prudence face au soleil direct.",
+      "Le quartz rose reste un excellent pont entre SEO, cadeau, amour de soi et vente de bracelet."
+    ],
+    sections: [
+      {
+        title: "Pourquoi cette question est si recherchée",
+        paragraphs: [
+          "Le quartz rose est l'une des pierres les plus connues du grand public. Sa couleur douce, son lien culturel avec l'amour de soi et son prix souvent accessible en font une porte d'entrée naturelle vers les pierres. Il n'est donc pas surprenant que la question « comment recharger le quartz rose » remonte parmi les requêtes associées. Elle révèle une envie de rituel plus qu'une simple question technique.",
+          "Pour y répondre correctement, il faut séparer trois sujets. D'abord l'entretien matériel du bijou : nettoyage, rangement, protection contre les chocs et les produits. Ensuite la pratique symbolique : poser une intention, créer un moment calme, donner du sens à l'objet. Enfin les limites : aucune recharge ne relève du champ clinique ou d'une promesse de résultat.",
+          "Cette distinction est essentielle pour Litho Intelligence. Elle permet d'offrir une réponse utile sans entretenir de confusion. Le quartz rose peut accompagner un rituel personnel de douceur, mais il ne remplace ni le dialogue, ni le repos réel, ni un accompagnement professionnel lorsque celui-ci est nécessaire."
+        ]
+      },
+      {
+        title: "Recharger ou entretenir : deux gestes différents",
+        paragraphs: [
+          "Dans le langage courant de la lithothérapie, « recharger » signifie souvent redonner une intention à la pierre. Ce n'est pas la même chose que nettoyer le bracelet. Le nettoyage concerne la matière : retirer la poussière, préserver le fil, éviter les produits agressifs. Le rechargement appartient plutôt au registre symbolique : reprendre contact avec le sens que l'on donne à la pierre.",
+          "Pour le quartz rose, la prudence est importante. Une exposition prolongée au soleil peut altérer certaines couleurs. Il vaut donc mieux éviter les longues séances en plein soleil, surtout pour un bracelet que l'on souhaite garder joli. Une lumière douce, un tissu propre, quelques respirations et une phrase d'intention suffisent largement.",
+          "Le rituel le plus simple est souvent le meilleur. Posez le bracelet devant vous, respirez lentement, puis formulez une intention courte : « Je choisis de me parler avec plus de douceur aujourd'hui » ou « Je garde de la tendresse sans m'oublier ». Le bracelet devient un rappel, pas une solution magique."
+        ],
+        bullets: [
+          "Nettoyer : préserver la matière et le montage du bracelet.",
+          "Recharger : renouveler symboliquement l'intention associée à la pierre.",
+          "Éviter le soleil direct prolongé.",
+          "Préférer un geste court, calme et régulier.",
+          "Garder une attente réaliste et personnelle."
+        ]
+      },
+      {
+        title: "Un rituel de deux minutes avec le quartz rose",
+        paragraphs: [
+          "Installez le bracelet sur un tissu clair. Éteignez les notifications pendant deux minutes. Posez une main sur le poignet ou sur le cœur si ce geste vous convient. Respirez quatre fois lentement. À chaque expiration, relâchez une tension concrète : une phrase dure, une comparaison, une obligation inutile ou une inquiétude qui n'a pas besoin d'être traitée tout de suite.",
+          "Choisissez ensuite une action minuscule. Envoyer un message bienveillant, boire un verre d'eau, refuser une surcharge, écrire trois lignes, ranger le bracelet avec soin. Le rituel devient utile lorsqu'il débouche sur un geste. La pierre sert de point d'ancrage symbolique, mais la transformation vient de l'action répétée.",
+          "Ce type de pratique convient particulièrement au quartz rose parce que sa symbolique est facile à comprendre. Il ne s'agit pas de forcer la positivité. Il s'agit de créer un rendez-vous doux avec soi-même, sans injonction et sans promesse excessive."
+        ]
+      },
+      {
+        title: "Les erreurs à éviter",
+        paragraphs: [
+          "La première erreur consiste à confondre rituel et obligation. Si le rechargement devient une source de stress, il perd son intérêt. Le quartz rose n'a pas besoin d'un protocole complexe pour garder sa valeur symbolique. Une intention claire et un entretien matériel sérieux suffisent.",
+          "La deuxième erreur concerne l'exposition. Beaucoup de contenus recommandent le soleil sans nuance. Pour un bracelet quartz rose, la lumière directe prolongée n'est pas idéale. Préférez une lumière douce, une étagère claire, un tissu propre ou simplement un moment de respiration.",
+          "La troisième erreur est commerciale : acheter plusieurs accessoires avant d'avoir choisi l'intention. Avant de multiplier les supports, demandez-vous ce que vous voulez réellement cultiver : amour de soi, tendresse relationnelle, paix dans une conversation, attention à vos limites. Le bracelet sera plus utile s'il est relié à une intention simple."
+        ]
+      },
+      {
+        title: "Le bracelet quartz rose recommandé",
+        paragraphs: [
+          "Le bracelet quartz rose recommandé est pensé comme un bijou d'intention accessible, facile à porter et facile à offrir. Il peut accompagner un rituel doux sans discours excessif. Le lien Amazon permet de vérifier les photos, la taille, les avis, le stock et les conditions du vendeur.",
+          "Pour un cadeau, associez le bracelet à une phrase courte : « Un symbole de douceur à porter quand tu veux revenir à toi. » Cette sobriété est souvent plus forte qu'un long texte. Elle respecte la personne, le bijou et la tradition symbolique sans transformer la pierre en promesse."
+        ]
+      }
+    ],
+    faq: [
+      { question: "Comment recharger le quartz rose simplement ?", answer: "Posez le bracelet sur un tissu propre, respirez lentement et formulez une intention courte. Préférez un rituel doux à un protocole compliqué." },
+      { question: "Peut-on mettre le quartz rose au soleil ?", answer: "Il vaut mieux éviter l'exposition directe prolongée, car certaines couleurs peuvent s'altérer. Une lumière douce suffit pour un rituel symbolique." },
+      { question: "Faut-il nettoyer le quartz rose avant de le recharger ?", answer: "Vous pouvez nettoyer le bracelet avec un chiffon doux. Le nettoyage matériel et le rechargement symbolique sont deux gestes différents." },
+      { question: "Quel rituel faire avec un bracelet quartz rose ?", answer: "Touchez le bracelet, respirez quatre fois, choisissez une intention de douceur puis réalisez une action simple en cohérence avec cette intention." },
+      { question: "Le quartz rose a-t-il un effet garanti ?", answer: "Non. Les informations relèvent des traditions symboliques et ne remplacent jamais un avis médical, psychologique ou professionnel." }
+    ],
+    sources: [sources.giaRoseQuartz, sources.giaJewelryCare, sources.mindatQuartz],
+    relatedLinks: [
+      { href: "/pierres/quartz-rose", label: "Fiche quartz rose" },
+      { href: "/intentions/amour", label: "Pierres associées à l'amour" },
+      { href: "/guides/quartz-rose-amour-soi-guide", label: "Guide quartz rose" },
+      { href: "/conseils-lithotherapie/bracelet-quartz-rose-signification-choisir-offrir", label: "Choisir un bracelet quartz rose" },
+      { href: "/idee-cadeau", label: "Idées cadeaux" }
+    ]
+  },
   {
     slug: "bracelet-quartz-rose-signification-choisir-offrir",
     title: "Bracelet quartz rose : signification, comment le choisir et à qui l'offrir",
@@ -138,7 +755,7 @@ export const journalArticles: JournalArticle[] = [
       {
         title: "Comment entretenir un bracelet quartz rose ?",
         paragraphs: [
-          "Pour l'entretien matériel, commencez par les gestes simples. Retirez le bracelet avant la douche, la piscine, le sport ou l'utilisation de produits ménagers. Évitez le parfum et les cosmétiques directement sur les perles. Nettoyez-les avec un chiffon doux et, si nécessaire, un peu d'eau tiède savonneuse, puis séchez soigneusement le bracelet.",
+          "Pour l'entretien matériel, commencez par les gestes simples. Retirez le bracelet avant la douche, la piscine, le sport ou l'utilisation de produits ménagers. Évitez le parfum et les cosmétiques directement sur les perles. Nettoyez-les avec un chiffon doux et, si nécessaire, un peu d'eau tiède savonneuse, puis séchez bien le bracelet.",
           "Le Gemological Institute of America recommande d'éviter les nettoyeurs à vapeur et à ultrasons pour le quartz rose. Une exposition prolongée à une chaleur ou une lumière intense peut aussi altérer certaines couleurs. Rangez le bracelet séparément afin d'éviter les frottements et vérifiez régulièrement l'état du fil élastique.",
           "Les gestes de purification ou de recharge relèvent des traditions spirituelles. Si vous souhaitez en pratiquer un, choisissez une méthode douce qui ne détériore pas le bijou : quelques instants de respiration, une intention écrite ou un rangement sur un tissu propre. L'entretien physique reste la priorité pour conserver le bracelet."
         ]
@@ -172,13 +789,13 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     slug: "agate-bleue-claire-signification-bracelet",
-    title: "Agate bleue claire : signification, vertus symboliques et bracelet recommandé",
-    seoTitle: "Agate bleue claire : signification, vertus et bracelet",
+    title: "Agate bleue claire : couleur, authenticité et bracelet recommandé",
+    seoTitle: "Agate bleue claire : couleur, authenticité et bracelet",
     description:
-      "Guide complet sur l'agate bleue claire : signification symbolique, différences avec l'agate teintée, conseils d'achat et bracelet recommandé.",
+      "Pourquoi l'agate bleue est-elle claire ? Guide sur les nuances, traitements, critères esthétiques et choix d'un bracelet bleu facile à porter.",
     category: "achat",
     publishedAt: "2026-09-16",
-    updatedAt: "2026-09-16",
+    updatedAt: "2026-09-27",
     readingTime: "12 min",
     heroImage: "/images/stones/agate-bleue.png",
     heroImageAlt: "Agate bleue claire en bracelet, pierre douce associée symboliquement à la parole calme",
@@ -592,13 +1209,14 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     slug: "agate-bleue-signification-vertus-bracelet",
-    title: "Agate bleue : signification, vertus symboliques et bracelet recommandé",
-    seoTitle: "Agate bleue : signification, vertus symboliques et bracelet recommandé",
+    canonicalPath: "/pierres/agate-bleue",
+    title: "Agate bleue et communication : rituel, associations et bracelet",
+    seoTitle: "Agate bleue et communication : rituel et bracelet",
     description:
-      "Guide de fond sur l'agate bleue, pierre associée symboliquement à la communication douce, à l'apaisement relationnel et au choix d'un bracelet.",
+      "Comment utiliser l'agate bleue comme symbole de communication douce : rituel de deux minutes, associations de pierres et choix d'un bracelet.",
     category: "culture",
     publishedAt: "2026-09-12",
-    updatedAt: "2026-09-12",
+    updatedAt: "2026-09-27",
     readingTime: "11 min",
     heroImage: "/images/stones/agate-bleue.png",
     heroImageAlt: "Agate bleue en pierre naturelle, associée symboliquement à la communication douce",
@@ -879,6 +1497,7 @@ export const journalArticles: JournalArticle[] = [
     relatedLinks: [
       { href: "/pierres/oeil-de-taureau", label: "Fiche œil de taureau" },
       { href: "/pierres/oeil-de-tigre", label: "Comparer avec l'œil de tigre" },
+      { href: "/pierres/obsidienne-noire", label: "Comparer avec l'obsidienne noire" },
       { href: "/conseils-lithotherapie/apatite-bleue-vertus-signification-bracelet", label: "Comparer avec l'apatite bleue" },
       { href: "/conseils-lithotherapie/agate-bleue-claire-signification-bracelet", label: "Comparer avec l'agate bleue claire" },
       { href: "/conseils-lithotherapie/agate-bleue-naturelle-vraie-pierre-teintee", label: "Comparer avec l'agate bleue naturelle" },

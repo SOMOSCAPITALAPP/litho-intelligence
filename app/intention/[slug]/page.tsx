@@ -16,7 +16,7 @@ import { getNativeStone, getNativeStoneImage } from "@/lib/nativeStones";
 import { getStone } from "@/lib/stones";
 import { wellbeingDisclaimer } from "@/lib/legal";
 import { getProductByStone } from "@/lib/products";
-import { defaultShareAlt, shareImage, shareImageType } from "@/lib/site";
+import { defaultShareAlt, shareImage, shareImageType, siteUrl } from "@/lib/site";
 
 export function generateStaticParams() {
   return intentionPages.map((page) => ({ slug: page.slug }));
@@ -28,6 +28,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: page?.seoTitle ?? "Pierres par intention | Litho Intelligence",
     description: page?.seoDescription,
+    alternates: page
+      ? {
+          canonical: `${siteUrl.replace(/\/$/, "")}/intentions/${page.slug}`
+        }
+      : undefined,
     openGraph: page
       ? {
           title: page.seoTitle,

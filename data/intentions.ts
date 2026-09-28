@@ -130,22 +130,42 @@ export const intentionPages: IntentionPage[] = [
   },
   {
     slug: "amour",
-    queryLabel: "pierre pour l’amour",
+    queryLabel: "quelle pierre pour l’amour et l’amour de soi ?",
     shortLabel: "Amour",
-    title: "Pierres pour l’amour : douceur, lien et réconciliation",
+    title: "Quelle pierre pour l’amour ? Quartz rose, rhodonite et pierre de lune",
     seoTitle: "Pierre pour l’amour : quartz rose, rhodonite et pierre de lune",
-    seoDescription: "Pierres traditionnellement associées à l’amour, à la tendresse et au réconfort émotionnel.",
-    intro: "Les pierres d’amour accompagnent symboliquement l’ouverture du cœur, la tendresse et le respect de soi.",
-    emotionalPromise: "Ici, l’amour commence par une intention simple : se considérer avec plus de douceur, puis créer un espace plus ouvert pour le lien.",
+    seoDescription: "Quelle pierre choisir pour l’amour ou l’amour de soi ? Comparez quartz rose, rhodonite, pierre de lune, aventurine verte et grenat.",
+    intro: "Le quartz rose est la pierre la plus traditionnellement associée à l’amour et à la tendresse. La rhodonite symbolise un lien plus solide, tandis que la pierre de lune accompagne les transitions relationnelles. Ces pierres soutiennent une intention personnelle : elles ne peuvent ni attirer une personne précise ni agir sur ses sentiments.",
+    emotionalPromise: "Ici, l’amour commence par une intention concrète : se traiter avec plus de douceur, communiquer sincèrement et laisser à l’autre sa liberté.",
     recommendedStoneSlugs: ["quartz-rose", "rhodonite", "pierre-de-lune", "aventurine-verte", "grenat"],
     meditationStone: "Quartz rose",
     meditationIntention: "douceur du cœur",
-    giftAngle: "Pour un cadeau amoureux ou affectif, le quartz rose reste une pierre lisible, tendre et très accessible.",
-    solutionSteps: ["Choisir une pierre du cœur.", "La porter ou l’offrir avec un message simple.", "Associer la pierre à une intention de douceur."],
+    giftAngle: "Pour un cadeau amoureux ou affectif, le quartz rose reste un symbole lisible et tendre. La rhodonite convient à un message de soutien, tandis que la pierre de lune évoque un nouveau chapitre.",
+    solutionSteps: ["Choisir une intention : amour de soi, tendresse, nouveau lien ou réconciliation symbolique.", "Sélectionner une pierre dont la couleur et le message vous parlent réellement.", "La porter ou l’offrir avec une phrase sincère, sans attente imposée à l’autre."],
     faq: [
       {
         question: "Quelle pierre choisir pour l’amour ?",
-        answer: "Le quartz rose est traditionnellement associé à l’amour de soi, à la tendresse et au réconfort du cœur."
+        answer: "Le quartz rose est le choix le plus connu pour symboliser l’amour de soi, la tendresse et l’attention portée aux relations. La rhodonite et la pierre de lune offrent des nuances plus affirmées."
+      },
+      {
+        question: "Quelle pierre est associée à l’amour de soi ?",
+        answer: "Le quartz rose est traditionnellement associé à l’amour de soi. Il peut servir de rappel visuel pour se parler avec davantage de douceur et prendre soin de ses limites."
+      },
+      {
+        question: "Une pierre peut-elle attirer l’amour d’une personne précise ?",
+        answer: "Non. Une pierre ne peut pas contraindre les sentiments ou la décision d’une autre personne. Elle peut seulement accompagner votre propre intention, votre confiance et votre manière d’entrer en relation."
+      },
+      {
+        question: "Quartz rose ou rhodonite : quelle pierre choisir ?",
+        answer: "Choisissez le quartz rose pour un symbole doux et universel. Préférez la rhodonite pour une intention de solidité relationnelle, de courage affectif ou de reconstruction symbolique."
+      },
+      {
+        question: "Quelle pierre offrir pour déclarer son amour ?",
+        answer: "Le quartz rose transmet un message immédiatement compréhensible. Ajoutez quelques mots personnels : le sens du cadeau vient surtout de l’attention et de la relation."
+      },
+      {
+        question: "Les pierres pour l’amour ont-elles un effet médical ou garanti ?",
+        answer: "Non. Leurs significations relèvent de traditions symboliques, culturelles ou spirituelles. Elles ne remplacent jamais un avis médical, psychologique ou professionnel."
       }
     ]
   },

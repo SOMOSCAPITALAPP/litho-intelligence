@@ -25,7 +25,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const article = getJournalArticle(params.slug);
   if (!article) return { title: "Journal | Litho Intelligence" };
 
-  const url = `${baseUrl}${routes.journalArticle(article.slug)}`;
+  const url = `${baseUrl}${article.canonicalPath ?? routes.journalArticle(article.slug)}`;
 
   return {
     title: article.seoTitle,
@@ -65,7 +65,7 @@ export default function JournalArticlePage({ params }: { params: { slug: string 
 
   const product = article.productStoneSlug ? getProductByStone(article.productStoneSlug) : undefined;
   const books = article.productStoneSlug ? getBooksForStone(article.productStoneSlug, 2) : getBooksByPlacement("journal", 2);
-  const articleUrl = `${baseUrl}${routes.journalArticle(article.slug)}`;
+  const articleUrl = `${baseUrl}${article.canonicalPath ?? routes.journalArticle(article.slug)}`;
 
   const articleJsonLd = {
     "@context": "https://schema.org",

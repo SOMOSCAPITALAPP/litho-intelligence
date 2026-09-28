@@ -153,6 +153,17 @@ const productSeeds: Array<Omit<RecommendedProduct, "imageUrl" | "amazonUrl"> & {
     price: "Prix variable",
     badge: "Abondance",
     description: "Une pierre dorée associée symboliquement à la clarté, à l'organisation et à l'abondance responsable."
+  },
+  {
+    id: "bracelet-malachite",
+    title: "Bracelet Malachite",
+    stone: "Malachite",
+    stoneSlug: "malachite",
+    intentions: ["protection", "transformation", "confiance", "femme"],
+    price: "Prix variable",
+    badge: "Tendance",
+    fallbackUrl: "https://www.amazon.fr/s?k=bracelet+malachite+pierre+naturelle",
+    description: "Une pierre verte expressive pour symboliser le changement, l'affirmation personnelle et la transformation intérieure."
   }
 ];
 

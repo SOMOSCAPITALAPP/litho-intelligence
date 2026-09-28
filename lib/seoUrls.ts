@@ -39,7 +39,7 @@ export function getCanonicalSeoUrls(now = new Date()): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.82
     })),
-    ...journalArticles.map((article) => ({
+    ...journalArticles.filter((article) => !article.canonicalPath).map((article) => ({
       url: `${baseUrl}/conseils-lithotherapie/${article.slug}`,
       lastModified: new Date(article.updatedAt),
       changeFrequency: "monthly" as const,
