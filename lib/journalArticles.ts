@@ -1,4 +1,5 @@
 import { protectionStressArticles } from "@/lib/protectionStressArticles";
+import { seasonalTrendArticles } from "@/lib/seasonalTrendArticles";
 
 export type JournalArticleSection = {
   title: string;
@@ -51,6 +52,7 @@ const sources = {
 };
 
 export const journalArticles: JournalArticle[] = [
+  ...seasonalTrendArticles,
   ...protectionStressArticles,
   {
     slug: "pleine-lune-septembre-2026-recharger-pierres-sans-risque",
