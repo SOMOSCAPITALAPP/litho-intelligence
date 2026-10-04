@@ -55,6 +55,14 @@ const priorityStoneSeo: Record<string, { title: string; description: string; sea
     guideHref: "/conseils-lithotherapie/apatite-bleue-vertus-signification-bracelet",
     guideLabel: "Lire le guide Apatite bleue"
   },
+  "jade-emeraude": {
+    title: "Jade émeraude : signification, vertus symboliques et bracelet",
+    description:
+      "Jade émeraude : signification symbolique, harmonie, chance culturelle, différences entre jadéite et néphrite et bracelet recommandé.",
+    searchIntent: "jade emeraude, jade émeraude signification, jade émeraude vertus, bracelet jade émeraude, jade vert naturel",
+    guideHref: "/conseils-lithotherapie/jade-harmonie-chance-symbolique",
+    guideLabel: "Lire le guide Jade émeraude"
+  },
   "oeil-de-tigre": {
     title: "Œil de tigre : vertus, protection, confiance et bracelet",
     description:
@@ -132,6 +140,10 @@ const priorityStoneFaq: Record<string, Array<[string, string]>> = {
     [
       "Comment reconnaître un œil de taureau de qualité ?",
       "Observez la chatoyance : la bande lumineuse doit bouger avec l'angle. Vérifiez aussi la description, les photos réelles, la taille des perles et les conditions de retour."
+    ],
+    [
+      "L'œil de taureau est-il un œil de tigre rouge ?",
+      "L'œil de taureau est un nom commercial couramment employé pour un quartz chatoyant brun rouge proche de l'œil de tigre rouge. La couleur peut être naturelle ou renforcée par chauffage : une annonce sérieuse doit préciser les traitements éventuels."
     ]
   ],
   "obsidienne-noire": [
@@ -180,6 +192,58 @@ const priorityStoneFaq: Record<string, Array<[string, string]>> = {
     [
       "Avec quelles pierres associer l'apatite bleue ?",
       "Elle peut être associée à l'agate bleue pour la parole douce, à la cornaline pour l'élan créatif et à la howlite pour une intention de calme."
+    ],
+    [
+      "Quelle est la signification d'une pierre apatite bleue ?",
+      "Dans les traditions symboliques, l'apatite bleue évoque une expression plus claire, l'inspiration et l'élan nécessaire pour formuler puis partager une idée."
+    ]
+  ],
+  "jade-emeraude": [
+    [
+      "Quelle est la signification du jade émeraude ?",
+      "Le jade émeraude est traditionnellement associé à l'harmonie, à la sagesse, à l'équilibre et à la chance symbolique. Sa couleur verte renforce son lien culturel avec le renouveau et le cœur."
+    ],
+    [
+      "Quelles sont les vertus symboliques du jade émeraude ?",
+      "Ses vertus traditionnelles relèvent de l'harmonie, de la sérénité, de la prospérité symbolique et de la constance. Elles ne constituent ni un effet médical ni une garantie de résultat."
+    ],
+    [
+      "Jadéite et néphrite sont-elles la même pierre ?",
+      "Non. La jadéite et la néphrite sont deux matériaux minéraux différents commercialisés sous le terme jade. Une description précise doit indiquer la matière et les traitements lorsqu'ils sont connus."
+    ],
+    [
+      "Pourquoi porter un bracelet jade émeraude ?",
+      "Le bracelet peut servir de rappel visuel d'une intention d'équilibre, de patience ou d'organisation, tout en restant un bijou vert élégant et facile à porter."
+    ],
+    [
+      "Comment choisir un bracelet jade émeraude ?",
+      "Vérifiez la matière annoncée, les éventuels traitements, les variations de couleur, la taille des perles, le tour de poignet et les conditions de retour du vendeur."
+    ],
+    [
+      "Le jade émeraude est-il une bonne idée cadeau ?",
+      "Oui. Il transmet un message positif d'harmonie et de chance symbolique, particulièrement adapté à un anniversaire, un nouveau projet ou un encouragement."
+    ]
+  ],
+  "oeil-de-tigre": [
+    [
+      "Quelles sont les vertus symboliques de l'œil de tigre ?",
+      "L'œil de tigre est traditionnellement associé à la confiance, à la vigilance, au courage et à la protection symbolique."
+    ],
+    [
+      "Quelle est la signification de l'œil de tigre rouge ?",
+      "L'œil de tigre rouge, souvent rapproché de l'œil de taureau, symbolise une forme plus terrienne de courage, d'ancrage et de détermination. Sa couleur peut être naturelle ou obtenue par chauffage."
+    ],
+    [
+      "Œil de tigre ou œil de taureau : lequel choisir ?",
+      "L'œil de tigre doré évoque davantage la confiance et la vigilance. L'œil de taureau brun rouge est traditionnellement associé à l'endurance et à une force plus ancrée."
+    ],
+    [
+      "Pourquoi porter un bracelet œil de tigre ?",
+      "Le bracelet peut rappeler une intention de posture, de confiance ou de décision avant une situation importante."
+    ],
+    [
+      "L'œil de tigre possède-t-il un effet médical ?",
+      "Non. Ses usages sont symboliques, culturels ou spirituels et ne remplacent jamais un avis médical, psychologique ou professionnel."
     ]
   ],
   "quartz-rose": [

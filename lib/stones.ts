@@ -299,6 +299,14 @@ const seeds: StoneSeed[] = [
     chakra: "Cœur",
     visual: "Vert intense à émeraude, aspect élégant et protecteur.",
     description: "Pierre associée à l'harmonie, à la chance symbolique et à l'équilibre du cœur.",
+    seo_keywords: [
+      "jade emeraude",
+      "jade émeraude signification",
+      "jade émeraude vertus",
+      "pierre jade émeraude",
+      "bracelet jade émeraude",
+      "jade vert naturel"
+    ],
     badge: "Harmonie"
   },
   {
@@ -872,6 +880,8 @@ const seeds: StoneSeed[] = [
       "œil de taureau vertus",
       "vertue oeil de taureau",
       "oeil de taureau signification",
+      "oeil de tigre rouge signification",
+      "œil de tigre rouge",
       "pierre oeil de taureau",
       "bracelet oeil de taureau",
       "oeil de taureau courage",

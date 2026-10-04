@@ -1,5 +1,6 @@
 import { protectionStressArticles } from "@/lib/protectionStressArticles";
 import { seasonalTrendArticles } from "@/lib/seasonalTrendArticles";
+import { trafficGrowthArticles } from "@/lib/trafficGrowthArticles";
 
 export type JournalArticleSection = {
   title: string;
@@ -53,6 +54,7 @@ const sources = {
 
 export const journalArticles: JournalArticle[] = [
   ...seasonalTrendArticles,
+  ...trafficGrowthArticles,
   ...protectionStressArticles,
   {
     slug: "pleine-lune-septembre-2026-recharger-pierres-sans-risque",
@@ -1361,13 +1363,13 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     slug: "oeil-de-taureau-vertus-signification-bracelet",
-    title: "Œil de taureau : vertus symboliques, signification, courage et bracelet",
-    seoTitle: "Œil de taureau vertus : signification, courage et bracelet",
+    title: "Œil de taureau : vertus, signification et différence avec l'œil de tigre rouge",
+    seoTitle: "Œil de taureau : vertus, signification et œil de tigre rouge",
     description:
-      "Guide de fond sur les vertus de l'œil de taureau : signification symbolique, courage, ancrage, différence avec l'œil de tigre, bracelet et conseils d'achat.",
+      "Œil de taureau : vertus symboliques, courage, ancrage, différence avec l'œil de tigre rouge, bracelet recommandé et conseils d'achat.",
     category: "culture",
     publishedAt: "2026-09-13",
-    updatedAt: "2026-09-15",
+    updatedAt: "2026-10-03",
     readingTime: "11 min",
     heroImage: "/images/stones/oeil-de-taureau.png",
     heroImageAlt: "Œil de taureau brun rouge chatoyant, pierre associée symboliquement au courage et à l'ancrage",
@@ -1480,6 +1482,11 @@ export const journalArticles: JournalArticle[] = [
           "L'œil de tigre est plus solaire et lié à la confiance visible. L'œil de taureau est plus terrien, plus brun rouge, et symboliquement associé à l'endurance et au courage calme."
       },
       {
+        question: "Quelle est la signification de l'œil de tigre rouge ?",
+        answer:
+          "L'œil de tigre rouge, souvent commercialisé comme œil de taureau, est traditionnellement associé au courage, à l'ancrage et à la détermination. La couleur rouge peut être naturelle ou renforcée par chauffage."
+      },
+      {
         question: "Pourquoi porter un bracelet œil de taureau ?",
         answer:
           "Le bracelet peut servir de rappel quotidien pour rester stable, choisir une action importante et accompagner une intention personnelle d'ancrage."
@@ -1499,6 +1506,7 @@ export const journalArticles: JournalArticle[] = [
     relatedLinks: [
       { href: "/pierres/oeil-de-taureau", label: "Fiche œil de taureau" },
       { href: "/pierres/oeil-de-tigre", label: "Comparer avec l'œil de tigre" },
+      { href: "/conseils-lithotherapie/oeil-de-tigre-rouge-signification-oeil-de-taureau", label: "Œil de tigre rouge ou œil de taureau" },
       { href: "/pierres/obsidienne-noire", label: "Comparer avec l'obsidienne noire" },
       { href: "/conseils-lithotherapie/apatite-bleue-vertus-signification-bracelet", label: "Comparer avec l'apatite bleue" },
       { href: "/conseils-lithotherapie/agate-bleue-claire-signification-bracelet", label: "Comparer avec l'agate bleue claire" },
@@ -2181,14 +2189,14 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     slug: "jade-harmonie-chance-symbolique",
-    title: "Jade : harmonie, chance symbolique et élégance minérale",
-    seoTitle: "Jade : signification, harmonie, chance symbolique et bracelet",
+    title: "Jade émeraude : signification, vertus symboliques et bracelet",
+    seoTitle: "Jade émeraude : signification, vertus et bracelet recommandé",
     description:
-      "Comprendre le jade comme symbole d'harmonie et de chance culturelle, avec un regard sur la qualité, la couleur et le bracelet.",
+      "Jade émeraude : signification, vertus symboliques, jadéite ou néphrite, critères de qualité et bracelet recommandé.",
     category: "culture",
     publishedAt: "2026-09-06",
-    updatedAt: "2026-09-06",
-    readingTime: "7 min",
+    updatedAt: "2026-10-03",
+    readingTime: "9 min",
     heroImage: "/images/stones/jade-emeraude.png",
     heroImageAlt: "Jade vert poli, pierre associée culturellement à l'harmonie",
     productStoneSlug: "jade-emeraude",
@@ -2203,6 +2211,20 @@ export const journalArticles: JournalArticle[] = [
         paragraphs: [
           "Le jade n'est pas seulement une couleur verte. C'est une pierre chargée d'histoire, de gestes, de sculptures, de bijoux transmis et de symboles culturels. Le GIA rappelle que le mot jade désigne notamment deux matériaux gemmes : la jadeite et la néphrite. Cette précision est essentielle pour acheter avec discernement.",
           "Dans les traditions, le jade est souvent associé à l'harmonie, à la sagesse, à la chance et à la longévité symbolique. Pour Litho Intelligence, l'enjeu est de respecter cette profondeur sans la transformer en argument excessif. Le jade doit être raconté comme une pierre de calme, de tenue et d'équilibre."
+        ]
+      },
+      {
+        title: "Jade émeraude : quelle signification ?",
+        paragraphs: [
+          "L'expression jade émeraude décrit d'abord une couleur commerciale : un vert soutenu qui rappelle l'émeraude. Elle ne suffit pas à identifier la matière. Un bijou présenté sous ce nom peut être en jadéite, en néphrite ou employer une appellation plus large. Avant l'achat, la description du vendeur, les traitements déclarés et les photos réelles restent donc essentiels.",
+          "Dans les traditions symboliques, ce vert profond est associé à l'harmonie, au renouveau, à la sagesse et à la chance culturelle. Le bracelet ne promet aucun résultat : il peut servir de rappel personnel pour agir avec plus de constance, préserver un équilibre ou marquer le début d'un projet.",
+          "Cette distinction entre matière, couleur et symbolique rend le choix plus clair. On peut apprécier le jade émeraude pour son esthétique tout en gardant un regard responsable sur son origine et sur les récits qui l'accompagnent."
+        ],
+        bullets: [
+          "Signification : harmonie, sagesse et renouveau symbolique.",
+          "Matière : vérifier s'il s'agit de jadéite, de néphrite ou d'une appellation commerciale.",
+          "Couleur : rechercher des photos nettes et des variations crédibles.",
+          "Bracelet : choisir selon le tour de poignet, la taille des perles et le confort."
         ]
       },
       {
@@ -2233,17 +2255,20 @@ export const journalArticles: JournalArticle[] = [
       }
     ],
     faq: [
-      { question: "Que symbolise le jade ?", answer: "Il est traditionnellement associé à l'harmonie, à la sagesse, à la chance symbolique et à l'équilibre." },
+      { question: "Quelle est la signification du jade émeraude ?", answer: "Il est traditionnellement associé à l'harmonie, à la sagesse, au renouveau et à la chance symbolique." },
+      { question: "Quelles sont les vertus symboliques du jade émeraude ?", answer: "Le jade émeraude évoque l'équilibre, la constance, la sérénité et la prospérité symbolique, sans effet médical ni résultat garanti." },
       { question: "Jadeite et néphrite, est-ce la même chose ?", answer: "Ce sont deux matériaux différents regroupés sous le terme jade dans le commerce et la gemmologie." },
+      { question: "Le jade émeraude est-il toujours naturel ?", answer: "Le nom décrit souvent une couleur. Il faut vérifier la matière annoncée, les traitements éventuels et les informations fournies par le vendeur." },
       { question: "Le jade est-il une bonne idée cadeau ?", answer: "Oui, surtout pour un cadeau élégant, discret et porteur d'un message positif." },
       { question: "Comment entretenir un bracelet jade ?", answer: "Un chiffon doux et une attention aux produits chimiques suffisent généralement. Évitez les traitements agressifs." }
     ],
     sources: [sources.giaJade, sources.giaJewelryCare],
     relatedLinks: [
-      { href: "/pierres/jade", label: "Fiche jade" },
+      { href: "/pierres/jade-emeraude", label: "Fiche jade émeraude" },
       { href: "/intentions/argent-abondance", label: "Chance symbolique" },
       { href: "/idee-cadeau", label: "Idée cadeau" },
-      { href: "/boutique-pierres-naturelles", label: "Voir les bracelets" }
+      { href: "/boutique-pierres-naturelles", label: "Voir les bracelets" },
+      { href: "/test", label: "Trouver ma pierre" }
     ]
   },
   {
